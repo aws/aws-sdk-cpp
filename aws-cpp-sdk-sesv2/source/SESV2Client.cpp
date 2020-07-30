@@ -22,18 +22,25 @@
 #include <aws/sesv2/SESV2ErrorMarshaller.h>
 #include <aws/sesv2/model/CreateConfigurationSetRequest.h>
 #include <aws/sesv2/model/CreateConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/CreateCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/CreateDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/CreateDeliverabilityTestReportRequest.h>
 #include <aws/sesv2/model/CreateEmailIdentityRequest.h>
+#include <aws/sesv2/model/CreateEmailIdentityPolicyRequest.h>
+#include <aws/sesv2/model/CreateEmailTemplateRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/DeleteCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/DeleteDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/DeleteEmailIdentityRequest.h>
+#include <aws/sesv2/model/DeleteEmailIdentityPolicyRequest.h>
+#include <aws/sesv2/model/DeleteEmailTemplateRequest.h>
 #include <aws/sesv2/model/DeleteSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/GetAccountRequest.h>
 #include <aws/sesv2/model/GetBlacklistReportsRequest.h>
 #include <aws/sesv2/model/GetConfigurationSetRequest.h>
 #include <aws/sesv2/model/GetConfigurationSetEventDestinationsRequest.h>
+#include <aws/sesv2/model/GetCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpsRequest.h>
 #include <aws/sesv2/model/GetDeliverabilityDashboardOptionsRequest.h>
@@ -41,15 +48,20 @@
 #include <aws/sesv2/model/GetDomainDeliverabilityCampaignRequest.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportRequest.h>
 #include <aws/sesv2/model/GetEmailIdentityRequest.h>
+#include <aws/sesv2/model/GetEmailIdentityPoliciesRequest.h>
+#include <aws/sesv2/model/GetEmailTemplateRequest.h>
 #include <aws/sesv2/model/GetSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/ListConfigurationSetsRequest.h>
+#include <aws/sesv2/model/ListCustomVerificationEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListDedicatedIpPoolsRequest.h>
 #include <aws/sesv2/model/ListDeliverabilityTestReportsRequest.h>
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsRequest.h>
 #include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
+#include <aws/sesv2/model/ListEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
 #include <aws/sesv2/model/ListTagsForResourceRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountDetailsRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
@@ -65,10 +77,16 @@
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesRequest.h>
 #include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
+#include <aws/sesv2/model/SendBulkEmailRequest.h>
+#include <aws/sesv2/model/SendCustomVerificationEmailRequest.h>
 #include <aws/sesv2/model/SendEmailRequest.h>
 #include <aws/sesv2/model/TagResourceRequest.h>
+#include <aws/sesv2/model/TestRenderEmailTemplateRequest.h>
 #include <aws/sesv2/model/UntagResourceRequest.h>
 #include <aws/sesv2/model/UpdateConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/UpdateCustomVerificationEmailTemplateRequest.h>
+#include <aws/sesv2/model/UpdateEmailIdentityPolicyRequest.h>
+#include <aws/sesv2/model/UpdateEmailTemplateRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -203,6 +221,33 @@ void SESV2Client::CreateConfigurationSetEventDestinationAsyncHelper(const Create
   handler(this, request, CreateConfigurationSetEventDestination(request), context);
 }
 
+CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/custom-verification-email-templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCustomVerificationEmailTemplateOutcomeCallable SESV2Client::CreateCustomVerificationEmailTemplateCallable(const CreateCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateCustomVerificationEmailTemplateAsyncHelper(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCustomVerificationEmailTemplate(request), context);
+}
+
 CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -284,6 +329,73 @@ void SESV2Client::CreateEmailIdentityAsyncHelper(const CreateEmailIdentityReques
   handler(this, request, CreateEmailIdentity(request), context);
 }
 
+CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const CreateEmailIdentityPolicyRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEmailIdentityPolicy", "Required field: EmailIdentity, is not set");
+    return CreateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEmailIdentityPolicy", "Required field: PolicyName, is not set");
+    return CreateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/identities/";
+  ss << request.GetEmailIdentity();
+  ss << "/policies/";
+  ss << request.GetPolicyName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEmailIdentityPolicyOutcomeCallable SESV2Client::CreateEmailIdentityPolicyCallable(const CreateEmailIdentityPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEmailIdentityPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEmailIdentityPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateEmailIdentityPolicyAsync(const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateEmailIdentityPolicyAsyncHelper(const CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEmailIdentityPolicy(request), context);
+}
+
+CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEmailTemplateOutcomeCallable SESV2Client::CreateEmailTemplateCallable(const CreateEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEmailTemplate(request), context);
+}
+
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
   if (!request.ConfigurationSetNameHasBeenSet())
@@ -357,6 +469,39 @@ void SESV2Client::DeleteConfigurationSetEventDestinationAsyncHelper(const Delete
   handler(this, request, DeleteConfigurationSetEventDestination(request), context);
 }
 
+DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomVerificationEmailTemplate", "Required field: TemplateName, is not set");
+    return DeleteCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/custom-verification-email-templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCustomVerificationEmailTemplateOutcomeCallable SESV2Client::DeleteCustomVerificationEmailTemplateCallable(const DeleteCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteCustomVerificationEmailTemplateAsyncHelper(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomVerificationEmailTemplate(request), context);
+}
+
 DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
 {
   if (!request.PoolNameHasBeenSet())
@@ -421,6 +566,79 @@ void SESV2Client::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& req
 void SESV2Client::DeleteEmailIdentityAsyncHelper(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEmailIdentity(request), context);
+}
+
+DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const DeleteEmailIdentityPolicyRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailIdentityPolicy", "Required field: EmailIdentity, is not set");
+    return DeleteEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailIdentityPolicy", "Required field: PolicyName, is not set");
+    return DeleteEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/identities/";
+  ss << request.GetEmailIdentity();
+  ss << "/policies/";
+  ss << request.GetPolicyName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEmailIdentityPolicyOutcomeCallable SESV2Client::DeleteEmailIdentityPolicyCallable(const DeleteEmailIdentityPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailIdentityPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailIdentityPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteEmailIdentityPolicyAsync(const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteEmailIdentityPolicyAsyncHelper(const DeleteEmailIdentityPolicyRequest& request, const DeleteEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailIdentityPolicy(request), context);
+}
+
+DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailTemplate", "Required field: TemplateName, is not set");
+    return DeleteEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEmailTemplateOutcomeCallable SESV2Client::DeleteEmailTemplateCallable(const DeleteEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteEmailTemplateAsyncHelper(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailTemplate(request), context);
 }
 
 DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(const DeleteSuppressedDestinationRequest& request) const
@@ -580,6 +798,39 @@ void SESV2Client::GetConfigurationSetEventDestinationsAsync(const GetConfigurati
 void SESV2Client::GetConfigurationSetEventDestinationsAsyncHelper(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetConfigurationSetEventDestinations(request), context);
+}
+
+GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCustomVerificationEmailTemplate", "Required field: TemplateName, is not set");
+    return GetCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/custom-verification-email-templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCustomVerificationEmailTemplateOutcomeCallable SESV2Client::GetCustomVerificationEmailTemplateCallable(const GetCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetCustomVerificationEmailTemplateAsyncHelper(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCustomVerificationEmailTemplate(request), context);
 }
 
 GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& request) const
@@ -811,6 +1062,73 @@ void SESV2Client::GetEmailIdentityAsyncHelper(const GetEmailIdentityRequest& req
   handler(this, request, GetEmailIdentity(request), context);
 }
 
+GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetEmailIdentityPoliciesRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEmailIdentityPolicies", "Required field: EmailIdentity, is not set");
+    return GetEmailIdentityPoliciesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/identities/";
+  ss << request.GetEmailIdentity();
+  ss << "/policies";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetEmailIdentityPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEmailIdentityPoliciesOutcomeCallable SESV2Client::GetEmailIdentityPoliciesCallable(const GetEmailIdentityPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEmailIdentityPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEmailIdentityPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetEmailIdentityPoliciesAsync(const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEmailIdentityPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetEmailIdentityPoliciesAsyncHelper(const GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEmailIdentityPolicies(request), context);
+}
+
+GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEmailTemplate", "Required field: TemplateName, is not set");
+    return GetEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEmailTemplateOutcomeCallable SESV2Client::GetEmailTemplateCallable(const GetEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetEmailTemplateAsyncHelper(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEmailTemplate(request), context);
+}
+
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
 {
   if (!request.EmailAddressHasBeenSet())
@@ -869,6 +1187,33 @@ void SESV2Client::ListConfigurationSetsAsync(const ListConfigurationSetsRequest&
 void SESV2Client::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConfigurationSets(request), context);
+}
+
+ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/custom-verification-email-templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListCustomVerificationEmailTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomVerificationEmailTemplatesOutcomeCallable SESV2Client::ListCustomVerificationEmailTemplatesCallable(const ListCustomVerificationEmailTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomVerificationEmailTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomVerificationEmailTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCustomVerificationEmailTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListCustomVerificationEmailTemplatesAsyncHelper(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCustomVerificationEmailTemplates(request), context);
 }
 
 ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
@@ -996,6 +1341,33 @@ void SESV2Client::ListEmailIdentitiesAsyncHelper(const ListEmailIdentitiesReques
   handler(this, request, ListEmailIdentities(request), context);
 }
 
+ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListEmailTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEmailTemplatesOutcomeCallable SESV2Client::ListEmailTemplatesCallable(const ListEmailTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEmailTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEmailTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListEmailTemplatesAsync(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEmailTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListEmailTemplatesAsyncHelper(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEmailTemplates(request), context);
+}
+
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1080,6 +1452,33 @@ void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsync(const PutAccountDed
 void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsyncHelper(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAccountDedicatedIpWarmupAttributes(request), context);
+}
+
+PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/account/details";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAccountDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAccountDetailsOutcomeCallable SESV2Client::PutAccountDetailsCallable(const PutAccountDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutAccountDetailsAsync(const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccountDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutAccountDetailsAsyncHelper(const PutAccountDetailsRequest& request, const PutAccountDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccountDetails(request), context);
 }
 
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
@@ -1564,6 +1963,60 @@ void SESV2Client::PutSuppressedDestinationAsyncHelper(const PutSuppressedDestina
   handler(this, request, PutSuppressedDestination(request), context);
 }
 
+SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/outbound-bulk-emails";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SendBulkEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendBulkEmailOutcomeCallable SESV2Client::SendBulkEmailCallable(const SendBulkEmailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendBulkEmailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendBulkEmail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::SendBulkEmailAsync(const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendBulkEmailAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::SendBulkEmailAsyncHelper(const SendBulkEmailRequest& request, const SendBulkEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendBulkEmail(request), context);
+}
+
+SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/outbound-custom-verification-emails";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SendCustomVerificationEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendCustomVerificationEmailOutcomeCallable SESV2Client::SendCustomVerificationEmailCallable(const SendCustomVerificationEmailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendCustomVerificationEmailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendCustomVerificationEmail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendCustomVerificationEmailAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::SendCustomVerificationEmailAsyncHelper(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendCustomVerificationEmail(request), context);
+}
+
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1616,6 +2069,40 @@ void SESV2Client::TagResourceAsync(const TagResourceRequest& request, const TagR
 void SESV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
+}
+
+TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRenderEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestRenderEmailTemplate", "Required field: TemplateName, is not set");
+    return TestRenderEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates/";
+  ss << request.GetTemplateName();
+  ss << "/render";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return TestRenderEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TestRenderEmailTemplateOutcomeCallable SESV2Client::TestRenderEmailTemplateCallable(const TestRenderEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestRenderEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestRenderEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::TestRenderEmailTemplateAsync(const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestRenderEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::TestRenderEmailTemplateAsyncHelper(const TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestRenderEmailTemplate(request), context);
 }
 
 UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -1693,5 +2180,111 @@ void SESV2Client::UpdateConfigurationSetEventDestinationAsync(const UpdateConfig
 void SESV2Client::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+}
+
+UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCustomVerificationEmailTemplate", "Required field: TemplateName, is not set");
+    return UpdateCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/custom-verification-email-templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateCustomVerificationEmailTemplateOutcomeCallable SESV2Client::UpdateCustomVerificationEmailTemplateCallable(const UpdateCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::UpdateCustomVerificationEmailTemplateAsyncHelper(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCustomVerificationEmailTemplate(request), context);
+}
+
+UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const UpdateEmailIdentityPolicyRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEmailIdentityPolicy", "Required field: EmailIdentity, is not set");
+    return UpdateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEmailIdentityPolicy", "Required field: PolicyName, is not set");
+    return UpdateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/identities/";
+  ss << request.GetEmailIdentity();
+  ss << "/policies/";
+  ss << request.GetPolicyName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEmailIdentityPolicyOutcomeCallable SESV2Client::UpdateEmailIdentityPolicyCallable(const UpdateEmailIdentityPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEmailIdentityPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEmailIdentityPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::UpdateEmailIdentityPolicyAsync(const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailIdentityPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::UpdateEmailIdentityPolicyAsyncHelper(const UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEmailIdentityPolicy(request), context);
+}
+
+UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEmailTemplate", "Required field: TemplateName, is not set");
+    return UpdateEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/templates/";
+  ss << request.GetTemplateName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEmailTemplateOutcomeCallable SESV2Client::UpdateEmailTemplateCallable(const UpdateEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::UpdateEmailTemplateAsyncHelper(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEmailTemplate(request), context);
 }
 

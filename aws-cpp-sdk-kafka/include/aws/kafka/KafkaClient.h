@@ -27,6 +27,7 @@
 #include <aws/kafka/model/ListKafkaVersionsResult.h>
 #include <aws/kafka/model/ListNodesResult.h>
 #include <aws/kafka/model/ListTagsForResourceResult.h>
+#include <aws/kafka/model/RebootBrokerResult.h>
 #include <aws/kafka/model/UpdateBrokerCountResult.h>
 #include <aws/kafka/model/UpdateBrokerStorageResult.h>
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
@@ -88,6 +89,7 @@ namespace Model
         class ListKafkaVersionsRequest;
         class ListNodesRequest;
         class ListTagsForResourceRequest;
+        class RebootBrokerRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateBrokerCountRequest;
@@ -112,6 +114,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListKafkaVersionsResult, KafkaError> ListKafkaVersionsOutcome;
         typedef Aws::Utils::Outcome<ListNodesResult, KafkaError> ListNodesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, KafkaError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RebootBrokerResult, KafkaError> RebootBrokerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KafkaError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KafkaError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateBrokerCountResult, KafkaError> UpdateBrokerCountOutcome;
@@ -136,6 +139,7 @@ namespace Model
         typedef std::future<ListKafkaVersionsOutcome> ListKafkaVersionsOutcomeCallable;
         typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<RebootBrokerOutcome> RebootBrokerOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateBrokerCountOutcome> UpdateBrokerCountOutcomeCallable;
@@ -163,6 +167,7 @@ namespace Model
     typedef std::function<void(const KafkaClient*, const Model::ListKafkaVersionsRequest&, const Model::ListKafkaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKafkaVersionsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListNodesRequest&, const Model::ListNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodesResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::RebootBrokerRequest&, const Model::RebootBrokerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootBrokerResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerCountRequest&, const Model::UpdateBrokerCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerCountResponseReceivedHandler;
@@ -751,6 +756,31 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Reboots brokers.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RebootBrokerOutcome RebootBroker(const Model::RebootBrokerRequest& request) const;
+
+        /**
+         * Reboots brokers.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RebootBrokerOutcomeCallable RebootBrokerCallable(const Model::RebootBrokerRequest& request) const;
+
+        /**
+         * Reboots brokers.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RebootBrokerAsync(const Model::RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * 
             <p>Adds tags to the specified MSK resource.</p>
          <p><h3>See
@@ -1014,6 +1044,7 @@ namespace Model
         void ListKafkaVersionsAsyncHelper(const Model::ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNodesAsyncHelper(const Model::ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RebootBrokerAsyncHelper(const Model::RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBrokerCountAsyncHelper(const Model::UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

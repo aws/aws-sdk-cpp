@@ -14,6 +14,7 @@
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/LogsConfig.h>
+#include <aws/codebuild/model/ProjectBuildBatchConfig.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/Tag.h>
 #include <aws/codebuild/model/ProjectFileSystemLocation.h>
@@ -1028,6 +1029,25 @@ namespace Model
      */
     inline UpdateProjectRequest& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ProjectBuildBatchConfig& GetBuildBatchConfig() const{ return m_buildBatchConfig; }
+
+    
+    inline bool BuildBatchConfigHasBeenSet() const { return m_buildBatchConfigHasBeenSet; }
+
+    
+    inline void SetBuildBatchConfig(const ProjectBuildBatchConfig& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = value; }
+
+    
+    inline void SetBuildBatchConfig(ProjectBuildBatchConfig&& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = std::move(value); }
+
+    
+    inline UpdateProjectRequest& WithBuildBatchConfig(const ProjectBuildBatchConfig& value) { SetBuildBatchConfig(value); return *this;}
+
+    
+    inline UpdateProjectRequest& WithBuildBatchConfig(ProjectBuildBatchConfig&& value) { SetBuildBatchConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1086,6 +1106,9 @@ namespace Model
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
     bool m_fileSystemLocationsHasBeenSet;
+
+    ProjectBuildBatchConfig m_buildBatchConfig;
+    bool m_buildBatchConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -43,7 +43,8 @@ Project::Project() :
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_buildBatchConfigHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ Project::Project(JsonView jsonValue) :
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_buildBatchConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -255,6 +257,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_fileSystemLocationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildBatchConfig"))
+  {
+    m_buildBatchConfig = jsonValue.GetObject("buildBatchConfig");
+
+    m_buildBatchConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -420,6 +429,12 @@ JsonValue Project::Jsonize() const
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
+
+  }
+
+  if(m_buildBatchConfigHasBeenSet)
+  {
+   payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
 
   }
 

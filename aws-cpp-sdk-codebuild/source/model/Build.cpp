@@ -54,7 +54,8 @@ Build::Build() :
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
-    m_debugSessionHasBeenSet(false)
+    m_debugSessionHasBeenSet(false),
+    m_buildBatchArnHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ Build::Build(JsonView jsonValue) :
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
-    m_debugSessionHasBeenSet(false)
+    m_debugSessionHasBeenSet(false),
+    m_buildBatchArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -339,6 +341,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_debugSessionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildBatchArn"))
+  {
+    m_buildBatchArn = jsonValue.GetString("buildBatchArn");
+
+    m_buildBatchArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -561,6 +570,12 @@ JsonValue Build::Jsonize() const
   if(m_debugSessionHasBeenSet)
   {
    payload.WithObject("debugSession", m_debugSession.Jsonize());
+
+  }
+
+  if(m_buildBatchArnHasBeenSet)
+  {
+   payload.WithString("buildBatchArn", m_buildBatchArn);
 
   }
 

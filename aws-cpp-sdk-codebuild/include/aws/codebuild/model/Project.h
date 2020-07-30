@@ -16,6 +16,7 @@
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/ProjectBadge.h>
 #include <aws/codebuild/model/LogsConfig.h>
+#include <aws/codebuild/model/ProjectBuildBatchConfig.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/Tag.h>
 #include <aws/codebuild/model/ProjectFileSystemLocation.h>
@@ -205,42 +206,42 @@ namespace Model
 
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline const Aws::Vector<ProjectSource>& GetSecondarySources() const{ return m_secondarySources; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline bool SecondarySourcesHasBeenSet() const { return m_secondarySourcesHasBeenSet; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline void SetSecondarySources(const Aws::Vector<ProjectSource>& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = value; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline void SetSecondarySources(Aws::Vector<ProjectSource>&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = std::move(value); }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline Project& WithSecondarySources(const Aws::Vector<ProjectSource>& value) { SetSecondarySources(value); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline Project& WithSecondarySources(Aws::Vector<ProjectSource>&& value) { SetSecondarySources(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline Project& AddSecondarySources(const ProjectSource& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(value); return *this; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p>An array of <code>ProjectSource</code> objects. </p>
      */
     inline Project& AddSecondarySources(ProjectSource&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(std::move(value)); return *this; }
 
@@ -259,10 +260,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -282,10 +283,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -305,10 +306,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -328,10 +329,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -351,10 +352,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -374,10 +375,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -397,10 +398,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -420,10 +421,10 @@ namespace Model
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p> For more
-     * information, see <a
+     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
+     * specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -431,7 +432,7 @@ namespace Model
 
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -439,7 +440,7 @@ namespace Model
     inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -447,7 +448,7 @@ namespace Model
     inline bool SecondarySourceVersionsHasBeenSet() const { return m_secondarySourceVersionsHasBeenSet; }
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -455,7 +456,7 @@ namespace Model
     inline void SetSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = value; }
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -463,7 +464,7 @@ namespace Model
     inline void SetSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::move(value); }
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -471,7 +472,7 @@ namespace Model
     inline Project& WithSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourceVersions(value); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -479,7 +480,7 @@ namespace Model
     inline Project& WithSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourceVersions(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -487,7 +488,7 @@ namespace Model
     inline Project& AddSecondarySourceVersions(const ProjectSourceVersion& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(value); return *this; }
 
     /**
-     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <p>An array of <code>ProjectSourceVersion</code> objects. If
      * <code>secondarySourceVersions</code> is specified at the build level, then they
      * take over these <code>secondarySourceVersions</code> (at the project level).
      * </p>
@@ -527,42 +528,42 @@ namespace Model
 
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline void SetSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline void SetSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline Project& WithSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { SetSecondaryArtifacts(value); return *this;}
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline Project& WithSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline Project& AddSecondaryArtifacts(const ProjectArtifacts& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
 
     /**
-     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline Project& AddSecondaryArtifacts(ProjectArtifacts&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
 
@@ -716,25 +717,25 @@ namespace Model
 
 
     /**
-     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * <p>The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
     inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
 
     /**
-     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * <p>The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
     inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
 
     /**
-     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * <p>The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
     inline void SetQueuedTimeoutInMinutes(int value) { m_queuedTimeoutInMinutesHasBeenSet = true; m_queuedTimeoutInMinutes = value; }
 
     /**
-     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * <p>The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
     inline Project& WithQueuedTimeoutInMinutes(int value) { SetQueuedTimeoutInMinutes(value); return *this;}
@@ -742,7 +743,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -752,7 +753,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -762,7 +763,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -772,7 +773,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -782,7 +783,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -792,7 +793,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -802,7 +803,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -812,7 +813,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1046,37 +1047,37 @@ namespace Model
 
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline bool LogsConfigHasBeenSet() const { return m_logsConfigHasBeenSet; }
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline Project& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
 
     /**
-     * <p> Information about logs for the build project. A project can create logs in
+     * <p>Information about logs for the build project. A project can create logs in
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline Project& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
@@ -1154,6 +1155,43 @@ namespace Model
      */
     inline Project& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline const ProjectBuildBatchConfig& GetBuildBatchConfig() const{ return m_buildBatchConfig; }
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline bool BuildBatchConfigHasBeenSet() const { return m_buildBatchConfigHasBeenSet; }
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline void SetBuildBatchConfig(const ProjectBuildBatchConfig& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = value; }
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline void SetBuildBatchConfig(ProjectBuildBatchConfig&& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = std::move(value); }
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline Project& WithBuildBatchConfig(const ProjectBuildBatchConfig& value) { SetBuildBatchConfig(value); return *this;}
+
+    /**
+     * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
+     * for the project.</p>
+     */
+    inline Project& WithBuildBatchConfig(ProjectBuildBatchConfig&& value) { SetBuildBatchConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1224,6 +1262,9 @@ namespace Model
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
     bool m_fileSystemLocationsHasBeenSet;
+
+    ProjectBuildBatchConfig m_buildBatchConfig;
+    bool m_buildBatchConfigHasBeenSet;
   };
 
 } // namespace Model

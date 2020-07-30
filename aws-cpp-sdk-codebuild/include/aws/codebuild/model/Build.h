@@ -1509,6 +1509,47 @@ namespace Model
      */
     inline Build& WithDebugSession(DebugSession&& value) { SetDebugSession(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline const Aws::String& GetBuildBatchArn() const{ return m_buildBatchArn; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline bool BuildBatchArnHasBeenSet() const { return m_buildBatchArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(const Aws::String& value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn = value; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(Aws::String&& value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(const char* value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn.assign(value); }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(const Aws::String& value) { SetBuildBatchArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(Aws::String&& value) { SetBuildBatchArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(const char* value) { SetBuildBatchArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1603,6 +1644,9 @@ namespace Model
 
     DebugSession m_debugSession;
     bool m_debugSessionHasBeenSet;
+
+    Aws::String m_buildBatchArn;
+    bool m_buildBatchArnHasBeenSet;
   };
 
 } // namespace Model

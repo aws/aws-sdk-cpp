@@ -15,8 +15,11 @@ using namespace Aws::Utils;
 DescribeProvisioningParametersRequest::DescribeProvisioningParametersRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
-    m_pathIdHasBeenSet(false)
+    m_provisioningArtifactNameHasBeenSet(false),
+    m_pathIdHasBeenSet(false),
+    m_pathNameHasBeenSet(false)
 {
 }
 
@@ -36,15 +39,33 @@ Aws::String DescribeProvisioningParametersRequest::SerializePayload() const
 
   }
 
+  if(m_productNameHasBeenSet)
+  {
+   payload.WithString("ProductName", m_productName);
+
+  }
+
   if(m_provisioningArtifactIdHasBeenSet)
   {
    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
 
   }
 
+  if(m_provisioningArtifactNameHasBeenSet)
+  {
+   payload.WithString("ProvisioningArtifactName", m_provisioningArtifactName);
+
+  }
+
   if(m_pathIdHasBeenSet)
   {
    payload.WithString("PathId", m_pathId);
+
+  }
+
+  if(m_pathNameHasBeenSet)
+  {
+   payload.WithString("PathName", m_pathName);
 
   }
 

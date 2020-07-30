@@ -16,7 +16,8 @@ namespace Model
   enum class ReportType
   {
     NOT_SET,
-    TEST
+    TEST,
+    CODE_COVERAGE
   };
 
 namespace ReportTypeMapper

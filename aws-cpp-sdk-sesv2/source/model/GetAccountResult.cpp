@@ -70,6 +70,12 @@ GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("Details"))
+  {
+    m_details = jsonValue.GetObject("Details");
+
+  }
+
 
 
   return *this;

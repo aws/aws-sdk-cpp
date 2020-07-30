@@ -36,6 +36,7 @@
 #include <aws/kafka/model/ListKafkaVersionsRequest.h>
 #include <aws/kafka/model/ListNodesRequest.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
+#include <aws/kafka/model/RebootBrokerRequest.h>
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/UntagResourceRequest.h>
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
@@ -617,6 +618,40 @@ void KafkaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& req
 void KafkaClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RebootBroker", "Required field: ClusterArn, is not set");
+    return RebootBrokerOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/clusters/";
+  ss << request.GetClusterArn();
+  ss << "/reboot-broker";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RebootBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+RebootBrokerOutcomeCallable KafkaClient::RebootBrokerCallable(const RebootBrokerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RebootBrokerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootBroker(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::RebootBrokerAsync(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RebootBrokerAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::RebootBrokerAsyncHelper(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RebootBroker(request), context);
 }
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const

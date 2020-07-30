@@ -18,6 +18,7 @@ namespace SESV2
 namespace SESV2ErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
 static const int SENDING_PAUSED_HASH = HashingUtils::HashString("SendingPausedException");
@@ -35,7 +36,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::NOT_FOUND), false);
   }

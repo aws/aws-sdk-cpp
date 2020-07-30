@@ -21,6 +21,7 @@
 #include <aws/codebuild/CodeBuildEndpoint.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>
 #include <aws/codebuild/model/BatchDeleteBuildsRequest.h>
+#include <aws/codebuild/model/BatchGetBuildBatchesRequest.h>
 #include <aws/codebuild/model/BatchGetBuildsRequest.h>
 #include <aws/codebuild/model/BatchGetProjectsRequest.h>
 #include <aws/codebuild/model/BatchGetReportGroupsRequest.h>
@@ -28,16 +29,20 @@
 #include <aws/codebuild/model/CreateProjectRequest.h>
 #include <aws/codebuild/model/CreateReportGroupRequest.h>
 #include <aws/codebuild/model/CreateWebhookRequest.h>
+#include <aws/codebuild/model/DeleteBuildBatchRequest.h>
 #include <aws/codebuild/model/DeleteProjectRequest.h>
 #include <aws/codebuild/model/DeleteReportRequest.h>
 #include <aws/codebuild/model/DeleteReportGroupRequest.h>
 #include <aws/codebuild/model/DeleteResourcePolicyRequest.h>
 #include <aws/codebuild/model/DeleteSourceCredentialsRequest.h>
 #include <aws/codebuild/model/DeleteWebhookRequest.h>
+#include <aws/codebuild/model/DescribeCodeCoveragesRequest.h>
 #include <aws/codebuild/model/DescribeTestCasesRequest.h>
 #include <aws/codebuild/model/GetResourcePolicyRequest.h>
 #include <aws/codebuild/model/ImportSourceCredentialsRequest.h>
 #include <aws/codebuild/model/InvalidateProjectCacheRequest.h>
+#include <aws/codebuild/model/ListBuildBatchesRequest.h>
+#include <aws/codebuild/model/ListBuildBatchesForProjectRequest.h>
 #include <aws/codebuild/model/ListBuildsRequest.h>
 #include <aws/codebuild/model/ListBuildsForProjectRequest.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesRequest.h>
@@ -49,8 +54,12 @@
 #include <aws/codebuild/model/ListSharedReportGroupsRequest.h>
 #include <aws/codebuild/model/ListSourceCredentialsRequest.h>
 #include <aws/codebuild/model/PutResourcePolicyRequest.h>
+#include <aws/codebuild/model/RetryBuildRequest.h>
+#include <aws/codebuild/model/RetryBuildBatchRequest.h>
 #include <aws/codebuild/model/StartBuildRequest.h>
+#include <aws/codebuild/model/StartBuildBatchRequest.h>
 #include <aws/codebuild/model/StopBuildRequest.h>
+#include <aws/codebuild/model/StopBuildBatchRequest.h>
 #include <aws/codebuild/model/UpdateProjectRequest.h>
 #include <aws/codebuild/model/UpdateReportGroupRequest.h>
 #include <aws/codebuild/model/UpdateWebhookRequest.h>
@@ -152,6 +161,33 @@ void CodeBuildClient::BatchDeleteBuildsAsync(const BatchDeleteBuildsRequest& req
 void CodeBuildClient::BatchDeleteBuildsAsyncHelper(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDeleteBuilds(request), context);
+}
+
+BatchGetBuildBatchesOutcome CodeBuildClient::BatchGetBuildBatches(const BatchGetBuildBatchesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchGetBuildBatchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetBuildBatchesOutcomeCallable CodeBuildClient::BatchGetBuildBatchesCallable(const BatchGetBuildBatchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetBuildBatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetBuildBatches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::BatchGetBuildBatchesAsync(const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBuildBatchesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::BatchGetBuildBatchesAsyncHelper(const BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetBuildBatches(request), context);
 }
 
 BatchGetBuildsOutcome CodeBuildClient::BatchGetBuilds(const BatchGetBuildsRequest& request) const
@@ -343,6 +379,33 @@ void CodeBuildClient::CreateWebhookAsyncHelper(const CreateWebhookRequest& reque
   handler(this, request, CreateWebhook(request), context);
 }
 
+DeleteBuildBatchOutcome CodeBuildClient::DeleteBuildBatch(const DeleteBuildBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteBuildBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBuildBatchOutcomeCallable CodeBuildClient::DeleteBuildBatchCallable(const DeleteBuildBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBuildBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBuildBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::DeleteBuildBatchAsync(const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBuildBatchAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::DeleteBuildBatchAsyncHelper(const DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBuildBatch(request), context);
+}
+
 DeleteProjectOutcome CodeBuildClient::DeleteProject(const DeleteProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -505,6 +568,33 @@ void CodeBuildClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& reque
   handler(this, request, DeleteWebhook(request), context);
 }
 
+DescribeCodeCoveragesOutcome CodeBuildClient::DescribeCodeCoverages(const DescribeCodeCoveragesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeCodeCoveragesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeCodeCoveragesOutcomeCallable CodeBuildClient::DescribeCodeCoveragesCallable(const DescribeCodeCoveragesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCodeCoveragesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCodeCoverages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::DescribeCodeCoveragesAsync(const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeCoveragesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::DescribeCodeCoveragesAsyncHelper(const DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCodeCoverages(request), context);
+}
+
 DescribeTestCasesOutcome CodeBuildClient::DescribeTestCases(const DescribeTestCasesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -611,6 +701,60 @@ void CodeBuildClient::InvalidateProjectCacheAsync(const InvalidateProjectCacheRe
 void CodeBuildClient::InvalidateProjectCacheAsyncHelper(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, InvalidateProjectCache(request), context);
+}
+
+ListBuildBatchesOutcome CodeBuildClient::ListBuildBatches(const ListBuildBatchesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListBuildBatchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBuildBatchesOutcomeCallable CodeBuildClient::ListBuildBatchesCallable(const ListBuildBatchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBuildBatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBuildBatches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ListBuildBatchesAsync(const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBuildBatchesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ListBuildBatchesAsyncHelper(const ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBuildBatches(request), context);
+}
+
+ListBuildBatchesForProjectOutcome CodeBuildClient::ListBuildBatchesForProject(const ListBuildBatchesForProjectRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListBuildBatchesForProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBuildBatchesForProjectOutcomeCallable CodeBuildClient::ListBuildBatchesForProjectCallable(const ListBuildBatchesForProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBuildBatchesForProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBuildBatchesForProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ListBuildBatchesForProjectAsync(const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBuildBatchesForProjectAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ListBuildBatchesForProjectAsyncHelper(const ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBuildBatchesForProject(request), context);
 }
 
 ListBuildsOutcome CodeBuildClient::ListBuilds(const ListBuildsRequest& request) const
@@ -910,6 +1054,60 @@ void CodeBuildClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyReques
   handler(this, request, PutResourcePolicy(request), context);
 }
 
+RetryBuildOutcome CodeBuildClient::RetryBuild(const RetryBuildRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RetryBuildOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RetryBuildOutcomeCallable CodeBuildClient::RetryBuildCallable(const RetryBuildRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RetryBuildOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryBuild(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::RetryBuildAsync(const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RetryBuildAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::RetryBuildAsyncHelper(const RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RetryBuild(request), context);
+}
+
+RetryBuildBatchOutcome CodeBuildClient::RetryBuildBatch(const RetryBuildBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RetryBuildBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RetryBuildBatchOutcomeCallable CodeBuildClient::RetryBuildBatchCallable(const RetryBuildBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RetryBuildBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryBuildBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::RetryBuildBatchAsync(const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RetryBuildBatchAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::RetryBuildBatchAsyncHelper(const RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RetryBuildBatch(request), context);
+}
+
 StartBuildOutcome CodeBuildClient::StartBuild(const StartBuildRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -937,6 +1135,33 @@ void CodeBuildClient::StartBuildAsyncHelper(const StartBuildRequest& request, co
   handler(this, request, StartBuild(request), context);
 }
 
+StartBuildBatchOutcome CodeBuildClient::StartBuildBatch(const StartBuildBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartBuildBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartBuildBatchOutcomeCallable CodeBuildClient::StartBuildBatchCallable(const StartBuildBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBuildBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBuildBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::StartBuildBatchAsync(const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBuildBatchAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::StartBuildBatchAsyncHelper(const StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBuildBatch(request), context);
+}
+
 StopBuildOutcome CodeBuildClient::StopBuild(const StopBuildRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -962,6 +1187,33 @@ void CodeBuildClient::StopBuildAsync(const StopBuildRequest& request, const Stop
 void CodeBuildClient::StopBuildAsyncHelper(const StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopBuild(request), context);
+}
+
+StopBuildBatchOutcome CodeBuildClient::StopBuildBatch(const StopBuildBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StopBuildBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopBuildBatchOutcomeCallable CodeBuildClient::StopBuildBatchCallable(const StopBuildBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopBuildBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopBuildBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::StopBuildBatchAsync(const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopBuildBatchAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::StopBuildBatchAsyncHelper(const StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopBuildBatch(request), context);
 }
 
 UpdateProjectOutcome CodeBuildClient::UpdateProject(const UpdateProjectRequest& request) const

@@ -52,10 +52,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -67,10 +70,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -82,10 +88,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -97,10 +106,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -112,10 +124,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -127,10 +142,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
      * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
@@ -143,10 +161,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you
@@ -166,10 +187,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you
@@ -189,10 +213,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you
@@ -212,10 +239,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you
@@ -235,10 +265,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you
@@ -258,10 +291,13 @@ namespace Model
     /**
      * <p>This field is deprecated. We recommend that you use a cache policy or an
      * origin request policy instead of this field.</p> <p>If you want to include
-     * cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
-     * <code>CreateCachePolicy</code>.</p> <p>If you want to send cookies to the origin
-     * but not include them in the cache key, use <code>CookiesConfig</code> in an
-     * origin request policy. See <code>CreateOriginRequestPolicy</code>.</p>
+     * cookies in the cache key, use a cache policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If
+     * you want to send cookies to the origin but not include them in the cache key,
+     * use an origin request policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Required if you specify <code>whitelist</code> for the value of
      * <code>Forward</code>. A complex type that specifies how many different cookies
      * you want CloudFront to forward to the origin for this cache behavior and, if you

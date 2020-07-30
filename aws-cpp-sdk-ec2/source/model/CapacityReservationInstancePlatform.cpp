@@ -31,6 +31,7 @@ namespace Aws
         static const int Linux_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Linux with SQL Server Standard");
         static const int Linux_with_SQL_Server_Web_HASH = HashingUtils::HashString("Linux with SQL Server Web");
         static const int Linux_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Linux with SQL Server Enterprise");
+        static const int Windows_BYOL_HASH = HashingUtils::HashString("Windows BYOL");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise;
           }
+          else if (hashCode == Windows_BYOL_HASH)
+          {
+            return CapacityReservationInstancePlatform::Windows_BYOL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +121,8 @@ namespace Aws
             return "Linux with SQL Server Web";
           case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise:
             return "Linux with SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::Windows_BYOL:
+            return "Windows BYOL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

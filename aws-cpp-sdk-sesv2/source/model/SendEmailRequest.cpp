@@ -14,9 +14,11 @@ using namespace Aws::Utils;
 
 SendEmailRequest::SendEmailRequest() : 
     m_fromEmailAddressHasBeenSet(false),
+    m_fromEmailAddressIdentityArnHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_replyToAddressesHasBeenSet(false),
     m_feedbackForwardingEmailAddressHasBeenSet(false),
+    m_feedbackForwardingEmailAddressIdentityArnHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_emailTagsHasBeenSet(false),
     m_configurationSetNameHasBeenSet(false)
@@ -30,6 +32,12 @@ Aws::String SendEmailRequest::SerializePayload() const
   if(m_fromEmailAddressHasBeenSet)
   {
    payload.WithString("FromEmailAddress", m_fromEmailAddress);
+
+  }
+
+  if(m_fromEmailAddressIdentityArnHasBeenSet)
+  {
+   payload.WithString("FromEmailAddressIdentityArn", m_fromEmailAddressIdentityArn);
 
   }
 
@@ -53,6 +61,12 @@ Aws::String SendEmailRequest::SerializePayload() const
   if(m_feedbackForwardingEmailAddressHasBeenSet)
   {
    payload.WithString("FeedbackForwardingEmailAddress", m_feedbackForwardingEmailAddress);
+
+  }
+
+  if(m_feedbackForwardingEmailAddressIdentityArnHasBeenSet)
+  {
+   payload.WithString("FeedbackForwardingEmailAddressIdentityArn", m_feedbackForwardingEmailAddressIdentityArn);
 
   }
 

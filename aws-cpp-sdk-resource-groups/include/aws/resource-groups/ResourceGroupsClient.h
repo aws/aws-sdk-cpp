@@ -405,16 +405,16 @@ namespace Model
         virtual void GroupResourcesAsync(const Model::GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of ARNs of resources that are members of a specified resource
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of ARNs of the resources that are members of a specified
+         * resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of ARNs of resources that are members of a specified resource
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of ARNs of the resources that are members of a specified
+         * resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          *
@@ -423,8 +423,8 @@ namespace Model
         virtual Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const Model::ListGroupResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of ARNs of resources that are members of a specified resource
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of ARNs of the resources that are members of a specified
+         * resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          *
@@ -461,7 +461,7 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches a specified query.
+         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
@@ -470,7 +470,7 @@ namespace Model
         virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches a specified query.
+         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
@@ -481,7 +481,7 @@ namespace Model
         virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches a specified query.
+         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS

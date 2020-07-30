@@ -11,6 +11,7 @@
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
 #include <aws/servicecatalog/model/TagOptionSummary.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactOutput.h>
 #include <utility>
 
 namespace Aws
@@ -225,6 +226,42 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { SetProvisioningArtifactPreferences(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline const Aws::Vector<ProvisioningArtifactOutput>& GetProvisioningArtifactOutputs() const{ return m_provisioningArtifactOutputs; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { m_provisioningArtifactOutputs = value; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { m_provisioningArtifactOutputs = std::move(value); }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { SetProvisioningArtifactOutputs(value); return *this;}
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { SetProvisioningArtifactOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(const ProvisioningArtifactOutput& value) { m_provisioningArtifactOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
@@ -236,6 +273,8 @@ namespace Model
     Aws::Vector<TagOptionSummary> m_tagOptions;
 
     ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
+
+    Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputs;
   };
 
 } // namespace Model

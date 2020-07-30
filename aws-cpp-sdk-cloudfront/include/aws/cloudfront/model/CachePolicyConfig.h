@@ -193,11 +193,11 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount of time, in seconds, that you want objects to stay in the
-     * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value only when the origin
-     * sends <code>Cache-Control</code> or <code>Expires</code> headers with the
-     * object. For more information, see <a
+     * <p>The maximum amount of time, in seconds, that objects stay in the CloudFront
+     * cache before CloudFront sends another request to the origin to see if the object
+     * has been updated. CloudFront uses this value only when the origin sends
+     * <code>Cache-Control</code> or <code>Expires</code> headers with the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <p>The default value for this field is
@@ -208,11 +208,11 @@ namespace Model
     inline long long GetMaxTTL() const{ return m_maxTTL; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that you want objects to stay in the
-     * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value only when the origin
-     * sends <code>Cache-Control</code> or <code>Expires</code> headers with the
-     * object. For more information, see <a
+     * <p>The maximum amount of time, in seconds, that objects stay in the CloudFront
+     * cache before CloudFront sends another request to the origin to see if the object
+     * has been updated. CloudFront uses this value only when the origin sends
+     * <code>Cache-Control</code> or <code>Expires</code> headers with the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <p>The default value for this field is
@@ -223,11 +223,11 @@ namespace Model
     inline bool MaxTTLHasBeenSet() const { return m_maxTTLHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that you want objects to stay in the
-     * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value only when the origin
-     * sends <code>Cache-Control</code> or <code>Expires</code> headers with the
-     * object. For more information, see <a
+     * <p>The maximum amount of time, in seconds, that objects stay in the CloudFront
+     * cache before CloudFront sends another request to the origin to see if the object
+     * has been updated. CloudFront uses this value only when the origin sends
+     * <code>Cache-Control</code> or <code>Expires</code> headers with the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <p>The default value for this field is
@@ -238,11 +238,11 @@ namespace Model
     inline void SetMaxTTL(long long value) { m_maxTTLHasBeenSet = true; m_maxTTL = value; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that you want objects to stay in the
-     * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value only when the origin
-     * sends <code>Cache-Control</code> or <code>Expires</code> headers with the
-     * object. For more information, see <a
+     * <p>The maximum amount of time, in seconds, that objects stay in the CloudFront
+     * cache before CloudFront sends another request to the origin to see if the object
+     * has been updated. CloudFront uses this value only when the origin sends
+     * <code>Cache-Control</code> or <code>Expires</code> headers with the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <p>The default value for this field is

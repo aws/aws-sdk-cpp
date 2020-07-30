@@ -157,80 +157,74 @@ namespace Model
 
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline const StatusType& GetPhaseStatus() const{ return m_phaseStatus; }
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline bool PhaseStatusHasBeenSet() const { return m_phaseStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline void SetPhaseStatus(const StatusType& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = value; }
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline void SetPhaseStatus(StatusType&& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = std::move(value); }
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline BuildPhase& WithPhaseStatus(const StatusType& value) { SetPhaseStatus(value); return *this;}
 
     /**
-     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
-     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
-     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
-     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
-     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
-     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
-     * out.</p> </li> </ul>
+     * <p>The current status of the build phase. Valid values include:</p> <dl>
+     * <dt>FAILED</dt> <dd> <p>The build phase failed.</p> </dd> <dt>FAULT</dt> <dd>
+     * <p>The build phase faulted.</p> </dd> <dt>IN_PROGRESS</dt> <dd> <p>The build
+     * phase is still in progress.</p> </dd> <dt>QUEUED</dt> <dd> <p>The build has been
+     * submitted and is queued behind other submitted builds.</p> </dd>
+     * <dt>STOPPED</dt> <dd> <p>The build phase stopped.</p> </dd> <dt>SUCCEEDED</dt>
+     * <dd> <p>The build phase succeeded.</p> </dd> <dt>TIMED_OUT</dt> <dd> <p>The
+     * build phase timed out.</p> </dd> </dl>
      */
     inline BuildPhase& WithPhaseStatus(StatusType&& value) { SetPhaseStatus(std::move(value)); return *this;}
 

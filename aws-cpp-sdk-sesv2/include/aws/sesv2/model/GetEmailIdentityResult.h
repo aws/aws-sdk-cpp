@@ -8,7 +8,9 @@
 #include <aws/sesv2/model/IdentityType.h>
 #include <aws/sesv2/model/DkimAttributes.h>
 #include <aws/sesv2/model/MailFromAttributes.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -195,6 +197,67 @@ namespace Model
 
 
     /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPolicies() const{ return m_policies; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline void SetPolicies(const Aws::Map<Aws::String, Aws::String>& value) { m_policies = value; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline void SetPolicies(Aws::Map<Aws::String, Aws::String>&& value) { m_policies = std::move(value); }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& WithPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetPolicies(value); return *this;}
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& WithPolicies(Aws::Map<Aws::String, Aws::String>&& value) { SetPolicies(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(const Aws::String& key, const Aws::String& value) { m_policies.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(Aws::String&& key, const Aws::String& value) { m_policies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(const Aws::String& key, Aws::String&& value) { m_policies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(Aws::String&& key, Aws::String&& value) { m_policies.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(const char* key, Aws::String&& value) { m_policies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(Aws::String&& key, const char* value) { m_policies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
+    inline GetEmailIdentityResult& AddPolicies(const char* key, const char* value) { m_policies.emplace(key, value); return *this; }
+
+
+    /**
      * <p>An array of objects that define the tags (keys and values) that are
      * associated with the email identity.</p>
      */
@@ -247,6 +310,8 @@ namespace Model
     DkimAttributes m_dkimAttributes;
 
     MailFromAttributes m_mailFromAttributes;
+
+    Aws::Map<Aws::String, Aws::String> m_policies;
 
     Aws::Vector<Tag> m_tags;
   };

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codebuild/model/BatchDeleteBuildsResult.h>
+#include <aws/codebuild/model/BatchGetBuildBatchesResult.h>
 #include <aws/codebuild/model/BatchGetBuildsResult.h>
 #include <aws/codebuild/model/BatchGetProjectsResult.h>
 #include <aws/codebuild/model/BatchGetReportGroupsResult.h>
@@ -19,16 +20,20 @@
 #include <aws/codebuild/model/CreateProjectResult.h>
 #include <aws/codebuild/model/CreateReportGroupResult.h>
 #include <aws/codebuild/model/CreateWebhookResult.h>
+#include <aws/codebuild/model/DeleteBuildBatchResult.h>
 #include <aws/codebuild/model/DeleteProjectResult.h>
 #include <aws/codebuild/model/DeleteReportResult.h>
 #include <aws/codebuild/model/DeleteReportGroupResult.h>
 #include <aws/codebuild/model/DeleteResourcePolicyResult.h>
 #include <aws/codebuild/model/DeleteSourceCredentialsResult.h>
 #include <aws/codebuild/model/DeleteWebhookResult.h>
+#include <aws/codebuild/model/DescribeCodeCoveragesResult.h>
 #include <aws/codebuild/model/DescribeTestCasesResult.h>
 #include <aws/codebuild/model/GetResourcePolicyResult.h>
 #include <aws/codebuild/model/ImportSourceCredentialsResult.h>
 #include <aws/codebuild/model/InvalidateProjectCacheResult.h>
+#include <aws/codebuild/model/ListBuildBatchesResult.h>
+#include <aws/codebuild/model/ListBuildBatchesForProjectResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
@@ -40,8 +45,12 @@
 #include <aws/codebuild/model/ListSharedReportGroupsResult.h>
 #include <aws/codebuild/model/ListSourceCredentialsResult.h>
 #include <aws/codebuild/model/PutResourcePolicyResult.h>
+#include <aws/codebuild/model/RetryBuildResult.h>
+#include <aws/codebuild/model/RetryBuildBatchResult.h>
 #include <aws/codebuild/model/StartBuildResult.h>
+#include <aws/codebuild/model/StartBuildBatchResult.h>
 #include <aws/codebuild/model/StopBuildResult.h>
+#include <aws/codebuild/model/StopBuildBatchResult.h>
 #include <aws/codebuild/model/UpdateProjectResult.h>
 #include <aws/codebuild/model/UpdateReportGroupResult.h>
 #include <aws/codebuild/model/UpdateWebhookResult.h>
@@ -85,6 +94,7 @@ namespace CodeBuild
 namespace Model
 {
         class BatchDeleteBuildsRequest;
+        class BatchGetBuildBatchesRequest;
         class BatchGetBuildsRequest;
         class BatchGetProjectsRequest;
         class BatchGetReportGroupsRequest;
@@ -92,16 +102,20 @@ namespace Model
         class CreateProjectRequest;
         class CreateReportGroupRequest;
         class CreateWebhookRequest;
+        class DeleteBuildBatchRequest;
         class DeleteProjectRequest;
         class DeleteReportRequest;
         class DeleteReportGroupRequest;
         class DeleteResourcePolicyRequest;
         class DeleteSourceCredentialsRequest;
         class DeleteWebhookRequest;
+        class DescribeCodeCoveragesRequest;
         class DescribeTestCasesRequest;
         class GetResourcePolicyRequest;
         class ImportSourceCredentialsRequest;
         class InvalidateProjectCacheRequest;
+        class ListBuildBatchesRequest;
+        class ListBuildBatchesForProjectRequest;
         class ListBuildsRequest;
         class ListBuildsForProjectRequest;
         class ListCuratedEnvironmentImagesRequest;
@@ -113,13 +127,18 @@ namespace Model
         class ListSharedReportGroupsRequest;
         class ListSourceCredentialsRequest;
         class PutResourcePolicyRequest;
+        class RetryBuildRequest;
+        class RetryBuildBatchRequest;
         class StartBuildRequest;
+        class StartBuildBatchRequest;
         class StopBuildRequest;
+        class StopBuildBatchRequest;
         class UpdateProjectRequest;
         class UpdateReportGroupRequest;
         class UpdateWebhookRequest;
 
         typedef Aws::Utils::Outcome<BatchDeleteBuildsResult, CodeBuildError> BatchDeleteBuildsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetBuildBatchesResult, CodeBuildError> BatchGetBuildBatchesOutcome;
         typedef Aws::Utils::Outcome<BatchGetBuildsResult, CodeBuildError> BatchGetBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetProjectsResult, CodeBuildError> BatchGetProjectsOutcome;
         typedef Aws::Utils::Outcome<BatchGetReportGroupsResult, CodeBuildError> BatchGetReportGroupsOutcome;
@@ -127,16 +146,20 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateProjectResult, CodeBuildError> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateReportGroupResult, CodeBuildError> CreateReportGroupOutcome;
         typedef Aws::Utils::Outcome<CreateWebhookResult, CodeBuildError> CreateWebhookOutcome;
+        typedef Aws::Utils::Outcome<DeleteBuildBatchResult, CodeBuildError> DeleteBuildBatchOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, CodeBuildError> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteReportResult, CodeBuildError> DeleteReportOutcome;
         typedef Aws::Utils::Outcome<DeleteReportGroupResult, CodeBuildError> DeleteReportGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, CodeBuildError> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteSourceCredentialsResult, CodeBuildError> DeleteSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, CodeBuildError> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<DescribeCodeCoveragesResult, CodeBuildError> DescribeCodeCoveragesOutcome;
         typedef Aws::Utils::Outcome<DescribeTestCasesResult, CodeBuildError> DescribeTestCasesOutcome;
         typedef Aws::Utils::Outcome<GetResourcePolicyResult, CodeBuildError> GetResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<ImportSourceCredentialsResult, CodeBuildError> ImportSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, CodeBuildError> InvalidateProjectCacheOutcome;
+        typedef Aws::Utils::Outcome<ListBuildBatchesResult, CodeBuildError> ListBuildBatchesOutcome;
+        typedef Aws::Utils::Outcome<ListBuildBatchesForProjectResult, CodeBuildError> ListBuildBatchesForProjectOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, CodeBuildError> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListBuildsForProjectResult, CodeBuildError> ListBuildsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, CodeBuildError> ListCuratedEnvironmentImagesOutcome;
@@ -148,13 +171,18 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSharedReportGroupsResult, CodeBuildError> ListSharedReportGroupsOutcome;
         typedef Aws::Utils::Outcome<ListSourceCredentialsResult, CodeBuildError> ListSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, CodeBuildError> PutResourcePolicyOutcome;
+        typedef Aws::Utils::Outcome<RetryBuildResult, CodeBuildError> RetryBuildOutcome;
+        typedef Aws::Utils::Outcome<RetryBuildBatchResult, CodeBuildError> RetryBuildBatchOutcome;
         typedef Aws::Utils::Outcome<StartBuildResult, CodeBuildError> StartBuildOutcome;
+        typedef Aws::Utils::Outcome<StartBuildBatchResult, CodeBuildError> StartBuildBatchOutcome;
         typedef Aws::Utils::Outcome<StopBuildResult, CodeBuildError> StopBuildOutcome;
+        typedef Aws::Utils::Outcome<StopBuildBatchResult, CodeBuildError> StopBuildBatchOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, CodeBuildError> UpdateProjectOutcome;
         typedef Aws::Utils::Outcome<UpdateReportGroupResult, CodeBuildError> UpdateReportGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateWebhookResult, CodeBuildError> UpdateWebhookOutcome;
 
         typedef std::future<BatchDeleteBuildsOutcome> BatchDeleteBuildsOutcomeCallable;
+        typedef std::future<BatchGetBuildBatchesOutcome> BatchGetBuildBatchesOutcomeCallable;
         typedef std::future<BatchGetBuildsOutcome> BatchGetBuildsOutcomeCallable;
         typedef std::future<BatchGetProjectsOutcome> BatchGetProjectsOutcomeCallable;
         typedef std::future<BatchGetReportGroupsOutcome> BatchGetReportGroupsOutcomeCallable;
@@ -162,16 +190,20 @@ namespace Model
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateReportGroupOutcome> CreateReportGroupOutcomeCallable;
         typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
+        typedef std::future<DeleteBuildBatchOutcome> DeleteBuildBatchOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteReportOutcome> DeleteReportOutcomeCallable;
         typedef std::future<DeleteReportGroupOutcome> DeleteReportGroupOutcomeCallable;
         typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteSourceCredentialsOutcome> DeleteSourceCredentialsOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
+        typedef std::future<DescribeCodeCoveragesOutcome> DescribeCodeCoveragesOutcomeCallable;
         typedef std::future<DescribeTestCasesOutcome> DescribeTestCasesOutcomeCallable;
         typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
         typedef std::future<ImportSourceCredentialsOutcome> ImportSourceCredentialsOutcomeCallable;
         typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
+        typedef std::future<ListBuildBatchesOutcome> ListBuildBatchesOutcomeCallable;
+        typedef std::future<ListBuildBatchesForProjectOutcome> ListBuildBatchesForProjectOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
         typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
@@ -183,8 +215,12 @@ namespace Model
         typedef std::future<ListSharedReportGroupsOutcome> ListSharedReportGroupsOutcomeCallable;
         typedef std::future<ListSourceCredentialsOutcome> ListSourceCredentialsOutcomeCallable;
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+        typedef std::future<RetryBuildOutcome> RetryBuildOutcomeCallable;
+        typedef std::future<RetryBuildBatchOutcome> RetryBuildBatchOutcomeCallable;
         typedef std::future<StartBuildOutcome> StartBuildOutcomeCallable;
+        typedef std::future<StartBuildBatchOutcome> StartBuildBatchOutcomeCallable;
         typedef std::future<StopBuildOutcome> StopBuildOutcomeCallable;
+        typedef std::future<StopBuildBatchOutcome> StopBuildBatchOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
         typedef std::future<UpdateReportGroupOutcome> UpdateReportGroupOutcomeCallable;
         typedef std::future<UpdateWebhookOutcome> UpdateWebhookOutcomeCallable;
@@ -193,6 +229,7 @@ namespace Model
   class CodeBuildClient;
 
     typedef std::function<void(const CodeBuildClient*, const Model::BatchDeleteBuildsRequest&, const Model::BatchDeleteBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteBuildsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildBatchesRequest&, const Model::BatchGetBuildBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildBatchesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildsRequest&, const Model::BatchGetBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetProjectsRequest&, const Model::BatchGetProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetReportGroupsRequest&, const Model::BatchGetReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetReportGroupsResponseReceivedHandler;
@@ -200,16 +237,20 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateReportGroupRequest&, const Model::CreateReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteBuildBatchRequest&, const Model::DeleteBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBuildBatchResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportRequest&, const Model::DeleteReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportGroupRequest&, const Model::DeleteReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteSourceCredentialsRequest&, const Model::DeleteSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DescribeCodeCoveragesRequest&, const Model::DescribeCodeCoveragesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeCoveragesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DescribeTestCasesRequest&, const Model::DescribeTestCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTestCasesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ImportSourceCredentialsRequest&, const Model::ImportSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListBuildBatchesRequest&, const Model::ListBuildBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildBatchesResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListBuildBatchesForProjectRequest&, const Model::ListBuildBatchesForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildBatchesForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
@@ -221,8 +262,12 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::ListSharedReportGroupsRequest&, const Model::ListSharedReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSourceCredentialsRequest&, const Model::ListSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::RetryBuildRequest&, const Model::RetryBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryBuildResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::RetryBuildBatchRequest&, const Model::RetryBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryBuildBatchResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildRequest&, const Model::StartBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StartBuildBatchRequest&, const Model::StartBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildBatchResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildRequest&, const Model::StopBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StopBuildBatchRequest&, const Model::StopBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildBatchResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateReportGroupRequest&, const Model::UpdateReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateWebhookRequest&, const Model::UpdateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebhookResponseReceivedHandler;
@@ -356,6 +401,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDeleteBuildsAsync(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about one or more batch builds.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetBuildBatchesOutcome BatchGetBuildBatches(const Model::BatchGetBuildBatchesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about one or more batch builds.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetBuildBatchesOutcomeCallable BatchGetBuildBatchesCallable(const Model::BatchGetBuildBatchesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about one or more batch builds.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetBuildBatchesAsync(const Model::BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more builds.</p><p><h3>See Also:</h3>   <a
@@ -572,6 +645,31 @@ namespace Model
         virtual void CreateWebhookAsync(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBuildBatchOutcome DeleteBuildBatch(const Model::DeleteBuildBatchRequest& request) const;
+
+        /**
+         * <p>Deletes a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBuildBatchOutcomeCallable DeleteBuildBatchCallable(const Model::DeleteBuildBatchRequest& request) const;
+
+        /**
+         * <p>Deletes a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBuildBatchAsync(const Model::DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Deletes a build project. When you delete a project, its builds are not
          * deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">AWS
@@ -761,6 +859,31 @@ namespace Model
         virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves one or more code coverage reports.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCodeCoveragesOutcome DescribeCodeCoverages(const Model::DescribeCodeCoveragesRequest& request) const;
+
+        /**
+         * <p>Retrieves one or more code coverage reports.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCodeCoveragesOutcomeCallable DescribeCodeCoveragesCallable(const Model::DescribeCodeCoveragesRequest& request) const;
+
+        /**
+         * <p>Retrieves one or more code coverage reports.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCodeCoveragesAsync(const Model::DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns a list of details about test cases for a report. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">AWS
@@ -871,6 +994,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void InvalidateProjectCacheAsync(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the identifiers of your build batches in the current
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBuildBatchesOutcome ListBuildBatches(const Model::ListBuildBatchesRequest& request) const;
+
+        /**
+         * <p>Retrieves the identifiers of your build batches in the current
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBuildBatchesOutcomeCallable ListBuildBatchesCallable(const Model::ListBuildBatchesRequest& request) const;
+
+        /**
+         * <p>Retrieves the identifiers of your build batches in the current
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBuildBatchesAsync(const Model::ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the identifiers of the build batches for a specific
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBuildBatchesForProjectOutcome ListBuildBatchesForProject(const Model::ListBuildBatchesForProjectRequest& request) const;
+
+        /**
+         * <p>Retrieves the identifiers of the build batches for a specific
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBuildBatchesForProjectOutcomeCallable ListBuildBatchesForProjectCallable(const Model::ListBuildBatchesForProjectRequest& request) const;
+
+        /**
+         * <p>Retrieves the identifiers of the build batches for a specific
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBuildBatchesForProjectAsync(const Model::ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of build IDs, with each build ID representing a single
@@ -1181,6 +1360,56 @@ namespace Model
         virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Restarts a build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RetryBuildOutcome RetryBuild(const Model::RetryBuildRequest& request) const;
+
+        /**
+         * <p>Restarts a build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RetryBuildOutcomeCallable RetryBuildCallable(const Model::RetryBuildRequest& request) const;
+
+        /**
+         * <p>Restarts a build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RetryBuildAsync(const Model::RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RetryBuildBatchOutcome RetryBuildBatch(const Model::RetryBuildBatchRequest& request) const;
+
+        /**
+         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RetryBuildBatchOutcomeCallable RetryBuildBatchCallable(const Model::RetryBuildBatchRequest& request) const;
+
+        /**
+         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RetryBuildBatchAsync(const Model::RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">AWS
          * API Reference</a></p>
@@ -1206,6 +1435,31 @@ namespace Model
         virtual void StartBuildAsync(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a batch build for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBuildBatchOutcome StartBuildBatch(const Model::StartBuildBatchRequest& request) const;
+
+        /**
+         * <p>Starts a batch build for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartBuildBatchOutcomeCallable StartBuildBatchCallable(const Model::StartBuildBatchRequest& request) const;
+
+        /**
+         * <p>Starts a batch build for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartBuildBatchAsync(const Model::StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Attempts to stop running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">AWS
          * API Reference</a></p>
@@ -1229,6 +1483,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopBuildAsync(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a running batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopBuildBatchOutcome StopBuildBatch(const Model::StopBuildBatchRequest& request) const;
+
+        /**
+         * <p>Stops a running batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopBuildBatchOutcomeCallable StopBuildBatchCallable(const Model::StopBuildBatchRequest& request) const;
+
+        /**
+         * <p>Stops a running batch build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopBuildBatchAsync(const Model::StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
@@ -1316,6 +1595,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchDeleteBuildsAsyncHelper(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetBuildBatchesAsyncHelper(const Model::BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetBuildsAsyncHelper(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetProjectsAsyncHelper(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetReportGroupsAsyncHelper(const Model::BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1323,16 +1603,20 @@ namespace Model
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReportGroupAsyncHelper(const Model::CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBuildBatchAsyncHelper(const Model::DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReportAsyncHelper(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReportGroupAsyncHelper(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSourceCredentialsAsyncHelper(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCodeCoveragesAsyncHelper(const Model::DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTestCasesAsyncHelper(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSourceCredentialsAsyncHelper(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBuildBatchesAsyncHelper(const Model::ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBuildBatchesForProjectAsyncHelper(const Model::ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsForProjectAsyncHelper(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCuratedEnvironmentImagesAsyncHelper(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1344,8 +1628,12 @@ namespace Model
         void ListSharedReportGroupsAsyncHelper(const Model::ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSourceCredentialsAsyncHelper(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RetryBuildAsyncHelper(const Model::RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RetryBuildBatchAsyncHelper(const Model::RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBuildAsyncHelper(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartBuildBatchAsyncHelper(const Model::StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopBuildAsyncHelper(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopBuildBatchAsyncHelper(const Model::StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateReportGroupAsyncHelper(const Model::UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWebhookAsyncHelper(const Model::UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

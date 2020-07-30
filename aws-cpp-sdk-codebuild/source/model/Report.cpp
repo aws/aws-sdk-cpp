@@ -32,7 +32,8 @@ Report::Report() :
     m_exportConfigHasBeenSet(false),
     m_truncated(false),
     m_truncatedHasBeenSet(false),
-    m_testSummaryHasBeenSet(false)
+    m_testSummaryHasBeenSet(false),
+    m_codeCoverageSummaryHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Report::Report(JsonView jsonValue) :
     m_exportConfigHasBeenSet(false),
     m_truncated(false),
     m_truncatedHasBeenSet(false),
-    m_testSummaryHasBeenSet(false)
+    m_testSummaryHasBeenSet(false),
+    m_codeCoverageSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,13 @@ Report& Report::operator =(JsonView jsonValue)
     m_testSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("codeCoverageSummary"))
+  {
+    m_codeCoverageSummary = jsonValue.GetObject("codeCoverageSummary");
+
+    m_codeCoverageSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +209,12 @@ JsonValue Report::Jsonize() const
   if(m_testSummaryHasBeenSet)
   {
    payload.WithObject("testSummary", m_testSummary.Jsonize());
+
+  }
+
+  if(m_codeCoverageSummaryHasBeenSet)
+  {
+   payload.WithObject("codeCoverageSummary", m_codeCoverageSummary.Jsonize());
 
   }
 

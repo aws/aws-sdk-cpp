@@ -42,6 +42,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline Template& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline Template& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations. </p>
+     */
+    inline Template& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
@@ -147,6 +204,9 @@ namespace Model
     inline Template& WithTemplateData(const char* value) { SetTemplateData(value); return *this;}
 
   private:
+
+    Aws::String m_templateName;
+    bool m_templateNameHasBeenSet;
 
     Aws::String m_templateArn;
     bool m_templateArnHasBeenSet;

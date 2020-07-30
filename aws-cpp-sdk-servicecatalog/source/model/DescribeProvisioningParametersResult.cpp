@@ -70,6 +70,15 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   }
 
+  if(jsonValue.ValueExists("ProvisioningArtifactOutputs"))
+  {
+    Array<JsonView> provisioningArtifactOutputsJsonList = jsonValue.GetArray("ProvisioningArtifactOutputs");
+    for(unsigned provisioningArtifactOutputsIndex = 0; provisioningArtifactOutputsIndex < provisioningArtifactOutputsJsonList.GetLength(); ++provisioningArtifactOutputsIndex)
+    {
+      m_provisioningArtifactOutputs.push_back(provisioningArtifactOutputsJsonList[provisioningArtifactOutputsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

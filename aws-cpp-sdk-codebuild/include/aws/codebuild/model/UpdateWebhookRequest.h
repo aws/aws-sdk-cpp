@@ -8,6 +8,7 @@
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codebuild/model/WebhookBuildType.h>
 #include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
@@ -235,6 +236,37 @@ namespace Model
      */
     inline UpdateWebhookRequest& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline const WebhookBuildType& GetBuildType() const{ return m_buildType; }
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline void SetBuildType(const WebhookBuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline void SetBuildType(WebhookBuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline UpdateWebhookRequest& WithBuildType(const WebhookBuildType& value) { SetBuildType(value); return *this;}
+
+    /**
+     * <p>Specifies the type of build this webhook will trigger.</p>
+     */
+    inline UpdateWebhookRequest& WithBuildType(WebhookBuildType&& value) { SetBuildType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -248,6 +280,9 @@ namespace Model
 
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
     bool m_filterGroupsHasBeenSet;
+
+    WebhookBuildType m_buildType;
+    bool m_buildTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -53,6 +53,7 @@
 #include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
+#include <aws/guardduty/model/GetUsageStatisticsRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
 #include <aws/guardduty/model/ListDetectorsRequest.h>
 #include <aws/guardduty/model/ListFiltersRequest.h>
@@ -1274,6 +1275,40 @@ void GuardDutyClient::GetThreatIntelSetAsync(const GetThreatIntelSetRequest& req
 void GuardDutyClient::GetThreatIntelSetAsyncHelper(const GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetThreatIntelSet(request), context);
+}
+
+GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUsageStatistics", "Required field: DetectorId, is not set");
+    return GetUsageStatisticsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/usage/statistics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetUsageStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUsageStatisticsOutcomeCallable GuardDutyClient::GetUsageStatisticsCallable(const GetUsageStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUsageStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUsageStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::GetUsageStatisticsAsync(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsageStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::GetUsageStatisticsAsyncHelper(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsageStatistics(request), context);
 }
 
 InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& request) const

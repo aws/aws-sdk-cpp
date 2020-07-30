@@ -189,176 +189,184 @@ namespace Model
 
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
-     * <p>A version of the build input to be built, for this build only. If not
-     * specified, the latest version is used. If specified, must be one of:</p> <ul>
-     * <li> <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-     * <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a pull
-     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * <p>The version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, the contents depends on the
+     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
+     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * ID, branch name, or tag name that corresponds to the version of the source code
+     * you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </dd> <dt>Bitbucket</dt> <dd>
+     * <p>The commit ID, branch name, or tag name that corresponds to the version of
+     * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
-     * that corresponds to the version of the source code you want to build. If a
-     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
-     * is specified at the project level, then this <code>sourceVersion</code> (at the
-     * build level) takes precedence. </p> <p> For more information, see <a
+     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
+     * version ID of the object that represents the build input ZIP file to use.</p>
+     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
+     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -1483,74 +1491,80 @@ namespace Model
 
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline const ImagePullCredentialsType& GetImagePullCredentialsTypeOverride() const{ return m_imagePullCredentialsTypeOverride; }
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline bool ImagePullCredentialsTypeOverrideHasBeenSet() const { return m_imagePullCredentialsTypeOverrideHasBeenSet; }
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline void SetImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = value; }
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline void SetImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = std::move(value); }
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline StartBuildRequest& WithImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { SetImagePullCredentialsTypeOverride(value); return *this;}
 
     /**
-     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
-     * that AWS CodeBuild uses its own credentials. This requires that you modify your
-     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </li> </ul> <p> When using a cross-account or
-     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
-     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
+     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
+     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+     * credentials. </p>
      */
     inline StartBuildRequest& WithImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { SetImagePullCredentialsTypeOverride(std::move(value)); return *this;}
 

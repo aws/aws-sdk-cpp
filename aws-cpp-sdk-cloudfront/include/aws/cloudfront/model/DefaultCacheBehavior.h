@@ -564,106 +564,178 @@ namespace Model
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetCachePolicyId() const{ return m_cachePolicyId; }
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline bool CachePolicyIdHasBeenSet() const { return m_cachePolicyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetCachePolicyId(const Aws::String& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = value; }
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetCachePolicyId(Aws::String&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::move(value); }
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetCachePolicyId(const char* value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId.assign(value); }
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const Aws::String& value) { SetCachePolicyId(value); return *this;}
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(Aws::String&& value) { SetCachePolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cache policy that is attached to the default
-     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     * cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+     * cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const char* value) { SetCachePolicyId(value); return *this;}
 
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetOriginRequestPolicyId() const{ return m_originRequestPolicyId; }
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline bool OriginRequestPolicyIdHasBeenSet() const { return m_originRequestPolicyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetOriginRequestPolicyId(const Aws::String& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = value; }
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetOriginRequestPolicyId(Aws::String&& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = std::move(value); }
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetOriginRequestPolicyId(const char* value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId.assign(value); }
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithOriginRequestPolicyId(const Aws::String& value) { SetOriginRequestPolicyId(value); return *this;}
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithOriginRequestPolicyId(Aws::String&& value) { SetOriginRequestPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the origin request policy that is attached to the
-     * default cache behavior. For more information, see
-     * <a>OriginRequestPolicy</a>.</p>
+     * default cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+     * origin request policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+     * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithOriginRequestPolicyId(const char* value) { SetOriginRequestPolicyId(value); return *this;}
 

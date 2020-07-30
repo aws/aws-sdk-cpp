@@ -34,7 +34,8 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_badgeEnabled(false),
     m_badgeEnabledHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_buildBatchConfigHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
+
+  }
+
+  if(m_buildBatchConfigHasBeenSet)
+  {
+   payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
 
   }
 

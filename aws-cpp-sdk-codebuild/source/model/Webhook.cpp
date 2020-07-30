@@ -24,6 +24,8 @@ Webhook::Webhook() :
     m_secretHasBeenSet(false),
     m_branchFilterHasBeenSet(false),
     m_filterGroupsHasBeenSet(false),
+    m_buildType(WebhookBuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false),
     m_lastModifiedSecretHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ Webhook::Webhook(JsonView jsonValue) :
     m_secretHasBeenSet(false),
     m_branchFilterHasBeenSet(false),
     m_filterGroupsHasBeenSet(false),
+    m_buildType(WebhookBuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false),
     m_lastModifiedSecretHasBeenSet(false)
 {
   *this = jsonValue;
@@ -84,6 +88,13 @@ Webhook& Webhook::operator =(JsonView jsonValue)
       m_filterGroups.push_back(std::move(filterGroupList));
     }
     m_filterGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("buildType"))
+  {
+    m_buildType = WebhookBuildTypeMapper::GetWebhookBuildTypeForName(jsonValue.GetString("buildType"));
+
+    m_buildTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastModifiedSecret"))
@@ -138,6 +149,11 @@ JsonValue Webhook::Jsonize() const
    }
    payload.WithArray("filterGroups", std::move(filterGroupsJsonList));
 
+  }
+
+  if(m_buildTypeHasBeenSet)
+  {
+   payload.WithString("buildType", WebhookBuildTypeMapper::GetNameForWebhookBuildType(m_buildType));
   }
 
   if(m_lastModifiedSecretHasBeenSet)

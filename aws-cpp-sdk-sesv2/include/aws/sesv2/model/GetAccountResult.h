@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
+#include <aws/sesv2/model/AccountDetails.h>
 #include <utility>
 
 namespace Aws
@@ -274,6 +275,32 @@ namespace Model
      */
     inline GetAccountResult& WithSuppressionAttributes(SuppressionAttributes&& value) { SetSuppressionAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline const AccountDetails& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline void SetDetails(const AccountDetails& value) { m_details = value; }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline void SetDetails(AccountDetails&& value) { m_details = std::move(value); }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline GetAccountResult& WithDetails(const AccountDetails& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline GetAccountResult& WithDetails(AccountDetails&& value) { SetDetails(std::move(value)); return *this;}
+
   private:
 
     bool m_dedicatedIpAutoWarmupEnabled;
@@ -287,6 +314,8 @@ namespace Model
     bool m_sendingEnabled;
 
     SuppressionAttributes m_suppressionAttributes;
+
+    AccountDetails m_details;
   };
 
 } // namespace Model

@@ -17,7 +17,9 @@ UpdateWebhookRequest::UpdateWebhookRequest() :
     m_branchFilterHasBeenSet(false),
     m_rotateSecret(false),
     m_rotateSecretHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false)
+    m_filterGroupsHasBeenSet(false),
+    m_buildType(WebhookBuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String UpdateWebhookRequest::SerializePayload() const
    }
    payload.WithArray("filterGroups", std::move(filterGroupsJsonList));
 
+  }
+
+  if(m_buildTypeHasBeenSet)
+  {
+   payload.WithString("buildType", WebhookBuildTypeMapper::GetNameForWebhookBuildType(m_buildType));
   }
 
   return payload.View().WriteReadable();

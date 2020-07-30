@@ -837,7 +837,9 @@ namespace Model
          * an organization, an organizational unit, or a specific account.</p> <p>Note that
          * if a delegated admin is de-registered, they can no longer create portfolio
          * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
-         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * create a portfolio share to an organization node.</p> <p>You can't share a
+         * shared resource. This includes portfolios that contain a shared
+         * product.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          */
@@ -850,7 +852,9 @@ namespace Model
          * an organization, an organizational unit, or a specific account.</p> <p>Note that
          * if a delegated admin is de-registered, they can no longer create portfolio
          * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
-         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * create a portfolio share to an organization node.</p> <p>You can't share a
+         * shared resource. This includes portfolios that contain a shared
+         * product.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -865,7 +869,9 @@ namespace Model
          * an organization, an organizational unit, or a specific account.</p> <p>Note that
          * if a delegated admin is de-registered, they can no longer create portfolio
          * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
-         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * create a portfolio share to an organization node.</p> <p>You can't share a
+         * shared resource. This includes portfolios that contain a shared
+         * product.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *

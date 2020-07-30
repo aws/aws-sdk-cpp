@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TEST_HASH = HashingUtils::HashString("TEST");
+        static const int CODE_COVERAGE_HASH = HashingUtils::HashString("CODE_COVERAGE");
 
 
         ReportType GetReportTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TEST_HASH)
           {
             return ReportType::TEST;
+          }
+          else if (hashCode == CODE_COVERAGE_HASH)
+          {
+            return ReportType::CODE_COVERAGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ReportType::TEST:
             return "TEST";
+          case ReportType::CODE_COVERAGE:
+            return "CODE_COVERAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

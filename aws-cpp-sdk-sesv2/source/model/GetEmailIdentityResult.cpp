@@ -64,6 +64,15 @@ GetEmailIdentityResult& GetEmailIdentityResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("Policies"))
+  {
+    Aws::Map<Aws::String, JsonView> policiesJsonMap = jsonValue.GetObject("Policies").GetAllObjects();
+    for(auto& policiesItem : policiesJsonMap)
+    {
+      m_policies[policiesItem.first] = policiesItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

@@ -44,6 +44,7 @@
 #include <aws/guardduty/model/GetMemberDetectorsResult.h>
 #include <aws/guardduty/model/GetMembersResult.h>
 #include <aws/guardduty/model/GetThreatIntelSetResult.h>
+#include <aws/guardduty/model/GetUsageStatisticsResult.h>
 #include <aws/guardduty/model/InviteMembersResult.h>
 #include <aws/guardduty/model/ListDetectorsResult.h>
 #include <aws/guardduty/model/ListFiltersResult.h>
@@ -140,6 +141,7 @@ namespace Model
         class GetMemberDetectorsRequest;
         class GetMembersRequest;
         class GetThreatIntelSetRequest;
+        class GetUsageStatisticsRequest;
         class InviteMembersRequest;
         class ListDetectorsRequest;
         class ListFiltersRequest;
@@ -198,6 +200,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMemberDetectorsResult, GuardDutyError> GetMemberDetectorsOutcome;
         typedef Aws::Utils::Outcome<GetMembersResult, GuardDutyError> GetMembersOutcome;
         typedef Aws::Utils::Outcome<GetThreatIntelSetResult, GuardDutyError> GetThreatIntelSetOutcome;
+        typedef Aws::Utils::Outcome<GetUsageStatisticsResult, GuardDutyError> GetUsageStatisticsOutcome;
         typedef Aws::Utils::Outcome<InviteMembersResult, GuardDutyError> InviteMembersOutcome;
         typedef Aws::Utils::Outcome<ListDetectorsResult, GuardDutyError> ListDetectorsOutcome;
         typedef Aws::Utils::Outcome<ListFiltersResult, GuardDutyError> ListFiltersOutcome;
@@ -256,6 +259,7 @@ namespace Model
         typedef std::future<GetMemberDetectorsOutcome> GetMemberDetectorsOutcomeCallable;
         typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
         typedef std::future<GetThreatIntelSetOutcome> GetThreatIntelSetOutcomeCallable;
+        typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
         typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
         typedef std::future<ListDetectorsOutcome> ListDetectorsOutcomeCallable;
         typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
@@ -317,6 +321,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::GetMemberDetectorsRequest&, const Model::GetMemberDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetThreatIntelSetRequest&, const Model::GetThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListDetectorsRequest&, const Model::ListDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
@@ -456,7 +461,8 @@ namespace Model
          * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
          * represents the GuardDuty service. To start using GuardDuty, you must create a
          * detector in each Region where you enable the service. You can have only one
-         * detector per account per Region.</p><p><h3>See Also:</h3>   <a
+         * detector per account per Region. All data sources are enabled in a new detector
+         * by default.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          */
@@ -466,7 +472,8 @@ namespace Model
          * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
          * represents the GuardDuty service. To start using GuardDuty, you must create a
          * detector in each Region where you enable the service. You can have only one
-         * detector per account per Region.</p><p><h3>See Also:</h3>   <a
+         * detector per account per Region. All data sources are enabled in a new detector
+         * by default.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          *
@@ -478,7 +485,8 @@ namespace Model
          * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
          * represents the GuardDuty service. To start using GuardDuty, you must create a
          * detector in each Region where you enable the service. You can have only one
-         * detector per account per Region.</p><p><h3>See Also:</h3>   <a
+         * detector per account per Region. All data sources are enabled in a new detector
+         * by default.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          *
@@ -553,8 +561,16 @@ namespace Model
 
         /**
          * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. The current AWS account can then invite these members to manage
-         * GuardDuty in their accounts.</p><p><h3>See Also:</h3>   <a
+         * AWS account IDs. This step is a prerequisite for managing the associated member
+         * accounts either by invitation or through an organization.</p> <p>When using
+         * <code>Create Members</code> as an organizations delegated administrator this
+         * action will enable GuardDuty in the added member accounts, with the exception of
+         * the organization master account, which must enable GuardDuty prior to being
+         * added as a member.</p> <p>If you are adding accounts by invitation use this
+         * action after GuardDuty has been enabled in potential member accounts and before
+         * using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+         * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -562,8 +578,16 @@ namespace Model
 
         /**
          * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. The current AWS account can then invite these members to manage
-         * GuardDuty in their accounts.</p><p><h3>See Also:</h3>   <a
+         * AWS account IDs. This step is a prerequisite for managing the associated member
+         * accounts either by invitation or through an organization.</p> <p>When using
+         * <code>Create Members</code> as an organizations delegated administrator this
+         * action will enable GuardDuty in the added member accounts, with the exception of
+         * the organization master account, which must enable GuardDuty prior to being
+         * added as a member.</p> <p>If you are adding accounts by invitation use this
+         * action after GuardDuty has been enabled in potential member accounts and before
+         * using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+         * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -573,8 +597,16 @@ namespace Model
 
         /**
          * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. The current AWS account can then invite these members to manage
-         * GuardDuty in their accounts.</p><p><h3>See Also:</h3>   <a
+         * AWS account IDs. This step is a prerequisite for managing the associated member
+         * accounts either by invitation or through an organization.</p> <p>When using
+         * <code>Create Members</code> as an organizations delegated administrator this
+         * action will enable GuardDuty in the added member accounts, with the exception of
+         * the organization master account, which must enable GuardDuty prior to being
+         * added as a member.</p> <p>If you are adding accounts by invitation use this
+         * action after GuardDuty has been enabled in potential member accounts and before
+         * using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+         * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -1351,6 +1383,49 @@ namespace Model
         virtual void GetThreatIntelSetAsync(const Model::GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the
+         * specified detector ID. For newly enabled detectors or data sources the cost
+         * returned will include only the usage so far under 30 days, this may differ from
+         * the cost metrics in the console, which projects usage over 30 days to provide a
+         * monthly cost estimate. For more information see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
+         * How Usage Costs are Calculated</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUsageStatisticsOutcome GetUsageStatistics(const Model::GetUsageStatisticsRequest& request) const;
+
+        /**
+         * <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the
+         * specified detector ID. For newly enabled detectors or data sources the cost
+         * returned will include only the usage so far under 30 days, this may differ from
+         * the cost metrics in the console, which projects usage over 30 days to provide a
+         * monthly cost estimate. For more information see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
+         * How Usage Costs are Calculated</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetUsageStatisticsOutcomeCallable GetUsageStatisticsCallable(const Model::GetUsageStatisticsRequest& request) const;
+
+        /**
+         * <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the
+         * specified detector ID. For newly enabled detectors or data sources the cost
+         * returned will include only the usage so far under 30 days, this may differ from
+         * the cost metrics in the console, which projects usage over 30 days to provide a
+         * monthly cost estimate. For more information see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
+         * How Usage Costs are Calculated</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetUsageStatisticsAsync(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Invites other AWS accounts (created as members of the current AWS account by
          * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
          * and manage these accounts' GuardDuty findings on their behalf as the master
@@ -1528,16 +1603,16 @@ namespace Model
         virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists details about associated member accounts for the current GuardDuty
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about associated member accounts for the current GuardDuty
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1546,8 +1621,8 @@ namespace Model
         virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about associated member accounts for the current GuardDuty
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -2074,6 +2149,7 @@ namespace Model
         void GetMemberDetectorsAsyncHelper(const Model::GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetThreatIntelSetAsyncHelper(const Model::GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetUsageStatisticsAsyncHelper(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteMembersAsyncHelper(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDetectorsAsyncHelper(const Model::ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFiltersAsyncHelper(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
