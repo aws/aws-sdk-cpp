@@ -132,6 +132,18 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("SoftwareUpdatesEndDate"))
+  {
+    m_softwareUpdatesEndDate = jsonValue.GetString("SoftwareUpdatesEndDate");
+
+  }
+
+  if(jsonValue.ValueExists("DeprecationDate"))
+  {
+    m_deprecationDate = jsonValue.GetString("DeprecationDate");
+
+  }
+
 
 
   return *this;

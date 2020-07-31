@@ -203,7 +203,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline const Aws::String& GetRuleNameWithinRuleGroup() const{ return m_ruleNameWithinRuleGroup; }
 
@@ -212,7 +212,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline bool RuleNameWithinRuleGroupHasBeenSet() const { return m_ruleNameWithinRuleGroupHasBeenSet; }
 
@@ -221,7 +221,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(const Aws::String& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = value; }
 
@@ -230,7 +230,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(Aws::String&& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = std::move(value); }
 
@@ -239,7 +239,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(const char* value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup.assign(value); }
 
@@ -248,7 +248,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const Aws::String& value) { SetRuleNameWithinRuleGroup(value); return *this;}
 
@@ -257,7 +257,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(Aws::String&& value) { SetRuleNameWithinRuleGroup(std::move(value)); return *this;}
 
@@ -266,7 +266,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const char* value) { SetRuleNameWithinRuleGroup(value); return *this;}
 

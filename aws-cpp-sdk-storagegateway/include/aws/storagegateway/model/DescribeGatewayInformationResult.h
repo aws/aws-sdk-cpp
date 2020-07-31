@@ -683,6 +683,92 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
 
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline const Aws::String& GetSoftwareUpdatesEndDate() const{ return m_softwareUpdatesEndDate; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(const Aws::String& value) { m_softwareUpdatesEndDate = value; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(Aws::String&& value) { m_softwareUpdatesEndDate = std::move(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(const char* value) { m_softwareUpdatesEndDate.assign(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(const Aws::String& value) { SetSoftwareUpdatesEndDate(value); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(Aws::String&& value) { SetSoftwareUpdatesEndDate(std::move(value)); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(const char* value) { SetSoftwareUpdatesEndDate(value); return *this;}
+
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline const Aws::String& GetDeprecationDate() const{ return m_deprecationDate; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const Aws::String& value) { m_deprecationDate = value; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(Aws::String&& value) { m_deprecationDate = std::move(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const char* value) { m_deprecationDate.assign(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(const Aws::String& value) { SetDeprecationDate(value); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(Aws::String&& value) { SetDeprecationDate(std::move(value)); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -716,6 +802,10 @@ namespace Model
     HostEnvironment m_hostEnvironment;
 
     Aws::String m_endpointType;
+
+    Aws::String m_softwareUpdatesEndDate;
+
+    Aws::String m_deprecationDate;
   };
 
 } // namespace Model

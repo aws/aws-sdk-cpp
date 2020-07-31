@@ -84,65 +84,65 @@ namespace Model
 
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInputList() const{ return m_inputList; }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline bool InputListHasBeenSet() const { return m_inputListHasBeenSet; }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline void SetInputList(const Aws::Vector<Aws::String>& value) { m_inputListHasBeenSet = true; m_inputList = value; }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline void SetInputList(Aws::Vector<Aws::String>&& value) { m_inputListHasBeenSet = true; m_inputList = std::move(value); }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& WithInputList(const Aws::Vector<Aws::String>& value) { SetInputList(value); return *this;}
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& WithInputList(Aws::Vector<Aws::String>&& value) { SetInputList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(const Aws::String& value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(Aws::String&& value) { m_inputListHasBeenSet = true; m_inputList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of items (itemId's) to rank. If an item was not included in the
-     * training dataset, the item is appended to the end of the reranked list. The
-     * maximum is 500.</p>
+     * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
+     * in the training dataset, the item is appended to the end of the reranked list.
+     * The maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(const char* value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
 
@@ -300,6 +300,55 @@ namespace Model
      */
     inline GetPersonalizedRankingRequest& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline GetPersonalizedRankingRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline GetPersonalizedRankingRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
+     * items from recommendations for a given user.</p>
+     */
+    inline GetPersonalizedRankingRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+
   private:
 
     Aws::String m_campaignArn;
@@ -313,6 +362,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_context;
     bool m_contextHasBeenSet;
+
+    Aws::String m_filterArn;
+    bool m_filterArnHasBeenSet;
   };
 
 } // namespace Model

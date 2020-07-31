@@ -21,14 +21,18 @@ namespace Model
 LoggingConfiguration::LoggingConfiguration() : 
     m_resourceArnHasBeenSet(false),
     m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
+    m_redactedFieldsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false)
 {
 }
 
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
+    m_redactedFieldsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
       m_redactedFields.push_back(redactedFieldsJsonList[redactedFieldsIndex].AsObject());
     }
     m_redactedFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManagedByFirewallManager"))
+  {
+    m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
+
+    m_managedByFirewallManagerHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +105,12 @@ JsonValue LoggingConfiguration::Jsonize() const
      redactedFieldsJsonList[redactedFieldsIndex].AsObject(m_redactedFields[redactedFieldsIndex].Jsonize());
    }
    payload.WithArray("RedactedFields", std::move(redactedFieldsJsonList));
+
+  }
+
+  if(m_managedByFirewallManagerHasBeenSet)
+  {
+   payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
 
   }
 

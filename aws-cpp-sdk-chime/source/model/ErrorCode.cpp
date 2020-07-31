@@ -30,6 +30,7 @@ namespace Aws
         static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
         static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
         static const int Throttled_HASH = HashingUtils::HashString("Throttled");
+        static const int Throttling_HASH = HashingUtils::HashString("Throttling");
         static const int Unauthorized_HASH = HashingUtils::HashString("Unauthorized");
         static const int Unprocessable_HASH = HashingUtils::HashString("Unprocessable");
         static const int VoiceConnectorGroupAssociationsExist_HASH = HashingUtils::HashString("VoiceConnectorGroupAssociationsExist");
@@ -78,6 +79,10 @@ namespace Aws
           else if (hashCode == Throttled_HASH)
           {
             return ErrorCode::Throttled;
+          }
+          else if (hashCode == Throttling_HASH)
+          {
+            return ErrorCode::Throttling;
           }
           else if (hashCode == Unauthorized_HASH)
           {
@@ -129,6 +134,8 @@ namespace Aws
             return "ServiceUnavailable";
           case ErrorCode::Throttled:
             return "Throttled";
+          case ErrorCode::Throttling:
+            return "Throttling";
           case ErrorCode::Unauthorized:
             return "Unauthorized";
           case ErrorCode::Unprocessable:

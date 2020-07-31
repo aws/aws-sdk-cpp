@@ -152,59 +152,104 @@ namespace Model
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline void SetRedactedFields(const Aws::Vector<FieldToMatch>& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = value; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline void SetRedactedFields(Aws::Vector<FieldToMatch>&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = std::move(value); }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline LoggingConfiguration& WithRedactedFields(const Aws::Vector<FieldToMatch>& value) { SetRedactedFields(value); return *this;}
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline LoggingConfiguration& WithRedactedFields(Aws::Vector<FieldToMatch>&& value) { SetRedactedFields(std::move(value)); return *this;}
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline LoggingConfiguration& AddRedactedFields(const FieldToMatch& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(value); return *this; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
-     * if you redact the cookie field, the cookie field in the firehose will be
-     * <code>xxx</code>. </p>
+     * if you redact the <code>HEADER</code> field, the <code>HEADER</code> field in
+     * the firehose will be <code>xxx</code>. </p>  <p>You must use one of the
+     * following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     * <code>HEADER</code>, or <code>METHOD</code>.</p> 
      */
     inline LoggingConfiguration& AddRedactedFields(FieldToMatch&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether the logging configuration was created by AWS Firewall
+     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
+     * Manager can modify or delete the configuration. </p>
+     */
+    inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
+
+    /**
+     * <p>Indicates whether the logging configuration was created by AWS Firewall
+     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
+     * Manager can modify or delete the configuration. </p>
+     */
+    inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the logging configuration was created by AWS Firewall
+     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
+     * Manager can modify or delete the configuration. </p>
+     */
+    inline void SetManagedByFirewallManager(bool value) { m_managedByFirewallManagerHasBeenSet = true; m_managedByFirewallManager = value; }
+
+    /**
+     * <p>Indicates whether the logging configuration was created by AWS Firewall
+     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
+     * Manager can modify or delete the configuration. </p>
+     */
+    inline LoggingConfiguration& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
 
   private:
 
@@ -216,6 +261,9 @@ namespace Model
 
     Aws::Vector<FieldToMatch> m_redactedFields;
     bool m_redactedFieldsHasBeenSet;
+
+    bool m_managedByFirewallManager;
+    bool m_managedByFirewallManagerHasBeenSet;
   };
 
 } // namespace Model

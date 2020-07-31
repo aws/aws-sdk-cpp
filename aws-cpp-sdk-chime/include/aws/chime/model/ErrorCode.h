@@ -26,6 +26,7 @@ namespace Model
     AccessDenied,
     ServiceUnavailable,
     Throttled,
+    Throttling,
     Unauthorized,
     Unprocessable,
     VoiceConnectorGroupAssociationsExist,
