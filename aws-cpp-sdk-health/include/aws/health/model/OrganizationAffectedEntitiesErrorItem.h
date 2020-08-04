@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Error information returned when a
-   * <a>DescribeAffectedEntitiesForOrganization</a> operation cannot find or process
-   * a specific entity.</p><p><h3>See Also:</h3>   <a
+   * <p>Error information returned when a <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a>
+   * operation cannot find or process a specific entity.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationAffectedEntitiesErrorItem">AWS
    * API Reference</a></p>
    */

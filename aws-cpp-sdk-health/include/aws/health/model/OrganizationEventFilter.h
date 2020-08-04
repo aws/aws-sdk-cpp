@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The values to filter results from the <a>DescribeEventsForOrganization</a>
+   * <p>The values to filter results from the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventFilter">AWS
    * API Reference</a></p>
@@ -320,47 +321,47 @@ namespace Model
 
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntityArns() const{ return m_entityArns; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline bool EntityArnsHasBeenSet() const { return m_entityArnsHasBeenSet; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline void SetEntityArns(const Aws::Vector<Aws::String>& value) { m_entityArnsHasBeenSet = true; m_entityArns = value; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline void SetEntityArns(Aws::Vector<Aws::String>&& value) { m_entityArnsHasBeenSet = true; m_entityArns = std::move(value); }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline OrganizationEventFilter& WithEntityArns(const Aws::Vector<Aws::String>& value) { SetEntityArns(value); return *this;}
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline OrganizationEventFilter& WithEntityArns(Aws::Vector<Aws::String>&& value) { SetEntityArns(std::move(value)); return *this;}
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline OrganizationEventFilter& AddEntityArns(const Aws::String& value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(value); return *this; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline OrganizationEventFilter& AddEntityArns(Aws::String&& value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline OrganizationEventFilter& AddEntityArns(const char* value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(value); return *this; }
 
@@ -421,42 +422,50 @@ namespace Model
 
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline const Aws::Vector<EventTypeCategory>& GetEventTypeCategories() const{ return m_eventTypeCategories; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline bool EventTypeCategoriesHasBeenSet() const { return m_eventTypeCategoriesHasBeenSet; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline void SetEventTypeCategories(const Aws::Vector<EventTypeCategory>& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = value; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline void SetEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = std::move(value); }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline OrganizationEventFilter& WithEventTypeCategories(const Aws::Vector<EventTypeCategory>& value) { SetEventTypeCategories(value); return *this;}
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline OrganizationEventFilter& WithEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { SetEventTypeCategories(std::move(value)); return *this;}
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline OrganizationEventFilter& AddEventTypeCategories(const EventTypeCategory& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(value); return *this; }
 
     /**
-     * <p>REPLACEME</p>
+     * <p>A list of event type category codes (issue, scheduledChange, or
+     * accountNotification).</p>
      */
     inline OrganizationEventFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(std::move(value)); return *this; }
 

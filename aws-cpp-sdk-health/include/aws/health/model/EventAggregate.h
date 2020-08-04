@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The number of events of each issue type. Returned by the
-   * <a>DescribeEventAggregates</a> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of events of each issue type. Returned by the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAggregate">AWS
    * API Reference</a></p>
    */

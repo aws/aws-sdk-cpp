@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+   * <p>Error information returned when a <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
    * operation cannot find a specified event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetailsErrorItem">AWS
    * API Reference</a></p>
@@ -39,49 +40,57 @@ namespace Model
 
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline OrganizationEventDetailsErrorItem& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline OrganizationEventDetailsErrorItem& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Error information returned when a <a>DescribeEventDetailsForOrganization</a>
+     * <p>Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
      * operation cannot find a specified event.</p>
      */
     inline OrganizationEventDetailsErrorItem& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}

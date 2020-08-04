@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>The number of entities that are affected by one or more events. Returned by
-   * the <a>DescribeEntityAggregates</a> operation.</p><p><h3>See Also:</h3>   <a
+   * the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityAggregate">AWS
    * API Reference</a></p>
    */
@@ -112,22 +114,22 @@ namespace Model
 
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline EntityAggregate& WithCount(int value) { SetCount(value); return *this;}
 

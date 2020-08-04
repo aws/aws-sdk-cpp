@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The values to use to filter results from the <a>DescribeEventTypes</a>
+   * <p>The values to use to filter results from the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventTypeFilter">AWS
    * API Reference</a></p>

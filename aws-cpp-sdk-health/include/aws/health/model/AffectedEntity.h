@@ -385,67 +385,80 @@ namespace Model
 
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

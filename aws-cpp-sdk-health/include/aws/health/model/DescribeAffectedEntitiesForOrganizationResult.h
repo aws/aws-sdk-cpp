@@ -38,56 +38,49 @@ namespace Model
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline const Aws::Vector<AffectedEntity>& GetEntities() const{ return m_entities; }
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline void SetEntities(const Aws::Vector<AffectedEntity>& value) { m_entities = value; }
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline void SetEntities(Aws::Vector<AffectedEntity>&& value) { m_entities = std::move(value); }
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline DescribeAffectedEntitiesForOrganizationResult& WithEntities(const Aws::Vector<AffectedEntity>& value) { SetEntities(value); return *this;}
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline DescribeAffectedEntitiesForOrganizationResult& WithEntities(Aws::Vector<AffectedEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline DescribeAffectedEntitiesForOrganizationResult& AddEntities(const AffectedEntity& value) { m_entities.push_back(value); return *this; }
 
     /**
      * <p>A JSON set of elements including the <code>awsAccountId</code> and its
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-     * <code>lastUpdatedTime</code>, <code>statusCode</code>, and
-     * <code>tags</code>.</p>
+     * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
     inline DescribeAffectedEntitiesForOrganizationResult& AddEntities(AffectedEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

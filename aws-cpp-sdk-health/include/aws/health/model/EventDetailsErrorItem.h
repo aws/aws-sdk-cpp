@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Error information returned when a <a>DescribeEventDetails</a> operation
-   * cannot find a specified event.</p><p><h3>See Also:</h3>   <a
+   * <p>Error information returned when a <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a>
+   * operation cannot find a specified event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventDetailsErrorItem">AWS
    * API Reference</a></p>
    */
