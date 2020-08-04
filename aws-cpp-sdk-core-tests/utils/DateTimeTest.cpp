@@ -26,6 +26,7 @@ TEST(DateTimeTest, TestRFC822Parsing)
 {
     const char* gmtDateStr = "Wed, 02 Oct 2002 08:05:09 GMT";
     const char* twoDigitYearVersion = "Wed, 02 Oct 02 08:05:09 GMT";
+    const char* utcOffsetVersion = "Wed, 02 Oct 2002 08:05:09 +0000";
     DateTime gmtDate(gmtDateStr, DateFormat::RFC822);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -38,6 +39,7 @@ TEST(DateTimeTest, TestRFC822Parsing)
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::RFC822));
 
     ASSERT_EQ(gmtDate, DateTime(twoDigitYearVersion, DateFormat::RFC822));
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::RFC822));
 }
 
 TEST(DateTimeTest, TestRFC822Parsing_DOS_Stopped)
@@ -57,6 +59,7 @@ TEST(DateTimeTest, TestRFC822Parsing_WrongFormat)
 TEST(DateTimeTest, TestISO_8601Parsing)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09Z";
+    const char* utcOffsetVersion = "2002-10-02T08:05:09+00:00";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -67,11 +70,14 @@ TEST(DateTimeTest, TestISO_8601Parsing)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::ISO_8601));
+
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
 TEST(DateTimeTest, TestISO_8601BasicParsing)
 {
     const char* gmtDateStr = "20021002T080509Z";
+    const char* utcOffsetVersion = "20021002T080509+0000";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601_BASIC);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -82,11 +88,14 @@ TEST(DateTimeTest, TestISO_8601BasicParsing)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));
+
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
 }
 
 TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.000Z";
+    const char* utcOffsetVersion = "2002-10-02T08:05:09.000+00:00";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -97,11 +106,14 @@ TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
+
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
 TEST(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
 {
     const char* gmtDateStr = "20021002T080509000Z";
+    const char* utcOffsetVersion = "20021002T080509000+0000";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601_BASIC);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -112,6 +124,8 @@ TEST(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ("20021002T080509Z", gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));
+
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
 }
 
 TEST(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)

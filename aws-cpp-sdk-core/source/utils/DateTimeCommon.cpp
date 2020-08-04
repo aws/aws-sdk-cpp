@@ -377,108 +377,13 @@ static int GetMonthNumberFromStr(const char* timeString, size_t startIndex, size
     }
 }
 
-//Detects whether or not the passed in timezone string is a UTC zone.
-static bool IsUtcTimeZone(const char* str)
-{
-    size_t len = strlen(str);
-    if (len < 3)
-    {
-        return false;
-    }
-
-    int index = 0;
-    char c = str[index];
-    switch (c)
-    {
-    case 'U':
-    case 'u':
-        c = str[++index];
-        switch(c)
-        {
-        case 'T':
-        case 't':
-            c = str[++index];
-            switch(c)
-            {
-            case 'C':
-            case 'c':
-                return true;
-            default:
-                return false;
-            }
-
-        case 'C':
-        case 'c':
-            c = str[++index];
-            switch (c)
-            {
-            case 'T':
-            case 't':
-                return true;
-            default:
-                return false;
-            }
-        default:
-            return false;
-        }
-    case 'G':
-    case 'g':
-        c = str[++index];
-        switch (c)
-        {
-        case 'M':
-        case 'm':
-            c = str[++index];
-            switch (c)
-            {
-            case 'T':
-            case 't':
-                return true;
-            default:
-                return false;
-            }
-        default:
-            return false;
-        }
-    case '+':
-    case '-':
-        c = str[++index];
-        switch (c)
-        {
-        case '0':
-            c = str[++index];
-            switch (c)
-            {
-            case '0':
-                c = str[++index];
-                switch (c)
-                {
-                case '0':
-                    return true;
-                default:
-                    return false;
-                }
-            default:
-                return false;
-            }
-        default:
-            return false;
-        }
-    case 'Z':
-        return true;
-    default:
-        return false;
-    }
-
-}
-
 class DateParser
 {
 public:
     DateParser(const char* toParse) : m_error(false), m_toParse(toParse), m_utcAssumed(true)
     {
         m_parsedTimestamp = CreateZeroedTm();
-        memset(m_tz, 0, 5);
+        memset(m_tz, 0, 7);
     }
 
     virtual ~DateParser() = default;
@@ -494,7 +399,8 @@ protected:
     const char* m_toParse;
     std::tm m_parsedTimestamp;
     bool m_utcAssumed;
-    char m_tz[5];
+    // The size should be at least one byte greater than the maximum possible size so that we could use the last char to indicate the end of the string.
+    char m_tz[7];
 };
 
 static const int MAX_LEN = 100;
@@ -671,11 +577,17 @@ public:
                     }
                     break;
                 case 8:
-                    if (isalpha(c) && (index - stateStartIndex) < 5)
+                    if ((isalnum(c) || c == '+' || c == '-') && (index - stateStartIndex < 5))
                     {
                         m_tz[index - stateStartIndex] = c;
                     }
-
+                    else
+                    {
+                        m_error = true;
+                    }
+                    break;
+                default:
+                    m_error = true;
                     break;
             }
 
@@ -684,7 +596,7 @@ public:
 
         if (m_tz[0] != 0)
         {
-           m_utcAssumed = IsUtcTimeZone(m_tz);
+           m_utcAssumed = IsUTCTimeZoneDesignator(m_tz);
         }
 
         m_error = (m_error || m_state != finalState);
@@ -693,6 +605,101 @@ public:
     int GetState() const { return m_state; }
 
 private:
+    //Detects whether or not the passed in timezone string is a UTC zone.
+    static bool IsUTCTimeZoneDesignator(const char* str)
+    {
+        size_t len = strlen(str);
+        if (len < 3)
+        {
+            return false;
+        }
+
+        int index = 0;
+        char c = str[index];
+        switch (c)
+        {
+        case 'U':
+        case 'u':
+            c = str[++index];
+            switch(c)
+            {
+            case 'T':
+            case 't':
+                c = str[++index];
+                switch(c)
+                {
+                case 'C':
+                case 'c':
+                    return true;
+                default:
+                    return false;
+                }
+
+            case 'C':
+            case 'c':
+                c = str[++index];
+                switch (c)
+                {
+                case 'T':
+                case 't':
+                    return true;
+                default:
+                    return false;
+                }
+            default:
+                return false;
+            }
+        case 'G':
+        case 'g':
+            c = str[++index];
+            switch (c)
+            {
+            case 'M':
+            case 'm':
+                c = str[++index];
+                switch (c)
+                {
+                case 'T':
+                case 't':
+                    return true;
+                default:
+                    return false;
+                }
+            default:
+                return false;
+            }
+        case '+':
+        case '-':
+            c = str[++index];
+            switch (c)
+            {
+            case '0':
+                c = str[++index];
+                switch (c)
+                {
+                case '0':
+                    c = str[++index];
+                    switch (c)
+                    {
+                    case '0':
+                        return true;
+                    default:
+                        return false;
+                    }
+                default:
+                    return false;
+                }
+            default:
+                return false;
+            }
+        case 'Z':
+            return true;
+        default:
+            return false;
+        }
+
+    }
+
     int m_state;
 };
 
@@ -811,9 +818,10 @@ public:
 
                     break;
                 case 5:
-                    if (c == 'Z' && index - stateStartIndex == 2)
+                    if ((c == 'Z' || c == '+' || c == '-' ) && (index - stateStartIndex == 2))
                     {
-                        m_state = finalState;
+                        m_tz[0] = c;
+                        m_state = 7;
                         stateStartIndex = index + 1;
                     }
                     else if (c == '.' && index - stateStartIndex == 2)
@@ -832,9 +840,10 @@ public:
 
                     break;
                 case 6:
-                    if (c == 'Z')
+                    if ((c == 'Z' || c == '+' || c == '-' ) && (index - stateStartIndex == 3))
                     {
-                        m_state = finalState;
+                        m_tz[0] = c;
+                        m_state = 7;
                         stateStartIndex = index + 1;
                     }
                     else if(!isdigit(c))
@@ -842,15 +851,60 @@ public:
                         m_error = true;
                     }
                     break;
+                case 7:
+                    if ((isdigit(c) || c == ':') && (index - stateStartIndex < 5))
+                    {
+                        m_tz[1 + index - stateStartIndex] = c;
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+                    break;
+                default:
+                    m_error = true;
+                    break;
             }
             index++;
+        }
+
+        if (m_tz[0] != 0)
+        {
+            m_utcAssumed = IsUTCTimeZoneDesignator(m_tz);
         }
 
         m_error = (m_error || m_state != finalState);
     }
 
-
 private:
+    //Detects whether or not the passed in timezone string is a UTC zone.
+    static bool IsUTCTimeZoneDesignator(const char* str)
+    {
+        size_t len = strlen(str);
+
+        if (len > 0)
+        {
+            if (len == 1 && str[0] == 'Z')
+            {
+                return true;
+            }
+
+            if (len == 6 && str[0] == '+'
+                         && str[1] == '0'
+                         && str[2] == '0'
+                         && str[3] == ':'
+                         && str[4] == '0'
+                         && str[5] == '0')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        return false;
+    }
+
     int m_state;
 };
 
@@ -983,11 +1037,23 @@ public:
                     break;
                 // On TZ: Z or 000Z
                 case 6:
-                    if (c == 'Z' && (index - stateStartIndex == 0 || index - stateStartIndex == 3))
+                    if ((c == 'Z' || c == '+' || c == '-' ) && (index - stateStartIndex == 0 || index - stateStartIndex == 3))
                     {
-                        m_state = finalState;
+                        m_tz[0] = c;
+                        m_state = 7;
+                        stateStartIndex = index + 1;
                     }
                     else if (!isdigit(c) || index - stateStartIndex > 3)
+                    {
+                        m_error = true;
+                    }
+                    break;
+                case 7:
+                    if ((isdigit(c) || c == ':') && (index - stateStartIndex < 5))
+                    {
+                        m_tz[1 + index - stateStartIndex] = c;
+                    }
+                    else
                     {
                         m_error = true;
                     }
@@ -999,11 +1065,42 @@ public:
             index++;
         }
 
+        if (m_tz[0] != 0)
+        {
+            m_utcAssumed = IsUTCTimeZoneDesignator(m_tz);
+        }
+
         m_error = (m_error || m_state != finalState);
     }
 
-
 private:
+    //Detects whether or not the passed in timezone string is a UTC zone.
+    static bool IsUTCTimeZoneDesignator(const char* str)
+    {
+        size_t len = strlen(str);
+
+        if (len > 0)
+        {
+            if (len == 1 && str[0] == 'Z')
+            {
+                return true;
+            }
+
+            if (len == 5 && str[0] == '+'
+                         && str[1] == '0'
+                         && str[2] == '0'
+                         && str[3] == '0'
+                         && str[4] == '0')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        return false;
+    }
+
     int m_state;
 };
 
