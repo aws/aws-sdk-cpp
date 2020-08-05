@@ -208,9 +208,8 @@ namespace Model
    * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/eventbridge">Amazon
    * EventBridge Schema</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/firewall-manager">AWS Firewall Manager</a>
-   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/frauddetector">Amazon
-   * Fraud Detector</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/fsx">Amazon FSx</a> </p> </li> <li> <p> <a
+   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/s3/?id=docs_gateway#amazon-s3-glacier">Amazon
    * S3 Glacier</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/global-accelerator">AWS Global Accelerator</a>

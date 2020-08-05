@@ -209,7 +209,7 @@ namespace Model
          * system from a backup if an issue arises with the original file system.</p>
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
          * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
@@ -245,7 +245,7 @@ namespace Model
          * system from a backup if an issue arises with the original file system.</p>
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
          * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
@@ -283,7 +283,7 @@ namespace Model
          * system from a backup if an issue arises with the original file system.</p>
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
          * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working

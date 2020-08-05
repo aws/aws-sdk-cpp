@@ -548,11 +548,11 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 100,000 standard topics (at most 1,000 FIFO topics). For more information,
-         * see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This
-         * action is idempotent, so if the requester already owns a topic with the
-         * specified name, that topic's ARN is returned without creating a new
-         * topic.</p><p><h3>See Also:</h3>   <a
+         * most 100,000 topics. For more information, see <a
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
+         * idempotent, so if the requester already owns a topic with the specified name,
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
          * Reference</a></p>
          */
@@ -560,11 +560,11 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 100,000 standard topics (at most 1,000 FIFO topics). For more information,
-         * see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This
-         * action is idempotent, so if the requester already owns a topic with the
-         * specified name, that topic's ARN is returned without creating a new
-         * topic.</p><p><h3>See Also:</h3>   <a
+         * most 100,000 topics. For more information, see <a
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
+         * idempotent, so if the requester already owns a topic with the specified name,
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
          * Reference</a></p>
          *
@@ -574,11 +574,11 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 100,000 standard topics (at most 1,000 FIFO topics). For more information,
-         * see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This
-         * action is idempotent, so if the requester already owns a topic with the
-         * specified name, that topic's ARN is returned without creating a new
-         * topic.</p><p><h3>See Also:</h3>   <a
+         * most 100,000 topics. For more information, see <a
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
+         * idempotent, so if the requester already owns a topic with the specified name,
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
          * Reference</a></p>
          *

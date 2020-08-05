@@ -38,7 +38,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -46,7 +46,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * The name is case sensitive. If you try to create a vocabulary with the same name
      * as a previous vocabulary you will receive a <code>ConflictException</code>
      * error.</p>
      */

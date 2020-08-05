@@ -72,94 +72,99 @@ namespace Model
 
 
     /**
-     * <p>The language code for the text file used to update the custom vocabulary. US
-     * English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+     * <p>The language code for the language of the text file used to update the custom
+     * vocabulary. US English (en-US) is the only language supported in Amazon
+     * Transcribe Medical.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code for the text file used to update the custom vocabulary. US
-     * English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+     * <p>The language code for the language of the text file used to update the custom
+     * vocabulary. US English (en-US) is the only language supported in Amazon
+     * Transcribe Medical.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code for the text file used to update the custom vocabulary. US
-     * English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+     * <p>The language code for the language of the text file used to update the custom
+     * vocabulary. US English (en-US) is the only language supported in Amazon
+     * Transcribe Medical.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code for the text file used to update the custom vocabulary. US
-     * English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+     * <p>The language code for the language of the text file used to update the custom
+     * vocabulary. US English (en-US) is the only language supported in Amazon
+     * Transcribe Medical.</p>
      */
     inline UpdateMedicalVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the text file used to update the custom vocabulary. US
-     * English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+     * <p>The language code for the language of the text file used to update the custom
+     * vocabulary. US English (en-US) is the only language supported in Amazon
+     * Transcribe Medical.</p>
      */
     inline UpdateMedicalVocabularyResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time the vocabulary was updated.</p>
+     * <p>The date and time that the vocabulary was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time the vocabulary was updated.</p>
+     * <p>The date and time that the vocabulary was updated.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time the vocabulary was updated.</p>
+     * <p>The date and time that the vocabulary was updated.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time the vocabulary was updated.</p>
+     * <p>The date and time that the vocabulary was updated.</p>
      */
     inline UpdateMedicalVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time the vocabulary was updated.</p>
+     * <p>The date and time that the vocabulary was updated.</p>
      */
     inline UpdateMedicalVocabularyResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
      * <p>The processing state of the update to the vocabulary. When the
-     * <code>VocabularyState</code> field is <code>READY</code> the vocabulary is ready
-     * to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+     * <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is
+     * ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of the update to the vocabulary. When the
-     * <code>VocabularyState</code> field is <code>READY</code> the vocabulary is ready
-     * to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+     * <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is
+     * ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of the update to the vocabulary. When the
-     * <code>VocabularyState</code> field is <code>READY</code> the vocabulary is ready
-     * to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+     * <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is
+     * ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of the update to the vocabulary. When the
-     * <code>VocabularyState</code> field is <code>READY</code> the vocabulary is ready
-     * to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+     * <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is
+     * ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline UpdateMedicalVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of the update to the vocabulary. When the
-     * <code>VocabularyState</code> field is <code>READY</code> the vocabulary is ready
-     * to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+     * <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is
+     * ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline UpdateMedicalVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
 

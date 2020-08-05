@@ -35,6 +35,7 @@ TranscriptionJob::TranscriptionJob() :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
     m_contentRedactionHasBeenSet(false)
 {
@@ -57,6 +58,7 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
     m_contentRedactionHasBeenSet(false)
 {
@@ -149,6 +151,13 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelSettings"))
+  {
+    m_modelSettings = jsonValue.GetObject("ModelSettings");
+
+    m_modelSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("JobExecutionSettings"))
   {
     m_jobExecutionSettings = jsonValue.GetObject("JobExecutionSettings");
@@ -233,6 +242,12 @@ JsonValue TranscriptionJob::Jsonize() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());
+
+  }
+
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
 
   }
 

@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both

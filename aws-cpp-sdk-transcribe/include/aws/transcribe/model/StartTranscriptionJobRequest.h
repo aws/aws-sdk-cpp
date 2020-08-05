@@ -11,6 +11,7 @@
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Settings.h>
+#include <aws/transcribe/model/ModelSettings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <utility>
@@ -41,66 +42,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
@@ -623,6 +632,43 @@ namespace Model
 
 
     /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Provides information about how a transcription job is executed. Use this
      * field to indicate that the job can be queued for deferred execution if the
      * concurrency limit is reached and there are no slots available to immediately run
@@ -726,6 +772,9 @@ namespace Model
 
     Settings m_settings;
     bool m_settingsHasBeenSet;
+
+    ModelSettings m_modelSettings;
+    bool m_modelSettingsHasBeenSet;
 
     JobExecutionSettings m_jobExecutionSettings;
     bool m_jobExecutionSettingsHasBeenSet;

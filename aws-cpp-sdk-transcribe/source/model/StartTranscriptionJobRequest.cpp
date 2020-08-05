@@ -24,6 +24,7 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_outputBucketNameHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
     m_contentRedactionHasBeenSet(false)
 {
@@ -76,6 +77,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());
+
+  }
+
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
 
   }
 

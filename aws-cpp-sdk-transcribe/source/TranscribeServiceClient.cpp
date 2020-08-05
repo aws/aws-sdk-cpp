@@ -20,19 +20,23 @@
 #include <aws/transcribe/TranscribeServiceClient.h>
 #include <aws/transcribe/TranscribeServiceEndpoint.h>
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
+#include <aws/transcribe/model/CreateLanguageModelRequest.h>
 #include <aws/transcribe/model/CreateMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/CreateVocabularyRequest.h>
 #include <aws/transcribe/model/CreateVocabularyFilterRequest.h>
+#include <aws/transcribe/model/DeleteLanguageModelRequest.h>
 #include <aws/transcribe/model/DeleteMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/DeleteTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyFilterRequest.h>
+#include <aws/transcribe/model/DescribeLanguageModelRequest.h>
 #include <aws/transcribe/model/GetMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/GetTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetVocabularyRequest.h>
 #include <aws/transcribe/model/GetVocabularyFilterRequest.h>
+#include <aws/transcribe/model/ListLanguageModelsRequest.h>
 #include <aws/transcribe/model/ListMedicalTranscriptionJobsRequest.h>
 #include <aws/transcribe/model/ListMedicalVocabulariesRequest.h>
 #include <aws/transcribe/model/ListTranscriptionJobsRequest.h>
@@ -116,6 +120,33 @@ void TranscribeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateLanguageModelOutcome TranscribeServiceClient::CreateLanguageModel(const CreateLanguageModelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateLanguageModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLanguageModelOutcomeCallable TranscribeServiceClient::CreateLanguageModelCallable(const CreateLanguageModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLanguageModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLanguageModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::CreateLanguageModelAsync(const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLanguageModelAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::CreateLanguageModelAsyncHelper(const CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLanguageModel(request), context);
+}
+
 CreateMedicalVocabularyOutcome TranscribeServiceClient::CreateMedicalVocabulary(const CreateMedicalVocabularyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -195,6 +226,33 @@ void TranscribeServiceClient::CreateVocabularyFilterAsync(const CreateVocabulary
 void TranscribeServiceClient::CreateVocabularyFilterAsyncHelper(const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateVocabularyFilter(request), context);
+}
+
+DeleteLanguageModelOutcome TranscribeServiceClient::DeleteLanguageModel(const DeleteLanguageModelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteLanguageModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLanguageModelOutcomeCallable TranscribeServiceClient::DeleteLanguageModelCallable(const DeleteLanguageModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLanguageModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLanguageModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DeleteLanguageModelAsync(const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLanguageModelAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DeleteLanguageModelAsyncHelper(const DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLanguageModel(request), context);
 }
 
 DeleteMedicalTranscriptionJobOutcome TranscribeServiceClient::DeleteMedicalTranscriptionJob(const DeleteMedicalTranscriptionJobRequest& request) const
@@ -332,6 +390,33 @@ void TranscribeServiceClient::DeleteVocabularyFilterAsyncHelper(const DeleteVoca
   handler(this, request, DeleteVocabularyFilter(request), context);
 }
 
+DescribeLanguageModelOutcome TranscribeServiceClient::DescribeLanguageModel(const DescribeLanguageModelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeLanguageModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLanguageModelOutcomeCallable TranscribeServiceClient::DescribeLanguageModelCallable(const DescribeLanguageModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLanguageModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLanguageModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DescribeLanguageModelAsync(const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLanguageModelAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DescribeLanguageModelAsyncHelper(const DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLanguageModel(request), context);
+}
+
 GetMedicalTranscriptionJobOutcome TranscribeServiceClient::GetMedicalTranscriptionJob(const GetMedicalTranscriptionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -465,6 +550,33 @@ void TranscribeServiceClient::GetVocabularyFilterAsync(const GetVocabularyFilter
 void TranscribeServiceClient::GetVocabularyFilterAsyncHelper(const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetVocabularyFilter(request), context);
+}
+
+ListLanguageModelsOutcome TranscribeServiceClient::ListLanguageModels(const ListLanguageModelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListLanguageModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLanguageModelsOutcomeCallable TranscribeServiceClient::ListLanguageModelsCallable(const ListLanguageModelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLanguageModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLanguageModels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::ListLanguageModelsAsync(const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLanguageModelsAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::ListLanguageModelsAsyncHelper(const ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLanguageModels(request), context);
 }
 
 ListMedicalTranscriptionJobsOutcome TranscribeServiceClient::ListMedicalTranscriptionJobs(const ListMedicalTranscriptionJobsRequest& request) const

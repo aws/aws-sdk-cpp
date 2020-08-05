@@ -13,6 +13,7 @@
 #include <aws/transcribe/model/Transcript.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/Settings.h>
+#include <aws/transcribe/model/ModelSettings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <utility>
@@ -656,6 +657,37 @@ namespace Model
 
 
     /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+
+    /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
+
+    /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
+
+    /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
+
+    /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline TranscriptionJob& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
+
+    /**
+     * <p>An object containing the details of your custom language model.</p>
+     */
+    inline TranscriptionJob& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Provides information about how a transcription job is executed.</p>
      */
     inline const JobExecutionSettings& GetJobExecutionSettings() const{ return m_jobExecutionSettings; }
@@ -759,6 +791,9 @@ namespace Model
 
     Settings m_settings;
     bool m_settingsHasBeenSet;
+
+    ModelSettings m_modelSettings;
+    bool m_modelSettingsHasBeenSet;
 
     JobExecutionSettings m_jobExecutionSettings;
     bool m_jobExecutionSettingsHasBeenSet;

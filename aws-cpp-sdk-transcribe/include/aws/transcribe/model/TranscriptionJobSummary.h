@@ -11,6 +11,7 @@
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
 #include <aws/transcribe/model/OutputLocationType.h>
 #include <aws/transcribe/model/ContentRedaction.h>
+#include <aws/transcribe/model/ModelSettings.h>
 #include <utility>
 
 namespace Aws
@@ -403,6 +404,25 @@ namespace Model
      */
     inline TranscriptionJobSummary& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
+
+    
+    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+
+    
+    inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
+
+    
+    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
+
+    
+    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
+
+    
+    inline TranscriptionJobSummary& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
+
+    
+    inline TranscriptionJobSummary& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -431,6 +451,9 @@ namespace Model
 
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet;
+
+    ModelSettings m_modelSettings;
+    bool m_modelSettingsHasBeenSet;
   };
 
 } // namespace Model

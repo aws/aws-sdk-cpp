@@ -30,7 +30,8 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
     m_failureReasonHasBeenSet(false),
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     m_contentRedactionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelSettings"))
+  {
+    m_modelSettings = jsonValue.GetObject("ModelSettings");
+
+    m_modelSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue TranscriptionJobSummary::Jsonize() const
   if(m_contentRedactionHasBeenSet)
   {
    payload.WithObject("ContentRedaction", m_contentRedaction.Jsonize());
+
+  }
+
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
 
   }
 

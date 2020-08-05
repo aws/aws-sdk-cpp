@@ -63,121 +63,121 @@ namespace Model
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline ListMedicalVocabulariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline ListMedicalVocabulariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ListMedicalVocabularies</code> operation returns a page of
-     * vocabularies at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     * page size, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalVocabularies</code> operation to return the next page of
-     * jobs.</p>
+     * vocabularies at a time. You set the maximum number of vocabularies to return on
+     * a page with the <code>MaxResults</code> parameter. If there are more jobs in the
+     * list will fit on a page, Amazon Transcribe Medical returns the
+     * <code>NextPage</code> token. To return the next page of vocabularies, include
+     * the token in the next request to the <code>ListMedicalVocabularies</code>
+     * operation .</p>
      */
     inline ListMedicalVocabulariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline const Aws::Vector<VocabularyInfo>& GetVocabularies() const{ return m_vocabularies; }
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline void SetVocabularies(const Aws::Vector<VocabularyInfo>& value) { m_vocabularies = value; }
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline void SetVocabularies(Aws::Vector<VocabularyInfo>&& value) { m_vocabularies = std::move(value); }
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline ListMedicalVocabulariesResult& WithVocabularies(const Aws::Vector<VocabularyInfo>& value) { SetVocabularies(value); return *this;}
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline ListMedicalVocabulariesResult& WithVocabularies(Aws::Vector<VocabularyInfo>&& value) { SetVocabularies(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline ListMedicalVocabulariesResult& AddVocabularies(const VocabularyInfo& value) { m_vocabularies.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects that describe the vocabularies that match the search
-     * criteria in the request.</p>
+     * <p>A list of objects that describe the vocabularies that match your search
+     * criteria.</p>
      */
     inline ListMedicalVocabulariesResult& AddVocabularies(VocabularyInfo&& value) { m_vocabularies.push_back(std::move(value)); return *this; }
 

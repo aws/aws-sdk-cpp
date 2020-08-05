@@ -36,108 +36,113 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline UpdateMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline UpdateMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive. If you try
-     * to update a vocabulary with the same name as a previous vocabulary you will
-     * receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the vocabulary to update. The name is case sensitive. If you try
+     * to update a vocabulary with the same name as a vocabulary you've already made,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline UpdateMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline UpdateMedicalVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the entries in the updated vocabulary. US English
-     * (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+     * <p>The language code of the language used for the entries in the updated
+     * vocabulary. US English (en-US) is the only valid language code in Amazon
+     * Transcribe Medical.</p>
      */
     inline UpdateMedicalVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -147,14 +152,13 @@ namespace Model
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -164,14 +168,13 @@ namespace Model
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -181,14 +184,13 @@ namespace Model
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -198,14 +200,13 @@ namespace Model
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -215,14 +216,13 @@ namespace Model
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -232,14 +232,13 @@ namespace Model
     inline UpdateMedicalVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -249,14 +248,13 @@ namespace Model
     inline UpdateMedicalVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 location of the text file containing the definition of the
-     * custom vocabulary. The URI must be in the same AWS region as the API endpoint
-     * you are calling. You can see the fields you need to enter for you Amazon S3
-     * location in the example URI here:</p> <p> <code>
+     * <p>The location in Amazon S3 of the text file that contains the you use for your
+     * custom vocabulary. The URI must be in the same AWS Region as the resource that
+     * you are calling. The following is the format for a URI:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
      * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * </p> <p>For more information about Amazon S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a

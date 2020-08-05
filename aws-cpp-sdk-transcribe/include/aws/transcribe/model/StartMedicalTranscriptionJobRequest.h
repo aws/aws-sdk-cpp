@@ -41,74 +41,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account. If you try to create a medical transcription job with the same name as
-     * a previous medical transcription job you will receive a
-     * <code>ConflictException</code> error.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
