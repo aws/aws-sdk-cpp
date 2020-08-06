@@ -86,7 +86,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
+     * 64,000 IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
@@ -108,7 +108,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
+     * 64,000 IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
@@ -130,7 +130,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
+     * 64,000 IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
@@ -152,7 +152,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
+     * 64,000 IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.

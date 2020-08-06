@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/CampaignConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/personalize/model/CampaignUpdateSummary.h>
 #include <utility>
@@ -187,6 +188,37 @@ namespace Model
      * per second.</p>
      */
     inline Campaign& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
+
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline Campaign& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
+
+    /**
+     * <p>The configuration details of a campaign.</p>
+     */
+    inline Campaign& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
 
 
     /**
@@ -388,6 +420,9 @@ namespace Model
 
     int m_minProvisionedTPS;
     bool m_minProvisionedTPSHasBeenSet;
+
+    CampaignConfig m_campaignConfig;
+    bool m_campaignConfigHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

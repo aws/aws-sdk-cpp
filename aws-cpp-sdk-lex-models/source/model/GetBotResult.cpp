@@ -17,6 +17,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetBotResult::GetBotResult() : 
+    m_enableModelImprovements(false),
+    m_nluIntentConfidenceThreshold(0.0),
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
@@ -26,6 +28,8 @@ GetBotResult::GetBotResult() :
 }
 
 GetBotResult::GetBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_enableModelImprovements(false),
+    m_nluIntentConfidenceThreshold(0.0),
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
@@ -57,6 +61,18 @@ GetBotResult& GetBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     {
       m_intents.push_back(intentsJsonList[intentsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("enableModelImprovements"))
+  {
+    m_enableModelImprovements = jsonValue.GetBool("enableModelImprovements");
+
+  }
+
+  if(jsonValue.ValueExists("nluIntentConfidenceThreshold"))
+  {
+    m_nluIntentConfidenceThreshold = jsonValue.GetDouble("nluIntentConfidenceThreshold");
+
   }
 
   if(jsonValue.ValueExists("clarificationPrompt"))

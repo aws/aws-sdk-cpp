@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes association information for an Elastic IP address (IPv4
-   * only).</p><p><h3>See Also:</h3>   <a
+   * <p>Describes association information for an Elastic IP address (IPv4 only), or a
+   * Carrier IP address (for a network interface which resides in a subnet in a
+   * Wavelength Zone).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation">AWS
    * API Reference</a></p>
    */
@@ -205,44 +206,109 @@ namespace Model
 
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     * <p>The address of the Elastic IP address or Carrier IP address bound to the
+     * network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline bool CarrierIpHasBeenSet() const { return m_carrierIpHasBeenSet; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(const Aws::String& value) { m_carrierIpHasBeenSet = true; m_carrierIp = value; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(Aws::String&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::move(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(const char* value) { m_carrierIpHasBeenSet = true; m_carrierIp.assign(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
 
   private:
 
@@ -260,6 +326,9 @@ namespace Model
 
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
+    Aws::String m_carrierIp;
+    bool m_carrierIpHasBeenSet;
   };
 
 } // namespace Model

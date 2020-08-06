@@ -6,11 +6,14 @@
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex/model/IntentConfidence.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lex/model/SentimentResponse.h>
 #include <aws/lex/model/MessageFormatType.h>
 #include <aws/lex/model/DialogState.h>
 #include <aws/lex/model/ResponseCard.h>
+#include <aws/lex/model/PredictedIntent.h>
 #include <utility>
 
 namespace Aws
@@ -71,6 +74,119 @@ namespace Model
      * <p>The current user intent that Amazon Lex is aware of.</p>
      */
     inline PostTextResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
+     * score may change based on improvements to the Amazon Lex natural language
+     * understanding (NLU) model.</p>
+     */
+    inline const IntentConfidence& GetNluIntentConfidence() const{ return m_nluIntentConfidence; }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
+     * score may change based on improvements to the Amazon Lex natural language
+     * understanding (NLU) model.</p>
+     */
+    inline void SetNluIntentConfidence(const IntentConfidence& value) { m_nluIntentConfidence = value; }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
+     * score may change based on improvements to the Amazon Lex natural language
+     * understanding (NLU) model.</p>
+     */
+    inline void SetNluIntentConfidence(IntentConfidence&& value) { m_nluIntentConfidence = std::move(value); }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
+     * score may change based on improvements to the Amazon Lex natural language
+     * understanding (NLU) model.</p>
+     */
+    inline PostTextResult& WithNluIntentConfidence(const IntentConfidence& value) { SetNluIntentConfidence(value); return *this;}
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
+     * score may change based on improvements to the Amazon Lex natural language
+     * understanding (NLU) model.</p>
+     */
+    inline PostTextResult& WithNluIntentConfidence(IntentConfidence&& value) { SetNluIntentConfidence(std::move(value)); return *this;}
+
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline const Aws::Vector<PredictedIntent>& GetAlternativeIntents() const{ return m_alternativeIntents; }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline void SetAlternativeIntents(const Aws::Vector<PredictedIntent>& value) { m_alternativeIntents = value; }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline void SetAlternativeIntents(Aws::Vector<PredictedIntent>&& value) { m_alternativeIntents = std::move(value); }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostTextResult& WithAlternativeIntents(const Aws::Vector<PredictedIntent>& value) { SetAlternativeIntents(value); return *this;}
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostTextResult& WithAlternativeIntents(Aws::Vector<PredictedIntent>&& value) { SetAlternativeIntents(std::move(value)); return *this;}
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostTextResult& AddAlternativeIntents(const PredictedIntent& value) { m_alternativeIntents.push_back(value); return *this; }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostTextResult& AddAlternativeIntents(PredictedIntent&& value) { m_alternativeIntents.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -819,9 +935,98 @@ namespace Model
      */
     inline PostTextResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline PostTextResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline PostTextResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p> <p>If you have enabled the new natural language
+     * understanding (NLU) model, you can use this to determine if the improvement is
+     * due to changes to the bot or changes to the NLU.</p> <p>For more information
+     * about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+     * parameter of the <code>PutBot</code> operation.</p>
+     */
+    inline PostTextResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+
   private:
 
     Aws::String m_intentName;
+
+    IntentConfidence m_nluIntentConfidence;
+
+    Aws::Vector<PredictedIntent> m_alternativeIntents;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
 
@@ -840,6 +1045,8 @@ namespace Model
     ResponseCard m_responseCard;
 
     Aws::String m_sessionId;
+
+    Aws::String m_botVersion;
   };
 
 } // namespace Model

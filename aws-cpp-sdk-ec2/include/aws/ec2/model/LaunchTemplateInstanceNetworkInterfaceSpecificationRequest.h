@@ -43,6 +43,47 @@ namespace Model
 
 
     /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
+
+
+    /**
      * <p>Associates a public IPv4 address with eth0 for a new network interface.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
@@ -552,6 +593,9 @@ namespace Model
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
+    bool m_associateCarrierIpAddress;
+    bool m_associateCarrierIpAddressHasBeenSet;
 
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;

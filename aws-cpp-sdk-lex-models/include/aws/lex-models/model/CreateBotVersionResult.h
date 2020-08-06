@@ -605,6 +605,28 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+
+    /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline CreateBotVersionResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
      * <p>Indicates whether utterances entered by the user should be sent to Amazon
      * Comprehend for sentiment analysis.</p>
      */
@@ -653,6 +675,8 @@ namespace Model
     Locale m_locale;
 
     bool m_childDirected;
+
+    bool m_enableModelImprovements;
 
     bool m_detectSentiment;
   };

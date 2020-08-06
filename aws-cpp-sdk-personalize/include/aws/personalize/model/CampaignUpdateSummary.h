@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/CampaignConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -103,6 +104,25 @@ namespace Model
      * per second that Amazon Personalize will support.</p>
      */
     inline CampaignUpdateSummary& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
+
+
+    
+    inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
+
+    
+    inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
+
+    
+    inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
+
+    
+    inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
+
+    
+    inline CampaignUpdateSummary& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
+
+    
+    inline CampaignUpdateSummary& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
 
 
     /**
@@ -285,6 +305,9 @@ namespace Model
 
     int m_minProvisionedTPS;
     bool m_minProvisionedTPSHasBeenSet;
+
+    CampaignConfig m_campaignConfig;
+    bool m_campaignConfigHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

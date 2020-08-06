@@ -25,7 +25,8 @@ NetworkInterfaceAssociation::NetworkInterfaceAssociation() :
     m_associationIdHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ NetworkInterfaceAssociation::NetworkInterfaceAssociation(const XmlNode& xmlNode)
     m_associationIdHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +77,12 @@ NetworkInterfaceAssociation& NetworkInterfaceAssociation::operator =(const XmlNo
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+      m_carrierIpHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -107,6 +115,11 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+
 }
 
 void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -130,6 +143,10 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
   if(m_publicIpHasBeenSet)
   {
       oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/BatchInferenceJobInput.h>
 #include <aws/personalize/model/BatchInferenceJobOutput.h>
+#include <aws/personalize/model/BatchInferenceJobConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -353,6 +354,43 @@ namespace Model
 
 
     /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline const BatchInferenceJobConfig& GetBatchInferenceJobConfig() const{ return m_batchInferenceJobConfig; }
+
+    /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline bool BatchInferenceJobConfigHasBeenSet() const { return m_batchInferenceJobConfigHasBeenSet; }
+
+    /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline void SetBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = value; }
+
+    /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline void SetBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = std::move(value); }
+
+    /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline BatchInferenceJob& WithBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { SetBatchInferenceJobConfig(value); return *this;}
+
+    /**
+     * <p>A string to string map of the configuration details of a batch inference
+     * job.</p>
+     */
+    inline BatchInferenceJob& WithBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { SetBatchInferenceJobConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the Amazon Identity and Access Management (IAM) role that
      * requested the batch inference job.</p>
      */
@@ -544,6 +582,9 @@ namespace Model
 
     BatchInferenceJobOutput m_jobOutput;
     bool m_jobOutputHasBeenSet;
+
+    BatchInferenceJobConfig m_batchInferenceJobConfig;
+    bool m_batchInferenceJobConfigHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

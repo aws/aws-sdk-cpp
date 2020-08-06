@@ -16,7 +16,8 @@ UpdateCampaignRequest::UpdateCampaignRequest() :
     m_campaignArnHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false)
+    m_minProvisionedTPSHasBeenSet(false),
+    m_campaignConfigHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String UpdateCampaignRequest::SerializePayload() const
   if(m_minProvisionedTPSHasBeenSet)
   {
    payload.WithInteger("minProvisionedTPS", m_minProvisionedTPS);
+
+  }
+
+  if(m_campaignConfigHasBeenSet)
+  {
+   payload.WithObject("campaignConfig", m_campaignConfig.Jsonize());
 
   }
 

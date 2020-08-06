@@ -21,6 +21,7 @@ namespace Model
 {
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() : 
+    m_carrierIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -28,6 +29,7 @@ InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() :
 }
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode) : 
+    m_carrierIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -41,6 +43,12 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
 
   if(!resultNode.IsNull())
   {
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+      m_carrierIpHasBeenSet = true;
+    }
     XmlNode ipOwnerIdNode = resultNode.FirstChild("ipOwnerId");
     if(!ipOwnerIdNode.IsNull())
     {
@@ -66,6 +74,11 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
 
 void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";
@@ -85,6 +98,10 @@ void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, 
 
 void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";

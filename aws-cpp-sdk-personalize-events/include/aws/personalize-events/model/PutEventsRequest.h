@@ -133,42 +133,66 @@ namespace Model
 
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>The session ID associated with the user's visit.</p>
+     * <p>The session ID associated with the user's visit. Your application generates
+     * the sessionId when a user first visits your website or uses your application.
+     * Amazon Personalize uses the sessionId to associate events with the user before
+     * they log in. For more information see <a>event-record-api</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 

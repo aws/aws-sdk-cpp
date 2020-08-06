@@ -156,6 +156,68 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+
+    /**
+     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
+     * model or the original NLU. True indicates that the bot is using the new model,
+     * otherwise, false.</p>
+     */
+    inline PutBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p>
+     */
+    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p>
+     */
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p>
+     */
+    inline PutBotResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
+
+
+    /**
      * <p> The prompts that Amazon Lex uses when it doesn't understand the user's
      * intent. For more information, see <a>PutBot</a>. </p>
      */
@@ -731,6 +793,10 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<Intent> m_intents;
+
+    bool m_enableModelImprovements;
+
+    double m_nluIntentConfidenceThreshold;
 
     Prompt m_clarificationPrompt;
 

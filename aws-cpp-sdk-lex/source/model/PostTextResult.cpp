@@ -38,6 +38,21 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("nluIntentConfidence"))
+  {
+    m_nluIntentConfidence = jsonValue.GetObject("nluIntentConfidence");
+
+  }
+
+  if(jsonValue.ValueExists("alternativeIntents"))
+  {
+    Array<JsonView> alternativeIntentsJsonList = jsonValue.GetArray("alternativeIntents");
+    for(unsigned alternativeIntentsIndex = 0; alternativeIntentsIndex < alternativeIntentsJsonList.GetLength(); ++alternativeIntentsIndex)
+    {
+      m_alternativeIntents.push_back(alternativeIntentsJsonList[alternativeIntentsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
@@ -95,6 +110,12 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
+
+  }
+
+  if(jsonValue.ValueExists("botVersion"))
+  {
+    m_botVersion = jsonValue.GetString("botVersion");
 
   }
 

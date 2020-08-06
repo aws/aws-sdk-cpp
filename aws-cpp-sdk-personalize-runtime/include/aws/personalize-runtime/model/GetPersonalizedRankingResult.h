@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize-runtime/model/PredictedItem.h>
 #include <utility>
 
@@ -75,9 +76,47 @@ namespace Model
      */
     inline GetPersonalizedRankingResult& AddPersonalizedRanking(PredictedItem&& value) { m_personalizedRanking.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetPersonalizedRankingResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetPersonalizedRankingResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetPersonalizedRankingResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+
   private:
 
     Aws::Vector<PredictedItem> m_personalizedRanking;
+
+    Aws::String m_recommendationId;
   };
 
 } // namespace Model

@@ -452,6 +452,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline const Aws::String& GetCarrierGatewayId() const{ return m_carrierGatewayId; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline bool CarrierGatewayIdHasBeenSet() const { return m_carrierGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const Aws::String& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = value; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(Aws::String&& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const char* value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline Route& WithCarrierGatewayId(const Aws::String& value) { SetCarrierGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline Route& WithCarrierGatewayId(Aws::String&& value) { SetCarrierGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the carrier gateway.</p>
+     */
+    inline Route& WithCarrierGatewayId(const char* value) { SetCarrierGatewayId(value); return *this;}
+
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -667,6 +708,9 @@ namespace Model
 
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet;
+
+    Aws::String m_carrierGatewayId;
+    bool m_carrierGatewayIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

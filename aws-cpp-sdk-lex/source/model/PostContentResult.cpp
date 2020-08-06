@@ -25,6 +25,8 @@ PostContentResult::PostContentResult() :
 PostContentResult::PostContentResult(PostContentResult&& toMove) : 
     m_contentType(std::move(toMove.m_contentType)),
     m_intentName(std::move(toMove.m_intentName)),
+    m_nluIntentConfidence(std::move(toMove.m_nluIntentConfidence)),
+    m_alternativeIntents(std::move(toMove.m_alternativeIntents)),
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
     m_sentimentResponse(std::move(toMove.m_sentimentResponse)),
@@ -34,6 +36,7 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_inputTranscript(std::move(toMove.m_inputTranscript)),
     m_audioStream(std::move(toMove.m_audioStream)),
+    m_botVersion(std::move(toMove.m_botVersion)),
     m_sessionId(std::move(toMove.m_sessionId))
 {
 }
@@ -47,6 +50,8 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
 
    m_contentType = std::move(toMove.m_contentType);
    m_intentName = std::move(toMove.m_intentName);
+   m_nluIntentConfidence = std::move(toMove.m_nluIntentConfidence);
+   m_alternativeIntents = std::move(toMove.m_alternativeIntents);
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
    m_sentimentResponse = std::move(toMove.m_sentimentResponse);
@@ -56,6 +61,7 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_slotToElicit = std::move(toMove.m_slotToElicit);
    m_inputTranscript = std::move(toMove.m_inputTranscript);
    m_audioStream = std::move(toMove.m_audioStream);
+   m_botVersion = std::move(toMove.m_botVersion);
    m_sessionId = std::move(toMove.m_sessionId);
 
    return *this;
@@ -83,6 +89,18 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(intentNameIter != headers.end())
   {
     m_intentName = intentNameIter->second;
+  }
+
+  const auto& nluIntentConfidenceIter = headers.find("x-amz-lex-nlu-intent-confidence");
+  if(nluIntentConfidenceIter != headers.end())
+  {
+    m_nluIntentConfidence = nluIntentConfidenceIter->second;
+  }
+
+  const auto& alternativeIntentsIter = headers.find("x-amz-lex-alternative-intents");
+  if(alternativeIntentsIter != headers.end())
+  {
+    m_alternativeIntents = alternativeIntentsIter->second;
   }
 
   const auto& slotsIter = headers.find("x-amz-lex-slots");
@@ -131,6 +149,12 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(inputTranscriptIter != headers.end())
   {
     m_inputTranscript = inputTranscriptIter->second;
+  }
+
+  const auto& botVersionIter = headers.find("x-amz-lex-bot-version");
+  if(botVersionIter != headers.end())
+  {
+    m_botVersion = botVersionIter->second;
   }
 
   const auto& sessionIdIter = headers.find("x-amz-lex-session-id");

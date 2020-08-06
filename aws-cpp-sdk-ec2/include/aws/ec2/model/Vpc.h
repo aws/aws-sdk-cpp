@@ -87,50 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline Vpc& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline Vpc& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC (or
-     * <code>default</code> if the default options are associated with the VPC).</p>
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
      */
     inline Vpc& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
 

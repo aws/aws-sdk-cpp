@@ -34,7 +34,8 @@ Address::Address() :
     m_publicIpv4PoolHasBeenSet(false),
     m_networkBorderGroupHasBeenSet(false),
     m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Address::Address(const XmlNode& xmlNode) :
     m_publicIpv4PoolHasBeenSet(false),
     m_networkBorderGroupHasBeenSet(false),
     m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -147,6 +149,12 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
     }
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+      m_carrierIpHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -225,6 +233,11 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+
 }
 
 void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -286,6 +299,10 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 }
 

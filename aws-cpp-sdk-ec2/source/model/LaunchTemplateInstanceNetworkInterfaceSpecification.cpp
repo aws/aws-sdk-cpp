@@ -21,6 +21,8 @@ namespace Model
 {
 
 LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetworkInterfaceSpecification() : 
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
     m_deleteOnTermination(false),
@@ -43,6 +45,8 @@ LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetwo
 }
 
 LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetworkInterfaceSpecification(const XmlNode& xmlNode) : 
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
     m_deleteOnTermination(false),
@@ -71,6 +75,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
 
   if(!resultNode.IsNull())
   {
+    XmlNode associateCarrierIpAddressNode = resultNode.FirstChild("associateCarrierIpAddress");
+    if(!associateCarrierIpAddressNode.IsNull())
+    {
+      m_associateCarrierIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associateCarrierIpAddressNode.GetText()).c_str()).c_str());
+      m_associateCarrierIpAddressHasBeenSet = true;
+    }
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("associatePublicIpAddress");
     if(!associatePublicIpAddressNode.IsNull())
     {
@@ -174,6 +184,11 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
 
 void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
+
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
@@ -259,6 +274,10 @@ void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OS
 
 void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";

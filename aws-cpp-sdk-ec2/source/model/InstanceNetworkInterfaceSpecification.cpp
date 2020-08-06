@@ -38,6 +38,8 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_interfaceTypeHasBeenSet(false)
 {
 }
@@ -60,6 +62,8 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -161,6 +165,12 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode associateCarrierIpAddressNode = resultNode.FirstChild("AssociateCarrierIpAddress");
+    if(!associateCarrierIpAddressNode.IsNull())
+    {
+      m_associateCarrierIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associateCarrierIpAddressNode.GetText()).c_str()).c_str());
+      m_associateCarrierIpAddressHasBeenSet = true;
+    }
     XmlNode interfaceTypeNode = resultNode.FirstChild("InterfaceType");
     if(!interfaceTypeNode.IsNull())
     {
@@ -250,6 +260,11 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
+
   if(m_interfaceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
@@ -322,6 +337,10 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
   }
   if(m_interfaceTypeHasBeenSet)
   {

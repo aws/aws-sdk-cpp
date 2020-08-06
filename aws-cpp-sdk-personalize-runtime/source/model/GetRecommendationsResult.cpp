@@ -37,6 +37,12 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("recommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("recommendationId");
+
+  }
+
 
 
   return *this;

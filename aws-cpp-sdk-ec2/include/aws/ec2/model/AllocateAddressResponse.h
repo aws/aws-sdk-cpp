@@ -150,37 +150,44 @@ namespace Model
 
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroup = value; }
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroup = std::move(value); }
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroup.assign(value); }
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised.</p>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * AWS advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 
@@ -288,6 +295,56 @@ namespace Model
     inline AllocateAddressResponse& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
 
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline void SetCarrierIp(const Aws::String& value) { m_carrierIp = value; }
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline void SetCarrierIp(Aws::String&& value) { m_carrierIp = std::move(value); }
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline void SetCarrierIp(const char* value) { m_carrierIp.assign(value); }
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline AllocateAddressResponse& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline AllocateAddressResponse& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The carrier IP address. This option is only available for network interfaces
+     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    inline AllocateAddressResponse& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -318,6 +375,8 @@ namespace Model
     Aws::String m_customerOwnedIp;
 
     Aws::String m_customerOwnedIpv4Pool;
+
+    Aws::String m_carrierIp;
 
     ResponseMetadata m_responseMetadata;
   };

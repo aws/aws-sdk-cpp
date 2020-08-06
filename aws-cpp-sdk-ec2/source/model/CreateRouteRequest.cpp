@@ -22,6 +22,7 @@ CreateRouteRequest::CreateRouteRequest() :
     m_natGatewayIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
     m_localGatewayIdHasBeenSet(false),
+    m_carrierGatewayIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false)
@@ -80,6 +81,11 @@ Aws::String CreateRouteRequest::SerializePayload() const
   if(m_localGatewayIdHasBeenSet)
   {
     ss << "LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
+  }
+
+  if(m_carrierGatewayIdHasBeenSet)
+  {
+    ss << "CarrierGatewayId=" << StringUtils::URLEncode(m_carrierGatewayId.c_str()) << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)

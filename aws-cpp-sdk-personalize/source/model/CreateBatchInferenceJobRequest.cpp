@@ -20,7 +20,8 @@ CreateBatchInferenceJobRequest::CreateBatchInferenceJobRequest() :
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_batchInferenceJobConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String CreateBatchInferenceJobRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_batchInferenceJobConfigHasBeenSet)
+  {
+   payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
 
   }
 

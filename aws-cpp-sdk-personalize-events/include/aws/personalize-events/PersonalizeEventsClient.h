@@ -63,7 +63,10 @@ namespace Model
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
 
   /**
-   * <p/>
+   * <p>Amazon Personalize can consume real-time user event data, such as
+   * <i>stream</i> or <i>click</i> data, and use it for model training either alone
+   * or combined with historical data. For more information see
+   * <a>recording-events</a>.</p>
    */
   class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient
   {
@@ -95,14 +98,16 @@ namespace Model
 
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
+         * <p>Records user interaction event data. For more information see
+         * <a>event-record-api</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
          * API Reference</a></p>
          */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
+         * <p>Records user interaction event data. For more information see
+         * <a>event-record-api</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
          * API Reference</a></p>
          *
@@ -111,7 +116,8 @@ namespace Model
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
+         * <p>Records user interaction event data. For more information see
+         * <a>event-record-api</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
          * API Reference</a></p>
          *

@@ -592,19 +592,21 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p>  <p>The
-         * dataset import job replaces any previous data in the dataset.</p> 
-         * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
-         * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
-         * dataset import job. The dataset import is complete when the status shows as
-         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> 
-         * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p>  <p class="title"> <b>Related
-         * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * role that has permission to read from the data source, as Amazon Personalize
+         * makes a copy of your data and processes it in an internal AWS system.</p>
+         *  <p>The dataset import job replaces any previous data in the
+         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          */
@@ -614,19 +616,21 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p>  <p>The
-         * dataset import job replaces any previous data in the dataset.</p> 
-         * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
-         * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
-         * dataset import job. The dataset import is complete when the status shows as
-         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> 
-         * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p>  <p class="title"> <b>Related
-         * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * role that has permission to read from the data source, as Amazon Personalize
+         * makes a copy of your data and processes it in an internal AWS system.</p>
+         *  <p>The dataset import job replaces any previous data in the
+         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          *
@@ -638,19 +642,21 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p>  <p>The
-         * dataset import job replaces any previous data in the dataset.</p> 
-         * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
-         * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
-         * dataset import job. The dataset import is complete when the status shows as
-         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> 
-         * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p>  <p class="title"> <b>Related
-         * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * role that has permission to read from the data source, as Amazon Personalize
+         * makes a copy of your data and processes it in an internal AWS system.</p>
+         *  <p>The dataset import job replaces any previous data in the
+         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          *
@@ -741,16 +747,18 @@ namespace Model
         virtual void CreateEventTrackerAsync(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see Using Filters with
-         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFilterOutcome CreateFilter(const Model::CreateFilterRequest& request) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see Using Filters with
-         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          *
@@ -759,8 +767,9 @@ namespace Model
         virtual Model::CreateFilterOutcomeCallable CreateFilterCallable(const Model::CreateFilterRequest& request) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see Using Filters with
-         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          *

@@ -28,6 +28,7 @@ BatchInferenceJob::BatchInferenceJob() :
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
+    m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -45,6 +46,7 @@ BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) :
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
+    m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -109,6 +111,13 @@ BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
     m_jobOutput = jsonValue.GetObject("jobOutput");
 
     m_jobOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchInferenceJobConfig"))
+  {
+    m_batchInferenceJobConfig = jsonValue.GetObject("batchInferenceJobConfig");
+
+    m_batchInferenceJobConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -191,6 +200,12 @@ JsonValue BatchInferenceJob::Jsonize() const
   if(m_jobOutputHasBeenSet)
   {
    payload.WithObject("jobOutput", m_jobOutput.Jsonize());
+
+  }
+
+  if(m_batchInferenceJobConfigHasBeenSet)
+  {
+   payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
 
   }
 

@@ -637,6 +637,43 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
+
+
+    /**
      * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
      * specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
@@ -753,6 +790,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    bool m_associateCarrierIpAddress;
+    bool m_associateCarrierIpAddressHasBeenSet;
 
     Aws::String m_interfaceType;
     bool m_interfaceTypeHasBeenSet;

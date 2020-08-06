@@ -16,6 +16,10 @@ PutBotRequest::PutBotRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_intentsHasBeenSet(false),
+    m_enableModelImprovements(false),
+    m_enableModelImprovementsHasBeenSet(false),
+    m_nluIntentConfidenceThreshold(0.0),
+    m_nluIntentConfidenceThresholdHasBeenSet(false),
     m_clarificationPromptHasBeenSet(false),
     m_abortStatementHasBeenSet(false),
     m_idleSessionTTLInSeconds(0),
@@ -54,6 +58,18 @@ Aws::String PutBotRequest::SerializePayload() const
      intentsJsonList[intentsIndex].AsObject(m_intents[intentsIndex].Jsonize());
    }
    payload.WithArray("intents", std::move(intentsJsonList));
+
+  }
+
+  if(m_enableModelImprovementsHasBeenSet)
+  {
+   payload.WithBool("enableModelImprovements", m_enableModelImprovements);
+
+  }
+
+  if(m_nluIntentConfidenceThresholdHasBeenSet)
+  {
+   payload.WithDouble("nluIntentConfidenceThreshold", m_nluIntentConfidenceThreshold);
 
   }
 

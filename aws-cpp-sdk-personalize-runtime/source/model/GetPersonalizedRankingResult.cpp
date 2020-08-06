@@ -37,6 +37,12 @@ GetPersonalizedRankingResult& GetPersonalizedRankingResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("recommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("recommendationId");
+
+  }
+
 
 
   return *this;

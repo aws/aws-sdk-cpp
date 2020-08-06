@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -158,7 +158,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -185,7 +185,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -203,7 +203,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>
@@ -212,7 +212,7 @@ namespace Model
 
     /**
      * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
-     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * this parameter to limit the CIDR block to this location.</p> <p> You must set
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p> <p> You can have one IPv6 CIDR block association per network
      * border group.</p>

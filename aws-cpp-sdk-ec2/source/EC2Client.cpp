@@ -62,6 +62,7 @@
 #include <aws/ec2/model/CopyImageRequest.h>
 #include <aws/ec2/model/CopySnapshotRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
+#include <aws/ec2/model/CreateCarrierGatewayRequest.h>
 #include <aws/ec2/model/CreateClientVpnEndpointRequest.h>
 #include <aws/ec2/model/CreateClientVpnRouteRequest.h>
 #include <aws/ec2/model/CreateCustomerGatewayRequest.h>
@@ -115,6 +116,7 @@
 #include <aws/ec2/model/CreateVpnConnectionRequest.h>
 #include <aws/ec2/model/CreateVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/CreateVpnGatewayRequest.h>
+#include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
 #include <aws/ec2/model/DeleteClientVpnRouteRequest.h>
 #include <aws/ec2/model/DeleteCustomerGatewayRequest.h>
@@ -175,6 +177,7 @@
 #include <aws/ec2/model/DescribeBundleTasksRequest.h>
 #include <aws/ec2/model/DescribeByoipCidrsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
+#include <aws/ec2/model/DescribeCarrierGatewaysRequest.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesRequest.h>
 #include <aws/ec2/model/DescribeClientVpnAuthorizationRulesRequest.h>
 #include <aws/ec2/model/DescribeClientVpnConnectionsRequest.h>
@@ -1639,6 +1642,33 @@ void EC2Client::CreateCapacityReservationAsyncHelper(const CreateCapacityReserva
   handler(this, request, CreateCapacityReservation(request), context);
 }
 
+CreateCarrierGatewayOutcome EC2Client::CreateCarrierGateway(const CreateCarrierGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateCarrierGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateCarrierGatewayOutcomeCallable EC2Client::CreateCarrierGatewayCallable(const CreateCarrierGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCarrierGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCarrierGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateCarrierGatewayAsync(const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCarrierGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateCarrierGatewayAsyncHelper(const CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCarrierGateway(request), context);
+}
+
 CreateClientVpnEndpointOutcome EC2Client::CreateClientVpnEndpoint(const CreateClientVpnEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3068,6 +3098,33 @@ void EC2Client::CreateVpnGatewayAsync(const CreateVpnGatewayRequest& request, co
 void EC2Client::CreateVpnGatewayAsyncHelper(const CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateVpnGateway(request), context);
+}
+
+DeleteCarrierGatewayOutcome EC2Client::DeleteCarrierGateway(const DeleteCarrierGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteCarrierGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteCarrierGatewayOutcomeCallable EC2Client::DeleteCarrierGatewayCallable(const DeleteCarrierGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCarrierGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCarrierGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteCarrierGatewayAsync(const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCarrierGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteCarrierGatewayAsyncHelper(const DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCarrierGateway(request), context);
 }
 
 DeleteClientVpnEndpointOutcome EC2Client::DeleteClientVpnEndpoint(const DeleteClientVpnEndpointRequest& request) const
@@ -4688,6 +4745,33 @@ void EC2Client::DescribeCapacityReservationsAsync(const DescribeCapacityReservat
 void EC2Client::DescribeCapacityReservationsAsyncHelper(const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCapacityReservations(request), context);
+}
+
+DescribeCarrierGatewaysOutcome EC2Client::DescribeCarrierGateways(const DescribeCarrierGatewaysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeCarrierGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeCarrierGatewaysOutcomeCallable EC2Client::DescribeCarrierGatewaysCallable(const DescribeCarrierGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCarrierGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCarrierGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeCarrierGatewaysAsync(const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCarrierGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeCarrierGatewaysAsyncHelper(const DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCarrierGateways(request), context);
 }
 
 DescribeClassicLinkInstancesOutcome EC2Client::DescribeClassicLinkInstances(const DescribeClassicLinkInstancesRequest& request) const

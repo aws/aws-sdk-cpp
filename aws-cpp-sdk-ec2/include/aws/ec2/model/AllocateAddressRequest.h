@@ -193,11 +193,10 @@ namespace Model
 
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -209,11 +208,10 @@ namespace Model
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -225,11 +223,10 @@ namespace Model
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -241,11 +238,10 @@ namespace Model
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -257,11 +253,10 @@ namespace Model
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -273,11 +268,10 @@ namespace Model
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -289,11 +283,10 @@ namespace Model
     inline AllocateAddressRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
@@ -305,11 +298,10 @@ namespace Model
     inline AllocateAddressRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
+     * this location. IP addresses cannot move between network border groups.</p>
+     * <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
      * to view the network border groups.</p>  <p>You cannot use a network border
      * group with EC2 Classic. If you attempt this operation on EC2 classic, you will

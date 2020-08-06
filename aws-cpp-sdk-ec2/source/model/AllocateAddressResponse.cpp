@@ -75,6 +75,11 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     {
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
     }
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

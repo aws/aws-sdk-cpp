@@ -480,6 +480,47 @@ namespace Model
 
 
     /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline const Aws::String& GetCarrierGatewayId() const{ return m_carrierGatewayId; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline bool CarrierGatewayIdHasBeenSet() const { return m_carrierGatewayIdHasBeenSet; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const Aws::String& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = value; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(Aws::String&& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = std::move(value); }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const char* value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId.assign(value); }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithCarrierGatewayId(const Aws::String& value) { SetCarrierGatewayId(value); return *this;}
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithCarrierGatewayId(Aws::String&& value) { SetCarrierGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithCarrierGatewayId(const char* value) { SetCarrierGatewayId(value); return *this;}
+
+
+    /**
      * <p>The ID of a network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -635,6 +676,9 @@ namespace Model
 
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet;
+
+    Aws::String m_carrierGatewayId;
+    bool m_carrierGatewayIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

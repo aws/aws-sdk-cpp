@@ -41,6 +41,47 @@ namespace Model
 
 
     /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline bool CarrierIpHasBeenSet() const { return m_carrierIpHasBeenSet; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline void SetCarrierIp(const Aws::String& value) { m_carrierIpHasBeenSet = true; m_carrierIp = value; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline void SetCarrierIp(Aws::String&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::move(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline void SetCarrierIp(const char* value) { m_carrierIpHasBeenSet = true; m_carrierIp.assign(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
+
+
+    /**
      * <p>The ID of the owner of the Elastic IP address.</p>
      */
     inline const Aws::String& GetIpOwnerId() const{ return m_ipOwnerId; }
@@ -171,6 +212,9 @@ namespace Model
     inline InstanceNetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
+    Aws::String m_carrierIp;
+    bool m_carrierIpHasBeenSet;
 
     Aws::String m_ipOwnerId;
     bool m_ipOwnerIdHasBeenSet;

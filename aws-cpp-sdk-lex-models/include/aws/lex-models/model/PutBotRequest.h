@@ -179,6 +179,192 @@ namespace Model
 
 
     /**
+     * <p>Set to <code>true</code> to enable the use of a new natural language
+     * understanding (NLU) model. Using the new NLU may improve the performance of your
+     * bot. </p> <p>When you set the <code>enableModelImprovements</code> parameter to
+     * <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code>
+     * parameter to configure confidence scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot will use the new NLU. If you set the parameter to <code>false</code>,
+     * your bot will continue to use the original NLU. If you set the parameter to
+     * <code>false</code> after setting it to <code>true</code>, your bot will return
+     * to the original NLU.</p> <p>The Regions where you can set the
+     * <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
+     * <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West
+     * (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
+     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
+     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
+     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Set to <code>true</code> to enable the use of a new natural language
+     * understanding (NLU) model. Using the new NLU may improve the performance of your
+     * bot. </p> <p>When you set the <code>enableModelImprovements</code> parameter to
+     * <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code>
+     * parameter to configure confidence scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot will use the new NLU. If you set the parameter to <code>false</code>,
+     * your bot will continue to use the original NLU. If you set the parameter to
+     * <code>false</code> after setting it to <code>true</code>, your bot will return
+     * to the original NLU.</p> <p>The Regions where you can set the
+     * <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
+     * <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West
+     * (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
+     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
+     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
+     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     */
+    inline bool EnableModelImprovementsHasBeenSet() const { return m_enableModelImprovementsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to enable the use of a new natural language
+     * understanding (NLU) model. Using the new NLU may improve the performance of your
+     * bot. </p> <p>When you set the <code>enableModelImprovements</code> parameter to
+     * <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code>
+     * parameter to configure confidence scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot will use the new NLU. If you set the parameter to <code>false</code>,
+     * your bot will continue to use the original NLU. If you set the parameter to
+     * <code>false</code> after setting it to <code>true</code>, your bot will return
+     * to the original NLU.</p> <p>The Regions where you can set the
+     * <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
+     * <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West
+     * (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
+     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
+     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
+     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
+
+    /**
+     * <p>Set to <code>true</code> to enable the use of a new natural language
+     * understanding (NLU) model. Using the new NLU may improve the performance of your
+     * bot. </p> <p>When you set the <code>enableModelImprovements</code> parameter to
+     * <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code>
+     * parameter to configure confidence scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot will use the new NLU. If you set the parameter to <code>false</code>,
+     * your bot will continue to use the original NLU. If you set the parameter to
+     * <code>false</code> after setting it to <code>true</code>, your bot will return
+     * to the original NLU.</p> <p>The Regions where you can set the
+     * <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
+     * <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West
+     * (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
+     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
+     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
+     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     */
+    inline PutBotRequest& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores.</p> <p>For example,
+     * suppose a bot is configured with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores.</p> <p>For example,
+     * suppose a bot is configured with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores.</p> <p>For example,
+     * suppose a bot is configured with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores.</p> <p>For example,
+     * suppose a bot is configured with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline PutBotRequest& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
+
+
+    /**
      * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
      * get clarification. To specify how many times Amazon Lex should repeat the
      * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
@@ -1042,6 +1228,12 @@ namespace Model
 
     Aws::Vector<Intent> m_intents;
     bool m_intentsHasBeenSet;
+
+    bool m_enableModelImprovements;
+    bool m_enableModelImprovementsHasBeenSet;
+
+    double m_nluIntentConfidenceThreshold;
+    bool m_nluIntentConfidenceThresholdHasBeenSet;
 
     Prompt m_clarificationPrompt;
     bool m_clarificationPromptHasBeenSet;

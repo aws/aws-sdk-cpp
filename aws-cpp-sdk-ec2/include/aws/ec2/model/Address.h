@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Elastic IP address.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Elastic IP address, or a carrier IP address.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Address">AWS API
    * Reference</a></p>
    */
@@ -463,42 +464,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline Address& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline Address& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the location from which the IP address is advertised.</p>
+     * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
+     * Zones from which AWS advertises IP addresses. </p>
      */
     inline Address& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 
@@ -584,6 +593,63 @@ namespace Model
      */
     inline Address& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline bool CarrierIpHasBeenSet() const { return m_carrierIpHasBeenSet; }
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline void SetCarrierIp(const Aws::String& value) { m_carrierIpHasBeenSet = true; m_carrierIp = value; }
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline void SetCarrierIp(Aws::String&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::move(value); }
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline void SetCarrierIp(const char* value) { m_carrierIpHasBeenSet = true; m_carrierIp.assign(value); }
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline Address& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline Address& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The carrier IP address associated. This option is only available for network
+     * interfaces which reside in a subnet in a Wavelength Zone (for example an EC2
+     * instance). </p>
+     */
+    inline Address& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -624,6 +690,9 @@ namespace Model
 
     Aws::String m_customerOwnedIpv4Pool;
     bool m_customerOwnedIpv4PoolHasBeenSet;
+
+    Aws::String m_carrierIp;
+    bool m_carrierIpHasBeenSet;
   };
 
 } // namespace Model

@@ -646,42 +646,58 @@ namespace Model
 
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
 

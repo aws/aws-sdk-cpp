@@ -22,6 +22,7 @@ CampaignUpdateSummary::CampaignUpdateSummary() :
     m_solutionVersionArnHasBeenSet(false),
     m_minProvisionedTPS(0),
     m_minProvisionedTPSHasBeenSet(false),
+    m_campaignConfigHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -33,6 +34,7 @@ CampaignUpdateSummary::CampaignUpdateSummary(JsonView jsonValue) :
     m_solutionVersionArnHasBeenSet(false),
     m_minProvisionedTPS(0),
     m_minProvisionedTPSHasBeenSet(false),
+    m_campaignConfigHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -55,6 +57,13 @@ CampaignUpdateSummary& CampaignUpdateSummary::operator =(JsonView jsonValue)
     m_minProvisionedTPS = jsonValue.GetInteger("minProvisionedTPS");
 
     m_minProvisionedTPSHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("campaignConfig"))
+  {
+    m_campaignConfig = jsonValue.GetObject("campaignConfig");
+
+    m_campaignConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -101,6 +110,12 @@ JsonValue CampaignUpdateSummary::Jsonize() const
   if(m_minProvisionedTPSHasBeenSet)
   {
    payload.WithInteger("minProvisionedTPS", m_minProvisionedTPS);
+
+  }
+
+  if(m_campaignConfigHasBeenSet)
+  {
+   payload.WithObject("campaignConfig", m_campaignConfig.Jsonize());
 
   }
 

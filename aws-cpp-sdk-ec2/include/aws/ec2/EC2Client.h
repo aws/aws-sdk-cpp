@@ -48,6 +48,7 @@
 #include <aws/ec2/model/CopyImageResponse.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
+#include <aws/ec2/model/CreateCarrierGatewayResponse.h>
 #include <aws/ec2/model/CreateClientVpnEndpointResponse.h>
 #include <aws/ec2/model/CreateClientVpnRouteResponse.h>
 #include <aws/ec2/model/CreateCustomerGatewayResponse.h>
@@ -98,6 +99,7 @@
 #include <aws/ec2/model/CreateVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnGatewayResponse.h>
+#include <aws/ec2/model/DeleteCarrierGatewayResponse.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointResponse.h>
 #include <aws/ec2/model/DeleteClientVpnRouteResponse.h>
 #include <aws/ec2/model/DeleteEgressOnlyInternetGatewayResponse.h>
@@ -137,6 +139,7 @@
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
 #include <aws/ec2/model/DescribeByoipCidrsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationsResponse.h>
+#include <aws/ec2/model/DescribeCarrierGatewaysResponse.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesResponse.h>
 #include <aws/ec2/model/DescribeClientVpnAuthorizationRulesResponse.h>
 #include <aws/ec2/model/DescribeClientVpnConnectionsResponse.h>
@@ -451,6 +454,7 @@ namespace Model
         class CopyImageRequest;
         class CopySnapshotRequest;
         class CreateCapacityReservationRequest;
+        class CreateCarrierGatewayRequest;
         class CreateClientVpnEndpointRequest;
         class CreateClientVpnRouteRequest;
         class CreateCustomerGatewayRequest;
@@ -504,6 +508,7 @@ namespace Model
         class CreateVpnConnectionRequest;
         class CreateVpnConnectionRouteRequest;
         class CreateVpnGatewayRequest;
+        class DeleteCarrierGatewayRequest;
         class DeleteClientVpnEndpointRequest;
         class DeleteClientVpnRouteRequest;
         class DeleteCustomerGatewayRequest;
@@ -564,6 +569,7 @@ namespace Model
         class DescribeBundleTasksRequest;
         class DescribeByoipCidrsRequest;
         class DescribeCapacityReservationsRequest;
+        class DescribeCarrierGatewaysRequest;
         class DescribeClassicLinkInstancesRequest;
         class DescribeClientVpnAuthorizationRulesRequest;
         class DescribeClientVpnConnectionsRequest;
@@ -863,6 +869,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CopyImageResponse, EC2Error> CopyImageOutcome;
         typedef Aws::Utils::Outcome<CopySnapshotResponse, EC2Error> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
+        typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateClientVpnRouteResponse, EC2Error> CreateClientVpnRouteOutcome;
         typedef Aws::Utils::Outcome<CreateCustomerGatewayResponse, EC2Error> CreateCustomerGatewayOutcome;
@@ -916,6 +923,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateVpnConnectionResponse, EC2Error> CreateVpnConnectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateVpnConnectionRouteOutcome;
         typedef Aws::Utils::Outcome<CreateVpnGatewayResponse, EC2Error> CreateVpnGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeleteCarrierGatewayResponse, EC2Error> DeleteCarrierGatewayOutcome;
         typedef Aws::Utils::Outcome<DeleteClientVpnEndpointResponse, EC2Error> DeleteClientVpnEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteClientVpnRouteResponse, EC2Error> DeleteClientVpnRouteOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteCustomerGatewayOutcome;
@@ -976,6 +984,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeByoipCidrsResponse, EC2Error> DescribeByoipCidrsOutcome;
         typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeCarrierGatewaysResponse, EC2Error> DescribeCarrierGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeClassicLinkInstancesResponse, EC2Error> DescribeClassicLinkInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeClientVpnAuthorizationRulesResponse, EC2Error> DescribeClientVpnAuthorizationRulesOutcome;
         typedef Aws::Utils::Outcome<DescribeClientVpnConnectionsResponse, EC2Error> DescribeClientVpnConnectionsOutcome;
@@ -1275,6 +1284,7 @@ namespace Model
         typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
+        typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
         typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
         typedef std::future<CreateClientVpnRouteOutcome> CreateClientVpnRouteOutcomeCallable;
         typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
@@ -1328,6 +1338,7 @@ namespace Model
         typedef std::future<CreateVpnConnectionOutcome> CreateVpnConnectionOutcomeCallable;
         typedef std::future<CreateVpnConnectionRouteOutcome> CreateVpnConnectionRouteOutcomeCallable;
         typedef std::future<CreateVpnGatewayOutcome> CreateVpnGatewayOutcomeCallable;
+        typedef std::future<DeleteCarrierGatewayOutcome> DeleteCarrierGatewayOutcomeCallable;
         typedef std::future<DeleteClientVpnEndpointOutcome> DeleteClientVpnEndpointOutcomeCallable;
         typedef std::future<DeleteClientVpnRouteOutcome> DeleteClientVpnRouteOutcomeCallable;
         typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
@@ -1388,6 +1399,7 @@ namespace Model
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
         typedef std::future<DescribeByoipCidrsOutcome> DescribeByoipCidrsOutcomeCallable;
         typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
+        typedef std::future<DescribeCarrierGatewaysOutcome> DescribeCarrierGatewaysOutcomeCallable;
         typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
         typedef std::future<DescribeClientVpnAuthorizationRulesOutcome> DescribeClientVpnAuthorizationRulesOutcomeCallable;
         typedef std::future<DescribeClientVpnConnectionsOutcome> DescribeClientVpnConnectionsOutcomeCallable;
@@ -1690,6 +1702,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationRequest&, const Model::CreateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateCarrierGatewayRequest&, const Model::CreateCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnEndpointRequest&, const Model::CreateClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnRouteRequest&, const Model::CreateClientVpnRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCustomerGatewayRequest&, const Model::CreateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomerGatewayResponseReceivedHandler;
@@ -1743,6 +1756,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateVpnConnectionRequest&, const Model::CreateVpnConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpnConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateVpnConnectionRouteRequest&, const Model::CreateVpnConnectionRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpnConnectionRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateVpnGatewayRequest&, const Model::CreateVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpnGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteCarrierGatewayRequest&, const Model::DeleteCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnEndpointRequest&, const Model::DeleteClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnRouteRequest&, const Model::DeleteClientVpnRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientVpnRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteCustomerGatewayRequest&, const Model::DeleteCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomerGatewayResponseReceivedHandler;
@@ -1803,6 +1817,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeByoipCidrsRequest&, const Model::DescribeByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeByoipCidrsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationsRequest&, const Model::DescribeCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCarrierGatewaysRequest&, const Model::DescribeCarrierGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCarrierGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClassicLinkInstancesRequest&, const Model::DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClassicLinkInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClientVpnAuthorizationRulesRequest&, const Model::DescribeClientVpnAuthorizationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientVpnAuthorizationRulesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClientVpnConnectionsRequest&, const Model::DescribeClientVpnConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientVpnConnectionsResponseReceivedHandler;
@@ -2349,8 +2364,10 @@ namespace Model
          * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for
          * EC2-VPC per Region.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can allocate a carrier IP address which is a public IP address from a
+         * telecommunication carrier, to a network interface which resides in a subnet in a
+         * Wavelength Zone (for example an EC2 instance). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
          * API Reference</a></p>
          */
@@ -2376,8 +2393,10 @@ namespace Model
          * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for
          * EC2-VPC per Region.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can allocate a carrier IP address which is a public IP address from a
+         * telecommunication carrier, to a network interface which resides in a subnet in a
+         * Wavelength Zone (for example an EC2 instance). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
          * API Reference</a></p>
          *
@@ -2405,8 +2424,10 @@ namespace Model
          * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for
          * EC2-VPC per Region.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can allocate a carrier IP address which is a public IP address from a
+         * telecommunication carrier, to a network interface which resides in a subnet in a
+         * Wavelength Zone (for example an EC2 instance). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
          * API Reference</a></p>
          *
@@ -2608,7 +2629,8 @@ namespace Model
         virtual void AssignPrivateIpAddressesAsync(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates an Elastic IP address with an instance or a network interface.
+         * <p>Associates an Elastic IP address, or carrier IP address (for instances that
+         * are in subnets in Wavelength Zones) with an instance or a network interface.
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
@@ -2624,12 +2646,14 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <p>You cannot
-         * associate an Elastic IP address with an interface in a different network border
-         * group.</p>  <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error, and you may be
-         * charged for each time the Elastic IP address is remapped to the same instance.
-         * For more information, see the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>[Subnets in
+         * Wavelength Zones] You can associate an IP address from the telecommunication
+         * carrier to the instance or network interface. </p> <p>You cannot associate an
+         * Elastic IP address with an interface in a different network border group.</p>
+         *  <p>This is an idempotent operation. If you perform the operation
+         * more than once, Amazon EC2 doesn't return an error, and you may be charged for
+         * each time the Elastic IP address is remapped to the same instance. For more
+         * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -2638,7 +2662,8 @@ namespace Model
         virtual Model::AssociateAddressOutcome AssociateAddress(const Model::AssociateAddressRequest& request) const;
 
         /**
-         * <p>Associates an Elastic IP address with an instance or a network interface.
+         * <p>Associates an Elastic IP address, or carrier IP address (for instances that
+         * are in subnets in Wavelength Zones) with an instance or a network interface.
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
@@ -2654,12 +2679,14 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <p>You cannot
-         * associate an Elastic IP address with an interface in a different network border
-         * group.</p>  <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error, and you may be
-         * charged for each time the Elastic IP address is remapped to the same instance.
-         * For more information, see the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>[Subnets in
+         * Wavelength Zones] You can associate an IP address from the telecommunication
+         * carrier to the instance or network interface. </p> <p>You cannot associate an
+         * Elastic IP address with an interface in a different network border group.</p>
+         *  <p>This is an idempotent operation. If you perform the operation
+         * more than once, Amazon EC2 doesn't return an error, and you may be charged for
+         * each time the Elastic IP address is remapped to the same instance. For more
+         * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -2670,7 +2697,8 @@ namespace Model
         virtual Model::AssociateAddressOutcomeCallable AssociateAddressCallable(const Model::AssociateAddressRequest& request) const;
 
         /**
-         * <p>Associates an Elastic IP address with an instance or a network interface.
+         * <p>Associates an Elastic IP address, or carrier IP address (for instances that
+         * are in subnets in Wavelength Zones) with an instance or a network interface.
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
@@ -2686,12 +2714,14 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <p>You cannot
-         * associate an Elastic IP address with an interface in a different network border
-         * group.</p>  <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error, and you may be
-         * charged for each time the Elastic IP address is remapped to the same instance.
-         * For more information, see the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>[Subnets in
+         * Wavelength Zones] You can associate an IP address from the telecommunication
+         * carrier to the instance or network interface. </p> <p>You cannot associate an
+         * Elastic IP address with an interface in a different network border group.</p>
+         *  <p>This is an idempotent operation. If you perform the operation
+         * more than once, Amazon EC2 doesn't return an error, and you may be charged for
+         * each time the Elastic IP address is remapped to the same instance. For more
+         * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -4017,6 +4047,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCapacityReservationAsync(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a carrier gateway. For more information about carrier gateways, see
+         * <a
+         * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCarrierGatewayOutcome CreateCarrierGateway(const Model::CreateCarrierGatewayRequest& request) const;
+
+        /**
+         * <p>Creates a carrier gateway. For more information about carrier gateways, see
+         * <a
+         * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCarrierGatewayOutcomeCallable CreateCarrierGatewayCallable(const Model::CreateCarrierGatewayRequest& request) const;
+
+        /**
+         * <p>Creates a carrier gateway. For more information about carrier gateways, see
+         * <a
+         * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCarrierGatewayAsync(const Model::CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Client VPN endpoint. A Client VPN endpoint is the resource you
@@ -6808,6 +6875,43 @@ namespace Model
         virtual void CreateVpnGatewayAsync(const Model::CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a carrier gateway.</p>  <p>If you do not delete the route
+         * that contains the carrier gateway as the Target, the route is a blackhole route.
+         * For information about how to delete a route, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCarrierGatewayOutcome DeleteCarrierGateway(const Model::DeleteCarrierGatewayRequest& request) const;
+
+        /**
+         * <p>Deletes a carrier gateway.</p>  <p>If you do not delete the route
+         * that contains the carrier gateway as the Target, the route is a blackhole route.
+         * For information about how to delete a route, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCarrierGatewayOutcomeCallable DeleteCarrierGatewayCallable(const Model::DeleteCarrierGatewayRequest& request) const;
+
+        /**
+         * <p>Deletes a carrier gateway.</p>  <p>If you do not delete the route
+         * that contains the carrier gateway as the Target, the route is a blackhole route.
+         * For information about how to delete a route, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCarrierGatewayAsync(const Model::DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified Client VPN endpoint. You must disassociate all target
          * networks before you can delete a Client VPN endpoint.</p><p><h3>See Also:</h3>  
          * <a
@@ -8709,13 +8813,13 @@ namespace Model
         virtual void DescribeAggregateIdFormatAsync(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Availability Zones and Local Zones that are available to you.
-         * If there is an event impacting an Availability Zone or Local Zone, you can use
-         * this request to view the state and any provided messages for that Availability
-         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
-         * Local Zones, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-         * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are
+         * available to you. If there is an event impacting a zone, you can use this
+         * request to view the state and any provided messages for that zone.</p> <p>For
+         * more information about Availability Zones, Local Zones, and Wavelength Zones,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+         * Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
          * API Reference</a></p>
@@ -8723,13 +8827,13 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcome DescribeAvailabilityZones(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes the Availability Zones and Local Zones that are available to you.
-         * If there is an event impacting an Availability Zone or Local Zone, you can use
-         * this request to view the state and any provided messages for that Availability
-         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
-         * Local Zones, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-         * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are
+         * available to you. If there is an event impacting a zone, you can use this
+         * request to view the state and any provided messages for that zone.</p> <p>For
+         * more information about Availability Zones, Local Zones, and Wavelength Zones,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+         * Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
          * API Reference</a></p>
@@ -8739,13 +8843,13 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcomeCallable DescribeAvailabilityZonesCallable(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes the Availability Zones and Local Zones that are available to you.
-         * If there is an event impacting an Availability Zone or Local Zone, you can use
-         * this request to view the state and any provided messages for that Availability
-         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
-         * Local Zones, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-         * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are
+         * available to you. If there is an event impacting a zone, you can use this
+         * request to view the state and any provided messages for that zone.</p> <p>For
+         * more information about Availability Zones, Local Zones, and Wavelength Zones,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+         * Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
          * API Reference</a></p>
@@ -8858,6 +8962,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCapacityReservationsAsync(const Model::DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more of your carrier gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCarrierGatewaysOutcome DescribeCarrierGateways(const Model::DescribeCarrierGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your carrier gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCarrierGatewaysOutcomeCallable DescribeCarrierGatewaysCallable(const Model::DescribeCarrierGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your carrier gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCarrierGatewaysAsync(const Model::DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your linked EC2-Classic instances. This request only
@@ -15037,8 +15166,8 @@ namespace Model
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
-         * <a
+         * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
+         * your account.</p> <p>Use <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
          * DescribeAvailabilityZones</a> to view the value for
          * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
@@ -15048,8 +15177,8 @@ namespace Model
         virtual Model::ModifyAvailabilityZoneGroupOutcome ModifyAvailabilityZoneGroup(const Model::ModifyAvailabilityZoneGroupRequest& request) const;
 
         /**
-         * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
-         * <a
+         * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
+         * your account.</p> <p>Use <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
          * DescribeAvailabilityZones</a> to view the value for
          * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
@@ -15061,8 +15190,8 @@ namespace Model
         virtual Model::ModifyAvailabilityZoneGroupOutcomeCallable ModifyAvailabilityZoneGroupCallable(const Model::ModifyAvailabilityZoneGroupRequest& request) const;
 
         /**
-         * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
-         * <a
+         * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
+         * your account.</p> <p>Use <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
          * DescribeAvailabilityZones</a> to view the value for
          * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
@@ -19787,6 +19916,7 @@ namespace Model
         void CopyImageAsyncHelper(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCapacityReservationAsyncHelper(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCarrierGatewayAsyncHelper(const Model::CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClientVpnEndpointAsyncHelper(const Model::CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClientVpnRouteAsyncHelper(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomerGatewayAsyncHelper(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19840,6 +19970,7 @@ namespace Model
         void CreateVpnConnectionAsyncHelper(const Model::CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVpnConnectionRouteAsyncHelper(const Model::CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVpnGatewayAsyncHelper(const Model::CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCarrierGatewayAsyncHelper(const Model::DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClientVpnEndpointAsyncHelper(const Model::DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClientVpnRouteAsyncHelper(const Model::DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCustomerGatewayAsyncHelper(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19900,6 +20031,7 @@ namespace Model
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeByoipCidrsAsyncHelper(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCapacityReservationsAsyncHelper(const Model::DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCarrierGatewaysAsyncHelper(const Model::DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClassicLinkInstancesAsyncHelper(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientVpnAuthorizationRulesAsyncHelper(const Model::DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientVpnConnectionsAsyncHelper(const Model::DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
