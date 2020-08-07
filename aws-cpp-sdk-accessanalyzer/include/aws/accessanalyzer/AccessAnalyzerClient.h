@@ -181,8 +181,6 @@ namespace Model
 
         virtual ~AccessAnalyzerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "AccessAnalyzer"; }
-
 
         /**
          * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a

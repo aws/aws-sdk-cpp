@@ -75,6 +75,7 @@ MediaStoreDataClient::~MediaStoreDataClient()
 
 void MediaStoreDataClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaStore Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

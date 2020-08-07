@@ -252,8 +252,6 @@ namespace Model
 
         virtual ~IVSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ivs"; }
-
 
         /**
          * <p>Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p><p><h3>See

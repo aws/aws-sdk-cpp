@@ -95,6 +95,7 @@ MediaConvertClient::~MediaConvertClient()
 
 void MediaConvertClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaConvert");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

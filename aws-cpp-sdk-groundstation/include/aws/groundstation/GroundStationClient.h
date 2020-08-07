@@ -215,8 +215,6 @@ namespace Model
 
         virtual ~GroundStationClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "GroundStation"; }
-
 
         /**
          * <p>Cancels a contact with a specified contact ID.</p><p><h3>See Also:</h3>   <a

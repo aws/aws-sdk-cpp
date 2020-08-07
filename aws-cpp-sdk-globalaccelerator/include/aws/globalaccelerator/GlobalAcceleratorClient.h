@@ -289,8 +289,6 @@ namespace Model
 
         virtual ~GlobalAcceleratorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Global Accelerator"; }
-
 
         /**
          * <p>Advertises an IPv4 address range that is provisioned for use with your AWS

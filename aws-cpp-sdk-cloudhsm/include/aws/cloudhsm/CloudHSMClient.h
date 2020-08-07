@@ -199,8 +199,6 @@ namespace Model
 
         virtual ~CloudHSMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudHSM"; }
-
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,

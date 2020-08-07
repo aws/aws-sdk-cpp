@@ -193,8 +193,6 @@ namespace Model
 
         virtual ~KinesisAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Analytics"; }
-
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data

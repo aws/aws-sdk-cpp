@@ -120,8 +120,6 @@ namespace Model
 
         virtual ~SSOClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SSO"; }
-
 
         /**
          * <p>Returns the STS short-term credentials for a given role name that is assigned

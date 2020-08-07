@@ -347,8 +347,6 @@ namespace Model
 
         virtual ~ECSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ECS"; }
-
 
         /**
          * <p>Creates a new capacity provider. Capacity providers are associated with an

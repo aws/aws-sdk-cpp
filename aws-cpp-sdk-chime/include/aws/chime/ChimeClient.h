@@ -690,8 +690,6 @@ namespace Model
 
         virtual ~ChimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Chime"; }
-
 
         /**
          * <p>Associates a phone number with the specified Amazon Chime user.</p><p><h3>See

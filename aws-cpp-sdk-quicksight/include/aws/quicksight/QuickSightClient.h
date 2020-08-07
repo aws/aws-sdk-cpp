@@ -540,8 +540,6 @@ namespace Model
 
         virtual ~QuickSightClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "QuickSight"; }
-
 
         /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  

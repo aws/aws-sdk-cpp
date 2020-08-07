@@ -253,8 +253,6 @@ namespace Model
 
         virtual ~ConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Connect"; }
-
 
         /**
          * <p>Creates a user account for the specified Amazon Connect

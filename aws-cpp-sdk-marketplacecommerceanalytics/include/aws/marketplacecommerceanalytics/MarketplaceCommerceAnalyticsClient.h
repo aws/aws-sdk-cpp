@@ -96,8 +96,6 @@ namespace Model
 
         virtual ~MarketplaceCommerceAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Marketplace Commerce Analytics"; }
-
 
         /**
          * Given a data set type and data set publication date, asynchronously publishes

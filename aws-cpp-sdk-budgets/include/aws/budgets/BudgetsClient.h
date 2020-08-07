@@ -180,8 +180,6 @@ namespace Model
 
         virtual ~BudgetsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Budgets"; }
-
 
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>

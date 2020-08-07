@@ -121,8 +121,6 @@ namespace Model
 
         virtual ~MarketplaceCatalogClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Marketplace Catalog"; }
-
 
         /**
          * <p>Used to cancel an open change request. Must be sent before the status of the

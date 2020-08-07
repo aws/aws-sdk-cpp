@@ -127,6 +127,7 @@ DirectoryServiceClient::~DirectoryServiceClient()
 
 void DirectoryServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Directory Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

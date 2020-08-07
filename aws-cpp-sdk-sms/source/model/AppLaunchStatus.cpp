@@ -28,6 +28,7 @@ namespace Aws
         static const int LAUNCH_PENDING_HASH = HashingUtils::HashString("LAUNCH_PENDING");
         static const int LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_IN_PROGRESS");
         static const int LAUNCHED_HASH = HashingUtils::HashString("LAUNCHED");
+        static const int PARTIALLY_LAUNCHED_HASH = HashingUtils::HashString("PARTIALLY_LAUNCHED");
         static const int DELTA_LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_LAUNCH_IN_PROGRESS");
         static const int DELTA_LAUNCH_FAILED_HASH = HashingUtils::HashString("DELTA_LAUNCH_FAILED");
         static const int LAUNCH_FAILED_HASH = HashingUtils::HashString("LAUNCH_FAILED");
@@ -70,6 +71,10 @@ namespace Aws
           else if (hashCode == LAUNCHED_HASH)
           {
             return AppLaunchStatus::LAUNCHED;
+          }
+          else if (hashCode == PARTIALLY_LAUNCHED_HASH)
+          {
+            return AppLaunchStatus::PARTIALLY_LAUNCHED;
           }
           else if (hashCode == DELTA_LAUNCH_IN_PROGRESS_HASH)
           {
@@ -125,6 +130,8 @@ namespace Aws
             return "LAUNCH_IN_PROGRESS";
           case AppLaunchStatus::LAUNCHED:
             return "LAUNCHED";
+          case AppLaunchStatus::PARTIALLY_LAUNCHED:
+            return "PARTIALLY_LAUNCHED";
           case AppLaunchStatus::DELTA_LAUNCH_IN_PROGRESS:
             return "DELTA_LAUNCH_IN_PROGRESS";
           case AppLaunchStatus::DELTA_LAUNCH_FAILED:

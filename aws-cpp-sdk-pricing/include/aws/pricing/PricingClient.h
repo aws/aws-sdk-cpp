@@ -119,8 +119,6 @@ namespace Model
 
         virtual ~PricingClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "api.pricing"; }
-
 
         /**
          * <p>Returns the metadata for one service or a list of the metadata for all

@@ -182,8 +182,6 @@ namespace Aws
 
         virtual ~S3ControlClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "S3 Control"; }
-
 
         /**
          * <p>Creates an access point and associates it with the specified

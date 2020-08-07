@@ -126,8 +126,6 @@ namespace Model
 
         virtual ~OutpostsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Outposts"; }
-
 
         /**
          * <p>Creates an Outpost.</p><p><h3>See Also:</h3>   <a

@@ -323,8 +323,6 @@ namespace Model
 
         virtual ~LambdaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Lambda"; }
-
 
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a

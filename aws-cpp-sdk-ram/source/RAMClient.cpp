@@ -94,6 +94,7 @@ RAMClient::~RAMClient()
 
 void RAMClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("RAM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

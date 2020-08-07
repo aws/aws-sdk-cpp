@@ -153,6 +153,7 @@ ServiceCatalogClient::~ServiceCatalogClient()
 
 void ServiceCatalogClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Service Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

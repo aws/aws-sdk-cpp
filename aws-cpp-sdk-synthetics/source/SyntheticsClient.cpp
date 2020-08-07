@@ -83,6 +83,7 @@ SyntheticsClient::~SyntheticsClient()
 
 void SyntheticsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("synthetics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

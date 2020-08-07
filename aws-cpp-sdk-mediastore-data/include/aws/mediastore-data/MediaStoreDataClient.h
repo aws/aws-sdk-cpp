@@ -113,8 +113,6 @@ namespace Model
 
         virtual ~MediaStoreDataClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaStore Data"; }
-
 
         /**
          * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a

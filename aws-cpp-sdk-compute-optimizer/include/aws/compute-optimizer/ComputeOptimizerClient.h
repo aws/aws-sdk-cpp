@@ -143,8 +143,6 @@ namespace Model
 
         virtual ~ComputeOptimizerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Compute Optimizer"; }
-
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>

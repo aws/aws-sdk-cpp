@@ -126,8 +126,6 @@ namespace Model
 
         virtual ~AutoScalingPlansClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Auto Scaling Plans"; }
-
 
         /**
          * <p>Creates a scaling plan.</p><p><h3>See Also:</h3>   <a

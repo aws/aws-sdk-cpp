@@ -111,6 +111,7 @@ AppSyncClient::~AppSyncClient()
 
 void AppSyncClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("AppSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

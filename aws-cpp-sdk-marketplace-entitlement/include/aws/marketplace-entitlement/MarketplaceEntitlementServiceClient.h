@@ -99,8 +99,6 @@ namespace Model
 
         virtual ~MarketplaceEntitlementServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "entitlement.marketplace"; }
-
 
         /**
          * <p>GetEntitlements retrieves entitlement values for a given product. The results

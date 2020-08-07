@@ -267,8 +267,6 @@ namespace Model
 
         virtual ~IoTAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoTAnalytics"; }
-
 
         /**
          * <p>Sends messages to a channel.</p><p><h3>See Also:</h3>   <a

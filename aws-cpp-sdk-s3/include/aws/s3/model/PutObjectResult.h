@@ -35,58 +35,65 @@ namespace Model
 
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline void SetExpiration(const char* value) { m_expiration.assign(value); }
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline PutObjectResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline PutObjectResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
-     * <p> If the expiration is configured for the object (see
-     * <a>PutBucketLifecycleConfiguration</a>), the response includes this header. It
-     * includes the expiry-date and rule-id key-value pairs that provide information
-     * about object expiration. The value of the rule-id is URL encoded.</p>
+     * <p> If the expiration is configured for the object (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>),
+     * the response includes this header. It includes the expiry-date and rule-id
+     * key-value pairs that provide information about object expiration. The value of
+     * the rule-id is URL encoded.</p>
      */
     inline PutObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 

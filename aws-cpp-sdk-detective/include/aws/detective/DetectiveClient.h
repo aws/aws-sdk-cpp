@@ -163,8 +163,6 @@ namespace Model
 
         virtual ~DetectiveClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Detective"; }
-
 
         /**
          * <p>Accepts an invitation for the member account to contribute data to a behavior

@@ -237,8 +237,6 @@ namespace Model
 
         virtual ~ECRClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ECR"; }
-
 
         /**
          * <p>Checks the availability of one or more image layers in a repository.</p>

@@ -352,8 +352,6 @@ namespace Model
 
         virtual ~DirectConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Direct Connect"; }
-
 
         /**
          * <p>Accepts a proposal request to attach a virtual private gateway or transit

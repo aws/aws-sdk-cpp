@@ -121,8 +121,6 @@ namespace Model
 
         virtual ~IoTDataPlaneClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT Data Plane"; }
-
 
         /**
          * <p>Deletes the shadow for the specified thing.</p> <p>For more information, see

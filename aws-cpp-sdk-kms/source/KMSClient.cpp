@@ -116,6 +116,7 @@ KMSClient::~KMSClient()
 
 void KMSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("KMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

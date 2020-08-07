@@ -230,8 +230,6 @@ namespace Model
 
         virtual ~SecretsManagerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Secrets Manager"; }
-
 
         /**
          * <p>Disables automatic scheduled rotation and cancels the rotation of a secret if

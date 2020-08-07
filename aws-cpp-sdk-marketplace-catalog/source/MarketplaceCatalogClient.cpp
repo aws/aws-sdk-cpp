@@ -76,6 +76,7 @@ MarketplaceCatalogClient::~MarketplaceCatalogClient()
 
 void MarketplaceCatalogClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Marketplace Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

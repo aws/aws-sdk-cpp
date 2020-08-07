@@ -246,8 +246,6 @@ namespace Model
 
         virtual ~CloudWatchEventsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudWatch Events"; }
-
 
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,

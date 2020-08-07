@@ -121,6 +121,7 @@ ComprehendClient::~ComprehendClient()
 
 void ComprehendClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Comprehend");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

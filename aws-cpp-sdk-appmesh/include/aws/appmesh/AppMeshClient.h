@@ -303,8 +303,6 @@ namespace Model
 
         virtual ~AppMeshClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "App Mesh"; }
-
 
         /**
          * <p>Creates a gateway route.</p>

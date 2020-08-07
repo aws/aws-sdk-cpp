@@ -107,6 +107,7 @@ SWFClient::~SWFClient()
 
 void SWFClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SWF");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

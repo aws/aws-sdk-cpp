@@ -321,8 +321,6 @@ namespace Model
 
         virtual ~RekognitionClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Rekognition"; }
-
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest

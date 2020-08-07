@@ -118,6 +118,7 @@ OrganizationsClient::~OrganizationsClient()
 
 void OrganizationsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Organizations");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -135,8 +135,6 @@ namespace Model
 
         virtual ~PollyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Polly"; }
-
 
         /**
          * <p>Deletes the specified pronunciation lexicon stored in an AWS Region. A

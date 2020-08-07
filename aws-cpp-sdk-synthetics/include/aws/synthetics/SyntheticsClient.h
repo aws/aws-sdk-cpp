@@ -165,8 +165,6 @@ namespace Model
 
         virtual ~SyntheticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "synthetics"; }
-
 
         /**
          * <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs

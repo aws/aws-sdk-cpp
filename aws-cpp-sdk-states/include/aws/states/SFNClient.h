@@ -212,8 +212,6 @@ namespace Model
 
         virtual ~SFNClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SFN"; }
-
 
         /**
          * <p>Creates an activity. An activity is a task that you write in any programming

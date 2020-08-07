@@ -111,6 +111,7 @@ WorkDocsClient::~WorkDocsClient()
 
 void WorkDocsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WorkDocs");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

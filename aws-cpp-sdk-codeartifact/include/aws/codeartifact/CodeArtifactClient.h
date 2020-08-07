@@ -360,8 +360,6 @@ namespace Model
 
         virtual ~CodeArtifactClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codeartifact"; }
-
 
         /**
          * <p>Adds an existing external connection to a repository. One external connection

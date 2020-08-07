@@ -89,6 +89,7 @@ KinesisVideoClient::~KinesisVideoClient()
 
 void KinesisVideoClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Kinesis Video");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

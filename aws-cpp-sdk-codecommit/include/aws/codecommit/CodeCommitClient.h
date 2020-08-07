@@ -618,8 +618,6 @@ namespace Model
 
         virtual ~CodeCommitClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeCommit"; }
-
 
         /**
          * <p>Creates an association between an approval rule template and a specified

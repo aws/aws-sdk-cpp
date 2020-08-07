@@ -121,8 +121,6 @@ namespace Model
 
         virtual ~LexRuntimeServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Lex Runtime Service"; }
-
 
         /**
          * <p>Removes session information for a specified bot, alias, and user ID.

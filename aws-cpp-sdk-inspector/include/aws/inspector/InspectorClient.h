@@ -266,8 +266,6 @@ namespace Model
 
         virtual ~InspectorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Inspector"; }
-
 
         /**
          * <p>Assigns attributes (key and value pairs) to the findings that are specified

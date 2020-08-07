@@ -213,8 +213,6 @@ namespace Model
 
         virtual ~RAMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "RAM"; }
-
 
         /**
          * <p>Accepts an invitation to a resource share from another AWS

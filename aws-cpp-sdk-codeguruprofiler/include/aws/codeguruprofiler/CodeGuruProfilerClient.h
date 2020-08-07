@@ -218,8 +218,6 @@ namespace Model
 
         virtual ~CodeGuruProfilerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeGuruProfiler"; }
-
 
         /**
          * <p>Add up to 2 anomaly notifications channels for a profiling

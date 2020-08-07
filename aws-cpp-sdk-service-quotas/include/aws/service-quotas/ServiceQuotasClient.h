@@ -178,8 +178,6 @@ namespace Model
 
         virtual ~ServiceQuotasClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Service Quotas"; }
-
 
         /**
          * <p>Associates the Service Quotas template with your organization so that when

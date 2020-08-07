@@ -79,6 +79,7 @@ MobileClient::~MobileClient()
 
 void MobileClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("mobile");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

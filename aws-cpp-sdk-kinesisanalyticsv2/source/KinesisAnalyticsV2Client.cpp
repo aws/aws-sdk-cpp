@@ -96,6 +96,7 @@ KinesisAnalyticsV2Client::~KinesisAnalyticsV2Client()
 
 void KinesisAnalyticsV2Client::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Kinesis Analytics V2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

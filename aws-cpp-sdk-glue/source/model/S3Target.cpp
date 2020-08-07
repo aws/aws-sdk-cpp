@@ -20,13 +20,15 @@ namespace Model
 
 S3Target::S3Target() : 
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_connectionNameHasBeenSet(false)
 {
 }
 
 S3Target::S3Target(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_connectionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ S3Target& S3Target::operator =(JsonView jsonValue)
     m_exclusionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionName"))
+  {
+    m_connectionName = jsonValue.GetString("ConnectionName");
+
+    m_connectionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue S3Target::Jsonize() const
      exclusionsJsonList[exclusionsIndex].AsString(m_exclusions[exclusionsIndex]);
    }
    payload.WithArray("Exclusions", std::move(exclusionsJsonList));
+
+  }
+
+  if(m_connectionNameHasBeenSet)
+  {
+   payload.WithString("ConnectionName", m_connectionName);
 
   }
 

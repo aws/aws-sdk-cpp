@@ -120,8 +120,6 @@ namespace Model
 
         virtual ~RDSDataServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "RDS Data"; }
-
 
         /**
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk

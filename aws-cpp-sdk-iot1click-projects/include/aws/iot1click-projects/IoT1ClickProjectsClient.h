@@ -166,8 +166,6 @@ namespace Model
 
         virtual ~IoT1ClickProjectsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT 1Click Projects"; }
-
 
         /**
          * <p>Associates a physical device with a placement.</p><p><h3>See Also:</h3>   <a

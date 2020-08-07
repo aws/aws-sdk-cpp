@@ -132,8 +132,6 @@ namespace Model
 
         virtual ~DLMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DLM"; }
-
 
         /**
          * <p>Creates a policy to manage the lifecycle of the specified AWS resources. You

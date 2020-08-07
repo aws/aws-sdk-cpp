@@ -302,8 +302,6 @@ namespace Model
 
         virtual ~CloudWatchLogsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudWatch Logs"; }
-
 
         /**
          * <p>Associates the specified AWS Key Management Service (AWS KMS) customer master

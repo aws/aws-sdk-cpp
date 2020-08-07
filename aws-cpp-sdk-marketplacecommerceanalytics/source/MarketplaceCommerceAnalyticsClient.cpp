@@ -72,6 +72,7 @@ MarketplaceCommerceAnalyticsClient::~MarketplaceCommerceAnalyticsClient()
 
 void MarketplaceCommerceAnalyticsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Marketplace Commerce Analytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

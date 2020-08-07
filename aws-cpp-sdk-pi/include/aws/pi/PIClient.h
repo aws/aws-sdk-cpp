@@ -111,8 +111,6 @@ namespace Model
 
         virtual ~PIClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "PI"; }
-
 
         /**
          * <p>For a specific time period, retrieve the top <code>N</code> dimension keys

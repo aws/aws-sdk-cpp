@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult()
+GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult() : 
+    m_autoLaunch(false)
 {
 }
 
-GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_autoLaunch(false)
 {
   *this = result;
 }
@@ -37,6 +39,12 @@ GetAppLaunchConfigurationResult& GetAppLaunchConfigurationResult::operator =(con
   if(jsonValue.ValueExists("roleName"))
   {
     m_roleName = jsonValue.GetString("roleName");
+
+  }
+
+  if(jsonValue.ValueExists("autoLaunch"))
+  {
+    m_autoLaunch = jsonValue.GetBool("autoLaunch");
 
   }
 

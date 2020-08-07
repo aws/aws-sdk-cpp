@@ -187,8 +187,6 @@ namespace Model
 
         virtual ~ComprehendMedicalClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ComprehendMedical"; }
-
 
         /**
          * <p>Gets the properties associated with a medical entities detection job. Use

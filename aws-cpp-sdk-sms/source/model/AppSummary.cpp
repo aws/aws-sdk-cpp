@@ -20,15 +20,20 @@ namespace Model
 
 AppSummary::AppSummary() : 
     m_appIdHasBeenSet(false),
+    m_importedAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_replicationConfigurationStatus(AppReplicationConfigurationStatus::NOT_SET),
+    m_replicationConfigurationStatusHasBeenSet(false),
     m_replicationStatus(AppReplicationStatus::NOT_SET),
     m_replicationStatusHasBeenSet(false),
     m_replicationStatusMessageHasBeenSet(false),
     m_latestReplicationTimeHasBeenSet(false),
+    m_launchConfigurationStatus(AppLaunchConfigurationStatus::NOT_SET),
+    m_launchConfigurationStatusHasBeenSet(false),
     m_launchStatus(AppLaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
     m_launchStatusMessageHasBeenSet(false),
@@ -45,15 +50,20 @@ AppSummary::AppSummary() :
 
 AppSummary::AppSummary(JsonView jsonValue) : 
     m_appIdHasBeenSet(false),
+    m_importedAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_replicationConfigurationStatus(AppReplicationConfigurationStatus::NOT_SET),
+    m_replicationConfigurationStatusHasBeenSet(false),
     m_replicationStatus(AppReplicationStatus::NOT_SET),
     m_replicationStatusHasBeenSet(false),
     m_replicationStatusMessageHasBeenSet(false),
     m_latestReplicationTimeHasBeenSet(false),
+    m_launchConfigurationStatus(AppLaunchConfigurationStatus::NOT_SET),
+    m_launchConfigurationStatusHasBeenSet(false),
     m_launchStatus(AppLaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
     m_launchStatusMessageHasBeenSet(false),
@@ -76,6 +86,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_appId = jsonValue.GetString("appId");
 
     m_appIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("importedAppId"))
+  {
+    m_importedAppId = jsonValue.GetString("importedAppId");
+
+    m_importedAppIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -106,6 +123,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("replicationConfigurationStatus"))
+  {
+    m_replicationConfigurationStatus = AppReplicationConfigurationStatusMapper::GetAppReplicationConfigurationStatusForName(jsonValue.GetString("replicationConfigurationStatus"));
+
+    m_replicationConfigurationStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("replicationStatus"))
   {
     m_replicationStatus = AppReplicationStatusMapper::GetAppReplicationStatusForName(jsonValue.GetString("replicationStatus"));
@@ -125,6 +149,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_latestReplicationTime = jsonValue.GetDouble("latestReplicationTime");
 
     m_latestReplicationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("launchConfigurationStatus"))
+  {
+    m_launchConfigurationStatus = AppLaunchConfigurationStatusMapper::GetAppLaunchConfigurationStatusForName(jsonValue.GetString("launchConfigurationStatus"));
+
+    m_launchConfigurationStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchStatus"))
@@ -196,6 +227,12 @@ JsonValue AppSummary::Jsonize() const
 
   }
 
+  if(m_importedAppIdHasBeenSet)
+  {
+   payload.WithString("importedAppId", m_importedAppId);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -219,6 +256,11 @@ JsonValue AppSummary::Jsonize() const
 
   }
 
+  if(m_replicationConfigurationStatusHasBeenSet)
+  {
+   payload.WithString("replicationConfigurationStatus", AppReplicationConfigurationStatusMapper::GetNameForAppReplicationConfigurationStatus(m_replicationConfigurationStatus));
+  }
+
   if(m_replicationStatusHasBeenSet)
   {
    payload.WithString("replicationStatus", AppReplicationStatusMapper::GetNameForAppReplicationStatus(m_replicationStatus));
@@ -233,6 +275,11 @@ JsonValue AppSummary::Jsonize() const
   if(m_latestReplicationTimeHasBeenSet)
   {
    payload.WithDouble("latestReplicationTime", m_latestReplicationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_launchConfigurationStatusHasBeenSet)
+  {
+   payload.WithString("launchConfigurationStatus", AppLaunchConfigurationStatusMapper::GetNameForAppLaunchConfigurationStatus(m_launchConfigurationStatus));
   }
 
   if(m_launchStatusHasBeenSet)

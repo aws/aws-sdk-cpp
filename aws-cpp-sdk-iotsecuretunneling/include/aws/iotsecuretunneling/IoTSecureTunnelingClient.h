@@ -125,8 +125,6 @@ namespace Model
 
         virtual ~IoTSecureTunnelingClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoTSecureTunneling"; }
-
 
         /**
          * <p>Closes a tunnel identified by the unique tunnel id. When a

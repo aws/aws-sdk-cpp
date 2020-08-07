@@ -156,6 +156,7 @@ S3Client::~S3Client()
 
 void S3Client::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("S3");
   LoadS3SpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;

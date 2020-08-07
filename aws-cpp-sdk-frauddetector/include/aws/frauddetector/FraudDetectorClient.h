@@ -314,8 +314,6 @@ namespace Model
 
         virtual ~FraudDetectorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "FraudDetector"; }
-
 
         /**
          * <p>Creates a batch of variables.</p><p><h3>See Also:</h3>   <a

@@ -75,6 +75,7 @@ AugmentedAIRuntimeClient::~AugmentedAIRuntimeClient()
 
 void AugmentedAIRuntimeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SageMaker A2I Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

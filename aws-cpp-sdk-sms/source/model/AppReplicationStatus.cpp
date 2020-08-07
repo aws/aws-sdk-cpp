@@ -28,6 +28,7 @@ namespace Aws
         static const int REPLICATION_PENDING_HASH = HashingUtils::HashString("REPLICATION_PENDING");
         static const int REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("REPLICATION_IN_PROGRESS");
         static const int REPLICATED_HASH = HashingUtils::HashString("REPLICATED");
+        static const int PARTIALLY_REPLICATED_HASH = HashingUtils::HashString("PARTIALLY_REPLICATED");
         static const int DELTA_REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_REPLICATION_IN_PROGRESS");
         static const int DELTA_REPLICATED_HASH = HashingUtils::HashString("DELTA_REPLICATED");
         static const int DELTA_REPLICATION_FAILED_HASH = HashingUtils::HashString("DELTA_REPLICATION_FAILED");
@@ -71,6 +72,10 @@ namespace Aws
           else if (hashCode == REPLICATED_HASH)
           {
             return AppReplicationStatus::REPLICATED;
+          }
+          else if (hashCode == PARTIALLY_REPLICATED_HASH)
+          {
+            return AppReplicationStatus::PARTIALLY_REPLICATED;
           }
           else if (hashCode == DELTA_REPLICATION_IN_PROGRESS_HASH)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "REPLICATION_IN_PROGRESS";
           case AppReplicationStatus::REPLICATED:
             return "REPLICATED";
+          case AppReplicationStatus::PARTIALLY_REPLICATED:
+            return "PARTIALLY_REPLICATED";
           case AppReplicationStatus::DELTA_REPLICATION_IN_PROGRESS:
             return "DELTA_REPLICATION_IN_PROGRESS";
           case AppReplicationStatus::DELTA_REPLICATED:

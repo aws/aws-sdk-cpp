@@ -320,8 +320,6 @@ namespace Model
 
         virtual ~MediaLiveClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaLive"; }
-
 
         /**
          * Update a channel schedule<p><h3>See Also:</h3>   <a

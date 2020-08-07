@@ -109,6 +109,7 @@ MTurkClient::~MTurkClient()
 
 void MTurkClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MTurk");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

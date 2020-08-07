@@ -157,8 +157,6 @@ namespace Model
 
         virtual ~FSxClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "FSx"; }
-
 
         /**
          * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task

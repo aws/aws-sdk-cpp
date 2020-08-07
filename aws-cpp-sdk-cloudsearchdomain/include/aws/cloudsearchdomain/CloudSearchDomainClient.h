@@ -110,8 +110,6 @@ namespace Model
 
         virtual ~CloudSearchDomainClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cloudsearchdomain"; }
-
 
         /**
          * <p>Retrieves a list of documents that match the specified search criteria. How

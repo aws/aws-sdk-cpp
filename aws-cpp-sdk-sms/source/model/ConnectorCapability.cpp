@@ -24,6 +24,7 @@ namespace Aws
         static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
         static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
         static const int SNAPSHOT_BATCHING_HASH = HashingUtils::HashString("SNAPSHOT_BATCHING");
+        static const int SMS_OPTIMIZED_HASH = HashingUtils::HashString("SMS_OPTIMIZED");
 
 
         ConnectorCapability GetConnectorCapabilityForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SNAPSHOT_BATCHING_HASH)
           {
             return ConnectorCapability::SNAPSHOT_BATCHING;
+          }
+          else if (hashCode == SMS_OPTIMIZED_HASH)
+          {
+            return ConnectorCapability::SMS_OPTIMIZED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "HYPERV-MANAGER";
           case ConnectorCapability::SNAPSHOT_BATCHING:
             return "SNAPSHOT_BATCHING";
+          case ConnectorCapability::SMS_OPTIMIZED:
+            return "SMS_OPTIMIZED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

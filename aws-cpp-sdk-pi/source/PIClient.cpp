@@ -72,6 +72,7 @@ PIClient::~PIClient()
 
 void PIClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("PI");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

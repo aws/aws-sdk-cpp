@@ -184,8 +184,6 @@ namespace Model
 
         virtual ~ResourceGroupsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Resource Groups"; }
-
 
         /**
          * <p>Creates a resource group with the specified name and description. You can

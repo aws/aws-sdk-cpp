@@ -192,8 +192,6 @@ namespace Model
 
         virtual ~MediaStoreClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaStore"; }
-
 
         /**
          * <p>Creates a storage container to hold objects. A container is similar to a

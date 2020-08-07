@@ -119,6 +119,7 @@ ECSClient::~ECSClient()
 
 void ECSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("ECS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

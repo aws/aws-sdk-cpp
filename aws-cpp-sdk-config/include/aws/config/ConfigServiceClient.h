@@ -483,8 +483,6 @@ namespace Model
 
         virtual ~ConfigServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Config Service"; }
-
 
         /**
          * <p>Returns the current configuration items for resources that are present in

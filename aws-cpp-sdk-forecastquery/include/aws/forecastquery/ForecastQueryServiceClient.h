@@ -91,8 +91,6 @@ namespace Model
 
         virtual ~ForecastQueryServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "forecastquery"; }
-
 
         /**
          * <p>Retrieves a forecast for a single item, filtered by the supplied

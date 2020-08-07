@@ -147,6 +147,7 @@ DeviceFarmClient::~DeviceFarmClient()
 
 void DeviceFarmClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Device Farm");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

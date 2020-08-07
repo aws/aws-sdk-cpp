@@ -112,6 +112,7 @@ PinpointEmailClient::~PinpointEmailClient()
 
 void PinpointEmailClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Pinpoint Email");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

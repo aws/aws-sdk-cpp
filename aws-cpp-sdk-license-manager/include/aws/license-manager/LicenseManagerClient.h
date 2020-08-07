@@ -168,8 +168,6 @@ namespace Model
 
         virtual ~LicenseManagerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "License Manager"; }
-
 
         /**
          * <p>Creates a license configuration.</p> <p>A license configuration is an

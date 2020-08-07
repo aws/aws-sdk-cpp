@@ -91,6 +91,7 @@ MediaStoreClient::~MediaStoreClient()
 
 void MediaStoreClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaStore");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -425,8 +425,6 @@ namespace Model
 
         virtual ~CloudDirectoryClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudDirectory"; }
-
 
         /**
          * <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet

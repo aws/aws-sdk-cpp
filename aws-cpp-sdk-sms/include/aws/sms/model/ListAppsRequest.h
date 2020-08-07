@@ -36,47 +36,47 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAppIds() const{ return m_appIds; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline bool AppIdsHasBeenSet() const { return m_appIdsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline void SetAppIds(const Aws::Vector<Aws::String>& value) { m_appIdsHasBeenSet = true; m_appIds = value; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline void SetAppIds(Aws::Vector<Aws::String>&& value) { m_appIdsHasBeenSet = true; m_appIds = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& WithAppIds(const Aws::Vector<Aws::String>& value) { SetAppIds(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& WithAppIds(Aws::Vector<Aws::String>&& value) { SetAppIds(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(const Aws::String& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(Aws::String&& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(const char* value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
 
@@ -124,28 +124,28 @@ namespace Model
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline ListAppsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

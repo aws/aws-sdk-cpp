@@ -151,8 +151,6 @@ namespace Model
 
         virtual ~ACMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ACM"; }
-
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use

@@ -234,8 +234,6 @@ namespace Model
 
         virtual ~ApplicationInsightsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Application Insights"; }
-
 
         /**
          * <p>Adds an application that is created from a resource group.</p><p><h3>See

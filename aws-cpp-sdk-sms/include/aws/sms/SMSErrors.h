@@ -47,7 +47,8 @@ enum class SMSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_PARAMETER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DRY_RUN_OPERATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_PARAMETER,
   MISSING_REQUIRED_PARAMETER,
   NO_CONNECTORS_AVAILABLE,
   OPERATION_NOT_PERMITTED,

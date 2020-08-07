@@ -180,8 +180,6 @@ namespace Model
 
         virtual ~HealthClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Health"; }
-
 
         /**
          * <p>Returns a list of accounts in the organization from AWS Organizations that

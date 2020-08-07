@@ -169,8 +169,6 @@ namespace Model
 
         virtual ~IoTEventsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT Events"; }
-
 
         /**
          * <p>Creates a detector model.</p><p><h3>See Also:</h3>   <a

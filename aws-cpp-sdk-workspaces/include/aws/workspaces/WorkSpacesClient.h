@@ -303,8 +303,6 @@ namespace Model
 
         virtual ~WorkSpacesClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WorkSpaces"; }
-
 
         /**
          * <p>Associates the specified IP access control group with the specified

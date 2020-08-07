@@ -91,8 +91,6 @@ namespace Model
 
         virtual ~SageMakerRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SageMaker Runtime"; }
-
 
         /**
          * <p>After you deploy a model into production using Amazon SageMaker hosting

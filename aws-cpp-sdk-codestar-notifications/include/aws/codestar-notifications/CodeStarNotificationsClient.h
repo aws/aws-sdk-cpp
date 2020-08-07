@@ -177,8 +177,6 @@ namespace Model
 
         virtual ~CodeStarNotificationsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codestar notifications"; }
-
 
         /**
          * <p>Creates a notification rule for a resource. The rule specifies the events you

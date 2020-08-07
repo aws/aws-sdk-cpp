@@ -426,8 +426,6 @@ namespace Model
 
         virtual ~ApiGatewayV2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "ApiGatewayV2"; }
-
 
         /**
          * <p>Creates an Api resource.</p><p><h3>See Also:</h3>   <a

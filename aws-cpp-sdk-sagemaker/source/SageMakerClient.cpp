@@ -207,6 +207,7 @@ SageMakerClient::~SageMakerClient()
 
 void SageMakerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SageMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

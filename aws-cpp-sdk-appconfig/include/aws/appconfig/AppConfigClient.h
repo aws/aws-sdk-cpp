@@ -274,8 +274,6 @@ namespace Model
 
         virtual ~AppConfigClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "AppConfig"; }
-
 
         /**
          * <p>An application in AppConfig is a logical unit of code that provides

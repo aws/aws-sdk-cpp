@@ -99,6 +99,7 @@ ForecastServiceClient::~ForecastServiceClient()
 
 void ForecastServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("forecast");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

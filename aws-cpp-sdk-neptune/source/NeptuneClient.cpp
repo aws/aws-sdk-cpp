@@ -130,6 +130,7 @@ NeptuneClient::~NeptuneClient()
 
 void NeptuneClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Neptune");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

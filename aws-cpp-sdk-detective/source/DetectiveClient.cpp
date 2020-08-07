@@ -81,6 +81,7 @@ DetectiveClient::~DetectiveClient()
 
 void DetectiveClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Detective");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

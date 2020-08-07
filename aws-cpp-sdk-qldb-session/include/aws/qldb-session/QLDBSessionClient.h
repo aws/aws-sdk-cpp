@@ -104,8 +104,6 @@ namespace Model
 
         virtual ~QLDBSessionClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "QLDB Session"; }
-
 
         /**
          * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of

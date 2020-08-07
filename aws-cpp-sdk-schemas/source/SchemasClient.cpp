@@ -100,6 +100,7 @@ SchemasClient::~SchemasClient()
 
 void SchemasClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("schemas");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -91,8 +91,6 @@ namespace Model
 
         virtual ~KinesisVideoMediaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video Media"; }
-
 
         /**
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the

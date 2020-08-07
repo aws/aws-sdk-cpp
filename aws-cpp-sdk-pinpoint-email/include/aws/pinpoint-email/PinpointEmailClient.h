@@ -329,8 +329,6 @@ namespace Model
 
         virtual ~PinpointEmailClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Pinpoint Email"; }
-
 
         /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules

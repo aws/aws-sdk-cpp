@@ -222,8 +222,6 @@ namespace Model
 
         virtual ~OpsWorksCMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "OpsWorksCM"; }
-
 
         /**
          * <p> Associates a new node with the server. For more information about how to

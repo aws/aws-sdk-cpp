@@ -227,8 +227,6 @@ namespace Model
 
         virtual ~Route53DomainsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Route 53 Domains"; }
-
 
         /**
          * <p>Accepts the transfer of a domain from another AWS account to the current AWS

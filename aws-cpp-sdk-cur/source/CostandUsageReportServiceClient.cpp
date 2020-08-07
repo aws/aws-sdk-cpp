@@ -74,6 +74,7 @@ CostandUsageReportServiceClient::~CostandUsageReportServiceClient()
 
 void CostandUsageReportServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Cost and Usage Report Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

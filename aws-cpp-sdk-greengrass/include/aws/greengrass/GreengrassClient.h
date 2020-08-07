@@ -540,8 +540,6 @@ namespace Model
 
         virtual ~GreengrassClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Greengrass"; }
-
 
         /**
          * Associates a role with a group. Your Greengrass core will use the role to access

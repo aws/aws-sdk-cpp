@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline void SetConnectorId(const Aws::String& value) { m_connectorIdHasBeenSet = true; m_connectorId = value; }
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline void SetConnectorId(Aws::String&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::move(value); }
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline void SetConnectorId(const char* value) { m_connectorIdHasBeenSet = true; m_connectorId.assign(value); }
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline Connector& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline Connector& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the connector.</p>
+     * <p>The ID of the connector.</p>
      */
     inline Connector& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
 
@@ -269,42 +269,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline const Aws::String& GetVmManagerId() const{ return m_vmManagerId; }
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline bool VmManagerIdHasBeenSet() const { return m_vmManagerIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline void SetVmManagerId(const Aws::String& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = value; }
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline void SetVmManagerId(Aws::String&& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = std::move(value); }
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline void SetVmManagerId(const char* value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId.assign(value); }
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline Connector& WithVmManagerId(const Aws::String& value) { SetVmManagerId(value); return *this;}
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline Connector& WithVmManagerId(Aws::String&& value) { SetVmManagerId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the VM manager.</p>
+     * <p>The ID of the VM manager.</p>
      */
     inline Connector& WithVmManagerId(const char* value) { SetVmManagerId(value); return *this;}
 

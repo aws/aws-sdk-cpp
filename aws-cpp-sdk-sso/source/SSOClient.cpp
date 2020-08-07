@@ -74,6 +74,7 @@ SSOClient::~SSOClient()
 
 void SSOClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

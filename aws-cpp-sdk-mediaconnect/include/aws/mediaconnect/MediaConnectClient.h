@@ -195,8 +195,6 @@ namespace Model
 
         virtual ~MediaConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaConnect"; }
-
 
         /**
          * Adds outputs to an existing flow. You can create up to 50 outputs per

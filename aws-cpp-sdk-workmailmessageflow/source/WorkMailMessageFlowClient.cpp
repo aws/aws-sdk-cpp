@@ -71,6 +71,7 @@ WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 
 void WorkMailMessageFlowClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WorkMailMessageFlow");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

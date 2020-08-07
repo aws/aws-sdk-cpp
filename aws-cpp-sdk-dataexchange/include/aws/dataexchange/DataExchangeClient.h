@@ -207,8 +207,6 @@ namespace Model
 
         virtual ~DataExchangeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DataExchange"; }
-
 
         /**
          * <p>This operation cancels a job. Jobs can be cancelled only when they are in the

@@ -72,6 +72,7 @@ KinesisVideoSignalingChannelsClient::~KinesisVideoSignalingChannelsClient()
 
 void KinesisVideoSignalingChannelsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Kinesis Video Signaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

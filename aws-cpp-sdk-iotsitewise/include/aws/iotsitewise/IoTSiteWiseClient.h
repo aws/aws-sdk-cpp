@@ -360,8 +360,6 @@ namespace Model
 
         virtual ~IoTSiteWiseClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoTSiteWise"; }
-
 
         /**
          * <p>Associates a child asset with the given parent asset through a hierarchy

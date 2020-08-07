@@ -105,6 +105,7 @@ ElasticsearchServiceClient::~ElasticsearchServiceClient()
 
 void ElasticsearchServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Elasticsearch Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

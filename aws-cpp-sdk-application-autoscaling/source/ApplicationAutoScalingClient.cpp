@@ -80,6 +80,7 @@ ApplicationAutoScalingClient::~ApplicationAutoScalingClient()
 
 void ApplicationAutoScalingClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Application Auto Scaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

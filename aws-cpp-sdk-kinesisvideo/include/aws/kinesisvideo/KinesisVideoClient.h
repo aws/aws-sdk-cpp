@@ -181,8 +181,6 @@ namespace Model
 
         virtual ~KinesisVideoClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video"; }
-
 
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is

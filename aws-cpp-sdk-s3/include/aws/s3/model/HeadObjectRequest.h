@@ -465,7 +465,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
@@ -474,7 +474,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
@@ -483,7 +483,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
@@ -492,7 +492,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
@@ -501,7 +501,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
@@ -510,7 +510,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
@@ -519,7 +519,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
@@ -528,7 +528,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 

@@ -80,6 +80,7 @@ CodeGuruReviewerClient::~CodeGuruReviewerClient()
 
 void CodeGuruReviewerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CodeGuru Reviewer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

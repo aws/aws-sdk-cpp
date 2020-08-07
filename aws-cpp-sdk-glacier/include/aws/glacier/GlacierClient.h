@@ -265,8 +265,6 @@ namespace Model
 
         virtual ~GlacierClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Glacier"; }
-
 
         /**
          * <p>This operation aborts a multipart upload identified by the upload ID.</p>

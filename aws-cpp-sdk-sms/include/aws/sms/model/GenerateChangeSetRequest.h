@@ -36,73 +36,73 @@ namespace Model
 
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline const OutputFormat& GetChangesetFormat() const{ return m_changesetFormat; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline bool ChangesetFormatHasBeenSet() const { return m_changesetFormatHasBeenSet; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline void SetChangesetFormat(const OutputFormat& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = value; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline void SetChangesetFormat(OutputFormat&& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = std::move(value); }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline GenerateChangeSetRequest& WithChangesetFormat(const OutputFormat& value) { SetChangesetFormat(value); return *this;}
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline GenerateChangeSetRequest& WithChangesetFormat(OutputFormat&& value) { SetChangesetFormat(std::move(value)); return *this;}
 

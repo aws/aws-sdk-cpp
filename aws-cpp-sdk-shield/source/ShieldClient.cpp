@@ -92,6 +92,7 @@ ShieldClient::~ShieldClient()
 
 void ShieldClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Shield");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

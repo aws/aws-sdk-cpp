@@ -104,6 +104,7 @@ SNSClient::~SNSClient()
 
 void SNSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SNS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

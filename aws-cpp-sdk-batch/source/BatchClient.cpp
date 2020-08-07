@@ -86,6 +86,7 @@ BatchClient::~BatchClient()
 
 void BatchClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Batch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

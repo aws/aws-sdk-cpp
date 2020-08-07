@@ -75,6 +75,7 @@ RDSDataServiceClient::~RDSDataServiceClient()
 
 void RDSDataServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("RDS Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

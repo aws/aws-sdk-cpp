@@ -112,8 +112,6 @@ namespace Model
 
         virtual ~MigrationHubConfigClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MigrationHub Config"; }
-
 
         /**
          * <p>This API sets up the home region for the calling account only.</p><p><h3>See

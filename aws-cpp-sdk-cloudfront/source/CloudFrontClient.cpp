@@ -130,6 +130,7 @@ CloudFrontClient::~CloudFrontClient()
 
 void CloudFrontClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CloudFront");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

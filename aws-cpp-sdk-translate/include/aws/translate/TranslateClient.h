@@ -132,8 +132,6 @@ namespace Model
 
         virtual ~TranslateClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Translate"; }
-
 
         /**
          * <p>A synchronous action that deletes a custom terminology.</p><p><h3>See

@@ -344,8 +344,6 @@ namespace Model
 
         virtual ~ComprehendClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Comprehend"; }
-
 
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.

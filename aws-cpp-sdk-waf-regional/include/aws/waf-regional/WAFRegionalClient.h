@@ -511,8 +511,6 @@ namespace Model
 
         virtual ~WAFRegionalClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WAF Regional"; }
-
 
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more

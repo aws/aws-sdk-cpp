@@ -99,8 +99,6 @@ namespace Model
 
         virtual ~HoneycodeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Honeycode"; }
-
 
         /**
          * <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode

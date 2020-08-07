@@ -113,6 +113,7 @@ WorkMailClient::~WorkMailClient()
 
 void WorkMailClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WorkMail");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

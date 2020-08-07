@@ -191,8 +191,6 @@ namespace Model
 
         virtual ~ManagedBlockchainClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ManagedBlockchain"; }
-
 
         /**
          * <p>Creates a member within a Managed Blockchain network.</p><p><h3>See

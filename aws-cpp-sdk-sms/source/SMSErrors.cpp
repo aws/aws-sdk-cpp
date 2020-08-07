@@ -27,6 +27,7 @@ static const int TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("Tempor
 static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int REPLICATION_JOB_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationJobAlreadyExistsException");
+static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperationException");
 static const int REPLICATION_JOB_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationJobNotFoundException");
 
 
@@ -69,6 +70,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPLICATION_JOB_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == DRY_RUN_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::DRY_RUN_OPERATION), false);
   }
   else if (hashCode == REPLICATION_JOB_NOT_FOUND_HASH)
   {

@@ -202,8 +202,6 @@ namespace Model
 
         virtual ~ShieldClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Shield"; }
-
 
         /**
          * <p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3

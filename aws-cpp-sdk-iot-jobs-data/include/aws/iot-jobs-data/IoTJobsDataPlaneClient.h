@@ -118,8 +118,6 @@ namespace Model
 
         virtual ~IoTJobsDataPlaneClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT Jobs Data Plane"; }
-
 
         /**
          * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a

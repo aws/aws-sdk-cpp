@@ -113,6 +113,7 @@ DocDBClient::~DocDBClient()
 
 void DocDBClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("DocDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

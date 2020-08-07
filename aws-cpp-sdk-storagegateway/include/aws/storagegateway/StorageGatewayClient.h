@@ -519,8 +519,6 @@ namespace Model
 
         virtual ~StorageGatewayClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Storage Gateway"; }
-
 
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation

@@ -90,6 +90,7 @@ S3ControlClient::~S3ControlClient()
 
 void S3ControlClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("S3 Control");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())

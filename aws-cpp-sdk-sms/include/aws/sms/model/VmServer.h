@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline const VmServerAddress& GetVmServerAddress() const{ return m_vmServerAddress; }
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline bool VmServerAddressHasBeenSet() const { return m_vmServerAddressHasBeenSet; }
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline void SetVmServerAddress(const VmServerAddress& value) { m_vmServerAddressHasBeenSet = true; m_vmServerAddress = value; }
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline void SetVmServerAddress(VmServerAddress&& value) { m_vmServerAddressHasBeenSet = true; m_vmServerAddress = std::move(value); }
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline VmServer& WithVmServerAddress(const VmServerAddress& value) { SetVmServerAddress(value); return *this;}
 
     /**
-     * <p>Information about the VM server location.</p>
+     * <p>The VM server location.</p>
      */
     inline VmServer& WithVmServerAddress(VmServerAddress&& value) { SetVmServerAddress(std::move(value)); return *this;}
 

@@ -92,8 +92,6 @@ namespace Model
 
         virtual ~WorkMailMessageFlowClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WorkMailMessageFlow"; }
-
 
         /**
          * <p>Retrieves the raw content of an in-transit email message, in MIME format.

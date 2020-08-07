@@ -94,8 +94,6 @@ namespace Model
 
         virtual ~EC2InstanceConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EC2 Instance Connect"; }
-
 
         /**
          * <p>Pushes an SSH public key to a particular OS user on a given EC2 instance for

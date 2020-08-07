@@ -319,8 +319,6 @@ namespace Model
 
         virtual ~WorkMailClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WorkMail"; }
-
 
         /**
          * <p>Adds a member (user or group) to the resource's set of

@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline const Aws::Vector<ServerGroupReplicationConfiguration>& GetServerGroupReplicationConfigurations() const{ return m_serverGroupReplicationConfigurations; }
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline void SetServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { m_serverGroupReplicationConfigurations = value; }
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline void SetServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { m_serverGroupReplicationConfigurations = std::move(value); }
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline GetAppReplicationConfigurationResult& WithServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { SetServerGroupReplicationConfigurations(value); return *this;}
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline GetAppReplicationConfigurationResult& WithServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { SetServerGroupReplicationConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline GetAppReplicationConfigurationResult& AddServerGroupReplicationConfigurations(const ServerGroupReplicationConfiguration& value) { m_serverGroupReplicationConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Replication configurations associated with server groups in this
+     * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
     inline GetAppReplicationConfigurationResult& AddServerGroupReplicationConfigurations(ServerGroupReplicationConfiguration&& value) { m_serverGroupReplicationConfigurations.push_back(std::move(value)); return *this; }

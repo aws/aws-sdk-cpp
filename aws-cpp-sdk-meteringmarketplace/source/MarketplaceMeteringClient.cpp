@@ -74,6 +74,7 @@ MarketplaceMeteringClient::~MarketplaceMeteringClient()
 
 void MarketplaceMeteringClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Marketplace Metering");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

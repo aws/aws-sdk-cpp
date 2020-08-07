@@ -361,8 +361,6 @@ namespace Model
 
         virtual ~DatabaseMigrationServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Database Migration Service"; }
-
 
         /**
          * <p>Adds metadata tags to an AWS DMS resource, including replication instance,

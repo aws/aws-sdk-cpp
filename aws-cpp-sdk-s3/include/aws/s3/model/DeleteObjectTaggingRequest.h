@@ -153,42 +153,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline DeleteObjectTaggingRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline DeleteObjectTaggingRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the tag.</p>
+     * <p>Name of the object key.</p>
      */
     inline DeleteObjectTaggingRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

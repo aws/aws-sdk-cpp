@@ -103,6 +103,7 @@ ConnectClient::~ConnectClient()
 
 void ConnectClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

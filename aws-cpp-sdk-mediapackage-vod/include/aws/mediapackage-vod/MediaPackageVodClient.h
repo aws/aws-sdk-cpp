@@ -165,8 +165,6 @@ namespace Model
 
         virtual ~MediaPackageVodClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaPackage Vod"; }
-
 
         /**
          * Creates a new MediaPackage VOD Asset resource.<p><h3>See Also:</h3>   <a

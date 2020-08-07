@@ -246,8 +246,6 @@ namespace Model
 
         virtual ~DataSyncClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DataSync"; }
-
 
         /**
          * <p>Cancels execution of a task. </p> <p>When you cancel a task execution, the

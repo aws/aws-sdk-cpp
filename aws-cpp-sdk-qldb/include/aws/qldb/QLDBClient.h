@@ -181,8 +181,6 @@ namespace Model
 
         virtual ~QLDBClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "QLDB"; }
-
 
         /**
          * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline const Aws::Vector<AppSummary>& GetApps() const{ return m_apps; }
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline void SetApps(const Aws::Vector<AppSummary>& value) { m_apps = value; }
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline void SetApps(Aws::Vector<AppSummary>&& value) { m_apps = std::move(value); }
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline ListAppsResult& WithApps(const Aws::Vector<AppSummary>& value) { SetApps(value); return *this;}
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline ListAppsResult& WithApps(Aws::Vector<AppSummary>&& value) { SetApps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline ListAppsResult& AddApps(const AppSummary& value) { m_apps.push_back(value); return *this; }
 
     /**
-     * <p>A list of application summaries.</p>
+     * <p>The application summaries.</p>
      */
     inline ListAppsResult& AddApps(AppSummary&& value) { m_apps.push_back(std::move(value)); return *this; }
 

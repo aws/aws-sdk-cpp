@@ -446,8 +446,6 @@ namespace Model
 
         virtual ~SESV2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "SESv2"; }
-
 
         /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules

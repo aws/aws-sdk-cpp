@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(const Aws::String& value) { SetStage(value); return *this;}
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(const char* value) { SetStage(value); return *this;}
 
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline const Aws::String& GetStageProgress() const{ return m_stageProgress; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline bool StageProgressHasBeenSet() const { return m_stageProgressHasBeenSet; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(const Aws::String& value) { m_stageProgressHasBeenSet = true; m_stageProgress = value; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(Aws::String&& value) { m_stageProgressHasBeenSet = true; m_stageProgress = std::move(value); }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(const char* value) { m_stageProgressHasBeenSet = true; m_stageProgress.assign(value); }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(const Aws::String& value) { SetStageProgress(value); return *this;}
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(Aws::String&& value) { SetStageProgress(std::move(value)); return *this;}
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(const char* value) { SetStageProgress(value); return *this;}
 

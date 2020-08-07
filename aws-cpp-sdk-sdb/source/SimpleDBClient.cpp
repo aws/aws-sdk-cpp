@@ -81,6 +81,7 @@ SimpleDBClient::~SimpleDBClient()
 
 void SimpleDBClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("sdb");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

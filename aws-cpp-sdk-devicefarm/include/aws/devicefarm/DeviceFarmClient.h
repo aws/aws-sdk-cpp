@@ -482,8 +482,6 @@ namespace Model
 
         virtual ~DeviceFarmClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Device Farm"; }
-
 
         /**
          * <p>Creates a device pool.</p><p><h3>See Also:</h3>   <a

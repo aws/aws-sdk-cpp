@@ -98,6 +98,7 @@ NetworkManagerClient::~NetworkManagerClient()
 
 void NetworkManagerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("NetworkManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

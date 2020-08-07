@@ -82,6 +82,7 @@ FirehoseClient::~FirehoseClient()
 
 void FirehoseClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Firehose");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

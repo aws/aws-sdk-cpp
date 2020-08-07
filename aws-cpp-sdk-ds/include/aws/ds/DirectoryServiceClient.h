@@ -386,8 +386,6 @@ namespace Model
 
         virtual ~DirectoryServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Directory Service"; }
-
 
         /**
          * <p>Accepts a directory sharing request that was sent from the directory owner

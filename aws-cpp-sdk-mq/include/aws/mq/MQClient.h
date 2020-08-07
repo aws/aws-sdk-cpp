@@ -198,8 +198,6 @@ namespace Model
 
         virtual ~MQClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mq"; }
-
 
         /**
          * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a

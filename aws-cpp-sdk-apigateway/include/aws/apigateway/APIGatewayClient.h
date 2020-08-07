@@ -666,8 +666,6 @@ namespace Model
 
         virtual ~APIGatewayClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "API Gateway"; }
-
 
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a

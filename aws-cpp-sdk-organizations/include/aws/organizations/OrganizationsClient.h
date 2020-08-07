@@ -325,8 +325,6 @@ namespace Model
 
         virtual ~OrganizationsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Organizations"; }
-
 
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action

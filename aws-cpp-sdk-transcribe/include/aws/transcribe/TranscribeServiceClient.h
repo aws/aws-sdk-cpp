@@ -216,8 +216,6 @@ namespace Model
 
         virtual ~TranscribeServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Transcribe"; }
-
 
         /**
          * <p>Creates a new custom language model. Use Amazon S3 prefixes to provide the

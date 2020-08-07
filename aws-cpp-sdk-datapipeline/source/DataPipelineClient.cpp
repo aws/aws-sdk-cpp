@@ -89,6 +89,7 @@ DataPipelineClient::~DataPipelineClient()
 
 void DataPipelineClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("datapipeline");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -197,8 +197,6 @@ namespace Model
 
         virtual ~EFSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EFS"; }
-
 
         /**
          * <p>Creates an EFS access point. An access point is an application-specific view

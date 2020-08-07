@@ -217,8 +217,6 @@ namespace Model
 
         virtual ~KinesisClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis"; }
-
 
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. Each time you

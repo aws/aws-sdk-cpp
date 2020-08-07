@@ -87,6 +87,7 @@ CognitoSyncClient::~CognitoSyncClient()
 
 void CognitoSyncClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("cognito-sync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

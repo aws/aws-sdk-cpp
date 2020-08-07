@@ -740,8 +740,6 @@ namespace Model
 
         virtual ~IAMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IAM"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.

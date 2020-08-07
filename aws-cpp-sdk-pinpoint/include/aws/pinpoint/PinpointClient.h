@@ -645,8 +645,6 @@ namespace Model
 
         virtual ~PinpointClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Pinpoint"; }
-
 
         /**
          * <p>Creates an application.</p><p><h3>See Also:</h3>   <a

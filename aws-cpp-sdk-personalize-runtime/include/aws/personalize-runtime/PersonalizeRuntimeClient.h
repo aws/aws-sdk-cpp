@@ -96,8 +96,6 @@ namespace Model
 
         virtual ~PersonalizeRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Personalize Runtime"; }
-
 
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in

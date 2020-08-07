@@ -211,8 +211,6 @@ namespace Model
 
         virtual ~MediaConvertClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaConvert"; }
-
 
         /**
          * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS

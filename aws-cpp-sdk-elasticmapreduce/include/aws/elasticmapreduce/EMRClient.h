@@ -245,8 +245,6 @@ namespace Model
 
         virtual ~EMRClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EMR"; }
-
 
         /**
          * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet

@@ -73,6 +73,7 @@ MigrationHubConfigClient::~MigrationHubConfigClient()
 
 void MigrationHubConfigClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MigrationHub Config");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

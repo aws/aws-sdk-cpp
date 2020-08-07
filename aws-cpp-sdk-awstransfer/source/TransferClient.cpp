@@ -88,6 +88,7 @@ TransferClient::~TransferClient()
 
 void TransferClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Transfer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

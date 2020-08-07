@@ -348,8 +348,6 @@ namespace Model
 
         virtual ~Macie2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "Macie2"; }
-
 
         /**
          * <p>Accepts an Amazon Macie membership invitation that was received from a

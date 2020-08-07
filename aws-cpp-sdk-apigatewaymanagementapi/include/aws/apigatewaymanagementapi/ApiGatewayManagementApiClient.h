@@ -105,8 +105,6 @@ namespace Model
 
         virtual ~ApiGatewayManagementApiClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ApiGatewayManagementApi"; }
-
 
         /**
          * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a

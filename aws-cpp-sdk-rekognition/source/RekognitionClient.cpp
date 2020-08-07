@@ -117,6 +117,7 @@ RekognitionClient::~RekognitionClient()
 
 void RekognitionClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Rekognition");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -317,8 +317,6 @@ namespace Model
 
         virtual ~ResourceGroupsTaggingAPIClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Resource Groups Tagging API"; }
-
 
         /**
          * <p>Describes the status of the <code>StartReportCreation</code> operation. </p>

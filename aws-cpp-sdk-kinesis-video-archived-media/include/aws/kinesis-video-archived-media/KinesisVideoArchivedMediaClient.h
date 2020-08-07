@@ -111,8 +111,6 @@ namespace Model
 
         virtual ~KinesisVideoArchivedMediaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video Archived Media"; }
-
 
         /**
          * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from

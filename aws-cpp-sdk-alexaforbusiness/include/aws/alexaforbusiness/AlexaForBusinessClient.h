@@ -560,8 +560,6 @@ namespace Model
 
         virtual ~AlexaForBusinessClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Alexa For Business"; }
-
 
         /**
          * <p>Associates a skill with the organization under the customer's AWS account. If

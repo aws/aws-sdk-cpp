@@ -99,6 +99,7 @@ KinesisClient::~KinesisClient()
 
 void KinesisClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Kinesis");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

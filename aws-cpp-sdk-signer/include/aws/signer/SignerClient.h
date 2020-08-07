@@ -157,8 +157,6 @@ namespace Model
 
         virtual ~SignerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "signer"; }
-
 
         /**
          * <p>Changes the state of an <code>ACTIVE</code> signing profile to

@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline TerminateAppRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline TerminateAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the application to terminate.</p>
+     * <p>The ID of the application.</p>
      */
     inline TerminateAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 

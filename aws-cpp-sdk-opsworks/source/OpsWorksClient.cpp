@@ -142,6 +142,7 @@ OpsWorksClient::~OpsWorksClient()
 
 void OpsWorksClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("OpsWorks");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

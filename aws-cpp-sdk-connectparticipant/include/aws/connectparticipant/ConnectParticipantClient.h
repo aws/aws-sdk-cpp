@@ -115,8 +115,6 @@ namespace Model
 
         virtual ~ConnectParticipantClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ConnectParticipant"; }
-
 
         /**
          * <p>Creates the participant's connection. Note that ParticipantToken is used for

@@ -201,6 +201,7 @@ RDSClient::~RDSClient()
 
 void RDSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("RDS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

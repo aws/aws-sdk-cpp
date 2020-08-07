@@ -179,8 +179,6 @@ namespace Model
 
         virtual ~TransferClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Transfer"; }
-
 
         /**
          * <p>Instantiates an autoscaling virtual server based on the selected file

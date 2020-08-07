@@ -79,6 +79,7 @@ STSClient::~STSClient()
 
 void STSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("STS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

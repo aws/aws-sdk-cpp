@@ -181,8 +181,6 @@ namespace Model
 
         virtual ~CodeStarconnectionsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeStar connections"; }
-
 
         /**
          * <p>Creates a connection that can then be given to other AWS services like

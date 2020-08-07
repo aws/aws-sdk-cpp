@@ -207,8 +207,6 @@ namespace Model
 
         virtual ~ServiceDiscoveryClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ServiceDiscovery"; }
-
 
         /**
          * <p>Creates an HTTP namespace. Service instances that you register using an HTTP

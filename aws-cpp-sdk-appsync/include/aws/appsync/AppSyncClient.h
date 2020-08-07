@@ -292,8 +292,6 @@ namespace Model
 
         virtual ~AppSyncClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "AppSync"; }
-
 
         /**
          * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a

@@ -90,6 +90,7 @@ CloudHSMClient::~CloudHSMClient()
 
 void CloudHSMClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CloudHSM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

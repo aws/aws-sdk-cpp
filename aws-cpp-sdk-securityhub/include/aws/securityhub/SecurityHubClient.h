@@ -326,8 +326,6 @@ namespace Model
 
         virtual ~SecurityHubClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SecurityHub"; }
-
 
         /**
          * <p>Accepts the invitation to be a member account and be monitored by the

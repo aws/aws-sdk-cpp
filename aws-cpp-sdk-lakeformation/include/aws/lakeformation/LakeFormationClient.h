@@ -152,8 +152,6 @@ namespace Model
 
         virtual ~LakeFormationClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "LakeFormation"; }
-
 
         /**
          * <p>Batch operation to grant permissions to the principal.</p><p><h3>See

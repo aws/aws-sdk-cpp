@@ -189,8 +189,6 @@ namespace Model
 
         virtual ~ACMPCAClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ACM PCA"; }
-
 
         /**
          * <p>Creates a root or subordinate private certificate authority (CA). You must

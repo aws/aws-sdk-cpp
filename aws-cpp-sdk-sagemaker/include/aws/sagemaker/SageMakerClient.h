@@ -754,8 +754,6 @@ namespace Model
 
         virtual ~SageMakerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SageMaker"; }
-
 
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon SageMaker

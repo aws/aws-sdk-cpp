@@ -35,116 +35,135 @@ namespace Model
 
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appId = value; }
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const char* value) { m_appId.assign(value); }
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the application associated with the launch configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline void SetRoleName(const char* value) { m_roleName.assign(value); }
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the service role in the customer's account that Amazon CloudFormation
-     * uses to launch the application.</p>
+     * <p>The name of the service role in the customer's account that AWS
+     * CloudFormation uses to launch the application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>Indicates whether the application is configured to launch automatically after
+     * replication is complete.</p>
+     */
+    inline bool GetAutoLaunch() const{ return m_autoLaunch; }
+
+    /**
+     * <p>Indicates whether the application is configured to launch automatically after
+     * replication is complete.</p>
+     */
+    inline void SetAutoLaunch(bool value) { m_autoLaunch = value; }
+
+    /**
+     * <p>Indicates whether the application is configured to launch automatically after
+     * replication is complete.</p>
+     */
+    inline GetAppLaunchConfigurationResult& WithAutoLaunch(bool value) { SetAutoLaunch(value); return *this;}
+
+
+    /**
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline const Aws::Vector<ServerGroupLaunchConfiguration>& GetServerGroupLaunchConfigurations() const{ return m_serverGroupLaunchConfigurations; }
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline void SetServerGroupLaunchConfigurations(const Aws::Vector<ServerGroupLaunchConfiguration>& value) { m_serverGroupLaunchConfigurations = value; }
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline void SetServerGroupLaunchConfigurations(Aws::Vector<ServerGroupLaunchConfiguration>&& value) { m_serverGroupLaunchConfigurations = std::move(value); }
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithServerGroupLaunchConfigurations(const Aws::Vector<ServerGroupLaunchConfiguration>& value) { SetServerGroupLaunchConfigurations(value); return *this;}
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline GetAppLaunchConfigurationResult& WithServerGroupLaunchConfigurations(Aws::Vector<ServerGroupLaunchConfiguration>&& value) { SetServerGroupLaunchConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline GetAppLaunchConfigurationResult& AddServerGroupLaunchConfigurations(const ServerGroupLaunchConfiguration& value) { m_serverGroupLaunchConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>List of launch configurations for server groups in this application.</p>
+     * <p>The launch configurations for server groups in this application.</p>
      */
     inline GetAppLaunchConfigurationResult& AddServerGroupLaunchConfigurations(ServerGroupLaunchConfiguration&& value) { m_serverGroupLaunchConfigurations.push_back(std::move(value)); return *this; }
 
@@ -153,6 +172,8 @@ namespace Model
     Aws::String m_appId;
 
     Aws::String m_roleName;
+
+    bool m_autoLaunch;
 
     Aws::Vector<ServerGroupLaunchConfiguration> m_serverGroupLaunchConfigurations;
   };

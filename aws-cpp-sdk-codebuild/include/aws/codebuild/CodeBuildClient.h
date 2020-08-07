@@ -374,8 +374,6 @@ namespace Model
 
         virtual ~CodeBuildClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeBuild"; }
-
 
         /**
          * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a

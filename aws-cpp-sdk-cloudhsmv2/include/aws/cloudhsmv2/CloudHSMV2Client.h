@@ -154,8 +154,6 @@ namespace Model
 
         virtual ~CloudHSMV2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudHSM V2"; }
-
 
         /**
          * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See

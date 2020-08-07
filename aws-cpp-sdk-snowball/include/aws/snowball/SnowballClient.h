@@ -190,8 +190,6 @@ namespace Model
 
         virtual ~SnowballClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Snowball"; }
-
 
         /**
          * <p>Cancels a cluster job. You can only cancel a cluster job while it's in the

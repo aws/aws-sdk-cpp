@@ -111,6 +111,7 @@ DynamoDBClient::~DynamoDBClient()
 
 void DynamoDBClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("DynamoDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

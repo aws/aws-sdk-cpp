@@ -72,6 +72,7 @@ PersonalizeRuntimeClient::~PersonalizeRuntimeClient()
 
 void PersonalizeRuntimeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Personalize Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

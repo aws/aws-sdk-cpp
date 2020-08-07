@@ -79,6 +79,7 @@ TranslateClient::~TranslateClient()
 
 void TranslateClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Translate");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

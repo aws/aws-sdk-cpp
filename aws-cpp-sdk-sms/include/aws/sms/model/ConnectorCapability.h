@@ -19,7 +19,8 @@ namespace Model
     VSPHERE,
     SCVMM,
     HYPERV_MANAGER,
-    SNAPSHOT_BATCHING
+    SNAPSHOT_BATCHING,
+    SMS_OPTIMIZED
   };
 
 namespace ConnectorCapabilityMapper

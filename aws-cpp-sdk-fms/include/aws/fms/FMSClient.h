@@ -215,8 +215,6 @@ namespace Model
 
         virtual ~FMSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "FMS"; }
-
 
         /**
          * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager

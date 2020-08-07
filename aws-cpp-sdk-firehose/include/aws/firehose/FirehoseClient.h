@@ -149,8 +149,6 @@ namespace Model
 
         virtual ~FirehoseClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Firehose"; }
-
 
         /**
          * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can

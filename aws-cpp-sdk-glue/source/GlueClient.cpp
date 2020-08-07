@@ -203,6 +203,7 @@ GlueClient::~GlueClient()
 
 void GlueClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Glue");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -199,8 +199,6 @@ namespace Model
 
         virtual ~ServerlessApplicationRepositoryClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ServerlessApplicationRepository"; }
-
 
         /**
          * <p>Creates an application, optionally including an AWS SAM file to create the

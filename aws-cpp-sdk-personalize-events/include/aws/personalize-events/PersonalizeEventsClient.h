@@ -94,8 +94,6 @@ namespace Model
 
         virtual ~PersonalizeEventsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Personalize Events"; }
-
 
         /**
          * <p>Records user interaction event data. For more information see

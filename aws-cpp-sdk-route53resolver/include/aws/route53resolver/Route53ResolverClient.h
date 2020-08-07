@@ -215,8 +215,6 @@ namespace Model
 
         virtual ~Route53ResolverClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Route53Resolver"; }
-
 
         /**
          * <p>Adds IP addresses to an inbound or an outbound resolver endpoint. If you want

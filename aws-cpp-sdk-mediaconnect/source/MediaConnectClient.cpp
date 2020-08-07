@@ -92,6 +92,7 @@ MediaConnectClient::~MediaConnectClient()
 
 void MediaConnectClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaConnect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

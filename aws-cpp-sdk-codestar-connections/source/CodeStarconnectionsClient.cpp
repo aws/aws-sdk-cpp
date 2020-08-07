@@ -81,6 +81,7 @@ CodeStarconnectionsClient::~CodeStarconnectionsClient()
 
 void CodeStarconnectionsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CodeStar connections");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

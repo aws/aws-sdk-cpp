@@ -90,6 +90,7 @@ ACMPCAClient::~ACMPCAClient()
 
 void ACMPCAClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("ACM PCA");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

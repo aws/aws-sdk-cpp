@@ -190,8 +190,6 @@ namespace Model
 
         virtual ~CostExplorerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Cost Explorer"; }
-
 
         /**
          * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See

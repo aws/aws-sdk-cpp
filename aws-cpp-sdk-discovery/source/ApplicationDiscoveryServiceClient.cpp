@@ -93,6 +93,7 @@ ApplicationDiscoveryServiceClient::~ApplicationDiscoveryServiceClient()
 
 void ApplicationDiscoveryServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Application Discovery Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

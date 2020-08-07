@@ -269,8 +269,6 @@ namespace Model
 
         virtual ~IoTThingsGraphClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoTThingsGraph"; }
-
 
         /**
          * <p>Associates a device with a concrete thing that is in the user's registry.</p>

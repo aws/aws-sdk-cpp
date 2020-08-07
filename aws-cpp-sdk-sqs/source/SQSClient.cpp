@@ -91,6 +91,7 @@ SQSClient::~SQSClient()
 
 void SQSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SQS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -141,8 +141,6 @@ namespace Model
 
         virtual ~AugmentedAIRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SageMaker A2I Runtime"; }
-
 
         /**
          * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See

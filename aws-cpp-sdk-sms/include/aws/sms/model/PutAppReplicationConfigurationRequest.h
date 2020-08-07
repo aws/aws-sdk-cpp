@@ -37,83 +37,91 @@ namespace Model
 
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline PutAppReplicationConfigurationRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline PutAppReplicationConfigurationRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the application tassociated with the replication configuration.</p>
+     * <p>The ID of the application.</p>
      */
     inline PutAppReplicationConfigurationRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline const Aws::Vector<ServerGroupReplicationConfiguration>& GetServerGroupReplicationConfigurations() const{ return m_serverGroupReplicationConfigurations; }
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline bool ServerGroupReplicationConfigurationsHasBeenSet() const { return m_serverGroupReplicationConfigurationsHasBeenSet; }
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline void SetServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations = value; }
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline void SetServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations = std::move(value); }
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline PutAppReplicationConfigurationRequest& WithServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { SetServerGroupReplicationConfigurations(value); return *this;}
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline PutAppReplicationConfigurationRequest& WithServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { SetServerGroupReplicationConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline PutAppReplicationConfigurationRequest& AddServerGroupReplicationConfigurations(const ServerGroupReplicationConfiguration& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Replication configurations for server groups in the application.</p>
+     * <p>Information about the replication configurations for server groups in the
+     * application.</p>
      */
     inline PutAppReplicationConfigurationRequest& AddServerGroupReplicationConfigurations(ServerGroupReplicationConfiguration&& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations.push_back(std::move(value)); return *this; }
 

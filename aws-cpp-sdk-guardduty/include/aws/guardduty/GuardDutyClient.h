@@ -392,8 +392,6 @@ namespace Model
 
         virtual ~GuardDutyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "GuardDuty"; }
-
 
         /**
          * <p>Accepts the invitation to be monitored by a master GuardDuty

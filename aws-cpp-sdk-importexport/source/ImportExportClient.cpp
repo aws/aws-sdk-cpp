@@ -77,6 +77,7 @@ ImportExportClient::~ImportExportClient()
 
 void ImportExportClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("importexport");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

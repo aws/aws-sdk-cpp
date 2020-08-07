@@ -359,16 +359,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -376,16 +381,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -393,16 +403,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -410,16 +425,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -427,16 +447,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -444,16 +469,21 @@ namespace Model
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
      * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
      * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
-     * AWS account with that email address already exists.</p> </li> <li>
-     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
-     * could not be created because this Region already includes an account with that
-     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
-     * created because the address you provided is not valid.</p> </li> <li>
-     * <p>INVALID_EMAIL: The account could not be created because the email address you
-     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
-     * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
+     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
+     * not be created because another AWS account with that email address already
+     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
+     * AWS GovCloud (US) Region could not be created because this Region already
+     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * The account could not be created because the address you provided is not
+     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
+     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
+     * The account could not be created because of an internal failure. Try again
+     * later. If the problem persists, contact Customer Support.</p> </li> <li>
+     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
+     * You must configure the master account with a valid payment method, such as a
+     * credit card.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

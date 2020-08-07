@@ -148,6 +148,7 @@ ConfigServiceClient::~ConfigServiceClient()
 
 void ConfigServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Config Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

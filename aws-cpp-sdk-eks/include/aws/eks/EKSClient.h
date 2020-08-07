@@ -201,8 +201,6 @@ namespace Model
 
         virtual ~EKSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EKS"; }
-
 
         /**
          * <p>Creates an Amazon EKS control plane. </p> <p>The Amazon EKS control plane

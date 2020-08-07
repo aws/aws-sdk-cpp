@@ -118,8 +118,6 @@ namespace Model
 
         virtual ~TextractClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Textract"; }
-
 
         /**
          * <p>Analyzes an input document for relationships between detected items. </p>

@@ -101,6 +101,7 @@ EventBridgeClient::~EventBridgeClient()
 
 void EventBridgeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("EventBridge");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

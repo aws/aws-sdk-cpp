@@ -152,6 +152,55 @@ namespace Model
      */
     inline S3Target& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline S3Target& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline S3Target& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a connection which allows a job or crawler to access data in
+     * Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     */
+    inline S3Target& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -159,6 +208,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_exclusions;
     bool m_exclusionsHasBeenSet;
+
+    Aws::String m_connectionName;
+    bool m_connectionNameHasBeenSet;
   };
 
 } // namespace Model

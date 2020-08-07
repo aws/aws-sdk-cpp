@@ -99,8 +99,6 @@ namespace Model
 
         virtual ~KinesisVideoSignalingChannelsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video Signaling"; }
-
 
         /**
          * <p>Gets the Interactive Connectivity Establishment (ICE) server configuration

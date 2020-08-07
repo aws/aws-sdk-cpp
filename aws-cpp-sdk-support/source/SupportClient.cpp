@@ -84,6 +84,7 @@ SupportClient::~SupportClient()
 
 void SupportClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Support");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

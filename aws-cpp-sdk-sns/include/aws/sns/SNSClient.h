@@ -262,8 +262,6 @@ namespace Model
 
         virtual ~SNSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SNS"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.

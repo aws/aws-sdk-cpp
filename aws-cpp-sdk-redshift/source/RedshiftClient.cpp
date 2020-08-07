@@ -163,6 +163,7 @@ RedshiftClient::~RedshiftClient()
 
 void RedshiftClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Redshift");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

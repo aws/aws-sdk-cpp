@@ -266,8 +266,6 @@ namespace Model
 
         virtual ~SWFClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SWF"; }
-
 
         /**
          * <p>Returns the number of closed workflow executions within the given domain that

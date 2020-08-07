@@ -228,8 +228,6 @@ namespace Model
 
         virtual ~NetworkManagerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "NetworkManager"; }
-
 
         /**
          * <p>Associates a customer gateway with a device and optionally, with a link. If

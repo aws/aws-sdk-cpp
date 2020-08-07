@@ -103,6 +103,7 @@ AppConfigClient::~AppConfigClient()
 
 void AppConfigClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

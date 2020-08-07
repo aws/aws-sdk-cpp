@@ -83,6 +83,7 @@ IoT1ClickDevicesServiceClient::~IoT1ClickDevicesServiceClient()
 
 void IoT1ClickDevicesServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("IoT 1Click Devices Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

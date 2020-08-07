@@ -71,6 +71,7 @@ SageMakerRuntimeClient::~SageMakerRuntimeClient()
 
 void SageMakerRuntimeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SageMaker Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

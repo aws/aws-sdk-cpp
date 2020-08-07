@@ -190,8 +190,6 @@ namespace Model
 
         virtual ~CognitoSyncClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cognito-sync"; }
-
 
         /**
          * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the

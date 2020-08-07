@@ -343,8 +343,6 @@ namespace Model
 
         virtual ~CodePipelineClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodePipeline"; }
-
 
         /**
          * <p>Returns information about a specified job and whether that job has been

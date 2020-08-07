@@ -176,8 +176,6 @@ namespace Model
 
         virtual ~MigrationHubClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Migration Hub"; }
-
 
         /**
          * <p>Associates a created artifact of an AWS cloud resource, the target receiving

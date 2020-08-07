@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Location of the Amazon S3 object.</p>
+     * <p>The location of the Amazon S3 object.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
 
     /**
-     * <p>Location of the Amazon S3 object.</p>
+     * <p>The location of the Amazon S3 object.</p>
      */
     inline void SetS3Location(const S3Location& value) { m_s3Location = value; }
 
     /**
-     * <p>Location of the Amazon S3 object.</p>
+     * <p>The location of the Amazon S3 object.</p>
      */
     inline void SetS3Location(S3Location&& value) { m_s3Location = std::move(value); }
 
     /**
-     * <p>Location of the Amazon S3 object.</p>
+     * <p>The location of the Amazon S3 object.</p>
      */
     inline GenerateTemplateResult& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
 
     /**
-     * <p>Location of the Amazon S3 object.</p>
+     * <p>The location of the Amazon S3 object.</p>
      */
     inline GenerateTemplateResult& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
 

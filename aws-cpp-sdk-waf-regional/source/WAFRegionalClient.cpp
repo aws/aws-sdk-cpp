@@ -151,6 +151,7 @@ WAFRegionalClient::~WAFRegionalClient()
 
 void WAFRegionalClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WAF Regional");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

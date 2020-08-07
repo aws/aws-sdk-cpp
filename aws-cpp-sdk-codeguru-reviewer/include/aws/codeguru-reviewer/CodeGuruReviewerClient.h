@@ -145,8 +145,6 @@ namespace Model
 
         virtual ~CodeGuruReviewerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeGuru Reviewer"; }
-
 
         /**
          * <p> Use to associate an AWS CodeCommit repository or a repostory managed by AWS

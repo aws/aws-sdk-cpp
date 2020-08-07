@@ -279,8 +279,6 @@ namespace Model
 
         virtual ~ElasticsearchServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Elasticsearch Service"; }
-
 
         /**
          * <p>Allows the destination domain owner to accept an inbound cross-cluster search

@@ -487,8 +487,6 @@ namespace Model
 
         virtual ~WAFClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WAF"; }
-
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,

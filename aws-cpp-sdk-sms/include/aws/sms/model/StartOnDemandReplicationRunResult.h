@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline const Aws::String& GetReplicationRunId() const{ return m_replicationRunId; }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(const Aws::String& value) { m_replicationRunId = value; }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(Aws::String&& value) { m_replicationRunId = std::move(value); }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(const char* value) { m_replicationRunId.assign(value); }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline StartOnDemandReplicationRunResult& WithReplicationRunId(const Aws::String& value) { SetReplicationRunId(value); return *this;}
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline StartOnDemandReplicationRunResult& WithReplicationRunId(Aws::String&& value) { SetReplicationRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline StartOnDemandReplicationRunResult& WithReplicationRunId(const char* value) { SetReplicationRunId(value); return *this;}
 

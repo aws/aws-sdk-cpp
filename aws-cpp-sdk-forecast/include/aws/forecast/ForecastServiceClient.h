@@ -226,8 +226,6 @@ namespace Model
 
         virtual ~ForecastServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "forecast"; }
-
 
         /**
          * <p>Creates an Amazon Forecast dataset. The information about the dataset that

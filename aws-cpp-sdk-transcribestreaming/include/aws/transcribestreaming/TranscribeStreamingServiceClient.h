@@ -98,8 +98,6 @@ namespace Model
 
         virtual ~TranscribeStreamingServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Transcribe Streaming"; }
-
 
         /**
          * <p>Starts a bidirectional HTTP2 stream where audio is streamed to Amazon

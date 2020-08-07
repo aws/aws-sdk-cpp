@@ -167,8 +167,6 @@ namespace Model
 
         virtual ~ElasticTranscoderClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Elastic Transcoder"; }
-
 
         /**
          * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only

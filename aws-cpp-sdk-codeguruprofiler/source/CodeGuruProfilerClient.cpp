@@ -93,6 +93,7 @@ CodeGuruProfilerClient::~CodeGuruProfilerClient()
 
 void CodeGuruProfilerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CodeGuruProfiler");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

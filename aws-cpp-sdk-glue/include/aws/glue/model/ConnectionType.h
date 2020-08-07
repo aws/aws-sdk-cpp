@@ -19,7 +19,8 @@ namespace Model
     JDBC,
     SFTP,
     MONGODB,
-    KAFKA
+    KAFKA,
+    NETWORK
   };
 
 namespace ConnectionTypeMapper

@@ -154,8 +154,6 @@ namespace Model
 
         virtual ~IoT1ClickDevicesServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT 1Click Devices Service"; }
-
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only

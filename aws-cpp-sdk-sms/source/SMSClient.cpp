@@ -25,6 +25,7 @@
 #include <aws/sms/model/DeleteAppRequest.h>
 #include <aws/sms/model/DeleteAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/DeleteAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/DeleteAppValidationConfigurationRequest.h>
 #include <aws/sms/model/DeleteReplicationJobRequest.h>
 #include <aws/sms/model/DeleteServerCatalogRequest.h>
 #include <aws/sms/model/DisassociateConnectorRequest.h>
@@ -33,16 +34,22 @@
 #include <aws/sms/model/GetAppRequest.h>
 #include <aws/sms/model/GetAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/GetAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/GetAppValidationConfigurationRequest.h>
+#include <aws/sms/model/GetAppValidationOutputRequest.h>
 #include <aws/sms/model/GetConnectorsRequest.h>
 #include <aws/sms/model/GetReplicationJobsRequest.h>
 #include <aws/sms/model/GetReplicationRunsRequest.h>
 #include <aws/sms/model/GetServersRequest.h>
+#include <aws/sms/model/ImportAppCatalogRequest.h>
 #include <aws/sms/model/ImportServerCatalogRequest.h>
 #include <aws/sms/model/LaunchAppRequest.h>
 #include <aws/sms/model/ListAppsRequest.h>
+#include <aws/sms/model/NotifyAppValidationOutputRequest.h>
 #include <aws/sms/model/PutAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/PutAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/PutAppValidationConfigurationRequest.h>
 #include <aws/sms/model/StartAppReplicationRequest.h>
+#include <aws/sms/model/StartOnDemandAppReplicationRequest.h>
 #include <aws/sms/model/StartOnDemandReplicationRunRequest.h>
 #include <aws/sms/model/StopAppReplicationRequest.h>
 #include <aws/sms/model/TerminateAppRequest.h>
@@ -98,6 +105,7 @@ SMSClient::~SMSClient()
 
 void SMSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -254,6 +262,33 @@ void SMSClient::DeleteAppReplicationConfigurationAsync(const DeleteAppReplicatio
 void SMSClient::DeleteAppReplicationConfigurationAsyncHelper(const DeleteAppReplicationConfigurationRequest& request, const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAppReplicationConfiguration(request), context);
+}
+
+DeleteAppValidationConfigurationOutcome SMSClient::DeleteAppValidationConfiguration(const DeleteAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppValidationConfigurationOutcomeCallable SMSClient::DeleteAppValidationConfigurationCallable(const DeleteAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::DeleteAppValidationConfigurationAsync(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::DeleteAppValidationConfigurationAsyncHelper(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppValidationConfiguration(request), context);
 }
 
 DeleteReplicationJobOutcome SMSClient::DeleteReplicationJob(const DeleteReplicationJobRequest& request) const
@@ -472,6 +507,60 @@ void SMSClient::GetAppReplicationConfigurationAsyncHelper(const GetAppReplicatio
   handler(this, request, GetAppReplicationConfiguration(request), context);
 }
 
+GetAppValidationConfigurationOutcome SMSClient::GetAppValidationConfiguration(const GetAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppValidationConfigurationOutcomeCallable SMSClient::GetAppValidationConfigurationCallable(const GetAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::GetAppValidationConfigurationAsync(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::GetAppValidationConfigurationAsyncHelper(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppValidationConfiguration(request), context);
+}
+
+GetAppValidationOutputOutcome SMSClient::GetAppValidationOutput(const GetAppValidationOutputRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppValidationOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppValidationOutputOutcomeCallable SMSClient::GetAppValidationOutputCallable(const GetAppValidationOutputRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationOutput(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::GetAppValidationOutputAsync(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationOutputAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::GetAppValidationOutputAsyncHelper(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppValidationOutput(request), context);
+}
+
 GetConnectorsOutcome SMSClient::GetConnectors(const GetConnectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -580,6 +669,33 @@ void SMSClient::GetServersAsyncHelper(const GetServersRequest& request, const Ge
   handler(this, request, GetServers(request), context);
 }
 
+ImportAppCatalogOutcome SMSClient::ImportAppCatalog(const ImportAppCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ImportAppCatalogOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportAppCatalogOutcomeCallable SMSClient::ImportAppCatalogCallable(const ImportAppCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportAppCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportAppCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::ImportAppCatalogAsync(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportAppCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::ImportAppCatalogAsyncHelper(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportAppCatalog(request), context);
+}
+
 ImportServerCatalogOutcome SMSClient::ImportServerCatalog(const ImportServerCatalogRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -661,6 +777,33 @@ void SMSClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAp
   handler(this, request, ListApps(request), context);
 }
 
+NotifyAppValidationOutputOutcome SMSClient::NotifyAppValidationOutput(const NotifyAppValidationOutputRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return NotifyAppValidationOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+NotifyAppValidationOutputOutcomeCallable SMSClient::NotifyAppValidationOutputCallable(const NotifyAppValidationOutputRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< NotifyAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyAppValidationOutput(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::NotifyAppValidationOutputAsync(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->NotifyAppValidationOutputAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::NotifyAppValidationOutputAsyncHelper(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, NotifyAppValidationOutput(request), context);
+}
+
 PutAppLaunchConfigurationOutcome SMSClient::PutAppLaunchConfiguration(const PutAppLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -715,6 +858,33 @@ void SMSClient::PutAppReplicationConfigurationAsyncHelper(const PutAppReplicatio
   handler(this, request, PutAppReplicationConfiguration(request), context);
 }
 
+PutAppValidationConfigurationOutcome SMSClient::PutAppValidationConfiguration(const PutAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAppValidationConfigurationOutcomeCallable SMSClient::PutAppValidationConfigurationCallable(const PutAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::PutAppValidationConfigurationAsync(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::PutAppValidationConfigurationAsyncHelper(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAppValidationConfiguration(request), context);
+}
+
 StartAppReplicationOutcome SMSClient::StartAppReplication(const StartAppReplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -740,6 +910,33 @@ void SMSClient::StartAppReplicationAsync(const StartAppReplicationRequest& reque
 void SMSClient::StartAppReplicationAsyncHelper(const StartAppReplicationRequest& request, const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartAppReplication(request), context);
+}
+
+StartOnDemandAppReplicationOutcome SMSClient::StartOnDemandAppReplication(const StartOnDemandAppReplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartOnDemandAppReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartOnDemandAppReplicationOutcomeCallable SMSClient::StartOnDemandAppReplicationCallable(const StartOnDemandAppReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartOnDemandAppReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartOnDemandAppReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::StartOnDemandAppReplicationAsync(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartOnDemandAppReplicationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::StartOnDemandAppReplicationAsyncHelper(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartOnDemandAppReplication(request), context);
 }
 
 StartOnDemandReplicationRunOutcome SMSClient::StartOnDemandReplicationRun(const StartOnDemandReplicationRunRequest& request) const

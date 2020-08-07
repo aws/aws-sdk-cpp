@@ -134,8 +134,6 @@ namespace Model
 
         virtual ~EBSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EBS"; }
-
 
         /**
          * <p>Seals and completes the snapshot after all of the required blocks of data

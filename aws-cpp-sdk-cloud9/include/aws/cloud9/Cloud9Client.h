@@ -176,8 +176,6 @@ namespace Model
 
         virtual ~Cloud9Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "Cloud9"; }
-
 
         /**
          * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic

@@ -95,6 +95,7 @@ GroundStationClient::~GroundStationClient()
 
 void GroundStationClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("GroundStation");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

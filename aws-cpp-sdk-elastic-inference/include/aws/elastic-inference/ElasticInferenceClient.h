@@ -116,8 +116,6 @@ namespace Model
 
         virtual ~ElasticInferenceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Elastic Inference"; }
-
 
         /**
          * <p> Describes the locations in which a given accelerator type or set of types is

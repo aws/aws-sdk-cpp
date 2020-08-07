@@ -337,8 +337,6 @@ namespace Model
 
         virtual ~AppStreamClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "AppStream"; }
-
 
         /**
          * <p>Associates the specified fleet with the specified stack.</p><p><h3>See

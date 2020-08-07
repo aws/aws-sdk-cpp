@@ -78,6 +78,7 @@ SavingsPlansClient::~SavingsPlansClient()
 
 void SavingsPlansClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("savingsplans");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -107,6 +107,7 @@ CodePipelineClient::~CodePipelineClient()
 
 void CodePipelineClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CodePipeline");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

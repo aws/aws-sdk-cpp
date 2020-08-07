@@ -126,8 +126,6 @@ namespace Model
 
         virtual ~PinpointSMSVoiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Pinpoint SMS Voice"; }
-
 
         /**
          * Create a new configuration set. After you create the configuration set, you can

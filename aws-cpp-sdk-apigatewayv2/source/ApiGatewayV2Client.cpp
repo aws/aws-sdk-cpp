@@ -141,6 +141,7 @@ ApiGatewayV2Client::~ApiGatewayV2Client()
 
 void ApiGatewayV2Client::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("ApiGatewayV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

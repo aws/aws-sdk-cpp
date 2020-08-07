@@ -117,6 +117,7 @@ AppStreamClient::~AppStreamClient()
 
 void AppStreamClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("AppStream");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

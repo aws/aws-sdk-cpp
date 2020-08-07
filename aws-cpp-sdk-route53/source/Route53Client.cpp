@@ -128,6 +128,7 @@ Route53Client::~Route53Client()
 
 void Route53Client::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Route 53");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

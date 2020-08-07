@@ -128,8 +128,6 @@ namespace Model
 
         virtual ~MediaTailorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaTailor"; }
-
 
         /**
          * <p>Deletes the playback configuration for the specified name. </p><p><h3>See

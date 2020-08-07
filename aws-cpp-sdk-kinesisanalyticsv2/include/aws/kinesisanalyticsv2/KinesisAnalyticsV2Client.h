@@ -220,8 +220,6 @@ namespace Model
 
         virtual ~KinesisAnalyticsV2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Analytics V2"; }
-
 
         /**
          * <p>Adds an Amazon CloudWatch log stream to monitor application configuration

@@ -208,8 +208,6 @@ namespace Model
 
         virtual ~KafkaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kafka"; }
-
 
         /**
          * 

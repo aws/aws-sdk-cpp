@@ -200,8 +200,6 @@ namespace Model
 
         virtual ~KendraClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "kendra"; }
-
 
         /**
          * <p>Removes one or more documents from an index. The documents must have been

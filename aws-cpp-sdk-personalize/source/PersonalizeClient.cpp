@@ -113,6 +113,7 @@ PersonalizeClient::~PersonalizeClient()
 
 void PersonalizeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Personalize");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

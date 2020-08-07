@@ -107,42 +107,42 @@ namespace Model
 
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline const Aws::Vector<VmServerAddress>& GetVmServerAddressList() const{ return m_vmServerAddressList; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline bool VmServerAddressListHasBeenSet() const { return m_vmServerAddressListHasBeenSet; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline void SetVmServerAddressList(const Aws::Vector<VmServerAddress>& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList = value; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline void SetVmServerAddressList(Aws::Vector<VmServerAddress>&& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList = std::move(value); }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& WithVmServerAddressList(const Aws::Vector<VmServerAddress>& value) { SetVmServerAddressList(value); return *this;}
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& WithVmServerAddressList(Aws::Vector<VmServerAddress>&& value) { SetVmServerAddressList(std::move(value)); return *this;}
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& AddVmServerAddressList(const VmServerAddress& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& AddVmServerAddressList(VmServerAddress&& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList.push_back(std::move(value)); return *this; }
 

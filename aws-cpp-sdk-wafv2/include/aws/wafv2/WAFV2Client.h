@@ -332,8 +332,6 @@ namespace Model
 
         virtual ~WAFV2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "WAFV2"; }
-
 
         /**
          *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,

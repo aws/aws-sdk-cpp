@@ -86,6 +86,7 @@ MediaPackageVodClient::~MediaPackageVodClient()
 
 void MediaPackageVodClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaPackage Vod");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

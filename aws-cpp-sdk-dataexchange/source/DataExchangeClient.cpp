@@ -92,6 +92,7 @@ DataExchangeClient::~DataExchangeClient()
 
 void DataExchangeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("DataExchange");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

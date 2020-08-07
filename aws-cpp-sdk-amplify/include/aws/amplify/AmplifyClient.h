@@ -278,8 +278,6 @@ namespace Model
 
         virtual ~AmplifyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Amplify"; }
-
 
         /**
          * <p> Creates a new Amplify app. </p><p><h3>See Also:</h3>   <a

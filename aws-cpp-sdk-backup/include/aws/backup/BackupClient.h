@@ -318,8 +318,6 @@ namespace Model
 
         virtual ~BackupClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Backup"; }
-
 
         /**
          * <p>Backup plans are documents that contain information that AWS Backup uses to

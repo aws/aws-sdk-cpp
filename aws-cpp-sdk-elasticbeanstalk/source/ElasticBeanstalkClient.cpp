@@ -118,6 +118,7 @@ ElasticBeanstalkClient::~ElasticBeanstalkClient()
 
 void ElasticBeanstalkClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Elastic Beanstalk");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

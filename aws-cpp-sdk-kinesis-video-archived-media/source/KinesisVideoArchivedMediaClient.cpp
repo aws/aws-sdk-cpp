@@ -75,6 +75,7 @@ KinesisVideoArchivedMediaClient::~KinesisVideoArchivedMediaClient()
 
 void KinesisVideoArchivedMediaClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Kinesis Video Archived Media");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

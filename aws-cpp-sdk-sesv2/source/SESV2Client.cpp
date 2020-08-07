@@ -137,6 +137,7 @@ SESV2Client::~SESV2Client()
 
 void SESV2Client::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SESv2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

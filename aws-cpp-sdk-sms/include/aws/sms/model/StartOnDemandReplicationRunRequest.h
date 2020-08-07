@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 

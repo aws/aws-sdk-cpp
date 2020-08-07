@@ -170,8 +170,6 @@ namespace Model
 
         virtual ~MediaPackageClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaPackage"; }
-
 
         /**
          * Creates a new Channel.<p><h3>See Also:</h3>   <a

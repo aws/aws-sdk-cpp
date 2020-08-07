@@ -246,8 +246,6 @@ namespace Model
 
         virtual ~EventBridgeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EventBridge"; }
-
 
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,

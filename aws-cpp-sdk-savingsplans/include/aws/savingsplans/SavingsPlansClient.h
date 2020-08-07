@@ -131,8 +131,6 @@ namespace Model
 
         virtual ~SavingsPlansClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "savingsplans"; }
-
 
         /**
          * <p>Creates a Savings Plan.</p><p><h3>See Also:</h3>   <a

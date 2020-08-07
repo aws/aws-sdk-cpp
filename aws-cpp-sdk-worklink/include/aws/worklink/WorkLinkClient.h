@@ -258,8 +258,6 @@ namespace Model
 
         virtual ~WorkLinkClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "WorkLink"; }
-
 
         /**
          * <p>Specifies a domain to be associated to Amazon WorkLink.</p><p><h3>See

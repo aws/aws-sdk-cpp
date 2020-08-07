@@ -24,6 +24,7 @@ namespace Aws
         static const int SFTP_HASH = HashingUtils::HashString("SFTP");
         static const int MONGODB_HASH = HashingUtils::HashString("MONGODB");
         static const int KAFKA_HASH = HashingUtils::HashString("KAFKA");
+        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == KAFKA_HASH)
           {
             return ConnectionType::KAFKA;
+          }
+          else if (hashCode == NETWORK_HASH)
+          {
+            return ConnectionType::NETWORK;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "MONGODB";
           case ConnectionType::KAFKA:
             return "KAFKA";
+          case ConnectionType::NETWORK:
+            return "NETWORK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

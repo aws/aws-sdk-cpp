@@ -28,7 +28,11 @@ ServerLaunchConfiguration::ServerLaunchConfiguration() :
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_iamInstanceProfileNameHasBeenSet(false),
+    m_configureScriptHasBeenSet(false),
+    m_configureScriptType(ScriptType::NOT_SET),
+    m_configureScriptTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +46,11 @@ ServerLaunchConfiguration::ServerLaunchConfiguration(JsonView jsonValue) :
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_iamInstanceProfileNameHasBeenSet(false),
+    m_configureScriptHasBeenSet(false),
+    m_configureScriptType(ScriptType::NOT_SET),
+    m_configureScriptTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +120,27 @@ ServerLaunchConfiguration& ServerLaunchConfiguration::operator =(JsonView jsonVa
     m_associatePublicIpAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iamInstanceProfileName"))
+  {
+    m_iamInstanceProfileName = jsonValue.GetString("iamInstanceProfileName");
+
+    m_iamInstanceProfileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configureScript"))
+  {
+    m_configureScript = jsonValue.GetObject("configureScript");
+
+    m_configureScriptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configureScriptType"))
+  {
+    m_configureScriptType = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("configureScriptType"));
+
+    m_configureScriptTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +200,23 @@ JsonValue ServerLaunchConfiguration::Jsonize() const
   {
    payload.WithBool("associatePublicIpAddress", m_associatePublicIpAddress);
 
+  }
+
+  if(m_iamInstanceProfileNameHasBeenSet)
+  {
+   payload.WithString("iamInstanceProfileName", m_iamInstanceProfileName);
+
+  }
+
+  if(m_configureScriptHasBeenSet)
+  {
+   payload.WithObject("configureScript", m_configureScript.Jsonize());
+
+  }
+
+  if(m_configureScriptTypeHasBeenSet)
+  {
+   payload.WithString("configureScriptType", ScriptTypeMapper::GetNameForScriptType(m_configureScriptType));
   }
 
   return payload;

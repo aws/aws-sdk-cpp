@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 PutAppLaunchConfigurationRequest::PutAppLaunchConfigurationRequest() : 
     m_appIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
+    m_autoLaunch(false),
+    m_autoLaunchHasBeenSet(false),
     m_serverGroupLaunchConfigurationsHasBeenSet(false)
 {
 }
@@ -32,6 +34,12 @@ Aws::String PutAppLaunchConfigurationRequest::SerializePayload() const
   if(m_roleNameHasBeenSet)
   {
    payload.WithString("roleName", m_roleName);
+
+  }
+
+  if(m_autoLaunchHasBeenSet)
+  {
+   payload.WithBool("autoLaunch", m_autoLaunch);
 
   }
 

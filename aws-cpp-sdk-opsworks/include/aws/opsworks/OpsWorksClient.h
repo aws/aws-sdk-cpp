@@ -468,8 +468,6 @@ namespace Model
 
         virtual ~OpsWorksClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "OpsWorks"; }
-
 
         /**
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign

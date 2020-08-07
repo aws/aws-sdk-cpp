@@ -299,8 +299,6 @@ namespace Model
 
         virtual ~ImagebuilderClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "imagebuilder"; }
-
 
         /**
          * <p>CancelImageCreation cancels the creation of Image. This operation can only be

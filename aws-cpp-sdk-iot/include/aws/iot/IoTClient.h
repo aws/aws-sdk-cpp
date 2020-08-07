@@ -1096,8 +1096,6 @@ namespace Model
 
         virtual ~IoTClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT"; }
-
 
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate

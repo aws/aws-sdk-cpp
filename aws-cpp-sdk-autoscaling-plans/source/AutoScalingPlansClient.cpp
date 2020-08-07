@@ -76,6 +76,7 @@ AutoScalingPlansClient::~AutoScalingPlansClient()
 
 void AutoScalingPlansClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Auto Scaling Plans");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

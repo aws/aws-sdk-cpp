@@ -306,8 +306,6 @@ namespace Model
 
         virtual ~DynamoDBClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DynamoDB"; }
-
 
         /**
          * <p>The <code>BatchGetItem</code> operation returns the attributes of one or more

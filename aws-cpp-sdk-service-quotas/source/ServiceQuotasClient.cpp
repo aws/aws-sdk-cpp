@@ -86,6 +86,7 @@ ServiceQuotasClient::~ServiceQuotasClient()
 
 void ServiceQuotasClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Service Quotas");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

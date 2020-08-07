@@ -118,8 +118,6 @@ namespace Model
 
         virtual ~SSOOIDCClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SSO OIDC"; }
-
 
         /**
          * <p>Creates and returns an access token for the authorized client. The access

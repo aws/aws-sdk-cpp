@@ -230,8 +230,6 @@ namespace Model
 
         virtual ~SchemasClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "schemas"; }
-
 
         /**
          * <p>Creates a discoverer.</p><p><h3>See Also:</h3>   <a

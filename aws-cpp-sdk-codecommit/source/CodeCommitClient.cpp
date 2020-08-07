@@ -147,6 +147,7 @@ CodeCommitClient::~CodeCommitClient()
 
 void CodeCommitClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("CodeCommit");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -296,8 +296,6 @@ namespace Model
 
         virtual ~PersonalizeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Personalize"; }
-
 
         /**
          * <p>Creates a batch inference job. The operation can handle up to 50 million

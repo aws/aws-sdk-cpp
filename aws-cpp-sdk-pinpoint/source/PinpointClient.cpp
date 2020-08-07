@@ -182,6 +182,7 @@ PinpointClient::~PinpointClient()
 
 void PinpointClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Pinpoint");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

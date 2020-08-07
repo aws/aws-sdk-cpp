@@ -78,6 +78,7 @@ ResourceGroupsTaggingAPIClient::~ResourceGroupsTaggingAPIClient()
 
 void ResourceGroupsTaggingAPIClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Resource Groups Tagging API");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

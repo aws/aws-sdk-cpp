@@ -109,8 +109,6 @@ namespace Model
 
         virtual ~IoTEventsDataClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT Events Data"; }
-
 
         /**
          * <p>Sends a set of messages to the AWS IoT Events system. Each message payload is

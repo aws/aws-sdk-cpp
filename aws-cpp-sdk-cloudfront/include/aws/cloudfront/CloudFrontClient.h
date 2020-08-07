@@ -382,8 +382,6 @@ namespace Model
 
         virtual ~CloudFrontClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudFront"; }
-
 
         /**
          * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can

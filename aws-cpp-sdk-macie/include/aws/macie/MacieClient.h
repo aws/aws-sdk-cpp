@@ -132,8 +132,6 @@ namespace Model
 
         virtual ~MacieClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Macie"; }
-
 
         /**
          * <p>Associates a specified AWS account with Amazon Macie Classic as a member
