@@ -85,8 +85,6 @@ namespace Aws
                 virtual ~Sha256HMACCommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
-
-
             };
 
             /**
@@ -165,6 +163,8 @@ namespace Aws
                 virtual size_t GetBlockSizeBytes() const = 0;
 
                 virtual size_t GetKeyLengthBits() const = 0;
+
+                bool CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength);
 
                 _CCCryptor* m_encryptorHandle;
                 _CCCryptor* m_decryptorHandle;
@@ -304,6 +304,7 @@ namespace Aws
 
             private:
                 void InitCipher();
+
                 CryptoBuffer m_aad;
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;

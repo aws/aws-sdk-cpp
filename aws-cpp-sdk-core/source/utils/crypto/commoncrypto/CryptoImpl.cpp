@@ -51,7 +51,17 @@ namespace Aws
              */
             void SecureRandomBytes_CommonCrypto::GetBytes(unsigned char* buffer, size_t bufferSize)
             {
-                assert(buffer);
+                if (!bufferSize)
+                {
+                    return;
+                }
+
+                if (!buffer)
+                {
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG, "Secure Random Bytes generator can't generate: " << bufferSize << " bytes with nullptr buffer.");
+                    assert(buffer);
+                    return;
+                }
 
                 if(!fp)
                 {
@@ -237,8 +247,7 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for encryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG, "Cipher not properly initialized for encryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -289,8 +298,7 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for decryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG, "Cipher not properly initialized for decryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -324,6 +332,16 @@ AWS_SUPPRESS_DEPRECATION(
                 Init();
             }
 
+            bool CommonCryptoCipher::CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength)
+            {
+                if (!m_failure && ((m_key.GetLength() != expectedKeyLength) || m_initializationVector.GetLength() != expectedIVLength))
+                {
+                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Expected Key size is: " << expectedKeyLength << " and expected IV size is: " << expectedIVLength);
+                    m_failure = true;
+                }
+                return !m_failure;
+            }
+
             size_t AES_CBC_Cipher_CommonCrypto::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_CommonCrypto::KeyLengthBits = 256;
             static const char* CBC_CC_LOG_TAG = "AES_CBC_Cipher_CommonCrypto";
@@ -346,18 +364,19 @@ AWS_SUPPRESS_DEPRECATION(
                 InitCipher();
             }
 
+
             void AES_CBC_Cipher_CommonCrypto::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, BlockSizeBytes))
+                {
+                    return;
+                }
+
                 CCCryptorStatus status = CCCryptorCreateWithMode(kCCEncrypt, kCCModeCBC, kCCAlgorithmAES, ccPKCS7Padding,
                                                                  m_initializationVector.GetUnderlyingData(), m_key.GetUnderlyingData(), m_key.GetLength(),
                                                                  nullptr, 0, 0, 0, &m_encryptorHandle);
-                if (status != kCCSuccess)
-                {
-                    m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CBC_CC_LOG_TAG, "Error while initializing AES 256 CBC encryptor. Status code: " << status);
-                }
 
-                status = CCCryptorCreateWithMode(kCCDecrypt, kCCModeCBC, kCCAlgorithmAES, ccPKCS7Padding,
+                status |= CCCryptorCreateWithMode(kCCDecrypt, kCCModeCBC, kCCAlgorithmAES, ccPKCS7Padding,
                                                  m_initializationVector.GetUnderlyingData(), m_key.GetUnderlyingData(), m_key.GetLength(),
                                                  nullptr, 0, 0, 0, &m_decryptorHandle);
                 if (status != kCCSuccess)
@@ -365,7 +384,6 @@ AWS_SUPPRESS_DEPRECATION(
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(CBC_CC_LOG_TAG, "Error while initializing AES 256 CBC decryptor. Status code: " << status);
                 }
-
             }
 
             size_t AES_CBC_Cipher_CommonCrypto::GetBlockSizeBytes() const
@@ -409,16 +427,15 @@ AWS_SUPPRESS_DEPRECATION(
 
             void AES_CTR_Cipher_CommonCrypto::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, BlockSizeBytes))
+                {
+                    return;
+                }
                 CCCryptorStatus status = CCCryptorCreateWithMode(kCCEncrypt, kCCModeCTR, kCCAlgorithmAES, ccNoPadding,
                                                                  m_initializationVector.GetUnderlyingData(), m_key.GetUnderlyingData(), m_key.GetLength(),
                                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_encryptorHandle);
-                if (status != kCCSuccess)
-                {
-                    m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CTR_CC_LOG_TAG, "Error while initializing AES 256 CTR encryptor. Status code: " << status);
-                }
 
-                status = CCCryptorCreateWithMode(kCCDecrypt, kCCModeCTR, kCCAlgorithmAES, ccNoPadding,
+                status |= CCCryptorCreateWithMode(kCCDecrypt, kCCModeCTR, kCCAlgorithmAES, ccNoPadding,
                                                  m_initializationVector.GetUnderlyingData(), m_key.GetUnderlyingData(), m_key.GetLength(),
                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_decryptorHandle);
                 if (status != kCCSuccess)
@@ -450,7 +467,7 @@ AWS_SUPPRESS_DEPRECATION(
             size_t AES_GCM_Cipher_CommonCrypto::IVLengthBytes = 12;
 
             static const char* GCM_CC_LOG_TAG = "AES_GCM_Cipher_CommonCrypto";
-            
+
             AES_GCM_Cipher_CommonCrypto::AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key) :
                     CommonCryptoCipher(key, IVLengthBytes, false)
             {
@@ -477,6 +494,10 @@ AWS_SUPPRESS_DEPRECATION(
 
             void AES_GCM_Cipher_CommonCrypto::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, IVLengthBytes))
+                {
+                    return;
+                }
                 CCCryptorStatus status = CCCryptorCreateWithMode(kCCEncrypt, kCCModeGCM, kCCAlgorithmAES, ccNoPadding,
                                                                  nullptr, m_key.GetUnderlyingData(), m_key.GetLength(),
                                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_encryptorHandle);
@@ -490,13 +511,7 @@ AWS_SUPPRESS_DEPRECATION(
                     status |= CCCryptorGCMAddAAD(m_encryptorHandle, m_aad.GetUnderlyingData(), m_aad.GetLength());
                 }
 
-                if (status != kCCSuccess)
-                {
-                    m_failure = true;
-                    AWS_LOGSTREAM_ERROR(GCM_CC_LOG_TAG, "Error while initializing AES 256 GCM encryptor. Status code: " << status);
-                }
-
-                status = CCCryptorCreateWithMode(kCCDecrypt, kCCModeGCM, kCCAlgorithmAES, ccNoPadding,
+                status |= CCCryptorCreateWithMode(kCCDecrypt, kCCModeGCM, kCCAlgorithmAES, ccNoPadding,
                                                  nullptr, m_key.GetUnderlyingData(), m_key.GetLength(),
                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_decryptorHandle);
 #ifdef MAC_13_AVAILABLE
@@ -520,8 +535,7 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for encryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(GCM_CC_LOG_TAG, "Cipher not properly initialized for encryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -537,7 +551,7 @@ AWS_SUPPRESS_DEPRECATION(
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Encryption of buffer failed to get tag with status code: " << status);
+                    AWS_LOGSTREAM_ERROR(GCM_CC_LOG_TAG, "Encryption of buffer failed to get tag with status code: " << status);
                 }
 
                 return CryptoBuffer();
@@ -547,15 +561,14 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for decryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(GCM_CC_LOG_TAG, "Cipher not properly initialized for decryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
                 CCStatus status;
                 size_t tagLength = TagLengthBytes;
-                
-                /* Note that CCCryptorGCMFinal is deprecated in Mac 10.13. It also doesn't compare the tag with expected tag 
+
+                /* Note that CCCryptorGCMFinal is deprecated in Mac 10.13. It also doesn't compare the tag with expected tag
                  * https://opensource.apple.com/source/CommonCrypto/CommonCrypto-60118.1.1/include/CommonCryptorSPI.h.auto.html
                  */
 #ifdef MAC_13_AVAILABLE
@@ -566,8 +579,8 @@ AWS_SUPPRESS_DEPRECATION(
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Decryption of buffer failed to verify tag with status code: " << status);
-                } 
+                    AWS_LOGSTREAM_ERROR(GCM_CC_LOG_TAG, "Decryption of buffer failed to verify tag with status code: " << status);
+                }
 
                 return CryptoBuffer();
             }
@@ -597,10 +610,10 @@ AWS_SUPPRESS_DEPRECATION(
 
             CryptoBuffer AES_KeyWrap_Cipher_CommonCrypto::EncryptBuffer(const CryptoBuffer& unEncryptedData)
             {
-                assert(!m_failure);
-
-                m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&unEncryptedData});
-
+                if (!m_failure)
+                {
+                    m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&unEncryptedData});
+                }
                 return CryptoBuffer();
             }
 
@@ -608,8 +621,7 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for encryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(AES_KEY_WRAP_LOG_TAG, "Cipher not properly initialized for encryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -637,10 +649,10 @@ AWS_SUPPRESS_DEPRECATION(
 
             CryptoBuffer AES_KeyWrap_Cipher_CommonCrypto::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
-                assert(!m_failure);
-
-                m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&encryptedData});
-
+                if (!m_failure)
+                {
+                    m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&encryptedData});
+                }
                 return CryptoBuffer();
             }
 
@@ -648,8 +660,7 @@ AWS_SUPPRESS_DEPRECATION(
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
-                                        "Cipher not properly initialized for decryption finalization. Aborting");
+                    AWS_LOGSTREAM_FATAL(AES_KEY_WRAP_LOG_TAG, "Cipher not properly initialized for decryption finalization. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -680,7 +691,6 @@ AWS_SUPPRESS_DEPRECATION(
                 CommonCryptoCipher::Reset();
                 m_workingKeyBuffer = CryptoBuffer();
             }
-
         }
     }
 }

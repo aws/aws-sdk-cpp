@@ -99,7 +99,7 @@ namespace
             auto finalCEK = CryptoBuffer({ &iv, &key, &tag});
             contentCryptoMaterial.SetFinalCEK(finalCEK);
             contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
-            contentCryptoMaterial.SetCryptoTagLength(CRYPTO_TAG_LENGTH);
+            contentCryptoMaterial.SetCryptoTagLength(CRYPTO_TAG_LENGTH * 8UL);
             contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
             Aws::Map<Aws::String, Aws::String> testMap;
             testMap[TEST_KEY] = TEST_VALUE;
@@ -116,7 +116,7 @@ namespace
             metadata[CONTENT_KEY_HEADER] = HashingUtils::Base64Encode(finalCEK);
             metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IV_SIZE));
             metadata[CONTENT_CRYPTO_SCHEME_HEADER] = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
-            metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CRYPTO_TAG_LENGTH);
+            metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CRYPTO_TAG_LENGTH * 8UL);
             metadata[KEY_WRAP_ALGORITHM] = KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
             metadata[MATERIALS_DESCRIPTION_HEADER] = "";
             result.SetMetadata(metadata);
@@ -224,7 +224,7 @@ namespace
         ASSERT_STREQ(metadata[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
     }
 
-    //This test the metadata read/write functionality using a mock S3 Client which stores the metadata on a put object request and 
+    //This test the metadata read/write functionality using a mock S3 Client which stores the metadata on a put object request and
     //  uses the metadata to populate a get object result.
     TEST_F(HandlerTest, MetadataS3OperationsTest)
     {
@@ -268,7 +268,7 @@ namespace
         ASSERT_EQ(myClient->m_putObjectCalled, 1u);
     }
 
-    //This tests the instruction file functionality of writing content crypto material to an instruction file object. 
+    //This tests the instruction file functionality of writing content crypto material to an instruction file object.
     TEST_F(HandlerTest, WriteInstructionFileTest)
     {
         PutObjectRequest request;

@@ -48,22 +48,29 @@ namespace Aws
                 Aws::Utils::CryptoBuffer m_symmetricMasterKey;
             };
 
-            class AWS_DEPRECATED("This class has been deprecated due to security reason") AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public SimpleEncryptionMaterialsBase
+            /**
+             * @deprecated This class is in the maintenance mode, no new updates will be released, use SimpleEncryptionMaterialsWithGCMAAD.
+             */
+            class
+            AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use SimpleEncryptionMaterialsWithGCMAAD. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
+            AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public SimpleEncryptionMaterialsBase
             {
             public:
-                SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey) 
+                SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey)
                     : SimpleEncryptionMaterialsBase(symmetricKey) {}
             };
 
+            /**
+             * SimpleEncryptionMaterialsWithGCMAAD provides more secure key wrap algorithm than SimpleEncryptionMaterials. See https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html
+             * Examples: https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/cpp/example_code/s3encryption/s3Encryption.cpp
+             */
             class AWS_S3ENCRYPTION_API SimpleEncryptionMaterialsWithGCMAAD : public SimpleEncryptionMaterialsBase
             {
             public:
-                SimpleEncryptionMaterialsWithGCMAAD(const Aws::Utils::CryptoBuffer& symmetricKey) 
+                SimpleEncryptionMaterialsWithGCMAAD(const Aws::Utils::CryptoBuffer& symmetricKey)
                     : SimpleEncryptionMaterialsBase(symmetricKey) {}
-                    
-            protected:
-                std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> CreateCipher(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial, bool encrypt) const override;
 
+            protected:
                 Aws::Utils::Crypto::KeyWrapAlgorithm GetKeyWrapAlgorithm() const override;
             };
 

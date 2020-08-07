@@ -111,6 +111,7 @@ ${className}::~${className}()
 
 void ${className}::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end

@@ -8,8 +8,10 @@
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/s3/S3Errors.h>
 #include <aws/s3-encryption/S3EncryptionClient.h>
 
+using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -35,17 +37,18 @@ namespace Aws
             {
             }
 
-            S3EncryptionPutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction)
+            S3EncryptionPutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction, const Aws::Map<Aws::String, Aws::String>& contextMap)
             {
                 PutObjectRequest copyRequest(request);
                 PopulateCryptoContentMaterial();
+                m_contentCryptoMaterial.SetMaterialsDescription(contextMap);
                 SetContentLength(copyRequest);
                 auto encryptOutcome = m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
                 if (!encryptOutcome.IsSuccess())
                 {
                     return S3EncryptionPutObjectOutcome(BuildS3EncryptionError(encryptOutcome.GetError()));
                 }
-                
+
                 InitEncryptionCipher();
 
                 if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
@@ -77,7 +80,11 @@ namespace Aws
             {
                 GetObjectRequest copyRequest(request);
                 m_contentCryptoMaterial = contentCryptoMaterial;
-                DecryptionConditionCheck(copyRequest.GetRange());
+                if (!DecryptionConditionCheck(copyRequest.GetRange()))
+                {
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(AWSError<S3Errors>(S3Errors::VALIDATION, "DecryptionConditionCheckFailed",
+                            "S3 Encryption Client failed to validate the decryption condition", false/*not retryable*/)));
+                }
                 auto decryptOutcome = m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
                 if (!decryptOutcome.IsSuccess())
                 {
@@ -97,7 +104,13 @@ namespace Aws
 
                 InitDecryptionCipher(rangeStart, rangeEnd, tagFromBody);
                 auto newRange = AdjustRange(copyRequest, headObjectResult);
-
+                if (newRange.first > newRange.second)
+                {
+					Aws::StringStream ss;
+					ss << "S3 Encryption Client received invalid range get: rangeStart:" << newRange.first << " > rangeEnd:" << newRange.second << " after adjustment.";
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(AWSError<S3Errors>(S3Errors::VALIDATION, "InvalidRangeGet",
+                            ss.str(), false/*not retryable*/)));
+                }
                 int16_t firstBlockAdjustment = 0;
                 if (rangeStart > 0)
                 {
@@ -137,6 +150,7 @@ namespace Aws
                     [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher, DEFAULT_BUF_SIZE, firstBlockOffset); }
                 );
                 GetObjectOutcome outcome = getObjectFunction(request);
+
                 if (!outcome.IsSuccess())
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
@@ -151,6 +165,13 @@ namespace Aws
                 userSuppliedStream->clear();
                 userSuppliedStream->seekg(0, std::ios_base::beg);
                 result.ReplaceBody(userSuppliedStream);
+
+                if (!(*m_cipher))
+                {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Encryption Client failed to decrypt the encrypted object.");
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(AWSError<S3Errors>(S3Errors::VALIDATION, "FailedToDecryptContent",
+                            "S3 Encryption Client failed to decrypt the encrypted object", false/*not retryable*/)));
+                }
 
                 return S3EncryptionGetObjectOutcome(outcome.GetResultWithOwnership());
             }
@@ -230,9 +251,10 @@ namespace Aws
                 return Aws::Utils::CryptoBuffer();
             }
 
-            void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
+            bool CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
             {
                 AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
+                return true;
             }
 
             std::pair<int64_t, int64_t> CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult & result)
@@ -328,9 +350,10 @@ namespace Aws
                 }
             }
 
-            void CryptoModuleAE::DecryptionConditionCheck(const Aws::String&)
+            bool CryptoModuleAE::DecryptionConditionCheck(const Aws::String&)
             {
-                //no condition checks needed for decryption in Authenticated Encryption Mode. 
+                //no condition checks needed for decryption in Authenticated Encryption Mode.
+                return true;
             }
 
             std::pair<int64_t, int64_t> CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult)
@@ -425,18 +448,19 @@ namespace Aws
                 return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
             }
 
-            void CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRange)
+            bool CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRange)
             {
                 if (!requestRange.empty())
                 {
-                    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
-                        assert(0);
+                    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.");
+                    return false;
                 }
                 if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM)
                 {
-                    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.")
-                        assert(0);
+                    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.");
+                    return false;
                 }
+                return true;
             }
 
             std::pair<int64_t, int64_t> CryptoModuleStrictAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectRequest, const Aws::S3::Model::HeadObjectResult & headObjectResult)

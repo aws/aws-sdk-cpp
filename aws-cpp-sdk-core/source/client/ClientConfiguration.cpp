@@ -36,7 +36,6 @@ AWS_CORE_API Aws::String ComputeUserAgentString()
 }
 
 ClientConfiguration::ClientConfiguration() :
-    userAgent(ComputeUserAgentString()),
     scheme(Aws::Http::Scheme::HTTPS),
     useDualStack(false),
     maxConnections(25),

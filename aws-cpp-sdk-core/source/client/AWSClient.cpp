@@ -34,6 +34,8 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
+#include <aws/core/Version.h>
+#include <aws/core/platform/OSVersionInfo.h>
 
 #include <cstring>
 #include <cassert>
@@ -67,6 +69,15 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
         return CoreErrors::UNKNOWN;
     }
 }
+
+static Aws::String ComputeUserAgent(const Aws::String& serviceName)
+{
+  Aws::StringStream ss;
+  ss << "aws-sdk-cpp/" << Version::GetVersionString() << "/" << serviceName << "/" <<  Aws::OSVersionInfo::ComputeOSVersionString()
+      << " " << Version::GetCompilerVersionString();
+  return ss.str();
+}
+
 struct RequestInfo
 {
     Aws::Utils::DateTime ttl;
@@ -675,6 +686,11 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 
 void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 {
+    // user doesn't override user agent string
+    if (m_userAgent.empty())
+    {
+        m_userAgent = ComputeUserAgent(GetServiceClientName());
+    }
     httpRequest.SetUserAgent(m_userAgent);
 }
 

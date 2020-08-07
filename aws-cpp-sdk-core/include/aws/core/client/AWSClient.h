@@ -155,7 +155,8 @@ namespace Aws
              */
             void EnableRequestProcessing();
 
-            inline virtual const char* GetServiceClientName() const { return nullptr; }
+            inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
+            inline virtual void SetServiceClientName(const Aws::String& name) { m_serviceName = name; }
 
         protected:
             /**
@@ -286,10 +287,11 @@ namespace Aws
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
-            Aws::String m_userAgent;
+            mutable Aws::String m_userAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
+            Aws::String m_serviceName;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;

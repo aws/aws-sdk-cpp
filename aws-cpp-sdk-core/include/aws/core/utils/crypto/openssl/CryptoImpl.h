@@ -165,14 +165,15 @@ namespace Aws
 
             protected:
                 virtual size_t GetBlockSizeBytes() const = 0;
-
                 virtual size_t GetKeyLengthBits() const = 0;
+                bool CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength);
 
                 EVP_CIPHER_CTX* m_encryptor_ctx;
                 EVP_CIPHER_CTX* m_decryptor_ctx;
             private:
                 void Init();
                 void Cleanup();
+
                 /* openssl has bug finalize decryption of an empty string */
                 bool m_emptyPlaintext;
             };
@@ -316,6 +317,7 @@ namespace Aws
 
             private:
                 void InitCipher();
+
                 CryptoBuffer m_aad;
                 static size_t BlockSizeBytes;
                 static size_t IVLengthBytes;

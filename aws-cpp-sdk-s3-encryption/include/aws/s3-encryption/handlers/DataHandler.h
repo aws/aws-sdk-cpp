@@ -15,6 +15,7 @@ namespace Aws
     namespace S3Encryption
     {
         static const char* const MetadataHandler_Tag = "MetadataHandler";
+        static const char* const DEPRECATED_CONTENT_KEY_HEADER = "x-amz-key";
         static const char* const CONTENT_KEY_HEADER = "x-amz-key-v2";
         static const char* const IV_HEADER = "x-amz-iv";
         static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
@@ -25,6 +26,8 @@ namespace Aws
         static const size_t AES_GCM_IV_BYTES = 12;
         static const size_t AES_GCM_KEY_BYTES = 32;
         static const size_t AES_GCM_TAG_BYTES = 16;
+        static const size_t AES_KEY_WRAP_ENCRYPTED_CEK_BYTES = 40;
+
         namespace Handlers
         {
             /*

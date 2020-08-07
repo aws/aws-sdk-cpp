@@ -49,31 +49,36 @@ namespace Aws
 
             void SecureRandomBytes_BCrypt::GetBytes(unsigned char* buffer, size_t bufferSize)
             {
-                assert(m_algHandle);
-                if(bufferSize)
+                if (!m_algHandle)
                 {
-                    assert(buffer);
-                    if (m_algHandle)
-                    {
-                        NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Secure Random Bytes generator can't generate bytes with empty algorithm handle.");
+                    m_failure = true;
+                    assert(m_algHandle);
+                    return;
+                }
 
-                        if (!NT_SUCCESS(status))
-                        {
-                            m_failure = true;
-                            AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
-                        }
-                    }
-                    else
-                    {
-                        m_failure = true;
-                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
-                    }
+                if (!bufferSize)
+                {
+                    return;
+                }
+
+                if (!buffer)
+                {
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Secure Random Bytes generator can't generate: " << bufferSize << " bytes with nullptr buffer.");
+                    assert(buffer);
+                    return;
+                }
+
+                NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
+
+                if (!NT_SUCCESS(status))
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
                 }
             }
 
-
             static const char* logTag = "CryptoHash";
-
             // RAII class for one-use-per-hash-call data used in Windows cryptographic hash implementations
             // Useful so we don't have to call a Cleanup function for every failure point
             class BCryptHashContext
@@ -109,8 +114,6 @@ namespace Aws
                 BCRYPT_HASH_HANDLE m_hashHandle;
                 bool m_isValid;
             };
-
-
 
             BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
                 m_algorithmHandle(nullptr),
@@ -410,25 +413,27 @@ namespace Aws
 
             void BCryptSymmetricCipher::InitKey()
             {
-                if (m_algHandle)
+                if (m_failure || !m_algHandle)
                 {
-                    m_keyHandle = ImportKeyBlob(m_algHandle, m_key);
-                    if (!m_keyHandle)
+                    return;
+                }
+
+                m_keyHandle = ImportKeyBlob(m_algHandle, m_key);
+                if (!m_keyHandle)
+                {
+                    m_failure = true;
+                    return;
+                }
+
+                if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
+                {
+                    NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
+
+                    if (!NT_SUCCESS(status))
                     {
                         m_failure = true;
+                        AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symmetric key initialization vector with status code " << status);
                         return;
-                    }
-
-                    if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
-                    {
-                        NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
-
-                        if (!NT_SUCCESS(status))
-                        {
-                            m_failure = true;
-                            AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symmetric key initialization vector with status code " << status);
-                            return;
-                        }
                     }
                 }
             }
@@ -560,6 +565,16 @@ namespace Aws
                 m_failure = false;
             }
 
+            bool BCryptSymmetricCipher::CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength)
+            {
+                if (!m_failure && ((m_key.GetLength() != expectedKeyLength) || m_initializationVector.GetLength() != expectedIVLength))
+                {
+                    AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Expected Key size is: " << expectedKeyLength << " and expected IV size is: " << expectedIVLength);
+                    m_failure = true;
+                }
+                return !m_failure;
+            }
+
             size_t AES_CBC_Cipher_BCrypt::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_BCrypt::KeyLengthBits = 256;
 
@@ -585,6 +600,10 @@ namespace Aws
 
             void AES_CBC_Cipher_BCrypt::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, BlockSizeBytes))
+                {
+                    return;
+                }
                 //due to odd BCrypt api behavior, we have to manually handle the padding, however we are producing padded output.
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
@@ -593,6 +612,7 @@ namespace Aws
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Failed to initialize encryptor/decryptor with status code " << status);
+                    return;
                 }
 
                 status = BCryptSetProperty(m_algHandle, BCRYPT_CHAINING_MODE, (PUCHAR)BCRYPT_CHAIN_MODE_CBC, static_cast<ULONG>(wcslen(BCRYPT_CHAIN_MODE_CBC) + 1), 0);
@@ -611,6 +631,11 @@ namespace Aws
              */
             CryptoBuffer AES_CBC_Cipher_BCrypt::FillInOverflow(const CryptoBuffer& buffer)
             {
+                if (m_failure)
+                {
+                    return CryptoBuffer();
+                }
+
                 static const size_t RESERVE_SIZE = BlockSizeBytes * 2;
                 m_flags = 0;
 
@@ -653,12 +678,11 @@ namespace Aws
              */
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeEncryption()
             {
-                if (m_blockOverflow.GetLength() > 0)
+                if (!m_failure && m_blockOverflow.GetLength() > 0)
                 {
                     m_flags = BCRYPT_BLOCK_PADDING;
                     return BCryptSymmetricCipher::EncryptBuffer(m_blockOverflow);
                 }
-
                 return CryptoBuffer();
             }
 
@@ -669,7 +693,7 @@ namespace Aws
 
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeDecryption()
             {
-                if ( m_blockOverflow.GetLength() > 0)
+                if (!m_failure && m_blockOverflow.GetLength() > 0)
                 {
                     m_flags = BCRYPT_BLOCK_PADDING;
                     return BCryptSymmetricCipher::DecryptBuffer(m_blockOverflow);
@@ -724,7 +748,6 @@ namespace Aws
                     AWS_LOGSTREAM_FATAL(CTR_LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
                     return CryptoBuffer();
                 }
-
                 return EncryptWithCtr(unEncryptedData);
             }
 
@@ -734,13 +757,12 @@ namespace Aws
              */
             CryptoBuffer AES_CTR_Cipher_BCrypt::FinalizeEncryption()
             {
-                if (m_blockOverflow.GetLength())
+                if (!m_failure && m_blockOverflow.GetLength())
                 {
                     CryptoBuffer const& returnBuffer = EncryptBuffer(m_blockOverflow);
                     m_blockOverflow = CryptoBuffer();
                     return returnBuffer;
                 }
-
                 return CryptoBuffer();
             }
 
@@ -751,7 +773,6 @@ namespace Aws
                     AWS_LOGSTREAM_FATAL(CTR_LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
                     return CryptoBuffer();
                 }
-
                 //Encryption and decryption are identical in CTR mode.
                 return EncryptWithCtr(encryptedData);
             }
@@ -762,18 +783,21 @@ namespace Aws
             */
             CryptoBuffer AES_CTR_Cipher_BCrypt::FinalizeDecryption()
             {
-                if (m_blockOverflow.GetLength())
+                if (!m_failure && m_blockOverflow.GetLength())
                 {
                     CryptoBuffer const& returnBuffer = DecryptBuffer(m_blockOverflow);
                     m_blockOverflow = CryptoBuffer();
                     return returnBuffer;
                 }
-
                 return CryptoBuffer();
             }
 
             void AES_CTR_Cipher_BCrypt::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, BlockSizeBytes))
+                {
+                    return;
+                }
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -798,6 +822,10 @@ namespace Aws
             */
             CryptoBuffer AES_CTR_Cipher_BCrypt::EncryptWithCtr(const CryptoBuffer& buffer)
             {
+                if (m_failure)
+                {
+                    return CryptoBuffer();
+                }
                 size_t bytesWritten = 0;
                 Aws::Vector<ByteBuffer*> finalBufferSet(0);
 
@@ -905,12 +933,12 @@ namespace Aws
 
             static const char* GCM_LOG_TAG = "BCrypt_AES_GCM_Cipher";
             size_t AES_GCM_Cipher_BCrypt::BlockSizeBytes = 16;
-            size_t AES_GCM_Cipher_BCrypt::NonceSizeBytes = 12;
+            size_t AES_GCM_Cipher_BCrypt::IVLengthBytes = 12;
             size_t AES_GCM_Cipher_BCrypt::KeyLengthBits = 256;
             size_t AES_GCM_Cipher_BCrypt::TagLengthBytes = 16;
 
             AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key) :
-                    BCryptSymmetricCipher(key, NonceSizeBytes), m_macBuffer(TagLengthBytes)
+                    BCryptSymmetricCipher(key, IVLengthBytes), m_macBuffer(TagLengthBytes)
             {
                 m_tag = CryptoBuffer(TagLengthBytes);
                 InitCipher();
@@ -918,7 +946,7 @@ namespace Aws
             }
 
             AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer* aad) :
-                    BCryptSymmetricCipher(key, NonceSizeBytes), m_macBuffer(TagLengthBytes), m_aad(*aad)
+                    BCryptSymmetricCipher(key, IVLengthBytes), m_macBuffer(TagLengthBytes), m_aad(*aad)
             {
                 m_tag = CryptoBuffer(TagLengthBytes);
                 InitCipher();
@@ -970,7 +998,10 @@ namespace Aws
              */
             CryptoBuffer AES_GCM_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& toEncrypt)
             {
-                assert(!m_failure);
+                if (m_failure)
+                {
+                    return CryptoBuffer();
+                }
 
                 CryptoBuffer workingBuffer;
 
@@ -1009,7 +1040,10 @@ namespace Aws
              */
             CryptoBuffer AES_GCM_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& toDecrypt)
             {
-                assert(!m_failure);
+                if (m_failure)
+                {
+                    return CryptoBuffer();
+                }
 
                 CryptoBuffer workingBuffer;
 
@@ -1059,6 +1093,11 @@ namespace Aws
              */
             void AES_GCM_Cipher_BCrypt::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, IVLengthBytes))
+                {
+                    return;
+                }
+
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -1066,6 +1105,7 @@ namespace Aws
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(GCM_LOG_TAG, "Failed to initialize encryptor/decryptor with status code " << status);
+                    return;
                 }
 
                 status = BCryptSetProperty(m_algHandle, BCRYPT_CHAINING_MODE, (PUCHAR)BCRYPT_CHAIN_MODE_GCM, static_cast<ULONG>(wcslen(BCRYPT_CHAIN_MODE_GCM) + 1), 0);
@@ -1073,6 +1113,7 @@ namespace Aws
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(GCM_LOG_TAG, "Failed to initialize encryptor/decryptor chaining mode with status code " << status);
+                    return;
                 }
 
                 BCRYPT_INIT_AUTH_MODE_INFO(m_authInfo);
@@ -1136,25 +1177,30 @@ namespace Aws
 
             CryptoBuffer AES_KeyWrap_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
             {
-                assert(!m_failure);
-
-                m_operatingKeyBuffer = CryptoBuffer({(ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&unEncryptedData});
-
+                if (!m_failure)
+                {
+                    m_operatingKeyBuffer = CryptoBuffer({(ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&unEncryptedData});
+                }
                 return CryptoBuffer();
             }
 
             CryptoBuffer AES_KeyWrap_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
-                assert(!m_failure);
-
-                m_operatingKeyBuffer = CryptoBuffer({ (ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&encryptedData });
-
+                if (!m_failure)
+                {
+                    m_operatingKeyBuffer = CryptoBuffer({ (ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&encryptedData });
+                }
                 return CryptoBuffer();
             }
 
 
             void AES_KeyWrap_Cipher_BCrypt::InitCipher()
             {
+                if (m_failure || !CheckKeyAndIVLength(KeyLengthBits/8, 0))
+                {
+                    return;
+                }
+
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
                 if (!NT_SUCCESS(status))
@@ -1237,6 +1283,7 @@ namespace Aws
                     {
                         m_failure = true;
                         AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to re-export key with status code " << status);
+                        return CryptoBuffer();
                     }
 
                     BCryptDestroyKey(importKey);
@@ -1245,6 +1292,7 @@ namespace Aws
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to import symmetric key with status code " << status);
+                    return CryptoBuffer();
                 }
 
                 return returnBuffer;

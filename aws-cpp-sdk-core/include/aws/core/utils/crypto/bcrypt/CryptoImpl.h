@@ -225,6 +225,7 @@ namespace Aws
                 void InitKey();
                 virtual size_t GetBlockSizeBytes() const = 0;
                 virtual size_t GetKeyLengthBits() const = 0;
+                bool CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength);
 
                 BCRYPT_ALG_HANDLE m_algHandle;
                 BCRYPT_KEY_HANDLE m_keyHandle;
@@ -363,14 +364,14 @@ namespace Aws
                 * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD).
                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
                 */
-                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, 
+                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
                     CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
 
                 /**
                 * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD)
                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
                 */
-                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, 
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
                     const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0));
 
                 AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt&) = delete;
@@ -397,7 +398,7 @@ namespace Aws
                 void InitCipher();
 
                 static size_t BlockSizeBytes;
-                static size_t NonceSizeBytes;
+                static size_t IVLengthBytes;
                 static size_t KeyLengthBits;
                 static size_t TagLengthBytes;
 

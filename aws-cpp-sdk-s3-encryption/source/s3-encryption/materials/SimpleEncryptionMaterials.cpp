@@ -24,11 +24,39 @@ namespace Aws
             SimpleEncryptionMaterialsBase::SimpleEncryptionMaterialsBase(const Aws::Utils::CryptoBuffer& symmetricKey) :
                 m_symmetricMasterKey(symmetricKey)
             {
+                if (m_symmetricMasterKey.GetLength() != AES_GCM_KEY_BYTES)
+                {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Expected symmetric key's length should be: " << AES_GCM_KEY_BYTES << " provided: " << m_symmetricMasterKey.GetLength());
+                }
             }
 
-            std::shared_ptr<SymmetricCipher> SimpleEncryptionMaterialsBase::CreateCipher(ContentCryptoMaterial&, bool) const 
+            std::shared_ptr<SymmetricCipher> SimpleEncryptionMaterialsBase::CreateCipher(ContentCryptoMaterial& contentCryptoMaterial, bool encrypt) const
             {
-                return CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+                switch (contentCryptoMaterial.GetKeyWrapAlgorithm())
+                {
+                    case KeyWrapAlgorithm::AES_GCM:
+                    {
+                        if (encrypt)
+                        {
+                            auto cipher = CreateAES_GCMImplementation(m_symmetricMasterKey, &(contentCryptoMaterial.GetGCMAAD()));
+                            contentCryptoMaterial.SetCekIV(cipher->GetIV());
+                            return cipher;
+                        }
+                        else
+                        {
+                            return CreateAES_GCMImplementation(m_symmetricMasterKey, contentCryptoMaterial.GetCekIV(), contentCryptoMaterial.GetCEKGCMTag(), contentCryptoMaterial.GetGCMAAD());
+                        }
+                    }
+
+                    case KeyWrapAlgorithm::AES_KEY_WRAP:
+                    {
+                        return CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+                    }
+
+                    default:
+                        break;
+                }
+                return nullptr;
             }
 
             KeyWrapAlgorithm SimpleEncryptionMaterialsBase::GetKeyWrapAlgorithm() const
@@ -38,6 +66,14 @@ namespace Aws
 
             CryptoOutcome SimpleEncryptionMaterialsBase::EncryptCEK(ContentCryptoMaterial& contentCryptoMaterial)
             {
+                // non empty context map passed in.
+                if (!contentCryptoMaterial.GetMaterialsDescription().empty())
+                {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Customized encryption context map is not allowed for AES/GCM Key wrap algorithm.");
+                    return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "EncryptContentEncryptionKeyFailed", "Customized encryption context map is not allowed for AES/GCM Key wrap algorithm.", false/*not retryable*/));
+                }
+
+                contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithm());
                 auto cipher = CreateCipher(contentCryptoMaterial, true/*encrypt*/);
                 if (cipher == nullptr)
                 {
@@ -48,6 +84,11 @@ namespace Aws
                 const CryptoBuffer& contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
                 CryptoBuffer&& encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
                 CryptoBuffer&& encryptFinalizeResult = cipher->FinalizeEncryption();
+                if (!(*cipher))
+                {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Cipher internal error, failed to encrypt the Content Encryption Key.");
+                    return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "EncryptContentEncryptionKeyFailed", "Failed to encrypt the Content Encryption Key", false/*not retryable*/));
+                }
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
                 contentCryptoMaterial.SetCEKGCMTag(cipher->GetTag());
 
@@ -70,28 +111,33 @@ namespace Aws
             {
                 auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
 
-                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != GetKeyWrapAlgorithm())
-                {
-                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm set in contentCryptoMaterial is not mached to the concrete key wrap algorithem during decryption, therefore the"
-                        << " current encryption materials can not decrypt the content encryption key.");
-                    return errorOutcome;
-                }
-
                 if (contentCryptoMaterial.GetFinalCEK().GetLength())
                 {
+                    const auto& finalCEK = contentCryptoMaterial.GetFinalCEK();
                     if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
                     {
-                        const auto& finalCEK = contentCryptoMaterial.GetFinalCEK();
+                        size_t expectedLength = AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES + AES_GCM_TAG_BYTES;
+                        if (contentCryptoMaterial.GetFinalCEK().GetLength() != expectedLength)
+                        {
+                            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Encryption Client get unexpected AES GCM key wrap final CEK length: " << finalCEK.GetLength() << " expected: " << expectedLength);
+                            return errorOutcome;
+                        }
                         contentCryptoMaterial.SetCekIV(CryptoBuffer(finalCEK.GetUnderlyingData(), AES_GCM_IV_BYTES));
                         contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES, AES_GCM_KEY_BYTES));
                         contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES, AES_GCM_TAG_BYTES));
                     }
                     else
                     {
-                        contentCryptoMaterial.SetEncryptedContentEncryptionKey(contentCryptoMaterial.GetFinalCEK());
+                        if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_KEY_WRAP && finalCEK.GetLength() != AES_KEY_WRAP_ENCRYPTED_CEK_BYTES)
+                        {
+                            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Encryption Client get unexpected AES Key Wrap final CEK length: " << finalCEK.GetLength() << " expected: " << AES_KEY_WRAP_ENCRYPTED_CEK_BYTES);
+                            return errorOutcome;
+                        }
+                        contentCryptoMaterial.SetEncryptedContentEncryptionKey(finalCEK);
+                        contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer());
                     }
                 }
-                
+
                 auto cipher = CreateCipher(contentCryptoMaterial, false/*decrypt*/);
                 if (cipher == nullptr)
                 {
@@ -103,26 +149,12 @@ namespace Aws
                 CryptoBuffer&& decryptFinalizeResult = cipher->FinalizeDecryption();
                 CryptoBuffer decryptedBuffer = CryptoBuffer({ &decryptResult, &decryptFinalizeResult });
                 contentCryptoMaterial.SetContentEncryptionKey(decryptedBuffer);
-                if (contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
+                if (!(*cipher) || contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
                     return errorOutcome;
                 }
                 return CryptoOutcome(Aws::NoResult());
-            }
-
-            std::shared_ptr<SymmetricCipher> SimpleEncryptionMaterialsWithGCMAAD::CreateCipher(ContentCryptoMaterial& contentCryptoMaterial, bool encrypt) const 
-            {
-                if (encrypt)
-                {
-                    auto cipher = CreateAES_GCMImplementation(m_symmetricMasterKey, &(contentCryptoMaterial.GetGCMAAD()));
-                    contentCryptoMaterial.SetCekIV(cipher->GetIV());
-                    return cipher;
-                }
-                else
-                {
-                    return CreateAES_GCMImplementation(m_symmetricMasterKey, contentCryptoMaterial.GetCekIV(), contentCryptoMaterial.GetCEKGCMTag(), contentCryptoMaterial.GetGCMAAD());
-                }
             }
 
             KeyWrapAlgorithm SimpleEncryptionMaterialsWithGCMAAD::GetKeyWrapAlgorithm() const

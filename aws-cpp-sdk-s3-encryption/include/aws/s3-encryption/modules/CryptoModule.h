@@ -47,7 +47,7 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                S3EncryptionPutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
+                S3EncryptionPutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction, const Aws::Map<Aws::String, Aws::String>& contextMap = {});
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
@@ -100,7 +100,7 @@ namespace Aws
                 /*
                 * This function checks for any prohibitted actions within each module.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) = 0;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) = 0;
 
                 /*
                 * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. It also adjusts the range if the a range-get request was specified according to the range for the cipher block.
@@ -150,7 +150,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function to adjust getObjectRequest range to only specify the encrypted body.
@@ -194,7 +194,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.
@@ -238,7 +238,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.

@@ -142,7 +142,7 @@ namespace
         encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
         auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
-        cipher = CreateAES_GCMImplementation(masterKey, encryptedContentCryptoMaterial.GetCekIV(), 
+        cipher = CreateAES_GCMImplementation(masterKey, encryptedContentCryptoMaterial.GetCekIV(),
             encryptedContentCryptoMaterial.GetCEKGCMTag(), encryptedContentCryptoMaterial.GetGCMAAD());
         auto decryptBuffer = cipher->DecryptBuffer(encrypted);
         auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
@@ -155,8 +155,112 @@ namespace
         ASSERT_EQ(decryptedContentEncryptionKey, contentEncryptionKey);
     }
 
+    TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, TestUnexpectedKeyLength)
+    {
+        auto cek = SymmetricCipher::GenerateKey();
+        //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
+        ContentCryptoMaterial contentCryptoMaterial(cek, ContentCryptoScheme::GCM);
+        auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+        CryptoBuffer aad((const unsigned char*)GCM_AAD, GCM_AAD_LENGTH);
+        contentCryptoMaterial.SetGCMAAD(aad);
+
+        Aws::Vector<size_t> lengthVector = {0, 2, 3, 5, 8, 16, 26, 31, 33, 64};
+        for (const auto& i: lengthVector)
+        {
+            SimpleEncryptionMaterialsWithGCMAAD encryptionMaterials(SymmetricCipher::GenerateKey(i));
+            auto outcome = encryptionMaterials.EncryptCEK(contentCryptoMaterial);
+            ASSERT_FALSE(outcome.IsSuccess());
+        }
+
+        SimpleEncryptionMaterialsWithGCMAAD encryptionMaterialsGood(SymmetricCipher::GenerateKey(32));
+        auto outcomeGood = encryptionMaterialsGood.EncryptCEK(contentCryptoMaterial);
+        ASSERT_TRUE(outcomeGood.IsSuccess());
+    }
+
+    TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, DecryptWithMalformedFinalCEKTest)
+    {
+        auto masterKey = SymmetricCipher::GenerateKey();
+        auto cek = SymmetricCipher::GenerateKey();
+
+        SimpleEncryptionMaterialsWithGCMAAD encryptionMaterials(masterKey);
+        //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
+        ContentCryptoMaterial contentCryptoMaterial(cek, ContentCryptoScheme::GCM);
+        auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+        CryptoBuffer aad((const unsigned char*)GCM_AAD, GCM_AAD_LENGTH);
+        contentCryptoMaterial.SetGCMAAD(aad);
+
+        encryptionMaterials.EncryptCEK(contentCryptoMaterial);
+
+        auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+
+        //test against key wrap cipher
+        auto cipher = CreateAES_GCMImplementation(masterKey, contentCryptoMaterial.GetCekIV(), CryptoBuffer(), aad);
+        auto encryptBuffer = cipher->EncryptBuffer(cek);
+        auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+        CryptoBuffer encrypted({&encryptBuffer, &finalizeEncryptBuffer});
+        ASSERT_EQ(encrypted, encryptedContentEncryptionKey);
+
+        CryptoBuffer iv = contentCryptoMaterial.GetCekIV(), tag = contentCryptoMaterial.GetCEKGCMTag();
+        //creating a new content crypto material since this is how encryption and decryption will be implemented
+        ContentCryptoMaterial encryptedContentCryptoMaterial;
+        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+        encryptedContentCryptoMaterial.SetGCMAAD(aad);
+
+        // correct case
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv, &encryptedContentEncryptionKey, &tag}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_EQ(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // too small key
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv, &tag}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // too long key
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv, &encryptedContentEncryptionKey, &encryptedContentEncryptionKey, &tag}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // corrupted key
+        CryptoBuffer corruptedKey(encryptedContentEncryptionKey.GetLength());
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv, &corruptedKey, &tag}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // no tag
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv, &encryptedContentEncryptionKey}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // only have iv
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&iv}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // only have iv
+        CryptoBuffer shortIV(10);
+        encryptedContentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer()); //reset
+        encryptedContentCryptoMaterial.SetFinalCEK(CryptoBuffer({&shortIV}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+    }
+
     //This tests Simple Encryption Materials by attempting to encrypt and decrypt with separate
-    //    materials which have the same master key. 
+    //    materials which have the same master key.
     TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterialsSuccess)
     {
         auto masterKey = SymmetricCipher::GenerateKey();
@@ -244,7 +348,54 @@ namespace
         ASSERT_NE(decryptedContentEncryptionKey, contentEncryptionKey);
     }
 
-    //This test simple encryption materials by setting the key wrap algorithm to KMS to see if 
+    TEST_F(SimpleEncryptionMaterialsTest, DecryptWithMalformedEncryptedKey)
+    {
+        auto masterKey = SymmetricCipher::GenerateKey();
+
+        SimpleEncryptionMaterials encryptionMaterials(masterKey);
+        //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
+        ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::GCM);
+
+        encryptionMaterials.EncryptCEK(contentCryptoMaterial);
+        auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+
+        //test against key wrap cipher
+        auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+        auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+        auto encryptBuffer = cipher->EncryptBuffer(contentEncryptionKey);
+        auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+        ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
+
+        ContentCryptoMaterial encryptedContentCryptoMaterial;
+        encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
+        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+
+        // correct case
+        encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_EQ(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // too small encrypted key
+        encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(encryptedContentEncryptionKey.GetUnderlyingData(), encryptedContentEncryptionKey.GetLength() / 3));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // too long encrypted key
+        encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({&encryptedContentEncryptionKey, &encryptedContentEncryptionKey}));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+
+        // corrupted key
+        encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(encryptedContentEncryptionKey.GetLength()));
+        encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
+        decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+        ASSERT_NE(contentEncryptionKey, decryptedContentEncryptionKey);
+    }
+
+    //This test simple encryption materials by setting the key wrap algorithm to KMS to see if
     //  it will not decrypt the encrypted content encryption key.
     TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
     {
