@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AmazonEC2_HASH = HashingUtils::HashString("AmazonEC2");
         static const int AmazonECS_HASH = HashingUtils::HashString("AmazonECS");
+        static const int AmazonEKS_HASH = HashingUtils::HashString("AmazonEKS");
         static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
 
 
@@ -35,6 +36,10 @@ namespace Aws
           else if (hashCode == AmazonECS_HASH)
           {
             return SavingsPlanRateServiceCode::AmazonECS;
+          }
+          else if (hashCode == AmazonEKS_HASH)
+          {
+            return SavingsPlanRateServiceCode::AmazonEKS;
           }
           else if (hashCode == AWSLambda_HASH)
           {
@@ -58,6 +63,8 @@ namespace Aws
             return "AmazonEC2";
           case SavingsPlanRateServiceCode::AmazonECS:
             return "AmazonECS";
+          case SavingsPlanRateServiceCode::AmazonEKS:
+            return "AmazonEKS";
           case SavingsPlanRateServiceCode::AWSLambda:
             return "AWSLambda";
           default:

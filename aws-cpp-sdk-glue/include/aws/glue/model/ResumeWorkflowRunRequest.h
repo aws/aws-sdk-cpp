@@ -119,55 +119,55 @@ namespace Model
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodeIds() const{ return m_nodeIds; }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline bool NodeIdsHasBeenSet() const { return m_nodeIdsHasBeenSet; }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline void SetNodeIds(const Aws::Vector<Aws::String>& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = value; }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline void SetNodeIds(Aws::Vector<Aws::String>&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = std::move(value); }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline ResumeWorkflowRunRequest& WithNodeIds(const Aws::Vector<Aws::String>& value) { SetNodeIds(value); return *this;}
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline ResumeWorkflowRunRequest& WithNodeIds(Aws::Vector<Aws::String>&& value) { SetNodeIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline ResumeWorkflowRunRequest& AddNodeIds(const Aws::String& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline ResumeWorkflowRunRequest& AddNodeIds(Aws::String&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
-     * to be restarted must have an execution attempt in the original run.</p>
+     * to be restarted must have a run attempt in the original run.</p>
      */
     inline ResumeWorkflowRunRequest& AddNodeIds(const char* value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
 

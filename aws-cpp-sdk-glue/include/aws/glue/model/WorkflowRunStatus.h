@@ -19,7 +19,8 @@ namespace Model
     RUNNING,
     COMPLETED,
     STOPPING,
-    STOPPED
+    STOPPED,
+    ERROR_
   };
 
 namespace WorkflowRunStatusMapper

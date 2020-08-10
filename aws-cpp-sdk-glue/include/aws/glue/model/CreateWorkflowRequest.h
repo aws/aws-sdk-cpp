@@ -269,6 +269,39 @@ namespace Model
      */
     inline CreateWorkflowRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline CreateWorkflowRequest& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -282,6 +315,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_maxConcurrentRuns;
+    bool m_maxConcurrentRunsHasBeenSet;
   };
 
 } // namespace Model

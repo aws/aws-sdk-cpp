@@ -27,6 +27,7 @@ WorkflowRun::WorkflowRun() :
     m_completedOnHasBeenSet(false),
     m_status(WorkflowRunStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_graphHasBeenSet(false)
 {
@@ -41,6 +42,7 @@ WorkflowRun::WorkflowRun(JsonView jsonValue) :
     m_completedOnHasBeenSet(false),
     m_status(WorkflowRunStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_graphHasBeenSet(false)
 {
@@ -99,6 +101,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_status = WorkflowRunStatusMapper::GetWorkflowRunStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+    m_errorMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Statistics"))
@@ -164,6 +173,12 @@ JsonValue WorkflowRun::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", WorkflowRunStatusMapper::GetNameForWorkflowRunStatus(m_status));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
+
   }
 
   if(m_statisticsHasBeenSet)

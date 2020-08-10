@@ -16,7 +16,9 @@ CreateWorkflowRequest::CreateWorkflowRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_defaultRunPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_maxConcurrentRunsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
 
   }
 

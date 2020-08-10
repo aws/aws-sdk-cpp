@@ -3828,16 +3828,18 @@ namespace Model
         virtual void ResetJobBookmarkAsync(const Model::ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restarts any completed nodes in a workflow run and resumes the run
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts selected nodes of a previous partially completed workflow run and
+         * resumes the workflow run. The selected nodes and all nodes that are downstream
+         * from the selected nodes are run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">AWS
          * API Reference</a></p>
          */
         virtual Model::ResumeWorkflowRunOutcome ResumeWorkflowRun(const Model::ResumeWorkflowRunRequest& request) const;
 
         /**
-         * <p>Restarts any completed nodes in a workflow run and resumes the run
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts selected nodes of a previous partially completed workflow run and
+         * resumes the workflow run. The selected nodes and all nodes that are downstream
+         * from the selected nodes are run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">AWS
          * API Reference</a></p>
          *
@@ -3846,8 +3848,9 @@ namespace Model
         virtual Model::ResumeWorkflowRunOutcomeCallable ResumeWorkflowRunCallable(const Model::ResumeWorkflowRunRequest& request) const;
 
         /**
-         * <p>Restarts any completed nodes in a workflow run and resumes the run
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts selected nodes of a previous partially completed workflow run and
+         * resumes the workflow run. The selected nodes and all nodes that are downstream
+         * from the selected nodes are run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">AWS
          * API Reference</a></p>
          *

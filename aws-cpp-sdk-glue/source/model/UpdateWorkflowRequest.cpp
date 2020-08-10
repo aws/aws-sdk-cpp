@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 UpdateWorkflowRequest::UpdateWorkflowRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_defaultRunPropertiesHasBeenSet(false)
+    m_defaultRunPropertiesHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,12 @@ Aws::String UpdateWorkflowRequest::SerializePayload() const
      defaultRunPropertiesJsonMap.WithString(defaultRunPropertiesItem.first, defaultRunPropertiesItem.second);
    }
    payload.WithObject("DefaultRunProperties", std::move(defaultRunPropertiesJsonMap));
+
+  }
+
+  if(m_maxConcurrentRunsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
 
   }
 

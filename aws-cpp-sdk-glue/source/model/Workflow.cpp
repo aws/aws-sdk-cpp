@@ -25,7 +25,9 @@ Workflow::Workflow() :
     m_createdOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_lastRunHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ Workflow::Workflow(JsonView jsonValue) :
     m_createdOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_lastRunHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +99,13 @@ Workflow& Workflow::operator =(JsonView jsonValue)
     m_graphHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxConcurrentRuns"))
+  {
+    m_maxConcurrentRuns = jsonValue.GetInteger("MaxConcurrentRuns");
+
+    m_maxConcurrentRunsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +155,12 @@ JsonValue Workflow::Jsonize() const
   if(m_graphHasBeenSet)
   {
    payload.WithObject("Graph", m_graph.Jsonize());
+
+  }
+
+  if(m_maxConcurrentRunsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
 
   }
 
