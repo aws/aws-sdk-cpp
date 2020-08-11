@@ -188,22 +188,26 @@ namespace Model
 
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline UpdateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -212,7 +216,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -220,7 +226,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -228,7 +236,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -236,7 +246,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
@@ -304,26 +316,26 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
@@ -354,26 +366,30 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 

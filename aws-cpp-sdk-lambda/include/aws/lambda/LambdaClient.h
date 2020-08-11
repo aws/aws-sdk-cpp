@@ -489,15 +489,19 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
+         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
          * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
@@ -514,15 +518,19 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
+         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
          * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
@@ -541,15 +549,19 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
+         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
          * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
@@ -2173,9 +2185,11 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
@@ -2191,9 +2205,11 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
@@ -2211,9 +2227,11 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age.</p> </li> <li> <p>
-         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
+         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
+         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
+         * Maximum 10000. When infinite, failed records will be retried until the record
+         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
          * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS

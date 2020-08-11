@@ -106,6 +106,15 @@ CreateEventSourceMappingResult& CreateEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("Topics"))
+  {
+    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+    {
+      m_topics.push_back(topicsJsonList[topicsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");

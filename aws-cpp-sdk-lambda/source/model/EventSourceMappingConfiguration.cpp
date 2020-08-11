@@ -33,6 +33,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_stateHasBeenSet(false),
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
+    m_topicsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
@@ -57,6 +58,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_stateHasBeenSet(false),
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
+    m_topicsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
@@ -144,6 +146,16 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_destinationConfig = jsonValue.GetObject("DestinationConfig");
 
     m_destinationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Topics"))
+  {
+    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+    {
+      m_topics.push_back(topicsJsonList[topicsIndex].AsString());
+    }
+    m_topicsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
@@ -236,6 +248,17 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_destinationConfigHasBeenSet)
   {
    payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
+
+  }
+
+  if(m_topicsHasBeenSet)
+  {
+   Array<JsonValue> topicsJsonList(m_topics.size());
+   for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+   {
+     topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
+   }
+   payload.WithArray("Topics", std::move(topicsJsonList));
 
   }
 

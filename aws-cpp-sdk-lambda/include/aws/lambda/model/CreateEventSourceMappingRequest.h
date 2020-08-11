@@ -10,6 +10,7 @@
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +41,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -49,7 +51,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -58,7 +61,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -67,7 +71,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -76,7 +81,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -85,7 +91,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -94,7 +101,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -103,7 +111,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -222,22 +231,26 @@ namespace Model
 
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline CreateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -246,7 +259,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -254,7 +269,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -262,7 +279,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -270,7 +289,9 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
+     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+     * </ul>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
@@ -323,43 +344,43 @@ namespace Model
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
-     * supported for Amazon Kinesis streams.</p>
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
@@ -439,26 +460,26 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline CreateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
@@ -489,28 +510,78 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline CreateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
+
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topicsHasBeenSet = true; m_topics = value; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline CreateEventSourceMappingRequest& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline CreateEventSourceMappingRequest& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddTopics(const Aws::String& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddTopics(Aws::String&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
   private:
 
@@ -549,6 +620,9 @@ namespace Model
 
     int m_maximumRetryAttempts;
     bool m_maximumRetryAttemptsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_topics;
+    bool m_topicsHasBeenSet;
   };
 
 } // namespace Model

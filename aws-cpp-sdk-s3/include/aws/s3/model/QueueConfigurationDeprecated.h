@@ -25,11 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>This data type is deprecated. Use <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueueConfiguration.html">QueueConfiguration</a>
-   * for the same purposes. This data type specifies the configuration for publishing
-   * messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3
-   * detects specified events. </p><p><h3>See Also:</h3>   <a
+   * <p>This data type is deprecated. Use <a>QueueConfiguration</a> for the same
+   * purposes. This data type specifies the configuration for publishing messages to
+   * an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects
+   * specified events. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/QueueConfigurationDeprecated">AWS
    * API Reference</a></p>
    */

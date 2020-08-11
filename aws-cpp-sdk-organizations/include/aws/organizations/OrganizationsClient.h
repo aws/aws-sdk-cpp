@@ -2646,8 +2646,7 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          */
@@ -2664,8 +2663,7 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2684,8 +2682,7 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *

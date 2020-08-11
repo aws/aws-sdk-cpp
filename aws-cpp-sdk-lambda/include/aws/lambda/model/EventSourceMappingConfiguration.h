@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -460,6 +461,52 @@ namespace Model
 
 
     /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topicsHasBeenSet = true; m_topics = value; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline EventSourceMappingConfiguration& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline EventSourceMappingConfiguration& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline EventSourceMappingConfiguration& AddTopics(const Aws::String& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline EventSourceMappingConfiguration& AddTopics(Aws::String&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> (MSK) The name of the Kafka topic. </p>
+     */
+    inline EventSourceMappingConfiguration& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
+
+
+    /**
      * <p>(Streams) The maximum age of a record that Lambda sends to a function for
      * processing.</p>
      */
@@ -567,6 +614,9 @@ namespace Model
 
     DestinationConfig m_destinationConfig;
     bool m_destinationConfigHasBeenSet;
+
+    Aws::Vector<Aws::String> m_topics;
+    bool m_topicsHasBeenSet;
 
     int m_maximumRecordAgeInSeconds;
     bool m_maximumRecordAgeInSecondsHasBeenSet;
