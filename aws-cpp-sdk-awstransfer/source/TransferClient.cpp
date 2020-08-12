@@ -25,9 +25,11 @@
 #include <aws/awstransfer/model/DeleteServerRequest.h>
 #include <aws/awstransfer/model/DeleteSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/DeleteUserRequest.h>
+#include <aws/awstransfer/model/DescribeSecurityPolicyRequest.h>
 #include <aws/awstransfer/model/DescribeServerRequest.h>
 #include <aws/awstransfer/model/DescribeUserRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
+#include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
 #include <aws/awstransfer/model/ListServersRequest.h>
 #include <aws/awstransfer/model/ListTagsForResourceRequest.h>
 #include <aws/awstransfer/model/ListUsersRequest.h>
@@ -247,6 +249,33 @@ void TransferClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
   handler(this, request, DeleteUser(request), context);
 }
 
+DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeSecurityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSecurityPolicyOutcomeCallable TransferClient::DescribeSecurityPolicyCallable(const DescribeSecurityPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSecurityPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSecurityPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeSecurityPolicyAsync(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeSecurityPolicyAsyncHelper(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSecurityPolicy(request), context);
+}
+
 DescribeServerOutcome TransferClient::DescribeServer(const DescribeServerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -326,6 +355,33 @@ void TransferClient::ImportSshPublicKeyAsync(const ImportSshPublicKeyRequest& re
 void TransferClient::ImportSshPublicKeyAsyncHelper(const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportSshPublicKey(request), context);
+}
+
+ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListSecurityPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSecurityPoliciesOutcomeCallable TransferClient::ListSecurityPoliciesCallable(const ListSecurityPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSecurityPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSecurityPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListSecurityPoliciesAsync(const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListSecurityPoliciesAsyncHelper(const ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSecurityPolicies(request), context);
 }
 
 ListServersOutcome TransferClient::ListServers(const ListServersRequest& request) const

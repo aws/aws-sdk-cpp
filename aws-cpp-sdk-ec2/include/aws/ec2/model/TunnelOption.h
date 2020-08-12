@@ -89,44 +89,85 @@ namespace Model
 
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline const Aws::String& GetTunnelInsideCidr() const{ return m_tunnelInsideCidr; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline bool TunnelInsideCidrHasBeenSet() const { return m_tunnelInsideCidrHasBeenSet; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(const Aws::String& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = value; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(Aws::String&& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = std::move(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(const char* value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr.assign(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(const Aws::String& value) { SetTunnelInsideCidr(value); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(Aws::String&& value) { SetTunnelInsideCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(const char* value) { SetTunnelInsideCidr(value); return *this;}
+
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline const Aws::String& GetTunnelInsideIpv6Cidr() const{ return m_tunnelInsideIpv6Cidr; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline bool TunnelInsideIpv6CidrHasBeenSet() const { return m_tunnelInsideIpv6CidrHasBeenSet; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const Aws::String& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = value; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(Aws::String&& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = std::move(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const char* value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr.assign(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(const Aws::String& value) { SetTunnelInsideIpv6Cidr(value); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(Aws::String&& value) { SetTunnelInsideIpv6Cidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(const char* value) { SetTunnelInsideIpv6Cidr(value); return *this;}
 
 
     /**
@@ -657,6 +698,9 @@ namespace Model
 
     Aws::String m_tunnelInsideCidr;
     bool m_tunnelInsideCidrHasBeenSet;
+
+    Aws::String m_tunnelInsideIpv6Cidr;
+    bool m_tunnelInsideIpv6CidrHasBeenSet;
 
     Aws::String m_preSharedKey;
     bool m_preSharedKeyHasBeenSet;

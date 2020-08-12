@@ -719,6 +719,47 @@ namespace Model
 
 
     /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline UpdateServerRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline UpdateServerRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline UpdateServerRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+
+
+    /**
      * <p>A system-assigned unique identifier for a file transfer protocol-enabled
      * server instance that the user account is assigned to.</p>
      */
@@ -788,6 +829,9 @@ namespace Model
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;
+
+    Aws::String m_securityPolicyName;
+    bool m_securityPolicyNameHasBeenSet;
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;

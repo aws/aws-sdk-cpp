@@ -48,6 +48,7 @@ enum class Cloud9Errors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_ACCESS,
   CONFLICT,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,

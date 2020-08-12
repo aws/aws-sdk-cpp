@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns properties of the user that you want to describe.</p><p><h3>See
+   * <p>Describes the properties of a user that was specified.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedUser">AWS
    * API Reference</a></p>

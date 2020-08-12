@@ -409,42 +409,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline const Aws::String& GetComputerName() const{ return m_computerName; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(const Aws::String& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(const char* value) { m_computerNameHasBeenSet = true; m_computerName.assign(value); }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(const Aws::String& value) { SetComputerName(value); return *this;}
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(const char* value) { SetComputerName(value); return *this;}
 

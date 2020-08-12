@@ -29,7 +29,9 @@ AuditFinding::AuditFinding() :
     m_nonCompliantResourceHasBeenSet(false),
     m_relatedResourcesHasBeenSet(false),
     m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false)
+    m_reasonForNonComplianceCodeHasBeenSet(false),
+    m_isSuppressed(false),
+    m_isSuppressedHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ AuditFinding::AuditFinding(JsonView jsonValue) :
     m_nonCompliantResourceHasBeenSet(false),
     m_relatedResourcesHasBeenSet(false),
     m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false)
+    m_reasonForNonComplianceCodeHasBeenSet(false),
+    m_isSuppressed(false),
+    m_isSuppressedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +128,13 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
     m_reasonForNonComplianceCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isSuppressed"))
+  {
+    m_isSuppressed = jsonValue.GetBool("isSuppressed");
+
+    m_isSuppressedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +201,12 @@ JsonValue AuditFinding::Jsonize() const
   if(m_reasonForNonComplianceCodeHasBeenSet)
   {
    payload.WithString("reasonForNonComplianceCode", m_reasonForNonComplianceCode);
+
+  }
+
+  if(m_isSuppressedHasBeenSet)
+  {
+   payload.WithBool("isSuppressed", m_isSuppressed);
 
   }
 

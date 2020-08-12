@@ -290,6 +290,35 @@ namespace Model
      */
     inline ListAuditFindingsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline bool GetListSuppressedFindings() const{ return m_listSuppressedFindings; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline bool ListSuppressedFindingsHasBeenSet() const { return m_listSuppressedFindingsHasBeenSet; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline void SetListSuppressedFindings(bool value) { m_listSuppressedFindingsHasBeenSet = true; m_listSuppressedFindings = value; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline ListAuditFindingsRequest& WithListSuppressedFindings(bool value) { SetListSuppressedFindings(value); return *this;}
+
   private:
 
     Aws::String m_taskId;
@@ -312,6 +341,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    bool m_listSuppressedFindings;
+    bool m_listSuppressedFindingsHasBeenSet;
   };
 
 } // namespace Model

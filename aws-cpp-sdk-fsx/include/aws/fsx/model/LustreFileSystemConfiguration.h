@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DataRepositoryConfiguration.h>
 #include <aws/fsx/model/LustreDeploymentType.h>
+#include <aws/fsx/model/DriveCacheType.h>
 #include <utility>
 
 namespace Aws
@@ -212,7 +213,8 @@ namespace Model
      * write throughput per 1 tebibyte of storage provisioned. File system throughput
      * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
      * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     * types. Valid values are 50, 100, 200. </p>
+     * types. </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40. </p>
      */
     inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
 
@@ -221,7 +223,8 @@ namespace Model
      * write throughput per 1 tebibyte of storage provisioned. File system throughput
      * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
      * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     * types. Valid values are 50, 100, 200. </p>
+     * types. </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40. </p>
      */
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
 
@@ -230,7 +233,8 @@ namespace Model
      * write throughput per 1 tebibyte of storage provisioned. File system throughput
      * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
      * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     * types. Valid values are 50, 100, 200. </p>
+     * types. </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40. </p>
      */
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
 
@@ -239,7 +243,8 @@ namespace Model
      * write throughput per 1 tebibyte of storage provisioned. File system throughput
      * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
      * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     * types. Valid values are 50, 100, 200. </p>
+     * types. </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40. </p>
      */
     inline LustreFileSystemConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
 
@@ -399,6 +404,67 @@ namespace Model
      */
     inline LustreFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline const DriveCacheType& GetDriveCacheType() const{ return m_driveCacheType; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline bool DriveCacheTypeHasBeenSet() const { return m_driveCacheTypeHasBeenSet; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline void SetDriveCacheType(const DriveCacheType& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = value; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline void SetDriveCacheType(DriveCacheType&& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = std::move(value); }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline LustreFileSystemConfiguration& WithDriveCacheType(const DriveCacheType& value) { SetDriveCacheType(value); return *this;}
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline LustreFileSystemConfiguration& WithDriveCacheType(DriveCacheType&& value) { SetDriveCacheType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -424,6 +490,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet;
+
+    DriveCacheType m_driveCacheType;
+    bool m_driveCacheTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -419,28 +419,28 @@ namespace Model
     /**
      * <p>The number of days to retain automatic backups. The default is to retain
      * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 35 days.</p>
+     * backups. The maximum retention period for backups is 90 days.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
     /**
      * <p>The number of days to retain automatic backups. The default is to retain
      * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 35 days.</p>
+     * backups. The maximum retention period for backups is 90 days.</p>
      */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
      * <p>The number of days to retain automatic backups. The default is to retain
      * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 35 days.</p>
+     * backups. The maximum retention period for backups is 90 days.</p>
      */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
      * <p>The number of days to retain automatic backups. The default is to retain
      * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 35 days.</p>
+     * backups. The maximum retention period for backups is 90 days.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 

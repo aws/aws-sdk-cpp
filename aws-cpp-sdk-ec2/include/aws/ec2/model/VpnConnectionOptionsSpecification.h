@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/TunnelInsideIpVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>
 #include <utility>
@@ -99,6 +100,43 @@ namespace Model
 
 
     /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline const TunnelInsideIpVersion& GetTunnelInsideIpVersion() const{ return m_tunnelInsideIpVersion; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline bool TunnelInsideIpVersionHasBeenSet() const { return m_tunnelInsideIpVersionHasBeenSet; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline void SetTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = value; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline void SetTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = std::move(value); }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { SetTunnelInsideIpVersion(value); return *this;}
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { SetTunnelInsideIpVersion(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tunnel options for the VPN connection.</p>
      */
     inline const Aws::Vector<VpnTunnelOptionsSpecification>& GetTunnelOptions() const{ return m_tunnelOptions; }
@@ -145,6 +183,9 @@ namespace Model
 
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;
+
+    TunnelInsideIpVersion m_tunnelInsideIpVersion;
+    bool m_tunnelInsideIpVersionHasBeenSet;
 
     Aws::Vector<VpnTunnelOptionsSpecification> m_tunnelOptions;
     bool m_tunnelOptionsHasBeenSet;

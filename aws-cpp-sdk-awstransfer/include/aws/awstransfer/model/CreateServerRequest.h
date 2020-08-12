@@ -645,14 +645,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -667,14 +667,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -689,14 +689,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -711,14 +711,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -733,14 +733,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -755,14 +755,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -777,14 +777,14 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -799,18 +799,59 @@ namespace Model
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
      * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
      * choose a certificate stored in AWS Certificate Manager (ACM) which will be used
-     * to identify your server when clients connect to it over FTPS.</p> <p>If
-     * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
-     * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * to identify your file transfer protocol-enabled server when clients connect to
+     * it over FTPS.</p> <p>If <code>Protocol</code> includes either <code>FTP</code>
+     * or <code>FTPS</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline CreateServerRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline CreateServerRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline CreateServerRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline CreateServerRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
 
 
     /**
@@ -886,6 +927,9 @@ namespace Model
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;
+
+    Aws::String m_securityPolicyName;
+    bool m_securityPolicyNameHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

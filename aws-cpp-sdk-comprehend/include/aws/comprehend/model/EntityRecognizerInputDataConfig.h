@@ -43,49 +43,49 @@ namespace Model
 
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline void SetEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline void SetEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline EntityRecognizerInputDataConfig& WithEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { SetEntityTypes(value); return *this;}
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline EntityRecognizerInputDataConfig& WithEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { SetEntityTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline EntityRecognizerInputDataConfig& AddEntityTypes(const EntityTypesListItem& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
 
     /**
-     * <p>The entity types in the input data for an entity recognizer. A maximum of 12
+     * <p>The entity types in the input data for an entity recognizer. A maximum of 25
      * entity types can be used at one time to train an entity recognizer.</p>
      */
     inline EntityRecognizerInputDataConfig& AddEntityTypes(EntityTypesListItem&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }

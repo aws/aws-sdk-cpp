@@ -23,6 +23,7 @@ namespace Model
     nodejs10_x,
     nodejs12_x,
     java8,
+    java8_al2,
     java11,
     python2_7,
     python3_6,
@@ -36,7 +37,8 @@ namespace Model
     go1_x,
     ruby2_5,
     ruby2_7,
-    provided
+    provided,
+    provided_al2
   };
 
 namespace RuntimeMapper

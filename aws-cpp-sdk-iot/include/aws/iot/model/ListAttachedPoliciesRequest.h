@@ -39,42 +39,82 @@ namespace Model
 
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The group or principal for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed. Valid
+     * principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
 

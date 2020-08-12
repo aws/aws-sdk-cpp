@@ -22,6 +22,7 @@ namespace Model
 
 ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification() : 
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -47,6 +48,7 @@ ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification() :
 
 ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification(const XmlNode& xmlNode) : 
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -82,6 +84,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
     {
       m_tunnelInsideCidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideCidrNode.GetText());
       m_tunnelInsideCidrHasBeenSet = true;
+    }
+    XmlNode tunnelInsideIpv6CidrNode = resultNode.FirstChild("TunnelInsideIpv6Cidr");
+    if(!tunnelInsideIpv6CidrNode.IsNull())
+    {
+      m_tunnelInsideIpv6Cidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpv6CidrNode.GetText());
+      m_tunnelInsideIpv6CidrHasBeenSet = true;
     }
     XmlNode preSharedKeyNode = resultNode.FirstChild("PreSharedKey");
     if(!preSharedKeyNode.IsNull())
@@ -221,6 +229,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
       oStream << location << index << locationValue << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
   }
 
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
+  }
+
   if(m_preSharedKeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreSharedKey=" << StringUtils::URLEncode(m_preSharedKey.c_str()) << "&";
@@ -340,6 +353,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_tunnelInsideCidrHasBeenSet)
   {
       oStream << location << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
+  }
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
   }
   if(m_preSharedKeyHasBeenSet)
   {

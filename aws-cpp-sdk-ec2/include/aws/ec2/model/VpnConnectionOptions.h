@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/TunnelInsideIpVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TunnelOption.h>
 #include <utility>
@@ -87,6 +88,37 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline const TunnelInsideIpVersion& GetTunnelInsideIpVersion() const{ return m_tunnelInsideIpVersion; }
+
+    /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline bool TunnelInsideIpVersionHasBeenSet() const { return m_tunnelInsideIpVersionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline void SetTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = value; }
+
+    /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline void SetTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = std::move(value); }
+
+    /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline VpnConnectionOptions& WithTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { SetTunnelInsideIpVersion(value); return *this;}
+
+    /**
+     * <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     */
+    inline VpnConnectionOptions& WithTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { SetTunnelInsideIpVersion(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates the VPN tunnel options.</p>
      */
     inline const Aws::Vector<TunnelOption>& GetTunnelOptions() const{ return m_tunnelOptions; }
@@ -133,6 +165,9 @@ namespace Model
 
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;
+
+    TunnelInsideIpVersion m_tunnelInsideIpVersion;
+    bool m_tunnelInsideIpVersionHasBeenSet;
 
     Aws::Vector<TunnelOption> m_tunnelOptions;
     bool m_tunnelOptionsHasBeenSet;

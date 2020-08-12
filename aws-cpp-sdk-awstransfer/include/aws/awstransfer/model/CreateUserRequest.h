@@ -171,7 +171,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -195,7 +195,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -219,7 +219,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -243,7 +243,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -267,7 +267,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -291,7 +291,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -315,7 +315,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -339,7 +339,7 @@ namespace Model
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
      * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
-     * the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     * the Amazon S3 API to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -717,72 +717,72 @@ namespace Model
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a file transfer
      * protocol-enabled server as specified by the <code>ServerId</code>. This user
-     * name must be a minimum of 3 and a maximum of 32 characters long. The following
-     * are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't
-     * start with a hyphen.</p>
+     * name must be a minimum of 3 and a maximum of 100 characters long. The following
+     * are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and
+     * at sign '@'. The user name can't start with a hyphen, period, and at sign.</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

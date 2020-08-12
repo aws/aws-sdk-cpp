@@ -24,6 +24,8 @@ Environment::Environment() :
     m_descriptionHasBeenSet(false),
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
     m_lifecycleHasBeenSet(false)
@@ -36,6 +38,8 @@ Environment::Environment(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
     m_lifecycleHasBeenSet(false)
@@ -71,6 +75,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_type = EnvironmentTypeMapper::GetEnvironmentTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectionType"))
+  {
+    m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
+
+    m_connectionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -122,6 +133,11 @@ JsonValue Environment::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", EnvironmentTypeMapper::GetNameForEnvironmentType(m_type));
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
   }
 
   if(m_arnHasBeenSet)

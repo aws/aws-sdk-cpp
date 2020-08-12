@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int TRANSFERRING_HASH = HashingUtils::HashString("TRANSFERRING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
@@ -36,6 +37,10 @@ namespace Aws
           else if (hashCode == CREATING_HASH)
           {
             return BackupLifecycle::CREATING;
+          }
+          else if (hashCode == TRANSFERRING_HASH)
+          {
+            return BackupLifecycle::TRANSFERRING;
           }
           else if (hashCode == DELETED_HASH)
           {
@@ -63,6 +68,8 @@ namespace Aws
             return "AVAILABLE";
           case BackupLifecycle::CREATING:
             return "CREATING";
+          case BackupLifecycle::TRANSFERRING:
+            return "TRANSFERRING";
           case BackupLifecycle::DELETED:
             return "DELETED";
           case BackupLifecycle::FAILED:

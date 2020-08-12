@@ -145,6 +145,31 @@ namespace Model
 
 
     /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline long long GetSuppressedNonCompliantResourcesCount() const{ return m_suppressedNonCompliantResourcesCount; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline bool SuppressedNonCompliantResourcesCountHasBeenSet() const { return m_suppressedNonCompliantResourcesCountHasBeenSet; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline void SetSuppressedNonCompliantResourcesCount(long long value) { m_suppressedNonCompliantResourcesCountHasBeenSet = true; m_suppressedNonCompliantResourcesCount = value; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline AuditCheckDetails& WithSuppressedNonCompliantResourcesCount(long long value) { SetSuppressedNonCompliantResourcesCount(value); return *this;}
+
+
+    /**
      * <p>The code of any error encountered when this check is performed during this
      * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
@@ -254,6 +279,9 @@ namespace Model
 
     long long m_nonCompliantResourcesCount;
     bool m_nonCompliantResourcesCountHasBeenSet;
+
+    long long m_suppressedNonCompliantResourcesCount;
+    bool m_suppressedNonCompliantResourcesCountHasBeenSet;
 
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;

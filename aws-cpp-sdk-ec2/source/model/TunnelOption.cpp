@@ -23,6 +23,7 @@ namespace Model
 TunnelOption::TunnelOption() : 
     m_outsideIpAddressHasBeenSet(false),
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -49,6 +50,7 @@ TunnelOption::TunnelOption() :
 TunnelOption::TunnelOption(const XmlNode& xmlNode) : 
     m_outsideIpAddressHasBeenSet(false),
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -90,6 +92,12 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     {
       m_tunnelInsideCidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideCidrNode.GetText());
       m_tunnelInsideCidrHasBeenSet = true;
+    }
+    XmlNode tunnelInsideIpv6CidrNode = resultNode.FirstChild("tunnelInsideIpv6Cidr");
+    if(!tunnelInsideIpv6CidrNode.IsNull())
+    {
+      m_tunnelInsideIpv6Cidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpv6CidrNode.GetText());
+      m_tunnelInsideIpv6CidrHasBeenSet = true;
     }
     XmlNode preSharedKeyNode = resultNode.FirstChild("preSharedKey");
     if(!preSharedKeyNode.IsNull())
@@ -234,6 +242,11 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
   }
 
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
+  }
+
   if(m_preSharedKeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreSharedKey=" << StringUtils::URLEncode(m_preSharedKey.c_str()) << "&";
@@ -357,6 +370,10 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_tunnelInsideCidrHasBeenSet)
   {
       oStream << location << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
+  }
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
   }
   if(m_preSharedKeyHasBeenSet)
   {

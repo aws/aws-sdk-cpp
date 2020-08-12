@@ -20,7 +20,9 @@ ListAuditFindingsRequest::ListAuditFindingsRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_listSuppressedFindings(false),
+    m_listSuppressedFindingsHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,12 @@ Aws::String ListAuditFindingsRequest::SerializePayload() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_listSuppressedFindingsHasBeenSet)
+  {
+   payload.WithBool("listSuppressedFindings", m_listSuppressedFindings);
+
   }
 
   return payload.View().WriteReadable();

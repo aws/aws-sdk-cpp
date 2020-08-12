@@ -21,6 +21,7 @@ UpdateServerRequest::UpdateServerRequest() :
     m_identityProviderDetailsHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false)
 {
 }
@@ -72,6 +73,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
   }
 

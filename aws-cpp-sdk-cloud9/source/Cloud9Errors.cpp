@@ -19,6 +19,7 @@ namespace Cloud9ErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int CONCURRENT_ACCESS_HASH = HashingUtils::HashString("ConcurrentAccessException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -34,6 +35,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONFLICT), false);
+  }
+  else if (hashCode == CONCURRENT_ACCESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONCURRENT_ACCESS), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

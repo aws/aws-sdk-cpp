@@ -419,6 +419,31 @@ namespace Model
      */
     inline AuditFinding& WithReasonForNonComplianceCode(const char* value) { SetReasonForNonComplianceCode(value); return *this;}
 
+
+    /**
+     * <p> Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     */
+    inline bool GetIsSuppressed() const{ return m_isSuppressed; }
+
+    /**
+     * <p> Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     */
+    inline bool IsSuppressedHasBeenSet() const { return m_isSuppressedHasBeenSet; }
+
+    /**
+     * <p> Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     */
+    inline void SetIsSuppressed(bool value) { m_isSuppressedHasBeenSet = true; m_isSuppressed = value; }
+
+    /**
+     * <p> Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     */
+    inline AuditFinding& WithIsSuppressed(bool value) { SetIsSuppressed(value); return *this;}
+
   private:
 
     Aws::String m_findingId;
@@ -450,6 +475,9 @@ namespace Model
 
     Aws::String m_reasonForNonComplianceCode;
     bool m_reasonForNonComplianceCodeHasBeenSet;
+
+    bool m_isSuppressed;
+    bool m_isSuppressedHasBeenSet;
   };
 
 } // namespace Model

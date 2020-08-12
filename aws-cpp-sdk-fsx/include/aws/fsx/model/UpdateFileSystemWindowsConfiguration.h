@@ -149,7 +149,7 @@ namespace Model
     /**
      * <p>The number of days to retain automatic daily backups. Setting this to zero
      * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 35 days. For more information, see <a
+     * a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
@@ -158,7 +158,7 @@ namespace Model
     /**
      * <p>The number of days to retain automatic daily backups. Setting this to zero
      * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 35 days. For more information, see <a
+     * a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>The number of days to retain automatic daily backups. Setting this to zero
      * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 35 days. For more information, see <a
+     * a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
@@ -176,7 +176,7 @@ namespace Model
     /**
      * <p>The number of days to retain automatic daily backups. Setting this to zero
      * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 35 days. For more information, see <a
+     * a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */

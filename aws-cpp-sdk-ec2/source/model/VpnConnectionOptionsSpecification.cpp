@@ -25,6 +25,8 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() :
     m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
+    m_tunnelInsideIpVersionHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNo
     m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
+    m_tunnelInsideIpVersionHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -56,6 +60,12 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
     {
       m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
+    }
+    XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("TunnelInsideIpVersion");
+    if(!tunnelInsideIpVersionNode.IsNull())
+    {
+      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()).c_str());
+      m_tunnelInsideIpVersionHasBeenSet = true;
     }
     XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
     if(!tunnelOptionsNode.IsNull())
@@ -86,6 +96,11 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
+  if(m_tunnelInsideIpVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
+  }
+
   if(m_tunnelOptionsHasBeenSet)
   {
       unsigned tunnelOptionsIdx = 1;
@@ -108,6 +123,10 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   if(m_staticRoutesOnlyHasBeenSet)
   {
       oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
+  }
+  if(m_tunnelInsideIpVersionHasBeenSet)
+  {
+      oStream << location << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
   }
   if(m_tunnelOptionsHasBeenSet)
   {

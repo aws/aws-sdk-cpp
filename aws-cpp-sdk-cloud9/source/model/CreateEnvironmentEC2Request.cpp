@@ -21,7 +21,9 @@ CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() :
     m_automaticStopTimeMinutes(0),
     m_automaticStopTimeMinutesHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,11 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
   }
 
   return payload.View().WriteReadable();

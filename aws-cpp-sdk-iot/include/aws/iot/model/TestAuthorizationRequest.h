@@ -41,42 +41,74 @@ namespace Model
 
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline TestAuthorizationRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline TestAuthorizationRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+     * thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+     * CognitoId (<i>region</i>:<i>id</i>).</p>
      */
     inline TestAuthorizationRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

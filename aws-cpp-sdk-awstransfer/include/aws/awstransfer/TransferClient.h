@@ -13,9 +13,11 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/awstransfer/model/CreateServerResult.h>
 #include <aws/awstransfer/model/CreateUserResult.h>
+#include <aws/awstransfer/model/DescribeSecurityPolicyResult.h>
 #include <aws/awstransfer/model/DescribeServerResult.h>
 #include <aws/awstransfer/model/DescribeUserResult.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyResult.h>
+#include <aws/awstransfer/model/ListSecurityPoliciesResult.h>
 #include <aws/awstransfer/model/ListServersResult.h>
 #include <aws/awstransfer/model/ListTagsForResourceResult.h>
 #include <aws/awstransfer/model/ListUsersResult.h>
@@ -67,9 +69,11 @@ namespace Model
         class DeleteServerRequest;
         class DeleteSshPublicKeyRequest;
         class DeleteUserRequest;
+        class DescribeSecurityPolicyRequest;
         class DescribeServerRequest;
         class DescribeUserRequest;
         class ImportSshPublicKeyRequest;
+        class ListSecurityPoliciesRequest;
         class ListServersRequest;
         class ListTagsForResourceRequest;
         class ListUsersRequest;
@@ -86,9 +90,11 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteServerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteSshPublicKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeSecurityPolicyResult, TransferError> DescribeSecurityPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeServerResult, TransferError> DescribeServerOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, TransferError> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<ImportSshPublicKeyResult, TransferError> ImportSshPublicKeyOutcome;
+        typedef Aws::Utils::Outcome<ListSecurityPoliciesResult, TransferError> ListSecurityPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListServersResult, TransferError> ListServersOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, TransferError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, TransferError> ListUsersOutcome;
@@ -105,9 +111,11 @@ namespace Model
         typedef std::future<DeleteServerOutcome> DeleteServerOutcomeCallable;
         typedef std::future<DeleteSshPublicKeyOutcome> DeleteSshPublicKeyOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+        typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
         typedef std::future<DescribeServerOutcome> DescribeServerOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<ImportSshPublicKeyOutcome> ImportSshPublicKeyOutcomeCallable;
+        typedef std::future<ListSecurityPoliciesOutcome> ListSecurityPoliciesOutcomeCallable;
         typedef std::future<ListServersOutcome> ListServersOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -127,9 +135,11 @@ namespace Model
     typedef std::function<void(const TransferClient*, const Model::DeleteServerRequest&, const Model::DeleteServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::DeleteSshPublicKeyRequest&, const Model::DeleteSshPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSshPublicKeyResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::DescribeSecurityPolicyRequest&, const Model::DescribeSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityPolicyResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::DescribeServerRequest&, const Model::DescribeServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ImportSshPublicKeyRequest&, const Model::ImportSshPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSshPublicKeyResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::ListSecurityPoliciesRequest&, const Model::ListSecurityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityPoliciesResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListServersRequest&, const Model::ListServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServersResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
@@ -143,7 +153,7 @@ namespace Model
 
   /**
    * <p>AWS Transfer Family is a fully managed service that enables the transfer of
-   * files over the the File Transfer Protocol (FTP), File Transfer Protocol over SSL
+   * files over the File Transfer Protocol (FTP), File Transfer Protocol over SSL
    * (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
    * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly
    * migrate your file transfer workflows to AWS Transfer Family by integrating with
@@ -354,6 +364,43 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the security policy that is attached to your file transfer
+         * protocol-enabled server. The response contains a description of the security
+         * policy's properties. For more information about security policies, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSecurityPolicyOutcome DescribeSecurityPolicy(const Model::DescribeSecurityPolicyRequest& request) const;
+
+        /**
+         * <p>Describes the security policy that is attached to your file transfer
+         * protocol-enabled server. The response contains a description of the security
+         * policy's properties. For more information about security policies, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSecurityPolicyOutcomeCallable DescribeSecurityPolicyCallable(const Model::DescribeSecurityPolicyRequest& request) const;
+
+        /**
+         * <p>Describes the security policy that is attached to your file transfer
+         * protocol-enabled server. The response contains a description of the security
+         * policy's properties. For more information about security policies, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSecurityPolicyAsync(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes a file transfer protocol-enabled server that you specify by passing
          * the <code>ServerId</code> parameter.</p> <p>The response contains a description
          * of a server's properties. When you set <code>EndpointType</code> to VPC, the
@@ -463,6 +510,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportSshPublicKeyAsync(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the security policies that are attached to your file transfer
+         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request) const;
+
+        /**
+         * <p>Lists the security policies that are attached to your file transfer
+         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const Model::ListSecurityPoliciesRequest& request) const;
+
+        /**
+         * <p>Lists the security policies that are attached to your file transfer
+         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSecurityPoliciesAsync(const Model::ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the file transfer protocol-enabled servers that are associated with
@@ -831,9 +906,11 @@ namespace Model
         void DeleteServerAsyncHelper(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSshPublicKeyAsyncHelper(const Model::DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSecurityPolicyAsyncHelper(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServerAsyncHelper(const Model::DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSshPublicKeyAsyncHelper(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSecurityPoliciesAsyncHelper(const Model::ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServersAsyncHelper(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

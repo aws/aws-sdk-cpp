@@ -6726,17 +6726,18 @@ namespace Model
         virtual void CreateVpcPeeringConnectionAsync(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
-         * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p>  <p>We strongly
-         * recommend that you use HTTPS when calling this operation because the response
-         * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p>  <p>If you decide to shut down your VPN connection for
-         * any reason and later create a new VPN connection, you must reconfigure your
-         * customer gateway with the new information returned from this call.</p> <p>This
-         * is an idempotent operation. If you perform the operation more than once, Amazon
-         * EC2 doesn't return an error.</p> <p>For more information, see <a
+         * <p>Creates a VPN connection between an existing virtual private gateway or
+         * transit gateway and a customer gateway. The supported connection type is
+         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
+         * give to your network administrator to configure your customer gateway.</p>
+         *  <p>We strongly recommend that you use HTTPS when calling this
+         * operation because the response contains sensitive cryptographic information for
+         * configuring your customer gateway device.</p>  <p>If you decide to
+         * shut down your VPN connection for any reason and later create a new VPN
+         * connection, you must reconfigure your customer gateway with the new information
+         * returned from this call.</p> <p>This is an idempotent operation. If you perform
+         * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -6746,17 +6747,18 @@ namespace Model
         virtual Model::CreateVpnConnectionOutcome CreateVpnConnection(const Model::CreateVpnConnectionRequest& request) const;
 
         /**
-         * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
-         * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p>  <p>We strongly
-         * recommend that you use HTTPS when calling this operation because the response
-         * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p>  <p>If you decide to shut down your VPN connection for
-         * any reason and later create a new VPN connection, you must reconfigure your
-         * customer gateway with the new information returned from this call.</p> <p>This
-         * is an idempotent operation. If you perform the operation more than once, Amazon
-         * EC2 doesn't return an error.</p> <p>For more information, see <a
+         * <p>Creates a VPN connection between an existing virtual private gateway or
+         * transit gateway and a customer gateway. The supported connection type is
+         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
+         * give to your network administrator to configure your customer gateway.</p>
+         *  <p>We strongly recommend that you use HTTPS when calling this
+         * operation because the response contains sensitive cryptographic information for
+         * configuring your customer gateway device.</p>  <p>If you decide to
+         * shut down your VPN connection for any reason and later create a new VPN
+         * connection, you must reconfigure your customer gateway with the new information
+         * returned from this call.</p> <p>This is an idempotent operation. If you perform
+         * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -6768,17 +6770,18 @@ namespace Model
         virtual Model::CreateVpnConnectionOutcomeCallable CreateVpnConnectionCallable(const Model::CreateVpnConnectionRequest& request) const;
 
         /**
-         * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
-         * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p>  <p>We strongly
-         * recommend that you use HTTPS when calling this operation because the response
-         * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p>  <p>If you decide to shut down your VPN connection for
-         * any reason and later create a new VPN connection, you must reconfigure your
-         * customer gateway with the new information returned from this call.</p> <p>This
-         * is an idempotent operation. If you perform the operation more than once, Amazon
-         * EC2 doesn't return an error.</p> <p>For more information, see <a
+         * <p>Creates a VPN connection between an existing virtual private gateway or
+         * transit gateway and a customer gateway. The supported connection type is
+         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
+         * give to your network administrator to configure your customer gateway.</p>
+         *  <p>We strongly recommend that you use HTTPS when calling this
+         * operation because the response contains sensitive cryptographic information for
+         * configuring your customer gateway device.</p>  <p>If you decide to
+         * shut down your VPN connection for any reason and later create a new VPN
+         * connection, you must reconfigure your customer gateway with the new information
+         * returned from this call.</p> <p>This is an idempotent operation. If you perform
+         * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an object that contains entries and a targets for
+   * <p>Represents an object that contains entries and targets for
    * <code>HomeDirectoryMappings</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/HomeDirectoryMapEntry">AWS
    * API Reference</a></p>

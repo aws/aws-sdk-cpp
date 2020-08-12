@@ -30,7 +30,9 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +113,13 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_copyTagsToBackupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DriveCacheType"))
+  {
+    m_driveCacheType = DriveCacheTypeMapper::GetDriveCacheTypeForName(jsonValue.GetString("DriveCacheType"));
+
+    m_driveCacheTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +172,11 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   {
    payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
 
+  }
+
+  if(m_driveCacheTypeHasBeenSet)
+  {
+   payload.WithString("DriveCacheType", DriveCacheTypeMapper::GetNameForDriveCacheType(m_driveCacheType));
   }
 
   return payload;

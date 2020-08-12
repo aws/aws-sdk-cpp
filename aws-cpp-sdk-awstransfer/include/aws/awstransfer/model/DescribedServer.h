@@ -33,11 +33,7 @@ namespace Model
 
   /**
    * <p>Describes the properties of a file transfer protocol-enabled server that was
-   * specified. Information returned includes the following: the server Amazon
-   * Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected),
-   * the endpoint type and details, the authentication configuration and type, the
-   * logging role, the file transfer protocol or protocols, the server ID and state,
-   * and assigned tags or metadata.</p><p><h3>See Also:</h3>   <a
+   * specified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedServer">AWS
    * API Reference</a></p>
    */
@@ -51,50 +47,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline DescribedServer& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline DescribedServer& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the unique Amazon Resource Name (ARN) for a file transfer
-     * protocol-enabled server to be described.</p>
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the file transfer
+     * protocol-enabled server.</p>
      */
     inline DescribedServer& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -544,6 +540,47 @@ namespace Model
 
 
     /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline DescribedServer& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline DescribedServer& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     */
+    inline DescribedServer& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+
+
+    /**
      * <p>Specifies the unique system-assigned identifier for a file transfer
      * protocol-enabled server that you instantiate.</p>
      */
@@ -774,6 +811,9 @@ namespace Model
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;
+
+    Aws::String m_securityPolicyName;
+    bool m_securityPolicyNameHasBeenSet;
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;

@@ -21,6 +21,7 @@
 #include <aws/iot/model/CancelJobResult.h>
 #include <aws/iot/model/ClearDefaultAuthorizerResult.h>
 #include <aws/iot/model/ConfirmTopicRuleDestinationResult.h>
+#include <aws/iot/model/CreateAuditSuppressionResult.h>
 #include <aws/iot/model/CreateAuthorizerResult.h>
 #include <aws/iot/model/CreateBillingGroupResult.h>
 #include <aws/iot/model/CreateCertificateFromCsrResult.h>
@@ -45,6 +46,7 @@
 #include <aws/iot/model/CreateThingTypeResult.h>
 #include <aws/iot/model/CreateTopicRuleDestinationResult.h>
 #include <aws/iot/model/DeleteAccountAuditConfigurationResult.h>
+#include <aws/iot/model/DeleteAuditSuppressionResult.h>
 #include <aws/iot/model/DeleteAuthorizerResult.h>
 #include <aws/iot/model/DeleteBillingGroupResult.h>
 #include <aws/iot/model/DeleteCACertificateResult.h>
@@ -68,6 +70,7 @@
 #include <aws/iot/model/DescribeAccountAuditConfigurationResult.h>
 #include <aws/iot/model/DescribeAuditFindingResult.h>
 #include <aws/iot/model/DescribeAuditMitigationActionsTaskResult.h>
+#include <aws/iot/model/DescribeAuditSuppressionResult.h>
 #include <aws/iot/model/DescribeAuditTaskResult.h>
 #include <aws/iot/model/DescribeAuthorizerResult.h>
 #include <aws/iot/model/DescribeBillingGroupResult.h>
@@ -113,6 +116,7 @@
 #include <aws/iot/model/ListAuditFindingsResult.h>
 #include <aws/iot/model/ListAuditMitigationActionsExecutionsResult.h>
 #include <aws/iot/model/ListAuditMitigationActionsTasksResult.h>
+#include <aws/iot/model/ListAuditSuppressionsResult.h>
 #include <aws/iot/model/ListAuditTasksResult.h>
 #include <aws/iot/model/ListAuthorizersResult.h>
 #include <aws/iot/model/ListBillingGroupsResult.h>
@@ -172,6 +176,7 @@
 #include <aws/iot/model/TransferCertificateResult.h>
 #include <aws/iot/model/UntagResourceResult.h>
 #include <aws/iot/model/UpdateAccountAuditConfigurationResult.h>
+#include <aws/iot/model/UpdateAuditSuppressionResult.h>
 #include <aws/iot/model/UpdateAuthorizerResult.h>
 #include <aws/iot/model/UpdateBillingGroupResult.h>
 #include <aws/iot/model/UpdateDimensionResult.h>
@@ -244,6 +249,7 @@ namespace Model
         class CancelJobExecutionRequest;
         class ClearDefaultAuthorizerRequest;
         class ConfirmTopicRuleDestinationRequest;
+        class CreateAuditSuppressionRequest;
         class CreateAuthorizerRequest;
         class CreateBillingGroupRequest;
         class CreateCertificateFromCsrRequest;
@@ -269,6 +275,7 @@ namespace Model
         class CreateTopicRuleRequest;
         class CreateTopicRuleDestinationRequest;
         class DeleteAccountAuditConfigurationRequest;
+        class DeleteAuditSuppressionRequest;
         class DeleteAuthorizerRequest;
         class DeleteBillingGroupRequest;
         class DeleteCACertificateRequest;
@@ -299,6 +306,7 @@ namespace Model
         class DescribeAccountAuditConfigurationRequest;
         class DescribeAuditFindingRequest;
         class DescribeAuditMitigationActionsTaskRequest;
+        class DescribeAuditSuppressionRequest;
         class DescribeAuditTaskRequest;
         class DescribeAuthorizerRequest;
         class DescribeBillingGroupRequest;
@@ -347,6 +355,7 @@ namespace Model
         class ListAuditFindingsRequest;
         class ListAuditMitigationActionsExecutionsRequest;
         class ListAuditMitigationActionsTasksRequest;
+        class ListAuditSuppressionsRequest;
         class ListAuditTasksRequest;
         class ListAuthorizersRequest;
         class ListBillingGroupsRequest;
@@ -412,6 +421,7 @@ namespace Model
         class TransferCertificateRequest;
         class UntagResourceRequest;
         class UpdateAccountAuditConfigurationRequest;
+        class UpdateAuditSuppressionRequest;
         class UpdateAuthorizerRequest;
         class UpdateBillingGroupRequest;
         class UpdateCACertificateRequest;
@@ -448,6 +458,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> CancelJobExecutionOutcome;
         typedef Aws::Utils::Outcome<ClearDefaultAuthorizerResult, IoTError> ClearDefaultAuthorizerOutcome;
         typedef Aws::Utils::Outcome<ConfirmTopicRuleDestinationResult, IoTError> ConfirmTopicRuleDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateAuditSuppressionResult, IoTError> CreateAuditSuppressionOutcome;
         typedef Aws::Utils::Outcome<CreateAuthorizerResult, IoTError> CreateAuthorizerOutcome;
         typedef Aws::Utils::Outcome<CreateBillingGroupResult, IoTError> CreateBillingGroupOutcome;
         typedef Aws::Utils::Outcome<CreateCertificateFromCsrResult, IoTError> CreateCertificateFromCsrOutcome;
@@ -473,6 +484,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> CreateTopicRuleOutcome;
         typedef Aws::Utils::Outcome<CreateTopicRuleDestinationResult, IoTError> CreateTopicRuleDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountAuditConfigurationResult, IoTError> DeleteAccountAuditConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteAuditSuppressionResult, IoTError> DeleteAuditSuppressionOutcome;
         typedef Aws::Utils::Outcome<DeleteAuthorizerResult, IoTError> DeleteAuthorizerOutcome;
         typedef Aws::Utils::Outcome<DeleteBillingGroupResult, IoTError> DeleteBillingGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteCACertificateResult, IoTError> DeleteCACertificateOutcome;
@@ -503,6 +515,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAccountAuditConfigurationResult, IoTError> DescribeAccountAuditConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeAuditFindingResult, IoTError> DescribeAuditFindingOutcome;
         typedef Aws::Utils::Outcome<DescribeAuditMitigationActionsTaskResult, IoTError> DescribeAuditMitigationActionsTaskOutcome;
+        typedef Aws::Utils::Outcome<DescribeAuditSuppressionResult, IoTError> DescribeAuditSuppressionOutcome;
         typedef Aws::Utils::Outcome<DescribeAuditTaskResult, IoTError> DescribeAuditTaskOutcome;
         typedef Aws::Utils::Outcome<DescribeAuthorizerResult, IoTError> DescribeAuthorizerOutcome;
         typedef Aws::Utils::Outcome<DescribeBillingGroupResult, IoTError> DescribeBillingGroupOutcome;
@@ -551,6 +564,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAuditFindingsResult, IoTError> ListAuditFindingsOutcome;
         typedef Aws::Utils::Outcome<ListAuditMitigationActionsExecutionsResult, IoTError> ListAuditMitigationActionsExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListAuditMitigationActionsTasksResult, IoTError> ListAuditMitigationActionsTasksOutcome;
+        typedef Aws::Utils::Outcome<ListAuditSuppressionsResult, IoTError> ListAuditSuppressionsOutcome;
         typedef Aws::Utils::Outcome<ListAuditTasksResult, IoTError> ListAuditTasksOutcome;
         typedef Aws::Utils::Outcome<ListAuthorizersResult, IoTError> ListAuthorizersOutcome;
         typedef Aws::Utils::Outcome<ListBillingGroupsResult, IoTError> ListBillingGroupsOutcome;
@@ -616,6 +630,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TransferCertificateResult, IoTError> TransferCertificateOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountAuditConfigurationResult, IoTError> UpdateAccountAuditConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateAuditSuppressionResult, IoTError> UpdateAuditSuppressionOutcome;
         typedef Aws::Utils::Outcome<UpdateAuthorizerResult, IoTError> UpdateAuthorizerOutcome;
         typedef Aws::Utils::Outcome<UpdateBillingGroupResult, IoTError> UpdateBillingGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateCACertificateOutcome;
@@ -652,6 +667,7 @@ namespace Model
         typedef std::future<CancelJobExecutionOutcome> CancelJobExecutionOutcomeCallable;
         typedef std::future<ClearDefaultAuthorizerOutcome> ClearDefaultAuthorizerOutcomeCallable;
         typedef std::future<ConfirmTopicRuleDestinationOutcome> ConfirmTopicRuleDestinationOutcomeCallable;
+        typedef std::future<CreateAuditSuppressionOutcome> CreateAuditSuppressionOutcomeCallable;
         typedef std::future<CreateAuthorizerOutcome> CreateAuthorizerOutcomeCallable;
         typedef std::future<CreateBillingGroupOutcome> CreateBillingGroupOutcomeCallable;
         typedef std::future<CreateCertificateFromCsrOutcome> CreateCertificateFromCsrOutcomeCallable;
@@ -677,6 +693,7 @@ namespace Model
         typedef std::future<CreateTopicRuleOutcome> CreateTopicRuleOutcomeCallable;
         typedef std::future<CreateTopicRuleDestinationOutcome> CreateTopicRuleDestinationOutcomeCallable;
         typedef std::future<DeleteAccountAuditConfigurationOutcome> DeleteAccountAuditConfigurationOutcomeCallable;
+        typedef std::future<DeleteAuditSuppressionOutcome> DeleteAuditSuppressionOutcomeCallable;
         typedef std::future<DeleteAuthorizerOutcome> DeleteAuthorizerOutcomeCallable;
         typedef std::future<DeleteBillingGroupOutcome> DeleteBillingGroupOutcomeCallable;
         typedef std::future<DeleteCACertificateOutcome> DeleteCACertificateOutcomeCallable;
@@ -707,6 +724,7 @@ namespace Model
         typedef std::future<DescribeAccountAuditConfigurationOutcome> DescribeAccountAuditConfigurationOutcomeCallable;
         typedef std::future<DescribeAuditFindingOutcome> DescribeAuditFindingOutcomeCallable;
         typedef std::future<DescribeAuditMitigationActionsTaskOutcome> DescribeAuditMitigationActionsTaskOutcomeCallable;
+        typedef std::future<DescribeAuditSuppressionOutcome> DescribeAuditSuppressionOutcomeCallable;
         typedef std::future<DescribeAuditTaskOutcome> DescribeAuditTaskOutcomeCallable;
         typedef std::future<DescribeAuthorizerOutcome> DescribeAuthorizerOutcomeCallable;
         typedef std::future<DescribeBillingGroupOutcome> DescribeBillingGroupOutcomeCallable;
@@ -755,6 +773,7 @@ namespace Model
         typedef std::future<ListAuditFindingsOutcome> ListAuditFindingsOutcomeCallable;
         typedef std::future<ListAuditMitigationActionsExecutionsOutcome> ListAuditMitigationActionsExecutionsOutcomeCallable;
         typedef std::future<ListAuditMitigationActionsTasksOutcome> ListAuditMitigationActionsTasksOutcomeCallable;
+        typedef std::future<ListAuditSuppressionsOutcome> ListAuditSuppressionsOutcomeCallable;
         typedef std::future<ListAuditTasksOutcome> ListAuditTasksOutcomeCallable;
         typedef std::future<ListAuthorizersOutcome> ListAuthorizersOutcomeCallable;
         typedef std::future<ListBillingGroupsOutcome> ListBillingGroupsOutcomeCallable;
@@ -820,6 +839,7 @@ namespace Model
         typedef std::future<TransferCertificateOutcome> TransferCertificateOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccountAuditConfigurationOutcome> UpdateAccountAuditConfigurationOutcomeCallable;
+        typedef std::future<UpdateAuditSuppressionOutcome> UpdateAuditSuppressionOutcomeCallable;
         typedef std::future<UpdateAuthorizerOutcome> UpdateAuthorizerOutcomeCallable;
         typedef std::future<UpdateBillingGroupOutcome> UpdateBillingGroupOutcomeCallable;
         typedef std::future<UpdateCACertificateOutcome> UpdateCACertificateOutcomeCallable;
@@ -859,6 +879,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::CancelJobExecutionRequest&, const Model::CancelJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ClearDefaultAuthorizerRequest&, const Model::ClearDefaultAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearDefaultAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ConfirmTopicRuleDestinationRequest&, const Model::ConfirmTopicRuleDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmTopicRuleDestinationResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::CreateAuditSuppressionRequest&, const Model::CreateAuditSuppressionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuditSuppressionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateAuthorizerRequest&, const Model::CreateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateBillingGroupRequest&, const Model::CreateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateCertificateFromCsrRequest&, const Model::CreateCertificateFromCsrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateFromCsrResponseReceivedHandler;
@@ -884,6 +905,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::CreateTopicRuleRequest&, const Model::CreateTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateTopicRuleDestinationRequest&, const Model::CreateTopicRuleDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicRuleDestinationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteAccountAuditConfigurationRequest&, const Model::DeleteAccountAuditConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountAuditConfigurationResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DeleteAuditSuppressionRequest&, const Model::DeleteAuditSuppressionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuditSuppressionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteAuthorizerRequest&, const Model::DeleteAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteBillingGroupRequest&, const Model::DeleteBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCACertificateRequest&, const Model::DeleteCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCACertificateResponseReceivedHandler;
@@ -914,6 +936,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DescribeAccountAuditConfigurationRequest&, const Model::DescribeAccountAuditConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAuditConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeAuditFindingRequest&, const Model::DescribeAuditFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuditFindingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeAuditMitigationActionsTaskRequest&, const Model::DescribeAuditMitigationActionsTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuditMitigationActionsTaskResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeAuditSuppressionRequest&, const Model::DescribeAuditSuppressionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuditSuppressionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeAuditTaskRequest&, const Model::DescribeAuditTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuditTaskResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeAuthorizerRequest&, const Model::DescribeAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeBillingGroupRequest&, const Model::DescribeBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBillingGroupResponseReceivedHandler;
@@ -962,6 +985,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListAuditFindingsRequest&, const Model::ListAuditFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditFindingsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListAuditMitigationActionsExecutionsRequest&, const Model::ListAuditMitigationActionsExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditMitigationActionsExecutionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListAuditMitigationActionsTasksRequest&, const Model::ListAuditMitigationActionsTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditMitigationActionsTasksResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListAuditSuppressionsRequest&, const Model::ListAuditSuppressionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditSuppressionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListAuditTasksRequest&, const Model::ListAuditTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditTasksResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListAuthorizersRequest&, const Model::ListAuthorizersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuthorizersResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListBillingGroupsRequest&, const Model::ListBillingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupsResponseReceivedHandler;
@@ -1027,6 +1051,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::TransferCertificateRequest&, const Model::TransferCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferCertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateAccountAuditConfigurationRequest&, const Model::UpdateAccountAuditConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountAuditConfigurationResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::UpdateAuditSuppressionRequest&, const Model::UpdateAuditSuppressionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuditSuppressionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateAuthorizerRequest&, const Model::UpdateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateBillingGroupRequest&, const Model::UpdateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateCACertificateRequest&, const Model::UpdateCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCACertificateResponseReceivedHandler;
@@ -1529,6 +1554,31 @@ namespace Model
         virtual void ConfirmTopicRuleDestinationAsync(const Model::ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAuditSuppressionOutcome CreateAuditSuppression(const Model::CreateAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAuditSuppressionOutcomeCallable CreateAuditSuppressionCallable(const Model::CreateAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAuditSuppressionAsync(const Model::CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an authorizer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">AWS
          * API Reference</a></p>
@@ -1841,8 +1891,11 @@ namespace Model
 
         /**
          * <p>Defines an action that can be applied to audit findings by using
-         * StartAuditMitigationActionsTask. Each mitigation action can apply only one type
-         * of change.</p><p><h3>See Also:</h3>   <a
+         * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
+         * applied to specific check names. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+         * actions</a>. Each mitigation action can apply only one type of
+         * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          */
@@ -1850,8 +1903,11 @@ namespace Model
 
         /**
          * <p>Defines an action that can be applied to audit findings by using
-         * StartAuditMitigationActionsTask. Each mitigation action can apply only one type
-         * of change.</p><p><h3>See Also:</h3>   <a
+         * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
+         * applied to specific check names. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+         * actions</a>. Each mitigation action can apply only one type of
+         * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -1861,8 +1917,11 @@ namespace Model
 
         /**
          * <p>Defines an action that can be applied to audit findings by using
-         * StartAuditMitigationActionsTask. Each mitigation action can apply only one type
-         * of change.</p><p><h3>See Also:</h3>   <a
+         * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
+         * applied to specific check names. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+         * actions</a>. Each mitigation action can apply only one type of
+         * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -2359,6 +2418,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAccountAuditConfigurationAsync(const Model::DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAuditSuppressionOutcome DeleteAuditSuppression(const Model::DeleteAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAuditSuppressionOutcomeCallable DeleteAuditSuppressionCallable(const Model::DeleteAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAuditSuppressionAsync(const Model::DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an authorizer.</p><p><h3>See Also:</h3>   <a
@@ -3223,6 +3307,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAuditMitigationActionsTaskAsync(const Model::DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Gets information about a Device Defender audit suppression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditSuppression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAuditSuppressionOutcome DescribeAuditSuppression(const Model::DescribeAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Gets information about a Device Defender audit suppression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAuditSuppressionOutcomeCallable DescribeAuditSuppressionCallable(const Model::DescribeAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Gets information about a Device Defender audit suppression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAuditSuppressionAsync(const Model::DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a Device Defender audit.</p><p><h3>See Also:</h3>   <a
@@ -4548,6 +4660,31 @@ namespace Model
         virtual void ListAuditMitigationActionsTasksAsync(const Model::ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAuditSuppressionsOutcome ListAuditSuppressions(const Model::ListAuditSuppressionsRequest& request) const;
+
+        /**
+         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAuditSuppressionsOutcomeCallable ListAuditSuppressionsCallable(const Model::ListAuditSuppressionsRequest& request) const;
+
+        /**
+         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAuditSuppressionsAsync(const Model::ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the Device Defender audits that have been performed during a given time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">AWS
@@ -5482,8 +5619,11 @@ namespace Model
          * <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
-         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
-         * </p><p><h3>See Also:</h3>   <a
+         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
+         *  <p>You will not be charged for calling this API if an <code>Access
+         * denied</code> error is returned. You will also not be charged if no attributes
+         * or pagination token was provided in request and no pagination token and no
+         * results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          */
@@ -5493,8 +5633,11 @@ namespace Model
          * <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
-         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
-         * </p><p><h3>See Also:</h3>   <a
+         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
+         *  <p>You will not be charged for calling this API if an <code>Access
+         * denied</code> error is returned. You will also not be charged if no attributes
+         * or pagination token was provided in request and no pagination token and no
+         * results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          *
@@ -5506,8 +5649,11 @@ namespace Model
          * <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
-         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
-         * </p><p><h3>See Also:</h3>   <a
+         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
+         *  <p>You will not be charged for calling this API if an <code>Access
+         * denied</code> error is returned. You will also not be charged if no attributes
+         * or pagination token was provided in request and no pagination token and no
+         * results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          *
@@ -6440,6 +6586,31 @@ namespace Model
         virtual void UpdateAccountAuditConfigurationAsync(const Model::UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Updates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuditSuppression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAuditSuppressionOutcome UpdateAuditSuppression(const Model::UpdateAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Updates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAuditSuppressionOutcomeCallable UpdateAuditSuppressionCallable(const Model::UpdateAuditSuppressionRequest& request) const;
+
+        /**
+         * <p> Updates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuditSuppression">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAuditSuppressionAsync(const Model::UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an authorizer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">AWS
          * API Reference</a></p>
@@ -6516,10 +6687,12 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
-         * REVOKED) will not disconnect currently connected devices, but these devices will
-         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
-         * devices connecting to AWS IoT using a certificate.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
+         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
+         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
+         * IoT disconnects all devices that used that certificate to connect. Devices
+         * cannot use a certificate that is not in the ACTIVE state to
+         * reconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          */
@@ -6527,10 +6700,12 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
-         * REVOKED) will not disconnect currently connected devices, but these devices will
-         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
-         * devices connecting to AWS IoT using a certificate.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
+         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
+         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
+         * IoT disconnects all devices that used that certificate to connect. Devices
+         * cannot use a certificate that is not in the ACTIVE state to
+         * reconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          *
@@ -6540,10 +6715,12 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
-         * REVOKED) will not disconnect currently connected devices, but these devices will
-         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
-         * devices connecting to AWS IoT using a certificate.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
+         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
+         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
+         * IoT disconnects all devices that used that certificate to connect. Devices
+         * cannot use a certificate that is not in the ACTIVE state to
+         * reconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          *
@@ -7024,6 +7201,7 @@ namespace Model
         void CancelJobExecutionAsyncHelper(const Model::CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ClearDefaultAuthorizerAsyncHelper(const Model::ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmTopicRuleDestinationAsyncHelper(const Model::ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAuditSuppressionAsyncHelper(const Model::CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAuthorizerAsyncHelper(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBillingGroupAsyncHelper(const Model::CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCertificateFromCsrAsyncHelper(const Model::CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7049,6 +7227,7 @@ namespace Model
         void CreateTopicRuleAsyncHelper(const Model::CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTopicRuleDestinationAsyncHelper(const Model::CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAuditConfigurationAsyncHelper(const Model::DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAuditSuppressionAsyncHelper(const Model::DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAuthorizerAsyncHelper(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBillingGroupAsyncHelper(const Model::DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCACertificateAsyncHelper(const Model::DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7079,6 +7258,7 @@ namespace Model
         void DescribeAccountAuditConfigurationAsyncHelper(const Model::DescribeAccountAuditConfigurationRequest& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAuditFindingAsyncHelper(const Model::DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAuditMitigationActionsTaskAsyncHelper(const Model::DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAuditSuppressionAsyncHelper(const Model::DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAuditTaskAsyncHelper(const Model::DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAuthorizerAsyncHelper(const Model::DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBillingGroupAsyncHelper(const Model::DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7127,6 +7307,7 @@ namespace Model
         void ListAuditFindingsAsyncHelper(const Model::ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAuditMitigationActionsExecutionsAsyncHelper(const Model::ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAuditMitigationActionsTasksAsyncHelper(const Model::ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAuditSuppressionsAsyncHelper(const Model::ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAuditTasksAsyncHelper(const Model::ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAuthorizersAsyncHelper(const Model::ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBillingGroupsAsyncHelper(const Model::ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7192,6 +7373,7 @@ namespace Model
         void TransferCertificateAsyncHelper(const Model::TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAuditConfigurationAsyncHelper(const Model::UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAuditSuppressionAsyncHelper(const Model::UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAuthorizerAsyncHelper(const Model::UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBillingGroupAsyncHelper(const Model::UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCACertificateAsyncHelper(const Model::UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

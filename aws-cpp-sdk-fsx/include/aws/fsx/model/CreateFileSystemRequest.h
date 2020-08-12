@@ -142,52 +142,52 @@ namespace Model
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.</p> </li> <li> <p>For <code>SCRATCH_1</code>
-     * deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     * GiB.</p> </li> </ul> <p>For Windows file systems:</p> <ul> <li> <p>If
-     * <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB -
-     * 65,536 GiB (64 TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.</p> </li> <li> <p>For <code>SCRATCH_1</code>
-     * deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     * GiB.</p> </li> </ul> <p>For Windows file systems:</p> <ul> <li> <p>If
-     * <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB -
-     * 65,536 GiB (64 TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.</p> </li> <li> <p>For <code>SCRATCH_1</code>
-     * deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     * GiB.</p> </li> </ul> <p>For Windows file systems:</p> <ul> <li> <p>If
-     * <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB -
-     * 65,536 GiB (64 TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.</p> </li> <li> <p>For <code>SCRATCH_1</code>
-     * deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     * GiB.</p> </li> </ul> <p>For Windows file systems:</p> <ul> <li> <p>If
-     * <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB -
-     * 65,536 GiB (64 TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

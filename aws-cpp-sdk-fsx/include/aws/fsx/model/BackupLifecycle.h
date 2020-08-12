@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     AVAILABLE,
     CREATING,
+    TRANSFERRING,
     DELETED,
     FAILED
   };

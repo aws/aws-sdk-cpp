@@ -664,28 +664,28 @@ namespace Model
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline WindowsFileSystemConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}

@@ -27,6 +27,7 @@ namespace Aws
         static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
         static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
         static const int java8_HASH = HashingUtils::HashString("java8");
+        static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
         static const int java11_HASH = HashingUtils::HashString("java11");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
@@ -41,6 +42,7 @@ namespace Aws
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
         static const int ruby2_7_HASH = HashingUtils::HashString("ruby2.7");
         static const int provided_HASH = HashingUtils::HashString("provided");
+        static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -73,6 +75,10 @@ namespace Aws
           else if (hashCode == java8_HASH)
           {
             return Runtime::java8;
+          }
+          else if (hashCode == java8_al2_HASH)
+          {
+            return Runtime::java8_al2;
           }
           else if (hashCode == java11_HASH)
           {
@@ -130,6 +136,10 @@ namespace Aws
           {
             return Runtime::provided;
           }
+          else if (hashCode == provided_al2_HASH)
+          {
+            return Runtime::provided_al2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -158,6 +168,8 @@ namespace Aws
             return "nodejs12.x";
           case Runtime::java8:
             return "java8";
+          case Runtime::java8_al2:
+            return "java8.al2";
           case Runtime::java11:
             return "java11";
           case Runtime::python2_7:
@@ -186,6 +198,8 @@ namespace Aws
             return "ruby2.7";
           case Runtime::provided:
             return "provided";
+          case Runtime::provided_al2:
+            return "provided.al2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

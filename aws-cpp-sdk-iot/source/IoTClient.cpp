@@ -34,6 +34,7 @@
 #include <aws/iot/model/CancelJobExecutionRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
 #include <aws/iot/model/ConfirmTopicRuleDestinationRequest.h>
+#include <aws/iot/model/CreateAuditSuppressionRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
 #include <aws/iot/model/CreateBillingGroupRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
@@ -59,6 +60,7 @@
 #include <aws/iot/model/CreateTopicRuleRequest.h>
 #include <aws/iot/model/CreateTopicRuleDestinationRequest.h>
 #include <aws/iot/model/DeleteAccountAuditConfigurationRequest.h>
+#include <aws/iot/model/DeleteAuditSuppressionRequest.h>
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
 #include <aws/iot/model/DeleteBillingGroupRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
@@ -89,6 +91,7 @@
 #include <aws/iot/model/DescribeAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DescribeAuditFindingRequest.h>
 #include <aws/iot/model/DescribeAuditMitigationActionsTaskRequest.h>
+#include <aws/iot/model/DescribeAuditSuppressionRequest.h>
 #include <aws/iot/model/DescribeAuditTaskRequest.h>
 #include <aws/iot/model/DescribeAuthorizerRequest.h>
 #include <aws/iot/model/DescribeBillingGroupRequest.h>
@@ -137,6 +140,7 @@
 #include <aws/iot/model/ListAuditFindingsRequest.h>
 #include <aws/iot/model/ListAuditMitigationActionsExecutionsRequest.h>
 #include <aws/iot/model/ListAuditMitigationActionsTasksRequest.h>
+#include <aws/iot/model/ListAuditSuppressionsRequest.h>
 #include <aws/iot/model/ListAuditTasksRequest.h>
 #include <aws/iot/model/ListAuthorizersRequest.h>
 #include <aws/iot/model/ListBillingGroupsRequest.h>
@@ -202,6 +206,7 @@
 #include <aws/iot/model/TransferCertificateRequest.h>
 #include <aws/iot/model/UntagResourceRequest.h>
 #include <aws/iot/model/UpdateAccountAuditConfigurationRequest.h>
+#include <aws/iot/model/UpdateAuditSuppressionRequest.h>
 #include <aws/iot/model/UpdateAuthorizerRequest.h>
 #include <aws/iot/model/UpdateBillingGroupRequest.h>
 #include <aws/iot/model/UpdateCACertificateRequest.h>
@@ -763,6 +768,33 @@ void IoTClient::ConfirmTopicRuleDestinationAsync(const ConfirmTopicRuleDestinati
 void IoTClient::ConfirmTopicRuleDestinationAsyncHelper(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ConfirmTopicRuleDestination(request), context);
+}
+
+CreateAuditSuppressionOutcome IoTClient::CreateAuditSuppression(const CreateAuditSuppressionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/suppressions/create";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAuditSuppressionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAuditSuppressionOutcomeCallable IoTClient::CreateAuditSuppressionCallable(const CreateAuditSuppressionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAuditSuppressionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAuditSuppression(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateAuditSuppressionAsync(const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAuditSuppressionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateAuditSuppressionAsyncHelper(const CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAuditSuppression(request), context);
 }
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
@@ -1561,6 +1593,33 @@ void IoTClient::DeleteAccountAuditConfigurationAsync(const DeleteAccountAuditCon
 void IoTClient::DeleteAccountAuditConfigurationAsyncHelper(const DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAccountAuditConfiguration(request), context);
+}
+
+DeleteAuditSuppressionOutcome IoTClient::DeleteAuditSuppression(const DeleteAuditSuppressionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/suppressions/delete";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAuditSuppressionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAuditSuppressionOutcomeCallable IoTClient::DeleteAuditSuppressionCallable(const DeleteAuditSuppressionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAuditSuppressionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAuditSuppression(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteAuditSuppressionAsync(const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuditSuppressionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteAuditSuppressionAsyncHelper(const DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAuditSuppression(request), context);
 }
 
 DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
@@ -2572,6 +2631,33 @@ void IoTClient::DescribeAuditMitigationActionsTaskAsync(const DescribeAuditMitig
 void IoTClient::DescribeAuditMitigationActionsTaskAsyncHelper(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAuditMitigationActionsTask(request), context);
+}
+
+DescribeAuditSuppressionOutcome IoTClient::DescribeAuditSuppression(const DescribeAuditSuppressionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/suppressions/describe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAuditSuppressionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAuditSuppressionOutcomeCallable IoTClient::DescribeAuditSuppressionCallable(const DescribeAuditSuppressionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAuditSuppressionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAuditSuppression(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeAuditSuppressionAsync(const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditSuppressionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeAuditSuppressionAsyncHelper(const DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAuditSuppression(request), context);
 }
 
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
@@ -4122,6 +4208,33 @@ void IoTClient::ListAuditMitigationActionsTasksAsync(const ListAuditMitigationAc
 void IoTClient::ListAuditMitigationActionsTasksAsyncHelper(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAuditMitigationActionsTasks(request), context);
+}
+
+ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSuppressionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/suppressions/list";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAuditSuppressionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAuditSuppressionsOutcomeCallable IoTClient::ListAuditSuppressionsCallable(const ListAuditSuppressionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAuditSuppressionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAuditSuppressions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListAuditSuppressionsAsync(const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAuditSuppressionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListAuditSuppressionsAsyncHelper(const ListAuditSuppressionsRequest& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAuditSuppressions(request), context);
 }
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
@@ -6055,6 +6168,33 @@ void IoTClient::UpdateAccountAuditConfigurationAsync(const UpdateAccountAuditCon
 void IoTClient::UpdateAccountAuditConfigurationAsyncHelper(const UpdateAccountAuditConfigurationRequest& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAccountAuditConfiguration(request), context);
+}
+
+UpdateAuditSuppressionOutcome IoTClient::UpdateAuditSuppression(const UpdateAuditSuppressionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/suppressions/update";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAuditSuppressionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAuditSuppressionOutcomeCallable IoTClient::UpdateAuditSuppressionCallable(const UpdateAuditSuppressionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAuditSuppressionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAuditSuppression(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateAuditSuppressionAsync(const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuditSuppressionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateAuditSuppressionAsyncHelper(const UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAuditSuppression(request), context);
 }
 
 UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
