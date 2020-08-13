@@ -27,8 +27,8 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p>Data returned from the <b>DescribeEventCategories</b> action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Data returned from the <code>DescribeEventCategories</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventCategoriesMessage">AWS
    * API Reference</a></p>
    */

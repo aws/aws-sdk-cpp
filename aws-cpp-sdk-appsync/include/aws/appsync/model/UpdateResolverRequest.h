@@ -201,42 +201,82 @@ namespace Model
 
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(const Aws::String& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = value; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(Aws::String&& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = std::move(value); }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(const char* value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate.assign(value); }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(const Aws::String& value) { SetRequestMappingTemplate(value); return *this;}
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(Aws::String&& value) { SetRequestMappingTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(const char* value) { SetRequestMappingTemplate(value); return *this;}
 

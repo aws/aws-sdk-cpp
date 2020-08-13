@@ -161,7 +161,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
 
@@ -169,7 +170,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline bool IgnoreWordsHasBeenSet() const { return m_ignoreWordsHasBeenSet; }
 
@@ -177,7 +179,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = value; }
 
@@ -185,7 +188,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = std::move(value); }
 
@@ -193,7 +197,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
 
@@ -201,7 +206,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
 
@@ -209,7 +215,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const Aws::String& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
@@ -217,7 +224,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(Aws::String&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(std::move(value)); return *this; }
 
@@ -225,7 +233,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters.</p>
+     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     * are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const char* value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
@@ -234,7 +243,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
@@ -242,7 +251,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
 
@@ -250,7 +259,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
@@ -258,7 +267,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
@@ -266,7 +275,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
@@ -274,7 +283,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
@@ -282,7 +291,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
@@ -290,7 +299,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
 
@@ -298,7 +307,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters.</p>
+     * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
@@ -465,8 +474,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -474,8 +483,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -483,8 +492,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -492,8 +501,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -501,8 +510,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -510,8 +519,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -519,8 +528,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -528,8 +537,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -537,8 +546,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -546,8 +555,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -555,8 +564,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -564,8 +573,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -573,8 +582,8 @@ namespace Model
     /**
      * <p>A map of key-value pairs that specifies the tags to associate with the custom
      * data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags.
-     * Each tag consists of a required tag key and an associated tag value. The maximum
-     * length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * Each tag consists of a tag key and an associated tag value. The maximum length
+     * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

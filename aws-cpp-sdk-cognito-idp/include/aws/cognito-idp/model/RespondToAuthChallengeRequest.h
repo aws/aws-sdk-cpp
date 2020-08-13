@@ -84,38 +84,44 @@ namespace Model
 
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline void SetChallengeName(ChallengeNameType&& value) { m_challengeNameHasBeenSet = true; m_challengeName = std::move(value); }
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
 
     /**
-     * <p>The challenge name. For more information, see .</p> <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 

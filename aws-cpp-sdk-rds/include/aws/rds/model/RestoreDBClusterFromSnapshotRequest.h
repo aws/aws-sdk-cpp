@@ -1265,49 +1265,81 @@ namespace Model
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

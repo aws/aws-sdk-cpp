@@ -78,38 +78,38 @@ namespace Model
 
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline const TagScopeTerm& GetTagScopeTerm() const{ return m_tagScopeTerm; }
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline bool TagScopeTermHasBeenSet() const { return m_tagScopeTermHasBeenSet; }
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline void SetTagScopeTerm(const TagScopeTerm& value) { m_tagScopeTermHasBeenSet = true; m_tagScopeTerm = value; }
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline void SetTagScopeTerm(TagScopeTerm&& value) { m_tagScopeTermHasBeenSet = true; m_tagScopeTerm = std::move(value); }
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline JobScopeTerm& WithTagScopeTerm(const TagScopeTerm& value) { SetTagScopeTerm(value); return *this;}
 
     /**
-     * <p>A tag-based condition that defines the operator and a tag key or tag keys and
-     * values for including or excluding an object from the job.</p>
+     * <p>A tag-based condition that defines an operator and a tag key and value for
+     * including or excluding an object from the job.</p>
      */
     inline JobScopeTerm& WithTagScopeTerm(TagScopeTerm&& value) { SetTagScopeTerm(std::move(value)); return *this;}
 

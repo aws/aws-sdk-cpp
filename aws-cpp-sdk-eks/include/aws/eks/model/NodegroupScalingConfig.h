@@ -23,7 +23,9 @@ namespace Model
 
   /**
    * <p>An object representing the scaling configuration details for the Auto Scaling
-   * group that is associated with your node group.</p><p><h3>See Also:</h3>   <a
+   * group that is associated with your node group. If you specify a value for any
+   * property, then you must specify values for all of the properties.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupScalingConfig">AWS
    * API Reference</a></p>
    */

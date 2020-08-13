@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/TokenValidityUnitsType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
 #include <aws/cognito-idp/model/PreventUserExistenceErrorTypes.h>
@@ -197,6 +198,93 @@ namespace Model
      * cannot be used.</p>
      */
     inline UpdateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
+
+
+    /**
+     * <p>The time limit, after which the access token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline int GetAccessTokenValidity() const{ return m_accessTokenValidity; }
+
+    /**
+     * <p>The time limit, after which the access token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline bool AccessTokenValidityHasBeenSet() const { return m_accessTokenValidityHasBeenSet; }
+
+    /**
+     * <p>The time limit, after which the access token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline void SetAccessTokenValidity(int value) { m_accessTokenValidityHasBeenSet = true; m_accessTokenValidity = value; }
+
+    /**
+     * <p>The time limit, after which the access token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithAccessTokenValidity(int value) { SetAccessTokenValidity(value); return *this;}
+
+
+    /**
+     * <p>The time limit, after which the ID token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
+
+    /**
+     * <p>The time limit, after which the ID token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
+
+    /**
+     * <p>The time limit, after which the ID token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
+
+    /**
+     * <p>The time limit, after which the ID token is no longer valid and cannot be
+     * used.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
+
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline void SetTokenValidityUnits(const TokenValidityUnitsType& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = value; }
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline void SetTokenValidityUnits(TokenValidityUnitsType&& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = std::move(value); }
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithTokenValidityUnits(const TokenValidityUnitsType& value) { SetTokenValidityUnits(value); return *this;}
+
+    /**
+     * <p>The units in which the validity times are represented in. Default for
+     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithTokenValidityUnits(TokenValidityUnitsType&& value) { SetTokenValidityUnits(std::move(value)); return *this;}
 
 
     /**
@@ -973,49 +1061,61 @@ namespace Model
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>Cognito User Pools only supports sending events to
-     * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> 
+     * user pool.</p>  <p>In regions where Pinpoint is not available, Cognito
+     * User Pools only supports sending events to Amazon Pinpoint projects in
+     * us-east-1. In regions where Pinpoint is available, Cognito User Pools will
+     * support sending events to Amazon Pinpoint projects within that same region. </p>
+     * 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
@@ -1032,16 +1132,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
 
@@ -1057,16 +1151,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }
 
@@ -1082,16 +1170,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline void SetPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = value; }
 
@@ -1107,16 +1189,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline void SetPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = std::move(value); }
 
@@ -1132,16 +1208,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline UpdateUserPoolClientRequest& WithPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { SetPreventUserExistenceErrors(value); return *this;}
 
@@ -1157,16 +1227,10 @@ namespace Model
      * user pool.</p> <p>Valid values include:</p> <ul> <li> <p> <code>ENABLED</code> -
      * This prevents user existence-related errors.</p> </li> <li> <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user
-     * existence related errors are not prevented.</p> </li> </ul> <p>This setting
-     * affects the behavior of following APIs:</p> <ul> <li> <p>
-     * <a>AdminInitiateAuth</a> </p> </li> <li> <p> <a>AdminRespondToAuthChallenge</a>
-     * </p> </li> <li> <p> <a>InitiateAuth</a> </p> </li> <li> <p>
-     * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
-     * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
-     * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul>  <p>After February 15th 2020, the value of
-     * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> 
+     * existence related errors are not prevented.</p> </li> </ul>  <p>After
+     * February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
+     * default to <code>ENABLED</code> for newly created user pool clients if no value
+     * is provided.</p> 
      */
     inline UpdateUserPoolClientRequest& WithPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { SetPreventUserExistenceErrors(std::move(value)); return *this;}
 
@@ -1183,6 +1247,15 @@ namespace Model
 
     int m_refreshTokenValidity;
     bool m_refreshTokenValidityHasBeenSet;
+
+    int m_accessTokenValidity;
+    bool m_accessTokenValidityHasBeenSet;
+
+    int m_idTokenValidity;
+    bool m_idTokenValidityHasBeenSet;
+
+    TokenValidityUnitsType m_tokenValidityUnits;
+    bool m_tokenValidityUnitsHasBeenSet;
 
     Aws::Vector<Aws::String> m_readAttributes;
     bool m_readAttributesHasBeenSet;

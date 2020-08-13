@@ -1187,56 +1187,72 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

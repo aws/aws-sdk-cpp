@@ -451,11 +451,14 @@ namespace Model
          * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
          * create a node group for your cluster that is equal to the current Kubernetes
          * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
-         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
-         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
-         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
-         * more information, see <a
+         * version for the respective minor Kubernetes version of the cluster, unless you
+         * deploy a custom AMI using a launch template. For more information about using
+         * launch templates, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
+         * for an Amazon EKS cluster. Each node group uses a version of the Amazon
+         * EKS-optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -468,11 +471,14 @@ namespace Model
          * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
          * create a node group for your cluster that is equal to the current Kubernetes
          * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
-         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
-         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
-         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
-         * more information, see <a
+         * version for the respective minor Kubernetes version of the cluster, unless you
+         * deploy a custom AMI using a launch template. For more information about using
+         * launch templates, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
+         * for an Amazon EKS cluster. Each node group uses a version of the Amazon
+         * EKS-optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -487,11 +493,14 @@ namespace Model
          * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
          * create a node group for your cluster that is equal to the current Kubernetes
          * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
-         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
-         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
-         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
-         * more information, see <a
+         * version for the respective minor Kubernetes version of the cluster, unless you
+         * deploy a custom AMI using a launch template. For more information about using
+         * launch templates, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
+         * for an Amazon EKS cluster. Each node group uses a version of the Amazon
+         * EKS-optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -1169,11 +1178,16 @@ namespace Model
 
         /**
          * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
-         * group.</p> <p>You can update to the latest available AMI version of a node
-         * group's current Kubernetes version by not specifying a Kubernetes version in the
-         * request. You can update to the latest AMI version of your cluster's current
-         * Kubernetes version by specifying your cluster's Kubernetes version in the
-         * request. For more information, see <a
+         * group.</p> <p>You can update a node group using a launch template only if the
+         * node group was originally deployed with a launch template. If you need to update
+         * a custom AMI in a node group that was deployed with a launch template, then
+         * update your custom AMI, specify the new ID in a new version of the launch
+         * template, and then update the node group to the new version of the launch
+         * template.</p> <p>If you update without a launch template, then you can update to
+         * the latest available AMI version of a node group's current Kubernetes version by
+         * not specifying a Kubernetes version in the request. You can update to the latest
+         * AMI version of your cluster's current Kubernetes version by specifying your
+         * cluster's Kubernetes version in the request. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
          * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
          * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
@@ -1189,11 +1203,16 @@ namespace Model
 
         /**
          * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
-         * group.</p> <p>You can update to the latest available AMI version of a node
-         * group's current Kubernetes version by not specifying a Kubernetes version in the
-         * request. You can update to the latest AMI version of your cluster's current
-         * Kubernetes version by specifying your cluster's Kubernetes version in the
-         * request. For more information, see <a
+         * group.</p> <p>You can update a node group using a launch template only if the
+         * node group was originally deployed with a launch template. If you need to update
+         * a custom AMI in a node group that was deployed with a launch template, then
+         * update your custom AMI, specify the new ID in a new version of the launch
+         * template, and then update the node group to the new version of the launch
+         * template.</p> <p>If you update without a launch template, then you can update to
+         * the latest available AMI version of a node group's current Kubernetes version by
+         * not specifying a Kubernetes version in the request. You can update to the latest
+         * AMI version of your cluster's current Kubernetes version by specifying your
+         * cluster's Kubernetes version in the request. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
          * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
          * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
@@ -1211,11 +1230,16 @@ namespace Model
 
         /**
          * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
-         * group.</p> <p>You can update to the latest available AMI version of a node
-         * group's current Kubernetes version by not specifying a Kubernetes version in the
-         * request. You can update to the latest AMI version of your cluster's current
-         * Kubernetes version by specifying your cluster's Kubernetes version in the
-         * request. For more information, see <a
+         * group.</p> <p>You can update a node group using a launch template only if the
+         * node group was originally deployed with a launch template. If you need to update
+         * a custom AMI in a node group that was deployed with a launch template, then
+         * update your custom AMI, specify the new ID in a new version of the launch
+         * template, and then update the node group to the new version of the launch
+         * template.</p> <p>If you update without a launch template, then you can update to
+         * the latest available AMI version of a node group's current Kubernetes version by
+         * not specifying a Kubernetes version in the request. You can update to the latest
+         * AMI version of your cluster's current Kubernetes version by specifying your
+         * cluster's Kubernetes version in the request. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
          * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
          * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI

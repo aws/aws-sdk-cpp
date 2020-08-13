@@ -47,29 +47,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -78,29 +81,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -109,29 +115,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -140,29 +149,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -171,29 +183,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -202,29 +217,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -233,29 +251,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -264,29 +285,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, the default "postgres" database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
+     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
+     * is used. You can't specify the string NULL, or any other reserved word, for
+     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>The name of the database to create when the primary instance of the DB
+     * cluster is created. If this parameter isn't specified, no database is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * database engine</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -2789,137 +2813,73 @@ namespace Model
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

@@ -896,7 +896,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
 
@@ -904,7 +905,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
 
@@ -912,7 +914,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
 
@@ -920,7 +923,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
 
@@ -928,7 +932,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
 
@@ -936,7 +941,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
 
@@ -948,10 +954,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
@@ -962,10 +965,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
@@ -976,10 +976,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
@@ -990,10 +987,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
@@ -1004,10 +998,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
@@ -1018,10 +1009,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>  <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> 
+     * over email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 

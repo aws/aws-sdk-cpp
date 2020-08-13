@@ -18,6 +18,11 @@ UpdateUserPoolClientRequest::UpdateUserPoolClientRequest() :
     m_clientNameHasBeenSet(false),
     m_refreshTokenValidity(0),
     m_refreshTokenValidityHasBeenSet(false),
+    m_accessTokenValidity(0),
+    m_accessTokenValidityHasBeenSet(false),
+    m_idTokenValidity(0),
+    m_idTokenValidityHasBeenSet(false),
+    m_tokenValidityUnitsHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
     m_explicitAuthFlowsHasBeenSet(false),
@@ -60,6 +65,24 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
   if(m_refreshTokenValidityHasBeenSet)
   {
    payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
+
+  }
+
+  if(m_accessTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("AccessTokenValidity", m_accessTokenValidity);
+
+  }
+
+  if(m_idTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("IdTokenValidity", m_idTokenValidity);
+
+  }
+
+  if(m_tokenValidityUnitsHasBeenSet)
+  {
+   payload.WithObject("TokenValidityUnits", m_tokenValidityUnits.Jsonize());
 
   }
 

@@ -27,6 +27,11 @@ UserPoolClientType::UserPoolClientType() :
     m_creationDateHasBeenSet(false),
     m_refreshTokenValidity(0),
     m_refreshTokenValidityHasBeenSet(false),
+    m_accessTokenValidity(0),
+    m_accessTokenValidityHasBeenSet(false),
+    m_idTokenValidity(0),
+    m_idTokenValidityHasBeenSet(false),
+    m_tokenValidityUnitsHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
     m_explicitAuthFlowsHasBeenSet(false),
@@ -53,6 +58,11 @@ UserPoolClientType::UserPoolClientType(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_refreshTokenValidity(0),
     m_refreshTokenValidityHasBeenSet(false),
+    m_accessTokenValidity(0),
+    m_accessTokenValidityHasBeenSet(false),
+    m_idTokenValidity(0),
+    m_idTokenValidityHasBeenSet(false),
+    m_tokenValidityUnitsHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
     m_explicitAuthFlowsHasBeenSet(false),
@@ -120,6 +130,27 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_refreshTokenValidity = jsonValue.GetInteger("RefreshTokenValidity");
 
     m_refreshTokenValidityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessTokenValidity"))
+  {
+    m_accessTokenValidity = jsonValue.GetInteger("AccessTokenValidity");
+
+    m_accessTokenValidityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdTokenValidity"))
+  {
+    m_idTokenValidity = jsonValue.GetInteger("IdTokenValidity");
+
+    m_idTokenValidityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenValidityUnits"))
+  {
+    m_tokenValidityUnits = jsonValue.GetObject("TokenValidityUnits");
+
+    m_tokenValidityUnitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReadAttributes"))
@@ -274,6 +305,24 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_refreshTokenValidityHasBeenSet)
   {
    payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
+
+  }
+
+  if(m_accessTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("AccessTokenValidity", m_accessTokenValidity);
+
+  }
+
+  if(m_idTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("IdTokenValidity", m_idTokenValidity);
+
+  }
+
+  if(m_tokenValidityUnitsHasBeenSet)
+  {
+   payload.WithObject("TokenValidityUnits", m_tokenValidityUnits.Jsonize());
 
   }
 

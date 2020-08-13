@@ -17,6 +17,7 @@ UpdateNodegroupVersionRequest::UpdateNodegroupVersionRequest() :
     m_nodegroupNameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_releaseVersionHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
@@ -37,6 +38,12 @@ Aws::String UpdateNodegroupVersionRequest::SerializePayload() const
   if(m_releaseVersionHasBeenSet)
   {
    payload.WithString("releaseVersion", m_releaseVersion);
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
   }
 

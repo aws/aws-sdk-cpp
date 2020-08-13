@@ -145,9 +145,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -156,15 +156,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
@@ -173,9 +174,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -184,15 +185,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
@@ -201,9 +203,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -212,15 +214,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
@@ -229,9 +232,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -240,15 +243,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
@@ -257,9 +261,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -268,15 +272,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUserAttributes(const Aws::Vector<AttributeType>& value) { SetUserAttributes(value); return *this;}
@@ -285,9 +290,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -296,15 +301,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
@@ -313,9 +319,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -324,15 +330,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& AddUserAttributes(const AttributeType& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
@@ -341,9 +348,9 @@ namespace Model
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
      * specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in or in the <b>Attributes</b> tab of
-     * the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * attributes that you specify as required (when creating a user pool or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your
+     * call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in
      * response to your welcome message).</p> <p>For custom attributes, you must
      * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
      * message inviting the user to sign up, you must specify the user's email address
@@ -352,15 +359,16 @@ namespace Model
      * <p>In your call to <code>AdminCreateUser</code>, you can set the
      * <code>email_verified</code> attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
-     * do this by calling .)</p> <ul> <li> <p> <b>email</b>: The email address of the
-     * user to whom the message that contains the code and username will be sent.
-     * Required if the <code>email_verified</code> attribute is set to
-     * <code>True</code>, or if <code>"EMAIL"</code> is specified in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * do this by calling <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
      * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }

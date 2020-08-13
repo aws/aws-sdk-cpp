@@ -182,49 +182,57 @@ namespace Model
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(const Aws::String& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = value; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = std::move(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(const char* value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode.assign(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const Aws::String& value) { SetConfirmationCode(value); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(std::move(value)); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see </p>
+     * password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const char* value) { SetConfirmationCode(value); return *this;}
 

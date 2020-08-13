@@ -66,64 +66,64 @@ namespace Model
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCachingKeys() const{ return m_cachingKeys; }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline bool CachingKeysHasBeenSet() const { return m_cachingKeysHasBeenSet; }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline void SetCachingKeys(const Aws::Vector<Aws::String>& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = value; }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline void SetCachingKeys(Aws::Vector<Aws::String>&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = std::move(value); }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& WithCachingKeys(const Aws::Vector<Aws::String>& value) { SetCachingKeys(value); return *this;}
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& WithCachingKeys(Aws::Vector<Aws::String>&& value) { SetCachingKeys(std::move(value)); return *this;}
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(const Aws::String& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(Aws::String&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(const char* value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
 

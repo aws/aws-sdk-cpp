@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
+#include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -1199,6 +1200,67 @@ namespace Model
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline const ReplicaMode& GetReplicaMode() const{ return m_replicaMode; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline void SetReplicaMode(const ReplicaMode& value) { m_replicaModeHasBeenSet = true; m_replicaMode = value; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline void SetReplicaMode(ReplicaMode&& value) { m_replicaModeHasBeenSet = true; m_replicaMode = std::move(value); }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline DBInstance& WithReplicaMode(const ReplicaMode& value) { SetReplicaMode(value); return *this;}
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline DBInstance& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
 
 
     /**
@@ -2684,6 +2746,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_readReplicaDBClusterIdentifiers;
     bool m_readReplicaDBClusterIdentifiersHasBeenSet;
+
+    ReplicaMode m_replicaMode;
+    bool m_replicaModeHasBeenSet;
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;

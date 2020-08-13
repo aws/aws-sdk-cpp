@@ -216,25 +216,29 @@ namespace Model
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see .</p>
+     * parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see .</p>
+     * parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
      */
     inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see .</p>
+     * parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
      */
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see .</p>
+     * parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
      */
     inline UpdateGroupRequest& WithPrecedence(int value) { SetPrecedence(value); return *this;}
 

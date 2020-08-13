@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AL2_x86_64,
-    AL2_x86_64_GPU
+    AL2_x86_64_GPU,
+    AL2_ARM_64
   };
 
 namespace AMITypesMapper

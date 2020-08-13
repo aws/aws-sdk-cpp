@@ -213,43 +213,64 @@ namespace Model
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline DeleteDBClusterEndpointResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline DeleteDBClusterEndpointResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline DeleteDBClusterEndpointResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

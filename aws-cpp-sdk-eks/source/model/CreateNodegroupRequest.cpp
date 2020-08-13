@@ -28,6 +28,7 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
+    m_launchTemplateHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_releaseVersionHasBeenSet(false)
 {
@@ -119,6 +120,12 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
   }
 

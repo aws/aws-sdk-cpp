@@ -125,42 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline const Aws::String& GetUserCode() const{ return m_userCode; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline bool UserCodeHasBeenSet() const { return m_userCodeHasBeenSet; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(const Aws::String& value) { m_userCodeHasBeenSet = true; m_userCode = value; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(Aws::String&& value) { m_userCodeHasBeenSet = true; m_userCode = std::move(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(const char* value) { m_userCodeHasBeenSet = true; m_userCode.assign(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const Aws::String& value) { SetUserCode(value); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(Aws::String&& value) { SetUserCode(std::move(value)); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const char* value) { SetUserCode(value); return *this;}
 

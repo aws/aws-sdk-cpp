@@ -40,6 +40,7 @@ Nodegroup::Nodegroup() :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -66,6 +67,7 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -208,6 +210,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_healthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchTemplate"))
+  {
+    m_launchTemplate = jsonValue.GetObject("launchTemplate");
+
+    m_launchTemplateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -341,6 +350,12 @@ JsonValue Nodegroup::Jsonize() const
   if(m_healthHasBeenSet)
   {
    payload.WithObject("health", m_health.Jsonize());
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
   }
 

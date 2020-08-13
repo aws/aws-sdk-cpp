@@ -71,7 +71,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
     m_certificateRotationRestart(false),
-    m_certificateRotationRestartHasBeenSet(false)
+    m_certificateRotationRestartHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false)
 {
 }
 
@@ -304,6 +306,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_certificateRotationRestartHasBeenSet)
   {
     ss << "CertificateRotationRestart=" << std::boolalpha << m_certificateRotationRestart << "&";
+  }
+
+  if(m_replicaModeHasBeenSet)
+  {
+    ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -199,56 +199,64 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWords = value; }
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWords = std::move(value); }
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddIgnoreWords(const Aws::String& value) { m_ignoreWords.push_back(value); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddIgnoreWords(Aws::String&& value) { m_ignoreWords.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
-     * any string in this array, Amazon Macie ignores it.</p>
+     * any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddIgnoreWords(const char* value) { m_ignoreWords.push_back(value); return *this; }
 
@@ -256,56 +264,56 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywords = value; }
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywords = std::move(value); }
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const Aws::String& value) { m_keywords.push_back(value); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(Aws::String&& value) { m_keywords.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match.</p>
+     * match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const char* value) { m_keywords.push_back(value); return *this; }
 

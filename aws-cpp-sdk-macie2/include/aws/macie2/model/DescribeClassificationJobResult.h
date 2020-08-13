@@ -501,20 +501,20 @@ namespace Model
 
 
     /**
-     * <p>The sampling depth, as a percentage, that the job applies when it processes
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, that determines the number of objects
+     * that the job processes.</p>
      */
     inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
 
     /**
-     * <p>The sampling depth, as a percentage, that the job applies when it processes
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, that determines the number of objects
+     * that the job processes.</p>
      */
     inline void SetSamplingPercentage(int value) { m_samplingPercentage = value; }
 
     /**
-     * <p>The sampling depth, as a percentage, that the job applies when it processes
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, that determines the number of objects
+     * that the job processes.</p>
      */
     inline DescribeClassificationJobResult& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
 

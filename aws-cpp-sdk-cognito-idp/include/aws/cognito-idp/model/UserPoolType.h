@@ -1214,7 +1214,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
 
@@ -1222,7 +1223,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
 
@@ -1230,7 +1232,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
 
@@ -1238,7 +1241,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
 
@@ -1246,7 +1250,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline UserPoolType& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
 
@@ -1254,7 +1259,8 @@ namespace Model
      * <p>You can choose to enable case sensitivity on the username input for the
      * selected sign-in option. For example, when this is set to <code>False</code>,
      * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .</p>
+     * configuration is immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline UserPoolType& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
 

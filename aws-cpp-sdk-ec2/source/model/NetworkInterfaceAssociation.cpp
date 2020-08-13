@@ -26,6 +26,7 @@ NetworkInterfaceAssociation::NetworkInterfaceAssociation() :
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_carrierIpHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ NetworkInterfaceAssociation::NetworkInterfaceAssociation(const XmlNode& xmlNode)
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_carrierIpHasBeenSet(false)
 {
   *this = xmlNode;
@@ -77,6 +79,12 @@ NetworkInterfaceAssociation& NetworkInterfaceAssociation::operator =(const XmlNo
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
+    XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
+    if(!customerOwnedIpNode.IsNull())
+    {
+      m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
+      m_customerOwnedIpHasBeenSet = true;
+    }
     XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
     if(!carrierIpNode.IsNull())
     {
@@ -115,6 +123,11 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
+  }
+
   if(m_carrierIpHasBeenSet)
   {
       oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
@@ -143,6 +156,10 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
   if(m_publicIpHasBeenSet)
   {
       oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
   }
   if(m_carrierIpHasBeenSet)
   {

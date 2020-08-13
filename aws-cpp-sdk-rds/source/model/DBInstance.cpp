@@ -50,6 +50,8 @@ DBInstance::DBInstance() :
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
     m_readReplicaDBClusterIdentifiersHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -128,6 +130,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
     m_readReplicaDBClusterIdentifiersHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -362,6 +366,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       }
 
       m_readReplicaDBClusterIdentifiersHasBeenSet = true;
+    }
+    XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
+    if(!replicaModeNode.IsNull())
+    {
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()).c_str());
+      m_replicaModeHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
@@ -761,6 +771,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
@@ -1097,6 +1112,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       {
         oStream << location << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
   }
   if(m_licenseModelHasBeenSet)
   {

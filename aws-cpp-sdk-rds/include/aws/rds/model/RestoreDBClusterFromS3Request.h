@@ -471,50 +471,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1342,56 +1358,56 @@ namespace Model
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
      * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
-     * <code>5.6.40</code> </p>
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 

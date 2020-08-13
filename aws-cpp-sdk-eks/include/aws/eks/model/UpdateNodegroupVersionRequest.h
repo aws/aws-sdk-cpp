@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -127,7 +128,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -135,7 +141,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -143,7 +154,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -151,7 +167,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -159,7 +180,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -167,7 +193,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -175,7 +206,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -183,7 +219,12 @@ namespace Model
      * <p>The Kubernetes version to update to. If no version is specified, then the
      * Kubernetes version of the node group does not change. You can specify the
      * Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.</p>
+     * version of the cluster's Kubernetes version. If you specify
+     * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+     * don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -193,7 +234,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
@@ -202,7 +249,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
@@ -211,7 +264,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
@@ -220,7 +279,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
@@ -229,7 +294,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
@@ -238,7 +309,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
@@ -247,7 +324,13 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
@@ -256,9 +339,58 @@ namespace Model
      * default, the latest available AMI version for the node group's Kubernetes
      * version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If
+     * you specify <code>launchTemplate</code>, and your launch template uses a custom
+     * AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+     * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline UpdateNodegroupVersionRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>An object representing a node group's launch template specification. You can
+     * only update a node group using a launch template if the node group was
+     * originally deployed with a launch template.</p>
+     */
+    inline UpdateNodegroupVersionRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
@@ -355,6 +487,9 @@ namespace Model
 
     Aws::String m_releaseVersion;
     bool m_releaseVersionHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     bool m_force;
     bool m_forceHasBeenSet;
