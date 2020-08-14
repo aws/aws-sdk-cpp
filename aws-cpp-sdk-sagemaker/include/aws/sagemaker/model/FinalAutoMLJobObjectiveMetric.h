@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The candidate result from a job.</p><p><h3>See Also:</h3>   <a
+   * <p>The best candidate result from an AutoML training job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FinalAutoMLJobObjectiveMetric">AWS
    * API Reference</a></p>
    */
@@ -39,84 +40,90 @@ namespace Model
 
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline const AutoMLJobObjectiveType& GetType() const{ return m_type; }
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline void SetType(const AutoMLJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline void SetType(AutoMLJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline FinalAutoMLJobObjectiveMetric& WithType(const AutoMLJobObjectiveType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The metric type used.</p>
+     * <p>The type of metric with the best result.</p>
      */
     inline FinalAutoMLJobObjectiveMetric& WithType(AutoMLJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline FinalAutoMLJobObjectiveMetric& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric with the best result. For a description of the
+     * possible objective metrics, see <a>AutoMLJobObjective$MetricName</a>.</p>
      */
     inline FinalAutoMLJobObjectiveMetric& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The value of the metric.</p>
+     * <p>The value of the metric with the best result.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the metric.</p>
+     * <p>The value of the metric with the best result.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the metric.</p>
+     * <p>The value of the metric with the best result.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the metric.</p>
+     * <p>The value of the metric with the best result.</p>
      */
     inline FinalAutoMLJobObjectiveMetric& WithValue(double value) { SetValue(value); return *this;}
 

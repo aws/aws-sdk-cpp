@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines the Amazon Cognito user group that is part of a work
-   * team.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines an Amazon Cognito or your own OIDC IdP user group that is part of a
+   * work team.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MemberDefinition">AWS
    * API Reference</a></p>
    */

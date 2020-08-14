@@ -199,154 +199,217 @@ namespace Model
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline void SetLicenseRules(const Aws::Vector<Aws::String>& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = value; }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline void SetLicenseRules(Aws::Vector<Aws::String>&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = std::move(value); }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseRules(const Aws::Vector<Aws::String>& value) { SetLicenseRules(value); return *this;}
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseRules(Aws::Vector<Aws::String>&& value) { SetLicenseRules(std::move(value)); return *this;}
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(const Aws::String& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(Aws::String&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(std::move(value)); return *this; }
 
     /**
      * <p>License rules. The syntax is #name=value (for example,
-     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
-     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as
+     * follows.</p> <ul> <li> <p> <code>Cores</code> dimension:
+     * <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
      * <code>Instances</code> dimension: <code>allowedTenancy</code> |
      * <code>maximumCores</code> | <code>minimumCores</code> |
      * <code>maximumSockets</code> | <code>minimumSockets</code> |
      * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
      * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
-     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
-     * <code>minimumVcpus</code> </p> </li> </ul>
+     * <code>licenseAffinityToHost</code> | <code>maximumSockets</code> |
+     * <code>minimumSockets</code> </p> </li> <li> <p> <code>vCPUs</code> dimension:
+     * <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> </ul> <p>The
+     * unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+     * The possible values for <code>allowedTenancy</code> are
+     * <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for
+     * <code>honorVcpuOptimization</code> are <code>True</code> and
+     * <code>False</code>.</p>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(const char* value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 

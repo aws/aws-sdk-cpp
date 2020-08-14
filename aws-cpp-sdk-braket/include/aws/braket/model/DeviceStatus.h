@@ -16,8 +16,8 @@ namespace Model
   enum class DeviceStatus
   {
     NOT_SET,
-    QPU,
-    SIMULATOR
+    OFFLINE,
+    ONLINE
   };
 
 namespace DeviceStatusMapper

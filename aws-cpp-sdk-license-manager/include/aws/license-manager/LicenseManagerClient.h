@@ -174,9 +174,9 @@ namespace Model
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
          * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
-         * VM must be associated with a host), and the number of licenses purchased and
-         * used.</p><p><h3>See Also:</h3>   <a
+         * Dedicated Instance, Dedicated Host, or all of these), license affinity to host
+         * (how long a license must be associated with a host), and the number of licenses
+         * purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          */
@@ -187,9 +187,9 @@ namespace Model
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
          * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
-         * VM must be associated with a host), and the number of licenses purchased and
-         * used.</p><p><h3>See Also:</h3>   <a
+         * Dedicated Instance, Dedicated Host, or all of these), license affinity to host
+         * (how long a license must be associated with a host), and the number of licenses
+         * purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -202,9 +202,9 @@ namespace Model
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
          * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
-         * VM must be associated with a host), and the number of licenses purchased and
-         * used.</p><p><h3>See Also:</h3>   <a
+         * Dedicated Instance, Dedicated Host, or all of these), license affinity to host
+         * (how long a license must be associated with a host), and the number of licenses
+         * purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -561,26 +561,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
-         * license configuration is an abstraction of a customer license agreement that can
-         * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
-         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
-         * host affinity (how long a VM must be associated with a host), and the number of
-         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the attributes of an existing license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLicenseConfigurationOutcome UpdateLicenseConfiguration(const Model::UpdateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
-         * license configuration is an abstraction of a customer license agreement that can
-         * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
-         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
-         * host affinity (how long a VM must be associated with a host), and the number of
-         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the attributes of an existing license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -589,13 +579,8 @@ namespace Model
         virtual Model::UpdateLicenseConfigurationOutcomeCallable UpdateLicenseConfigurationCallable(const Model::UpdateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
-         * license configuration is an abstraction of a customer license agreement that can
-         * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
-         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
-         * host affinity (how long a VM must be associated with a host), and the number of
-         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the attributes of an existing license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          *

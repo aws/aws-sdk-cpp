@@ -33,7 +33,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_tagsHasBeenSet(false),
     m_idleDisconnectTimeoutInSeconds(0),
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+    m_iamRoleArnHasBeenSet(false),
+    m_streamView(StreamView::NOT_SET),
+    m_streamViewHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
   {
    payload.WithString("IamRoleArn", m_iamRoleArn);
 
+  }
+
+  if(m_streamViewHasBeenSet)
+  {
+   payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
   }
 
   return payload.View().WriteReadable();

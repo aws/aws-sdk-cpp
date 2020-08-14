@@ -71,44 +71,44 @@ namespace Model
 
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -280,6 +281,61 @@ namespace Model
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline ContainerDefinition& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry in your Amazon Virtual Private Cloud (VPC). For information about
+     * storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline ContainerDefinition& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
 
 
     /**
@@ -621,6 +677,9 @@ namespace Model
 
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
+    ImageConfig m_imageConfig;
+    bool m_imageConfigHasBeenSet;
 
     ContainerMode m_mode;
     bool m_modeHasBeenSet;

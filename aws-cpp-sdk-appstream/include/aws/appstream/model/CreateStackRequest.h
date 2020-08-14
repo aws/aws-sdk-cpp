@@ -595,63 +595,63 @@ namespace Model
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEmbedHostDomains() const{ return m_embedHostDomains; }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline bool EmbedHostDomainsHasBeenSet() const { return m_embedHostDomainsHasBeenSet; }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline void SetEmbedHostDomains(const Aws::Vector<Aws::String>& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains = value; }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline void SetEmbedHostDomains(Aws::Vector<Aws::String>&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains = std::move(value); }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline CreateStackRequest& WithEmbedHostDomains(const Aws::Vector<Aws::String>& value) { SetEmbedHostDomains(value); return *this;}
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline CreateStackRequest& WithEmbedHostDomains(Aws::Vector<Aws::String>&& value) { SetEmbedHostDomains(std::move(value)); return *this;}
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline CreateStackRequest& AddEmbedHostDomains(const Aws::String& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline CreateStackRequest& AddEmbedHostDomains(Aws::String&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
      * iframe. You must approve the domains that you want to host embedded AppStream
-     * 2.0 streaming sessions.</p>
+     * 2.0 streaming sessions. </p>
      */
     inline CreateStackRequest& AddEmbedHostDomains(const char* value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
 

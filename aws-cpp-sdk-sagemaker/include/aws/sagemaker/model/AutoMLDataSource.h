@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The data source for the AutoPilot job.</p><p><h3>See Also:</h3>   <a
+   * <p>The data source for the Autopilot job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSource">AWS
    * API Reference</a></p>
    */

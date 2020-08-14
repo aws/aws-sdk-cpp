@@ -110,47 +110,56 @@ namespace Model
 
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline void SetLicenseRules(const Aws::Vector<Aws::String>& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = value; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline void SetLicenseRules(Aws::Vector<Aws::String>&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = std::move(value); }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& WithLicenseRules(const Aws::Vector<Aws::String>& value) { SetLicenseRules(value); return *this;}
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& WithLicenseRules(Aws::Vector<Aws::String>&& value) { SetLicenseRules(std::move(value)); return *this;}
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(const Aws::String& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(Aws::String&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(const char* value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 

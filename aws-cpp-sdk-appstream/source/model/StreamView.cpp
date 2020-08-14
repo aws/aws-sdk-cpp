@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/braket/model/DeviceStatus.h>
+#include <aws/appstream/model/StreamView.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace Braket
+  namespace AppStream
   {
     namespace Model
     {
-      namespace DeviceStatusMapper
+      namespace StreamViewMapper
       {
 
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
+        static const int APP_HASH = HashingUtils::HashString("APP");
+        static const int DESKTOP_HASH = HashingUtils::HashString("DESKTOP");
 
 
-        DeviceStatus GetDeviceStatusForName(const Aws::String& name)
+        StreamView GetStreamViewForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OFFLINE_HASH)
+          if (hashCode == APP_HASH)
           {
-            return DeviceStatus::OFFLINE;
+            return StreamView::APP;
           }
-          else if (hashCode == ONLINE_HASH)
+          else if (hashCode == DESKTOP_HASH)
           {
-            return DeviceStatus::ONLINE;
+            return StreamView::DESKTOP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DeviceStatus>(hashCode);
+            return static_cast<StreamView>(hashCode);
           }
 
-          return DeviceStatus::NOT_SET;
+          return StreamView::NOT_SET;
         }
 
-        Aws::String GetNameForDeviceStatus(DeviceStatus enumValue)
+        Aws::String GetNameForStreamView(StreamView enumValue)
         {
           switch(enumValue)
           {
-          case DeviceStatus::OFFLINE:
-            return "OFFLINE";
-          case DeviceStatus::ONLINE:
-            return "ONLINE";
+          case StreamView::APP:
+            return "APP";
+          case StreamView::DESKTOP:
+            return "DESKTOP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace DeviceStatusMapper
+      } // namespace StreamViewMapper
     } // namespace Model
-  } // namespace Braket
+  } // namespace AppStream
 } // namespace Aws

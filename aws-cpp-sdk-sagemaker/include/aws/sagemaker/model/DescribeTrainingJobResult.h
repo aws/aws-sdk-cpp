@@ -368,7 +368,7 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
@@ -400,7 +400,7 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
@@ -432,7 +432,7 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
@@ -464,7 +464,7 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
@@ -496,7 +496,7 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>

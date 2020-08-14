@@ -187,19 +187,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
@@ -217,19 +219,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
@@ -247,19 +251,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
@@ -277,19 +283,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
@@ -307,19 +315,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
@@ -337,19 +347,21 @@ namespace Model
      * files are not split, and request payloads contain the entire contents of an
      * input object. Set the value of this parameter to <code>Line</code> to split
      * records on a newline character boundary. <code>SplitType</code> also supports a
-     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
-     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-     * and <code>MaxPayloadInMB</code> parameters. When the value of
-     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
-     * the maximum number of records in each request, up to the
-     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
-     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p>  <p>Some data formats represent a record as a binary payload
-     * wrapped with extra padding bytes. When splitting is applied to a binary data
-     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
-     * <code>SingleRecord</code>. Padding is not removed if the value of
-     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
-     * information about <code>RecordIO</code>, see <a
+     * number of record-oriented binary data formats. Currently, the supported record
+     * formats are:</p> <ul> <li> <p>RecordIO</p> </li> <li> <p>TFRecord</p> </li>
+     * </ul> <p>When splitting is enabled, the size of a mini-batch depends on the
+     * values of the <code>BatchStrategy</code> and <code>MaxPayloadInMB</code>
+     * parameters. When the value of <code>BatchStrategy</code> is
+     * <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
+     * in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of
+     * <code>BatchStrategy</code> is <code>SingleRecord</code>, Amazon SageMaker sends
+     * individual records in each request.</p>  <p>Some data formats represent a
+     * record as a binary payload wrapped with extra padding bytes. When splitting is
+     * applied to a binary data format, padding is removed if the value of
+     * <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not
+     * removed if the value of <code>BatchStrategy</code> is set to
+     * <code>MultiRecord</code>.</p> <p>For more information about
+     * <code>RecordIO</code>, see <a
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a

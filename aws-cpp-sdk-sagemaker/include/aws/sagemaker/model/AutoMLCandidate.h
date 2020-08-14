@@ -31,9 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>An AutoPilot job will return recommendations, or candidates. Each candidate
-   * has futher details about the steps involed, and the status.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An Autopilot job returns recommendations, or candidates. Each candidate has
+   * futher details about the steps involed, and the status.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidate">AWS
    * API Reference</a></p>
    */

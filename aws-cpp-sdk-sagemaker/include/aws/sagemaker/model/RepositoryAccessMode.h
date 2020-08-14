@@ -13,22 +13,19 @@ namespace SageMaker
 {
 namespace Model
 {
-  enum class AutoMLMetricEnum
+  enum class RepositoryAccessMode
   {
     NOT_SET,
-    Accuracy,
-    MSE,
-    F1,
-    F1macro,
-    AUC
+    Platform,
+    Vpc
   };
 
-namespace AutoMLMetricEnumMapper
+namespace RepositoryAccessModeMapper
 {
-AWS_SAGEMAKER_API AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name);
+AWS_SAGEMAKER_API RepositoryAccessMode GetRepositoryAccessModeForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForAutoMLMetricEnum(AutoMLMetricEnum value);
-} // namespace AutoMLMetricEnumMapper
+AWS_SAGEMAKER_API Aws::String GetNameForRepositoryAccessMode(RepositoryAccessMode value);
+} // namespace RepositoryAccessModeMapper
 } // namespace Model
 } // namespace SageMaker
 } // namespace Aws

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/braket/model/DeviceStatus.h>
+#include <aws/sagemaker/model/RepositoryAccessMode.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace Braket
+  namespace SageMaker
   {
     namespace Model
     {
-      namespace DeviceStatusMapper
+      namespace RepositoryAccessModeMapper
       {
 
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
+        static const int Platform_HASH = HashingUtils::HashString("Platform");
+        static const int Vpc_HASH = HashingUtils::HashString("Vpc");
 
 
-        DeviceStatus GetDeviceStatusForName(const Aws::String& name)
+        RepositoryAccessMode GetRepositoryAccessModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OFFLINE_HASH)
+          if (hashCode == Platform_HASH)
           {
-            return DeviceStatus::OFFLINE;
+            return RepositoryAccessMode::Platform;
           }
-          else if (hashCode == ONLINE_HASH)
+          else if (hashCode == Vpc_HASH)
           {
-            return DeviceStatus::ONLINE;
+            return RepositoryAccessMode::Vpc;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DeviceStatus>(hashCode);
+            return static_cast<RepositoryAccessMode>(hashCode);
           }
 
-          return DeviceStatus::NOT_SET;
+          return RepositoryAccessMode::NOT_SET;
         }
 
-        Aws::String GetNameForDeviceStatus(DeviceStatus enumValue)
+        Aws::String GetNameForRepositoryAccessMode(RepositoryAccessMode enumValue)
         {
           switch(enumValue)
           {
-          case DeviceStatus::OFFLINE:
-            return "OFFLINE";
-          case DeviceStatus::ONLINE:
-            return "ONLINE";
+          case RepositoryAccessMode::Platform:
+            return "Platform";
+          case RepositoryAccessMode::Vpc:
+            return "Vpc";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace DeviceStatusMapper
+      } // namespace RepositoryAccessModeMapper
     } // namespace Model
-  } // namespace Braket
+  } // namespace SageMaker
 } // namespace Aws

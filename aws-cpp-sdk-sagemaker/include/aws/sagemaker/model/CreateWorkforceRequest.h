@@ -96,43 +96,43 @@ namespace Model
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline const OidcConfig& GetOidcConfig() const{ return m_oidcConfig; }
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline bool OidcConfigHasBeenSet() const { return m_oidcConfigHasBeenSet; }
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline void SetOidcConfig(const OidcConfig& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = value; }
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline void SetOidcConfig(OidcConfig&& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = std::move(value); }
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline CreateWorkforceRequest& WithOidcConfig(const OidcConfig& value) { SetOidcConfig(value); return *this;}
 
     /**
      * <p>Use this parameter to configure a private workforce using your own OIDC
-     * Identity Provider. Do not use <code>CognitoConfig</code> if you specify values
-     * for <code>OidcConfig</code>.</p>
+     * Identity Provider.</p> <p>Do not use <code>CognitoConfig</code> if you specify
+     * values for <code>OidcConfig</code>.</p>
      */
     inline CreateWorkforceRequest& WithOidcConfig(OidcConfig&& value) { SetOidcConfig(std::move(value)); return *this;}
 

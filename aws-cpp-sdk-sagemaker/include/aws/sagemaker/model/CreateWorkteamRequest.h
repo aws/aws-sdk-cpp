@@ -122,89 +122,185 @@ namespace Model
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline void SetMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = value; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline void SetMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::move(value); }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& WithMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { SetMemberDefinitions(value); return *this;}
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& WithMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { SetMemberDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& AddMemberDefinitions(const MemberDefinition& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& AddMemberDefinitions(MemberDefinition&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(std::move(value)); return *this; }
 

@@ -21,6 +21,7 @@ namespace Model
 ContainerDefinition::ContainerDefinition() : 
     m_containerHostnameHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
@@ -32,6 +33,7 @@ ContainerDefinition::ContainerDefinition() :
 ContainerDefinition::ContainerDefinition(JsonView jsonValue) : 
     m_containerHostnameHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
@@ -55,6 +57,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_image = jsonValue.GetString("Image");
 
     m_imageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageConfig"))
+  {
+    m_imageConfig = jsonValue.GetObject("ImageConfig");
+
+    m_imageConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Mode"))
@@ -104,6 +113,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_imageHasBeenSet)
   {
    payload.WithString("Image", m_image);
+
+  }
+
+  if(m_imageConfigHasBeenSet)
+  {
+   payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
 
   }
 

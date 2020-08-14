@@ -12,6 +12,7 @@
 #include <aws/appstream/model/VpcConfig.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appstream/model/StreamView.h>
 #include <utility>
 
 namespace Aws
@@ -171,11 +172,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -190,11 +201,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -209,11 +230,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -228,11 +259,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -247,11 +288,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -266,11 +317,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -285,11 +346,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -304,11 +375,21 @@ namespace Model
      * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
      * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
      * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
      * <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -926,7 +1007,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -941,7 +1022,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -956,7 +1037,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -971,7 +1052,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -986,7 +1067,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -1001,7 +1082,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -1016,7 +1097,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -1031,7 +1112,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -1039,6 +1120,61 @@ namespace Model
      * Administration Guide</i>.</p>
      */
     inline CreateFleetRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline const StreamView& GetStreamView() const{ return m_streamView; }
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline bool StreamViewHasBeenSet() const { return m_streamViewHasBeenSet; }
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline void SetStreamView(const StreamView& value) { m_streamViewHasBeenSet = true; m_streamView = value; }
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline void SetStreamView(StreamView&& value) { m_streamViewHasBeenSet = true; m_streamView = std::move(value); }
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline CreateFleetRequest& WithStreamView(const StreamView& value) { SetStreamView(value); return *this;}
+
+    /**
+     * <p>The AppStream 2.0 view that is displayed to your users when they stream from
+     * the fleet. When <code>APP</code> is specified, only the windows of applications
+     * opened by users display. When <code>DESKTOP</code> is specified, the standard
+     * desktop that is provided by the operating system displays.</p> <p>The default
+     * value is <code>APP</code>.</p>
+     */
+    inline CreateFleetRequest& WithStreamView(StreamView&& value) { SetStreamView(std::move(value)); return *this;}
 
   private:
 
@@ -1089,6 +1225,9 @@ namespace Model
 
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
+    StreamView m_streamView;
+    bool m_streamViewHasBeenSet;
   };
 
 } // namespace Model

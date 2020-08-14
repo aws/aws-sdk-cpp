@@ -20,20 +20,20 @@ namespace Aws
       namespace DeviceTypeMapper
       {
 
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
+        static const int QPU_HASH = HashingUtils::HashString("QPU");
+        static const int SIMULATOR_HASH = HashingUtils::HashString("SIMULATOR");
 
 
         DeviceType GetDeviceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OFFLINE_HASH)
+          if (hashCode == QPU_HASH)
           {
-            return DeviceType::OFFLINE;
+            return DeviceType::QPU;
           }
-          else if (hashCode == ONLINE_HASH)
+          else if (hashCode == SIMULATOR_HASH)
           {
-            return DeviceType::ONLINE;
+            return DeviceType::SIMULATOR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case DeviceType::OFFLINE:
-            return "OFFLINE";
-          case DeviceType::ONLINE:
-            return "ONLINE";
+          case DeviceType::QPU:
+            return "QPU";
+          case DeviceType::SIMULATOR:
+            return "SIMULATOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -83,42 +83,82 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline void SetMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = value; }
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline void SetMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::move(value); }
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline Workteam& WithMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { SetMemberDefinitions(value); return *this;}
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline Workteam& WithMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { SetMemberDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline Workteam& AddMemberDefinitions(const MemberDefinition& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline Workteam& AddMemberDefinitions(MemberDefinition&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(std::move(value)); return *this; }
 

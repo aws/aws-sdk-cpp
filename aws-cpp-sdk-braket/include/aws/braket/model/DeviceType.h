@@ -16,8 +16,8 @@ namespace Model
   enum class DeviceType
   {
     NOT_SET,
-    OFFLINE,
-    ONLINE
+    QPU,
+    SIMULATOR
   };
 
 namespace DeviceTypeMapper

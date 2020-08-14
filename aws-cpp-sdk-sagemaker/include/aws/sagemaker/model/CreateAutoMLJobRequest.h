@@ -42,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies an AutoPilot job. Must be unique to your account and is
+     * <p>Identifies an Autopilot job. Must be unique to your account and is
      * case-insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
@@ -220,44 +220,50 @@ namespace Model
 
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
-     * <p>Defines the job's objective. You provide a MetricName and AutoML will infer
-     * minimize or maximize. If this is not provided, the most commonly used
-     * ObjectiveMetric for problem type will be selected.</p>
+     * <p>Defines the objective of a an AutoML job. You provide a
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or
+     * maximize it. If a metric is not specified, the most commonly used
+     * ObjectiveMetric for problem type is automaically selected.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 
@@ -294,70 +300,70 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that will be used to access the data.</p>
+     * <p>The ARN of the role that is used to access the data.</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>This will generate possible candidates without training a model. A candidate
-     * is a combination of data preprocessors, algorithms, and algorithm parameter
+     * <p>Generates possible candidates without training a model. A candidate is a
+     * combination of data preprocessors, algorithms, and algorithm parameter
      * settings.</p>
      */
     inline bool GetGenerateCandidateDefinitionsOnly() const{ return m_generateCandidateDefinitionsOnly; }
 
     /**
-     * <p>This will generate possible candidates without training a model. A candidate
-     * is a combination of data preprocessors, algorithms, and algorithm parameter
+     * <p>Generates possible candidates without training a model. A candidate is a
+     * combination of data preprocessors, algorithms, and algorithm parameter
      * settings.</p>
      */
     inline bool GenerateCandidateDefinitionsOnlyHasBeenSet() const { return m_generateCandidateDefinitionsOnlyHasBeenSet; }
 
     /**
-     * <p>This will generate possible candidates without training a model. A candidate
-     * is a combination of data preprocessors, algorithms, and algorithm parameter
+     * <p>Generates possible candidates without training a model. A candidate is a
+     * combination of data preprocessors, algorithms, and algorithm parameter
      * settings.</p>
      */
     inline void SetGenerateCandidateDefinitionsOnly(bool value) { m_generateCandidateDefinitionsOnlyHasBeenSet = true; m_generateCandidateDefinitionsOnly = value; }
 
     /**
-     * <p>This will generate possible candidates without training a model. A candidate
-     * is a combination of data preprocessors, algorithms, and algorithm parameter
+     * <p>Generates possible candidates without training a model. A candidate is a
+     * combination of data preprocessors, algorithms, and algorithm parameter
      * settings.</p>
      */
     inline CreateAutoMLJobRequest& WithGenerateCandidateDefinitionsOnly(bool value) { SetGenerateCandidateDefinitionsOnly(value); return *this;}

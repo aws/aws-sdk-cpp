@@ -36,22 +36,22 @@ namespace Model
 
 
     /**
-     * <p>The objective metric's value.</p>
+     * <p>The value of the objective metric.</p>
      */
     inline double GetTargetObjectiveMetricValue() const{ return m_targetObjectiveMetricValue; }
 
     /**
-     * <p>The objective metric's value.</p>
+     * <p>The value of the objective metric.</p>
      */
     inline bool TargetObjectiveMetricValueHasBeenSet() const { return m_targetObjectiveMetricValueHasBeenSet; }
 
     /**
-     * <p>The objective metric's value.</p>
+     * <p>The value of the objective metric.</p>
      */
     inline void SetTargetObjectiveMetricValue(double value) { m_targetObjectiveMetricValueHasBeenSet = true; m_targetObjectiveMetricValue = value; }
 
     /**
-     * <p>The objective metric's value.</p>
+     * <p>The value of the objective metric.</p>
      */
     inline TuningJobCompletionCriteria& WithTargetObjectiveMetricValue(double value) { SetTargetObjectiveMetricValue(value); return *this;}
 

@@ -24,6 +24,7 @@ namespace Aws
         static const int MSE_HASH = HashingUtils::HashString("MSE");
         static const int F1_HASH = HashingUtils::HashString("F1");
         static const int F1macro_HASH = HashingUtils::HashString("F1macro");
+        static const int AUC_HASH = HashingUtils::HashString("AUC");
 
 
         AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == F1macro_HASH)
           {
             return AutoMLMetricEnum::F1macro;
+          }
+          else if (hashCode == AUC_HASH)
+          {
+            return AutoMLMetricEnum::AUC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "F1";
           case AutoMLMetricEnum::F1macro:
             return "F1macro";
+          case AutoMLMetricEnum::AUC:
+            return "AUC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

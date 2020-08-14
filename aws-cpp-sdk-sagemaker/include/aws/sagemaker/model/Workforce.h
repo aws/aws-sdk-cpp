@@ -181,42 +181,48 @@ namespace Model
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline const SourceIpConfig& GetSourceIpConfig() const{ return m_sourceIpConfig; }
 
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline bool SourceIpConfigHasBeenSet() const { return m_sourceIpConfigHasBeenSet; }
 
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline void SetSourceIpConfig(const SourceIpConfig& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = value; }
 
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline void SetSourceIpConfig(SourceIpConfig&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::move(value); }
 
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline Workforce& WithSourceIpConfig(const SourceIpConfig& value) { SetSourceIpConfig(value); return *this;}
 
     /**
      * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * to be added to the workforce allow list.</p>
+     * to be added to the workforce allow list. By default, a workforce isn't
+     * restricted to specific IP addresses.</p>
      */
     inline Workforce& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
 
