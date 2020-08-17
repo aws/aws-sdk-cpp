@@ -33,32 +33,37 @@ namespace Model
 
 
     /**
-     * <p>A <a>CertificateAuthority</a> structure that contains information about your
-     * private CA.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+     * structure that contains information about your private CA.</p>
      */
     inline const CertificateAuthority& GetCertificateAuthority() const{ return m_certificateAuthority; }
 
     /**
-     * <p>A <a>CertificateAuthority</a> structure that contains information about your
-     * private CA.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+     * structure that contains information about your private CA.</p>
      */
     inline void SetCertificateAuthority(const CertificateAuthority& value) { m_certificateAuthority = value; }
 
     /**
-     * <p>A <a>CertificateAuthority</a> structure that contains information about your
-     * private CA.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+     * structure that contains information about your private CA.</p>
      */
     inline void SetCertificateAuthority(CertificateAuthority&& value) { m_certificateAuthority = std::move(value); }
 
     /**
-     * <p>A <a>CertificateAuthority</a> structure that contains information about your
-     * private CA.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+     * structure that contains information about your private CA.</p>
      */
     inline DescribeCertificateAuthorityResult& WithCertificateAuthority(const CertificateAuthority& value) { SetCertificateAuthority(value); return *this;}
 
     /**
-     * <p>A <a>CertificateAuthority</a> structure that contains information about your
-     * private CA.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+     * structure that contains information about your private CA.</p>
      */
     inline DescribeCertificateAuthorityResult& WithCertificateAuthority(CertificateAuthority&& value) { SetCertificateAuthority(std::move(value)); return *this;}
 

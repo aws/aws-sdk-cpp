@@ -22,6 +22,7 @@
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
 #include <aws/quicksight/model/CancelIngestionRequest.h>
 #include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
+#include <aws/quicksight/model/CreateAnalysisRequest.h>
 #include <aws/quicksight/model/CreateDashboardRequest.h>
 #include <aws/quicksight/model/CreateDataSetRequest.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/quicksight/model/CreateThemeRequest.h>
 #include <aws/quicksight/model/CreateThemeAliasRequest.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationRequest.h>
+#include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
 #include <aws/quicksight/model/DeleteDataSourceRequest.h>
@@ -50,6 +52,8 @@
 #include <aws/quicksight/model/DeleteUserByPrincipalIdRequest.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DescribeAccountSettingsRequest.h>
+#include <aws/quicksight/model/DescribeAnalysisRequest.h>
+#include <aws/quicksight/model/DescribeAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDashboardRequest.h>
 #include <aws/quicksight/model/DescribeDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
@@ -69,6 +73,7 @@
 #include <aws/quicksight/model/DescribeUserRequest.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
+#include <aws/quicksight/model/ListAnalysesRequest.h>
 #include <aws/quicksight/model/ListDashboardVersionsRequest.h>
 #include <aws/quicksight/model/ListDashboardsRequest.h>
 #include <aws/quicksight/model/ListDataSetsRequest.h>
@@ -89,11 +94,15 @@
 #include <aws/quicksight/model/ListUserGroupsRequest.h>
 #include <aws/quicksight/model/ListUsersRequest.h>
 #include <aws/quicksight/model/RegisterUserRequest.h>
+#include <aws/quicksight/model/RestoreAnalysisRequest.h>
+#include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/UpdateAccountSettingsRequest.h>
+#include <aws/quicksight/model/UpdateAnalysisRequest.h>
+#include <aws/quicksight/model/UpdateAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDashboardRequest.h>
 #include <aws/quicksight/model/UpdateDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDashboardPublishedVersionRequest.h>
@@ -263,6 +272,46 @@ void QuickSightClient::CreateAccountCustomizationAsync(const CreateAccountCustom
 void QuickSightClient::CreateAccountCustomizationAsyncHelper(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateAccountCustomization(request), context);
+}
+
+CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAnalysis", "Required field: AwsAccountId, is not set");
+    return CreateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAnalysis", "Required field: AnalysisId, is not set");
+    return CreateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAnalysisOutcomeCallable QuickSightClient::CreateAnalysisCallable(const CreateAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateAnalysisAsync(const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateAnalysisAsyncHelper(const CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAnalysis(request), context);
 }
 
 CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRequest& request) const
@@ -795,6 +844,46 @@ void QuickSightClient::DeleteAccountCustomizationAsync(const DeleteAccountCustom
 void QuickSightClient::DeleteAccountCustomizationAsyncHelper(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAccountCustomization(request), context);
+}
+
+DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAnalysis", "Required field: AwsAccountId, is not set");
+    return DeleteAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAnalysis", "Required field: AnalysisId, is not set");
+    return DeleteAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAnalysisOutcomeCallable QuickSightClient::DeleteAnalysisCallable(const DeleteAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteAnalysisAsync(const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteAnalysisAsyncHelper(const DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAnalysis(request), context);
 }
 
 DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRequest& request) const
@@ -1439,6 +1528,87 @@ void QuickSightClient::DescribeAccountSettingsAsync(const DescribeAccountSetting
 void QuickSightClient::DescribeAccountSettingsAsyncHelper(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccountSettings(request), context);
+}
+
+DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysisRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysis", "Required field: AwsAccountId, is not set");
+    return DescribeAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysis", "Required field: AnalysisId, is not set");
+    return DescribeAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAnalysisOutcomeCallable QuickSightClient::DescribeAnalysisCallable(const DescribeAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeAnalysisAsync(const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeAnalysisAsyncHelper(const DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAnalysis(request), context);
+}
+
+DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions(const DescribeAnalysisPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysisPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysisPermissions", "Required field: AnalysisId, is not set");
+    return DescribeAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  ss << "/permissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAnalysisPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAnalysisPermissionsOutcomeCallable QuickSightClient::DescribeAnalysisPermissionsCallable(const DescribeAnalysisPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnalysisPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnalysisPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeAnalysisPermissionsAsync(const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeAnalysisPermissionsAsyncHelper(const DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAnalysisPermissions(request), context);
 }
 
 DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashboardRequest& request) const
@@ -2248,6 +2418,40 @@ void QuickSightClient::GetSessionEmbedUrlAsyncHelper(const GetSessionEmbedUrlReq
   handler(this, request, GetSessionEmbedUrl(request), context);
 }
 
+ListAnalysesOutcome QuickSightClient::ListAnalyses(const ListAnalysesRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAnalyses", "Required field: AwsAccountId, is not set");
+    return ListAnalysesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAnalysesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAnalysesOutcomeCallable QuickSightClient::ListAnalysesCallable(const ListAnalysesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAnalysesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnalyses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListAnalysesAsync(const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAnalysesAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListAnalysesAsyncHelper(const ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAnalyses(request), context);
+}
+
 ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListDashboardVersionsRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -3040,6 +3244,80 @@ void QuickSightClient::RegisterUserAsyncHelper(const RegisterUserRequest& reques
   handler(this, request, RegisterUser(request), context);
 }
 
+RestoreAnalysisOutcome QuickSightClient::RestoreAnalysis(const RestoreAnalysisRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RestoreAnalysis", "Required field: AwsAccountId, is not set");
+    return RestoreAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RestoreAnalysis", "Required field: AnalysisId, is not set");
+    return RestoreAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/restore/analyses/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RestoreAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RestoreAnalysisOutcomeCallable QuickSightClient::RestoreAnalysisCallable(const RestoreAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::RestoreAnalysisAsync(const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::RestoreAnalysisAsyncHelper(const RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreAnalysis(request), context);
+}
+
+SearchAnalysesOutcome QuickSightClient::SearchAnalyses(const SearchAnalysesRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchAnalyses", "Required field: AwsAccountId, is not set");
+    return SearchAnalysesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/search/analyses";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SearchAnalysesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchAnalysesOutcomeCallable QuickSightClient::SearchAnalysesCallable(const SearchAnalysesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchAnalysesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchAnalyses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchAnalysesAsync(const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchAnalysesAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::SearchAnalysesAsyncHelper(const SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchAnalyses(request), context);
+}
+
 SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboardsRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -3213,6 +3491,87 @@ void QuickSightClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsReq
 void QuickSightClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAccountSettings(request), context);
+}
+
+UpdateAnalysisOutcome QuickSightClient::UpdateAnalysis(const UpdateAnalysisRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAnalysis", "Required field: AwsAccountId, is not set");
+    return UpdateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAnalysis", "Required field: AnalysisId, is not set");
+    return UpdateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAnalysisOutcomeCallable QuickSightClient::UpdateAnalysisCallable(const UpdateAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateAnalysisAsync(const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateAnalysisAsyncHelper(const UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAnalysis(request), context);
+}
+
+UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(const UpdateAnalysisPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAnalysisPermissions", "Required field: AwsAccountId, is not set");
+    return UpdateAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAnalysisPermissions", "Required field: AnalysisId, is not set");
+    return UpdateAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/analyses/";
+  ss << request.GetAnalysisId();
+  ss << "/permissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAnalysisPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAnalysisPermissionsOutcomeCallable QuickSightClient::UpdateAnalysisPermissionsCallable(const UpdateAnalysisPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAnalysisPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnalysisPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateAnalysisPermissionsAsync(const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnalysisPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateAnalysisPermissionsAsyncHelper(const UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAnalysisPermissions(request), context);
 }
 
 UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRequest& request) const

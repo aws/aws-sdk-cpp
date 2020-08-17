@@ -35,6 +35,7 @@ namespace Aws
         static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
         static const int PCA_INVALID_DURATION_HASH = HashingUtils::HashString("PCA_INVALID_DURATION");
         static const int PCA_ACCESS_DENIED_HASH = HashingUtils::HashString("PCA_ACCESS_DENIED");
+        static const int SLR_NOT_FOUND_HASH = HashingUtils::HashString("SLR_NOT_FOUND");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -101,6 +102,10 @@ namespace Aws
           {
             return FailureReason::PCA_ACCESS_DENIED;
           }
+          else if (hashCode == SLR_NOT_FOUND_HASH)
+          {
+            return FailureReason::SLR_NOT_FOUND;
+          }
           else if (hashCode == OTHER_HASH)
           {
             return FailureReason::OTHER;
@@ -149,6 +154,8 @@ namespace Aws
             return "PCA_INVALID_DURATION";
           case FailureReason::PCA_ACCESS_DENIED:
             return "PCA_ACCESS_DENIED";
+          case FailureReason::SLR_NOT_FOUND:
+            return "SLR_NOT_FOUND";
           case FailureReason::OTHER:
             return "OTHER";
           default:

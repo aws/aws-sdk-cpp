@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Summary information about a theme.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Theme">AWS
    * API Reference</a></p>
    */

@@ -48,7 +48,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -112,7 +112,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -128,7 +128,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -144,7 +144,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
@@ -160,7 +160,7 @@ namespace Model
      * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
+     * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */

@@ -18,7 +18,8 @@ ListShardsRequest::ListShardsRequest() :
     m_exclusiveStartShardIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_streamCreationTimestampHasBeenSet(false)
+    m_streamCreationTimestampHasBeenSet(false),
+    m_shardFilterHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String ListShardsRequest::SerializePayload() const
   if(m_streamCreationTimestampHasBeenSet)
   {
    payload.WithDouble("StreamCreationTimestamp", m_streamCreationTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_shardFilterHasBeenSet)
+  {
+   payload.WithObject("ShardFilter", m_shardFilter.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

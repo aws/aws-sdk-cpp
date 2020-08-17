@@ -7,6 +7,7 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/acm-pca/ACMPCARequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/acm-pca/model/ResourceOwner.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +128,43 @@ namespace Model
      */
     inline ListCertificateAuthoritiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline ListCertificateAuthoritiesRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline ListCertificateAuthoritiesRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -134,6 +172,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    ResourceOwner m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet;
   };
 
 } // namespace Model

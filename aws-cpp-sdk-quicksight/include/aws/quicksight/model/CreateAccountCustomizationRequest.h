@@ -81,103 +81,115 @@ namespace Model
 
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline CreateAccountCustomizationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline CreateAccountCustomizationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're creating.</p>
+     * <p>The QuickSight namespace that you want to add customizations to.</p>
      */
     inline CreateAccountCustomizationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = value; }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline CreateAccountCustomizationRequest& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account. For example, you could add a default theme by setting
-     * <code>AccountCustomization</code> to the midnight theme
-     * (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>) or to a
-     * custom theme
-     * (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. You
+     * can add these to an AWS account and a QuickSight namespace. </p> <p>For example,
+     * you could add a default theme by setting <code>AccountCustomization</code> to
+     * the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you could add a custom
+     * theme by specifying <code>"AccountCustomization": { "DefaultTheme":
+     * "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+     * }</code>. </p>
      */
     inline CreateAccountCustomizationRequest& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

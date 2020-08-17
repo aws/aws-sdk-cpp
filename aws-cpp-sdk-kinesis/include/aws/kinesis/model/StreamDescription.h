@@ -290,22 +290,26 @@ namespace Model
 
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline StreamDescription& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 

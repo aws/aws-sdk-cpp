@@ -118,7 +118,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
@@ -127,7 +127,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
@@ -136,7 +136,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
@@ -145,7 +145,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
@@ -154,7 +154,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
@@ -163,7 +163,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 

@@ -51,6 +51,15 @@ GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("ChildShards"))
+  {
+    Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
+    for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
+    {
+      m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

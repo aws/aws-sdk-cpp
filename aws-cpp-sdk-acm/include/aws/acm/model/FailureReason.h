@@ -31,6 +31,7 @@ namespace Model
     PCA_INVALID_ARGS,
     PCA_INVALID_DURATION,
     PCA_ACCESS_DENIED,
+    SLR_NOT_FOUND,
     OTHER
   };
 

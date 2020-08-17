@@ -206,49 +206,65 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline CreateDashboardRequest& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline CreateDashboardRequest& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline CreateDashboardRequest& AddPermissions(const ResourcePermission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions with principal and action information.</p>
+     * structure for granting permissions by providing a list of IAM action information
+     * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
+     * list.</p>
      */
     inline CreateDashboardRequest& AddPermissions(ResourcePermission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
@@ -449,7 +465,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -467,7 +483,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -485,7 +501,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -503,7 +519,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -521,7 +537,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -539,7 +555,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or

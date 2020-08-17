@@ -88,71 +88,91 @@ namespace Model
 
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline DescribeAccountCustomizationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline DescribeAccountCustomizationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you want to describe QuickSight customizations
+     * for.</p>
      */
     inline DescribeAccountCustomizationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
-     * <p>The status of the creation of the customization. This is an asynchronous
-     * process. A status of <code>CREATED</code> means that your customization is ready
-     * to use.</p>
+     * <p>The <code>Resolved</code> flag works with the other parameters to determine
+     * which view of QuickSight customizations is returned. You can add this flag to
+     * your command to use the same view that QuickSight uses to identify which
+     * customizations to apply to the console. Omit this flag, or set it to
+     * <code>no-resolved</code>, to reveal customizations that are configured at
+     * different levels. </p>
      */
     inline bool GetResolved() const{ return m_resolved; }
 
     /**
-     * <p>The status of the creation of the customization. This is an asynchronous
-     * process. A status of <code>CREATED</code> means that your customization is ready
-     * to use.</p>
+     * <p>The <code>Resolved</code> flag works with the other parameters to determine
+     * which view of QuickSight customizations is returned. You can add this flag to
+     * your command to use the same view that QuickSight uses to identify which
+     * customizations to apply to the console. Omit this flag, or set it to
+     * <code>no-resolved</code>, to reveal customizations that are configured at
+     * different levels. </p>
      */
     inline bool ResolvedHasBeenSet() const { return m_resolvedHasBeenSet; }
 
     /**
-     * <p>The status of the creation of the customization. This is an asynchronous
-     * process. A status of <code>CREATED</code> means that your customization is ready
-     * to use.</p>
+     * <p>The <code>Resolved</code> flag works with the other parameters to determine
+     * which view of QuickSight customizations is returned. You can add this flag to
+     * your command to use the same view that QuickSight uses to identify which
+     * customizations to apply to the console. Omit this flag, or set it to
+     * <code>no-resolved</code>, to reveal customizations that are configured at
+     * different levels. </p>
      */
     inline void SetResolved(bool value) { m_resolvedHasBeenSet = true; m_resolved = value; }
 
     /**
-     * <p>The status of the creation of the customization. This is an asynchronous
-     * process. A status of <code>CREATED</code> means that your customization is ready
-     * to use.</p>
+     * <p>The <code>Resolved</code> flag works with the other parameters to determine
+     * which view of QuickSight customizations is returned. You can add this flag to
+     * your command to use the same view that QuickSight uses to identify which
+     * customizations to apply to the console. Omit this flag, or set it to
+     * <code>no-resolved</code>, to reveal customizations that are configured at
+     * different levels. </p>
      */
     inline DescribeAccountCustomizationRequest& WithResolved(bool value) { SetResolved(value); return *this;}
 

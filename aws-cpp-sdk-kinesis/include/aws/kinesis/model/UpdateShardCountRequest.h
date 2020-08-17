@@ -77,22 +77,50 @@ namespace Model
 
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 500 shards in a stream (the default limit for shard
+     * count per stream is 500 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+     * you set this value to less than 500 shards.</p> </li> </ul>
      */
     inline int GetTargetShardCount() const{ return m_targetShardCount; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 500 shards in a stream (the default limit for shard
+     * count per stream is 500 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+     * you set this value to less than 500 shards.</p> </li> </ul>
      */
     inline bool TargetShardCountHasBeenSet() const { return m_targetShardCountHasBeenSet; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 500 shards in a stream (the default limit for shard
+     * count per stream is 500 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+     * you set this value to less than 500 shards.</p> </li> </ul>
      */
     inline void SetTargetShardCount(int value) { m_targetShardCountHasBeenSet = true; m_targetShardCount = value; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 500 shards in a stream (the default limit for shard
+     * count per stream is 500 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+     * you set this value to less than 500 shards.</p> </li> </ul>
      */
     inline UpdateShardCountRequest& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
 

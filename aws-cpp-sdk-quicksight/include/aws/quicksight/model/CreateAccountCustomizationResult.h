@@ -106,32 +106,27 @@ namespace Model
 
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account.</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account.</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomization = value; }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account.</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account.</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. </p>
      */
     inline CreateAccountCustomizationResult& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The customizations you're adding to the QuickSight subscription for the AWS
-     * account.</p>
+     * <p>The QuickSight customizations you're adding in the current AWS Region. </p>
      */
     inline CreateAccountCustomizationResult& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

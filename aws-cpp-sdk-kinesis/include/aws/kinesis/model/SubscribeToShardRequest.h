@@ -155,22 +155,34 @@ namespace Model
     inline SubscribeToShardRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const StartingPosition& GetStartingPosition() const{ return m_startingPosition; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStartingPosition(const StartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStartingPosition(StartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline SubscribeToShardRequest& WithStartingPosition(const StartingPosition& value) { SetStartingPosition(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline SubscribeToShardRequest& WithStartingPosition(StartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
   private:

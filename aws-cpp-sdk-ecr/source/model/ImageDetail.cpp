@@ -27,7 +27,9 @@ ImageDetail::ImageDetail() :
     m_imageSizeInBytesHasBeenSet(false),
     m_imagePushedAtHasBeenSet(false),
     m_imageScanStatusHasBeenSet(false),
-    m_imageScanFindingsSummaryHasBeenSet(false)
+    m_imageScanFindingsSummaryHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false),
+    m_artifactMediaTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ImageDetail::ImageDetail(JsonView jsonValue) :
     m_imageSizeInBytesHasBeenSet(false),
     m_imagePushedAtHasBeenSet(false),
     m_imageScanStatusHasBeenSet(false),
-    m_imageScanFindingsSummaryHasBeenSet(false)
+    m_imageScanFindingsSummaryHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false),
+    m_artifactMediaTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +110,20 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
     m_imageScanFindingsSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageManifestMediaType"))
+  {
+    m_imageManifestMediaType = jsonValue.GetString("imageManifestMediaType");
+
+    m_imageManifestMediaTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("artifactMediaType"))
+  {
+    m_artifactMediaType = jsonValue.GetString("artifactMediaType");
+
+    m_artifactMediaTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +180,18 @@ JsonValue ImageDetail::Jsonize() const
   if(m_imageScanFindingsSummaryHasBeenSet)
   {
    payload.WithObject("imageScanFindingsSummary", m_imageScanFindingsSummary.Jsonize());
+
+  }
+
+  if(m_imageManifestMediaTypeHasBeenSet)
+  {
+   payload.WithString("imageManifestMediaType", m_imageManifestMediaType);
+
+  }
+
+  if(m_artifactMediaTypeHasBeenSet)
+  {
+   payload.WithString("artifactMediaType", m_artifactMediaType);
 
   }
 

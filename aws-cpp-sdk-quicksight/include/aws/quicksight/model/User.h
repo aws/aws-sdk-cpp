@@ -26,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A registered user of Amazon QuickSight. Currently, an Amazon QuickSight
-   * subscription can't contain more than 20 million users.</p><p><h3>See Also:</h3> 
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS
-   * API Reference</a></p>
+   * <p>A registered user of Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS API
+   * Reference</a></p>
    */
   class AWS_QUICKSIGHT_API User
   {

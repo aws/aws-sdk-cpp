@@ -39,7 +39,7 @@ namespace Model
      * <p>The simulation unit limit. Your simulation is allocated CPU and memory
      * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
      * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximim value provided. </p>
+     * the maximim value provided. The default is 15. </p>
      */
     inline int GetSimulationUnitLimit() const{ return m_simulationUnitLimit; }
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>The simulation unit limit. Your simulation is allocated CPU and memory
      * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
      * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximim value provided. </p>
+     * the maximim value provided. The default is 15. </p>
      */
     inline bool SimulationUnitLimitHasBeenSet() const { return m_simulationUnitLimitHasBeenSet; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>The simulation unit limit. Your simulation is allocated CPU and memory
      * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
      * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximim value provided. </p>
+     * the maximim value provided. The default is 15. </p>
      */
     inline void SetSimulationUnitLimit(int value) { m_simulationUnitLimitHasBeenSet = true; m_simulationUnitLimit = value; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>The simulation unit limit. Your simulation is allocated CPU and memory
      * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
      * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximim value provided. </p>
+     * the maximim value provided. The default is 15. </p>
      */
     inline ComputeResponse& WithSimulationUnitLimit(int value) { SetSimulationUnitLimit(value); return *this;}
 

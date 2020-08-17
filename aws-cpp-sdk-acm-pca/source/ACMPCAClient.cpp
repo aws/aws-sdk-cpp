@@ -25,16 +25,19 @@
 #include <aws/acm-pca/model/CreatePermissionRequest.h>
 #include <aws/acm-pca/model/DeleteCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/DeletePermissionRequest.h>
+#include <aws/acm-pca/model/DeletePolicyRequest.h>
 #include <aws/acm-pca/model/DescribeCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/DescribeCertificateAuthorityAuditReportRequest.h>
 #include <aws/acm-pca/model/GetCertificateRequest.h>
 #include <aws/acm-pca/model/GetCertificateAuthorityCertificateRequest.h>
 #include <aws/acm-pca/model/GetCertificateAuthorityCsrRequest.h>
+#include <aws/acm-pca/model/GetPolicyRequest.h>
 #include <aws/acm-pca/model/ImportCertificateAuthorityCertificateRequest.h>
 #include <aws/acm-pca/model/IssueCertificateRequest.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesRequest.h>
 #include <aws/acm-pca/model/ListPermissionsRequest.h>
 #include <aws/acm-pca/model/ListTagsRequest.h>
+#include <aws/acm-pca/model/PutPolicyRequest.h>
 #include <aws/acm-pca/model/RestoreCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/RevokeCertificateRequest.h>
 #include <aws/acm-pca/model/TagCertificateAuthorityRequest.h>
@@ -249,6 +252,33 @@ void ACMPCAClient::DeletePermissionAsyncHelper(const DeletePermissionRequest& re
   handler(this, request, DeletePermission(request), context);
 }
 
+DeletePolicyOutcome ACMPCAClient::DeletePolicy(const DeletePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePolicyOutcomeCallable ACMPCAClient::DeletePolicyCallable(const DeletePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePolicy(request), context);
+}
+
 DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -384,6 +414,33 @@ void ACMPCAClient::GetCertificateAuthorityCsrAsyncHelper(const GetCertificateAut
   handler(this, request, GetCertificateAuthorityCsr(request), context);
 }
 
+GetPolicyOutcome ACMPCAClient::GetPolicy(const GetPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPolicyOutcomeCallable ACMPCAClient::GetPolicyCallable(const GetPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPolicy(request), context);
+}
+
 ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuthorityCertificate(const ImportCertificateAuthorityCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -517,6 +574,33 @@ void ACMPCAClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsR
 void ACMPCAClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTags(request), context);
+}
+
+PutPolicyOutcome ACMPCAClient::PutPolicy(const PutPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPolicyOutcomeCallable ACMPCAClient::PutPolicyCallable(const PutPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::PutPolicyAsyncHelper(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPolicy(request), context);
 }
 
 RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(const RestoreCertificateAuthorityRequest& request) const

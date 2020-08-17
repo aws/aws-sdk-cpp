@@ -31,7 +31,13 @@ namespace Model
 {
 
   /**
-   * <p>Information about a condition for a rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a condition for a rule.</p> <p>Each rule can optionally
+   * include up to one of each of the following conditions:
+   * <code>http-request-method</code>, <code>host-header</code>,
+   * <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also
+   * optionally include one or more of each of the following conditions:
+   * <code>http-header</code> and <code>query-string</code>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition">AWS
    * API Reference</a></p>
    */
@@ -128,19 +134,20 @@ namespace Model
 
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -149,19 +156,20 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -170,19 +178,20 @@ namespace Model
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -191,19 +200,20 @@ namespace Model
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -212,19 +222,20 @@ namespace Model
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -233,19 +244,20 @@ namespace Model
     inline RuleCondition& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -254,19 +266,20 @@ namespace Model
     inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -275,19 +288,20 @@ namespace Model
     inline RuleCondition& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
@@ -296,19 +310,20 @@ namespace Model
     inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The condition value. You can use <code>Values</code> if the rule contains
-     * only <code>host-header</code> and <code>path-pattern</code> conditions.
-     * Otherwise, you can use <code>HostHeaderConfig</code> for
-     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for
-     * <code>path-pattern</code> conditions.</p> <p>If <code>Field</code> is
-     * <code>host-header</code>, you can specify a single host name (for example,
-     * my.example.com). A host name is case insensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If <code>Field</code> is <code>path-pattern</code>, you can specify a single
-     * path pattern (for example, /img/ *). A path pattern is case-sensitive, can be up
-     * to 128 characters in length, and can contain any of the following
+     * <p>The condition value. Specify only when <code>Field</code> is
+     * <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify
+     * multiple host names or multiple path patterns, use <code>HostHeaderConfig</code>
+     * or <code>PathPatternConfig</code>.</p> <p>If <code>Field</code> is
+     * <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+     * you can specify a single host name (for example, my.example.com) in
+     * <code>Values</code>. A host name is case insensitive, can be up to 128
+     * characters in length, and can contain any of the following characters.</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If <code>Field</code> is <code>path-pattern</code> and you are not
+     * using <code>PathPatternConfig</code>, you can specify a single path pattern (for
+     * example, /img/ *) in <code>Values</code>. A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
      * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
      * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>

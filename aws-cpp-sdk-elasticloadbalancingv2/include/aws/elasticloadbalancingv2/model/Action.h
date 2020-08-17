@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about an action.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an action.</p> <p>Each rule must include exactly one of the
+   * following types of actions: <code>forward</code>, <code>fixed-response</code>,
+   * or <code>redirect</code>, and it must be the last action to be
+   * performed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Action">AWS
    * API Reference</a></p>
    */
@@ -223,33 +226,25 @@ namespace Model
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The last
-     * action to be performed must be one of the following types of actions: a
-     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
+     * actions. The action with the lowest value for order is performed first.</p>
      */
     inline int GetOrder() const{ return m_order; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The last
-     * action to be performed must be one of the following types of actions: a
-     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
+     * actions. The action with the lowest value for order is performed first.</p>
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The last
-     * action to be performed must be one of the following types of actions: a
-     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
+     * actions. The action with the lowest value for order is performed first.</p>
      */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The last
-     * action to be performed must be one of the following types of actions: a
-     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
+     * actions. The action with the lowest value for order is performed first.</p>
      */
     inline Action& WithOrder(int value) { SetOrder(value); return *this;}
 

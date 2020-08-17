@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of QuickSight parameters and the list's override values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Parameters">AWS
    * API Reference</a></p>
    */
@@ -165,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline const Aws::Vector<DateTimeParameter>& GetDateTimeParameters() const{ return m_dateTimeParameters; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline bool DateTimeParametersHasBeenSet() const { return m_dateTimeParametersHasBeenSet; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline void SetDateTimeParameters(const Aws::Vector<DateTimeParameter>& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters = value; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline void SetDateTimeParameters(Aws::Vector<DateTimeParameter>&& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters = std::move(value); }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline Parameters& WithDateTimeParameters(const Aws::Vector<DateTimeParameter>& value) { SetDateTimeParameters(value); return *this;}
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline Parameters& WithDateTimeParameters(Aws::Vector<DateTimeParameter>&& value) { SetDateTimeParameters(std::move(value)); return *this;}
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline Parameters& AddDateTimeParameters(const DateTimeParameter& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters.push_back(value); return *this; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>Date-time parameters.</p>
      */
     inline Parameters& AddDateTimeParameters(DateTimeParameter&& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters.push_back(std::move(value)); return *this; }
 

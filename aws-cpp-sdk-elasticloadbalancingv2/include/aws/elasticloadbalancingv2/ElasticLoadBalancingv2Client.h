@@ -543,10 +543,11 @@ namespace Model
 
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
-         * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the conditions for a rule are
-         * met, its actions are performed. If the conditions for no rules are met, the
-         * actions for the default rule are performed. For more information, see <a
+         * with an Application Load Balancer.</p> <p>Each rule consists of a priority, one
+         * or more actions, and one or more conditions. Rules are evaluated in priority
+         * order, from the lowest value to the highest value. When the conditions for a
+         * rule are met, its actions are performed. If the conditions for no rules are met,
+         * the actions for the default rule are performed. For more information, see <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -560,10 +561,11 @@ namespace Model
 
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
-         * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the conditions for a rule are
-         * met, its actions are performed. If the conditions for no rules are met, the
-         * actions for the default rule are performed. For more information, see <a
+         * with an Application Load Balancer.</p> <p>Each rule consists of a priority, one
+         * or more actions, and one or more conditions. Rules are evaluated in priority
+         * order, from the lowest value to the highest value. When the conditions for a
+         * rule are met, its actions are performed. If the conditions for no rules are met,
+         * the actions for the default rule are performed. For more information, see <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -579,10 +581,11 @@ namespace Model
 
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
-         * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the conditions for a rule are
-         * met, its actions are performed. If the conditions for no rules are met, the
-         * actions for the default rule are performed. For more information, see <a
+         * with an Application Load Balancer.</p> <p>Each rule consists of a priority, one
+         * or more actions, and one or more conditions. Rules are evaluated in priority
+         * order, from the lowest value to the highest value. When the conditions for a
+         * rule are met, its actions are performed. If the conditions for no rules are met,
+         * the actions for the default rule are performed. For more information, see <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -738,14 +741,16 @@ namespace Model
         virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified rule.</p> <p>You can't delete the default
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified rule.</p> <p>You can't delete the default
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -754,7 +759,8 @@ namespace Model
         virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified rule.</p> <p>You can't delete the default
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
          * API Reference</a></p>
          *

@@ -8,6 +8,7 @@
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kinesis/model/ShardFilter.h>
 #include <utility>
 
 namespace Aws
@@ -353,7 +354,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -363,7 +364,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -373,7 +374,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -383,7 +384,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -451,6 +452,25 @@ namespace Model
      */
     inline ListShardsRequest& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
 
+
+    
+    inline const ShardFilter& GetShardFilter() const{ return m_shardFilter; }
+
+    
+    inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
+
+    
+    inline void SetShardFilter(const ShardFilter& value) { m_shardFilterHasBeenSet = true; m_shardFilter = value; }
+
+    
+    inline void SetShardFilter(ShardFilter&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::move(value); }
+
+    
+    inline ListShardsRequest& WithShardFilter(const ShardFilter& value) { SetShardFilter(value); return *this;}
+
+    
+    inline ListShardsRequest& WithShardFilter(ShardFilter&& value) { SetShardFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -467,6 +487,9 @@ namespace Model
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
     bool m_streamCreationTimestampHasBeenSet;
+
+    ShardFilter m_shardFilter;
+    bool m_shardFilterHasBeenSet;
   };
 
 } // namespace Model

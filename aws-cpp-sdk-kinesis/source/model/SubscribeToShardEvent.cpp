@@ -22,7 +22,8 @@ SubscribeToShardEvent::SubscribeToShardEvent() :
     m_recordsHasBeenSet(false),
     m_continuationSequenceNumberHasBeenSet(false),
     m_millisBehindLatest(0),
-    m_millisBehindLatestHasBeenSet(false)
+    m_millisBehindLatestHasBeenSet(false),
+    m_childShardsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue) :
     m_recordsHasBeenSet(false),
     m_continuationSequenceNumberHasBeenSet(false),
     m_millisBehindLatest(0),
-    m_millisBehindLatestHasBeenSet(false)
+    m_millisBehindLatestHasBeenSet(false),
+    m_childShardsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
     m_millisBehindLatestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChildShards"))
+  {
+    Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
+    for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
+    {
+      m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
+    }
+    m_childShardsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +100,17 @@ JsonValue SubscribeToShardEvent::Jsonize() const
   if(m_millisBehindLatestHasBeenSet)
   {
    payload.WithInt64("MillisBehindLatest", m_millisBehindLatest);
+
+  }
+
+  if(m_childShardsHasBeenSet)
+  {
+   Array<JsonValue> childShardsJsonList(m_childShards.size());
+   for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
+   {
+     childShardsJsonList[childShardsIndex].AsObject(m_childShards[childShardsIndex].Jsonize());
+   }
+   payload.WithArray("ChildShards", std::move(childShardsJsonList));
 
   }
 

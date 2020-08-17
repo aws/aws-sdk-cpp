@@ -21,14 +21,16 @@ namespace Model
 SimulationApplicationConfig::SimulationApplicationConfig() : 
     m_applicationHasBeenSet(false),
     m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
+    m_launchConfigHasBeenSet(false),
+    m_worldConfigsHasBeenSet(false)
 {
 }
 
 SimulationApplicationConfig::SimulationApplicationConfig(JsonView jsonValue) : 
     m_applicationHasBeenSet(false),
     m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
+    m_launchConfigHasBeenSet(false),
+    m_worldConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,16 @@ SimulationApplicationConfig& SimulationApplicationConfig::operator =(JsonView js
     m_launchConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("worldConfigs"))
+  {
+    Array<JsonView> worldConfigsJsonList = jsonValue.GetArray("worldConfigs");
+    for(unsigned worldConfigsIndex = 0; worldConfigsIndex < worldConfigsJsonList.GetLength(); ++worldConfigsIndex)
+    {
+      m_worldConfigs.push_back(worldConfigsJsonList[worldConfigsIndex].AsObject());
+    }
+    m_worldConfigsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +90,17 @@ JsonValue SimulationApplicationConfig::Jsonize() const
   if(m_launchConfigHasBeenSet)
   {
    payload.WithObject("launchConfig", m_launchConfig.Jsonize());
+
+  }
+
+  if(m_worldConfigsHasBeenSet)
+  {
+   Array<JsonValue> worldConfigsJsonList(m_worldConfigs.size());
+   for(unsigned worldConfigsIndex = 0; worldConfigsIndex < worldConfigsJsonList.GetLength(); ++worldConfigsIndex)
+   {
+     worldConfigsJsonList[worldConfigsIndex].AsObject(m_worldConfigs[worldConfigsIndex].Jsonize());
+   }
+   payload.WithArray("worldConfigs", std::move(worldConfigsJsonList));
 
   }
 

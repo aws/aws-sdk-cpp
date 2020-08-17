@@ -62,8 +62,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -108,8 +108,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -154,8 +154,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -200,8 +200,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -246,8 +246,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -292,8 +292,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -338,8 +338,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -384,8 +384,8 @@ namespace Model
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     * disabled by default.</p> </li> <li> <p>
+     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is

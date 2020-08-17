@@ -27,6 +27,7 @@ static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("Concur
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int CERTIFICATE_MISMATCH_HASH = HashingUtils::HashString("CertificateMismatchException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
+static const int LOCKOUT_PREVENTED_HASH = HashingUtils::HashString("LockoutPreventedException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificateException");
@@ -76,6 +77,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::INVALID_STATE), false);
+  }
+  else if (hashCode == LOCKOUT_PREVENTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::LOCKOUT_PREVENTED), false);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {

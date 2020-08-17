@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A resource is already in a state that indicates an action is happening that
-   * must complete before a new update can be applied.</p><p><h3>See Also:</h3>   <a
+   * <p>A resource is already in a state that indicates an operation is happening
+   * that must complete before a new update can be applied.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ConcurrentUpdatingException">AWS
    * API Reference</a></p>
    */

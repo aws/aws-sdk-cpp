@@ -21,7 +21,8 @@ namespace Model
     CREATION_FAILED,
     UPDATE_IN_PROGRESS,
     UPDATE_SUCCESSFUL,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    DELETED
   };
 
 namespace ResourceStatusMapper

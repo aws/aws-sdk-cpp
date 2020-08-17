@@ -20,10 +20,13 @@
 #include <aws/robomaker/RoboMakerClient.h>
 #include <aws/robomaker/RoboMakerEndpoint.h>
 #include <aws/robomaker/RoboMakerErrorMarshaller.h>
+#include <aws/robomaker/model/BatchDeleteWorldsRequest.h>
 #include <aws/robomaker/model/BatchDescribeSimulationJobRequest.h>
 #include <aws/robomaker/model/CancelDeploymentJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobBatchRequest.h>
+#include <aws/robomaker/model/CancelWorldExportJobRequest.h>
+#include <aws/robomaker/model/CancelWorldGenerationJobRequest.h>
 #include <aws/robomaker/model/CreateDeploymentJobRequest.h>
 #include <aws/robomaker/model/CreateFleetRequest.h>
 #include <aws/robomaker/model/CreateRobotRequest.h>
@@ -32,10 +35,14 @@
 #include <aws/robomaker/model/CreateSimulationApplicationRequest.h>
 #include <aws/robomaker/model/CreateSimulationApplicationVersionRequest.h>
 #include <aws/robomaker/model/CreateSimulationJobRequest.h>
+#include <aws/robomaker/model/CreateWorldExportJobRequest.h>
+#include <aws/robomaker/model/CreateWorldGenerationJobRequest.h>
+#include <aws/robomaker/model/CreateWorldTemplateRequest.h>
 #include <aws/robomaker/model/DeleteFleetRequest.h>
 #include <aws/robomaker/model/DeleteRobotRequest.h>
 #include <aws/robomaker/model/DeleteRobotApplicationRequest.h>
 #include <aws/robomaker/model/DeleteSimulationApplicationRequest.h>
+#include <aws/robomaker/model/DeleteWorldTemplateRequest.h>
 #include <aws/robomaker/model/DeregisterRobotRequest.h>
 #include <aws/robomaker/model/DescribeDeploymentJobRequest.h>
 #include <aws/robomaker/model/DescribeFleetRequest.h>
@@ -44,6 +51,11 @@
 #include <aws/robomaker/model/DescribeSimulationApplicationRequest.h>
 #include <aws/robomaker/model/DescribeSimulationJobRequest.h>
 #include <aws/robomaker/model/DescribeSimulationJobBatchRequest.h>
+#include <aws/robomaker/model/DescribeWorldRequest.h>
+#include <aws/robomaker/model/DescribeWorldExportJobRequest.h>
+#include <aws/robomaker/model/DescribeWorldGenerationJobRequest.h>
+#include <aws/robomaker/model/DescribeWorldTemplateRequest.h>
+#include <aws/robomaker/model/GetWorldTemplateBodyRequest.h>
 #include <aws/robomaker/model/ListDeploymentJobsRequest.h>
 #include <aws/robomaker/model/ListFleetsRequest.h>
 #include <aws/robomaker/model/ListRobotApplicationsRequest.h>
@@ -52,6 +64,10 @@
 #include <aws/robomaker/model/ListSimulationJobBatchesRequest.h>
 #include <aws/robomaker/model/ListSimulationJobsRequest.h>
 #include <aws/robomaker/model/ListTagsForResourceRequest.h>
+#include <aws/robomaker/model/ListWorldExportJobsRequest.h>
+#include <aws/robomaker/model/ListWorldGenerationJobsRequest.h>
+#include <aws/robomaker/model/ListWorldTemplatesRequest.h>
+#include <aws/robomaker/model/ListWorldsRequest.h>
 #include <aws/robomaker/model/RegisterRobotRequest.h>
 #include <aws/robomaker/model/RestartSimulationJobRequest.h>
 #include <aws/robomaker/model/StartSimulationJobBatchRequest.h>
@@ -60,6 +76,7 @@
 #include <aws/robomaker/model/UntagResourceRequest.h>
 #include <aws/robomaker/model/UpdateRobotApplicationRequest.h>
 #include <aws/robomaker/model/UpdateSimulationApplicationRequest.h>
+#include <aws/robomaker/model/UpdateWorldTemplateRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -132,6 +149,33 @@ void RoboMakerClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchDeleteWorldsOutcome RoboMakerClient::BatchDeleteWorlds(const BatchDeleteWorldsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/batchDeleteWorlds";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchDeleteWorldsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteWorldsOutcomeCallable RoboMakerClient::BatchDeleteWorldsCallable(const BatchDeleteWorldsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteWorldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteWorlds(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::BatchDeleteWorldsAsync(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteWorldsAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::BatchDeleteWorldsAsyncHelper(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteWorlds(request), context);
 }
 
 BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(const BatchDescribeSimulationJobRequest& request) const
@@ -240,6 +284,60 @@ void RoboMakerClient::CancelSimulationJobBatchAsync(const CancelSimulationJobBat
 void RoboMakerClient::CancelSimulationJobBatchAsyncHelper(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelSimulationJobBatch(request), context);
+}
+
+CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWorldExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cancelWorldExportJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelWorldExportJobOutcomeCallable RoboMakerClient::CancelWorldExportJobCallable(const CancelWorldExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelWorldExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CancelWorldExportJobAsync(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelWorldExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CancelWorldExportJobAsyncHelper(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelWorldExportJob(request), context);
+}
+
+CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const CancelWorldGenerationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cancelWorldGenerationJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelWorldGenerationJobOutcomeCallable RoboMakerClient::CancelWorldGenerationJobCallable(const CancelWorldGenerationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelWorldGenerationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CancelWorldGenerationJobAsync(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelWorldGenerationJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CancelWorldGenerationJobAsyncHelper(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelWorldGenerationJob(request), context);
 }
 
 CreateDeploymentJobOutcome RoboMakerClient::CreateDeploymentJob(const CreateDeploymentJobRequest& request) const
@@ -458,6 +556,87 @@ void RoboMakerClient::CreateSimulationJobAsyncHelper(const CreateSimulationJobRe
   handler(this, request, CreateSimulationJob(request), context);
 }
 
+CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWorldExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/createWorldExportJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorldExportJobOutcomeCallable RoboMakerClient::CreateWorldExportJobCallable(const CreateWorldExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CreateWorldExportJobAsync(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CreateWorldExportJobAsyncHelper(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorldExportJob(request), context);
+}
+
+CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const CreateWorldGenerationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/createWorldGenerationJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorldGenerationJobOutcomeCallable RoboMakerClient::CreateWorldGenerationJobCallable(const CreateWorldGenerationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldGenerationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CreateWorldGenerationJobAsync(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldGenerationJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CreateWorldGenerationJobAsyncHelper(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorldGenerationJob(request), context);
+}
+
+CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorldTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/createWorldTemplate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorldTemplateOutcomeCallable RoboMakerClient::CreateWorldTemplateCallable(const CreateWorldTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CreateWorldTemplateAsync(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorldTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CreateWorldTemplateAsyncHelper(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorldTemplate(request), context);
+}
+
 DeleteFleetOutcome RoboMakerClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -564,6 +743,33 @@ void RoboMakerClient::DeleteSimulationApplicationAsync(const DeleteSimulationApp
 void RoboMakerClient::DeleteSimulationApplicationAsyncHelper(const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSimulationApplication(request), context);
+}
+
+DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorldTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/deleteWorldTemplate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWorldTemplateOutcomeCallable RoboMakerClient::DeleteWorldTemplateCallable(const DeleteWorldTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorldTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DeleteWorldTemplateAsync(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorldTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DeleteWorldTemplateAsyncHelper(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWorldTemplate(request), context);
 }
 
 DeregisterRobotOutcome RoboMakerClient::DeregisterRobot(const DeregisterRobotRequest& request) const
@@ -780,6 +986,141 @@ void RoboMakerClient::DescribeSimulationJobBatchAsync(const DescribeSimulationJo
 void RoboMakerClient::DescribeSimulationJobBatchAsyncHelper(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSimulationJobBatch(request), context);
+}
+
+DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeWorld";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWorldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorldOutcomeCallable RoboMakerClient::DescribeWorldCallable(const DescribeWorldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorld(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DescribeWorldAsync(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DescribeWorldAsyncHelper(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorld(request), context);
+}
+
+DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const DescribeWorldExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeWorldExportJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorldExportJobOutcomeCallable RoboMakerClient::DescribeWorldExportJobCallable(const DescribeWorldExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DescribeWorldExportJobAsync(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DescribeWorldExportJobAsyncHelper(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorldExportJob(request), context);
+}
+
+DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(const DescribeWorldGenerationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeWorldGenerationJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorldGenerationJobOutcomeCallable RoboMakerClient::DescribeWorldGenerationJobCallable(const DescribeWorldGenerationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldGenerationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DescribeWorldGenerationJobAsync(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldGenerationJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DescribeWorldGenerationJobAsyncHelper(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorldGenerationJob(request), context);
+}
+
+DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const DescribeWorldTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeWorldTemplate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorldTemplateOutcomeCallable RoboMakerClient::DescribeWorldTemplateCallable(const DescribeWorldTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DescribeWorldTemplateAsync(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorldTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DescribeWorldTemplateAsyncHelper(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorldTemplate(request), context);
+}
+
+GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorldTemplateBodyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/getWorldTemplateBody";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetWorldTemplateBodyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetWorldTemplateBodyOutcomeCallable RoboMakerClient::GetWorldTemplateBodyCallable(const GetWorldTemplateBodyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWorldTemplateBodyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorldTemplateBody(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::GetWorldTemplateBodyAsync(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWorldTemplateBodyAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::GetWorldTemplateBodyAsyncHelper(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWorldTemplateBody(request), context);
 }
 
 ListDeploymentJobsOutcome RoboMakerClient::ListDeploymentJobs(const ListDeploymentJobsRequest& request) const
@@ -1002,6 +1343,114 @@ void RoboMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest&
 void RoboMakerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldExportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listWorldExportJobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListWorldExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorldExportJobsOutcomeCallable RoboMakerClient::ListWorldExportJobsCallable(const ListWorldExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorldExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::ListWorldExportJobsAsync(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorldExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::ListWorldExportJobsAsyncHelper(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorldExportJobs(request), context);
+}
+
+ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const ListWorldGenerationJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listWorldGenerationJobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListWorldGenerationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorldGenerationJobsOutcomeCallable RoboMakerClient::ListWorldGenerationJobsCallable(const ListWorldGenerationJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorldGenerationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldGenerationJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::ListWorldGenerationJobsAsync(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorldGenerationJobsAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::ListWorldGenerationJobsAsyncHelper(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorldGenerationJobs(request), context);
+}
+
+ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listWorldTemplates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListWorldTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorldTemplatesOutcomeCallable RoboMakerClient::ListWorldTemplatesCallable(const ListWorldTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorldTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::ListWorldTemplatesAsync(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorldTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::ListWorldTemplatesAsyncHelper(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorldTemplates(request), context);
+}
+
+ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listWorlds";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListWorldsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorldsOutcomeCallable RoboMakerClient::ListWorldsCallable(const ListWorldsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorlds(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::ListWorldsAsync(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorldsAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::ListWorldsAsyncHelper(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorlds(request), context);
 }
 
 RegisterRobotOutcome RoboMakerClient::RegisterRobot(const RegisterRobotRequest& request) const
@@ -1235,5 +1684,32 @@ void RoboMakerClient::UpdateSimulationApplicationAsync(const UpdateSimulationApp
 void RoboMakerClient::UpdateSimulationApplicationAsyncHelper(const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSimulationApplication(request), context);
+}
+
+UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorldTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/updateWorldTemplate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateWorldTemplateOutcomeCallable RoboMakerClient::UpdateWorldTemplateCallable(const UpdateWorldTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorldTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::UpdateWorldTemplateAsync(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorldTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::UpdateWorldTemplateAsyncHelper(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWorldTemplate(request), context);
 }
 

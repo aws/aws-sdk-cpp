@@ -89,73 +89,73 @@ namespace Model
 
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're updating.</p>
+     * <p>The namespace that you want to update QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = value; }
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The customizations you want to update in QuickSight.</p>
+     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

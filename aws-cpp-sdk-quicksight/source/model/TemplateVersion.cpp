@@ -27,7 +27,8 @@ TemplateVersion::TemplateVersion() :
     m_statusHasBeenSet(false),
     m_dataSetConfigurationsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false)
+    m_sourceEntityArnHasBeenSet(false),
+    m_themeArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TemplateVersion::TemplateVersion(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_dataSetConfigurationsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false)
+    m_sourceEntityArnHasBeenSet(false),
+    m_themeArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +104,13 @@ TemplateVersion& TemplateVersion::operator =(JsonView jsonValue)
     m_sourceEntityArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThemeArn"))
+  {
+    m_themeArn = jsonValue.GetString("ThemeArn");
+
+    m_themeArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +165,12 @@ JsonValue TemplateVersion::Jsonize() const
   if(m_sourceEntityArnHasBeenSet)
   {
    payload.WithString("SourceEntityArn", m_sourceEntityArn);
+
+  }
+
+  if(m_themeArnHasBeenSet)
+  {
+   payload.WithString("ThemeArn", m_themeArn);
 
   }
 

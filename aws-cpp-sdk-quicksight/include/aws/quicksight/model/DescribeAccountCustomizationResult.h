@@ -34,106 +34,99 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline DescribeAccountCustomizationResult& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline DescribeAccountCustomizationResult& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that you want to describe QuickSight
-     * customizations for.</p>
+     * <p>The ID for the AWS account that you're describing.</p>
      */
     inline DescribeAccountCustomizationResult& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline void SetNamespace(const char* value) { m_namespace.assign(value); }
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline DescribeAccountCustomizationResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline DescribeAccountCustomizationResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace associated with the customization that you're describing.</p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline DescribeAccountCustomizationResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
-     * <p>The customizations associated with QuickSight.</p>
+     * <p>The QuickSight customizations that exist in the current AWS Region. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The customizations associated with QuickSight.</p>
+     * <p>The QuickSight customizations that exist in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomization = value; }
 
     /**
-     * <p>The customizations associated with QuickSight.</p>
+     * <p>The QuickSight customizations that exist in the current AWS Region. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The customizations associated with QuickSight.</p>
+     * <p>The QuickSight customizations that exist in the current AWS Region. </p>
      */
     inline DescribeAccountCustomizationResult& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The customizations associated with QuickSight.</p>
+     * <p>The QuickSight customizations that exist in the current AWS Region. </p>
      */
     inline DescribeAccountCustomizationResult& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

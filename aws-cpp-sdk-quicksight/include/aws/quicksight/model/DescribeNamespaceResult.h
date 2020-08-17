@@ -37,8 +37,8 @@ namespace Model
      * <p>The information about the namespace that you're describing. The response
      * includes the namespace ARN, name, AWS Region, creation status, and identity
      * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API lists the
-     * namespace error types and messages associated with the creation process.</p>
+     * process of being created. For incomplete namespaces, this API operation lists
+     * the namespace error types and messages associated with the creation process.</p>
      */
     inline const NamespaceInfoV2& GetNamespace() const{ return m_namespace; }
 
@@ -46,8 +46,8 @@ namespace Model
      * <p>The information about the namespace that you're describing. The response
      * includes the namespace ARN, name, AWS Region, creation status, and identity
      * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API lists the
-     * namespace error types and messages associated with the creation process.</p>
+     * process of being created. For incomplete namespaces, this API operation lists
+     * the namespace error types and messages associated with the creation process.</p>
      */
     inline void SetNamespace(const NamespaceInfoV2& value) { m_namespace = value; }
 
@@ -55,8 +55,8 @@ namespace Model
      * <p>The information about the namespace that you're describing. The response
      * includes the namespace ARN, name, AWS Region, creation status, and identity
      * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API lists the
-     * namespace error types and messages associated with the creation process.</p>
+     * process of being created. For incomplete namespaces, this API operation lists
+     * the namespace error types and messages associated with the creation process.</p>
      */
     inline void SetNamespace(NamespaceInfoV2&& value) { m_namespace = std::move(value); }
 
@@ -64,8 +64,8 @@ namespace Model
      * <p>The information about the namespace that you're describing. The response
      * includes the namespace ARN, name, AWS Region, creation status, and identity
      * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API lists the
-     * namespace error types and messages associated with the creation process.</p>
+     * process of being created. For incomplete namespaces, this API operation lists
+     * the namespace error types and messages associated with the creation process.</p>
      */
     inline DescribeNamespaceResult& WithNamespace(const NamespaceInfoV2& value) { SetNamespace(value); return *this;}
 
@@ -73,8 +73,8 @@ namespace Model
      * <p>The information about the namespace that you're describing. The response
      * includes the namespace ARN, name, AWS Region, creation status, and identity
      * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API lists the
-     * namespace error types and messages associated with the creation process.</p>
+     * process of being created. For incomplete namespaces, this API operation lists
+     * the namespace error types and messages associated with the creation process.</p>
      */
     inline DescribeNamespaceResult& WithNamespace(NamespaceInfoV2&& value) { SetNamespace(std::move(value)); return *this;}
 

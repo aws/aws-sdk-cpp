@@ -81,74 +81,74 @@ namespace Model
 
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline CreateRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline CreateRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
-     * <p>The conditions. Each rule can include zero or one of the following
-     * conditions: <code>http-request-method</code>, <code>host-header</code>,
-     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and
-     * <code>query-string</code>.</p>
+     * <p>The conditions. Each rule can optionally include up to one of each of the
+     * following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>.
+     * Each rule can also optionally include one or more of each of the following
+     * conditions: <code>http-header</code> and <code>query-string</code>.</p>
      */
     inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 

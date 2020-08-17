@@ -199,42 +199,42 @@ namespace Model
 
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline Image& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline Image& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
 
     /**
-     * <p>The media type associated with the image manifest.</p>
+     * <p>The manifest media type of the image.</p>
      */
     inline Image& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
 

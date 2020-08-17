@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 ListCertificateAuthoritiesRequest::ListCertificateAuthoritiesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_resourceOwner(ResourceOwner::NOT_SET),
+    m_resourceOwnerHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,11 @@ Aws::String ListCertificateAuthoritiesRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("ResourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
   }
 
   return payload.View().WriteReadable();

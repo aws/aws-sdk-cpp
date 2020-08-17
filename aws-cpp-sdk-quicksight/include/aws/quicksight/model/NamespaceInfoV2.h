@@ -226,32 +226,32 @@ namespace Model
 
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline const NamespaceError& GetNamespaceError() const{ return m_namespaceError; }
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline bool NamespaceErrorHasBeenSet() const { return m_namespaceErrorHasBeenSet; }
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline void SetNamespaceError(const NamespaceError& value) { m_namespaceErrorHasBeenSet = true; m_namespaceError = value; }
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline void SetNamespaceError(NamespaceError&& value) { m_namespaceErrorHasBeenSet = true; m_namespaceError = std::move(value); }
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline NamespaceInfoV2& WithNamespaceError(const NamespaceError& value) { SetNamespaceError(value); return *this;}
 
     /**
-     * <p>An error that occured when the namespace was created.</p>
+     * <p>An error that occurred when the namespace was created.</p>
      */
     inline NamespaceInfoV2& WithNamespaceError(NamespaceError&& value) { SetNamespaceError(std::move(value)); return *this;}
 

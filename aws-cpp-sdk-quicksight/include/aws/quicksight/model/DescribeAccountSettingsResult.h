@@ -34,52 +34,62 @@ namespace Model
 
 
     /**
-     * <p>The settings associated with the QuickSight subscription associated with this
-     * AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the
-     * QuickSight subscription. The QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it is technically
-     * not an account, but a subscription in your AWS account.</p>
+     * <p>The QuickSight settings for this AWS account. This information includes the
+     * edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+     * the notification email for the QuickSight subscription. The QuickSight console,
+     * the QuickSight subscription is sometimes referred to as a QuickSight "account"
+     * even though it's technically not an account by itself. Instead, it's a
+     * subscription to the QuickSight service for your AWS account. The edition that
+     * you subscribe to applies to QuickSight in every AWS Region where you use it.
+     * </p>
      */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
 
     /**
-     * <p>The settings associated with the QuickSight subscription associated with this
-     * AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the
-     * QuickSight subscription. The QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it is technically
-     * not an account, but a subscription in your AWS account.</p>
+     * <p>The QuickSight settings for this AWS account. This information includes the
+     * edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+     * the notification email for the QuickSight subscription. The QuickSight console,
+     * the QuickSight subscription is sometimes referred to as a QuickSight "account"
+     * even though it's technically not an account by itself. Instead, it's a
+     * subscription to the QuickSight service for your AWS account. The edition that
+     * you subscribe to applies to QuickSight in every AWS Region where you use it.
+     * </p>
      */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
 
     /**
-     * <p>The settings associated with the QuickSight subscription associated with this
-     * AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the
-     * QuickSight subscription. The QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it is technically
-     * not an account, but a subscription in your AWS account.</p>
+     * <p>The QuickSight settings for this AWS account. This information includes the
+     * edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+     * the notification email for the QuickSight subscription. The QuickSight console,
+     * the QuickSight subscription is sometimes referred to as a QuickSight "account"
+     * even though it's technically not an account by itself. Instead, it's a
+     * subscription to the QuickSight service for your AWS account. The edition that
+     * you subscribe to applies to QuickSight in every AWS Region where you use it.
+     * </p>
      */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
 
     /**
-     * <p>The settings associated with the QuickSight subscription associated with this
-     * AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the
-     * QuickSight subscription. The QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it is technically
-     * not an account, but a subscription in your AWS account.</p>
+     * <p>The QuickSight settings for this AWS account. This information includes the
+     * edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+     * the notification email for the QuickSight subscription. The QuickSight console,
+     * the QuickSight subscription is sometimes referred to as a QuickSight "account"
+     * even though it's technically not an account by itself. Instead, it's a
+     * subscription to the QuickSight service for your AWS account. The edition that
+     * you subscribe to applies to QuickSight in every AWS Region where you use it.
+     * </p>
      */
     inline DescribeAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
 
     /**
-     * <p>The settings associated with the QuickSight subscription associated with this
-     * AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the
-     * QuickSight subscription. The QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it is technically
-     * not an account, but a subscription in your AWS account.</p>
+     * <p>The QuickSight settings for this AWS account. This information includes the
+     * edition of Amazon QuickSight that you subscribed to (Standard or Enterprise) and
+     * the notification email for the QuickSight subscription. The QuickSight console,
+     * the QuickSight subscription is sometimes referred to as a QuickSight "account"
+     * even though it's technically not an account by itself. Instead, it's a
+     * subscription to the QuickSight service for your AWS account. The edition that
+     * you subscribe to applies to QuickSight in every AWS Region where you use it.
+     * </p>
      */
     inline DescribeAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
 

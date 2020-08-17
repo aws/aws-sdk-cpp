@@ -76,74 +76,82 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListRobotApplications</code> request where <code>maxResults</code> was
-     * used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListRobotApplications</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

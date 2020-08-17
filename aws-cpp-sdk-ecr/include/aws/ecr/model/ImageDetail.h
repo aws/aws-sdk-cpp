@@ -362,6 +362,88 @@ namespace Model
      */
     inline ImageDetail& WithImageScanFindingsSummary(ImageScanFindingsSummary&& value) { SetImageScanFindingsSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline const Aws::String& GetArtifactMediaType() const{ return m_artifactMediaType; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline bool ArtifactMediaTypeHasBeenSet() const { return m_artifactMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(const Aws::String& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = value; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(Aws::String&& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = std::move(value); }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(const char* value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType.assign(value); }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(const Aws::String& value) { SetArtifactMediaType(value); return *this;}
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(Aws::String&& value) { SetArtifactMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(const char* value) { SetArtifactMediaType(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -387,6 +469,12 @@ namespace Model
 
     ImageScanFindingsSummary m_imageScanFindingsSummary;
     bool m_imageScanFindingsSummaryHasBeenSet;
+
+    Aws::String m_imageManifestMediaType;
+    bool m_imageManifestMediaTypeHasBeenSet;
+
+    Aws::String m_artifactMediaType;
+    bool m_artifactMediaTypeHasBeenSet;
   };
 
 } // namespace Model

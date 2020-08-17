@@ -32,6 +32,13 @@ namespace Kinesis
 namespace Model
 {
 
+  /**
+   * <p>This is a tagged union for all of the types of events an enhanced fan-out
+   * consumer can receive over HTTP/2 after a call to
+   * <a>SubscribeToShard</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShardEventStream">AWS
+   * API Reference</a></p>
+   */
   class AWS_KINESIS_API SubscribeToShardEventStream
   {
   public:
@@ -41,22 +48,52 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline const SubscribeToShardEvent& GetSubscribeToShardEvent() const{ return m_subscribeToShardEvent; }
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline bool SubscribeToShardEventHasBeenSet() const { return m_subscribeToShardEventHasBeenSet; }
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline void SetSubscribeToShardEvent(const SubscribeToShardEvent& value) { m_subscribeToShardEventHasBeenSet = true; m_subscribeToShardEvent = value; }
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline void SetSubscribeToShardEvent(SubscribeToShardEvent&& value) { m_subscribeToShardEventHasBeenSet = true; m_subscribeToShardEvent = std::move(value); }
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline SubscribeToShardEventStream& WithSubscribeToShardEvent(const SubscribeToShardEvent& value) { SetSubscribeToShardEvent(value); return *this;}
 
-    
+    /**
+     * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of
+     * this type to your consumer. For an example of how to handle these events, see <a
+     * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+     * Using the Kinesis Data Streams API</a>.</p>
+     */
     inline SubscribeToShardEventStream& WithSubscribeToShardEvent(SubscribeToShardEvent&& value) { SetSubscribeToShardEvent(std::move(value)); return *this;}
 
 
@@ -212,22 +249,40 @@ namespace Model
     inline SubscribeToShardEventStream& WithKMSThrottlingException(KMSThrottlingException&& value) { SetKMSThrottlingException(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline const InternalFailureException& GetInternalFailureException() const{ return m_internalFailureException; }
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline void SetInternalFailureException(const InternalFailureException& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = value; }
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline void SetInternalFailureException(InternalFailureException&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::move(value); }
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline SubscribeToShardEventStream& WithInternalFailureException(const InternalFailureException& value) { SetInternalFailureException(value); return *this;}
 
-    
+    /**
+     * <p>The processing of the request failed because of an unknown error, exception,
+     * or failure.</p>
+     */
     inline SubscribeToShardEventStream& WithInternalFailureException(InternalFailureException&& value) { SetInternalFailureException(std::move(value)); return *this;}
 
   private:

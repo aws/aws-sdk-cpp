@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The user name.</p>
+     * <p>The user's user name.</p>
      */
     inline const User& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user name.</p>
+     * <p>The user's user name.</p>
      */
     inline void SetUser(const User& value) { m_user = value; }
 
     /**
-     * <p>The user name.</p>
+     * <p>The user's user name.</p>
      */
     inline void SetUser(User&& value) { m_user = std::move(value); }
 
     /**
-     * <p>The user name.</p>
+     * <p>The user's user name.</p>
      */
     inline RegisterUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user name.</p>
+     * <p>The user's user name.</p>
      */
     inline RegisterUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 

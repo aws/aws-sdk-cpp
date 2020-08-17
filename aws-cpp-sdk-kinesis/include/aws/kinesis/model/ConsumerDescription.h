@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the details of a registered consumer.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that represents the details of a registered consumer. This type of
+   * object is returned by <a>DescribeStreamConsumer</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ConsumerDescription">AWS
    * API Reference</a></p>
    */

@@ -33,49 +33,49 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline UpdateAccountSettingsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline UpdateAccountSettingsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that contains the QuickSight namespaces that you
+     * <p>The ID for the AWS account that contains the QuickSight settings that you
      * want to list.</p>
      */
     inline UpdateAccountSettingsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -139,50 +139,50 @@ namespace Model
 
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const{ return m_notificationEmail; }
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline void SetNotificationEmail(const Aws::String& value) { m_notificationEmailHasBeenSet = true; m_notificationEmail = value; }
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline void SetNotificationEmail(Aws::String&& value) { m_notificationEmailHasBeenSet = true; m_notificationEmail = std::move(value); }
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline void SetNotificationEmail(const char* value) { m_notificationEmailHasBeenSet = true; m_notificationEmail.assign(value); }
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline UpdateAccountSettingsRequest& WithNotificationEmail(const Aws::String& value) { SetNotificationEmail(value); return *this;}
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline UpdateAccountSettingsRequest& WithNotificationEmail(Aws::String&& value) { SetNotificationEmail(std::move(value)); return *this;}
 
     /**
-     * <p>Email address used to send notifications regarding administration of
-     * QuickSight.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your AWS account or QuickSight subscription.</p>
      */
     inline UpdateAccountSettingsRequest& WithNotificationEmail(const char* value) { SetNotificationEmail(value); return *this;}
 

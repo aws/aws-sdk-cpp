@@ -23,6 +23,7 @@ namespace Aws
         static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
         static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
 
 
         TemplateErrorType GetTemplateErrorTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == INTERNAL_FAILURE_HASH)
           {
             return TemplateErrorType::INTERNAL_FAILURE;
+          }
+          else if (hashCode == ACCESS_DENIED_HASH)
+          {
+            return TemplateErrorType::ACCESS_DENIED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "DATA_SET_NOT_FOUND";
           case TemplateErrorType::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
+          case TemplateErrorType::ACCESS_DENIED:
+            return "ACCESS_DENIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

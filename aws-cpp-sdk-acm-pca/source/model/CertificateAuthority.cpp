@@ -20,6 +20,7 @@ namespace Model
 
 CertificateAuthority::CertificateAuthority() : 
     m_arnHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastStateChangeAtHasBeenSet(false),
     m_type(CertificateAuthorityType::NOT_SET),
@@ -39,6 +40,7 @@ CertificateAuthority::CertificateAuthority() :
 
 CertificateAuthority::CertificateAuthority(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastStateChangeAtHasBeenSet(false),
     m_type(CertificateAuthorityType::NOT_SET),
@@ -64,6 +66,13 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnerAccount"))
+  {
+    m_ownerAccount = jsonValue.GetString("OwnerAccount");
+
+    m_ownerAccountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -153,6 +162,12 @@ JsonValue CertificateAuthority::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("OwnerAccount", m_ownerAccount);
 
   }
 

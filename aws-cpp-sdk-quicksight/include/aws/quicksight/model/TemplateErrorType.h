@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SOURCE_NOT_FOUND,
     DATA_SET_NOT_FOUND,
-    INTERNAL_FAILURE
+    INTERNAL_FAILURE,
+    ACCESS_DENIED
   };
 
 namespace TemplateErrorTypeMapper

@@ -154,7 +154,7 @@ namespace Model
      * A status of <code>CREATED</code> means that your namespace is ready to use. If
      * an error occurs, it indicates if the process is <code>retryable</code> or
      * <code>non-retryable</code>. In the case of a non-retryable error, refer to the
-     * error message for follow-up actions.</p>
+     * error message for follow-up tasks.</p>
      */
     inline const NamespaceStatus& GetCreationStatus() const{ return m_creationStatus; }
 
@@ -163,7 +163,7 @@ namespace Model
      * A status of <code>CREATED</code> means that your namespace is ready to use. If
      * an error occurs, it indicates if the process is <code>retryable</code> or
      * <code>non-retryable</code>. In the case of a non-retryable error, refer to the
-     * error message for follow-up actions.</p>
+     * error message for follow-up tasks.</p>
      */
     inline void SetCreationStatus(const NamespaceStatus& value) { m_creationStatus = value; }
 
@@ -172,7 +172,7 @@ namespace Model
      * A status of <code>CREATED</code> means that your namespace is ready to use. If
      * an error occurs, it indicates if the process is <code>retryable</code> or
      * <code>non-retryable</code>. In the case of a non-retryable error, refer to the
-     * error message for follow-up actions.</p>
+     * error message for follow-up tasks.</p>
      */
     inline void SetCreationStatus(NamespaceStatus&& value) { m_creationStatus = std::move(value); }
 
@@ -181,7 +181,7 @@ namespace Model
      * A status of <code>CREATED</code> means that your namespace is ready to use. If
      * an error occurs, it indicates if the process is <code>retryable</code> or
      * <code>non-retryable</code>. In the case of a non-retryable error, refer to the
-     * error message for follow-up actions.</p>
+     * error message for follow-up tasks.</p>
      */
     inline CreateNamespaceResult& WithCreationStatus(const NamespaceStatus& value) { SetCreationStatus(value); return *this;}
 
@@ -190,7 +190,7 @@ namespace Model
      * A status of <code>CREATED</code> means that your namespace is ready to use. If
      * an error occurs, it indicates if the process is <code>retryable</code> or
      * <code>non-retryable</code>. In the case of a non-retryable error, refer to the
-     * error message for follow-up actions.</p>
+     * error message for follow-up tasks.</p>
      */
     inline CreateNamespaceResult& WithCreationStatus(NamespaceStatus&& value) { SetCreationStatus(std::move(value)); return *this;}
 

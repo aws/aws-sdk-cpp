@@ -363,43 +363,55 @@ namespace Model
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p> <p>With Network Load Balancers, you can't
-     * modify this setting.</p>
+     * successful response from a target. The possible values are from 200 to 499. You
+     * can specify multiple values (for example, "200,202") or a range of values (for
+     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

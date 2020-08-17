@@ -356,7 +356,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -374,7 +374,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -392,7 +392,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -410,7 +410,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -428,7 +428,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
@@ -446,7 +446,7 @@ namespace Model
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or

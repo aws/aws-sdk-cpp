@@ -114,28 +114,28 @@ namespace Model
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream
      * is a function of the number of shards; more shards are required for greater
-     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     * provisioned throughput.</p>
      */
     inline int GetShardCount() const{ return m_shardCount; }
 
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream
      * is a function of the number of shards; more shards are required for greater
-     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     * provisioned throughput.</p>
      */
     inline bool ShardCountHasBeenSet() const { return m_shardCountHasBeenSet; }
 
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream
      * is a function of the number of shards; more shards are required for greater
-     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     * provisioned throughput.</p>
      */
     inline void SetShardCount(int value) { m_shardCountHasBeenSet = true; m_shardCount = value; }
 
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream
      * is a function of the number of shards; more shards are required for greater
-     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     * provisioned throughput.</p>
      */
     inline CreateStreamRequest& WithShardCount(int value) { SetShardCount(value); return *this;}
 

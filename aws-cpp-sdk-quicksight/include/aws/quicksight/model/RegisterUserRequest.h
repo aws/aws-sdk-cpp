@@ -496,129 +496,161 @@ namespace Model
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
 
     /**
      * <p>(Enterprise edition only) The name of the custom permissions profile that you
-     * want to assign to this user. Currently, custom permissions profile names are
-     * assigned to permissions profiles in the QuickSight console. You use this API to
-     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
-     * permissions in the QuickSight UI allows you to control a user's access to the
-     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
-     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
-     * policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts (admin,
-     * author, reader) in QuickSight.</p> <p>This feature is available only to
-     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).</p>
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
 

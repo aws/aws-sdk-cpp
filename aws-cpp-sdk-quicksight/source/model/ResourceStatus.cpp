@@ -26,6 +26,7 @@ namespace Aws
         static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int UPDATE_SUCCESSFUL_HASH = HashingUtils::HashString("UPDATE_SUCCESSFUL");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ResourceStatus::UPDATE_FAILED;
           }
+          else if (hashCode == DELETED_HASH)
+          {
+            return ResourceStatus::DELETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "UPDATE_SUCCESSFUL";
           case ResourceStatus::UPDATE_FAILED:
             return "UPDATE_FAILED";
+          case ResourceStatus::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
