@@ -39,42 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetAttachTime() const{ return m_attachTime; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(const Aws::String& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(Aws::String&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(const char* value) { m_attachTimeHasBeenSet = true; m_attachTime.assign(value); }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const Aws::String& value) { SetAttachTime(value); return *this;}
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(Aws::String&& value) { SetAttachTime(std::move(value)); return *this;}
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const char* value) { SetAttachTime(value); return *this;}
 

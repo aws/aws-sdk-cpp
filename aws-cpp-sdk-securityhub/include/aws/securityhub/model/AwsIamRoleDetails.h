@@ -80,50 +80,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreateDate() const{ return m_createDate; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
 

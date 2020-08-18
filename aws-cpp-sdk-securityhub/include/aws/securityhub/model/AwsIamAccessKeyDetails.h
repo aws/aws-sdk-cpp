@@ -70,42 +70,74 @@ namespace Model
 
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamAccessKeyDetails& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamAccessKeyDetails& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     * <p>Indicates when the IAM access key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamAccessKeyDetails& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 

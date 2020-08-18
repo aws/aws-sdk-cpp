@@ -122,42 +122,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(const Aws::String& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(Aws::String&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(const char* value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime.assign(value); }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(const Aws::String& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(Aws::String&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(const char* value) { SetLastModifiedTime(value); return *this;}
 

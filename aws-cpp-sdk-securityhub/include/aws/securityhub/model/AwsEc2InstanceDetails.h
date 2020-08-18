@@ -377,42 +377,74 @@ namespace Model
 
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
 

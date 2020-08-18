@@ -1224,7 +1224,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline const Aws::String& GetEncryptionKeyOverride() const{ return m_encryptionKeyOverride; }
 
@@ -1235,7 +1235,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline bool EncryptionKeyOverrideHasBeenSet() const { return m_encryptionKeyOverrideHasBeenSet; }
 
@@ -1246,7 +1246,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKeyOverride(const Aws::String& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = value; }
 
@@ -1257,7 +1257,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKeyOverride(Aws::String&& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = std::move(value); }
 
@@ -1268,7 +1268,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKeyOverride(const char* value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride.assign(value); }
 
@@ -1279,7 +1279,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline StartBuildBatchRequest& WithEncryptionKeyOverride(const Aws::String& value) { SetEncryptionKeyOverride(value); return *this;}
 
@@ -1290,7 +1290,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline StartBuildBatchRequest& WithEncryptionKeyOverride(Aws::String&& value) { SetEncryptionKeyOverride(std::move(value)); return *this;}
 
@@ -1301,7 +1301,7 @@ namespace Model
      * encrypt the build output artifacts if your service role has permission to that
      * key. </p>  <p>You can specify either the Amazon Resource Name (ARN) of
      * the CMK or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).</p>
+     * <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline StartBuildBatchRequest& WithEncryptionKeyOverride(const char* value) { SetEncryptionKeyOverride(value); return *this;}
 

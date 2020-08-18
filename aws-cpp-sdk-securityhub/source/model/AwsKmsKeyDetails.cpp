@@ -25,7 +25,8 @@ AwsKmsKeyDetails::AwsKmsKeyDetails() :
     m_keyIdHasBeenSet(false),
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue) :
     m_keyIdHasBeenSet(false),
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ AwsKmsKeyDetails& AwsKmsKeyDetails::operator =(JsonView jsonValue)
     m_originHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue AwsKmsKeyDetails::Jsonize() const
   if(m_originHasBeenSet)
   {
    payload.WithString("Origin", m_origin);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

@@ -13,11 +13,16 @@
 #include <aws/securityhub/model/AwsEc2SecurityGroupDetails.h>
 #include <aws/securityhub/model/AwsEc2VolumeDetails.h>
 #include <aws/securityhub/model/AwsEc2VpcDetails.h>
+#include <aws/securityhub/model/AwsEc2EipDetails.h>
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
 #include <aws/securityhub/model/AwsS3ObjectDetails.h>
+#include <aws/securityhub/model/AwsSecretsManagerSecretDetails.h>
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
+#include <aws/securityhub/model/AwsIamUserDetails.h>
+#include <aws/securityhub/model/AwsIamPolicyDetails.h>
+#include <aws/securityhub/model/AwsDynamoDbTableDetails.h>
 #include <aws/securityhub/model/AwsIamRoleDetails.h>
 #include <aws/securityhub/model/AwsKmsKeyDetails.h>
 #include <aws/securityhub/model/AwsLambdaFunctionDetails.h>
@@ -26,6 +31,9 @@
 #include <aws/securityhub/model/AwsSnsTopicDetails.h>
 #include <aws/securityhub/model/AwsSqsQueueDetails.h>
 #include <aws/securityhub/model/AwsWafWebAclDetails.h>
+#include <aws/securityhub/model/AwsRdsDbSnapshotDetails.h>
+#include <aws/securityhub/model/AwsRdsDbClusterSnapshotDetails.h>
+#include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
 #include <aws/securityhub/model/ContainerDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -317,6 +325,37 @@ namespace Model
 
 
     /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline const AwsEc2EipDetails& GetAwsEc2Eip() const{ return m_awsEc2Eip; }
+
+    /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline bool AwsEc2EipHasBeenSet() const { return m_awsEc2EipHasBeenSet; }
+
+    /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline void SetAwsEc2Eip(const AwsEc2EipDetails& value) { m_awsEc2EipHasBeenSet = true; m_awsEc2Eip = value; }
+
+    /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline void SetAwsEc2Eip(AwsEc2EipDetails&& value) { m_awsEc2EipHasBeenSet = true; m_awsEc2Eip = std::move(value); }
+
+    /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Eip(const AwsEc2EipDetails& value) { SetAwsEc2Eip(value); return *this;}
+
+    /**
+     * <p>Details about an Elastic IP address.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Eip(AwsEc2EipDetails&& value) { SetAwsEc2Eip(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a load balancer.</p>
      */
     inline const AwsElbv2LoadBalancerDetails& GetAwsElbv2LoadBalancer() const{ return m_awsElbv2LoadBalancer; }
@@ -441,6 +480,37 @@ namespace Model
 
 
     /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline const AwsSecretsManagerSecretDetails& GetAwsSecretsManagerSecret() const{ return m_awsSecretsManagerSecret; }
+
+    /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline bool AwsSecretsManagerSecretHasBeenSet() const { return m_awsSecretsManagerSecretHasBeenSet; }
+
+    /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline void SetAwsSecretsManagerSecret(const AwsSecretsManagerSecretDetails& value) { m_awsSecretsManagerSecretHasBeenSet = true; m_awsSecretsManagerSecret = value; }
+
+    /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline void SetAwsSecretsManagerSecret(AwsSecretsManagerSecretDetails&& value) { m_awsSecretsManagerSecretHasBeenSet = true; m_awsSecretsManagerSecret = std::move(value); }
+
+    /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline ResourceDetails& WithAwsSecretsManagerSecret(const AwsSecretsManagerSecretDetails& value) { SetAwsSecretsManagerSecret(value); return *this;}
+
+    /**
+     * <p>Details about a Secrets Manager secret.</p>
+     */
+    inline ResourceDetails& WithAwsSecretsManagerSecret(AwsSecretsManagerSecretDetails&& value) { SetAwsSecretsManagerSecret(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about an IAM access key related to a finding.</p>
      */
     inline const AwsIamAccessKeyDetails& GetAwsIamAccessKey() const{ return m_awsIamAccessKey; }
@@ -469,6 +539,99 @@ namespace Model
      * <p>Details about an IAM access key related to a finding.</p>
      */
     inline ResourceDetails& WithAwsIamAccessKey(AwsIamAccessKeyDetails&& value) { SetAwsIamAccessKey(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline const AwsIamUserDetails& GetAwsIamUser() const{ return m_awsIamUser; }
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline bool AwsIamUserHasBeenSet() const { return m_awsIamUserHasBeenSet; }
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline void SetAwsIamUser(const AwsIamUserDetails& value) { m_awsIamUserHasBeenSet = true; m_awsIamUser = value; }
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline void SetAwsIamUser(AwsIamUserDetails&& value) { m_awsIamUserHasBeenSet = true; m_awsIamUser = std::move(value); }
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline ResourceDetails& WithAwsIamUser(const AwsIamUserDetails& value) { SetAwsIamUser(value); return *this;}
+
+    /**
+     * <p>Details about an IAM user.</p>
+     */
+    inline ResourceDetails& WithAwsIamUser(AwsIamUserDetails&& value) { SetAwsIamUser(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline const AwsIamPolicyDetails& GetAwsIamPolicy() const{ return m_awsIamPolicy; }
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline bool AwsIamPolicyHasBeenSet() const { return m_awsIamPolicyHasBeenSet; }
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline void SetAwsIamPolicy(const AwsIamPolicyDetails& value) { m_awsIamPolicyHasBeenSet = true; m_awsIamPolicy = value; }
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline void SetAwsIamPolicy(AwsIamPolicyDetails&& value) { m_awsIamPolicyHasBeenSet = true; m_awsIamPolicy = std::move(value); }
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline ResourceDetails& WithAwsIamPolicy(const AwsIamPolicyDetails& value) { SetAwsIamPolicy(value); return *this;}
+
+    /**
+     * <p>Details about an IAM permissions policy.</p>
+     */
+    inline ResourceDetails& WithAwsIamPolicy(AwsIamPolicyDetails&& value) { SetAwsIamPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline const AwsDynamoDbTableDetails& GetAwsDynamoDbTable() const{ return m_awsDynamoDbTable; }
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline bool AwsDynamoDbTableHasBeenSet() const { return m_awsDynamoDbTableHasBeenSet; }
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline void SetAwsDynamoDbTable(const AwsDynamoDbTableDetails& value) { m_awsDynamoDbTableHasBeenSet = true; m_awsDynamoDbTable = value; }
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline void SetAwsDynamoDbTable(AwsDynamoDbTableDetails&& value) { m_awsDynamoDbTableHasBeenSet = true; m_awsDynamoDbTable = std::move(value); }
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline ResourceDetails& WithAwsDynamoDbTable(const AwsDynamoDbTableDetails& value) { SetAwsDynamoDbTable(value); return *this;}
+
+    /**
+     * <p>Details about a DynamoDB table.</p>
+     */
+    inline ResourceDetails& WithAwsDynamoDbTable(AwsDynamoDbTableDetails&& value) { SetAwsDynamoDbTable(std::move(value)); return *this;}
 
 
     /**
@@ -596,32 +759,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline const AwsRdsDbInstanceDetails& GetAwsRdsDbInstance() const{ return m_awsRdsDbInstance; }
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline bool AwsRdsDbInstanceHasBeenSet() const { return m_awsRdsDbInstanceHasBeenSet; }
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline void SetAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = value; }
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline void SetAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = std::move(value); }
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline ResourceDetails& WithAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { SetAwsRdsDbInstance(value); return *this;}
 
     /**
-     * <p>Details for an Amazon RDS database instance.</p>
+     * <p>Details about an Amazon RDS database instance.</p>
      */
     inline ResourceDetails& WithAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { SetAwsRdsDbInstance(std::move(value)); return *this;}
 
@@ -717,6 +880,99 @@ namespace Model
      * <p>Details for a WAF WebACL.</p>
      */
     inline ResourceDetails& WithAwsWafWebAcl(AwsWafWebAclDetails&& value) { SetAwsWafWebAcl(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline const AwsRdsDbSnapshotDetails& GetAwsRdsDbSnapshot() const{ return m_awsRdsDbSnapshot; }
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline bool AwsRdsDbSnapshotHasBeenSet() const { return m_awsRdsDbSnapshotHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline void SetAwsRdsDbSnapshot(const AwsRdsDbSnapshotDetails& value) { m_awsRdsDbSnapshotHasBeenSet = true; m_awsRdsDbSnapshot = value; }
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline void SetAwsRdsDbSnapshot(AwsRdsDbSnapshotDetails&& value) { m_awsRdsDbSnapshotHasBeenSet = true; m_awsRdsDbSnapshot = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbSnapshot(const AwsRdsDbSnapshotDetails& value) { SetAwsRdsDbSnapshot(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon RDS database snapshot.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbSnapshot(AwsRdsDbSnapshotDetails&& value) { SetAwsRdsDbSnapshot(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline const AwsRdsDbClusterSnapshotDetails& GetAwsRdsDbClusterSnapshot() const{ return m_awsRdsDbClusterSnapshot; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline bool AwsRdsDbClusterSnapshotHasBeenSet() const { return m_awsRdsDbClusterSnapshotHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline void SetAwsRdsDbClusterSnapshot(const AwsRdsDbClusterSnapshotDetails& value) { m_awsRdsDbClusterSnapshotHasBeenSet = true; m_awsRdsDbClusterSnapshot = value; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline void SetAwsRdsDbClusterSnapshot(AwsRdsDbClusterSnapshotDetails&& value) { m_awsRdsDbClusterSnapshotHasBeenSet = true; m_awsRdsDbClusterSnapshot = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbClusterSnapshot(const AwsRdsDbClusterSnapshotDetails& value) { SetAwsRdsDbClusterSnapshot(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon RDS database cluster snapshot.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbClusterSnapshot(AwsRdsDbClusterSnapshotDetails&& value) { SetAwsRdsDbClusterSnapshot(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline const AwsRdsDbClusterDetails& GetAwsRdsDbCluster() const{ return m_awsRdsDbCluster; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline bool AwsRdsDbClusterHasBeenSet() const { return m_awsRdsDbClusterHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline void SetAwsRdsDbCluster(const AwsRdsDbClusterDetails& value) { m_awsRdsDbClusterHasBeenSet = true; m_awsRdsDbCluster = value; }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline void SetAwsRdsDbCluster(AwsRdsDbClusterDetails&& value) { m_awsRdsDbClusterHasBeenSet = true; m_awsRdsDbCluster = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbCluster(const AwsRdsDbClusterDetails& value) { SetAwsRdsDbCluster(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon RDS database cluster.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbCluster(AwsRdsDbClusterDetails&& value) { SetAwsRdsDbCluster(std::move(value)); return *this;}
 
 
     /**
@@ -932,6 +1188,9 @@ namespace Model
     AwsEc2VpcDetails m_awsEc2Vpc;
     bool m_awsEc2VpcHasBeenSet;
 
+    AwsEc2EipDetails m_awsEc2Eip;
+    bool m_awsEc2EipHasBeenSet;
+
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
     bool m_awsElbv2LoadBalancerHasBeenSet;
 
@@ -944,8 +1203,20 @@ namespace Model
     AwsS3ObjectDetails m_awsS3Object;
     bool m_awsS3ObjectHasBeenSet;
 
+    AwsSecretsManagerSecretDetails m_awsSecretsManagerSecret;
+    bool m_awsSecretsManagerSecretHasBeenSet;
+
     AwsIamAccessKeyDetails m_awsIamAccessKey;
     bool m_awsIamAccessKeyHasBeenSet;
+
+    AwsIamUserDetails m_awsIamUser;
+    bool m_awsIamUserHasBeenSet;
+
+    AwsIamPolicyDetails m_awsIamPolicy;
+    bool m_awsIamPolicyHasBeenSet;
+
+    AwsDynamoDbTableDetails m_awsDynamoDbTable;
+    bool m_awsDynamoDbTableHasBeenSet;
 
     AwsIamRoleDetails m_awsIamRole;
     bool m_awsIamRoleHasBeenSet;
@@ -970,6 +1241,15 @@ namespace Model
 
     AwsWafWebAclDetails m_awsWafWebAcl;
     bool m_awsWafWebAclHasBeenSet;
+
+    AwsRdsDbSnapshotDetails m_awsRdsDbSnapshot;
+    bool m_awsRdsDbSnapshotHasBeenSet;
+
+    AwsRdsDbClusterSnapshotDetails m_awsRdsDbClusterSnapshot;
+    bool m_awsRdsDbClusterSnapshotHasBeenSet;
+
+    AwsRdsDbClusterDetails m_awsRdsDbCluster;
+    bool m_awsRdsDbClusterHasBeenSet;
 
     ContainerDetails m_container;
     bool m_containerHasBeenSet;

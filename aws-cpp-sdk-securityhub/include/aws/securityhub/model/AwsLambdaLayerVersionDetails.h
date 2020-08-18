@@ -151,50 +151,74 @@ namespace Model
 
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(const Aws::String& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(Aws::String&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(const char* value) { m_createdDateHasBeenSet = true; m_createdDate.assign(value); }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(const Aws::String& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(Aws::String&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(const char* value) { SetCreatedDate(value); return *this;}
 

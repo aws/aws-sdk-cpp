@@ -40,42 +40,74 @@ namespace Model
 
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateTime(const Aws::String& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateTime(Aws::String&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateTime(const char* value) { m_createTimeHasBeenSet = true; m_createTime.assign(value); }
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2VolumeDetails& WithCreateTime(const Aws::String& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2VolumeDetails& WithCreateTime(Aws::String&& value) { SetCreateTime(std::move(value)); return *this;}
 
     /**
-     * <p>The datetime when the volume was created.</p>
+     * <p>Indicates when the volume was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2VolumeDetails& WithCreateTime(const char* value) { SetCreateTime(value); return *this;}
 

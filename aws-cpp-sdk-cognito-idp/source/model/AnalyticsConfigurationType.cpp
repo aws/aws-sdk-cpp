@@ -20,6 +20,7 @@ namespace Model
 
 AnalyticsConfigurationType::AnalyticsConfigurationType() : 
     m_applicationIdHasBeenSet(false),
+    m_applicationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_userDataShared(false),
@@ -29,6 +30,7 @@ AnalyticsConfigurationType::AnalyticsConfigurationType() :
 
 AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_applicationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_userDataShared(false),
@@ -44,6 +46,13 @@ AnalyticsConfigurationType& AnalyticsConfigurationType::operator =(JsonView json
     m_applicationId = jsonValue.GetString("ApplicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationArn"))
+  {
+    m_applicationArn = jsonValue.GetString("ApplicationArn");
+
+    m_applicationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RoleArn"))
@@ -77,6 +86,12 @@ JsonValue AnalyticsConfigurationType::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("ApplicationId", m_applicationId);
+
+  }
+
+  if(m_applicationArnHasBeenSet)
+  {
+   payload.WithString("ApplicationArn", m_applicationArn);
 
   }
 

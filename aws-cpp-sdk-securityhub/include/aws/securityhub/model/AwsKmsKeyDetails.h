@@ -80,22 +80,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the CMK was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline double GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the CMK was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the CMK was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the CMK was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsKmsKeyDetails& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
@@ -311,6 +327,47 @@ namespace Model
      */
     inline AwsKmsKeyDetails& WithOrigin(const char* value) { SetOrigin(value); return *this;}
 
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_aWSAccountId;
@@ -330,6 +387,9 @@ namespace Model
 
     Aws::String m_origin;
     bool m_originHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

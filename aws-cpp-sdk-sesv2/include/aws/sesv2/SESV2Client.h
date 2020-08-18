@@ -19,6 +19,7 @@
 #include <aws/sesv2/model/CreateEmailIdentityResult.h>
 #include <aws/sesv2/model/CreateEmailIdentityPolicyResult.h>
 #include <aws/sesv2/model/CreateEmailTemplateResult.h>
+#include <aws/sesv2/model/CreateImportJobResult.h>
 #include <aws/sesv2/model/DeleteConfigurationSetResult.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationResult.h>
 #include <aws/sesv2/model/DeleteCustomVerificationEmailTemplateResult.h>
@@ -41,6 +42,7 @@
 #include <aws/sesv2/model/GetEmailIdentityResult.h>
 #include <aws/sesv2/model/GetEmailIdentityPoliciesResult.h>
 #include <aws/sesv2/model/GetEmailTemplateResult.h>
+#include <aws/sesv2/model/GetImportJobResult.h>
 #include <aws/sesv2/model/GetSuppressedDestinationResult.h>
 #include <aws/sesv2/model/ListConfigurationSetsResult.h>
 #include <aws/sesv2/model/ListCustomVerificationEmailTemplatesResult.h>
@@ -49,6 +51,7 @@
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsResult.h>
 #include <aws/sesv2/model/ListEmailIdentitiesResult.h>
 #include <aws/sesv2/model/ListEmailTemplatesResult.h>
+#include <aws/sesv2/model/ListImportJobsResult.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsResult.h>
 #include <aws/sesv2/model/ListTagsForResourceResult.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
@@ -125,6 +128,7 @@ namespace Model
         class CreateEmailIdentityRequest;
         class CreateEmailIdentityPolicyRequest;
         class CreateEmailTemplateRequest;
+        class CreateImportJobRequest;
         class DeleteConfigurationSetRequest;
         class DeleteConfigurationSetEventDestinationRequest;
         class DeleteCustomVerificationEmailTemplateRequest;
@@ -147,6 +151,7 @@ namespace Model
         class GetEmailIdentityRequest;
         class GetEmailIdentityPoliciesRequest;
         class GetEmailTemplateRequest;
+        class GetImportJobRequest;
         class GetSuppressedDestinationRequest;
         class ListConfigurationSetsRequest;
         class ListCustomVerificationEmailTemplatesRequest;
@@ -155,6 +160,7 @@ namespace Model
         class ListDomainDeliverabilityCampaignsRequest;
         class ListEmailIdentitiesRequest;
         class ListEmailTemplatesRequest;
+        class ListImportJobsRequest;
         class ListSuppressedDestinationsRequest;
         class ListTagsForResourceRequest;
         class PutAccountDedicatedIpWarmupAttributesRequest;
@@ -193,6 +199,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateEmailIdentityResult, SESV2Error> CreateEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<CreateEmailIdentityPolicyResult, SESV2Error> CreateEmailIdentityPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateEmailTemplateResult, SESV2Error> CreateEmailTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateImportJobResult, SESV2Error> CreateImportJobOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, SESV2Error> DeleteConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, SESV2Error> DeleteConfigurationSetEventDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteCustomVerificationEmailTemplateResult, SESV2Error> DeleteCustomVerificationEmailTemplateOutcome;
@@ -215,6 +222,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEmailIdentityResult, SESV2Error> GetEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<GetEmailIdentityPoliciesResult, SESV2Error> GetEmailIdentityPoliciesOutcome;
         typedef Aws::Utils::Outcome<GetEmailTemplateResult, SESV2Error> GetEmailTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetImportJobResult, SESV2Error> GetImportJobOutcome;
         typedef Aws::Utils::Outcome<GetSuppressedDestinationResult, SESV2Error> GetSuppressedDestinationOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationSetsResult, SESV2Error> ListConfigurationSetsOutcome;
         typedef Aws::Utils::Outcome<ListCustomVerificationEmailTemplatesResult, SESV2Error> ListCustomVerificationEmailTemplatesOutcome;
@@ -223,6 +231,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDomainDeliverabilityCampaignsResult, SESV2Error> ListDomainDeliverabilityCampaignsOutcome;
         typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, SESV2Error> ListEmailIdentitiesOutcome;
         typedef Aws::Utils::Outcome<ListEmailTemplatesResult, SESV2Error> ListEmailTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListImportJobsResult, SESV2Error> ListImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListSuppressedDestinationsResult, SESV2Error> ListSuppressedDestinationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, SESV2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, SESV2Error> PutAccountDedicatedIpWarmupAttributesOutcome;
@@ -261,6 +270,7 @@ namespace Model
         typedef std::future<CreateEmailIdentityOutcome> CreateEmailIdentityOutcomeCallable;
         typedef std::future<CreateEmailIdentityPolicyOutcome> CreateEmailIdentityPolicyOutcomeCallable;
         typedef std::future<CreateEmailTemplateOutcome> CreateEmailTemplateOutcomeCallable;
+        typedef std::future<CreateImportJobOutcome> CreateImportJobOutcomeCallable;
         typedef std::future<DeleteConfigurationSetOutcome> DeleteConfigurationSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
         typedef std::future<DeleteCustomVerificationEmailTemplateOutcome> DeleteCustomVerificationEmailTemplateOutcomeCallable;
@@ -283,6 +293,7 @@ namespace Model
         typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
         typedef std::future<GetEmailIdentityPoliciesOutcome> GetEmailIdentityPoliciesOutcomeCallable;
         typedef std::future<GetEmailTemplateOutcome> GetEmailTemplateOutcomeCallable;
+        typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
         typedef std::future<GetSuppressedDestinationOutcome> GetSuppressedDestinationOutcomeCallable;
         typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
         typedef std::future<ListCustomVerificationEmailTemplatesOutcome> ListCustomVerificationEmailTemplatesOutcomeCallable;
@@ -291,6 +302,7 @@ namespace Model
         typedef std::future<ListDomainDeliverabilityCampaignsOutcome> ListDomainDeliverabilityCampaignsOutcomeCallable;
         typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
         typedef std::future<ListEmailTemplatesOutcome> ListEmailTemplatesOutcomeCallable;
+        typedef std::future<ListImportJobsOutcome> ListImportJobsOutcomeCallable;
         typedef std::future<ListSuppressedDestinationsOutcome> ListSuppressedDestinationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
@@ -332,6 +344,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::CreateEmailIdentityRequest&, const Model::CreateEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateEmailIdentityPolicyRequest&, const Model::CreateEmailIdentityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEmailIdentityPolicyResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateEmailTemplateRequest&, const Model::CreateEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEmailTemplateResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::CreateImportJobRequest&, const Model::CreateImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImportJobResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteConfigurationSetRequest&, const Model::DeleteConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteCustomVerificationEmailTemplateRequest&, const Model::DeleteCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomVerificationEmailTemplateResponseReceivedHandler;
@@ -354,6 +367,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::GetEmailIdentityRequest&, const Model::GetEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetEmailIdentityPoliciesRequest&, const Model::GetEmailIdentityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailIdentityPoliciesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetEmailTemplateRequest&, const Model::GetEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailTemplateResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetSuppressedDestinationRequest&, const Model::GetSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuppressedDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListCustomVerificationEmailTemplatesRequest&, const Model::ListCustomVerificationEmailTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomVerificationEmailTemplatesResponseReceivedHandler;
@@ -362,6 +376,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::ListDomainDeliverabilityCampaignsRequest&, const Model::ListDomainDeliverabilityCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainDeliverabilityCampaignsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListEmailTemplatesRequest&, const Model::ListEmailTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailTemplatesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::ListImportJobsRequest&, const Model::ListImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportJobsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListSuppressedDestinationsRequest&, const Model::ListSuppressedDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuppressedDestinationsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
@@ -829,6 +844,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEmailTemplateAsync(const Model::CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an import job for a data destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateImportJobOutcome CreateImportJob(const Model::CreateImportJobRequest& request) const;
+
+        /**
+         * <p>Creates an import job for a data destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImportJobOutcomeCallable CreateImportJobCallable(const Model::CreateImportJobRequest& request) const;
+
+        /**
+         * <p>Creates an import job for a data destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImportJobAsync(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an existing configuration set.</p> <p> <i>Configuration sets</i> are
@@ -1612,6 +1652,31 @@ namespace Model
         virtual void GetEmailTemplateAsync(const Model::GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides information about an import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImportJobOutcome GetImportJob(const Model::GetImportJobRequest& request) const;
+
+        /**
+         * <p>Provides information about an import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImportJobOutcomeCallable GetImportJobCallable(const Model::GetImportJobRequest& request) const;
+
+        /**
+         * <p>Provides information about an import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImportJobAsync(const Model::GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about a specific email address that's on the
          * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
@@ -1885,6 +1950,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEmailTemplatesAsync(const Model::ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all of the import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportJobsOutcome ListImportJobs(const Model::ListImportJobsRequest& request) const;
+
+        /**
+         * <p>Lists all of the import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportJobsOutcomeCallable ListImportJobsCallable(const Model::ListImportJobsRequest& request) const;
+
+        /**
+         * <p>Lists all of the import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportJobsAsync(const Model::ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of email addresses that are on the suppression list for your
@@ -2932,6 +3022,7 @@ namespace Model
         void CreateEmailIdentityAsyncHelper(const Model::CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEmailIdentityPolicyAsyncHelper(const Model::CreateEmailIdentityPolicyRequest& request, const CreateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEmailTemplateAsyncHelper(const Model::CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateImportJobAsyncHelper(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetAsyncHelper(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCustomVerificationEmailTemplateAsyncHelper(const Model::DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2954,6 +3045,7 @@ namespace Model
         void GetEmailIdentityAsyncHelper(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailIdentityPoliciesAsyncHelper(const Model::GetEmailIdentityPoliciesRequest& request, const GetEmailIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailTemplateAsyncHelper(const Model::GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetImportJobAsyncHelper(const Model::GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuppressedDestinationAsyncHelper(const Model::GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCustomVerificationEmailTemplatesAsyncHelper(const Model::ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2962,6 +3054,7 @@ namespace Model
         void ListDomainDeliverabilityCampaignsAsyncHelper(const Model::ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailIdentitiesAsyncHelper(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailTemplatesAsyncHelper(const Model::ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImportJobsAsyncHelper(const Model::ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSuppressedDestinationsAsyncHelper(const Model::ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountDedicatedIpWarmupAttributesAsyncHelper(const Model::PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

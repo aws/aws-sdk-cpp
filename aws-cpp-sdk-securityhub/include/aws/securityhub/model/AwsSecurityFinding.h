@@ -372,213 +372,309 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(const Aws::String& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(Aws::String&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(const char* value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(const Aws::String& value) { SetFirstObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(Aws::String&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(const char* value) { SetFirstObservedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const Aws::String& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(Aws::String&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const char* value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(const Aws::String& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(Aws::String&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(const char* value) { SetLastObservedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 

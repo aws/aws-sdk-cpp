@@ -148,14 +148,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -190,14 +189,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -232,14 +230,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -274,14 +271,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -316,14 +312,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -358,14 +353,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -400,14 +394,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -442,14 +435,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild

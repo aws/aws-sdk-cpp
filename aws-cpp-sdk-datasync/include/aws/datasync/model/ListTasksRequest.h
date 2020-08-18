@@ -7,6 +7,8 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/TaskFilter.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +108,31 @@ namespace Model
      */
     inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const Aws::Vector<TaskFilter>& GetFilters() const{ return m_filters; }
+
+    
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    
+    inline void SetFilters(const Aws::Vector<TaskFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    
+    inline void SetFilters(Aws::Vector<TaskFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    
+    inline ListTasksRequest& WithFilters(const Aws::Vector<TaskFilter>& value) { SetFilters(value); return *this;}
+
+    
+    inline ListTasksRequest& WithFilters(Aws::Vector<TaskFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    
+    inline ListTasksRequest& AddFilters(const TaskFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    
+    inline ListTasksRequest& AddFilters(TaskFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_maxResults;
@@ -113,6 +140,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::Vector<TaskFilter> m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

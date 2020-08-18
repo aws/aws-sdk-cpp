@@ -28,6 +28,7 @@
 #include <aws/sesv2/model/CreateEmailIdentityRequest.h>
 #include <aws/sesv2/model/CreateEmailIdentityPolicyRequest.h>
 #include <aws/sesv2/model/CreateEmailTemplateRequest.h>
+#include <aws/sesv2/model/CreateImportJobRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/DeleteCustomVerificationEmailTemplateRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/sesv2/model/GetEmailIdentityRequest.h>
 #include <aws/sesv2/model/GetEmailIdentityPoliciesRequest.h>
 #include <aws/sesv2/model/GetEmailTemplateRequest.h>
+#include <aws/sesv2/model/GetImportJobRequest.h>
 #include <aws/sesv2/model/GetSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/ListConfigurationSetsRequest.h>
 #include <aws/sesv2/model/ListCustomVerificationEmailTemplatesRequest.h>
@@ -58,6 +60,7 @@
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsRequest.h>
 #include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
 #include <aws/sesv2/model/ListEmailTemplatesRequest.h>
+#include <aws/sesv2/model/ListImportJobsRequest.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
 #include <aws/sesv2/model/ListTagsForResourceRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
@@ -395,6 +398,33 @@ void SESV2Client::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& req
 void SESV2Client::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateEmailTemplate(request), context);
+}
+
+CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/import-jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateImportJobOutcomeCallable SESV2Client::CreateImportJobCallable(const CreateImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateImportJobAsync(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateImportJobAsyncHelper(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateImportJob(request), context);
 }
 
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -1130,6 +1160,39 @@ void SESV2Client::GetEmailTemplateAsyncHelper(const GetEmailTemplateRequest& req
   handler(this, request, GetEmailTemplate(request), context);
 }
 
+GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetImportJob", "Required field: JobId, is not set");
+    return GetImportJobOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/import-jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImportJobOutcomeCallable SESV2Client::GetImportJobCallable(const GetImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetImportJobAsync(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetImportJobAsyncHelper(const GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetImportJob(request), context);
+}
+
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
 {
   if (!request.EmailAddressHasBeenSet())
@@ -1367,6 +1430,33 @@ void SESV2Client::ListEmailTemplatesAsync(const ListEmailTemplatesRequest& reque
 void SESV2Client::ListEmailTemplatesAsyncHelper(const ListEmailTemplatesRequest& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEmailTemplates(request), context);
+}
+
+ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/import-jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportJobsOutcomeCallable SESV2Client::ListImportJobsCallable(const ListImportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListImportJobsAsync(const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListImportJobsAsyncHelper(const ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImportJobs(request), context);
 }
 
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const

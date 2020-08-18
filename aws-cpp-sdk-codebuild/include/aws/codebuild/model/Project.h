@@ -747,7 +747,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
@@ -757,7 +757,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
@@ -767,7 +767,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
@@ -777,7 +777,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
@@ -787,7 +787,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
@@ -797,7 +797,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Project& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
@@ -807,7 +807,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Project& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
@@ -817,7 +817,7 @@ namespace Model
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Project& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 

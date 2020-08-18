@@ -16,7 +16,8 @@ namespace Model
   enum class MapFilterComparison
   {
     NOT_SET,
-    EQUALS
+    EQUALS,
+    NOT_EQUALS
   };
 
 namespace MapFilterComparisonMapper
