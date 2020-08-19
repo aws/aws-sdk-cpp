@@ -26,6 +26,8 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_vocabularyFilterNameHasBeenSet(false),
     m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
     m_vocabularyFilterMethodHasBeenSet(false),
+    m_showSpeakerLabel(false),
+    m_showSpeakerLabelHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -82,6 +84,13 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   if(m_vocabularyFilterMethodHasBeenSet)
   {
     headers.emplace("x-amzn-transcribe-vocabulary-filter-method", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
+  }
+
+  if(m_showSpeakerLabelHasBeenSet)
+  {
+    ss << m_showSpeakerLabel;
+    headers.emplace("x-amzn-transcribe-show-speaker-label",  ss.str());
+    ss.str("");
   }
 
   return headers;

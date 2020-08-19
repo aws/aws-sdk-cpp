@@ -22,7 +22,8 @@ PrincipalResourcePermissions::PrincipalResourcePermissions() :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
+    m_permissionsWithGrantOptionHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ PrincipalResourcePermissions::PrincipalResourcePermissions(JsonView jsonValue) :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
+    m_permissionsWithGrantOptionHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +73,13 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
     m_permissionsWithGrantOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalDetails"))
+  {
+    m_additionalDetails = jsonValue.GetObject("AdditionalDetails");
+
+    m_additionalDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue PrincipalResourcePermissions::Jsonize() const
      permissionsWithGrantOptionJsonList[permissionsWithGrantOptionIndex].AsString(PermissionMapper::GetNameForPermission(m_permissionsWithGrantOption[permissionsWithGrantOptionIndex]));
    }
    payload.WithArray("PermissionsWithGrantOption", std::move(permissionsWithGrantOptionJsonList));
+
+  }
+
+  if(m_additionalDetailsHasBeenSet)
+  {
+   payload.WithObject("AdditionalDetails", m_additionalDetails.Jsonize());
 
   }
 

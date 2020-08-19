@@ -329,6 +329,27 @@ namespace Model
 
 
     /**
+     * <p>Whether the channel is authorized.</p>
+     */
+    inline bool GetAuthorized() const{ return m_authorized; }
+
+    /**
+     * <p>Whether the channel is authorized.</p>
+     */
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
+
+    /**
+     * <p>Whether the channel is authorized.</p>
+     */
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
+
+    /**
+     * <p>Whether the channel is authorized.</p>
+     */
+    inline Channel& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+
+
+    /**
      * <p>Array of 1-50 maps, each of the form <code>string:string
      * (key:value)</code>.</p>
      */
@@ -425,6 +446,9 @@ namespace Model
 
     Aws::String m_playbackUrl;
     bool m_playbackUrlHasBeenSet;
+
+    bool m_authorized;
+    bool m_authorizedHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

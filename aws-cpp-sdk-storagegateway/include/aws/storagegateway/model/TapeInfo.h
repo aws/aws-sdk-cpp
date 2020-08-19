@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -310,6 +311,74 @@ namespace Model
      */
     inline TapeInfo& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRetentionStartDate() const{ return m_retentionStartDate; }
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline bool RetentionStartDateHasBeenSet() const { return m_retentionStartDateHasBeenSet; }
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline void SetRetentionStartDate(const Aws::Utils::DateTime& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = value; }
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline void SetRetentionStartDate(Aws::Utils::DateTime&& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = std::move(value); }
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline TapeInfo& WithRetentionStartDate(const Aws::Utils::DateTime& value) { SetRetentionStartDate(value); return *this;}
+
+    /**
+     * <p>The date that the tape became subject to tape retention lock.</p>
+     */
+    inline TapeInfo& WithRetentionStartDate(Aws::Utils::DateTime&& value) { SetRetentionStartDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPoolEntryDate() const{ return m_poolEntryDate; }
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline bool PoolEntryDateHasBeenSet() const { return m_poolEntryDateHasBeenSet; }
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline void SetPoolEntryDate(const Aws::Utils::DateTime& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = value; }
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline void SetPoolEntryDate(Aws::Utils::DateTime&& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = std::move(value); }
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline TapeInfo& WithPoolEntryDate(const Aws::Utils::DateTime& value) { SetPoolEntryDate(value); return *this;}
+
+    /**
+     * <p>The date that the tape entered the custom tape pool with tape retention lock
+     * enabled.</p>
+     */
+    inline TapeInfo& WithPoolEntryDate(Aws::Utils::DateTime&& value) { SetPoolEntryDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -329,6 +398,12 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    Aws::Utils::DateTime m_retentionStartDate;
+    bool m_retentionStartDateHasBeenSet;
+
+    Aws::Utils::DateTime m_poolEntryDate;
+    bool m_poolEntryDateHasBeenSet;
   };
 
 } // namespace Model

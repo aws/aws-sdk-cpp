@@ -77,49 +77,57 @@ namespace Model
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of medium changer you want to select.</p> <p>Valid Values:
-     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> </p>
+     * <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> |
+     * <code>IBM-03584L32-0402</code> </p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
 

@@ -175,42 +175,42 @@ namespace Model
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline TapeArchive& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
      * format.</p>
      */
     inline TapeArchive& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
@@ -420,6 +420,105 @@ namespace Model
      */
     inline TapeArchive& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>true</code> if the archived tape is stored as
+     * write-once-read-many (WORM).</p>
+     */
+    inline bool GetWorm() const{ return m_worm; }
+
+    /**
+     * <p>Set to <code>true</code> if the archived tape is stored as
+     * write-once-read-many (WORM).</p>
+     */
+    inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> if the archived tape is stored as
+     * write-once-read-many (WORM).</p>
+     */
+    inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
+
+    /**
+     * <p>Set to <code>true</code> if the archived tape is stored as
+     * write-once-read-many (WORM).</p>
+     */
+    inline TapeArchive& WithWorm(bool value) { SetWorm(value); return *this;}
+
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRetentionStartDate() const{ return m_retentionStartDate; }
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline bool RetentionStartDateHasBeenSet() const { return m_retentionStartDateHasBeenSet; }
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline void SetRetentionStartDate(const Aws::Utils::DateTime& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = value; }
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline void SetRetentionStartDate(Aws::Utils::DateTime&& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = std::move(value); }
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline TapeArchive& WithRetentionStartDate(const Aws::Utils::DateTime& value) { SetRetentionStartDate(value); return *this;}
+
+    /**
+     * <p>If the archived tape is subject to tape retention lock, the date that the
+     * archived tape started being retained.</p>
+     */
+    inline TapeArchive& WithRetentionStartDate(Aws::Utils::DateTime&& value) { SetRetentionStartDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPoolEntryDate() const{ return m_poolEntryDate; }
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline bool PoolEntryDateHasBeenSet() const { return m_poolEntryDateHasBeenSet; }
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline void SetPoolEntryDate(const Aws::Utils::DateTime& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = value; }
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline void SetPoolEntryDate(Aws::Utils::DateTime&& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = std::move(value); }
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeArchive& WithPoolEntryDate(const Aws::Utils::DateTime& value) { SetPoolEntryDate(value); return *this;}
+
+    /**
+     * <p>The time that the tape entered the custom tape pool.</p> <p>The default
+     * timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeArchive& WithPoolEntryDate(Aws::Utils::DateTime&& value) { SetPoolEntryDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -451,6 +550,15 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    bool m_worm;
+    bool m_wormHasBeenSet;
+
+    Aws::Utils::DateTime m_retentionStartDate;
+    bool m_retentionStartDateHasBeenSet;
+
+    Aws::Utils::DateTime m_poolEntryDate;
+    bool m_poolEntryDateHasBeenSet;
   };
 
 } // namespace Model

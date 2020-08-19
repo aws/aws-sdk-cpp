@@ -180,49 +180,49 @@ namespace Model
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline const Aws::String& GetSecretToAuthenticateTarget() const{ return m_secretToAuthenticateTarget; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline bool SecretToAuthenticateTargetHasBeenSet() const { return m_secretToAuthenticateTargetHasBeenSet; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline void SetSecretToAuthenticateTarget(const Aws::String& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = value; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline void SetSecretToAuthenticateTarget(Aws::String&& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = std::move(value); }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline void SetSecretToAuthenticateTarget(const char* value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget.assign(value); }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline ChapInfo& WithSecretToAuthenticateTarget(const Aws::String& value) { SetSecretToAuthenticateTarget(value); return *this;}
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline ChapInfo& WithSecretToAuthenticateTarget(Aws::String&& value) { SetSecretToAuthenticateTarget(std::move(value)); return *this;}
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
-     * with the initiator (e.g. Windows client).</p>
+     * with the initiator (e.g., Windows client).</p>
      */
     inline ChapInfo& WithSecretToAuthenticateTarget(const char* value) { SetSecretToAuthenticateTarget(value); return *this;}
 

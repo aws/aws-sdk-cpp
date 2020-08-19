@@ -27,6 +27,8 @@ Channel::Channel() :
     m_typeHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +42,8 @@ Channel::Channel(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -87,6 +91,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_playbackUrl = jsonValue.GetString("playbackUrl");
 
     m_playbackUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authorized"))
+  {
+    m_authorized = jsonValue.GetBool("authorized");
+
+    m_authorizedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -137,6 +148,12 @@ JsonValue Channel::Jsonize() const
   if(m_playbackUrlHasBeenSet)
   {
    payload.WithString("playbackUrl", m_playbackUrl);
+
+  }
+
+  if(m_authorizedHasBeenSet)
+  {
+   payload.WithBool("authorized", m_authorized);
 
   }
 

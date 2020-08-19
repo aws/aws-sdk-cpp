@@ -29,10 +29,14 @@ ProvisionedProductAttribute::ProvisionedProductAttribute() :
     m_createdTimeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_lastRecordIdHasBeenSet(false),
+    m_lastProvisioningRecordIdHasBeenSet(false),
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_physicalIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
+    m_provisioningArtifactNameHasBeenSet(false),
     m_userArnHasBeenSet(false),
     m_userArnSessionHasBeenSet(false)
 {
@@ -49,10 +53,14 @@ ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_lastRecordIdHasBeenSet(false),
+    m_lastProvisioningRecordIdHasBeenSet(false),
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_physicalIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
+    m_provisioningArtifactNameHasBeenSet(false),
     m_userArnHasBeenSet(false),
     m_userArnSessionHasBeenSet(false)
 {
@@ -124,6 +132,20 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
     m_lastRecordIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastProvisioningRecordId"))
+  {
+    m_lastProvisioningRecordId = jsonValue.GetString("LastProvisioningRecordId");
+
+    m_lastProvisioningRecordIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastSuccessfulProvisioningRecordId"))
+  {
+    m_lastSuccessfulProvisioningRecordId = jsonValue.GetString("LastSuccessfulProvisioningRecordId");
+
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -148,11 +170,25 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
     m_productIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProductName"))
+  {
+    m_productName = jsonValue.GetString("ProductName");
+
+    m_productNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
 
     m_provisioningArtifactIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisioningArtifactName"))
+  {
+    m_provisioningArtifactName = jsonValue.GetString("ProvisioningArtifactName");
+
+    m_provisioningArtifactNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UserArn"))
@@ -228,6 +264,18 @@ JsonValue ProvisionedProductAttribute::Jsonize() const
 
   }
 
+  if(m_lastProvisioningRecordIdHasBeenSet)
+  {
+   payload.WithString("LastProvisioningRecordId", m_lastProvisioningRecordId);
+
+  }
+
+  if(m_lastSuccessfulProvisioningRecordIdHasBeenSet)
+  {
+   payload.WithString("LastSuccessfulProvisioningRecordId", m_lastSuccessfulProvisioningRecordId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -251,9 +299,21 @@ JsonValue ProvisionedProductAttribute::Jsonize() const
 
   }
 
+  if(m_productNameHasBeenSet)
+  {
+   payload.WithString("ProductName", m_productName);
+
+  }
+
   if(m_provisioningArtifactIdHasBeenSet)
   {
    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
+
+  }
+
+  if(m_provisioningArtifactNameHasBeenSet)
+  {
+   payload.WithString("ProvisioningArtifactName", m_provisioningArtifactName);
 
   }
 

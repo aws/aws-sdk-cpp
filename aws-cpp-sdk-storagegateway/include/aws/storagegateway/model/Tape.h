@@ -421,6 +421,99 @@ namespace Model
      */
     inline Tape& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
+
+    /**
+     * <p>If the tape is archived as write-once-read-many (WORM), this value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetWorm() const{ return m_worm; }
+
+    /**
+     * <p>If the tape is archived as write-once-read-many (WORM), this value is
+     * <code>true</code>.</p>
+     */
+    inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
+
+    /**
+     * <p>If the tape is archived as write-once-read-many (WORM), this value is
+     * <code>true</code>.</p>
+     */
+    inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
+
+    /**
+     * <p>If the tape is archived as write-once-read-many (WORM), this value is
+     * <code>true</code>.</p>
+     */
+    inline Tape& WithWorm(bool value) { SetWorm(value); return *this;}
+
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRetentionStartDate() const{ return m_retentionStartDate; }
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline bool RetentionStartDateHasBeenSet() const { return m_retentionStartDateHasBeenSet; }
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline void SetRetentionStartDate(const Aws::Utils::DateTime& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = value; }
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline void SetRetentionStartDate(Aws::Utils::DateTime&& value) { m_retentionStartDateHasBeenSet = true; m_retentionStartDate = std::move(value); }
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline Tape& WithRetentionStartDate(const Aws::Utils::DateTime& value) { SetRetentionStartDate(value); return *this;}
+
+    /**
+     * <p>The date that the tape is first archived with tape retention lock
+     * enabled.</p>
+     */
+    inline Tape& WithRetentionStartDate(Aws::Utils::DateTime&& value) { SetRetentionStartDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPoolEntryDate() const{ return m_poolEntryDate; }
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline bool PoolEntryDateHasBeenSet() const { return m_poolEntryDateHasBeenSet; }
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline void SetPoolEntryDate(const Aws::Utils::DateTime& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = value; }
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline void SetPoolEntryDate(Aws::Utils::DateTime&& value) { m_poolEntryDateHasBeenSet = true; m_poolEntryDate = std::move(value); }
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline Tape& WithPoolEntryDate(const Aws::Utils::DateTime& value) { SetPoolEntryDate(value); return *this;}
+
+    /**
+     * <p>The date that the tape enters a custom tape pool.</p>
+     */
+    inline Tape& WithPoolEntryDate(Aws::Utils::DateTime&& value) { SetPoolEntryDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -452,6 +545,15 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    bool m_worm;
+    bool m_wormHasBeenSet;
+
+    Aws::Utils::DateTime m_retentionStartDate;
+    bool m_retentionStartDateHasBeenSet;
+
+    Aws::Utils::DateTime m_poolEntryDate;
+    bool m_poolEntryDateHasBeenSet;
   };
 
 } // namespace Model

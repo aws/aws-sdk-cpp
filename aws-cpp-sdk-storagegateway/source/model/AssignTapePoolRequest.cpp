@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 AssignTapePoolRequest::AssignTapePoolRequest() : 
     m_tapeARNHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_bypassGovernanceRetention(false),
+    m_bypassGovernanceRetentionHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String AssignTapePoolRequest::SerializePayload() const
   if(m_poolIdHasBeenSet)
   {
    payload.WithString("PoolId", m_poolId);
+
+  }
+
+  if(m_bypassGovernanceRetentionHasBeenSet)
+  {
+   payload.WithBool("BypassGovernanceRetention", m_bypassGovernanceRetention);
 
   }
 

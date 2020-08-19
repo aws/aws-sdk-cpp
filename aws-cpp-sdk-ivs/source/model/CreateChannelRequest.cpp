@@ -18,6 +18,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_latencyModeHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +42,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  }
+
+  if(m_authorizedHasBeenSet)
+  {
+   payload.WithBool("authorized", m_authorized);
+
   }
 
   if(m_tagsHasBeenSet)

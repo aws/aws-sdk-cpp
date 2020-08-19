@@ -193,6 +193,27 @@ namespace Model
 
 
     /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline bool GetAuthorized() const{ return m_authorized; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline CreateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+
+
+    /**
      * <p>See <a>Channel$tags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -267,6 +288,9 @@ namespace Model
 
     ChannelType m_type;
     bool m_typeHasBeenSet;
+
+    bool m_authorized;
+    bool m_authorizedHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

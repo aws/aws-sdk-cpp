@@ -30,7 +30,11 @@ TapeArchive::TapeArchive() :
     m_tapeUsedInBytes(0),
     m_tapeUsedInBytesHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false),
+    m_retentionStartDateHasBeenSet(false),
+    m_poolEntryDateHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ TapeArchive::TapeArchive(JsonView jsonValue) :
     m_tapeUsedInBytes(0),
     m_tapeUsedInBytesHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false),
+    m_retentionStartDateHasBeenSet(false),
+    m_poolEntryDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +131,27 @@ TapeArchive& TapeArchive::operator =(JsonView jsonValue)
     m_poolIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Worm"))
+  {
+    m_worm = jsonValue.GetBool("Worm");
+
+    m_wormHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetentionStartDate"))
+  {
+    m_retentionStartDate = jsonValue.GetDouble("RetentionStartDate");
+
+    m_retentionStartDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PoolEntryDate"))
+  {
+    m_poolEntryDate = jsonValue.GetDouble("PoolEntryDate");
+
+    m_poolEntryDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +215,22 @@ JsonValue TapeArchive::Jsonize() const
   {
    payload.WithString("PoolId", m_poolId);
 
+  }
+
+  if(m_wormHasBeenSet)
+  {
+   payload.WithBool("Worm", m_worm);
+
+  }
+
+  if(m_retentionStartDateHasBeenSet)
+  {
+   payload.WithDouble("RetentionStartDate", m_retentionStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_poolEntryDateHasBeenSet)
+  {
+   payload.WithDouble("PoolEntryDate", m_poolEntryDate.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -448,6 +448,31 @@ namespace Model
 
 
     /**
+     * <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as
+     * a write-once-read-many (WORM) tape.</p>
+     */
+    inline bool GetWorm() const{ return m_worm; }
+
+    /**
+     * <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as
+     * a write-once-read-many (WORM) tape.</p>
+     */
+    inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
+
+    /**
+     * <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as
+     * a write-once-read-many (WORM) tape.</p>
+     */
+    inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
+
+    /**
+     * <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as
+     * a write-once-read-many (WORM) tape.</p>
+     */
+    inline CreateTapesRequest& WithWorm(bool value) { SetWorm(value); return *this;}
+
+
+    /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
      * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
@@ -544,6 +569,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    bool m_worm;
+    bool m_wormHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

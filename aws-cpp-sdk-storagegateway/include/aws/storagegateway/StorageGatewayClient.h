@@ -26,6 +26,7 @@
 #include <aws/storagegateway/model/CreateSnapshotResult.h>
 #include <aws/storagegateway/model/CreateSnapshotFromVolumeRecoveryPointResult.h>
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeResult.h>
+#include <aws/storagegateway/model/CreateTapePoolResult.h>
 #include <aws/storagegateway/model/CreateTapeWithBarcodeResult.h>
 #include <aws/storagegateway/model/CreateTapesResult.h>
 #include <aws/storagegateway/model/DeleteAutomaticTapeCreationPolicyResult.h>
@@ -36,6 +37,7 @@
 #include <aws/storagegateway/model/DeleteSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/DeleteTapeResult.h>
 #include <aws/storagegateway/model/DeleteTapeArchiveResult.h>
+#include <aws/storagegateway/model/DeleteTapePoolResult.h>
 #include <aws/storagegateway/model/DeleteVolumeResult.h>
 #include <aws/storagegateway/model/DescribeAvailabilityMonitorTestResult.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitResult.h>
@@ -63,6 +65,7 @@
 #include <aws/storagegateway/model/ListGatewaysResult.h>
 #include <aws/storagegateway/model/ListLocalDisksResult.h>
 #include <aws/storagegateway/model/ListTagsForResourceResult.h>
+#include <aws/storagegateway/model/ListTapePoolsResult.h>
 #include <aws/storagegateway/model/ListTapesResult.h>
 #include <aws/storagegateway/model/ListVolumeInitiatorsResult.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsResult.h>
@@ -143,6 +146,7 @@ namespace Model
         class CreateSnapshotRequest;
         class CreateSnapshotFromVolumeRecoveryPointRequest;
         class CreateStorediSCSIVolumeRequest;
+        class CreateTapePoolRequest;
         class CreateTapeWithBarcodeRequest;
         class CreateTapesRequest;
         class DeleteAutomaticTapeCreationPolicyRequest;
@@ -153,6 +157,7 @@ namespace Model
         class DeleteSnapshotScheduleRequest;
         class DeleteTapeRequest;
         class DeleteTapeArchiveRequest;
+        class DeleteTapePoolRequest;
         class DeleteVolumeRequest;
         class DescribeAvailabilityMonitorTestRequest;
         class DescribeBandwidthRateLimitRequest;
@@ -180,6 +185,7 @@ namespace Model
         class ListGatewaysRequest;
         class ListLocalDisksRequest;
         class ListTagsForResourceRequest;
+        class ListTapePoolsRequest;
         class ListTapesRequest;
         class ListVolumeInitiatorsRequest;
         class ListVolumeRecoveryPointsRequest;
@@ -222,6 +228,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSnapshotResult, StorageGatewayError> CreateSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotFromVolumeRecoveryPointResult, StorageGatewayError> CreateSnapshotFromVolumeRecoveryPointOutcome;
         typedef Aws::Utils::Outcome<CreateStorediSCSIVolumeResult, StorageGatewayError> CreateStorediSCSIVolumeOutcome;
+        typedef Aws::Utils::Outcome<CreateTapePoolResult, StorageGatewayError> CreateTapePoolOutcome;
         typedef Aws::Utils::Outcome<CreateTapeWithBarcodeResult, StorageGatewayError> CreateTapeWithBarcodeOutcome;
         typedef Aws::Utils::Outcome<CreateTapesResult, StorageGatewayError> CreateTapesOutcome;
         typedef Aws::Utils::Outcome<DeleteAutomaticTapeCreationPolicyResult, StorageGatewayError> DeleteAutomaticTapeCreationPolicyOutcome;
@@ -232,6 +239,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteSnapshotScheduleResult, StorageGatewayError> DeleteSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<DeleteTapeResult, StorageGatewayError> DeleteTapeOutcome;
         typedef Aws::Utils::Outcome<DeleteTapeArchiveResult, StorageGatewayError> DeleteTapeArchiveOutcome;
+        typedef Aws::Utils::Outcome<DeleteTapePoolResult, StorageGatewayError> DeleteTapePoolOutcome;
         typedef Aws::Utils::Outcome<DeleteVolumeResult, StorageGatewayError> DeleteVolumeOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityMonitorTestResult, StorageGatewayError> DescribeAvailabilityMonitorTestOutcome;
         typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitResult, StorageGatewayError> DescribeBandwidthRateLimitOutcome;
@@ -259,6 +267,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListGatewaysResult, StorageGatewayError> ListGatewaysOutcome;
         typedef Aws::Utils::Outcome<ListLocalDisksResult, StorageGatewayError> ListLocalDisksOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, StorageGatewayError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTapePoolsResult, StorageGatewayError> ListTapePoolsOutcome;
         typedef Aws::Utils::Outcome<ListTapesResult, StorageGatewayError> ListTapesOutcome;
         typedef Aws::Utils::Outcome<ListVolumeInitiatorsResult, StorageGatewayError> ListVolumeInitiatorsOutcome;
         typedef Aws::Utils::Outcome<ListVolumeRecoveryPointsResult, StorageGatewayError> ListVolumeRecoveryPointsOutcome;
@@ -301,6 +310,7 @@ namespace Model
         typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
         typedef std::future<CreateSnapshotFromVolumeRecoveryPointOutcome> CreateSnapshotFromVolumeRecoveryPointOutcomeCallable;
         typedef std::future<CreateStorediSCSIVolumeOutcome> CreateStorediSCSIVolumeOutcomeCallable;
+        typedef std::future<CreateTapePoolOutcome> CreateTapePoolOutcomeCallable;
         typedef std::future<CreateTapeWithBarcodeOutcome> CreateTapeWithBarcodeOutcomeCallable;
         typedef std::future<CreateTapesOutcome> CreateTapesOutcomeCallable;
         typedef std::future<DeleteAutomaticTapeCreationPolicyOutcome> DeleteAutomaticTapeCreationPolicyOutcomeCallable;
@@ -311,6 +321,7 @@ namespace Model
         typedef std::future<DeleteSnapshotScheduleOutcome> DeleteSnapshotScheduleOutcomeCallable;
         typedef std::future<DeleteTapeOutcome> DeleteTapeOutcomeCallable;
         typedef std::future<DeleteTapeArchiveOutcome> DeleteTapeArchiveOutcomeCallable;
+        typedef std::future<DeleteTapePoolOutcome> DeleteTapePoolOutcomeCallable;
         typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
         typedef std::future<DescribeAvailabilityMonitorTestOutcome> DescribeAvailabilityMonitorTestOutcomeCallable;
         typedef std::future<DescribeBandwidthRateLimitOutcome> DescribeBandwidthRateLimitOutcomeCallable;
@@ -338,6 +349,7 @@ namespace Model
         typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
         typedef std::future<ListLocalDisksOutcome> ListLocalDisksOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTapePoolsOutcome> ListTapePoolsOutcomeCallable;
         typedef std::future<ListTapesOutcome> ListTapesOutcomeCallable;
         typedef std::future<ListVolumeInitiatorsOutcome> ListVolumeInitiatorsOutcomeCallable;
         typedef std::future<ListVolumeRecoveryPointsOutcome> ListVolumeRecoveryPointsOutcomeCallable;
@@ -383,6 +395,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateSnapshotFromVolumeRecoveryPointRequest&, const Model::CreateSnapshotFromVolumeRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateStorediSCSIVolumeRequest&, const Model::CreateStorediSCSIVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStorediSCSIVolumeResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::CreateTapePoolRequest&, const Model::CreateTapePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTapePoolResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateTapeWithBarcodeRequest&, const Model::CreateTapeWithBarcodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTapeWithBarcodeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateTapesRequest&, const Model::CreateTapesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTapesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteAutomaticTapeCreationPolicyRequest&, const Model::DeleteAutomaticTapeCreationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutomaticTapeCreationPolicyResponseReceivedHandler;
@@ -393,6 +406,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteSnapshotScheduleRequest&, const Model::DeleteSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapeRequest&, const Model::DeleteTapeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapeArchiveRequest&, const Model::DeleteTapeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapeArchiveResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapePoolRequest&, const Model::DeleteTapePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapePoolResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeAvailabilityMonitorTestRequest&, const Model::DescribeAvailabilityMonitorTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityMonitorTestResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitRequest&, const Model::DescribeBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitResponseReceivedHandler;
@@ -420,6 +434,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListLocalDisksRequest&, const Model::ListLocalDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLocalDisksResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::ListTapePoolsRequest&, const Model::ListTapePoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTapePoolsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListTapesRequest&, const Model::ListTapesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTapesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListVolumeInitiatorsRequest&, const Model::ListVolumeInitiatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVolumeInitiatorsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListVolumeRecoveryPointsRequest&, const Model::ListVolumeRecoveryPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVolumeRecoveryPointsResponseReceivedHandler;
@@ -470,7 +485,7 @@ namespace Model
    * Gateway operations, their request parameters, response elements, possible
    * errors, and examples of requests and responses.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-   * endpoints and quotas:</a> Provides a list of each AWS Region and the endpoints
+   * endpoints and quotas</a>: Provides a list of each AWS Region and the endpoints
    * available for use with AWS Storage Gateway.</p> </li> </ul>  <p>AWS
    * Storage Gateway resource IDs are in uppercase. When you use these resource IDs
    * with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change
@@ -1014,7 +1029,7 @@ namespace Model
         /**
          * <p>Creates a Server Message Block (SMB) file share on an existing file gateway.
          * In Storage Gateway, a file share is a file system mount point backed by Amazon
-         * S3 cloud storage. Storage Gateway expose file shares using an SMB interface.
+         * S3 cloud storage. Storage Gateway exposes file shares using an SMB interface.
          * This operation is only supported for file gateways.</p>  <p>File
          * gateways require AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure that AWS STS is activated in the AWS
@@ -1033,7 +1048,7 @@ namespace Model
         /**
          * <p>Creates a Server Message Block (SMB) file share on an existing file gateway.
          * In Storage Gateway, a file share is a file system mount point backed by Amazon
-         * S3 cloud storage. Storage Gateway expose file shares using an SMB interface.
+         * S3 cloud storage. Storage Gateway exposes file shares using an SMB interface.
          * This operation is only supported for file gateways.</p>  <p>File
          * gateways require AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure that AWS STS is activated in the AWS
@@ -1054,7 +1069,7 @@ namespace Model
         /**
          * <p>Creates a Server Message Block (SMB) file share on an existing file gateway.
          * In Storage Gateway, a file share is a file system mount point backed by Amazon
-         * S3 cloud storage. Storage Gateway expose file shares using an SMB interface.
+         * S3 cloud storage. Storage Gateway exposes file shares using an SMB interface.
          * This operation is only supported for file gateways.</p>  <p>File
          * gateways require AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure that AWS STS is activated in the AWS
@@ -1078,17 +1093,17 @@ namespace Model
          * (Amazon S3) for durable off-site recovery, as well as import the data to an
          * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
          * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take ad-hoc snapshot. For more information, see <a
+         * This API enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
-         * volume by providing its Amazon Resource Name (ARN). You must also provide
-         * description for the snapshot. When AWS Storage Gateway takes the snapshot of
-         * specified volume, the snapshot and description appears in the AWS Storage
-         * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
-         * can use this snapshot ID to check the snapshot progress or later use it when you
-         * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway type.</p>  <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
+         * identify the volume by providing its Amazon Resource Name (ARN). You must also
+         * provide description for the snapshot. When AWS Storage Gateway takes the
+         * snapshot of specified volume, the snapshot and description appears in the AWS
+         * Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot
+         * ID. You can use this snapshot ID to check the snapshot progress or later use it
+         * when you want to create a volume from a snapshot. This operation is only
+         * supported in stored and cached volume gateway type.</p>  <p>To list or
+         * delete a snapshot, you must use the Amazon EC2 API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
          * or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
@@ -1108,17 +1123,17 @@ namespace Model
          * (Amazon S3) for durable off-site recovery, as well as import the data to an
          * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
          * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take ad-hoc snapshot. For more information, see <a
+         * This API enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
-         * volume by providing its Amazon Resource Name (ARN). You must also provide
-         * description for the snapshot. When AWS Storage Gateway takes the snapshot of
-         * specified volume, the snapshot and description appears in the AWS Storage
-         * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
-         * can use this snapshot ID to check the snapshot progress or later use it when you
-         * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway type.</p>  <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
+         * identify the volume by providing its Amazon Resource Name (ARN). You must also
+         * provide description for the snapshot. When AWS Storage Gateway takes the
+         * snapshot of specified volume, the snapshot and description appears in the AWS
+         * Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot
+         * ID. You can use this snapshot ID to check the snapshot progress or later use it
+         * when you want to create a volume from a snapshot. This operation is only
+         * supported in stored and cached volume gateway type.</p>  <p>To list or
+         * delete a snapshot, you must use the Amazon EC2 API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
          * or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
@@ -1140,17 +1155,17 @@ namespace Model
          * (Amazon S3) for durable off-site recovery, as well as import the data to an
          * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
          * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take ad-hoc snapshot. For more information, see <a
+         * This API enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
-         * volume by providing its Amazon Resource Name (ARN). You must also provide
-         * description for the snapshot. When AWS Storage Gateway takes the snapshot of
-         * specified volume, the snapshot and description appears in the AWS Storage
-         * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
-         * can use this snapshot ID to check the snapshot progress or later use it when you
-         * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway type.</p>  <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
+         * identify the volume by providing its Amazon Resource Name (ARN). You must also
+         * provide description for the snapshot. When AWS Storage Gateway takes the
+         * snapshot of specified volume, the snapshot and description appears in the AWS
+         * Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot
+         * ID. You can use this snapshot ID to check the snapshot progress or later use it
+         * when you want to create a volume from a snapshot. This operation is only
+         * supported in stored and cached volume gateway type.</p>  <p>To list or
+         * delete a snapshot, you must use the Amazon EC2 API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
          * or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
@@ -1248,7 +1263,7 @@ namespace Model
          * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
-         * erased.</p> <p>In the request you must specify the gateway and the disk
+         * erased.</p> <p>In the request, you must specify the gateway and the disk
          * information on which you are creating the volume. In response, the gateway
          * creates the volume and returns volume information such as the volume Amazon
          * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
@@ -1264,7 +1279,7 @@ namespace Model
          * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
-         * erased.</p> <p>In the request you must specify the gateway and the disk
+         * erased.</p> <p>In the request, you must specify the gateway and the disk
          * information on which you are creating the volume. In response, the gateway
          * creates the volume and returns volume information such as the volume Amazon
          * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
@@ -1282,7 +1297,7 @@ namespace Model
          * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
-         * erased.</p> <p>In the request you must specify the gateway and the disk
+         * erased.</p> <p>In the request, you must specify the gateway and the disk
          * information on which you are creating the volume. In response, the gateway
          * creates the volume and returns volume information such as the volume Amazon
          * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
@@ -1295,11 +1310,42 @@ namespace Model
         virtual void CreateStorediSCSIVolumeAsync(const Model::CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new custom tape pool. You can use custom tape pool to enable tape
+         * retention lock on tapes that are archived in the custom pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTapePoolOutcome CreateTapePool(const Model::CreateTapePoolRequest& request) const;
+
+        /**
+         * <p>Creates a new custom tape pool. You can use custom tape pool to enable tape
+         * retention lock on tapes that are archived in the custom pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTapePoolOutcomeCallable CreateTapePoolCallable(const Model::CreateTapePoolRequest& request) const;
+
+        /**
+         * <p>Creates a new custom tape pool. You can use custom tape pool to enable tape
+         * retention lock on tapes that are archived in the custom pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTapePoolAsync(const Model::CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and can not be
-         * reused if it has already been used on a tape. This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway type.</p>
-         *  <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
+         * if it has already been used on a tape. This applies to barcodes used on deleted
+         * tapes. This operation is only supported in the tape gateway type.</p> 
+         * <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1309,10 +1355,10 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and can not be
-         * reused if it has already been used on a tape. This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway type.</p>
-         *  <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
+         * if it has already been used on a tape. This applies to barcodes used on deleted
+         * tapes. This operation is only supported in the tape gateway type.</p> 
+         * <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1324,10 +1370,10 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and can not be
-         * reused if it has already been used on a tape. This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway type.</p>
-         *  <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
+         * if it has already been used on a tape. This applies to barcodes used on deleted
+         * tapes. This operation is only supported in the tape gateway type.</p> 
+         * <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1578,7 +1624,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
          * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p>  <p>To
@@ -1596,7 +1642,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
          * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p>  <p>To
@@ -1616,7 +1662,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
          * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p>  <p>To
@@ -1690,6 +1736,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTapeArchiveAsync(const Model::DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete a custom tape pool. A custom tape pool can only be deleted if there
+         * are no tapes in the pool and if there are no automatic tape creation policies
+         * that reference the custom tape pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTapePoolOutcome DeleteTapePool(const Model::DeleteTapePoolRequest& request) const;
+
+        /**
+         * <p>Delete a custom tape pool. A custom tape pool can only be deleted if there
+         * are no tapes in the pool and if there are no automatic tape creation policies
+         * that reference the custom tape pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTapePoolOutcomeCallable DeleteTapePoolCallable(const Model::DeleteTapePoolRequest& request) const;
+
+        /**
+         * <p>Delete a custom tape pool. A custom tape pool can only be deleted if there
+         * are no tapes in the pool and if there are no automatic tape creation policies
+         * that reference the custom tape pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTapePoolAsync(const Model::DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified storage volume that you previously created using the
@@ -1792,7 +1869,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -1806,7 +1883,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -1822,7 +1899,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -2695,6 +2772,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists custom tape pools. You specify custom tape pools to list by specifying
+         * one or more custom tape pool Amazon Resource Names (ARNs). If you don't specify
+         * a custom tape pool ARN, the operation lists all custom tape pools.</p> <p>This
+         * operation supports pagination. You can optionally specify the <code>Limit</code>
+         * parameter in the body to limit the number of tape pools in the response. If the
+         * number of tape pools returned in the response is truncated, the response
+         * includes a <code>Marker</code> element that you can use in your subsequent
+         * request to retrieve the next set of tape pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTapePoolsOutcome ListTapePools(const Model::ListTapePoolsRequest& request) const;
+
+        /**
+         * <p>Lists custom tape pools. You specify custom tape pools to list by specifying
+         * one or more custom tape pool Amazon Resource Names (ARNs). If you don't specify
+         * a custom tape pool ARN, the operation lists all custom tape pools.</p> <p>This
+         * operation supports pagination. You can optionally specify the <code>Limit</code>
+         * parameter in the body to limit the number of tape pools in the response. If the
+         * number of tape pools returned in the response is truncated, the response
+         * includes a <code>Marker</code> element that you can use in your subsequent
+         * request to retrieve the next set of tape pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTapePoolsOutcomeCallable ListTapePoolsCallable(const Model::ListTapePoolsRequest& request) const;
+
+        /**
+         * <p>Lists custom tape pools. You specify custom tape pools to list by specifying
+         * one or more custom tape pool Amazon Resource Names (ARNs). If you don't specify
+         * a custom tape pool ARN, the operation lists all custom tape pools.</p> <p>This
+         * operation supports pagination. You can optionally specify the <code>Limit</code>
+         * parameter in the body to limit the number of tape pools in the response. If the
+         * number of tape pools returned in the response is truncated, the response
+         * includes a <code>Marker</code> element that you can use in your subsequent
+         * request to retrieve the next set of tape pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTapePoolsAsync(const Model::ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists virtual tapes in your virtual tape library (VTL) and your virtual tape
@@ -3590,7 +3713,7 @@ namespace Model
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p>  <p>For Gateways activated after
+         * the gateway in your request.</p>  <p>For gateways activated after
          * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
          * gateway name. However, changing the name of the gateway has no effect on the
          * gateway's ARN.</p> <p><h3>See Also:</h3>   <a
@@ -3602,7 +3725,7 @@ namespace Model
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p>  <p>For Gateways activated after
+         * the gateway in your request.</p>  <p>For gateways activated after
          * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
          * gateway name. However, changing the name of the gateway has no effect on the
          * gateway's ARN.</p> <p><h3>See Also:</h3>   <a
@@ -3616,7 +3739,7 @@ namespace Model
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p>  <p>For Gateways activated after
+         * the gateway in your request.</p>  <p>For gateways activated after
          * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
          * gateway name. However, changing the name of the gateway has no effect on the
          * gateway's ARN.</p> <p><h3>See Also:</h3>   <a
@@ -3968,6 +4091,7 @@ namespace Model
         void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotFromVolumeRecoveryPointAsyncHelper(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStorediSCSIVolumeAsyncHelper(const Model::CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTapePoolAsyncHelper(const Model::CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTapeWithBarcodeAsyncHelper(const Model::CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTapesAsyncHelper(const Model::CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAutomaticTapeCreationPolicyAsyncHelper(const Model::DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3978,6 +4102,7 @@ namespace Model
         void DeleteSnapshotScheduleAsyncHelper(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTapeAsyncHelper(const Model::DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTapeArchiveAsyncHelper(const Model::DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTapePoolAsyncHelper(const Model::DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityMonitorTestAsyncHelper(const Model::DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBandwidthRateLimitAsyncHelper(const Model::DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4005,6 +4130,7 @@ namespace Model
         void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLocalDisksAsyncHelper(const Model::ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTapePoolsAsyncHelper(const Model::ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTapesAsyncHelper(const Model::ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVolumeInitiatorsAsyncHelper(const Model::ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVolumeRecoveryPointsAsyncHelper(const Model::ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

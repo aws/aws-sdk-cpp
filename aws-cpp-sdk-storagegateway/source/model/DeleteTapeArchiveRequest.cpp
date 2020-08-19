@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteTapeArchiveRequest::DeleteTapeArchiveRequest() : 
-    m_tapeARNHasBeenSet(false)
+    m_tapeARNHasBeenSet(false),
+    m_bypassGovernanceRetention(false),
+    m_bypassGovernanceRetentionHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String DeleteTapeArchiveRequest::SerializePayload() const
   if(m_tapeARNHasBeenSet)
   {
    payload.WithString("TapeARN", m_tapeARN);
+
+  }
+
+  if(m_bypassGovernanceRetentionHasBeenSet)
+  {
+   payload.WithBool("BypassGovernanceRetention", m_bypassGovernanceRetention);
 
   }
 

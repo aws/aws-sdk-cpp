@@ -25,11 +25,15 @@
 #include <aws/ivs/model/CreateChannelRequest.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
 #include <aws/ivs/model/DeleteChannelRequest.h>
+#include <aws/ivs/model/DeletePlaybackKeyPairRequest.h>
 #include <aws/ivs/model/DeleteStreamKeyRequest.h>
 #include <aws/ivs/model/GetChannelRequest.h>
+#include <aws/ivs/model/GetPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/GetStreamRequest.h>
 #include <aws/ivs/model/GetStreamKeyRequest.h>
+#include <aws/ivs/model/ImportPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
+#include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
 #include <aws/ivs/model/ListStreamKeysRequest.h>
 #include <aws/ivs/model/ListStreamsRequest.h>
 #include <aws/ivs/model/ListTagsForResourceRequest.h>
@@ -247,6 +251,33 @@ void IVSClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, co
   handler(this, request, DeleteChannel(request), context);
 }
 
+DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlaybackKeyPairRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/DeletePlaybackKeyPair";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePlaybackKeyPairOutcomeCallable IVSClient::DeletePlaybackKeyPairCallable(const DeletePlaybackKeyPairRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePlaybackKeyPairOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePlaybackKeyPair(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::DeletePlaybackKeyPairAsync(const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePlaybackKeyPairAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::DeletePlaybackKeyPairAsyncHelper(const DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePlaybackKeyPair(request), context);
+}
+
 DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -299,6 +330,33 @@ void IVSClient::GetChannelAsync(const GetChannelRequest& request, const GetChann
 void IVSClient::GetChannelAsyncHelper(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetChannel(request), context);
+}
+
+GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPairRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/GetPlaybackKeyPair";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPlaybackKeyPairOutcomeCallable IVSClient::GetPlaybackKeyPairCallable(const GetPlaybackKeyPairRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPlaybackKeyPairOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPlaybackKeyPair(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::GetPlaybackKeyPairAsync(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPlaybackKeyPairAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::GetPlaybackKeyPairAsyncHelper(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPlaybackKeyPair(request), context);
 }
 
 GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const
@@ -355,6 +413,33 @@ void IVSClient::GetStreamKeyAsyncHelper(const GetStreamKeyRequest& request, cons
   handler(this, request, GetStreamKey(request), context);
 }
 
+ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlaybackKeyPairRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ImportPlaybackKeyPair";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ImportPlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportPlaybackKeyPairOutcomeCallable IVSClient::ImportPlaybackKeyPairCallable(const ImportPlaybackKeyPairRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportPlaybackKeyPairOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportPlaybackKeyPair(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::ImportPlaybackKeyPairAsync(const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportPlaybackKeyPairAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::ImportPlaybackKeyPairAsyncHelper(const ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportPlaybackKeyPair(request), context);
+}
+
 ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -380,6 +465,33 @@ void IVSClient::ListChannelsAsync(const ListChannelsRequest& request, const List
 void IVSClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannels(request), context);
+}
+
+ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKeyPairsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ListPlaybackKeyPairs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListPlaybackKeyPairsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPlaybackKeyPairsOutcomeCallable IVSClient::ListPlaybackKeyPairsCallable(const ListPlaybackKeyPairsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPlaybackKeyPairsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPlaybackKeyPairs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPlaybackKeyPairsAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::ListPlaybackKeyPairsAsyncHelper(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPlaybackKeyPairs(request), context);
 }
 
 ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& request) const

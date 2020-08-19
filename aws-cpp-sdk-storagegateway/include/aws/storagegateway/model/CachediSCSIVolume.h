@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
@@ -340,49 +340,57 @@ namespace Model
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline const Aws::String& GetSourceSnapshotId() const{ return m_sourceSnapshotId; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline bool SourceSnapshotIdHasBeenSet() const { return m_sourceSnapshotIdHasBeenSet; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(const Aws::String& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(const char* value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId.assign(value); }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(const Aws::String& value) { SetSourceSnapshotId(value); return *this;}
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
 
@@ -426,37 +434,37 @@ namespace Model
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline CachediSCSIVolume& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 

@@ -231,6 +231,27 @@ namespace Model
      */
     inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline bool GetAuthorized() const{ return m_authorized; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
+
+    /**
+     * <p>Whether the channel is authorized. Default: <code>false</code>.</p>
+     */
+    inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -244,6 +265,9 @@ namespace Model
 
     ChannelType m_type;
     bool m_typeHasBeenSet;
+
+    bool m_authorized;
+    bool m_authorizedHasBeenSet;
   };
 
 } // namespace Model

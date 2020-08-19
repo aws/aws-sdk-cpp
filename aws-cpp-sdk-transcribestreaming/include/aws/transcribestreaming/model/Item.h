@@ -201,6 +201,55 @@ namespace Model
      */
     inline Item& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
 
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline const Aws::String& GetSpeaker() const{ return m_speaker; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline bool SpeakerHasBeenSet() const { return m_speakerHasBeenSet; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(const Aws::String& value) { m_speakerHasBeenSet = true; m_speaker = value; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(Aws::String&& value) { m_speakerHasBeenSet = true; m_speaker = std::move(value); }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(const char* value) { m_speakerHasBeenSet = true; m_speaker.assign(value); }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(const Aws::String& value) { SetSpeaker(value); return *this;}
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(Aws::String&& value) { SetSpeaker(std::move(value)); return *this;}
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
+
   private:
 
     double m_startTime;
@@ -217,6 +266,9 @@ namespace Model
 
     bool m_vocabularyFilterMatch;
     bool m_vocabularyFilterMatchHasBeenSet;
+
+    Aws::String m_speaker;
+    bool m_speakerHasBeenSet;
   };
 
 } // namespace Model

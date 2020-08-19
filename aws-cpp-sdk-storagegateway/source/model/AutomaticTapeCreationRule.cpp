@@ -24,7 +24,9 @@ AutomaticTapeCreationRule::AutomaticTapeCreationRule() :
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false)
+    m_minimumNumTapesHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ AutomaticTapeCreationRule::AutomaticTapeCreationRule(JsonView jsonValue) :
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false)
+    m_minimumNumTapesHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ AutomaticTapeCreationRule& AutomaticTapeCreationRule::operator =(JsonView jsonVa
     m_minimumNumTapesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Worm"))
+  {
+    m_worm = jsonValue.GetBool("Worm");
+
+    m_wormHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,12 @@ JsonValue AutomaticTapeCreationRule::Jsonize() const
   if(m_minimumNumTapesHasBeenSet)
   {
    payload.WithInteger("MinimumNumTapes", m_minimumNumTapes);
+
+  }
+
+  if(m_wormHasBeenSet)
+  {
+   payload.WithBool("Worm", m_worm);
 
   }
 

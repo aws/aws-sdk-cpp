@@ -18,7 +18,9 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  }
+
+  if(m_authorizedHasBeenSet)
+  {
+   payload.WithBool("authorized", m_authorized);
+
   }
 
   return payload.View().WriteReadable();

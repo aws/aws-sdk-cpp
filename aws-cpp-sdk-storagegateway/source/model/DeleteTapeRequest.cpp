@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 DeleteTapeRequest::DeleteTapeRequest() : 
     m_gatewayARNHasBeenSet(false),
-    m_tapeARNHasBeenSet(false)
+    m_tapeARNHasBeenSet(false),
+    m_bypassGovernanceRetention(false),
+    m_bypassGovernanceRetentionHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String DeleteTapeRequest::SerializePayload() const
   if(m_tapeARNHasBeenSet)
   {
    payload.WithString("TapeARN", m_tapeARN);
+
+  }
+
+  if(m_bypassGovernanceRetentionHasBeenSet)
+  {
+   payload.WithBool("BypassGovernanceRetention", m_bypassGovernanceRetention);
 
   }
 

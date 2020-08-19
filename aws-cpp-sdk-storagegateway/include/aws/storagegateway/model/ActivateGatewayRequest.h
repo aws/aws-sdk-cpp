@@ -496,56 +496,56 @@ namespace Model
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline const Aws::String& GetMediumChangerType() const{ return m_mediumChangerType; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline bool MediumChangerTypeHasBeenSet() const { return m_mediumChangerTypeHasBeenSet; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetMediumChangerType(const Aws::String& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = value; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetMediumChangerType(Aws::String&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = std::move(value); }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline void SetMediumChangerType(const char* value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType.assign(value); }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(const Aws::String& value) { SetMediumChangerType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(Aws::String&& value) { SetMediumChangerType(std::move(value)); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
-     * <code>AWS-Gateway-VTL</code> </p>
+     * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(const char* value) { SetMediumChangerType(value); return *this;}
 

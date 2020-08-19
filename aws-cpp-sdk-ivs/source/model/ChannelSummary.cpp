@@ -23,6 +23,8 @@ ChannelSummary::ChannelSummary() :
     m_nameHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +34,8 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
+    m_authorized(false),
+    m_authorizedHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -58,6 +62,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_latencyMode = ChannelLatencyModeMapper::GetChannelLatencyModeForName(jsonValue.GetString("latencyMode"));
 
     m_latencyModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authorized"))
+  {
+    m_authorized = jsonValue.GetBool("authorized");
+
+    m_authorizedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -92,6 +103,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_latencyModeHasBeenSet)
   {
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
+  }
+
+  if(m_authorizedHasBeenSet)
+  {
+   payload.WithBool("authorized", m_authorized);
+
   }
 
   if(m_tagsHasBeenSet)

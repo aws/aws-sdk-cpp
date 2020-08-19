@@ -163,6 +163,51 @@ namespace Model
      */
     inline AssignTapePoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline AssignTapePoolRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -170,6 +215,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
   };
 
 } // namespace Model

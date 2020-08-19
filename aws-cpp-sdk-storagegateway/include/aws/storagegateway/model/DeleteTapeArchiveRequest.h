@@ -85,10 +85,46 @@ namespace Model
      */
     inline DeleteTapeArchiveRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline DeleteTapeArchiveRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
   };
 
 } // namespace Model

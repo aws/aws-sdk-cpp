@@ -121,32 +121,38 @@ namespace Model
 
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
+     * value.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
 
@@ -270,49 +276,49 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vocabulary filter you've created that is unique to your AWS
-     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 
@@ -377,6 +383,31 @@ namespace Model
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline bool GetShowSpeakerLabel() const{ return m_showSpeakerLabel; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline bool ShowSpeakerLabelHasBeenSet() const { return m_showSpeakerLabelHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline void SetShowSpeakerLabel(bool value) { m_showSpeakerLabelHasBeenSet = true; m_showSpeakerLabel = value; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -401,6 +432,9 @@ namespace Model
 
     VocabularyFilterMethod m_vocabularyFilterMethod;
     bool m_vocabularyFilterMethodHasBeenSet;
+
+    bool m_showSpeakerLabel;
+    bool m_showSpeakerLabelHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

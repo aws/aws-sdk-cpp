@@ -15,10 +15,14 @@
 #include <aws/ivs/model/BatchGetStreamKeyResult.h>
 #include <aws/ivs/model/CreateChannelResult.h>
 #include <aws/ivs/model/CreateStreamKeyResult.h>
+#include <aws/ivs/model/DeletePlaybackKeyPairResult.h>
 #include <aws/ivs/model/GetChannelResult.h>
+#include <aws/ivs/model/GetPlaybackKeyPairResult.h>
 #include <aws/ivs/model/GetStreamResult.h>
 #include <aws/ivs/model/GetStreamKeyResult.h>
+#include <aws/ivs/model/ImportPlaybackKeyPairResult.h>
 #include <aws/ivs/model/ListChannelsResult.h>
+#include <aws/ivs/model/ListPlaybackKeyPairsResult.h>
 #include <aws/ivs/model/ListStreamKeysResult.h>
 #include <aws/ivs/model/ListStreamsResult.h>
 #include <aws/ivs/model/ListTagsForResourceResult.h>
@@ -71,11 +75,15 @@ namespace Model
         class CreateChannelRequest;
         class CreateStreamKeyRequest;
         class DeleteChannelRequest;
+        class DeletePlaybackKeyPairRequest;
         class DeleteStreamKeyRequest;
         class GetChannelRequest;
+        class GetPlaybackKeyPairRequest;
         class GetStreamRequest;
         class GetStreamKeyRequest;
+        class ImportPlaybackKeyPairRequest;
         class ListChannelsRequest;
+        class ListPlaybackKeyPairsRequest;
         class ListStreamKeysRequest;
         class ListStreamsRequest;
         class ListTagsForResourceRequest;
@@ -90,11 +98,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateChannelResult, IVSError> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateStreamKeyResult, IVSError> CreateStreamKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteChannelOutcome;
+        typedef Aws::Utils::Outcome<DeletePlaybackKeyPairResult, IVSError> DeletePlaybackKeyPairOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteStreamKeyOutcome;
         typedef Aws::Utils::Outcome<GetChannelResult, IVSError> GetChannelOutcome;
+        typedef Aws::Utils::Outcome<GetPlaybackKeyPairResult, IVSError> GetPlaybackKeyPairOutcome;
         typedef Aws::Utils::Outcome<GetStreamResult, IVSError> GetStreamOutcome;
         typedef Aws::Utils::Outcome<GetStreamKeyResult, IVSError> GetStreamKeyOutcome;
+        typedef Aws::Utils::Outcome<ImportPlaybackKeyPairResult, IVSError> ImportPlaybackKeyPairOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, IVSError> ListChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListPlaybackKeyPairsResult, IVSError> ListPlaybackKeyPairsOutcome;
         typedef Aws::Utils::Outcome<ListStreamKeysResult, IVSError> ListStreamKeysOutcome;
         typedef Aws::Utils::Outcome<ListStreamsResult, IVSError> ListStreamsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IVSError> ListTagsForResourceOutcome;
@@ -109,11 +121,15 @@ namespace Model
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateStreamKeyOutcome> CreateStreamKeyOutcomeCallable;
         typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+        typedef std::future<DeletePlaybackKeyPairOutcome> DeletePlaybackKeyPairOutcomeCallable;
         typedef std::future<DeleteStreamKeyOutcome> DeleteStreamKeyOutcomeCallable;
         typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
+        typedef std::future<GetPlaybackKeyPairOutcome> GetPlaybackKeyPairOutcomeCallable;
         typedef std::future<GetStreamOutcome> GetStreamOutcomeCallable;
         typedef std::future<GetStreamKeyOutcome> GetStreamKeyOutcomeCallable;
+        typedef std::future<ImportPlaybackKeyPairOutcome> ImportPlaybackKeyPairOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+        typedef std::future<ListPlaybackKeyPairsOutcome> ListPlaybackKeyPairsOutcomeCallable;
         typedef std::future<ListStreamKeysOutcome> ListStreamKeysOutcomeCallable;
         typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -131,11 +147,15 @@ namespace Model
     typedef std::function<void(const IVSClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateStreamKeyRequest&, const Model::CreateStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamKeyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::DeletePlaybackKeyPairRequest&, const Model::DeletePlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackKeyPairResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeleteStreamKeyRequest&, const Model::DeleteStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamKeyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::GetPlaybackKeyPairRequest&, const Model::GetPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackKeyPairResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamRequest&, const Model::GetStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamKeyRequest&, const Model::GetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamKeyResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::ImportPlaybackKeyPairRequest&, const Model::ImportPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportPlaybackKeyPairResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::ListPlaybackKeyPairsRequest&, const Model::ListPlaybackKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackKeyPairsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamKeysRequest&, const Model::ListStreamKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamKeysResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -172,14 +192,18 @@ namespace Model
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/GSIVS.html"> Getting
    * Started with Amazon IVS</a>):</p> <ul> <li> <p>Channel — Stores configuration
    * data related to your live stream. You first create a channel and then use the
-   * channel’s stream key to start your live stream. See the <a>Channel</a> endpoints
-   * for more information. </p> </li> <li> <p>Stream key — An identifier assigned by
+   * channel’s stream key to start your live stream. See the Channel endpoints for
+   * more information. </p> </li> <li> <p>Stream key — An identifier assigned by
    * Amazon IVS when you create a channel, which is then used to authorize streaming.
-   * See the <a>StreamKey</a> endpoints for more information. <i> <b>Treat the stream
-   * key like a secret, since it allows anyone to stream to the channel.</b> </i>
-   * </p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label
-   * that you assign to an AWS resource. A tag comprises a <i>key</i> and a
-   * <i>value</i>, both set by you. For example, you might set a tag as
+   * See the StreamKey endpoints for more information. <i> <b>Treat the stream key
+   * like a secret, since it allows anyone to stream to the channel.</b> </i> </p>
+   * </li> <li> <p>Playback key pair — Video playback may be restricted using
+   * playback-authorization tokens, which use public-key encryption. A playback key
+   * pair is the public-private pair of keys used to sign and validate the
+   * playback-authorization token. See the PlaybackKeyPair endpoints for more
+   * information.</p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a
+   * metadata label that you assign to an AWS resource. A tag comprises a <i>key</i>
+   * and a <i>value</i>, both set by you. For example, you might set a tag as
    * <code>topic:nature</code> to label a particular video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * AWS Resources</a> for more information, including restrictions that apply to
@@ -189,42 +213,53 @@ namespace Model
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html"> Access
    * Tags</a>). </p> <p>The Amazon IVS API has these tag-related endpoints:
    * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
-   * following resources support tagging: Channels and Stream Keys.</p> <p> <b>API
-   * Endpoints</b> </p> <p> <a>Channel</a>:</p> <ul> <li> <p> <a>CreateChannel</a> —
-   * Creates a new channel and an associated stream key to start streaming.</p> </li>
-   * <li> <p> <a>GetChannel</a> — Gets the channel configuration for the specified
-   * channel ARN (Amazon Resource Name).</p> </li> <li> <p> <a>BatchGetChannel</a> —
-   * Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p> </li> <li> <p>
-   * <a>ListChannels</a> — Gets summary information about all channels in your
-   * account, in the AWS region where the API request is processed. This list can be
-   * filtered to match a specified string.</p> </li> <li> <p> <a>UpdateChannel</a> —
-   * Updates a channel's configuration. This does not affect an ongoing stream of
-   * this channel. You must stop and restart the stream for the changes to take
-   * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified
-   * channel.</p> </li> </ul> <p> <a>StreamKey</a>:</p> <ul> <li> <p>
-   * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for
-   * the specified channel ARN.</p> </li> <li> <p> <a>GetStreamKey</a> — Gets stream
-   * key information for the specified ARN.</p> </li> <li> <p>
-   * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs
-   * simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets summary
-   * information about stream keys for the specified channel.</p> </li> <li> <p>
-   * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
-   * no longer be used to stream.</p> </li> </ul> <p> <a>Stream</a>:</p> <ul> <li>
-   * <p> <a>GetStream</a> — Gets information about the active (live) stream on a
-   * specified channel.</p> </li> <li> <p> <a>ListStreams</a> — Gets summary
-   * information about live streams in your account, in the AWS region where the API
-   * request is processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects the
-   * incoming RTMPS stream for the specified channel. Can be used in conjunction with
-   * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li> <li>
-   * <p> <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the specified
-   * channel. A maximum of 5 requests per second per channel is allowed, each with a
-   * maximum 1KB payload.</p> </li> </ul> <p> <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS
-   * Tags</a>:</p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for the
-   * AWS resource with the specified ARN.</p> </li> <li> <p> <a>UntagResource</a> —
-   * Removes tags from the resource with the specified ARN.</p> </li> <li> <p>
-   * <a>ListTagsForResource</a> — Gets information about AWS tags for the specified
-   * ARN.</p> </li> </ul>
+   * following resources support tagging: Channels, Stream Keys, and Playback Key
+   * Pairs.</p> <p> <b>Channel Endpoints</b> </p> <ul> <li> <p> <a>CreateChannel</a>
+   * — Creates a new channel and an associated stream key to start streaming.</p>
+   * </li> <li> <p> <a>GetChannel</a> — Gets the channel configuration for the
+   * specified channel ARN (Amazon Resource Name).</p> </li> <li> <p>
+   * <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on multiple ARNs
+   * simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets summary
+   * information about all channels in your account, in the AWS region where the API
+   * request is processed. This list can be filtered to match a specified string.</p>
+   * </li> <li> <p> <a>UpdateChannel</a> — Updates a channel's configuration. This
+   * does not affect an ongoing stream of this channel. You must stop and restart the
+   * stream for the changes to take effect.</p> </li> <li> <p> <a>DeleteChannel</a> —
+   * Deletes the specified channel.</p> </li> </ul> <p> <b>StreamKey Endpoints</b>
+   * </p> <ul> <li> <p> <a>CreateStreamKey</a> — Creates a stream key, used to
+   * initiate a stream, for the specified channel ARN.</p> </li> <li> <p>
+   * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.</p>
+   * </li> <li> <p> <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on
+   * multiple ARNs simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets
+   * summary information about stream keys for the specified channel.</p> </li> <li>
+   * <p> <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it
+   * can no longer be used to stream.</p> </li> </ul> <p> <b>Stream Endpoints</b>
+   * </p> <ul> <li> <p> <a>GetStream</a> — Gets information about the active (live)
+   * stream on a specified channel.</p> </li> <li> <p> <a>ListStreams</a> — Gets
+   * summary information about live streams in your account, in the AWS region where
+   * the API request is processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects
+   * the incoming RTMPS stream for the specified channel. Can be used in conjunction
+   * with <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li>
+   * <li> <p> <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the
+   * specified channel. A maximum of 5 requests per second per channel is allowed,
+   * each with a maximum 1KB payload.</p> </li> </ul> <p> <b>PlaybackKeyPair
+   * Endpoints</b> </p> <ul> <li> <p> <a>ImportPlaybackKeyPair</a> — Imports the
+   * public portion of a new key pair and returns its <code>arn</code> and
+   * <code>fingerprint</code>. The <code>privateKey</code> can then be used to
+   * generate viewer authorization tokens, to grant viewers access to authorized
+   * channels.</p> </li> <li> <p> <a>GetPlaybackKeyPair</a> — Gets a specified
+   * playback authorization key pair and returns the <code>arn</code> and
+   * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
+   * used to generate viewer authorization tokens, to grant viewers access to
+   * authorized channels.</p> </li> <li> <p> <a>ListPlaybackKeyPairs</a> — Gets
+   * summary information about playback key pairs.</p> </li> <li> <p>
+   * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This
+   * invalidates future viewer tokens generated using the key pair’s
+   * <code>privateKey</code>.</p> </li> </ul> <p> <b>AWS Tags Endpoints</b> </p> <ul>
+   * <li> <p> <a>TagResource</a> — Adds or updates tags for the AWS resource with the
+   * specified ARN.</p> </li> <li> <p> <a>UntagResource</a> — Removes tags from the
+   * resource with the specified ARN.</p> </li> <li> <p> <a>ListTagsForResource</a> —
+   * Gets information about AWS tags for the specified ARN.</p> </li> </ul>
    */
   class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient
   {
@@ -406,6 +441,37 @@ namespace Model
         virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a specified authorization key pair. This invalidates future viewer
+         * tokens generated using the key pair’s <code>privateKey</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePlaybackKeyPairOutcome DeletePlaybackKeyPair(const Model::DeletePlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Deletes a specified authorization key pair. This invalidates future viewer
+         * tokens generated using the key pair’s <code>privateKey</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePlaybackKeyPairOutcomeCallable DeletePlaybackKeyPairCallable(const Model::DeletePlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Deletes a specified authorization key pair. This invalidates future viewer
+         * tokens generated using the key pair’s <code>privateKey</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePlaybackKeyPairAsync(const Model::DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the stream key for the specified ARN, so it can no longer be used to
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">AWS
@@ -462,6 +528,40 @@ namespace Model
         virtual void GetChannelAsync(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a specified playback authorization key pair and returns the
+         * <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> held
+         * by the caller can be used to generate viewer authorization tokens, to grant
+         * viewers access to authorized channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPlaybackKeyPairOutcome GetPlaybackKeyPair(const Model::GetPlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Gets a specified playback authorization key pair and returns the
+         * <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> held
+         * by the caller can be used to generate viewer authorization tokens, to grant
+         * viewers access to authorized channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPlaybackKeyPairOutcomeCallable GetPlaybackKeyPairCallable(const Model::GetPlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Gets a specified playback authorization key pair and returns the
+         * <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> held
+         * by the caller can be used to generate viewer authorization tokens, to grant
+         * viewers access to authorized channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPlaybackKeyPairAsync(const Model::GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about the active (live) stream on a specified
          * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStream">AWS API
@@ -515,6 +615,40 @@ namespace Model
         virtual void GetStreamKeyAsync(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Imports the public portion of a new key pair and returns its <code>arn</code>
+         * and <code>fingerprint</code>. The <code>privateKey</code> can then be used to
+         * generate viewer authorization tokens, to grant viewers access to authorized
+         * channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportPlaybackKeyPairOutcome ImportPlaybackKeyPair(const Model::ImportPlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Imports the public portion of a new key pair and returns its <code>arn</code>
+         * and <code>fingerprint</code>. The <code>privateKey</code> can then be used to
+         * generate viewer authorization tokens, to grant viewers access to authorized
+         * channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportPlaybackKeyPairOutcomeCallable ImportPlaybackKeyPairCallable(const Model::ImportPlaybackKeyPairRequest& request) const;
+
+        /**
+         * <p>Imports the public portion of a new key pair and returns its <code>arn</code>
+         * and <code>fingerprint</code>. The <code>privateKey</code> can then be used to
+         * generate viewer authorization tokens, to grant viewers access to authorized
+         * channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportPlaybackKeyPairAsync(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets summary information about all channels in your account, in the AWS
          * region where the API request is processed. This list can be filtered to match a
          * specified string.</p><p><h3>See Also:</h3>   <a
@@ -544,6 +678,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets summary information about playback key pairs.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPlaybackKeyPairsOutcome ListPlaybackKeyPairs(const Model::ListPlaybackKeyPairsRequest& request) const;
+
+        /**
+         * <p>Gets summary information about playback key pairs.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPlaybackKeyPairsOutcomeCallable ListPlaybackKeyPairsCallable(const Model::ListPlaybackKeyPairsRequest& request) const;
+
+        /**
+         * <p>Gets summary information about playback key pairs.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPlaybackKeyPairsAsync(const Model::ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about stream keys for the specified
@@ -796,11 +958,15 @@ namespace Model
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamKeyAsyncHelper(const Model::CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePlaybackKeyPairAsyncHelper(const Model::DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamKeyAsyncHelper(const Model::DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChannelAsyncHelper(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPlaybackKeyPairAsyncHelper(const Model::GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStreamAsyncHelper(const Model::GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStreamKeyAsyncHelper(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportPlaybackKeyPairAsyncHelper(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPlaybackKeyPairsAsyncHelper(const Model::ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamKeysAsyncHelper(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -25,8 +25,10 @@ namespace Model
 
   /**
    * <p>An automatic tape creation policy consists of automatic tape creation rules
-   * where each rule defines when and how to create new tapes.</p><p><h3>See
-   * Also:</h3>   <a
+   * where each rule defines when and how to create new tapes. For more information
+   * about automatic tape creation, see <a
+   * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+   * Tapes Automatically</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AutomaticTapeCreationRule">AWS
    * API Reference</a></p>
    */
@@ -210,7 +212,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline int GetMinimumNumTapes() const{ return m_minimumNumTapes; }
 
@@ -218,7 +223,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline bool MinimumNumTapesHasBeenSet() const { return m_minimumNumTapesHasBeenSet; }
 
@@ -226,7 +234,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline void SetMinimumNumTapes(int value) { m_minimumNumTapesHasBeenSet = true; m_minimumNumTapes = value; }
 
@@ -234,9 +245,41 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline AutomaticTapeCreationRule& WithMinimumNumTapes(int value) { SetMinimumNumTapes(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline bool GetWorm() const{ return m_worm; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline AutomaticTapeCreationRule& WithWorm(bool value) { SetWorm(value); return *this;}
 
   private:
 
@@ -251,6 +294,9 @@ namespace Model
 
     int m_minimumNumTapes;
     bool m_minimumNumTapesHasBeenSet;
+
+    bool m_worm;
+    bool m_wormHasBeenSet;
   };
 
 } // namespace Model

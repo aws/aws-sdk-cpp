@@ -517,6 +517,152 @@ namespace Model
 
 
     /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetLastProvisioningRecordId() const{ return m_lastProvisioningRecordId; }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline bool LastProvisioningRecordIdHasBeenSet() const { return m_lastProvisioningRecordIdHasBeenSet; }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastProvisioningRecordId(const Aws::String& value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId = value; }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastProvisioningRecordId(Aws::String&& value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId = std::move(value); }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastProvisioningRecordId(const char* value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId.assign(value); }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastProvisioningRecordId(const Aws::String& value) { SetLastProvisioningRecordId(value); return *this;}
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastProvisioningRecordId(Aws::String&& value) { SetLastProvisioningRecordId(std::move(value)); return *this;}
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastProvisioningRecordId(const char* value) { SetLastProvisioningRecordId(value); return *this;}
+
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetLastSuccessfulProvisioningRecordId() const{ return m_lastSuccessfulProvisioningRecordId; }
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline bool LastSuccessfulProvisioningRecordIdHasBeenSet() const { return m_lastSuccessfulProvisioningRecordIdHasBeenSet; }
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastSuccessfulProvisioningRecordId(const Aws::String& value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId = value; }
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastSuccessfulProvisioningRecordId(Aws::String&& value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId = std::move(value); }
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline void SetLastSuccessfulProvisioningRecordId(const char* value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId.assign(value); }
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastSuccessfulProvisioningRecordId(const Aws::String& value) { SetLastSuccessfulProvisioningRecordId(value); return *this;}
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastSuccessfulProvisioningRecordId(Aws::String&& value) { SetLastSuccessfulProvisioningRecordId(std::move(value)); return *this;}
+
+    /**
+     * <p>The record identifier of the last successful request performed on this
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
+     * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
+     * </p> </li> </ul>
+     */
+    inline ProvisionedProductDetail& WithLastSuccessfulProvisioningRecordId(const char* value) { SetLastSuccessfulProvisioningRecordId(value); return *this;}
+
+
+    /**
      * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
@@ -633,6 +779,12 @@ namespace Model
 
     Aws::String m_lastRecordId;
     bool m_lastRecordIdHasBeenSet;
+
+    Aws::String m_lastProvisioningRecordId;
+    bool m_lastProvisioningRecordIdHasBeenSet;
+
+    Aws::String m_lastSuccessfulProvisioningRecordId;
+    bool m_lastSuccessfulProvisioningRecordIdHasBeenSet;
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet;

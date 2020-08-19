@@ -35,6 +35,7 @@
 #include <aws/storagegateway/model/CreateSnapshotRequest.h>
 #include <aws/storagegateway/model/CreateSnapshotFromVolumeRecoveryPointRequest.h>
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeRequest.h>
+#include <aws/storagegateway/model/CreateTapePoolRequest.h>
 #include <aws/storagegateway/model/CreateTapeWithBarcodeRequest.h>
 #include <aws/storagegateway/model/CreateTapesRequest.h>
 #include <aws/storagegateway/model/DeleteAutomaticTapeCreationPolicyRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/storagegateway/model/DeleteSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/DeleteTapeRequest.h>
 #include <aws/storagegateway/model/DeleteTapeArchiveRequest.h>
+#include <aws/storagegateway/model/DeleteTapePoolRequest.h>
 #include <aws/storagegateway/model/DeleteVolumeRequest.h>
 #include <aws/storagegateway/model/DescribeAvailabilityMonitorTestRequest.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitRequest.h>
@@ -72,6 +74,7 @@
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
 #include <aws/storagegateway/model/ListTagsForResourceRequest.h>
+#include <aws/storagegateway/model/ListTapePoolsRequest.h>
 #include <aws/storagegateway/model/ListTapesRequest.h>
 #include <aws/storagegateway/model/ListVolumeInitiatorsRequest.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsRequest.h>
@@ -577,6 +580,33 @@ void StorageGatewayClient::CreateStorediSCSIVolumeAsyncHelper(const CreateStored
   handler(this, request, CreateStorediSCSIVolume(request), context);
 }
 
+CreateTapePoolOutcome StorageGatewayClient::CreateTapePool(const CreateTapePoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateTapePoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTapePoolOutcomeCallable StorageGatewayClient::CreateTapePoolCallable(const CreateTapePoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTapePoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTapePool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::CreateTapePoolAsync(const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTapePoolAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::CreateTapePoolAsyncHelper(const CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTapePool(request), context);
+}
+
 CreateTapeWithBarcodeOutcome StorageGatewayClient::CreateTapeWithBarcode(const CreateTapeWithBarcodeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -845,6 +875,33 @@ void StorageGatewayClient::DeleteTapeArchiveAsync(const DeleteTapeArchiveRequest
 void StorageGatewayClient::DeleteTapeArchiveAsyncHelper(const DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTapeArchive(request), context);
+}
+
+DeleteTapePoolOutcome StorageGatewayClient::DeleteTapePool(const DeleteTapePoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteTapePoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteTapePoolOutcomeCallable StorageGatewayClient::DeleteTapePoolCallable(const DeleteTapePoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTapePoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTapePool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DeleteTapePoolAsync(const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTapePoolAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DeleteTapePoolAsyncHelper(const DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTapePool(request), context);
 }
 
 DeleteVolumeOutcome StorageGatewayClient::DeleteVolume(const DeleteVolumeRequest& request) const
@@ -1574,6 +1631,33 @@ void StorageGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceReq
 void StorageGatewayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTapePoolsOutcome StorageGatewayClient::ListTapePools(const ListTapePoolsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListTapePoolsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTapePoolsOutcomeCallable StorageGatewayClient::ListTapePoolsCallable(const ListTapePoolsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTapePoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTapePools(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::ListTapePoolsAsync(const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTapePoolsAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::ListTapePoolsAsyncHelper(const ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTapePools(request), context);
 }
 
 ListTapesOutcome StorageGatewayClient::ListTapes(const ListTapesRequest& request) const

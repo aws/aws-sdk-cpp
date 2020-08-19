@@ -573,43 +573,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}

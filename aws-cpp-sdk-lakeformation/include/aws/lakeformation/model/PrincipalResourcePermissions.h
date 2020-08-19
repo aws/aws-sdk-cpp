@@ -8,6 +8,7 @@
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/Resource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lakeformation/model/DetailsMap.h>
 #include <aws/lakeformation/model/Permission.h>
 #include <utility>
 
@@ -192,6 +193,49 @@ namespace Model
      */
     inline PrincipalResourcePermissions& AddPermissionsWithGrantOption(Permission&& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline const DetailsMap& GetAdditionalDetails() const{ return m_additionalDetails; }
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline bool AdditionalDetailsHasBeenSet() const { return m_additionalDetailsHasBeenSet; }
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline void SetAdditionalDetails(const DetailsMap& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = value; }
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline void SetAdditionalDetails(DetailsMap&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = std::move(value); }
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline PrincipalResourcePermissions& WithAdditionalDetails(const DetailsMap& value) { SetAdditionalDetails(value); return *this;}
+
+    /**
+     * <p>This attribute can be used to return any additional details of
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
+     * resource ARN.</p>
+     */
+    inline PrincipalResourcePermissions& WithAdditionalDetails(DetailsMap&& value) { SetAdditionalDetails(std::move(value)); return *this;}
+
   private:
 
     DataLakePrincipal m_principal;
@@ -205,6 +249,9 @@ namespace Model
 
     Aws::Vector<Permission> m_permissionsWithGrantOption;
     bool m_permissionsWithGrantOptionHasBeenSet;
+
+    DetailsMap m_additionalDetails;
+    bool m_additionalDetailsHasBeenSet;
   };
 
 } // namespace Model
