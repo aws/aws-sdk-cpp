@@ -23,6 +23,7 @@ UpdateIntegrationRequest::UpdateIntegrationRequest() :
     m_descriptionHasBeenSet(false),
     m_integrationIdHasBeenSet(false),
     m_integrationMethodHasBeenSet(false),
+    m_integrationSubtypeHasBeenSet(false),
     m_integrationType(IntegrationType::NOT_SET),
     m_integrationTypeHasBeenSet(false),
     m_integrationUriHasBeenSet(false),
@@ -73,6 +74,12 @@ Aws::String UpdateIntegrationRequest::SerializePayload() const
   if(m_integrationMethodHasBeenSet)
   {
    payload.WithString("integrationMethod", m_integrationMethod);
+
+  }
+
+  if(m_integrationSubtypeHasBeenSet)
+  {
+   payload.WithString("integrationSubtype", m_integrationSubtype);
 
   }
 

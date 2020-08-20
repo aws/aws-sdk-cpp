@@ -458,22 +458,87 @@ namespace Model
 
 
     /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline const Aws::String& GetIntegrationSubtype() const{ return m_integrationSubtype; }
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline bool IntegrationSubtypeHasBeenSet() const { return m_integrationSubtypeHasBeenSet; }
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline void SetIntegrationSubtype(const Aws::String& value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype = value; }
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline void SetIntegrationSubtype(Aws::String&& value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype = std::move(value); }
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline void SetIntegrationSubtype(const char* value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype.assign(value); }
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline UpdateIntegrationRequest& WithIntegrationSubtype(const Aws::String& value) { SetIntegrationSubtype(value); return *this;}
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline UpdateIntegrationRequest& WithIntegrationSubtype(Aws::String&& value) { SetIntegrationSubtype(std::move(value)); return *this;}
+
+    /**
+     * <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service
+     * action to invoke. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+     * subtype reference</a>.</p>
+     */
+    inline UpdateIntegrationRequest& WithIntegrationSubtype(const char* value) { SetIntegrationSubtype(value); return *this;}
+
+
+    /**
      * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
      * integrating the route or method request with an AWS service action, including
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
 
@@ -483,17 +548,17 @@ namespace Model
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
 
@@ -503,17 +568,17 @@ namespace Model
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
 
@@ -523,17 +588,17 @@ namespace Model
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
 
@@ -543,17 +608,17 @@ namespace Model
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline UpdateIntegrationRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
 
@@ -563,17 +628,17 @@ namespace Model
      * the Lambda function-invoking action. With the Lambda function-invoking action,
      * this is referred to as the Lambda custom integration. With any other AWS service
      * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
-     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
-     * function-invoking action with the client request passed through as-is. This
-     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
-     * integrating the route or method request with an HTTP endpoint. This integration
-     * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
-     * HTTP endpoint, with the client request passed through as-is. This is also
-     * referred to as HTTP proxy integration. For HTTP API private integrations, use an
-     * HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request
-     * with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with a Lambda function
+     * or other AWS service action. This integration is also referred to as a Lambda
+     * proxy integration.</p> <p>HTTP: for integrating the route or method request with
+     * an HTTP endpoint. This integration is also referred to as the HTTP custom
+     * integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for
+     * integrating the route or method request with an HTTP endpoint, with the client
+     * request passed through as-is. This is also referred to as HTTP proxy
+     * integration. For HTTP API private integrations, use an HTTP_PROXY
+     * integration.</p> <p>MOCK: for integrating the route or method request with API
+     * Gateway as a "loopback" endpoint without invoking any backend. Supported only
+     * for WebSocket APIs.</p>
      */
     inline UpdateIntegrationRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
 
@@ -824,249 +889,275 @@ namespace Model
 
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the method
-     * request to the backend. The key is an integration request parameter name and the
-     * associated value is a method request parameter value or static value that must
-     * be enclosed within single quotes and pre-encoded as required by the backend. The
-     * method request parameter value must match the pattern of
+     * <p>For WebSocket APIs, a key-value map specifying request parameters that are
+     * passed from the method request to the backend. The key is an integration request
+     * parameter name and the associated value is a method request parameter value or
+     * static value that must be enclosed within single quotes and pre-encoded as
+     * required by the backend. The method request parameter value must match the
+     * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where 
-                  <replaceable>{location}</replaceable>
-               
-     * is querystring, path, or header; and 
-                 
-     * <replaceable>{name}</replaceable>
-                must be a valid and unique
-     * method request parameter name. Supported only for WebSocket APIs.</p>
+     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
+     * and <replaceable>{name}</replaceable> must be a valid and unique method request
+     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
+     * specifying parameters that are passed to AWS_PROXY integrations with a specified
+     * integrationSubtype. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+     * with AWS service integrations for HTTP APIs</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
@@ -1313,6 +1404,9 @@ namespace Model
 
     Aws::String m_integrationMethod;
     bool m_integrationMethodHasBeenSet;
+
+    Aws::String m_integrationSubtype;
+    bool m_integrationSubtypeHasBeenSet;
 
     IntegrationType m_integrationType;
     bool m_integrationTypeHasBeenSet;

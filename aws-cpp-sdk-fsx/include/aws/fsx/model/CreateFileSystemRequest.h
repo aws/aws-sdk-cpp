@@ -142,131 +142,157 @@ namespace Model
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
-     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
-     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
-     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
-     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.</p> </li> <li> <p>For <code>PERSISTENT
+     * HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB
+     * file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+     * <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB,
+     * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
+     * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
+     * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
-     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
-     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
-     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
-     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.</p> </li> <li> <p>For <code>PERSISTENT
+     * HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB
+     * file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+     * <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB,
+     * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
+     * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
+     * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
-     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
-     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
-     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
-     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.</p> </li> <li> <p>For <code>PERSISTENT
+     * HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB
+     * file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+     * <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB,
+     * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
+     * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
+     * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
      * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
      * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
-     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
-     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
-     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
-     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.</p> </li> <li> <p>For <code>PERSISTENT
+     * HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB
+     * file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+     * <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB,
+     * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
+     * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
+     * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline CreateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
-     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
-     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
-     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p>Sets the storage type for the file system you're creating. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
+     * to use solid state drive storage. SSD is supported on all Windows and Lustre
+     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
+     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
+     * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+     * Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
      */
     inline CreateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 

@@ -88,32 +88,68 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline const BackupLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline void SetLifecycle(const BackupLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline void SetLifecycle(BackupLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(const BackupLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
+     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
+     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
+     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
+     * backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(BackupLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -225,58 +261,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

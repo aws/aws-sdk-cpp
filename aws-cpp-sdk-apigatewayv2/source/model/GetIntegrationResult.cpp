@@ -94,6 +94,12 @@ GetIntegrationResult& GetIntegrationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("integrationSubtype"))
+  {
+    m_integrationSubtype = jsonValue.GetString("integrationSubtype");
+
+  }
+
   if(jsonValue.ValueExists("integrationType"))
   {
     m_integrationType = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("integrationType"));

@@ -31,6 +31,7 @@ Integration::Integration() :
     m_integrationIdHasBeenSet(false),
     m_integrationMethodHasBeenSet(false),
     m_integrationResponseSelectionExpressionHasBeenSet(false),
+    m_integrationSubtypeHasBeenSet(false),
     m_integrationType(IntegrationType::NOT_SET),
     m_integrationTypeHasBeenSet(false),
     m_integrationUriHasBeenSet(false),
@@ -59,6 +60,7 @@ Integration::Integration(JsonView jsonValue) :
     m_integrationIdHasBeenSet(false),
     m_integrationMethodHasBeenSet(false),
     m_integrationResponseSelectionExpressionHasBeenSet(false),
+    m_integrationSubtypeHasBeenSet(false),
     m_integrationType(IntegrationType::NOT_SET),
     m_integrationTypeHasBeenSet(false),
     m_integrationUriHasBeenSet(false),
@@ -138,6 +140,13 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_integrationResponseSelectionExpression = jsonValue.GetString("integrationResponseSelectionExpression");
 
     m_integrationResponseSelectionExpressionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("integrationSubtype"))
+  {
+    m_integrationSubtype = jsonValue.GetString("integrationSubtype");
+
+    m_integrationSubtypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("integrationType"))
@@ -265,6 +274,12 @@ JsonValue Integration::Jsonize() const
   if(m_integrationResponseSelectionExpressionHasBeenSet)
   {
    payload.WithString("integrationResponseSelectionExpression", m_integrationResponseSelectionExpression);
+
+  }
+
+  if(m_integrationSubtypeHasBeenSet)
+  {
+   payload.WithString("integrationSubtype", m_integrationSubtype);
 
   }
 

@@ -88,6 +88,28 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether an API is managed by API Gateway. You can't update or
+     * delete a managed API by using API Gateway. A managed API can be deleted only
+     * through the tooling or service that created it.</p>
+     */
+    inline bool GetApiGatewayManaged() const{ return m_apiGatewayManaged; }
+
+    /**
+     * <p>Specifies whether an API is managed by API Gateway. You can't update or
+     * delete a managed API by using API Gateway. A managed API can be deleted only
+     * through the tooling or service that created it.</p>
+     */
+    inline void SetApiGatewayManaged(bool value) { m_apiGatewayManaged = value; }
+
+    /**
+     * <p>Specifies whether an API is managed by API Gateway. You can't update or
+     * delete a managed API by using API Gateway. A managed API can be deleted only
+     * through the tooling or service that created it.</p>
+     */
+    inline ImportApiResult& WithApiGatewayManaged(bool value) { SetApiGatewayManaged(value); return *this;}
+
+
+    /**
      * <p>The API ID.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
@@ -604,6 +626,8 @@ namespace Model
   private:
 
     Aws::String m_apiEndpoint;
+
+    bool m_apiGatewayManaged;
 
     Aws::String m_apiId;
 

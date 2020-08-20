@@ -20,6 +20,8 @@ namespace Model
 
 Api::Api() : 
     m_apiEndpointHasBeenSet(false),
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
     m_corsConfigurationHasBeenSet(false),
@@ -40,6 +42,8 @@ Api::Api() :
 
 Api::Api(JsonView jsonValue) : 
     m_apiEndpointHasBeenSet(false),
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
     m_corsConfigurationHasBeenSet(false),
@@ -66,6 +70,13 @@ Api& Api::operator =(JsonView jsonValue)
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");
 
     m_apiEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
+
+    m_apiGatewayManagedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("apiId"))
@@ -178,6 +189,12 @@ JsonValue Api::Jsonize() const
   if(m_apiEndpointHasBeenSet)
   {
    payload.WithString("apiEndpoint", m_apiEndpoint);
+
+  }
+
+  if(m_apiGatewayManagedHasBeenSet)
+  {
+   payload.WithBool("apiGatewayManaged", m_apiGatewayManaged);
 
   }
 

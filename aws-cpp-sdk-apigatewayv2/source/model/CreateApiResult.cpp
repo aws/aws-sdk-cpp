@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateApiResult::CreateApiResult() : 
+    m_apiGatewayManaged(false),
     m_disableSchemaValidation(false),
     m_protocolType(ProtocolType::NOT_SET)
 {
 }
 
 CreateApiResult::CreateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_apiGatewayManaged(false),
     m_disableSchemaValidation(false),
     m_protocolType(ProtocolType::NOT_SET)
 {
@@ -35,6 +37,12 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("apiEndpoint"))
   {
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");
+
+  }
+
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
 
   }
 
