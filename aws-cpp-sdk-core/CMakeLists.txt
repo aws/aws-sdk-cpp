@@ -1,5 +1,7 @@
 add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
+include(AwsFindPackage)
+
 if(VERSION_STRING)
     set(AWSSDK_VERSION_STRING ${VERSION_STRING})
     message(STATUS "Updating version info to ${VERSION_STRING}")
@@ -493,9 +495,9 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
 
-find_package(aws-c-event-stream REQUIRED)
+aws_use_package(aws-c-event-stream)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC AWS::aws-c-event-stream)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_AWS_LIBS})
 
 
 if(USE_WINDOWS_DLL_SEMANTICS)
