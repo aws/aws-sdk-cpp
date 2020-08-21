@@ -663,7 +663,7 @@ namespace Aws
             assert(queuedParts.size() == 1);
 
             auto partState = queuedParts.begin()->second;
-            Aws::S3::Model::GetObjectRequest request;
+            auto request = m_transferConfig.getObjectTemplate;
             request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.SetRange(
@@ -833,7 +833,7 @@ namespace Aws
                 {
                     partState->SetDownloadBuffer(buffer);
 
-                    Aws::S3::Model::GetObjectRequest getObjectRangeRequest;
+                    auto getObjectRangeRequest = m_transferConfig.getObjectTemplate;
                     getObjectRangeRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     getObjectRangeRequest.SetBucket(handle->GetBucketName());

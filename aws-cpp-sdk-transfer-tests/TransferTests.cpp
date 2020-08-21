@@ -1650,4 +1650,62 @@ TEST_F(TransferTests, MultipartUploadWithComputeContentMd5Test)
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
 }
+
+// Test of a basic multi part upload - 7.5 megs with the templated tests
+TEST_F(TransferTests, TransferManager_TemplatesTest)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String mediumTestFilePath = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(mediumTestFilePath, MEDIUM_TEST_SIZE, testString);
+    
+    
+    GetObjectRequest getObjReqTemplate;
+    getObjReqTemplate.WithRequestPayer(Aws::S3::Model::RequestPayer::requester);
+    PutObjectRequest putObjReqTemplate;
+    putObjReqTemplate.WithRequestPayer(Aws::S3::Model::RequestPayer::requester);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.putObjectTemplate = putObjReqTemplate;
+    transferManagerConfig.getObjectTemplate = getObjReqTemplate;
+    
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFilePath, GetTestBucketName(), RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    ASSERT_EQ(true, requestPtr->ShouldContinue());
+    ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
+    ASSERT_STREQ(mediumTestFilePath.c_str(), requestPtr->GetTargetFilePath().c_str());
+    requestPtr->WaitUntilFinished();
+
+    size_t retries = 0;
+    //just make sure we don't fail because a the put object failed. (e.g. network problems or interuptions)
+    while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+    {
+        transferManager->RetryUpload(mediumTestFilePath, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+
+    ASSERT_TRUE(requestPtr->IsMultipart());
+    ASSERT_FALSE(requestPtr->GetMultiPartId().empty());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // Should be 2
+    ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+
+    uint64_t fileSize = requestPtr->GetBytesTotalSize();
+    ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
+    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
+
+    VerifyUploadedFile(*transferManager,
+                       mediumTestFilePath,
+                       GetTestBucketName(),
+                       RandomFileName,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+}
 }

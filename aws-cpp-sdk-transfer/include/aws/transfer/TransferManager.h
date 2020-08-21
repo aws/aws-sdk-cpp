@@ -8,6 +8,7 @@
 #include <aws/transfer/TransferHandle.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/core/utils/threading/Executor.h>
@@ -61,6 +62,11 @@ namespace Aws
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */
             Aws::S3::Model::PutObjectRequest putObjectTemplate;
+            /**
+             * If you have special arguments you want passed to our get object calls, put them here. We will copy the template for each put object call
+             * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
+             */
+            Aws::S3::Model::GetObjectRequest getObjectTemplate;
             /**
              * If you have special arguments you want passed to our create multipart upload calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
