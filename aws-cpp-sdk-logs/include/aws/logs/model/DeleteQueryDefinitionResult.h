@@ -30,13 +30,22 @@ namespace Model
     DeleteQueryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that
+     * the operation failed.</p>
+     */
     inline bool GetSuccess() const{ return m_success; }
 
-    
+    /**
+     * <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that
+     * the operation failed.</p>
+     */
     inline void SetSuccess(bool value) { m_success = value; }
 
-    
+    /**
+     * <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that
+     * the operation failed.</p>
+     */
     inline DeleteQueryDefinitionResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
 
   private:

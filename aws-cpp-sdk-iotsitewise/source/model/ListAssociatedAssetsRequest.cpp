@@ -18,6 +18,8 @@ using namespace Aws::Http;
 ListAssociatedAssetsRequest::ListAssociatedAssetsRequest() : 
     m_assetIdHasBeenSet(false),
     m_hierarchyIdHasBeenSet(false),
+    m_traversalDirection(TraversalDirection::NOT_SET),
+    m_traversalDirectionHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -36,6 +38,13 @@ void ListAssociatedAssetsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_hierarchyId;
       uri.AddQueryStringParameter("hierarchyId", ss.str());
+      ss.str("");
+    }
+
+    if(m_traversalDirectionHasBeenSet)
+    {
+      ss << TraversalDirectionMapper::GetNameForTraversalDirection(m_traversalDirection);
+      uri.AddQueryStringParameter("traversalDirection", ss.str());
       ss.str("");
     }
 

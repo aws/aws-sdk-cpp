@@ -191,37 +191,41 @@ namespace Model
 
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
-     * existing value is retained.</p>
+     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
+     * is specified, the existing value is retained.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
-     * existing value is retained.</p>
+     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
+     * is specified, the existing value is retained.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
-     * existing value is retained.</p>
+     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
+     * is specified, the existing value is retained.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
-     * existing value is retained.</p>
+     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
+     * is specified, the existing value is retained.</p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 

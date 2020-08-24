@@ -86,6 +86,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+
+
+    /**
      * <p>The attachments.</p>
      */
     inline const Aws::Vector<TransitGatewayRouteAttachment>& GetTransitGatewayAttachments() const{ return m_transitGatewayAttachments; }
@@ -191,6 +232,9 @@ namespace Model
 
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
+    Aws::String m_prefixListId;
+    bool m_prefixListIdHasBeenSet;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
     bool m_transitGatewayAttachmentsHasBeenSet;

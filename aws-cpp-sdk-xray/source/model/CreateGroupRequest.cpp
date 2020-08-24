@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateGroupRequest::CreateGroupRequest() : 
     m_groupNameHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,17 @@ Aws::String CreateGroupRequest::SerializePayload() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("FilterExpression", m_filterExpression);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

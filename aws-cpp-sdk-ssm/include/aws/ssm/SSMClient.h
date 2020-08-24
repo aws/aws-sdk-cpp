@@ -1394,18 +1394,18 @@ namespace Model
         virtual void DeleteDocumentAsync(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a custom inventory type, or the data associated with a custom
-         * Inventory type. Deleting a custom inventory type is also referred to as deleting
-         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a custom inventory type or the data associated with a custom Inventory
+         * type. Deleting a custom inventory type is also referred to as deleting a custom
+         * inventory schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInventoryOutcome DeleteInventory(const Model::DeleteInventoryRequest& request) const;
 
         /**
-         * <p>Delete a custom inventory type, or the data associated with a custom
-         * Inventory type. Deleting a custom inventory type is also referred to as deleting
-         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a custom inventory type or the data associated with a custom Inventory
+         * type. Deleting a custom inventory type is also referred to as deleting a custom
+         * inventory schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
          * API Reference</a></p>
          *
@@ -1414,9 +1414,9 @@ namespace Model
         virtual Model::DeleteInventoryOutcomeCallable DeleteInventoryCallable(const Model::DeleteInventoryRequest& request) const;
 
         /**
-         * <p>Delete a custom inventory type, or the data associated with a custom
-         * Inventory type. Deleting a custom inventory type is also referred to as deleting
-         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a custom inventory type or the data associated with a custom Inventory
+         * type. Deleting a custom inventory type is also referred to as deleting a custom
+         * inventory schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
          * API Reference</a></p>
          *
@@ -2735,8 +2735,12 @@ namespace Model
          * state of the calendar at a specific time, and returns the next time that the
          * Change Calendar state will transition. If you do not specify a time,
          * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
-         * information about Systems Manager Change Calendar, see <a
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
+         * you specify more than one calendar in a request, the command returns the status
+         * of <code>OPEN</code> only if all calendars in the request are open. If one or
+         * more calendars in the request are closed, the status returned is
+         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
+         * Calendar, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
          * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2751,8 +2755,12 @@ namespace Model
          * state of the calendar at a specific time, and returns the next time that the
          * Change Calendar state will transition. If you do not specify a time,
          * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
-         * information about Systems Manager Change Calendar, see <a
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
+         * you specify more than one calendar in a request, the command returns the status
+         * of <code>OPEN</code> only if all calendars in the request are open. If one or
+         * more calendars in the request are closed, the status returned is
+         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
+         * Calendar, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
          * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2769,8 +2777,12 @@ namespace Model
          * state of the calendar at a specific time, and returns the next time that the
          * Change Calendar state will transition. If you do not specify a time,
          * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
-         * information about Systems Manager Change Calendar, see <a
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
+         * you specify more than one calendar in a request, the command returns the status
+         * of <code>OPEN</code> only if all calendars in the request are open. If one or
+         * more calendars in the request are closed, the status returned is
+         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
+         * Calendar, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
          * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

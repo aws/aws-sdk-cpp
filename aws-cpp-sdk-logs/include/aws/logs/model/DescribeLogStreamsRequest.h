@@ -78,49 +78,49 @@ namespace Model
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
-     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     * <code>LastEventTime</code>, you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
 
@@ -130,12 +130,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
 
@@ -144,12 +144,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
@@ -158,12 +158,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
 
@@ -172,12 +172,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
 
@@ -186,12 +186,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline DescribeLogStreamsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
 
@@ -200,12 +200,12 @@ namespace Model
      * stream name. If the value is <code>LastEventTime</code>, the results are ordered
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
-     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
-     * updates in less than an hour from ingestion, but may take longer in some rare
-     * situations.</p>
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>
+     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * in the log stream in CloudWatch Logs. This number is expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * updates on an eventual consistency basis. It typically updates in less than an
+     * hour from ingestion, but in rare situations might take longer.</p>
      */
     inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
 

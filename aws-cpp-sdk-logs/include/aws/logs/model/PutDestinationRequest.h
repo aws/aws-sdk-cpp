@@ -126,49 +126,49 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
-     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     * Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

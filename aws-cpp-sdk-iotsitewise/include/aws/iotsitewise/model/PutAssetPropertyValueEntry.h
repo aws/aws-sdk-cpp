@@ -179,7 +179,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
@@ -190,7 +190,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
@@ -201,7 +201,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
@@ -212,7 +212,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
@@ -234,7 +234,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
@@ -245,7 +245,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
@@ -256,7 +256,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}

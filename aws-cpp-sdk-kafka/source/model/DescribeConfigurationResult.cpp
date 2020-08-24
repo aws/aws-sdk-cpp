@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationResult::DescribeConfigurationResult()
+DescribeConfigurationResult::DescribeConfigurationResult() : 
+    m_state(ConfigurationState::NOT_SET)
 {
 }
 
-DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_state(ConfigurationState::NOT_SET)
 {
   *this = result;
 }
@@ -64,6 +66,12 @@ DescribeConfigurationResult& DescribeConfigurationResult::operator =(const Aws::
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ConfigurationStateMapper::GetConfigurationStateForName(jsonValue.GetString("state"));
 
   }
 

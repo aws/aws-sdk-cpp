@@ -77,49 +77,49 @@ namespace Model
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline void SetAccessPolicy(const char* value) { m_accessPolicyHasBeenSet = true; m_accessPolicy.assign(value); }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to the associated destination.</p>
+     * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 

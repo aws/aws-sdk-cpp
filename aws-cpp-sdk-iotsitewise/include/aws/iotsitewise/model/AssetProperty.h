@@ -127,7 +127,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
@@ -138,7 +138,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
@@ -149,7 +149,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
@@ -160,7 +160,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
@@ -171,7 +171,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
@@ -182,7 +182,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
@@ -193,7 +193,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
@@ -204,7 +204,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(const char* value) { SetAlias(value); return *this;}
@@ -213,48 +213,42 @@ namespace Model
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline const PropertyNotification& GetNotification() const{ return m_notification; }
 
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
 
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline void SetNotification(const PropertyNotification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline void SetNotification(PropertyNotification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline AssetProperty& WithNotification(const PropertyNotification& value) { SetNotification(value); return *this;}
 
     /**
      * <p>The asset property's notification topic and state. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-     * </p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
      */
     inline AssetProperty& WithNotification(PropertyNotification&& value) { SetNotification(std::move(value)); return *this;}
 

@@ -409,42 +409,58 @@ namespace Model
 
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

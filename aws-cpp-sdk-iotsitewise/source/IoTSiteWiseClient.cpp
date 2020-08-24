@@ -1582,11 +1582,6 @@ ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAs
     AWS_LOGSTREAM_ERROR("ListAssociatedAssets", "Required field: AssetId, is not set");
     return ListAssociatedAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  if (!request.HierarchyIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListAssociatedAssets", "Required field: HierarchyId, is not set");
-    return ListAssociatedAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HierarchyId]", false));
-  }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {

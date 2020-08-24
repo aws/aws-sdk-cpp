@@ -58,8 +58,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -71,9 +71,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -97,8 +98,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -110,9 +111,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -136,8 +138,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -149,9 +151,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -175,8 +178,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -188,9 +191,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -214,8 +218,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -227,9 +231,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -253,8 +258,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -266,9 +271,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -292,8 +298,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -305,9 +311,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -331,8 +338,8 @@ namespace Model
      * from a snapshot that is enabled for fast snapshot restore (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>size</code> - The size of the
      * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
-     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
-     * status of the volume (<code>creating</code> | <code>available</code> |
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The state
+     * of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -344,9 +351,10 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
-     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+     * volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -32,25 +32,39 @@ namespace Model
     PutQueryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline const Aws::String& GetQueryDefinitionId() const{ return m_queryDefinitionId; }
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline void SetQueryDefinitionId(const Aws::String& value) { m_queryDefinitionId = value; }
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline void SetQueryDefinitionId(Aws::String&& value) { m_queryDefinitionId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline void SetQueryDefinitionId(const char* value) { m_queryDefinitionId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline PutQueryDefinitionResult& WithQueryDefinitionId(const Aws::String& value) { SetQueryDefinitionId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline PutQueryDefinitionResult& WithQueryDefinitionId(Aws::String&& value) { SetQueryDefinitionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the query definition.</p>
+     */
     inline PutQueryDefinitionResult& WithQueryDefinitionId(const char* value) { SetQueryDefinitionId(value); return *this;}
 
   private:

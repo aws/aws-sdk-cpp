@@ -115,8 +115,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -178,8 +178,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -241,8 +241,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -304,8 +304,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -367,8 +367,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -430,8 +430,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -493,8 +493,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>
@@ -556,8 +556,8 @@ namespace Model
      * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
      * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
+     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
      * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
      * description of the image (provided during image creation).</p> </li> <li> <p>

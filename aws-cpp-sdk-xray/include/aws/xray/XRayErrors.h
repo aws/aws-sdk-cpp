@@ -48,7 +48,8 @@ enum class XRayErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  RULE_LIMIT_EXCEEDED
+  RULE_LIMIT_EXCEEDED,
+  TOO_MANY_TAGS
 };
 
 class AWS_XRAY_API XRayError : public Aws::Client::AWSError<XRayErrors>

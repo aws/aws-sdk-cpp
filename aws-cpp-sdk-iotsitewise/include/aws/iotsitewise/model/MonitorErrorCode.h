@@ -16,7 +16,9 @@ namespace Model
   enum class MonitorErrorCode
   {
     NOT_SET,
-    INTERNAL_FAILURE
+    INTERNAL_FAILURE,
+    VALIDATION_ERROR,
+    LIMIT_EXCEEDED
   };
 
 namespace MonitorErrorCodeMapper

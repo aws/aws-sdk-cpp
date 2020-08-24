@@ -34,25 +34,39 @@ namespace Model
     DescribeQueryDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline const Aws::Vector<QueryDefinition>& GetQueryDefinitions() const{ return m_queryDefinitions; }
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline void SetQueryDefinitions(const Aws::Vector<QueryDefinition>& value) { m_queryDefinitions = value; }
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline void SetQueryDefinitions(Aws::Vector<QueryDefinition>&& value) { m_queryDefinitions = std::move(value); }
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline DescribeQueryDefinitionsResult& WithQueryDefinitions(const Aws::Vector<QueryDefinition>& value) { SetQueryDefinitions(value); return *this;}
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline DescribeQueryDefinitionsResult& WithQueryDefinitions(Aws::Vector<QueryDefinition>&& value) { SetQueryDefinitions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline DescribeQueryDefinitionsResult& AddQueryDefinitions(const QueryDefinition& value) { m_queryDefinitions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The list of query definitions that match your request.</p>
+     */
     inline DescribeQueryDefinitionsResult& AddQueryDefinitions(QueryDefinition&& value) { m_queryDefinitions.push_back(std::move(value)); return *this; }
 
 

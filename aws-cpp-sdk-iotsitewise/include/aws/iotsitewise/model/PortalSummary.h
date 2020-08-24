@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotsitewise/model/PortalStatus.h>
 #include <utility>
 
 namespace Aws
@@ -360,6 +361,25 @@ namespace Model
      */
     inline PortalSummary& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    
+    inline const PortalStatus& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    
+    inline void SetStatus(const PortalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    
+    inline void SetStatus(PortalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    
+    inline PortalSummary& WithStatus(const PortalStatus& value) { SetStatus(value); return *this;}
+
+    
+    inline PortalSummary& WithStatus(PortalStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -382,6 +402,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    PortalStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

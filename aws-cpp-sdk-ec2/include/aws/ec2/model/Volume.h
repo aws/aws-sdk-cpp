@@ -419,15 +419,17 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
-     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * 64,000 IOPS for <code>io1</code> and <code>io2</code> volumes, in most Regions.
+     * The maximum IOPS for <code>io1</code> and <code>io2</code> of 64,000 is
+     * guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000
      * IOPS.</p> <p>Condition: This parameter is required for requests to create
-     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
-     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * <code>io1</code> and <code>io2</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -438,15 +440,17 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
-     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * 64,000 IOPS for <code>io1</code> and <code>io2</code> volumes, in most Regions.
+     * The maximum IOPS for <code>io1</code> and <code>io2</code> of 64,000 is
+     * guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000
      * IOPS.</p> <p>Condition: This parameter is required for requests to create
-     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
-     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * <code>io1</code> and <code>io2</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -457,15 +461,17 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
-     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * 64,000 IOPS for <code>io1</code> and <code>io2</code> volumes, in most Regions.
+     * The maximum IOPS for <code>io1</code> and <code>io2</code> of 64,000 is
+     * guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000
      * IOPS.</p> <p>Condition: This parameter is required for requests to create
-     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
-     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * <code>io1</code> and <code>io2</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -476,15 +482,17 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
-     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
-     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * 64,000 IOPS for <code>io1</code> and <code>io2</code> volumes, in most Regions.
+     * The maximum IOPS for <code>io1</code> and <code>io2</code> of 64,000 is
+     * guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000
      * IOPS.</p> <p>Condition: This parameter is required for requests to create
-     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
-     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * <code>io1</code> and <code>io2</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
@@ -532,49 +540,49 @@ namespace Model
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline Volume& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p>
+     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
+     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     * <code>standard</code> for Magnetic volumes.</p>
      */
     inline Volume& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 

@@ -123,14 +123,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -143,14 +143,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -163,14 +163,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -183,14 +183,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -203,14 +203,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -223,14 +223,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -243,14 +243,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>
@@ -263,14 +263,14 @@ namespace Model
      * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
      * <li> <p> <code>original-size</code> - The original size of the volume, in
      * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
-     * type of the volume (standard | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
      * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
      * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
      * The target size of the volume, in GiB.</p> </li> <li> <p>
      * <code>target-volume-type</code> - The target volume type of the volume (standard
-     * | io1 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
      * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
      * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
      * ID of the volume.</p> </li> </ul>

@@ -32,7 +32,9 @@ KinesisSettings::KinesisSettings() :
     m_includeTableAlterOperations(false),
     m_includeTableAlterOperationsHasBeenSet(false),
     m_includeControlDetails(false),
-    m_includeControlDetailsHasBeenSet(false)
+    m_includeControlDetailsHasBeenSet(false),
+    m_includeNullAndEmpty(false),
+    m_includeNullAndEmptyHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ KinesisSettings::KinesisSettings(JsonView jsonValue) :
     m_includeTableAlterOperations(false),
     m_includeTableAlterOperationsHasBeenSet(false),
     m_includeControlDetails(false),
-    m_includeControlDetailsHasBeenSet(false)
+    m_includeControlDetailsHasBeenSet(false),
+    m_includeNullAndEmpty(false),
+    m_includeNullAndEmptyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,13 @@ KinesisSettings& KinesisSettings::operator =(JsonView jsonValue)
     m_includeControlDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludeNullAndEmpty"))
+  {
+    m_includeNullAndEmpty = jsonValue.GetBool("IncludeNullAndEmpty");
+
+    m_includeNullAndEmptyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +175,12 @@ JsonValue KinesisSettings::Jsonize() const
   if(m_includeControlDetailsHasBeenSet)
   {
    payload.WithBool("IncludeControlDetails", m_includeControlDetails);
+
+  }
+
+  if(m_includeNullAndEmptyHasBeenSet)
+  {
+   payload.WithBool("IncludeNullAndEmpty", m_includeNullAndEmpty);
 
   }
 

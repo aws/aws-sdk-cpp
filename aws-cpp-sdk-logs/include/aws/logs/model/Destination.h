@@ -80,49 +80,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}

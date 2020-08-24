@@ -43,181 +43,197 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
+     * required parameter that enables DMS to write and read objects from an 3S
+     * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
 
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline const Aws::String& GetCsvRowDelimiter() const{ return m_csvRowDelimiter; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline bool CsvRowDelimiterHasBeenSet() const { return m_csvRowDelimiterHasBeenSet; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(const Aws::String& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = value; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(Aws::String&& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = std::move(value); }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(const char* value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter.assign(value); }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(const Aws::String& value) { SetCsvRowDelimiter(value); return *this;}
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(Aws::String&& value) { SetCsvRowDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(const char* value) { SetCsvRowDelimiter(value); return *this;}
 
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline const Aws::String& GetCsvDelimiter() const{ return m_csvDelimiter; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline bool CsvDelimiterHasBeenSet() const { return m_csvDelimiterHasBeenSet; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(const Aws::String& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = value; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(Aws::String&& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = std::move(value); }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(const char* value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter.assign(value); }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(const Aws::String& value) { SetCsvDelimiter(value); return *this;}
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(Aws::String&& value) { SetCsvDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(const char* value) { SetCsvDelimiter(value); return *this;}
 
@@ -389,14 +405,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -408,14 +428,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -427,14 +451,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -446,14 +474,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -465,14 +497,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -484,14 +520,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+     * with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -1342,8 +1382,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1367,8 +1407,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1392,8 +1432,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1417,8 +1457,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the

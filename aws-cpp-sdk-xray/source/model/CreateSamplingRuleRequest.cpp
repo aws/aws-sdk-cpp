@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateSamplingRuleRequest::CreateSamplingRuleRequest() : 
-    m_samplingRuleHasBeenSet(false)
+    m_samplingRuleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String CreateSamplingRuleRequest::SerializePayload() const
   if(m_samplingRuleHasBeenSet)
   {
    payload.WithObject("SamplingRule", m_samplingRule.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

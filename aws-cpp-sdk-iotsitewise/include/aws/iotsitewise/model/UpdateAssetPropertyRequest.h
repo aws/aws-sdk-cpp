@@ -122,7 +122,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -146,7 +146,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -158,7 +158,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -182,7 +182,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -194,7 +194,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -206,7 +206,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -218,7 +218,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline const PropertyNotificationState& GetPropertyNotificationState() const{ return m_propertyNotificationState; }
@@ -228,7 +228,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline bool PropertyNotificationStateHasBeenSet() const { return m_propertyNotificationStateHasBeenSet; }
@@ -238,7 +238,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(const PropertyNotificationState& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = value; }
@@ -248,7 +248,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(PropertyNotificationState&& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = std::move(value); }
@@ -258,7 +258,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(const PropertyNotificationState& value) { SetPropertyNotificationState(value); return *this;}
@@ -268,7 +268,7 @@ namespace Model
      * When the notification state is enabled, AWS IoT SiteWise publishes property
      * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(PropertyNotificationState&& value) { SetPropertyNotificationState(std::move(value)); return *this;}

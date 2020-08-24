@@ -59,56 +59,56 @@ namespace Model
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
@@ -158,8 +158,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -171,8 +171,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -184,8 +184,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -197,8 +197,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -210,8 +210,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -223,8 +223,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -236,8 +236,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -249,8 +249,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -1329,9 +1329,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1340,9 +1340,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1351,9 +1351,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1362,9 +1362,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1373,9 +1373,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1384,9 +1384,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
      * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
      * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1396,9 +1396,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1407,9 +1407,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1418,9 +1418,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1429,9 +1429,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1440,9 +1440,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1451,9 +1451,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target MySQL endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
      * connection attributes when using MySQL as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
      * connection attributes when using a MySQL-compatible database as a target for AWS
      * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1463,9 +1463,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1474,9 +1474,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1485,9 +1485,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1496,9 +1496,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1507,9 +1507,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1518,9 +1518,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Oracle endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
      * connection attributes when using Oracle as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
      * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1530,9 +1530,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1541,9 +1541,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1552,9 +1552,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1563,9 +1563,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1574,9 +1574,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1585,9 +1585,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
      * information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
      * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
      * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1597,9 +1597,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1608,9 +1608,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1619,9 +1619,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1630,9 +1630,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1641,9 +1641,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1652,9 +1652,9 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source and target Microsoft SQL Server
      * endpoint. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
      * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
      * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
      * the <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1664,7 +1664,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1673,7 +1673,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1682,7 +1682,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1691,7 +1691,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1700,7 +1700,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -1709,7 +1709,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
      * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
      * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */

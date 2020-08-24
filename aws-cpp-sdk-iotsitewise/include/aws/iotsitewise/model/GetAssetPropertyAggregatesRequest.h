@@ -131,7 +131,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
@@ -142,7 +142,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
@@ -153,7 +153,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
@@ -164,7 +164,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
@@ -175,7 +175,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
@@ -186,7 +186,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
@@ -197,7 +197,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
@@ -208,7 +208,7 @@ namespace Model
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}
@@ -412,32 +412,38 @@ namespace Model
 
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline const TimeOrdering& GetTimeOrdering() const{ return m_timeOrdering; }
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline bool TimeOrderingHasBeenSet() const { return m_timeOrderingHasBeenSet; }
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline void SetTimeOrdering(const TimeOrdering& value) { m_timeOrderingHasBeenSet = true; m_timeOrdering = value; }
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline void SetTimeOrdering(TimeOrdering&& value) { m_timeOrderingHasBeenSet = true; m_timeOrdering = std::move(value); }
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline GetAssetPropertyAggregatesRequest& WithTimeOrdering(const TimeOrdering& value) { SetTimeOrdering(value); return *this;}
 
     /**
-     * <p>The chronological sorting order of the requested information.</p>
+     * <p>The chronological sorting order of the requested information.</p> <p>Default:
+     * <code>ASCENDING</code> </p>
      */
     inline GetAssetPropertyAggregatesRequest& WithTimeOrdering(TimeOrdering&& value) { SetTimeOrdering(std::move(value)); return *this;}
 
@@ -485,21 +491,25 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 100</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 100</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 100</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 100</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

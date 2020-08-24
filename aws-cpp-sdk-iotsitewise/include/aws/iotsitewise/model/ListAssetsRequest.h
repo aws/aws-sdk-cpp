@@ -82,21 +82,25 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 50</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 50</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 50</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: 50</p>
      */
     inline ListAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -160,61 +164,61 @@ namespace Model
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline const ListAssetsFilter& GetFilter() const{ return m_filter; }
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline void SetFilter(const ListAssetsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline void SetFilter(ListAssetsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline ListAssetsRequest& WithFilter(const ListAssetsFilter& value) { SetFilter(value); return *this;}
 
     /**
      * <p>The filter for the requested list of assets. Choose one of the following
-     * options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The
-     * list includes all assets for a given asset model ID. The
-     * <code>assetModelId</code> parameter is required if you filter by
-     * <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes
-     * only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a
+     * given asset model ID. The <code>assetModelId</code> parameter is required if you
+     * filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list
+     * includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
+     * <p>Default: <code>ALL</code> </p>
      */
     inline ListAssetsRequest& WithFilter(ListAssetsFilter&& value) { SetFilter(std::move(value)); return *this;}
 

@@ -83,8 +83,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -92,8 +94,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -101,8 +105,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -110,8 +116,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -119,8 +127,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline GetTransitGatewayRouteTableAssociationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -128,8 +138,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline GetTransitGatewayRouteTableAssociationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -137,8 +149,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline GetTransitGatewayRouteTableAssociationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -146,8 +160,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
-     * - The ID of the attachment.</p> </li> </ul>
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+     * </ul>
      */
     inline GetTransitGatewayRouteTableAssociationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

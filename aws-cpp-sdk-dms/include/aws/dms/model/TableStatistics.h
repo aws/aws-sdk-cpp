@@ -520,129 +520,161 @@ namespace Model
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline const Aws::String& GetValidationState() const{ return m_validationState; }
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline bool ValidationStateHasBeenSet() const { return m_validationStateHasBeenSet; }
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline void SetValidationState(const Aws::String& value) { m_validationStateHasBeenSet = true; m_validationState = value; }
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline void SetValidationState(Aws::String&& value) { m_validationStateHasBeenSet = true; m_validationState = std::move(value); }
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline void SetValidationState(const char* value) { m_validationStateHasBeenSet = true; m_validationState.assign(value); }
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(const Aws::String& value) { SetValidationState(value); return *this;}
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(Aws::String&& value) { SetValidationState(std::move(value)); return *this;}
 
     /**
      * <p>The validation state of the table.</p> <p>This parameter can have the
-     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
-     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * following values:</p> <ul> <li> <p>Not enabled – Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records – Some
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
-     * records - Some records in the table don't match between the source and
-     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
-     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * records – Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
-     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
-     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
-     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
+     * </li> <li> <p>Validated – All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error – The
+     * table couldn't be validated because of an unexpected error.</p> </li> <li>
+     * <p>Pending validation – The table is waiting validation.</p> </li> <li>
+     * <p>Preparing table – Preparing the table enabled in the migration task for
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * pending validation after the table was updated.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(const char* value) { SetValidationState(value); return *this;}
 

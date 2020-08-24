@@ -24,7 +24,9 @@ Configuration::Configuration() :
     m_descriptionHasBeenSet(false),
     m_kafkaVersionsHasBeenSet(false),
     m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_state(ConfigurationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Configuration::Configuration(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_kafkaVersionsHasBeenSet(false),
     m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_state(ConfigurationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ConfigurationStateMapper::GetConfigurationStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +142,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", ConfigurationStateMapper::GetNameForConfigurationState(m_state));
   }
 
   return payload;

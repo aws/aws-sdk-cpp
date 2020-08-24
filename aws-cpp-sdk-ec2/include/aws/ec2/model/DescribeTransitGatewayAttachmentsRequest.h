@@ -94,8 +94,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -116,8 +117,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -138,8 +140,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -160,8 +163,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -182,8 +186,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -204,8 +209,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -226,8 +232,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
@@ -248,8 +255,9 @@ namespace Model
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the attachment (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>

@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/model/ConfigurationRevision.h>
+#include <aws/kafka/model/ConfigurationState.h>
 #include <utility>
 
 namespace Aws
@@ -398,6 +399,55 @@ namespace Model
      */
     inline Configuration& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline const ConfigurationState& GetState() const{ return m_state; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline Configuration& WithState(const ConfigurationState& value) { SetState(value); return *this;}
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline Configuration& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -417,6 +467,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ConfigurationState m_state;
+    bool m_stateHasBeenSet;
   };
 
 } // namespace Model

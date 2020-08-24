@@ -25,7 +25,8 @@ PortalSummary::PortalSummary() :
     m_startUrlHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ PortalSummary::PortalSummary(JsonView jsonValue) :
     m_startUrlHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ PortalSummary& PortalSummary::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +145,12 @@ JsonValue PortalSummary::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("status", m_status.Jsonize());
 
   }
 

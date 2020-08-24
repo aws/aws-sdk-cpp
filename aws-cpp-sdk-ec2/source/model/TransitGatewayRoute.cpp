@@ -22,6 +22,7 @@ namespace Model
 
 TransitGatewayRoute::TransitGatewayRoute() : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_prefixListIdHasBeenSet(false),
     m_transitGatewayAttachmentsHasBeenSet(false),
     m_type(TransitGatewayRouteType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -32,6 +33,7 @@ TransitGatewayRoute::TransitGatewayRoute() :
 
 TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode) : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_prefixListIdHasBeenSet(false),
     m_transitGatewayAttachmentsHasBeenSet(false),
     m_type(TransitGatewayRouteType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -52,6 +54,12 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
+    }
+    XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
+    if(!prefixListIdNode.IsNull())
+    {
+      m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
+      m_prefixListIdHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentsNode = resultNode.FirstChild("transitGatewayAttachments");
     if(!transitGatewayAttachmentsNode.IsNull())
@@ -89,6 +97,11 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
+  if(m_prefixListIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
+  }
+
   if(m_transitGatewayAttachmentsHasBeenSet)
   {
       unsigned transitGatewayAttachmentsIdx = 1;
@@ -117,6 +130,10 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_destinationCidrBlockHasBeenSet)
   {
       oStream << location << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
+  }
+  if(m_prefixListIdHasBeenSet)
+  {
+      oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
   if(m_transitGatewayAttachmentsHasBeenSet)
   {

@@ -32,7 +32,11 @@ KafkaSettings::KafkaSettings() :
     m_includeTableAlterOperations(false),
     m_includeTableAlterOperationsHasBeenSet(false),
     m_includeControlDetails(false),
-    m_includeControlDetailsHasBeenSet(false)
+    m_includeControlDetailsHasBeenSet(false),
+    m_messageMaxBytes(0),
+    m_messageMaxBytesHasBeenSet(false),
+    m_includeNullAndEmpty(false),
+    m_includeNullAndEmptyHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ KafkaSettings::KafkaSettings(JsonView jsonValue) :
     m_includeTableAlterOperations(false),
     m_includeTableAlterOperationsHasBeenSet(false),
     m_includeControlDetails(false),
-    m_includeControlDetailsHasBeenSet(false)
+    m_includeControlDetailsHasBeenSet(false),
+    m_messageMaxBytes(0),
+    m_messageMaxBytesHasBeenSet(false),
+    m_includeNullAndEmpty(false),
+    m_includeNullAndEmptyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +121,20 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_includeControlDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageMaxBytes"))
+  {
+    m_messageMaxBytes = jsonValue.GetInteger("MessageMaxBytes");
+
+    m_messageMaxBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludeNullAndEmpty"))
+  {
+    m_includeNullAndEmpty = jsonValue.GetBool("IncludeNullAndEmpty");
+
+    m_includeNullAndEmptyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +186,18 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_includeControlDetailsHasBeenSet)
   {
    payload.WithBool("IncludeControlDetails", m_includeControlDetails);
+
+  }
+
+  if(m_messageMaxBytesHasBeenSet)
+  {
+   payload.WithInteger("MessageMaxBytes", m_messageMaxBytes);
+
+  }
+
+  if(m_includeNullAndEmptyHasBeenSet)
+  {
+   payload.WithBool("IncludeNullAndEmpty", m_includeNullAndEmpty);
 
   }
 

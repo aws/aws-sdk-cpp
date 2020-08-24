@@ -307,48 +307,72 @@ namespace Model
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(const char* value) { SetValue(value); return *this;}
 

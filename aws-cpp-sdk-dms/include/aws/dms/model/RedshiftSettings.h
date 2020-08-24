@@ -411,10 +411,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline const EncryptionModeValue& GetEncryptionMode() const{ return m_encryptionMode; }
 
@@ -422,10 +426,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
 
@@ -433,10 +441,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline void SetEncryptionMode(const EncryptionModeValue& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
 
@@ -444,10 +456,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline void SetEncryptionMode(EncryptionModeValue&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
 
@@ -455,10 +471,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline RedshiftSettings& WithEncryptionMode(const EncryptionModeValue& value) { SetEncryptionMode(value); return *this;}
 
@@ -466,10 +486,14 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
-     * Identity and Access Management (IAM) role with a policy that allows
-     * <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
+     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline RedshiftSettings& WithEncryptionMode(EncryptionModeValue&& value) { SetEncryptionMode(std::move(value)); return *this;}
 

@@ -353,7 +353,7 @@ namespace Model
 
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -361,7 +361,7 @@ namespace Model
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -369,7 +369,7 @@ namespace Model
     inline bool DistributionHasBeenSet() const { return m_distributionHasBeenSet; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -377,7 +377,7 @@ namespace Model
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -385,7 +385,7 @@ namespace Model
     inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -393,7 +393,7 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>

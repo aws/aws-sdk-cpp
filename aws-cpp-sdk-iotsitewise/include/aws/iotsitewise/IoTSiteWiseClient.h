@@ -365,7 +365,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
@@ -376,7 +376,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
@@ -389,7 +389,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
@@ -458,7 +458,7 @@ namespace Model
          * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * Data Using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
          * identify an asset property, you must specify one of the following:</p> <ul> <li>
          * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
@@ -473,7 +473,12 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> <p><h3>See Also:</h3>   <a
+         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * <code>BatchPutAssetPropertyValue</code> entry individually. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          */
@@ -483,7 +488,7 @@ namespace Model
          * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * Data Using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
          * identify an asset property, you must specify one of the following:</p> <ul> <li>
          * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
@@ -498,7 +503,12 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> <p><h3>See Also:</h3>   <a
+         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * <code>BatchPutAssetPropertyValue</code> entry individually. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          *
@@ -510,7 +520,7 @@ namespace Model
          * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * Data Using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
          * identify an asset property, you must specify one of the following:</p> <ul> <li>
          * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
@@ -525,7 +535,12 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> <p><h3>See Also:</h3>   <a
+         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * <code>BatchPutAssetPropertyValue</code> entry individually. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          *
@@ -567,7 +582,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
@@ -577,7 +592,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
@@ -589,7 +604,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
@@ -605,7 +620,7 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * Asset Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
@@ -619,7 +634,7 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * Asset Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
@@ -635,7 +650,7 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * Asset Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
@@ -714,15 +729,14 @@ namespace Model
 
         /**
          * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must configure AWS Single Sign-On in the current Region.
-         * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
-         * information, see <a
+         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
+         * uses AWS SSO to manage user permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
          * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
+         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
@@ -731,15 +745,14 @@ namespace Model
 
         /**
          * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must configure AWS Single Sign-On in the current Region.
-         * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
-         * information, see <a
+         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
+         * uses AWS SSO to manage user permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
          * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
+         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
@@ -750,15 +763,14 @@ namespace Model
 
         /**
          * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must configure AWS Single Sign-On in the current Region.
-         * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
-         * information, see <a
+         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
+         * uses AWS SSO to manage user permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
          * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
+         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
@@ -829,7 +841,7 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
@@ -842,7 +854,7 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
@@ -857,7 +869,7 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
@@ -876,7 +888,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -890,7 +902,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -906,7 +918,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -1115,16 +1127,28 @@ namespace Model
         virtual void DescribeAssetModelAsync(const Model::DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about an asset's property.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about an asset property.</p>  <p>When you call
+         * this operation for an attribute property, this response includes the default
+         * attribute value that you define in the asset model. If you update the default
+         * value in the model, this operation's response includes the new default
+         * value.</p>  <p>This operation doesn't return the value of the asset
+         * property. To get the value of an asset property, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAssetPropertyOutcome DescribeAssetProperty(const Model::DescribeAssetPropertyRequest& request) const;
 
         /**
-         * <p>Retrieves information about an asset's property.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about an asset property.</p>  <p>When you call
+         * this operation for an attribute property, this response includes the default
+         * attribute value that you define in the asset model. If you update the default
+         * value in the model, this operation's response includes the new default
+         * value.</p>  <p>This operation doesn't return the value of the asset
+         * property. To get the value of an asset property, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">AWS
          * API Reference</a></p>
          *
@@ -1133,8 +1157,14 @@ namespace Model
         virtual Model::DescribeAssetPropertyOutcomeCallable DescribeAssetPropertyCallable(const Model::DescribeAssetPropertyRequest& request) const;
 
         /**
-         * <p>Retrieves information about an asset's property.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about an asset property.</p>  <p>When you call
+         * this operation for an attribute property, this response includes the default
+         * attribute value that you define in the asset model. If you update the default
+         * value in the model, this operation's response includes the new default
+         * value.</p>  <p>This operation doesn't return the value of the asset
+         * property. To get the value of an asset property, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">AWS
          * API Reference</a></p>
          *
@@ -1347,12 +1377,12 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">AWS
@@ -1363,12 +1393,12 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">AWS
@@ -1381,12 +1411,12 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">AWS
@@ -1399,12 +1429,12 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">AWS
@@ -1415,12 +1445,12 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">AWS
@@ -1433,12 +1463,12 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">AWS
@@ -1451,9 +1481,9 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
+         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * identify an asset property, you must specify one of the following:</p> <ul> <li>
+         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
@@ -1467,9 +1497,9 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
+         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * identify an asset property, you must specify one of the following:</p> <ul> <li>
+         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
@@ -1485,9 +1515,9 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
-         * <p>To identify an asset property, you must specify one of the following:</p>
-         * <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset
+         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
+         * identify an asset property, you must specify one of the following:</p> <ul> <li>
+         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
          * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
@@ -1606,18 +1636,20 @@ namespace Model
         virtual void ListAssetsAsync(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of the assets associated to a parent asset
-         * (<code>assetId</code>) by a given hierarchy
-         * (<code>hierarchyId</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of associated assets.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List child assets associated to
+         * a parent asset by a hierarchy that you specify.</p> </li> <li> <p>List an
+         * asset's parent asset.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedAssetsOutcome ListAssociatedAssets(const Model::ListAssociatedAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of the assets associated to a parent asset
-         * (<code>assetId</code>) by a given hierarchy
-         * (<code>hierarchyId</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of associated assets.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List child assets associated to
+         * a parent asset by a hierarchy that you specify.</p> </li> <li> <p>List an
+         * asset's parent asset.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">AWS
          * API Reference</a></p>
          *
@@ -1626,9 +1658,10 @@ namespace Model
         virtual Model::ListAssociatedAssetsOutcomeCallable ListAssociatedAssetsCallable(const Model::ListAssociatedAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of the assets associated to a parent asset
-         * (<code>assetId</code>) by a given hierarchy
-         * (<code>hierarchyId</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of associated assets.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List child assets associated to
+         * a parent asset by a hierarchy that you specify.</p> </li> <li> <p>List an
+         * asset's parent asset.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">AWS
          * API Reference</a></p>
          *
@@ -1916,7 +1949,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -1926,7 +1959,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -1938,7 +1971,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -1952,7 +1985,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
@@ -1974,7 +2007,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
@@ -1998,7 +2031,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
