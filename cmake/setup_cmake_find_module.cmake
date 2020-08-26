@@ -22,7 +22,7 @@ file(WRITE
     "set(AWSSDK_PLATFORM_DEPS_LIBS ${PLATFORM_DEP_LIBS_ABSTRACT_NAME})\n"
     "set(AWSSDK_CLIENT_LIBS ${CLIENT_LIBS_ABSTRACT_NAME})\n"
     "set(AWSSDK_CRYPTO_LIBS ${CRYPTO_LIBS_ABSTRACT_NAME})\n"
-    "set(AWSSDK_THIRD_PARTY_LIBS ${THIRD_PARTY_LIBS})\n"
+    "set(AWSSDK_COMMON_RUNTIME_LIBS ${AWS_COMMON_RUNTIME_LIBS})\n"
     "set(AWSSDK_ADDITIONAL_LIBS ${AWS_SDK_ADDITIONAL_LIBRARIES_ABSTRACT_NAME})\n"
     "set(AWSSDK_INSTALL_LIBDIR ${LIBRARY_DIRECTORY})\n"
     "set(AWSSDK_INSTALL_BINDIR ${BINARY_DIRECTORY})\n"
@@ -49,25 +49,6 @@ install(
 # copy all cmake files to destination, these files include useful macros, functions and variables for users.
 # useful macros and variables will be included in this cmake file for user to use
 install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
-
-# copy third party dependencies
-if (BUILD_DEPS)
-    if (NOT DEFINED CMAKE_INSTALL_LIBDIR)
-        set(CMAKE_INSTALL_LIBDIR lib)
-    endif()
-    if (NOT DEFINED CMAKE_INSTALL_BINDIR)
-        set(CMAKE_INSTALL_BINDIR bin)
-    endif()
-    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/include")
-        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/include/" DESTINATION "${INCLUDE_DIRECTORY}")
-    endif()
-    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/${CMAKE_INSTALL_LIBDIR}")
-        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/${CMAKE_INSTALL_LIBDIR}/" DESTINATION "${LIBRARY_DIRECTORY}")
-    endif()
-    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/${CMAKE_INSTALL_BINDIR}")
-        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/${CMAKE_INSTALL_BINDIR}/" DESTINATION "${BINARY_DIRECTORY}")
-    endif()
-endif()
 
 # following two files are vital for cmake to find correct package, but since we copied all files from above
 # we left the code here to give you bettern understanding

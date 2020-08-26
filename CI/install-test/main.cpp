@@ -5,7 +5,7 @@
 
 using namespace Aws;
 
-int main(int argc, char *argv[])
+int main()
 {
     SDKOptions options;
     options.loggingOptions.logLevel = Utils::Logging::LogLevel::Warn;
