@@ -108,43 +108,43 @@ namespace Model
 
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline const Aws::Vector<ResolverEndpoint>& GetResolverEndpoints() const{ return m_resolverEndpoints; }
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline void SetResolverEndpoints(const Aws::Vector<ResolverEndpoint>& value) { m_resolverEndpoints = value; }
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline void SetResolverEndpoints(Aws::Vector<ResolverEndpoint>&& value) { m_resolverEndpoints = std::move(value); }
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline ListResolverEndpointsResult& WithResolverEndpoints(const Aws::Vector<ResolverEndpoint>& value) { SetResolverEndpoints(value); return *this;}
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline ListResolverEndpointsResult& WithResolverEndpoints(Aws::Vector<ResolverEndpoint>&& value) { SetResolverEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline ListResolverEndpointsResult& AddResolverEndpoints(const ResolverEndpoint& value) { m_resolverEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>The resolver endpoints that were created by using the current AWS account,
+     * <p>The Resolver endpoints that were created by using the current AWS account,
      * and that match the specified filters, if any.</p>
      */
     inline ListResolverEndpointsResult& AddResolverEndpoints(ResolverEndpoint&& value) { m_resolverEndpoints.push_back(std::move(value)); return *this; }

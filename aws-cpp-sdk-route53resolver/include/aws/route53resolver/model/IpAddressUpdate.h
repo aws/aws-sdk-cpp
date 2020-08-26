@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>In an <a>UpdateResolverEndpoint</a> request, information about an IP address
-   * to update.</p><p><h3>See Also:</h3>   <a
+   * <p>In an <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
+   * request, information about an IP address to update.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressUpdate">AWS
    * API Reference</a></p>
    */
@@ -39,107 +41,115 @@ namespace Model
 
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline const Aws::String& GetIpId() const{ return m_ipId; }
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline bool IpIdHasBeenSet() const { return m_ipIdHasBeenSet; }
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetIpId(const Aws::String& value) { m_ipIdHasBeenSet = true; m_ipId = value; }
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetIpId(Aws::String&& value) { m_ipIdHasBeenSet = true; m_ipId = std::move(value); }
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetIpId(const char* value) { m_ipIdHasBeenSet = true; m_ipId.assign(value); }
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithIpId(const Aws::String& value) { SetIpId(value); return *this;}
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithIpId(Aws::String&& value) { SetIpId(std::move(value)); return *this;}
 
     /**
-     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
-     * the IP address that you want to remove. To get this ID, use
-     * <a>GetResolverEndpoint</a>.</p>
+     * <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithIpId(const char* value) { SetIpId(value); return *this;}
 
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet that includes the IP address that you want to update. To
-     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     * get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
      */
     inline IpAddressUpdate& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

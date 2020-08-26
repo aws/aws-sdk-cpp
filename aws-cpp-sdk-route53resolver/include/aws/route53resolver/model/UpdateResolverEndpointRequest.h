@@ -35,83 +35,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resolver endpoint that you want to update.</p>
+     * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
 
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resolver endpoint that you want to update.</p>
+     * <p>The name of the Resolver endpoint that you want to update.</p>
      */
     inline UpdateResolverEndpointRequest& WithName(const char* value) { SetName(value); return *this;}
 

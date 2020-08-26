@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>Information about the resolver rule association that you specified in a
+     * <p>Information about the Resolver rule association that you specified in a
      * <code>GetResolverRuleAssociation</code> request.</p>
      */
     inline const ResolverRuleAssociation& GetResolverRuleAssociation() const{ return m_resolverRuleAssociation; }
 
     /**
-     * <p>Information about the resolver rule association that you specified in a
+     * <p>Information about the Resolver rule association that you specified in a
      * <code>GetResolverRuleAssociation</code> request.</p>
      */
     inline void SetResolverRuleAssociation(const ResolverRuleAssociation& value) { m_resolverRuleAssociation = value; }
 
     /**
-     * <p>Information about the resolver rule association that you specified in a
+     * <p>Information about the Resolver rule association that you specified in a
      * <code>GetResolverRuleAssociation</code> request.</p>
      */
     inline void SetResolverRuleAssociation(ResolverRuleAssociation&& value) { m_resolverRuleAssociation = std::move(value); }
 
     /**
-     * <p>Information about the resolver rule association that you specified in a
+     * <p>Information about the Resolver rule association that you specified in a
      * <code>GetResolverRuleAssociation</code> request.</p>
      */
     inline GetResolverRuleAssociationResult& WithResolverRuleAssociation(const ResolverRuleAssociation& value) { SetResolverRuleAssociation(value); return *this;}
 
     /**
-     * <p>Information about the resolver rule association that you specified in a
+     * <p>Information about the Resolver rule association that you specified in a
      * <code>GetResolverRuleAssociation</code> request.</p>
      */
     inline GetResolverRuleAssociationResult& WithResolverRuleAssociation(ResolverRuleAssociation&& value) { SetResolverRuleAssociation(std::move(value)); return *this;}

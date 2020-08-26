@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline const ResolverEndpoint& GetResolverEndpoint() const{ return m_resolverEndpoint; }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline void SetResolverEndpoint(const ResolverEndpoint& value) { m_resolverEndpoint = value; }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline void SetResolverEndpoint(ResolverEndpoint&& value) { m_resolverEndpoint = std::move(value); }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline GetResolverEndpointResult& WithResolverEndpoint(const ResolverEndpoint& value) { SetResolverEndpoint(value); return *this;}
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline GetResolverEndpointResult& WithResolverEndpoint(ResolverEndpoint&& value) { SetResolverEndpoint(std::move(value)); return *this;}

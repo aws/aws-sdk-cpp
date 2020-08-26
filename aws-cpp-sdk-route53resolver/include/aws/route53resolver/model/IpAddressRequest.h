@@ -24,8 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you
-   * want to use for DNS queries.</p><p><h3>See Also:</h3>   <a
+   * <p>In a <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
+   * request, the IP address that DNS queries originate from (for outbound endpoints)
+   * or that you forward DNS queries to (for inbound endpoints).
+   * <code>IpAddressRequest</code> also includes the ID of the subnet that contains
+   * the IP address.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressRequest">AWS
    * API Reference</a></p>
    */
@@ -39,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline IpAddressRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline IpAddressRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The subnet that contains the IP address.</p>
+     * <p>The ID of the subnet that contains the IP address. </p>
      */
     inline IpAddressRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

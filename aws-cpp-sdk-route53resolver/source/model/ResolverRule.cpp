@@ -33,7 +33,9 @@ ResolverRule::ResolverRule() :
     m_resolverEndpointIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+    m_shareStatusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_modificationTimeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ResolverRule::ResolverRule(JsonView jsonValue) :
     m_resolverEndpointIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+    m_shareStatusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_modificationTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,20 @@ ResolverRule& ResolverRule::operator =(JsonView jsonValue)
     m_shareStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreationTime"))
+  {
+    m_creationTime = jsonValue.GetString("CreationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModificationTime"))
+  {
+    m_modificationTime = jsonValue.GetString("ModificationTime");
+
+    m_modificationTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +243,18 @@ JsonValue ResolverRule::Jsonize() const
   if(m_shareStatusHasBeenSet)
   {
    payload.WithString("ShareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("CreationTime", m_creationTime);
+
+  }
+
+  if(m_modificationTimeHasBeenSet)
+  {
+   payload.WithString("ModificationTime", m_modificationTime);
+
   }
 
   return payload;

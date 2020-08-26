@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>Information about the resolver rule that you specified in a
+     * <p>Information about the Resolver rule that you specified in a
      * <code>GetResolverRule</code> request.</p>
      */
     inline const ResolverRule& GetResolverRule() const{ return m_resolverRule; }
 
     /**
-     * <p>Information about the resolver rule that you specified in a
+     * <p>Information about the Resolver rule that you specified in a
      * <code>GetResolverRule</code> request.</p>
      */
     inline void SetResolverRule(const ResolverRule& value) { m_resolverRule = value; }
 
     /**
-     * <p>Information about the resolver rule that you specified in a
+     * <p>Information about the Resolver rule that you specified in a
      * <code>GetResolverRule</code> request.</p>
      */
     inline void SetResolverRule(ResolverRule&& value) { m_resolverRule = std::move(value); }
 
     /**
-     * <p>Information about the resolver rule that you specified in a
+     * <p>Information about the Resolver rule that you specified in a
      * <code>GetResolverRule</code> request.</p>
      */
     inline GetResolverRuleResult& WithResolverRule(const ResolverRule& value) { SetResolverRule(value); return *this;}
 
     /**
-     * <p>Information about the resolver rule that you specified in a
+     * <p>Information about the Resolver rule that you specified in a
      * <code>GetResolverRule</code> request.</p>
      */
     inline GetResolverRuleResult& WithResolverRule(ResolverRule&& value) { SetResolverRule(std::move(value)); return *this;}

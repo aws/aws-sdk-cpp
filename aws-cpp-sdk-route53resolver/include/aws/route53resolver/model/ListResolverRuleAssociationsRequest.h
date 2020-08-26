@@ -143,8 +143,8 @@ namespace Model
 
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -152,8 +152,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -161,8 +161,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -170,8 +170,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -179,8 +179,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -188,8 +188,8 @@ namespace Model
     inline ListResolverRuleAssociationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -197,8 +197,8 @@ namespace Model
     inline ListResolverRuleAssociationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 
@@ -206,8 +206,8 @@ namespace Model
     inline ListResolverRuleAssociationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>An optional specification to return a subset of resolver rules, such as
-     * resolver rules that are associated with the same VPC ID.</p>  <p>If you
+     * <p>An optional specification to return a subset of Resolver rules, such as
+     * Resolver rules that are associated with the same VPC ID.</p>  <p>If you
      * submit a second or subsequent <code>ListResolverRuleAssociations</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
      * for <code>Filters</code>, if any, as in the previous request.</p> 

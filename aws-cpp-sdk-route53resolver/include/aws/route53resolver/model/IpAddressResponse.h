@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>In the response to a <a>GetResolverEndpoint</a> request, information about
-   * the IP addresses that the resolver endpoint uses for DNS queries.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>In the response to a <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+   * request, information about the IP addresses that the Resolver endpoint uses for
+   * DNS queries.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressResponse">AWS
    * API Reference</a></p>
    */
@@ -123,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline IpAddressResponse& WithIp(const Aws::String& value) { SetIp(value); return *this;}
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline IpAddressResponse& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
 
     /**
-     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     * <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
      */
     inline IpAddressResponse& WithIp(const char* value) { SetIp(value); return *this;}
 

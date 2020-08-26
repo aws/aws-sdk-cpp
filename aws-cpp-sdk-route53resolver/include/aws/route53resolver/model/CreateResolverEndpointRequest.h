@@ -155,184 +155,196 @@ namespace Model
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline CreateResolverEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline CreateResolverEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
      * to this VPC. The security group that you specify must include one or more
-     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
-     * resolver endpoints).</p>
+     * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
+     * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
+     * For inbound access, open port 53. For outbound access, open the port that you're
+     * using for DNS queries on your network.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline const ResolverEndpointDirection& GetDirection() const{ return m_direction; }
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline void SetDirection(const ResolverEndpointDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline void SetDirection(ResolverEndpointDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline CreateResolverEndpointRequest& WithDirection(const ResolverEndpointDirection& value) { SetDirection(value); return *this;}
 
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
-     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
-     * </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
+     * service for a VPC to your network</p> </li> </ul>
      */
     inline CreateResolverEndpointRequest& WithDirection(ResolverEndpointDirection&& value) { SetDirection(std::move(value)); return *this;}
 
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline const Aws::Vector<IpAddressRequest>& GetIpAddresses() const{ return m_ipAddresses; }
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline void SetIpAddresses(const Aws::Vector<IpAddressRequest>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline void SetIpAddresses(Aws::Vector<IpAddressRequest>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline CreateResolverEndpointRequest& WithIpAddresses(const Aws::Vector<IpAddressRequest>& value) { SetIpAddresses(value); return *this;}
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline CreateResolverEndpointRequest& WithIpAddresses(Aws::Vector<IpAddressRequest>&& value) { SetIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline CreateResolverEndpointRequest& AddIpAddresses(const IpAddressRequest& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
-     * through on the way from your VPCs to your network (for outbound endpoints) or on
-     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
+     * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
+     * The subnet ID uniquely identifies a VPC. </p>
      */
     inline CreateResolverEndpointRequest& AddIpAddresses(IpAddressRequest&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
 

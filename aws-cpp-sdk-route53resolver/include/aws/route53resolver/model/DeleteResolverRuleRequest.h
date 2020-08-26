@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline void SetResolverRuleId(Aws::String&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::move(value); }
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline void SetResolverRuleId(const char* value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId.assign(value); }
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline DeleteResolverRuleRequest& WithResolverRuleId(const Aws::String& value) { SetResolverRuleId(value); return *this;}
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline DeleteResolverRuleRequest& WithResolverRuleId(Aws::String&& value) { SetResolverRuleId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resolver rule that you want to delete.</p>
+     * <p>The ID of the Resolver rule that you want to delete.</p>
      */
     inline DeleteResolverRuleRequest& WithResolverRuleId(const char* value) { SetResolverRuleId(value); return *this;}
 
