@@ -71,9 +71,6 @@ endmacro()
 
 macro(set_msvc_flags)
     if(MSVC)
-        # Put all runtime outputs, including DLLs, executables into one directory, so as to avoid copying DLLs.
-        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
-
         # Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
         # modified from gtest's version; while only the else clause is actually necessary, do both for completeness/future-proofing
         foreach (var

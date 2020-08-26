@@ -493,10 +493,9 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
 
-find_package(aws-c-event-stream REQUIRED)
+aws_use_package(aws-crt-cpp)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC AWS::aws-c-event-stream)
-
+target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_AWS_LIBS})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
@@ -530,7 +529,7 @@ endif()
 
 if(SIMPLE_INSTALL)
     # These libs are needed by aws-cpp-sdk-core only.
-    set(ALL_DEP_LIBS ${THIRD_PARTY_LIBS} ${PLATFORM_DEP_LIBS_ABSTRACT_NAME} ${CLIENT_LIBS_ABSTRACT_NAME} ${CRYPTO_LIBS_ABSTRACT_NAME})
+    set(ALL_DEP_LIBS ${AWS_COMMON_RUNTIME_LIBS} ${PLATFORM_DEP_LIBS_ABSTRACT_NAME} ${CLIENT_LIBS_ABSTRACT_NAME} ${CRYPTO_LIBS_ABSTRACT_NAME})
     generate_pkgconfig_link_flags(ALL_DEP_LIBS ALL_DEP_LIBS_LINK_FLAGS)
     set(ALL_DEP_LIBS_LINK_FLAGS "${ALL_DEP_LIBS_LINK_FLAGS}")
     configure_file("${AWS_NATIVE_SDK_ROOT}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)

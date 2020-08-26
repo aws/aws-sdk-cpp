@@ -33,7 +33,9 @@
         // License and Notice
         "SPDX", "grinninglizard", "Thomason", "Lepilleur", "Sidebotham", "Rublee", "Andrey", "Kamaev",
         // Dependencies
-        "openssl"
+        "openssl",
+        // Aws common runtime libraries
+        "mqtt"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf

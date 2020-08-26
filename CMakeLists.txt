@@ -18,18 +18,17 @@ endif()
 if(POLICY CMP0057)
     cmake_policy(SET CMP0057 NEW) # support IN_LIST
 endif()
+if (POLICY CMP0077)
+    cmake_policy(SET CMP0077 OLD) # Enable options to get their values from normal variables
+endif()
 
-
-# 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
+# 3.12 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
 # Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
-if(CMAKE_MAJOR_VERSION LESS 3)
-    message(WARNING "Building with CMake 3.0 or higher is strongly suggested; current version is ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}")
+if(CMAKE_VERSION VERSION_LESS 3.12)
+    message(WARNING "Building with CMake 3.12 or higher is strongly suggested; current version is ${CMAKE_VERSION}")
 endif()
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
-
-# git is required for Android builds and building third-party dependencies
-find_package(Git)
 
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it
@@ -71,10 +70,7 @@ option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIE
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
-
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
+set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
 
 #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
 if(NOT WIN32)
@@ -109,10 +105,27 @@ endif()
 
 set(PYTHON_CMD "python")
 
+if (UNIX AND NOT APPLE)
+    include(GNUInstallDirs)
+elseif(NOT DEFINED CMAKE_INSTALL_LIBDIR)
+    set(CMAKE_INSTALL_LIBDIR "lib")
+endif()
+
+if (DEFINED CMAKE_PREFIX_PATH)
+    file(TO_CMAKE_PATH "${CMAKE_PREFIX_PATH}" CMAKE_PREFIX_PATH)
+endif()
+
+if (DEFINED CMAKE_INSTALL_PREFIX)
+    file(TO_CMAKE_PATH "${CMAKE_INSTALL_PREFIX}" CMAKE_INSTALL_PREFIX)
+endif()
+
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
-# Add cmake dir to search list
+# Add ${CMAKE_INSTALL_LIBDIR}/cmake and ${CMAKE_PREFIX_PATH}/lib/cmake to search list
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
+string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
+list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
 
 # include() will "load and run" cmake script
 include(resolve_platform)
@@ -144,90 +157,6 @@ endif()
 # Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled dependent libraries in customer paths when linking executables.
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 
-# build third-party targets
-if (BUILD_DEPS)
-    # If building third party dependencies, we will move them to the same directory where SDK has been installed during installation.
-    # Therefore, we should set rpath to $ORIGIN to let SDK find these third party dependencies.
-    # Otherwise, customers are responsible for handling the linkage to these libraries.
-    set(CMAKE_INSTALL_RPATH "$ORIGIN")
-    set(AWS_DEPS_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps)
-    if (NOT DEFINED AWS_DEPS_INSTALL_DIR)
-        if (DEFINED CMAKE_INSTALL_PREFIX)
-            set(AWS_DEPS_INSTALL_DIR ${CMAKE_INSTALL_PREFIX} CACHE STRING "A string describes the path where 3rd-party dependencies will be or have been installed")
-        else()
-            set(AWS_DEPS_INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps/install CACHE STRING "A string describes the path where 3rd-party dependencies will be or have been installed")
-        endif()
-    endif()
-    if (NOT CMAKE_GENERATOR_PLATFORM STREQUAL "")
-        set(GEN_PLATFORM_ARG "-A${CMAKE_GENERATOR_PLATFORM}")
-    endif()
-    file(MAKE_DIRECTORY ${AWS_DEPS_BUILD_DIR})
-    if(TARGET_ARCH STREQUAL "ANDROID")
-        execute_process(
-            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
-            -DTARGET_ARCH=${TARGET_ARCH}
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
-            -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-            -DANDROID_ABI=${ANDROID_ABI}
-            -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
-            -DANDROID_STL=${ANDROID_STL}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
-            -DGIT_EXECUTABLE=${GIT_EXECUTABLE}
-            ${GEN_PLATFORM_ARG}
-            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
-            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
-            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
-    elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT CMAKE_OSX_ARCHITECTURES STREQUAL "")
-        message("Cross compiling third-party dependencies for architecture ${CMAKE_OSX_ARCHITECTURES}")
-        execute_process(
-            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
-            -DTARGET_ARCH=${TARGET_ARCH}
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
-            -DCMAKE_OSX_SYSROOT=${CMAKE_OSX_SYSROOT}
-            -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}
-            -DCMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}
-            -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
-            ${GEN_PLATFORM_ARG}
-            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
-            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
-            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
-    else()
-        execute_process(
-            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
-            -DTARGET_ARCH=${TARGET_ARCH}
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DSTATIC_CRT=${STATIC_CRT}
-            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
-            ${GEN_PLATFORM_ARG}
-            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
-            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
-            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
-    endif()
-
-    if (NOT ${BUILD_3P_EXIT_CODE} EQUAL 0)
-        message(FATAL_ERROR "Failed to configure third-party libraries.")
-    endif()
-    execute_process(COMMAND ${CMAKE_COMMAND} --build ${AWS_DEPS_BUILD_DIR} --config ${CMAKE_BUILD_TYPE}
-        RESULT_VARIABLE BUILD_3P_EXIT_CODE)
-
-    if (NOT ${BUILD_3P_EXIT_CODE} EQUAL 0)
-        message(FATAL_ERROR "Failed to build third-party libraries.")
-    endif()
-    message(STATUS "Third-party dependencies are installed at: ${AWS_DEPS_INSTALL_DIR}")
-    list(APPEND CMAKE_PREFIX_PATH "${AWS_DEPS_INSTALL_DIR}")
-endif()
-set(THIRD_PARTY_LIBS "aws-c-event-stream;aws-checksums;aws-c-common")
-
 # build the sdk targets
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
@@ -245,6 +174,24 @@ set(CMAKE_CONFIGURATION_TYPES
         RelWithDebInfo          # A debuggable version of Release.
         MinSizeRel              # Like Release, but optimized for memory rather than speed.
         )
+
+# build third-party targets
+if (BUILD_DEPS)
+    set(CMAKE_INSTALL_RPATH "$ORIGIN")
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/crt/aws-crt-cpp/crt/aws-c-common/cmake")
+
+    include(AwsFindPackage)
+
+    set(IN_SOURCE_BUILD ON)
+    set(BUILD_TESTING_PREV ${BUILD_TESTING})
+    set(BUILD_TESTING OFF)
+    add_subdirectory(crt/aws-crt-cpp)
+    set(BUILD_TESTING ${BUILD_TESTING_PREV})
+else()
+    include(AwsFindPackage)
+    set(IN_SOURCE_BUILD OFF)
+endif()
+set(AWS_COMMON_RUNTIME_LIBS "aws-crt-cpp;aws-c-auth;aws-c-cal;aws-c-common;aws-c-compression;aws-c-event-stream;aws-c-http;aws-c-io;aws-c-mqtt;aws-c-s3;aws-checksums")
 
 include(compiler_settings)
 # Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt

@@ -10,13 +10,17 @@ else()
 endif()
 
 macro(apply_post_project_platform_settings)
+    if(MSVC)
+        # Put all runtime outputs, including DLLs, executables into one directory, so as to avoid copying DLLs.
+        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
+    endif()
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/intel64")
     else()
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
-    endif()    
-   
-    set(PLATFORM_DEP_LIBS Userenv version ws2_32)    
+    endif()
+
+    set(PLATFORM_DEP_LIBS Userenv version ws2_32)
     set(PLATFORM_DEP_LIBS_ABSTRACT_NAME Userenv version ws2_32)
 
 endmacro()

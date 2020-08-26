@@ -1,13 +1,14 @@
 
 macro(verify_tools)
     # TODO: don't do this if the user is supplying their own curl/openssl/zlib
-    # minimum version of cmake that 
+    # minimum version of cmake that
     #   (1) supports ExternalProject_Add URL_HASH
     #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
     cmake_minimum_required (VERSION 3.1.2)
 
     # TODO: don't do this if the user is supplying their own curl/openssl/zlib
     if(NOT GIT_FOUND)
+        find_package(Git)
         message(FATAL_ERROR "Unable to find git; git is required in order to build for Android")
     endif()
 endmacro()
@@ -40,7 +41,7 @@ macro(determine_stdlib_and_api)
 
         # With gnustl, API level can go as low as 3, but let's make a reasonably modern default
         if(NOT ANDROID_NATIVE_API_LEVEL)
-            set(ANDROID_NATIVE_API_LEVEL "android-19") 
+            set(ANDROID_NATIVE_API_LEVEL "android-19")
         endif()
 
     else()
@@ -102,10 +103,6 @@ macro(apply_pre_project_platform_settings)
 endmacro()
 
 macro(apply_post_project_platform_settings)
-    # CMAKE_FIND_ROOT_PATH_MODE_PACKAGE is set to ONLY by default, which means find_package will only search packages under ${ANDROID_NDK} (which is defined by built-in cmake toolchain file.)
-    # In Android NDK before and including 15c, we are not able to change CMAKE_FIND_ROOT_PATH_MODE_PACKAGE, we'd add AWS_DEPS_INSTALL_DIR to the search paths.
-    list(APPEND CMAKE_FIND_ROOT_PATH "${AWS_DEPS_INSTALL_DIR}")
-
     set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/${ANDROID_ABI}-api-${ANDROID_NATIVE_API_LEVEL}")
 
     set(PLATFORM_DEP_LIBS log atomic)
