@@ -27,8 +27,8 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the returned data in response to a request
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributesOutput">AWS
    * API Reference</a></p>
    */
@@ -92,49 +92,49 @@ namespace Model
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of the
+     * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

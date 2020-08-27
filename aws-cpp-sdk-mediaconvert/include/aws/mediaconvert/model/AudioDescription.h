@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AudioChannelTaggingSettings.h>
 #include <aws/mediaconvert/model/AudioNormalizationSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/AudioTypeControl.h>
@@ -41,6 +42,73 @@ namespace Model
     AudioDescription(Aws::Utils::Json::JsonView jsonValue);
     AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline const AudioChannelTaggingSettings& GetAudioChannelTaggingSettings() const{ return m_audioChannelTaggingSettings; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline bool AudioChannelTaggingSettingsHasBeenSet() const { return m_audioChannelTaggingSettingsHasBeenSet; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline void SetAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = value; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline void SetAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = std::move(value); }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline AudioDescription& WithAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { SetAudioChannelTaggingSettings(value); return *this;}
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline AudioDescription& WithAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { SetAudioChannelTaggingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -679,6 +747,9 @@ namespace Model
     inline AudioDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
   private:
+
+    AudioChannelTaggingSettings m_audioChannelTaggingSettings;
+    bool m_audioChannelTaggingSettingsHasBeenSet;
 
     AudioNormalizationSettings m_audioNormalizationSettings;
     bool m_audioNormalizationSettingsHasBeenSet;

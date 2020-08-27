@@ -21,6 +21,8 @@ namespace Model
 HlsGroupSettings::HlsGroupSettings() : 
     m_adMarkersHasBeenSet(false),
     m_additionalManifestsHasBeenSet(false),
+    m_audioOnlyHeader(HlsAudioOnlyHeader::NOT_SET),
+    m_audioOnlyHeaderHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
@@ -68,6 +70,8 @@ HlsGroupSettings::HlsGroupSettings() :
 HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) : 
     m_adMarkersHasBeenSet(false),
     m_additionalManifestsHasBeenSet(false),
+    m_audioOnlyHeader(HlsAudioOnlyHeader::NOT_SET),
+    m_audioOnlyHeaderHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
@@ -133,6 +137,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
       m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
     }
     m_additionalManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioOnlyHeader"))
+  {
+    m_audioOnlyHeader = HlsAudioOnlyHeaderMapper::GetHlsAudioOnlyHeaderForName(jsonValue.GetString("audioOnlyHeader"));
+
+    m_audioOnlyHeaderHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("baseUrl"))
@@ -326,6 +337,11 @@ JsonValue HlsGroupSettings::Jsonize() const
    }
    payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
 
+  }
+
+  if(m_audioOnlyHeaderHasBeenSet)
+  {
+   payload.WithString("audioOnlyHeader", HlsAudioOnlyHeaderMapper::GetNameForHlsAudioOnlyHeader(m_audioOnlyHeader));
   }
 
   if(m_baseUrlHasBeenSet)

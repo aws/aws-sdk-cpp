@@ -37,91 +37,91 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline ResumeGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline ResumeGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the game server group to resume activity on. Use
-     * either the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline ResumeGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline const Aws::Vector<GameServerGroupAction>& GetResumeActions() const{ return m_resumeActions; }
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline bool ResumeActionsHasBeenSet() const { return m_resumeActionsHasBeenSet; }
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline void SetResumeActions(const Aws::Vector<GameServerGroupAction>& value) { m_resumeActionsHasBeenSet = true; m_resumeActions = value; }
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline void SetResumeActions(Aws::Vector<GameServerGroupAction>&& value) { m_resumeActionsHasBeenSet = true; m_resumeActions = std::move(value); }
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline ResumeGameServerGroupRequest& WithResumeActions(const Aws::Vector<GameServerGroupAction>& value) { SetResumeActions(value); return *this;}
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline ResumeGameServerGroupRequest& WithResumeActions(Aws::Vector<GameServerGroupAction>&& value) { SetResumeActions(std::move(value)); return *this;}
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline ResumeGameServerGroupRequest& AddResumeActions(const GameServerGroupAction& value) { m_resumeActionsHasBeenSet = true; m_resumeActions.push_back(value); return *this; }
 
     /**
-     * <p>The action to resume for this game server group.</p>
+     * <p>The activity to resume for this game server group.</p>
      */
     inline ResumeGameServerGroupRequest& AddResumeActions(GameServerGroupAction&& value) { m_resumeActionsHasBeenSet = true; m_resumeActions.push_back(std::move(value)); return *this; }
 

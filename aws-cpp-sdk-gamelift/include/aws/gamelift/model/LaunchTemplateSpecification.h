@@ -24,10 +24,11 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is part of Amazon GameLift FleetIQ with game server
-   * groups, which is in preview release and is subject to change.</b> </p> <p>An EC2
-   * launch template that contains configuration settings and game server code to be
-   * deployed to all instances in a game server group. </p><p><h3>See Also:</h3>   <a
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * groups.</b> </p> <p>An EC2 launch template that contains configuration settings
+   * and game server code to be deployed to all instances in a game server group. The
+   * launch template is specified when creating a new game server group with
+   * <a>CreateGameServerGroup</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
@@ -124,64 +125,64 @@ namespace Model
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the EC2 launch template to use. If no version is specified,
-     * the default version will be used. EC2 allows you to specify a default version
-     * for a launch template, if none is set, the default is the first version
+     * the default version will be used. With Amazon EC2, you can specify a default
+     * version for a launch template. If none is set, the default is the first version
      * created.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}

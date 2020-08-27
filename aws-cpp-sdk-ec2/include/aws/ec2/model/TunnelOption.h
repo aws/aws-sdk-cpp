@@ -358,6 +358,47 @@ namespace Model
 
 
     /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline const Aws::String& GetDpdTimeoutAction() const{ return m_dpdTimeoutAction; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline bool DpdTimeoutActionHasBeenSet() const { return m_dpdTimeoutActionHasBeenSet; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(const Aws::String& value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction = value; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(Aws::String&& value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction = std::move(value); }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(const char* value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction.assign(value); }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(const Aws::String& value) { SetDpdTimeoutAction(value); return *this;}
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(Aws::String&& value) { SetDpdTimeoutAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(const char* value) { SetDpdTimeoutAction(value); return *this;}
+
+
+    /**
      * <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE
      * negotiations.</p>
      */
@@ -691,6 +732,55 @@ namespace Model
      */
     inline TunnelOption& AddIkeVersions(IKEVersionsListValue&& value) { m_ikeVersionsHasBeenSet = true; m_ikeVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline const Aws::String& GetStartupAction() const{ return m_startupAction; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline bool StartupActionHasBeenSet() const { return m_startupActionHasBeenSet; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(const Aws::String& value) { m_startupActionHasBeenSet = true; m_startupAction = value; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(Aws::String&& value) { m_startupActionHasBeenSet = true; m_startupAction = std::move(value); }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(const char* value) { m_startupActionHasBeenSet = true; m_startupAction.assign(value); }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(const Aws::String& value) { SetStartupAction(value); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(Aws::String&& value) { SetStartupAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
+
   private:
 
     Aws::String m_outsideIpAddress;
@@ -723,6 +813,9 @@ namespace Model
     int m_dpdTimeoutSeconds;
     bool m_dpdTimeoutSecondsHasBeenSet;
 
+    Aws::String m_dpdTimeoutAction;
+    bool m_dpdTimeoutActionHasBeenSet;
+
     Aws::Vector<Phase1EncryptionAlgorithmsListValue> m_phase1EncryptionAlgorithms;
     bool m_phase1EncryptionAlgorithmsHasBeenSet;
 
@@ -743,6 +836,9 @@ namespace Model
 
     Aws::Vector<IKEVersionsListValue> m_ikeVersions;
     bool m_ikeVersionsHasBeenSet;
+
+    Aws::String m_startupAction;
+    bool m_startupActionHasBeenSet;
   };
 
 } // namespace Model

@@ -36,13 +36,15 @@ ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification() :
     m_replayWindowSizeHasBeenSet(false),
     m_dPDTimeoutSeconds(0),
     m_dPDTimeoutSecondsHasBeenSet(false),
+    m_dPDTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false)
+    m_iKEVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
 }
 
@@ -62,13 +64,15 @@ ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification(const X
     m_replayWindowSizeHasBeenSet(false),
     m_dPDTimeoutSeconds(0),
     m_dPDTimeoutSecondsHasBeenSet(false),
+    m_dPDTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false)
+    m_iKEVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -132,6 +136,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
     {
       m_dPDTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutSecondsNode.GetText()).c_str()).c_str());
       m_dPDTimeoutSecondsHasBeenSet = true;
+    }
+    XmlNode dPDTimeoutActionNode = resultNode.FirstChild("DPDTimeoutAction");
+    if(!dPDTimeoutActionNode.IsNull())
+    {
+      m_dPDTimeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutActionNode.GetText());
+      m_dPDTimeoutActionHasBeenSet = true;
     }
     XmlNode phase1EncryptionAlgorithmsNode = resultNode.FirstChild("Phase1EncryptionAlgorithm");
     if(!phase1EncryptionAlgorithmsNode.IsNull())
@@ -217,6 +227,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
 
       m_iKEVersionsHasBeenSet = true;
     }
+    XmlNode startupActionNode = resultNode.FirstChild("StartupAction");
+    if(!startupActionNode.IsNull())
+    {
+      m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
+      m_startupActionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -267,6 +283,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_dPDTimeoutSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DPDTimeoutSeconds=" << m_dPDTimeoutSeconds << "&";
+  }
+
+  if(m_dPDTimeoutActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DPDTimeoutAction=" << StringUtils::URLEncode(m_dPDTimeoutAction.c_str()) << "&";
   }
 
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
@@ -346,6 +367,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
       }
   }
 
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
+  }
+
 }
 
 void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -385,6 +411,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_dPDTimeoutSecondsHasBeenSet)
   {
       oStream << location << ".DPDTimeoutSeconds=" << m_dPDTimeoutSeconds << "&";
+  }
+  if(m_dPDTimeoutActionHasBeenSet)
+  {
+      oStream << location << ".DPDTimeoutAction=" << StringUtils::URLEncode(m_dPDTimeoutAction.c_str()) << "&";
   }
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
   {
@@ -455,6 +485,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
         iKEVersionsSs << location <<  ".IKEVersion." << iKEVersionsIdx++;
         item.OutputToStream(oStream, iKEVersionsSs.str().c_str());
       }
+  }
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
   }
 }
 

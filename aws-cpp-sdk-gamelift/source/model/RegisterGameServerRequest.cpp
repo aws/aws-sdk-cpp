@@ -17,9 +17,7 @@ RegisterGameServerRequest::RegisterGameServerRequest() :
     m_gameServerIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_connectionInfoHasBeenSet(false),
-    m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_gameServerDataHasBeenSet(false)
 {
 }
 
@@ -54,23 +52,6 @@ Aws::String RegisterGameServerRequest::SerializePayload() const
   if(m_gameServerDataHasBeenSet)
   {
    payload.WithString("GameServerData", m_gameServerData);
-
-  }
-
-  if(m_customSortKeyHasBeenSet)
-  {
-   payload.WithString("CustomSortKey", m_customSortKey);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

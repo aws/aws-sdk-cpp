@@ -27,7 +27,11 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() :
     m_staticRoutesOnlyHasBeenSet(false),
     m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
     m_tunnelInsideIpVersionHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false)
+    m_tunnelOptionsHasBeenSet(false),
+    m_localIpv4NetworkCidrHasBeenSet(false),
+    m_remoteIpv4NetworkCidrHasBeenSet(false),
+    m_localIpv6NetworkCidrHasBeenSet(false),
+    m_remoteIpv6NetworkCidrHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNo
     m_staticRoutesOnlyHasBeenSet(false),
     m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
     m_tunnelInsideIpVersionHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false)
+    m_tunnelOptionsHasBeenSet(false),
+    m_localIpv4NetworkCidrHasBeenSet(false),
+    m_remoteIpv4NetworkCidrHasBeenSet(false),
+    m_localIpv6NetworkCidrHasBeenSet(false),
+    m_remoteIpv6NetworkCidrHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +87,30 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
 
       m_tunnelOptionsHasBeenSet = true;
     }
+    XmlNode localIpv4NetworkCidrNode = resultNode.FirstChild("LocalIpv4NetworkCidr");
+    if(!localIpv4NetworkCidrNode.IsNull())
+    {
+      m_localIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv4NetworkCidrNode.GetText());
+      m_localIpv4NetworkCidrHasBeenSet = true;
+    }
+    XmlNode remoteIpv4NetworkCidrNode = resultNode.FirstChild("RemoteIpv4NetworkCidr");
+    if(!remoteIpv4NetworkCidrNode.IsNull())
+    {
+      m_remoteIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv4NetworkCidrNode.GetText());
+      m_remoteIpv4NetworkCidrHasBeenSet = true;
+    }
+    XmlNode localIpv6NetworkCidrNode = resultNode.FirstChild("LocalIpv6NetworkCidr");
+    if(!localIpv6NetworkCidrNode.IsNull())
+    {
+      m_localIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv6NetworkCidrNode.GetText());
+      m_localIpv6NetworkCidrHasBeenSet = true;
+    }
+    XmlNode remoteIpv6NetworkCidrNode = resultNode.FirstChild("RemoteIpv6NetworkCidr");
+    if(!remoteIpv6NetworkCidrNode.IsNull())
+    {
+      m_remoteIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv6NetworkCidrNode.GetText());
+      m_remoteIpv6NetworkCidrHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +144,26 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       }
   }
 
+  if(m_localIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalIpv4NetworkCidr=" << StringUtils::URLEncode(m_localIpv4NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_remoteIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RemoteIpv4NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv4NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_localIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalIpv6NetworkCidr=" << StringUtils::URLEncode(m_localIpv6NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_remoteIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
+  }
+
 }
 
 void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -137,6 +189,22 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
         tunnelOptionsSs << location <<  ".TunnelOptions." << tunnelOptionsIdx++;
         item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
       }
+  }
+  if(m_localIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".LocalIpv4NetworkCidr=" << StringUtils::URLEncode(m_localIpv4NetworkCidr.c_str()) << "&";
+  }
+  if(m_remoteIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".RemoteIpv4NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv4NetworkCidr.c_str()) << "&";
+  }
+  if(m_localIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".LocalIpv6NetworkCidr=" << StringUtils::URLEncode(m_localIpv6NetworkCidr.c_str()) << "&";
+  }
+  if(m_remoteIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
   }
 }
 

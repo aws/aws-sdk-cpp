@@ -328,6 +328,7 @@
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/ModifyVpcTenancyResponse.h>
 #include <aws/ec2/model/ModifyVpnConnectionResponse.h>
+#include <aws/ec2/model/ModifyVpnConnectionOptionsResponse.h>
 #include <aws/ec2/model/ModifyVpnTunnelCertificateResponse.h>
 #include <aws/ec2/model/ModifyVpnTunnelOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
@@ -780,6 +781,7 @@ namespace Model
         class ModifyVpcPeeringConnectionOptionsRequest;
         class ModifyVpcTenancyRequest;
         class ModifyVpnConnectionRequest;
+        class ModifyVpnConnectionOptionsRequest;
         class ModifyVpnTunnelCertificateRequest;
         class ModifyVpnTunnelOptionsRequest;
         class MonitorInstancesRequest;
@@ -1200,6 +1202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, EC2Error> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcTenancyResponse, EC2Error> ModifyVpcTenancyOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnConnectionResponse, EC2Error> ModifyVpnConnectionOutcome;
+        typedef Aws::Utils::Outcome<ModifyVpnConnectionOptionsResponse, EC2Error> ModifyVpnConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnTunnelCertificateResponse, EC2Error> ModifyVpnTunnelCertificateOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnTunnelOptionsResponse, EC2Error> ModifyVpnTunnelOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, EC2Error> MonitorInstancesOutcome;
@@ -1620,6 +1623,7 @@ namespace Model
         typedef std::future<ModifyVpcPeeringConnectionOptionsOutcome> ModifyVpcPeeringConnectionOptionsOutcomeCallable;
         typedef std::future<ModifyVpcTenancyOutcome> ModifyVpcTenancyOutcomeCallable;
         typedef std::future<ModifyVpnConnectionOutcome> ModifyVpnConnectionOutcomeCallable;
+        typedef std::future<ModifyVpnConnectionOptionsOutcome> ModifyVpnConnectionOptionsOutcomeCallable;
         typedef std::future<ModifyVpnTunnelCertificateOutcome> ModifyVpnTunnelCertificateOutcomeCallable;
         typedef std::future<ModifyVpnTunnelOptionsOutcome> ModifyVpnTunnelOptionsOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
@@ -2043,6 +2047,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcPeeringConnectionOptionsRequest&, const Model::ModifyVpcPeeringConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcPeeringConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcTenancyRequest&, const Model::ModifyVpcTenancyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcTenancyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnConnectionRequest&, const Model::ModifyVpnConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnConnectionResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVpnConnectionOptionsRequest&, const Model::ModifyVpnConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelCertificateRequest&, const Model::ModifyVpnTunnelCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelCertificateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelOptionsRequest&, const Model::ModifyVpnTunnelOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
@@ -4180,16 +4185,19 @@ namespace Model
          * <p>Provides information to AWS about your VPN customer gateway device. The
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the Internet-routable IP address of the customer gateway's external
+         * provide the internet-routable IP address of the customer gateway's external
          * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
-         * with the exception of 7224, which is reserved in the <code>us-east-1</code>
-         * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         *  <p>For more information, see <a
+         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
+         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
+         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
+         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
+         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
+         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          *  <p>To create more than one customer gateway with the same VPN type,
@@ -4205,16 +4213,19 @@ namespace Model
          * <p>Provides information to AWS about your VPN customer gateway device. The
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the Internet-routable IP address of the customer gateway's external
+         * provide the internet-routable IP address of the customer gateway's external
          * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
-         * with the exception of 7224, which is reserved in the <code>us-east-1</code>
-         * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         *  <p>For more information, see <a
+         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
+         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
+         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
+         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
+         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
+         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          *  <p>To create more than one customer gateway with the same VPN type,
@@ -4232,16 +4243,19 @@ namespace Model
          * <p>Provides information to AWS about your VPN customer gateway device. The
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the Internet-routable IP address of the customer gateway's external
+         * provide the internet-routable IP address of the customer gateway's external
          * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
-         * with the exception of 7224, which is reserved in the <code>us-east-1</code>
-         * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         *  <p>For more information, see <a
+         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
+         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
+         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
+         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
+         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
+         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          *  <p>To create more than one customer gateway with the same VPN type,
@@ -17341,6 +17355,43 @@ namespace Model
         virtual void ModifyVpnConnectionAsync(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
+         * the AWS side do not change, and the tunnel options do not change. Your VPN
+         * connection will be temporarily unavailable for a brief period while the VPN
+         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpnConnectionOptionsOutcome ModifyVpnConnectionOptions(const Model::ModifyVpnConnectionOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
+         * the AWS side do not change, and the tunnel options do not change. Your VPN
+         * connection will be temporarily unavailable for a brief period while the VPN
+         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVpnConnectionOptionsOutcomeCallable ModifyVpnConnectionOptionsCallable(const Model::ModifyVpnConnectionOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
+         * the AWS side do not change, and the tunnel options do not change. Your VPN
+         * connection will be temporarily unavailable for a brief period while the VPN
+         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVpnConnectionOptionsAsync(const Model::ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the VPN tunnel endpoint certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">AWS
          * API Reference</a></p>
@@ -20409,6 +20460,7 @@ namespace Model
         void ModifyVpcPeeringConnectionOptionsAsyncHelper(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcTenancyAsyncHelper(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnConnectionAsyncHelper(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVpnConnectionOptionsAsyncHelper(const Model::ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnTunnelCertificateAsyncHelper(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnTunnelOptionsAsyncHelper(const Model::ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

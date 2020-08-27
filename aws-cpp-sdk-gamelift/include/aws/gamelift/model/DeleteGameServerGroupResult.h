@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>An object that describes the deleted game server group resource, with status
-     * updated to DELETE_SCHEDULED. </p>
+     * updated to <code>DELETE_SCHEDULED</code>. </p>
      */
     inline const GameServerGroup& GetGameServerGroup() const{ return m_gameServerGroup; }
 
     /**
      * <p>An object that describes the deleted game server group resource, with status
-     * updated to DELETE_SCHEDULED. </p>
+     * updated to <code>DELETE_SCHEDULED</code>. </p>
      */
     inline void SetGameServerGroup(const GameServerGroup& value) { m_gameServerGroup = value; }
 
     /**
      * <p>An object that describes the deleted game server group resource, with status
-     * updated to DELETE_SCHEDULED. </p>
+     * updated to <code>DELETE_SCHEDULED</code>. </p>
      */
     inline void SetGameServerGroup(GameServerGroup&& value) { m_gameServerGroup = std::move(value); }
 
     /**
      * <p>An object that describes the deleted game server group resource, with status
-     * updated to DELETE_SCHEDULED. </p>
+     * updated to <code>DELETE_SCHEDULED</code>. </p>
      */
     inline DeleteGameServerGroupResult& WithGameServerGroup(const GameServerGroup& value) { SetGameServerGroup(value); return *this;}
 
     /**
      * <p>An object that describes the deleted game server group resource, with status
-     * updated to DELETE_SCHEDULED. </p>
+     * updated to <code>DELETE_SCHEDULED</code>. </p>
      */
     inline DeleteGameServerGroupResult& WithGameServerGroup(GameServerGroup&& value) { SetGameServerGroup(std::move(value)); return *this;}
 

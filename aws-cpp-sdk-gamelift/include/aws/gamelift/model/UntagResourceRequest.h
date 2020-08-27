@@ -40,7 +40,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
@@ -50,7 +50,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
@@ -70,7 +70,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
@@ -80,7 +80,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
@@ -90,7 +90,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
@@ -100,7 +100,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to remove tags from. GameLift resource ARNs are included in the data object for
-     * the resource, which can be retrieved by calling a List or Describe action for
+     * the resource, which can be retrieved by calling a List or Describe operation for
      * the resource type. </p>
      */
     inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}

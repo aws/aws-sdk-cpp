@@ -1174,50 +1174,50 @@ namespace Model
 
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
 

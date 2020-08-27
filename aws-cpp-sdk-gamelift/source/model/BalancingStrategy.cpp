@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SPOT_ONLY_HASH = HashingUtils::HashString("SPOT_ONLY");
         static const int SPOT_PREFERRED_HASH = HashingUtils::HashString("SPOT_PREFERRED");
+        static const int ON_DEMAND_ONLY_HASH = HashingUtils::HashString("ON_DEMAND_ONLY");
 
 
         BalancingStrategy GetBalancingStrategyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SPOT_PREFERRED_HASH)
           {
             return BalancingStrategy::SPOT_PREFERRED;
+          }
+          else if (hashCode == ON_DEMAND_ONLY_HASH)
+          {
+            return BalancingStrategy::ON_DEMAND_ONLY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SPOT_ONLY";
           case BalancingStrategy::SPOT_PREFERRED:
             return "SPOT_PREFERRED";
+          case BalancingStrategy::ON_DEMAND_ONLY:
+            return "ON_DEMAND_ONLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

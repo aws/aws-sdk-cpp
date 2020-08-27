@@ -26,8 +26,8 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the returned data in response to a request
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessionsOutput">AWS
    * API Reference</a></p>
    */

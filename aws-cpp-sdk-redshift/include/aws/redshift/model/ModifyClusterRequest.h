@@ -1417,9 +1417,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -1427,9 +1426,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -1437,9 +1435,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -1447,9 +1444,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline ModifyClusterRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

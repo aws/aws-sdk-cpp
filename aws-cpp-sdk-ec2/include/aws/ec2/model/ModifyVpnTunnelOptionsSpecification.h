@@ -470,6 +470,71 @@ namespace Model
 
 
     /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline const Aws::String& GetDPDTimeoutAction() const{ return m_dPDTimeoutAction; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline bool DPDTimeoutActionHasBeenSet() const { return m_dPDTimeoutActionHasBeenSet; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(const Aws::String& value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction = value; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(Aws::String&& value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction = std::move(value); }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(const char* value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction.assign(value); }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithDPDTimeoutAction(const Aws::String& value) { SetDPDTimeoutAction(value); return *this;}
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithDPDTimeoutAction(Aws::String&& value) { SetDPDTimeoutAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithDPDTimeoutAction(const char* value) { SetDPDTimeoutAction(value); return *this;}
+
+
+    /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
      * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
@@ -907,6 +972,79 @@ namespace Model
      */
     inline ModifyVpnTunnelOptionsSpecification& AddIKEVersions(IKEVersionsRequestListValue&& value) { m_iKEVersionsHasBeenSet = true; m_iKEVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline const Aws::String& GetStartupAction() const{ return m_startupAction; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline bool StartupActionHasBeenSet() const { return m_startupActionHasBeenSet; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(const Aws::String& value) { m_startupActionHasBeenSet = true; m_startupAction = value; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(Aws::String&& value) { m_startupActionHasBeenSet = true; m_startupAction = std::move(value); }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(const char* value) { m_startupActionHasBeenSet = true; m_startupAction.assign(value); }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithStartupAction(const Aws::String& value) { SetStartupAction(value); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithStartupAction(Aws::String&& value) { SetStartupAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
+     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
+     * <p>Default: <code>add</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
+
   private:
 
     Aws::String m_tunnelInsideCidr;
@@ -936,6 +1074,9 @@ namespace Model
     int m_dPDTimeoutSeconds;
     bool m_dPDTimeoutSecondsHasBeenSet;
 
+    Aws::String m_dPDTimeoutAction;
+    bool m_dPDTimeoutActionHasBeenSet;
+
     Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue> m_phase1EncryptionAlgorithms;
     bool m_phase1EncryptionAlgorithmsHasBeenSet;
 
@@ -956,6 +1097,9 @@ namespace Model
 
     Aws::Vector<IKEVersionsRequestListValue> m_iKEVersions;
     bool m_iKEVersionsHasBeenSet;
+
+    Aws::String m_startupAction;
+    bool m_startupActionHasBeenSet;
   };
 
 } // namespace Model

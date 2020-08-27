@@ -19,6 +19,7 @@ namespace Model
 {
 
 AudioDescription::AudioDescription() : 
+    m_audioChannelTaggingSettingsHasBeenSet(false),
     m_audioNormalizationSettingsHasBeenSet(false),
     m_audioSourceNameHasBeenSet(false),
     m_audioType(0),
@@ -37,6 +38,7 @@ AudioDescription::AudioDescription() :
 }
 
 AudioDescription::AudioDescription(JsonView jsonValue) : 
+    m_audioChannelTaggingSettingsHasBeenSet(false),
     m_audioNormalizationSettingsHasBeenSet(false),
     m_audioSourceNameHasBeenSet(false),
     m_audioType(0),
@@ -57,6 +59,13 @@ AudioDescription::AudioDescription(JsonView jsonValue) :
 
 AudioDescription& AudioDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioChannelTaggingSettings"))
+  {
+    m_audioChannelTaggingSettings = jsonValue.GetObject("audioChannelTaggingSettings");
+
+    m_audioChannelTaggingSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioNormalizationSettings"))
   {
     m_audioNormalizationSettings = jsonValue.GetObject("audioNormalizationSettings");
@@ -133,6 +142,12 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
 JsonValue AudioDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioChannelTaggingSettingsHasBeenSet)
+  {
+   payload.WithObject("audioChannelTaggingSettings", m_audioChannelTaggingSettings.Jsonize());
+
+  }
 
   if(m_audioNormalizationSettingsHasBeenSet)
   {

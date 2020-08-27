@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilizationInput">AWS
    * API Reference</a></p>
    */
@@ -151,65 +151,65 @@ namespace Model
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetUtilizationRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetUtilizationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetUtilizationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

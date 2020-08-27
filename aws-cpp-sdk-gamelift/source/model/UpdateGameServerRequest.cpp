@@ -16,7 +16,6 @@ UpdateGameServerRequest::UpdateGameServerRequest() :
     m_gameServerGroupNameHasBeenSet(false),
     m_gameServerIdHasBeenSet(false),
     m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
     m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
     m_utilizationStatusHasBeenSet(false),
     m_healthCheck(GameServerHealthCheck::NOT_SET),
@@ -43,12 +42,6 @@ Aws::String UpdateGameServerRequest::SerializePayload() const
   if(m_gameServerDataHasBeenSet)
   {
    payload.WithString("GameServerData", m_gameServerData);
-
-  }
-
-  if(m_customSortKeyHasBeenSet)
-  {
-   payload.WithString("CustomSortKey", m_customSortKey);
 
   }
 

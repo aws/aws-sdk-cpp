@@ -546,50 +546,43 @@ namespace Model
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline const Aws::String& GetTargetEncryptionType() const{ return m_targetEncryptionType; }
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline void SetTargetEncryptionType(const Aws::String& value) { m_targetEncryptionType = value; }
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline void SetTargetEncryptionType(Aws::String&& value) { m_targetEncryptionType = std::move(value); }
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline void SetTargetEncryptionType(const char* value) { m_targetEncryptionType.assign(value); }
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline DescribeResizeResult& WithTargetEncryptionType(const Aws::String& value) { SetTargetEncryptionType(value); return *this;}
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline DescribeResizeResult& WithTargetEncryptionType(Aws::String&& value) { SetTargetEncryptionType(std::move(value)); return *this;}
 
     /**
      * <p>The type of encryption for the cluster after the resize is complete.</p>
-     * <p>Possible values are <code>KMS</code> and <code>None</code>. In the China
-     * region possible values are: <code>Legacy</code> and <code>None</code>.</p>
+     * <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
      */
     inline DescribeResizeResult& WithTargetEncryptionType(const char* value) { SetTargetEncryptionType(value); return *this;}
 

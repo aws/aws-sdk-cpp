@@ -57,6 +57,7 @@
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
 #include <aws/gamelift/model/DescribeGameServerRequest.h>
 #include <aws/gamelift/model/DescribeGameServerGroupRequest.h>
+#include <aws/gamelift/model/DescribeGameServerInstancesRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionQueuesRequest.h>
@@ -1180,6 +1181,33 @@ void GameLiftClient::DescribeGameServerGroupAsync(const DescribeGameServerGroupR
 void GameLiftClient::DescribeGameServerGroupAsyncHelper(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeGameServerGroup(request), context);
+}
+
+DescribeGameServerInstancesOutcome GameLiftClient::DescribeGameServerInstances(const DescribeGameServerInstancesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeGameServerInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGameServerInstancesOutcomeCallable GameLiftClient::DescribeGameServerInstancesCallable(const DescribeGameServerInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGameServerInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGameServerInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeGameServerInstancesAsync(const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerInstancesAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeGameServerInstancesAsyncHelper(const DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameServerInstances(request), context);
 }
 
 DescribeGameSessionDetailsOutcome GameLiftClient::DescribeGameSessionDetails(const DescribeGameSessionDetailsRequest& request) const

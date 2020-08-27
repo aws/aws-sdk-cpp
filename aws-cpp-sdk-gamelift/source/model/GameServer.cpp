@@ -25,7 +25,6 @@ GameServer::GameServer() :
     m_instanceIdHasBeenSet(false),
     m_connectionInfoHasBeenSet(false),
     m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
     m_claimStatus(GameServerClaimStatus::NOT_SET),
     m_claimStatusHasBeenSet(false),
     m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
@@ -43,7 +42,6 @@ GameServer::GameServer(JsonView jsonValue) :
     m_instanceIdHasBeenSet(false),
     m_connectionInfoHasBeenSet(false),
     m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
     m_claimStatus(GameServerClaimStatus::NOT_SET),
     m_claimStatusHasBeenSet(false),
     m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
@@ -97,13 +95,6 @@ GameServer& GameServer::operator =(JsonView jsonValue)
     m_gameServerData = jsonValue.GetString("GameServerData");
 
     m_gameServerDataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CustomSortKey"))
-  {
-    m_customSortKey = jsonValue.GetString("CustomSortKey");
-
-    m_customSortKeyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClaimStatus"))
@@ -181,12 +172,6 @@ JsonValue GameServer::Jsonize() const
   if(m_gameServerDataHasBeenSet)
   {
    payload.WithString("GameServerData", m_gameServerData);
-
-  }
-
-  if(m_customSortKeyHasBeenSet)
-  {
-   payload.WithString("CustomSortKey", m_customSortKey);
 
   }
 

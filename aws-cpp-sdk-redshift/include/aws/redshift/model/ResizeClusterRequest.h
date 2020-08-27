@@ -17,6 +17,10 @@ namespace Model
 {
 
   /**
+   * <p>Describes a resize cluster operation. For example, a scheduled action to run
+   * the <code>ResizeCluster</code> API operation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeClusterMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ResizeClusterRequest : public RedshiftRequest
   {
@@ -168,22 +172,26 @@ namespace Model
 
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline ResizeClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 

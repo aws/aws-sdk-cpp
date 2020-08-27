@@ -420,50 +420,42 @@ namespace Model
 
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
 

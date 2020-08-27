@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SPOT_ONLY,
-    SPOT_PREFERRED
+    SPOT_PREFERRED,
+    ON_DEMAND_ONLY
   };
 
 namespace BalancingStrategyMapper

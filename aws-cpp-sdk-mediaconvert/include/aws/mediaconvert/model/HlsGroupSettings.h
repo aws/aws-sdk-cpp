@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/HlsAudioOnlyHeader.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
@@ -175,6 +176,55 @@ namespace Model
      * of the outputs in the output group, specify a list of them here.
      */
     inline HlsGroupSettings& AddAdditionalManifests(HlsAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline const HlsAudioOnlyHeader& GetAudioOnlyHeader() const{ return m_audioOnlyHeader; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline bool AudioOnlyHeaderHasBeenSet() const { return m_audioOnlyHeaderHasBeenSet; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline void SetAudioOnlyHeader(const HlsAudioOnlyHeader& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = value; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline void SetAudioOnlyHeader(HlsAudioOnlyHeader&& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = std::move(value); }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline HlsGroupSettings& WithAudioOnlyHeader(const HlsAudioOnlyHeader& value) { SetAudioOnlyHeader(value); return *this;}
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline HlsGroupSettings& WithAudioOnlyHeader(HlsAudioOnlyHeader&& value) { SetAudioOnlyHeader(std::move(value)); return *this;}
 
 
     /**
@@ -1068,6 +1118,9 @@ namespace Model
 
     Aws::Vector<HlsAdditionalManifest> m_additionalManifests;
     bool m_additionalManifestsHasBeenSet;
+
+    HlsAudioOnlyHeader m_audioOnlyHeader;
+    bool m_audioOnlyHeaderHasBeenSet;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet;

@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object that describes the requested game server group resource. </p>
+     * <p>An object with the property settings for the requested game server group
+     * resource. </p>
      */
     inline const GameServerGroup& GetGameServerGroup() const{ return m_gameServerGroup; }
 
     /**
-     * <p>An object that describes the requested game server group resource. </p>
+     * <p>An object with the property settings for the requested game server group
+     * resource. </p>
      */
     inline void SetGameServerGroup(const GameServerGroup& value) { m_gameServerGroup = value; }
 
     /**
-     * <p>An object that describes the requested game server group resource. </p>
+     * <p>An object with the property settings for the requested game server group
+     * resource. </p>
      */
     inline void SetGameServerGroup(GameServerGroup&& value) { m_gameServerGroup = std::move(value); }
 
     /**
-     * <p>An object that describes the requested game server group resource. </p>
+     * <p>An object with the property settings for the requested game server group
+     * resource. </p>
      */
     inline DescribeGameServerGroupResult& WithGameServerGroup(const GameServerGroup& value) { SetGameServerGroup(value); return *this;}
 
     /**
-     * <p>An object that describes the requested game server group resource. </p>
+     * <p>An object with the property settings for the requested game server group
+     * resource. </p>
      */
     inline DescribeGameServerGroupResult& WithGameServerGroup(GameServerGroup&& value) { SetGameServerGroup(std::move(value)); return *this;}
 

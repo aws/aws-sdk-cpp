@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Object that describes the newly updated game server resource.</p>
+     * <p>Object that describes the newly updated game server.</p>
      */
     inline const GameServer& GetGameServer() const{ return m_gameServer; }
 
     /**
-     * <p>Object that describes the newly updated game server resource.</p>
+     * <p>Object that describes the newly updated game server.</p>
      */
     inline void SetGameServer(const GameServer& value) { m_gameServer = value; }
 
     /**
-     * <p>Object that describes the newly updated game server resource.</p>
+     * <p>Object that describes the newly updated game server.</p>
      */
     inline void SetGameServer(GameServer&& value) { m_gameServer = std::move(value); }
 
     /**
-     * <p>Object that describes the newly updated game server resource.</p>
+     * <p>Object that describes the newly updated game server.</p>
      */
     inline UpdateGameServerResult& WithGameServer(const GameServer& value) { SetGameServer(value); return *this;}
 
     /**
-     * <p>Object that describes the newly updated game server resource.</p>
+     * <p>Object that describes the newly updated game server.</p>
      */
     inline UpdateGameServerResult& WithGameServer(GameServer&& value) { SetGameServer(std::move(value)); return *this;}
 

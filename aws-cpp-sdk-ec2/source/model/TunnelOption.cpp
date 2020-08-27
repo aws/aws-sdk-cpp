@@ -37,13 +37,15 @@ TunnelOption::TunnelOption() :
     m_replayWindowSizeHasBeenSet(false),
     m_dpdTimeoutSeconds(0),
     m_dpdTimeoutSecondsHasBeenSet(false),
+    m_dpdTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_ikeVersionsHasBeenSet(false)
+    m_ikeVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
 }
 
@@ -64,13 +66,15 @@ TunnelOption::TunnelOption(const XmlNode& xmlNode) :
     m_replayWindowSizeHasBeenSet(false),
     m_dpdTimeoutSeconds(0),
     m_dpdTimeoutSecondsHasBeenSet(false),
+    m_dpdTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_ikeVersionsHasBeenSet(false)
+    m_ikeVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -140,6 +144,12 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     {
       m_dpdTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dpdTimeoutSecondsNode.GetText()).c_str()).c_str());
       m_dpdTimeoutSecondsHasBeenSet = true;
+    }
+    XmlNode dpdTimeoutActionNode = resultNode.FirstChild("dpdTimeoutAction");
+    if(!dpdTimeoutActionNode.IsNull())
+    {
+      m_dpdTimeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(dpdTimeoutActionNode.GetText());
+      m_dpdTimeoutActionHasBeenSet = true;
     }
     XmlNode phase1EncryptionAlgorithmsNode = resultNode.FirstChild("phase1EncryptionAlgorithmSet");
     if(!phase1EncryptionAlgorithmsNode.IsNull())
@@ -225,6 +235,12 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
 
       m_ikeVersionsHasBeenSet = true;
     }
+    XmlNode startupActionNode = resultNode.FirstChild("startupAction");
+    if(!startupActionNode.IsNull())
+    {
+      m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
+      m_startupActionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -280,6 +296,11 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location, u
   if(m_dpdTimeoutSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DpdTimeoutSeconds=" << m_dpdTimeoutSeconds << "&";
+  }
+
+  if(m_dpdTimeoutActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DpdTimeoutAction=" << StringUtils::URLEncode(m_dpdTimeoutAction.c_str()) << "&";
   }
 
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
@@ -359,6 +380,11 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location, u
       }
   }
 
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
+  }
+
 }
 
 void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -402,6 +428,10 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_dpdTimeoutSecondsHasBeenSet)
   {
       oStream << location << ".DpdTimeoutSeconds=" << m_dpdTimeoutSeconds << "&";
+  }
+  if(m_dpdTimeoutActionHasBeenSet)
+  {
+      oStream << location << ".DpdTimeoutAction=" << StringUtils::URLEncode(m_dpdTimeoutAction.c_str()) << "&";
   }
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
   {
@@ -472,6 +502,10 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
         ikeVersionsSs << location <<  ".IkeVersionSet." << ikeVersionsIdx++;
         item.OutputToStream(oStream, ikeVersionsSs.str().c_str());
       }
+  }
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
   }
 }
 
