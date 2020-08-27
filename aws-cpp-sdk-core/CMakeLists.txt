@@ -194,7 +194,6 @@ endif()
 
 
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
-    ${AWS_SOURCE}
     ${AWS_TINYXML2_SOURCE}
     ${AWS_AUTH_SOURCE}
     ${AWS_CLIENT_SOURCE}
@@ -283,7 +282,10 @@ elseif(PLATFORM_CUSTOM)
   gather_custom_core_source(AWS_NATIVE_SDK_CUSTOM_SRC)
 endif()
 
+# TODO: Could have different non unity source lists for different platforms.
+# One reason we have this list is to resolve Windows pre-defined type conflicts with those in C++ SDK.
 file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
+    ${AWS_SOURCE}
     ${HTTP_WINDOWS_CLIENT_SOURCE}
     ${HTTP_CURL_CLIENT_SOURCE}
     ${UTILS_CRYPTO_BCRYPT_SOURCE}
