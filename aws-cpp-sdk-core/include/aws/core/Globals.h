@@ -9,6 +9,27 @@
 
 namespace Aws
 {
+    namespace Crt
+    {
+        class ApiHandle;
+    }
+
+    /**
+     * Like we need to call InitAPI() to initialize aws-sdk-cpp, we need ApiHandle to initialize aws-crt-cpp, which is a wrapper of a collection of common runtime libraries.
+     * We will wrap the memory management system and pass it to common runtime libraries via ApiHandle.
+     */
+    AWS_CORE_API Aws::Crt::ApiHandle* GetApiHandle();
+
+    /**
+     * Initialize ApiHandle in aws-crt-cpp.
+     */
+    void InitializeCrt();
+
+    /**
+     * Clean up ApiHandle in aws-crt-cpp.
+     */
+    void CleanupCrt();
+
     namespace Utils
     {
         class EnumParseOverflowContainer;

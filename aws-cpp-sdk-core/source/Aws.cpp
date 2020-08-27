@@ -27,6 +27,7 @@ namespace Aws
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
 #endif // USE_AWS_MEMORY_MANAGEMENT
+        Aws::InitializeCrt();
         Aws::Client::CoreErrorsMapper::InitCoreErrorsMapper();
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
@@ -128,7 +129,7 @@ namespace Aws
         }
 
         Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
-
+        Aws::CleanupCrt();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
