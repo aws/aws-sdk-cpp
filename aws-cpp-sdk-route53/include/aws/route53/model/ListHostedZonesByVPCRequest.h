@@ -126,9 +126,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
@@ -136,9 +136,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
@@ -146,9 +146,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -156,9 +156,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
@@ -166,9 +166,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
@@ -176,9 +176,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline ListHostedZonesByVPCRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
@@ -186,9 +186,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline ListHostedZonesByVPCRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
@@ -196,9 +196,9 @@ namespace Model
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If the specified VPC is associated with more than
      * <code>MaxItems</code> hosted zones, the response includes a
-     * <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone
-     * ID of the first hosted zone that Route 53 will return if you submit another
-     * request.</p>
+     * <code>NextToken</code> element. <code>NextToken</code> contains an encrypted
+     * token that identifies the first hosted zone that Route 53 will return if you
+     * submit another request.</p>
      */
     inline ListHostedZonesByVPCRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

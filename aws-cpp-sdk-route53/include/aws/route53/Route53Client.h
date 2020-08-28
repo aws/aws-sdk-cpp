@@ -383,19 +383,13 @@ namespace Model
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         *  <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          */
@@ -404,19 +398,13 @@ namespace Model
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         *  <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -427,19 +415,13 @@ namespace Model
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         *  <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1704,14 +1686,32 @@ namespace Model
         virtual void DeleteReusableDelegationSetAsync(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTrafficPolicyOutcome DeleteTrafficPolicy(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1720,7 +1720,16 @@ namespace Model
         virtual Model::DeleteTrafficPolicyOutcomeCallable DeleteTrafficPolicyCallable(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -2409,16 +2418,22 @@ namespace Model
         virtual void GetReusableDelegationSetLimitAsync(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTrafficPolicyOutcome GetTrafficPolicy(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -2427,8 +2442,11 @@ namespace Model
         virtual Model::GetTrafficPolicyOutcomeCallable GetTrafficPolicyCallable(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -3108,7 +3126,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          */
@@ -3117,7 +3138,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *
@@ -3128,7 +3152,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *

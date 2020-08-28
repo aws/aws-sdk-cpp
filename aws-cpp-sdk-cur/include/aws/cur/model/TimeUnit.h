@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     HOURLY,
-    DAILY
+    DAILY,
+    MONTHLY
   };
 
 namespace TimeUnitMapper

@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline const ComputeLimits& GetComputeLimits() const{ return m_computeLimits; }
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline bool ComputeLimitsHasBeenSet() const { return m_computeLimitsHasBeenSet; }
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline void SetComputeLimits(const ComputeLimits& value) { m_computeLimitsHasBeenSet = true; m_computeLimits = value; }
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline void SetComputeLimits(ComputeLimits&& value) { m_computeLimitsHasBeenSet = true; m_computeLimits = std::move(value); }
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline ManagedScalingPolicy& WithComputeLimits(const ComputeLimits& value) { SetComputeLimits(value); return *this;}
 
     /**
-     * <p> The EC2 unit limits for a managed scaling policy. The managed scaling
+     * <p>The EC2 unit limits for a managed scaling policy. The managed scaling
      * activity of a cluster is not allowed to go above or below these limits. The
      * limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration. </p>
+     * after initial configuration.</p>
      */
     inline ManagedScalingPolicy& WithComputeLimits(ComputeLimits&& value) { SetComputeLimits(std::move(value)); return *this;}
 
