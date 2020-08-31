@@ -718,6 +718,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetRealtimeLogConfigArn() const{ return m_realtimeLogConfigArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline bool RealtimeLogConfigArnHasBeenSet() const { return m_realtimeLogConfigArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline void SetRealtimeLogConfigArn(const Aws::String& value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline void SetRealtimeLogConfigArn(Aws::String&& value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline void SetRealtimeLogConfigArn(const char* value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline CacheBehavior& WithRealtimeLogConfigArn(const Aws::String& value) { SetRealtimeLogConfigArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline CacheBehavior& WithRealtimeLogConfigArn(Aws::String&& value) { SetRealtimeLogConfigArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the real-time log configuration that is
+     * attached to this cache behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline CacheBehavior& WithRealtimeLogConfigArn(const char* value) { SetRealtimeLogConfigArn(value); return *this;}
+
+
+    /**
      * <p>The unique identifier of the cache policy that is attached to this cache
      * behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
@@ -922,6 +987,9 @@ namespace Model
 
     Aws::String m_fieldLevelEncryptionId;
     bool m_fieldLevelEncryptionIdHasBeenSet;
+
+    Aws::String m_realtimeLogConfigArn;
+    bool m_realtimeLogConfigArnHasBeenSet;
 
     Aws::String m_cachePolicyId;
     bool m_cachePolicyIdHasBeenSet;

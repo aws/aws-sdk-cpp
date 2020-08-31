@@ -22,6 +22,7 @@ namespace Aws
 
         static const int sni_only_HASH = HashingUtils::HashString("sni-only");
         static const int vip_HASH = HashingUtils::HashString("vip");
+        static const int static_ip_HASH = HashingUtils::HashString("static-ip");
 
 
         SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == vip_HASH)
           {
             return SSLSupportMethod::vip;
+          }
+          else if (hashCode == static_ip_HASH)
+          {
+            return SSLSupportMethod::static_ip;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "sni-only";
           case SSLSupportMethod::vip:
             return "vip";
+          case SSLSupportMethod::static_ip:
+            return "static-ip";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

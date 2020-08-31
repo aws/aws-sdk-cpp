@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     sni_only,
-    vip
+    vip,
+    static_ip
   };
 
 namespace SSLSupportMethodMapper

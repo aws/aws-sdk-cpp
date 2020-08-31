@@ -15,6 +15,7 @@ ModifyFleetRequest::ModifyFleetRequest() :
     m_dryRunHasBeenSet(false),
     m_excessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_launchTemplateConfigsHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
     m_targetCapacitySpecificationHasBeenSet(false)
 {
@@ -32,6 +33,16 @@ Aws::String ModifyFleetRequest::SerializePayload() const
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
     ss << "ExcessCapacityTerminationPolicy=" << FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+
+  if(m_launchTemplateConfigsHasBeenSet)
+  {
+    unsigned launchTemplateConfigsCount = 1;
+    for(auto& item : m_launchTemplateConfigs)
+    {
+      item.OutputToStream(ss, "LaunchTemplateConfig.", launchTemplateConfigsCount, "");
+      launchTemplateConfigsCount++;
+    }
   }
 
   if(m_fleetIdHasBeenSet)

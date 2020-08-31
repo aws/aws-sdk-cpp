@@ -89,37 +89,51 @@ namespace Model
 
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token to include in the next request.</p>
+     * <p>Pagination token to include in the next request. Token value is
+     * <code>null</code> if there are no additional results to request, or if you did
+     * not set <code>MaxResults</code> in the request.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -138,22 +138,30 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to include in the response.</p>
+     * <p>Maximum number of results to include in the response. Value range is 1 to
+     * 1000. You must set <code>MaxResults</code> to receive a value for
+     * <code>NextToken</code> in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of results to include in the response.</p>
+     * <p>Maximum number of results to include in the response. Value range is 1 to
+     * 1000. You must set <code>MaxResults</code> to receive a value for
+     * <code>NextToken</code> in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to include in the response.</p>
+     * <p>Maximum number of results to include in the response. Value range is 1 to
+     * 1000. You must set <code>MaxResults</code> to receive a value for
+     * <code>NextToken</code> in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of results to include in the response.</p>
+     * <p>Maximum number of results to include in the response. Value range is 1 to
+     * 1000. You must set <code>MaxResults</code> to receive a value for
+     * <code>NextToken</code> in the response.</p>
      */
     inline ListQueuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -93,10 +93,10 @@ namespace Model
 
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -106,10 +106,10 @@ namespace Model
     inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -119,10 +119,10 @@ namespace Model
     inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -132,10 +132,10 @@ namespace Model
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -145,10 +145,10 @@ namespace Model
     inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -158,10 +158,10 @@ namespace Model
     inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -171,10 +171,10 @@ namespace Model
     inline SendMessageRequest& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -184,10 +184,10 @@ namespace Model
     inline SendMessageRequest& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
 
     /**
-     * <p>The message to send. The maximum string size is 256 KB.</p>  <p>A
-     * message can include only XML, JSON, and unformatted text. The following Unicode
-     * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <p>The message to send. The minimum size is one character. The maximum size is
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
      * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
      * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
      * rejected. For more information, see the <a
@@ -245,7 +245,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -254,7 +254,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -272,7 +272,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -281,7 +281,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -290,7 +290,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -299,7 +299,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -308,7 +308,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -317,7 +317,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -326,7 +326,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -335,7 +335,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -344,7 +344,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */

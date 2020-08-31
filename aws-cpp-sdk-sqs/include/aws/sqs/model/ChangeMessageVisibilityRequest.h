@@ -144,25 +144,25 @@ namespace Model
 
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values
-     * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+     * range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
     inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
 
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values
-     * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+     * range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
     inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
 
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values
-     * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+     * range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
     inline void SetVisibilityTimeout(int value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
 
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values
-     * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+     * range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
     inline ChangeMessageVisibilityRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 

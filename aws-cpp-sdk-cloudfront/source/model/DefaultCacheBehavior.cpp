@@ -32,6 +32,7 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
     m_originRequestPolicyIdHasBeenSet(false)
 {
@@ -49,6 +50,7 @@ DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) :
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
     m_originRequestPolicyIdHasBeenSet(false)
 {
@@ -108,6 +110,12 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_fieldLevelEncryptionId = Aws::Utils::Xml::DecodeEscapedXmlText(fieldLevelEncryptionIdNode.GetText());
       m_fieldLevelEncryptionIdHasBeenSet = true;
+    }
+    XmlNode realtimeLogConfigArnNode = resultNode.FirstChild("RealtimeLogConfigArn");
+    if(!realtimeLogConfigArnNode.IsNull())
+    {
+      m_realtimeLogConfigArn = Aws::Utils::Xml::DecodeEscapedXmlText(realtimeLogConfigArnNode.GetText());
+      m_realtimeLogConfigArnHasBeenSet = true;
     }
     XmlNode cachePolicyIdNode = resultNode.FirstChild("CachePolicyId");
     if(!cachePolicyIdNode.IsNull())
@@ -179,6 +187,12 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode fieldLevelEncryptionIdNode = parentNode.CreateChildElement("FieldLevelEncryptionId");
    fieldLevelEncryptionIdNode.SetText(m_fieldLevelEncryptionId);
+  }
+
+  if(m_realtimeLogConfigArnHasBeenSet)
+  {
+   XmlNode realtimeLogConfigArnNode = parentNode.CreateChildElement("RealtimeLogConfigArn");
+   realtimeLogConfigArnNode.SetText(m_realtimeLogConfigArn);
   }
 
   if(m_cachePolicyIdHasBeenSet)

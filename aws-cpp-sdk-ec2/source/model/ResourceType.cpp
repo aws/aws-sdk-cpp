@@ -24,6 +24,7 @@ namespace Aws
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
+        static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
         static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
         static const int elastic_gpu_HASH = HashingUtils::HashString("elastic-gpu");
         static const int export_image_task_HASH = HashingUtils::HashString("export-image-task");
@@ -83,6 +84,10 @@ namespace Aws
           else if (hashCode == dhcp_options_HASH)
           {
             return ResourceType::dhcp_options;
+          }
+          else if (hashCode == egress_only_internet_gateway_HASH)
+          {
+            return ResourceType::egress_only_internet_gateway;
           }
           else if (hashCode == elastic_ip_HASH)
           {
@@ -262,6 +267,8 @@ namespace Aws
             return "dedicated-host";
           case ResourceType::dhcp_options:
             return "dhcp-options";
+          case ResourceType::egress_only_internet_gateway:
+            return "egress-only-internet-gateway";
           case ResourceType::elastic_ip:
             return "elastic-ip";
           case ResourceType::elastic_gpu:

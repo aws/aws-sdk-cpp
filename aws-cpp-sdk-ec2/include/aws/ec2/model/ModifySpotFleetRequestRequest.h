@@ -7,7 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/LaunchTemplateConfig.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +84,71 @@ namespace Model
      * Spot Fleet.</p>
      */
     inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline const Aws::Vector<LaunchTemplateConfig>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline void SetLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = value; }
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline void SetLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = std::move(value); }
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { SetLaunchTemplateConfigs(value); return *this;}
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { SetLaunchTemplateConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline ModifySpotFleetRequestRequest& AddLaunchTemplateConfigs(const LaunchTemplateConfig& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>The launch template and overrides. You can only use this parameter if you
+     * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
+     * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
+     * Fleet request, then omit this parameter.</p>
+     */
+    inline ModifySpotFleetRequestRequest& AddLaunchTemplateConfigs(LaunchTemplateConfig&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -170,6 +237,9 @@ namespace Model
 
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;
+
+    Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
+    bool m_launchTemplateConfigsHasBeenSet;
 
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;

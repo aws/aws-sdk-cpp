@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() : 
     m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_launchTemplateConfigsHasBeenSet(false),
     m_spotFleetRequestIdHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
@@ -28,6 +29,16 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
     ss << "ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+
+  if(m_launchTemplateConfigsHasBeenSet)
+  {
+    unsigned launchTemplateConfigsCount = 1;
+    for(auto& item : m_launchTemplateConfigs)
+    {
+      item.OutputToStream(ss, "LaunchTemplateConfig.", launchTemplateConfigsCount, "");
+      launchTemplateConfigsCount++;
+    }
   }
 
   if(m_spotFleetRequestIdHasBeenSet)

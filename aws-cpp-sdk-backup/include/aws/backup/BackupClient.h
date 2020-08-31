@@ -361,10 +361,10 @@ namespace Model
          * "arn:aws:ec2:region:account-id:volume/volume-id"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"department"</code> </p> <p>
          * <code>ConditionValue:"finance"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> <li> <p>
+         * <code>ConditionType:"StringEquals"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"importance"</code> </p> <p>
          * <code>ConditionValue:"critical"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> </ul> <p>Using these
+         * <code>ConditionType:"StringEquals"</code> </p> </li> </ul> <p>Using these
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the
@@ -386,10 +386,10 @@ namespace Model
          * "arn:aws:ec2:region:account-id:volume/volume-id"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"department"</code> </p> <p>
          * <code>ConditionValue:"finance"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> <li> <p>
+         * <code>ConditionType:"StringEquals"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"importance"</code> </p> <p>
          * <code>ConditionValue:"critical"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> </ul> <p>Using these
+         * <code>ConditionType:"StringEquals"</code> </p> </li> </ul> <p>Using these
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the
@@ -413,10 +413,10 @@ namespace Model
          * "arn:aws:ec2:region:account-id:volume/volume-id"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"department"</code> </p> <p>
          * <code>ConditionValue:"finance"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> <li> <p>
+         * <code>ConditionType:"StringEquals"</code> </p> </li> <li> <p>
          * <code>ConditionKey:"importance"</code> </p> <p>
          * <code>ConditionValue:"critical"</code> </p> <p>
-         * <code>ConditionType:"STRINGEQUALS"</code> </p> </li> </ul> <p>Using these
+         * <code>ConditionType:"StringEquals"</code> </p> </li> </ul> <p>Using these
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the

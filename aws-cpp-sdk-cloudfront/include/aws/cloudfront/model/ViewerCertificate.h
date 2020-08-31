@@ -324,9 +324,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
 
@@ -340,9 +344,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline bool SSLSupportMethodHasBeenSet() const { return m_sSLSupportMethodHasBeenSet; }
 
@@ -356,9 +364,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline void SetSSLSupportMethod(const SSLSupportMethod& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
 
@@ -372,9 +384,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline void SetSSLSupportMethod(SSLSupportMethod&& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = std::move(value); }
 
@@ -388,9 +404,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(const SSLSupportMethod& value) { SetSSLSupportMethod(value); return *this;}
 
@@ -404,9 +424,13 @@ namespace Model
      * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
      * connections from all viewers including those that don’t support SNI. This is not
      * recommended, and results in additional monthly charges from CloudFront.</p>
-     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
-     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
-     * field.</p>
+     * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
+     * distribution has been enabled for this feature by the CloudFront team. If you
+     * have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
+     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
+     * value for this field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
 

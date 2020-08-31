@@ -20,6 +20,7 @@ namespace Model
     customer_gateway,
     dedicated_host,
     dhcp_options,
+    egress_only_internet_gateway,
     elastic_ip,
     elastic_gpu,
     export_image_task,

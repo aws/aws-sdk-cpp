@@ -36,6 +36,7 @@ static const int INVALID_LOCATION_CODE_HASH = HashingUtils::HashString("InvalidL
 static const int PUBLIC_KEY_IN_USE_HASH = HashingUtils::HashString("PublicKeyInUse");
 static const int TOO_MANY_QUERY_STRING_PARAMETERS_HASH = HashingUtils::HashString("TooManyQueryStringParameters");
 static const int TOO_MANY_CERTIFICATES_HASH = HashingUtils::HashString("TooManyCertificates");
+static const int REALTIME_LOG_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("RealtimeLogConfigAlreadyExists");
 static const int NO_SUCH_PUBLIC_KEY_HASH = HashingUtils::HashString("NoSuchPublicKey");
 static const int TOO_MANY_CACHE_POLICIES_HASH = HashingUtils::HashString("TooManyCachePolicies");
 static const int ORIGIN_REQUEST_POLICY_IN_USE_HASH = HashingUtils::HashString("OriginRequestPolicyInUse");
@@ -49,6 +50,7 @@ static const int FIELD_LEVEL_ENCRYPTION_PROFILE_ALREADY_EXISTS_HASH = HashingUti
 static const int TOO_MANY_HEADERS_IN_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("TooManyHeadersInOriginRequestPolicy");
 static const int TOO_MANY_ORIGIN_CUSTOM_HEADERS_HASH = HashingUtils::HashString("TooManyOriginCustomHeaders");
 static const int INVALID_GEO_RESTRICTION_PARAMETER_HASH = HashingUtils::HashString("InvalidGeoRestrictionParameter");
+static const int TOO_MANY_REALTIME_LOG_CONFIGS_HASH = HashingUtils::HashString("TooManyRealtimeLogConfigs");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_PROFILES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionProfiles");
 static const int ILLEGAL_DELETE_HASH = HashingUtils::HashString("IllegalDelete");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_FIELD_PATTERNS_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionFieldPatterns");
@@ -68,6 +70,7 @@ static const int INVALID_ORIGIN_HASH = HashingUtils::HashString("InvalidOrigin")
 static const int TRUSTED_SIGNER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrustedSignerDoesNotExist");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONFIGS_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionConfigs");
 static const int NO_SUCH_INVALIDATION_HASH = HashingUtils::HashString("NoSuchInvalidation");
+static const int NO_SUCH_REALTIME_LOG_CONFIG_HASH = HashingUtils::HashString("NoSuchRealtimeLogConfig");
 static const int TOO_MANY_ORIGINS_HASH = HashingUtils::HashString("TooManyOrigins");
 static const int TOO_MANY_QUERY_STRINGS_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyQueryStringsInCachePolicy");
 static const int DISTRIBUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("DistributionAlreadyExists");
@@ -114,6 +117,7 @@ static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_FIELD_LEVEL_ENCRYPTION_CON
 static const int DISTRIBUTION_NOT_DISABLED_HASH = HashingUtils::HashString("DistributionNotDisabled");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgument");
 static const int PUBLIC_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString("PublicKeyAlreadyExists");
+static const int REALTIME_LOG_CONFIG_IN_USE_HASH = HashingUtils::HashString("RealtimeLogConfigInUse");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityInUse");
 static const int MISSING_BODY_HASH = HashingUtils::HashString("MissingBody");
 
@@ -194,6 +198,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_CERTIFICATES), false);
   }
+  else if (hashCode == REALTIME_LOG_CONFIG_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::REALTIME_LOG_CONFIG_ALREADY_EXISTS), false);
+  }
   else if (hashCode == NO_SUCH_PUBLIC_KEY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_PUBLIC_KEY), false);
@@ -245,6 +253,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_GEO_RESTRICTION_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_GEO_RESTRICTION_PARAMETER), false);
+  }
+  else if (hashCode == TOO_MANY_REALTIME_LOG_CONFIGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_REALTIME_LOG_CONFIGS), false);
   }
   else if (hashCode == TOO_MANY_FIELD_LEVEL_ENCRYPTION_PROFILES_HASH)
   {
@@ -321,6 +333,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_SUCH_INVALIDATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_INVALIDATION), false);
+  }
+  else if (hashCode == NO_SUCH_REALTIME_LOG_CONFIG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_REALTIME_LOG_CONFIG), false);
   }
   else if (hashCode == TOO_MANY_ORIGINS_HASH)
   {
@@ -505,6 +521,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PUBLIC_KEY_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PUBLIC_KEY_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == REALTIME_LOG_CONFIG_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::REALTIME_LOG_CONFIG_IN_USE), false);
   }
   else if (hashCode == CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH)
   {

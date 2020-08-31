@@ -193,7 +193,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -291,7 +291,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -389,7 +389,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -487,7 +487,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -585,7 +585,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -683,7 +683,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -781,7 +781,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -879,7 +879,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -977,7 +977,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -1075,7 +1075,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -1173,7 +1173,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -1271,7 +1271,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * </li> <li> <p> <code>ContentBasedDeduplication</code> �� Enables content-based
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based
      * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once

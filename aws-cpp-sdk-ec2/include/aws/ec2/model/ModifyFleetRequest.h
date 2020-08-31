@@ -7,8 +7,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/FleetExcessCapacityTerminationPolicy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TargetCapacitySpecificationRequest.h>
+#include <aws/ec2/model/FleetLaunchTemplateConfigRequest.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +117,47 @@ namespace Model
 
 
     /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline const Aws::Vector<FleetLaunchTemplateConfigRequest>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline void SetLaunchTemplateConfigs(const Aws::Vector<FleetLaunchTemplateConfigRequest>& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = value; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline void SetLaunchTemplateConfigs(Aws::Vector<FleetLaunchTemplateConfigRequest>&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = std::move(value); }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline ModifyFleetRequest& WithLaunchTemplateConfigs(const Aws::Vector<FleetLaunchTemplateConfigRequest>& value) { SetLaunchTemplateConfigs(value); return *this;}
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline ModifyFleetRequest& WithLaunchTemplateConfigs(Aws::Vector<FleetLaunchTemplateConfigRequest>&& value) { SetLaunchTemplateConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline ModifyFleetRequest& AddLaunchTemplateConfigs(const FleetLaunchTemplateConfigRequest& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline ModifyFleetRequest& AddLaunchTemplateConfigs(FleetLaunchTemplateConfigRequest&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
@@ -192,6 +235,9 @@ namespace Model
 
     FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;
+
+    Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
+    bool m_launchTemplateConfigsHasBeenSet;
 
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
