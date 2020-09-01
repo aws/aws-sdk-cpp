@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryResult.h>
+#include <aws/codeguru-reviewer/model/CreateCodeReviewResult.h>
 #include <aws/codeguru-reviewer/model/DescribeCodeReviewResult.h>
 #include <aws/codeguru-reviewer/model/DescribeRecommendationFeedbackResult.h>
 #include <aws/codeguru-reviewer/model/DescribeRepositoryAssociationResult.h>
@@ -61,6 +62,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
         class AssociateRepositoryRequest;
+        class CreateCodeReviewRequest;
         class DescribeCodeReviewRequest;
         class DescribeRecommendationFeedbackRequest;
         class DescribeRepositoryAssociationRequest;
@@ -72,6 +74,7 @@ namespace Model
         class PutRecommendationFeedbackRequest;
 
         typedef Aws::Utils::Outcome<AssociateRepositoryResult, CodeGuruReviewerError> AssociateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<CreateCodeReviewResult, CodeGuruReviewerError> CreateCodeReviewOutcome;
         typedef Aws::Utils::Outcome<DescribeCodeReviewResult, CodeGuruReviewerError> DescribeCodeReviewOutcome;
         typedef Aws::Utils::Outcome<DescribeRecommendationFeedbackResult, CodeGuruReviewerError> DescribeRecommendationFeedbackOutcome;
         typedef Aws::Utils::Outcome<DescribeRepositoryAssociationResult, CodeGuruReviewerError> DescribeRepositoryAssociationOutcome;
@@ -83,6 +86,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutRecommendationFeedbackResult, CodeGuruReviewerError> PutRecommendationFeedbackOutcome;
 
         typedef std::future<AssociateRepositoryOutcome> AssociateRepositoryOutcomeCallable;
+        typedef std::future<CreateCodeReviewOutcome> CreateCodeReviewOutcomeCallable;
         typedef std::future<DescribeCodeReviewOutcome> DescribeCodeReviewOutcomeCallable;
         typedef std::future<DescribeRecommendationFeedbackOutcome> DescribeRecommendationFeedbackOutcomeCallable;
         typedef std::future<DescribeRepositoryAssociationOutcome> DescribeRepositoryAssociationOutcomeCallable;
@@ -97,6 +101,7 @@ namespace Model
   class CodeGuruReviewerClient;
 
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::AssociateRepositoryRequest&, const Model::AssociateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::CreateCodeReviewRequest&, const Model::CreateCodeReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeReviewResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeCodeReviewRequest&, const Model::DescribeCodeReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeReviewResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeRecommendationFeedbackRequest&, const Model::DescribeRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommendationFeedbackResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeRepositoryAssociationRequest&, const Model::DescribeRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoryAssociationResponseReceivedHandler;
@@ -157,7 +162,7 @@ namespace Model
          * in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User
          * Guide.</i> </p> <p>If you associate a CodeCommit repository, it must be in the
          * same AWS Region and AWS account where its CodeGuru Reviewer code reviews are
-         * configured.</p> <p> Bitbucket and GitHub Enterprise Server repositories are
+         * configured.</p> <p>Bitbucket and GitHub Enterprise Server repositories are
          * managed by AWS CodeStar Connections to connect to CodeGuru Reviewer. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
@@ -184,7 +189,7 @@ namespace Model
          * in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User
          * Guide.</i> </p> <p>If you associate a CodeCommit repository, it must be in the
          * same AWS Region and AWS account where its CodeGuru Reviewer code reviews are
-         * configured.</p> <p> Bitbucket and GitHub Enterprise Server repositories are
+         * configured.</p> <p>Bitbucket and GitHub Enterprise Server repositories are
          * managed by AWS CodeStar Connections to connect to CodeGuru Reviewer. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
@@ -213,7 +218,7 @@ namespace Model
          * in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User
          * Guide.</i> </p> <p>If you associate a CodeCommit repository, it must be in the
          * same AWS Region and AWS account where its CodeGuru Reviewer code reviews are
-         * configured.</p> <p> Bitbucket and GitHub Enterprise Server repositories are
+         * configured.</p> <p>Bitbucket and GitHub Enterprise Server repositories are
          * managed by AWS CodeStar Connections to connect to CodeGuru Reviewer. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
@@ -230,6 +235,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateRepositoryAsync(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCodeReviewOutcome CreateCodeReview(const Model::CreateCodeReviewRequest& request) const;
+
+        /**
+         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCodeReviewOutcomeCallable CreateCodeReviewCallable(const Model::CreateCodeReviewRequest& request) const;
+
+        /**
+         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCodeReviewAsync(const Model::CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the metadata associated with the code review along with its
@@ -539,6 +572,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateRepositoryAsyncHelper(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCodeReviewAsyncHelper(const Model::CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCodeReviewAsyncHelper(const Model::DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecommendationFeedbackAsyncHelper(const Model::DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoryAssociationAsyncHelper(const Model::DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

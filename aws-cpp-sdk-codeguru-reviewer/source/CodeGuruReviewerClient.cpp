@@ -21,6 +21,7 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpoint.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrorMarshaller.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryRequest.h>
+#include <aws/codeguru-reviewer/model/CreateCodeReviewRequest.h>
 #include <aws/codeguru-reviewer/model/DescribeCodeReviewRequest.h>
 #include <aws/codeguru-reviewer/model/DescribeRecommendationFeedbackRequest.h>
 #include <aws/codeguru-reviewer/model/DescribeRepositoryAssociationRequest.h>
@@ -129,6 +130,33 @@ void CodeGuruReviewerClient::AssociateRepositoryAsync(const AssociateRepositoryR
 void CodeGuruReviewerClient::AssociateRepositoryAsyncHelper(const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateRepository(request), context);
+}
+
+CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/codereviews";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateCodeReviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCodeReviewOutcomeCallable CodeGuruReviewerClient::CreateCodeReviewCallable(const CreateCodeReviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCodeReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCodeReview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::CreateCodeReviewAsync(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCodeReviewAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::CreateCodeReviewAsyncHelper(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCodeReview(request), context);
 }
 
 DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const

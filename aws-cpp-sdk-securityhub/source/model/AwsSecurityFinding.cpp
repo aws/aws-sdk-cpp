@@ -56,7 +56,8 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_vulnerabilitiesHasBeenSet(false)
+    m_vulnerabilitiesHasBeenSet(false),
+    m_patchSummaryHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_vulnerabilitiesHasBeenSet(false)
+    m_vulnerabilitiesHasBeenSet(false),
+    m_patchSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -363,6 +365,13 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_vulnerabilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PatchSummary"))
+  {
+    m_patchSummary = jsonValue.GetObject("PatchSummary");
+
+    m_patchSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -607,6 +616,12 @@ JsonValue AwsSecurityFinding::Jsonize() const
      vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject(m_vulnerabilities[vulnerabilitiesIndex].Jsonize());
    }
    payload.WithArray("Vulnerabilities", std::move(vulnerabilitiesJsonList));
+
+  }
+
+  if(m_patchSummaryHasBeenSet)
+  {
+   payload.WithObject("PatchSummary", m_patchSummary.Jsonize());
 
   }
 

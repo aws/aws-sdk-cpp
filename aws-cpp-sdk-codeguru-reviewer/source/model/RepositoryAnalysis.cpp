@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/codeguru-reviewer/model/SourceCodeType.h>
+#include <aws/codeguru-reviewer/model/RepositoryAnalysis.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,28 +18,19 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-SourceCodeType::SourceCodeType() : 
-    m_commitDiffHasBeenSet(false),
+RepositoryAnalysis::RepositoryAnalysis() : 
     m_repositoryHeadHasBeenSet(false)
 {
 }
 
-SourceCodeType::SourceCodeType(JsonView jsonValue) : 
-    m_commitDiffHasBeenSet(false),
+RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue) : 
     m_repositoryHeadHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SourceCodeType& SourceCodeType::operator =(JsonView jsonValue)
+RepositoryAnalysis& RepositoryAnalysis::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CommitDiff"))
-  {
-    m_commitDiff = jsonValue.GetObject("CommitDiff");
-
-    m_commitDiffHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("RepositoryHead"))
   {
     m_repositoryHead = jsonValue.GetObject("RepositoryHead");
@@ -50,15 +41,9 @@ SourceCodeType& SourceCodeType::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SourceCodeType::Jsonize() const
+JsonValue RepositoryAnalysis::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_commitDiffHasBeenSet)
-  {
-   payload.WithObject("CommitDiff", m_commitDiff.Jsonize());
-
-  }
 
   if(m_repositoryHeadHasBeenSet)
   {

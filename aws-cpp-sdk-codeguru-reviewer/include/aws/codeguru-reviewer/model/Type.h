@@ -16,7 +16,8 @@ namespace Model
   enum class Type
   {
     NOT_SET,
-    PullRequest
+    PullRequest,
+    RepositoryAnalysis
   };
 
 namespace TypeMapper

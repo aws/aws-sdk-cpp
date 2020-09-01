@@ -88,15 +88,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline const Aws::Vector<RepositoryAssociationState>& GetStates() const{ return m_states; }
 
@@ -106,15 +107,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
@@ -124,15 +126,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline void SetStates(const Aws::Vector<RepositoryAssociationState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
@@ -142,15 +145,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline void SetStates(Aws::Vector<RepositoryAssociationState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
@@ -160,15 +164,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(const Aws::Vector<RepositoryAssociationState>& value) { SetStates(value); return *this;}
 
@@ -178,15 +183,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(Aws::Vector<RepositoryAssociationState>&& value) { SetStates(std::move(value)); return *this;}
 
@@ -196,15 +202,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(const RepositoryAssociationState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
@@ -214,15 +221,16 @@ namespace Model
      * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
      * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
      * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
-     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
-     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
-     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
-     * code in your repository cannot be triggered. </p>  </li> <li> <p> Setting
-     * up source code access. This is required for CodeGuru Reviewer to securely clone
-     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
-     * repository failed to associate or disassociate. </p> </li> <li> <p>
-     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
-     * request notifications and source code access. </p> </li> </ul>
+     *  <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(RepositoryAssociationState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
@@ -276,72 +284,72 @@ namespace Model
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
      * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket, this is name of the account that
-     * was used to associate the repository. </p>
+     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 

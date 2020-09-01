@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PullRequest_HASH = HashingUtils::HashString("PullRequest");
+        static const int RepositoryAnalysis_HASH = HashingUtils::HashString("RepositoryAnalysis");
 
 
         Type GetTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PullRequest_HASH)
           {
             return Type::PullRequest;
+          }
+          else if (hashCode == RepositoryAnalysis_HASH)
+          {
+            return Type::RepositoryAnalysis;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case Type::PullRequest:
             return "PullRequest";
+          case Type::RepositoryAnalysis:
+            return "RepositoryAnalysis";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

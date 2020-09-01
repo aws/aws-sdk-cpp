@@ -24,7 +24,10 @@ namespace Model
 {
 
   /**
-   * <p> The commit diff for the pull request. </p><p><h3>See Also:</h3>   <a
+   * <p> A type of <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+   * <code>SourceCodeType</code> </a> that specifies the commit diff for a pull
+   * request on an associated repository. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CommitDiffSourceCodeType">AWS
    * API Reference</a></p>
    */
@@ -38,83 +41,83 @@ namespace Model
 
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline const Aws::String& GetSourceCommit() const{ return m_sourceCommit; }
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline bool SourceCommitHasBeenSet() const { return m_sourceCommitHasBeenSet; }
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline void SetSourceCommit(const Aws::String& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = value; }
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline void SetSourceCommit(Aws::String&& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = std::move(value); }
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline void SetSourceCommit(const char* value) { m_sourceCommitHasBeenSet = true; m_sourceCommit.assign(value); }
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(const Aws::String& value) { SetSourceCommit(value); return *this;}
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(Aws::String&& value) { SetSourceCommit(std::move(value)); return *this;}
 
     /**
-     * <p> The SHA of the source commit. </p>
+     * <p> The SHA of the source commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(const char* value) { SetSourceCommit(value); return *this;}
 
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline const Aws::String& GetDestinationCommit() const{ return m_destinationCommit; }
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline bool DestinationCommitHasBeenSet() const { return m_destinationCommitHasBeenSet; }
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline void SetDestinationCommit(const Aws::String& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = value; }
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline void SetDestinationCommit(Aws::String&& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = std::move(value); }
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline void SetDestinationCommit(const char* value) { m_destinationCommitHasBeenSet = true; m_destinationCommit.assign(value); }
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(const Aws::String& value) { SetDestinationCommit(value); return *this;}
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(Aws::String&& value) { SetDestinationCommit(std::move(value)); return *this;}
 
     /**
-     * <p> The SHA of the destination commit. </p>
+     * <p> The SHA of the destination commit used to generate a commit diff. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(const char* value) { SetDestinationCommit(value); return *this;}
 

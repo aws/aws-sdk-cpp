@@ -84,8 +84,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
 
@@ -94,8 +95,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
 
@@ -104,8 +106,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
 
@@ -114,8 +117,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
 
@@ -124,8 +128,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
 
@@ -134,8 +139,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline ThirdPartySourceRepository& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
 
@@ -144,8 +150,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline ThirdPartySourceRepository& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
 
@@ -154,8 +161,9 @@ namespace Model
      * Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-     * in the <i>AWS CodeStar Connections API Reference</i>. </p>
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
      */
     inline ThirdPartySourceRepository& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 

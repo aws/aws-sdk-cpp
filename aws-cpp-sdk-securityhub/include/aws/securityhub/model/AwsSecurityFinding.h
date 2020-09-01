@@ -18,6 +18,7 @@
 #include <aws/securityhub/model/Workflow.h>
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
+#include <aws/securityhub/model/PatchSummary.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
@@ -1648,6 +1649,43 @@ namespace Model
      */
     inline AwsSecurityFinding& AddVulnerabilities(Vulnerability&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline const PatchSummary& GetPatchSummary() const{ return m_patchSummary; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline bool PatchSummaryHasBeenSet() const { return m_patchSummaryHasBeenSet; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline void SetPatchSummary(const PatchSummary& value) { m_patchSummaryHasBeenSet = true; m_patchSummary = value; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline void SetPatchSummary(PatchSummary&& value) { m_patchSummaryHasBeenSet = true; m_patchSummary = std::move(value); }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline AwsSecurityFinding& WithPatchSummary(const PatchSummary& value) { SetPatchSummary(value); return *this;}
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline AwsSecurityFinding& WithPatchSummary(PatchSummary&& value) { SetPatchSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1748,6 +1786,9 @@ namespace Model
 
     Aws::Vector<Vulnerability> m_vulnerabilities;
     bool m_vulnerabilitiesHasBeenSet;
+
+    PatchSummary m_patchSummary;
+    bool m_patchSummaryHasBeenSet;
   };
 
 } // namespace Model

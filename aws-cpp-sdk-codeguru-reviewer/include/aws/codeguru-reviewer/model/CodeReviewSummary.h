@@ -184,65 +184,65 @@ namespace Model
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReviewSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReviewSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub or
-     * Bitbucket repository, this is the username for the account that owns the
-     * repository.</p>
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReviewSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
 
