@@ -40,50 +40,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline const Aws::String& GetDetailedResultsLocation() const{ return m_detailedResultsLocation; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline bool DetailedResultsLocationHasBeenSet() const { return m_detailedResultsLocationHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline void SetDetailedResultsLocation(const Aws::String& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline void SetDetailedResultsLocation(Aws::String&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline void SetDetailedResultsLocation(const char* value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(const Aws::String& value) { SetDetailedResultsLocation(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(Aws::String&& value) { SetDetailedResultsLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file that contains the detailed record,
-     * including offsets, for the finding.</p>
+     * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
+     * sensitive data discovery results for the finding. If a finding applies to a
+     * large archive or compressed file, this is a path to a folder. Otherwise, this is
+     * a path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(const char* value) { SetDetailedResultsLocation(value); return *this;}
 
@@ -187,32 +203,32 @@ namespace Model
 
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline const ClassificationResult& GetResult() const{ return m_result; }
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline void SetResult(const ClassificationResult& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline void SetResult(ClassificationResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline ClassificationDetails& WithResult(const ClassificationResult& value) { SetResult(value); return *this;}
 
     /**
-     * <p>The status and detailed results of the finding.</p>
+     * <p>The status and other details for the finding.</p>
      */
     inline ClassificationDetails& WithResult(ClassificationResult&& value) { SetResult(std::move(value)); return *this;}
 

@@ -12,6 +12,7 @@
 #include <aws/macie2/model/ReplicationDetails.h>
 #include <aws/macie2/model/SharedAccess.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/macie2/model/ObjectLevelStatistics.h>
 #include <aws/macie2/model/KeyValuePair.h>
 #include <utility>
 
@@ -46,50 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline BucketMetadata& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the
-     * bucket.</p>
+     * <p>The unique identifier for the AWS account that owns the bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -215,66 +208,91 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline bool ClassifiableObjectCountHasBeenSet() const { return m_classifiableObjectCountHasBeenSet; }
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCountHasBeenSet = true; m_classifiableObjectCount = value; }
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline BucketMetadata& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
 
 
     /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
+     * analyze in the bucket. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
+     * analyze in the bucket. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline bool ClassifiableSizeInBytesHasBeenSet() const { return m_classifiableSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
+     * analyze in the bucket. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytesHasBeenSet = true; m_classifiableSizeInBytes = value; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
+     * analyze in the bucket. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline BucketMetadata& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
+
+
+    /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline BucketMetadata& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the bucket.</p>
+     * most recently retrieved data about the bucket from Amazon S3.</p>
      */
     inline BucketMetadata& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -465,62 +483,68 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline const SharedAccess& GetSharedAccess() const{ return m_sharedAccess; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline bool SharedAccessHasBeenSet() const { return m_sharedAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(const SharedAccess& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(SharedAccess&& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(const SharedAccess& value) { SetSharedAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
-     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
-     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
-     * bucket is shared with an AWS account that's part of the same Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Possible
+     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
+     * that isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
+     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li></ul>
+     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(SharedAccess&& value) { SetSharedAccess(std::move(value)); return *this;}
 
@@ -617,6 +641,86 @@ namespace Model
 
 
     /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline const ObjectLevelStatistics& GetUnclassifiableObjectCount() const{ return m_unclassifiableObjectCount; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline bool UnclassifiableObjectCountHasBeenSet() const { return m_unclassifiableObjectCountHasBeenSet; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectCount(const ObjectLevelStatistics& value) { m_unclassifiableObjectCountHasBeenSet = true; m_unclassifiableObjectCount = value; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectCount(ObjectLevelStatistics&& value) { m_unclassifiableObjectCountHasBeenSet = true; m_unclassifiableObjectCount = std::move(value); }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline BucketMetadata& WithUnclassifiableObjectCount(const ObjectLevelStatistics& value) { SetUnclassifiableObjectCount(value); return *this;}
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline BucketMetadata& WithUnclassifiableObjectCount(ObjectLevelStatistics&& value) { SetUnclassifiableObjectCount(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline const ObjectLevelStatistics& GetUnclassifiableObjectSizeInBytes() const{ return m_unclassifiableObjectSizeInBytes; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline bool UnclassifiableObjectSizeInBytesHasBeenSet() const { return m_unclassifiableObjectSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { m_unclassifiableObjectSizeInBytesHasBeenSet = true; m_unclassifiableObjectSizeInBytes = value; }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { m_unclassifiableObjectSizeInBytesHasBeenSet = true; m_unclassifiableObjectSizeInBytes = std::move(value); }
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline BucketMetadata& WithUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { SetUnclassifiableObjectSizeInBytes(value); return *this;}
+
+    /**
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
+     * analyze in the bucket. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline BucketMetadata& WithUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { SetUnclassifiableObjectSizeInBytes(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies whether versioning is enabled for the bucket.</p>
      */
     inline bool GetVersioning() const{ return m_versioning; }
@@ -653,6 +757,9 @@ namespace Model
     long long m_classifiableObjectCount;
     bool m_classifiableObjectCountHasBeenSet;
 
+    long long m_classifiableSizeInBytes;
+    bool m_classifiableSizeInBytesHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet;
 
@@ -682,6 +789,12 @@ namespace Model
 
     Aws::Vector<KeyValuePair> m_tags;
     bool m_tagsHasBeenSet;
+
+    ObjectLevelStatistics m_unclassifiableObjectCount;
+    bool m_unclassifiableObjectCountHasBeenSet;
+
+    ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
+    bool m_unclassifiableObjectSizeInBytesHasBeenSet;
 
     bool m_versioning;
     bool m_versioningHasBeenSet;

@@ -83,9 +83,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -100,9 +101,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -117,9 +119,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -134,9 +137,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -151,9 +155,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -168,9 +173,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -185,9 +191,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>
@@ -202,9 +209,10 @@ namespace Model
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>attachment.resource-id</code> - The ID of the resource for the
      * attachment.</p> </li> <li> <p> <code>attachment.resource-type</code> - The type
-     * of resource for the attachment (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).</p> </li> <li>
-     * <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the
+     * of resource for the attachment. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>is-blackhole</code> - Whether traffic
      * matching the route is blocked (<code>true</code> | <code>false</code>).</p>
      * </li> <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p>

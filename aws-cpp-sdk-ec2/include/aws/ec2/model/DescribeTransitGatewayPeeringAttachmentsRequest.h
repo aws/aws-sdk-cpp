@@ -90,8 +90,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -105,8 +106,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -120,8 +122,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -135,8 +138,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -150,8 +154,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -165,8 +170,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -180,8 +186,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
@@ -195,8 +202,9 @@ namespace Model
      * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
      * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
      * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code>
-     * | <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the peering attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
      * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit

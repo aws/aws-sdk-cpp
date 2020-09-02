@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     initiating,
+    initiatingRequest,
     pendingAcceptance,
     rollingBack,
     pending,

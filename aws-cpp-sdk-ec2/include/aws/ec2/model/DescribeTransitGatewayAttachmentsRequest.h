@@ -93,13 +93,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -116,13 +117,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -139,13 +141,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -162,13 +165,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -185,13 +189,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -208,13 +213,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -231,13 +237,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
@@ -254,13 +261,14 @@ namespace Model
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
      * of the AWS account that owns the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> |
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
      * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account

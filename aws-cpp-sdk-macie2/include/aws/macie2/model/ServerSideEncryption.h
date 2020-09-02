@@ -83,58 +83,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * master key that's used to encrypt the bucket or object. This value is null if
-     * KMS isn't used to encrypt the bucket or object.</p>
+     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
+     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
+     * used to encrypt the bucket or object.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 

@@ -25,6 +25,8 @@ BucketMetadata::BucketMetadata() :
     m_bucketNameHasBeenSet(false),
     m_classifiableObjectCount(0),
     m_classifiableObjectCountHasBeenSet(false),
+    m_classifiableSizeInBytes(0),
+    m_classifiableSizeInBytesHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -39,6 +41,8 @@ BucketMetadata::BucketMetadata() :
     m_sizeInBytesCompressed(0),
     m_sizeInBytesCompressedHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_unclassifiableObjectCountHasBeenSet(false),
+    m_unclassifiableObjectSizeInBytesHasBeenSet(false),
     m_versioning(false),
     m_versioningHasBeenSet(false)
 {
@@ -51,6 +55,8 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_bucketNameHasBeenSet(false),
     m_classifiableObjectCount(0),
     m_classifiableObjectCountHasBeenSet(false),
+    m_classifiableSizeInBytes(0),
+    m_classifiableSizeInBytesHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -65,6 +71,8 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_sizeInBytesCompressed(0),
     m_sizeInBytesCompressedHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_unclassifiableObjectCountHasBeenSet(false),
+    m_unclassifiableObjectSizeInBytesHasBeenSet(false),
     m_versioning(false),
     m_versioningHasBeenSet(false)
 {
@@ -106,6 +114,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_classifiableObjectCount = jsonValue.GetInt64("classifiableObjectCount");
 
     m_classifiableObjectCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("classifiableSizeInBytes"))
+  {
+    m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
+
+    m_classifiableSizeInBytesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdated"))
@@ -181,6 +196,20 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unclassifiableObjectCount"))
+  {
+    m_unclassifiableObjectCount = jsonValue.GetObject("unclassifiableObjectCount");
+
+    m_unclassifiableObjectCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unclassifiableObjectSizeInBytes"))
+  {
+    m_unclassifiableObjectSizeInBytes = jsonValue.GetObject("unclassifiableObjectSizeInBytes");
+
+    m_unclassifiableObjectSizeInBytesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("versioning"))
   {
     m_versioning = jsonValue.GetBool("versioning");
@@ -221,6 +250,12 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_classifiableObjectCountHasBeenSet)
   {
    payload.WithInt64("classifiableObjectCount", m_classifiableObjectCount);
+
+  }
+
+  if(m_classifiableSizeInBytesHasBeenSet)
+  {
+   payload.WithInt64("classifiableSizeInBytes", m_classifiableSizeInBytes);
 
   }
 
@@ -284,6 +319,18 @@ JsonValue BucketMetadata::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_unclassifiableObjectCountHasBeenSet)
+  {
+   payload.WithObject("unclassifiableObjectCount", m_unclassifiableObjectCount.Jsonize());
+
+  }
+
+  if(m_unclassifiableObjectSizeInBytesHasBeenSet)
+  {
+   payload.WithObject("unclassifiableObjectSizeInBytes", m_unclassifiableObjectSizeInBytes.Jsonize());
 
   }
 

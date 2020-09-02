@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about permissions settings that determine whether an S3
-   * bucket is publicly accessible.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the permissions settings that determine whether an
+   * S3 bucket is publicly accessible.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPublicAccess">AWS
    * API Reference</a></p>
    */
@@ -41,49 +41,61 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline const EffectivePermission& GetEffectivePermission() const{ return m_effectivePermission; }
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline bool EffectivePermissionHasBeenSet() const { return m_effectivePermissionHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline void SetEffectivePermission(const EffectivePermission& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = value; }
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline void SetEffectivePermission(EffectivePermission&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::move(value); }
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline BucketPublicAccess& WithEffectivePermission(const EffectivePermission& value) { SetEffectivePermission(value); return *this;}
 
     /**
      * <p>Specifies whether the bucket is publicly accessible due to the combination of
-     * permissions settings that apply to the bucket. Possible values are: PUBLIC, the
-     * bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't publicly
-     * accessible.</p>
+     * permissions settings that apply to the bucket. Possible values are:</p>
+     * <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+     * <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN -
+     * Amazon Macie can't determine whether the bucket is publicly
+     * accessible.</p></li></ul>
      */
     inline BucketPublicAccess& WithEffectivePermission(EffectivePermission&& value) { SetEffectivePermission(std::move(value)); return *this;}
 

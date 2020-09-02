@@ -84,14 +84,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -107,14 +108,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -130,14 +132,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -153,14 +156,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -176,14 +180,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -199,14 +204,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -222,14 +228,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
@@ -245,14 +252,15 @@ namespace Model
      * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
-     * <code>attachment.resource-type</code> - The attachment resource type
-     * (<code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p> <code>prefix-list-id</code> - The
-     * ID of the prefix list.</p> </li> <li> <p> <code>route-search.exact-match</code>
-     * - The exact match of the specified filter.</p> </li> <li> <p>
-     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-     * the route.</p> </li> <li> <p> <code>route-search.subnet-of-match</code> - The
-     * routes with a subnet that match the specified CIDR filter.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid
+     * values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li> <li> <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
      * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,

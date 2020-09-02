@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int initiating_HASH = HashingUtils::HashString("initiating");
+        static const int initiatingRequest_HASH = HashingUtils::HashString("initiatingRequest");
         static const int pendingAcceptance_HASH = HashingUtils::HashString("pendingAcceptance");
         static const int rollingBack_HASH = HashingUtils::HashString("rollingBack");
         static const int pending_HASH = HashingUtils::HashString("pending");
@@ -40,6 +41,10 @@ namespace Aws
           if (hashCode == initiating_HASH)
           {
             return TransitGatewayAttachmentState::initiating;
+          }
+          else if (hashCode == initiatingRequest_HASH)
+          {
+            return TransitGatewayAttachmentState::initiatingRequest;
           }
           else if (hashCode == pendingAcceptance_HASH)
           {
@@ -101,6 +106,8 @@ namespace Aws
           {
           case TransitGatewayAttachmentState::initiating:
             return "initiating";
+          case TransitGatewayAttachmentState::initiatingRequest:
+            return "initiatingRequest";
           case TransitGatewayAttachmentState::pendingAcceptance:
             return "pendingAcceptance";
           case TransitGatewayAttachmentState::rollingBack:

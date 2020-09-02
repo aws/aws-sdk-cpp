@@ -86,10 +86,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -99,10 +100,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -112,10 +114,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -125,10 +128,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -138,10 +142,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -151,10 +156,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -164,10 +170,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
@@ -177,10 +184,11 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> |
-     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
      * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>

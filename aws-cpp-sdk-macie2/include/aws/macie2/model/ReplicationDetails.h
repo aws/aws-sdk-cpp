@@ -67,25 +67,25 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the Amazon Macie organization.</p>
+     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
      */
     inline bool GetReplicatedExternally() const{ return m_replicatedExternally; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the Amazon Macie organization.</p>
+     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
      */
     inline bool ReplicatedExternallyHasBeenSet() const { return m_replicatedExternallyHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the Amazon Macie organization.</p>
+     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
      */
     inline void SetReplicatedExternally(bool value) { m_replicatedExternallyHasBeenSet = true; m_replicatedExternally = value; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the Amazon Macie organization.</p>
+     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
      */
     inline ReplicationDetails& WithReplicatedExternally(bool value) { SetReplicatedExternally(value); return *this;}
 

@@ -209,32 +209,38 @@ namespace Model
 
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline const TransitGatewayAttachmentState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline void SetState(const TransitGatewayAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline void SetState(TransitGatewayAttachmentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline TransitGatewayVpcAttachment& WithState(const TransitGatewayAttachmentState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline TransitGatewayVpcAttachment& WithState(TransitGatewayAttachmentState&& value) { SetState(std::move(value)); return *this;}
 

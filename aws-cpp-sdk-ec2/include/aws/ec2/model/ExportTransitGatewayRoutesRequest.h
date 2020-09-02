@@ -93,13 +93,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -117,13 +114,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -141,13 +135,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -165,13 +156,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -189,13 +177,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -213,13 +198,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -237,13 +219,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -261,13 +240,10 @@ namespace Model
      * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
      * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
      * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
-     * state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
-     * <code>blackhole</code>).</p> </li> </ul>
+     * state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+     * <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR
+     * range.</p> </li> <li> <p> <code>type</code> - The type of route
+     * (<code>propagated</code> | <code>static</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

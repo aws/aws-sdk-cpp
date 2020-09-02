@@ -164,91 +164,85 @@ namespace Model
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline JobSummary& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline JobSummary& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

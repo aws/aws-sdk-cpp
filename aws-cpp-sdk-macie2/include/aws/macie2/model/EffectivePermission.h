@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PUBLIC_,
-    NOT_PUBLIC
+    NOT_PUBLIC,
+    UNKNOWN
   };
 
 namespace EffectivePermissionMapper

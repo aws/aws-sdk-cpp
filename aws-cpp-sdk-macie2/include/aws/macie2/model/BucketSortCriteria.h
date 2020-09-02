@@ -41,57 +41,57 @@ namespace Model
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline BucketSortCriteria& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline BucketSortCriteria& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines as bucket metadata, such as
-     * bucketName, accountId, or lastUpdated.</p>
+     * of any property that Amazon Macie defines as bucket metadata, such as bucketName
+     * or accountId.</p>
      */
     inline BucketSortCriteria& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

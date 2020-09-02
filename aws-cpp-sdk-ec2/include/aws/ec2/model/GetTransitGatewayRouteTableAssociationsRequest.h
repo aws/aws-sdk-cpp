@@ -82,9 +82,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -93,9 +93,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -104,9 +104,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -115,9 +115,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -126,9 +126,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -137,9 +137,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -148,9 +148,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */
@@ -159,9 +159,9 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> |
-     * <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>tgw-peering</code>).</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type. Valid values are
+     * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
+     * <code>peering</code>.</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
      * </ul>
      */

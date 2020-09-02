@@ -9,6 +9,7 @@
 #include <aws/macie2/model/BucketCountByEncryptionType.h>
 #include <aws/macie2/model/BucketCountBySharedAccessType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/macie2/model/ObjectLevelStatistics.h>
 #include <utility>
 
 namespace Aws
@@ -84,31 +85,36 @@ namespace Model
 
     /**
      * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that aren't encrypted.</p>
+     * object also reports the total number of buckets that don't encrypt objects by
+     * default.</p>
      */
     inline const BucketCountByEncryptionType& GetBucketCountByEncryptionType() const{ return m_bucketCountByEncryptionType; }
 
     /**
      * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that aren't encrypted.</p>
+     * object also reports the total number of buckets that don't encrypt objects by
+     * default.</p>
      */
     inline void SetBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { m_bucketCountByEncryptionType = value; }
 
     /**
      * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that aren't encrypted.</p>
+     * object also reports the total number of buckets that don't encrypt objects by
+     * default.</p>
      */
     inline void SetBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { m_bucketCountByEncryptionType = std::move(value); }
 
     /**
      * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that aren't encrypted.</p>
+     * object also reports the total number of buckets that don't encrypt objects by
+     * default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { SetBucketCountByEncryptionType(value); return *this;}
 
     /**
      * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that aren't encrypted.</p>
+     * object also reports the total number of buckets that don't encrypt objects by
+     * default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { SetBucketCountByEncryptionType(std::move(value)); return *this;}
 
@@ -140,104 +146,190 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the buckets.
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the buckets.
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCount = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
-     * These objects use a file format, file extension, or content type that Amazon
-     * Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the buckets.
+     * These objects use a supported file or storage format and storage class.</p>
      */
     inline GetBucketStatisticsResult& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
 
 
     /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
+     * analyze in the buckets. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
+     * analyze in the buckets. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytes = value; }
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
+     * analyze in the buckets. These objects use a supported file or storage format and
+     * storage class.</p>
+     */
+    inline GetBucketStatisticsResult& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
+
+
+    /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the buckets.</p>
+     * most recently retrieved data about the buckets from Amazon S3.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the buckets.</p>
+     * most recently retrieved data about the buckets from Amazon S3.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the buckets.</p>
+     * most recently retrieved data about the buckets from Amazon S3.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the buckets.</p>
+     * most recently retrieved data about the buckets from Amazon S3.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * last analyzed the buckets.</p>
+     * most recently retrieved data about the buckets from Amazon S3.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total number of objects in all the buckets.</p>
+     * <p>The total number of objects in the buckets.</p>
      */
     inline long long GetObjectCount() const{ return m_objectCount; }
 
     /**
-     * <p>The total number of objects in all the buckets.</p>
+     * <p>The total number of objects in the buckets.</p>
      */
     inline void SetObjectCount(long long value) { m_objectCount = value; }
 
     /**
-     * <p>The total number of objects in all the buckets.</p>
+     * <p>The total number of objects in the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithObjectCount(long long value) { SetObjectCount(value); return *this;}
 
 
     /**
-     * <p>The total storage size, in bytes, of all the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
-     * <p>The total storage size, in bytes, of all the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytes = value; }
 
     /**
-     * <p>The total storage size, in bytes, of all the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of all the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of all the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of all the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
+
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline const ObjectLevelStatistics& GetUnclassifiableObjectCount() const{ return m_unclassifiableObjectCount; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectCount(const ObjectLevelStatistics& value) { m_unclassifiableObjectCount = value; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectCount(ObjectLevelStatistics&& value) { m_unclassifiableObjectCount = std::move(value); }
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline GetBucketStatisticsResult& WithUnclassifiableObjectCount(const ObjectLevelStatistics& value) { SetUnclassifiableObjectCount(value); return *this;}
+
+    /**
+     * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
+     * These objects use an unsupported file or storage format or storage class.</p>
+     */
+    inline GetBucketStatisticsResult& WithUnclassifiableObjectCount(ObjectLevelStatistics&& value) { SetUnclassifiableObjectCount(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * analyze in the buckets. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline const ObjectLevelStatistics& GetUnclassifiableObjectSizeInBytes() const{ return m_unclassifiableObjectSizeInBytes; }
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * analyze in the buckets. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { m_unclassifiableObjectSizeInBytes = value; }
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * analyze in the buckets. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline void SetUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { m_unclassifiableObjectSizeInBytes = std::move(value); }
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * analyze in the buckets. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { SetUnclassifiableObjectSizeInBytes(value); return *this;}
+
+    /**
+     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * analyze in the buckets. These objects use an unsupported file or storage format
+     * or storage class.</p>
+     */
+    inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { SetUnclassifiableObjectSizeInBytes(std::move(value)); return *this;}
 
   private:
 
@@ -251,6 +343,8 @@ namespace Model
 
     long long m_classifiableObjectCount;
 
+    long long m_classifiableSizeInBytes;
+
     Aws::Utils::DateTime m_lastUpdated;
 
     long long m_objectCount;
@@ -258,6 +352,10 @@ namespace Model
     long long m_sizeInBytes;
 
     long long m_sizeInBytesCompressed;
+
+    ObjectLevelStatistics m_unclassifiableObjectCount;
+
+    ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
   };
 
 } // namespace Model

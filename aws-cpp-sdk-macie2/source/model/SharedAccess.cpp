@@ -23,6 +23,7 @@ namespace Aws
         static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
         static const int INTERNAL_HASH = HashingUtils::HashString("INTERNAL");
         static const int NOT_SHARED_HASH = HashingUtils::HashString("NOT_SHARED");
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 
         SharedAccess GetSharedAccessForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NOT_SHARED_HASH)
           {
             return SharedAccess::NOT_SHARED;
+          }
+          else if (hashCode == UNKNOWN_HASH)
+          {
+            return SharedAccess::UNKNOWN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "INTERNAL";
           case SharedAccess::NOT_SHARED:
             return "NOT_SHARED";
+          case SharedAccess::UNKNOWN:
+            return "UNKNOWN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -183,22 +183,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to run the job immediately, after it's created.</p>
+     * <p>Specifies whether to analyze all existing, eligible objects immediately after
+     * the job is created.</p>
      */
     inline bool GetInitialRun() const{ return m_initialRun; }
 
     /**
-     * <p>Specifies whether to run the job immediately, after it's created.</p>
+     * <p>Specifies whether to analyze all existing, eligible objects immediately after
+     * the job is created.</p>
      */
     inline bool InitialRunHasBeenSet() const { return m_initialRunHasBeenSet; }
 
     /**
-     * <p>Specifies whether to run the job immediately, after it's created.</p>
+     * <p>Specifies whether to analyze all existing, eligible objects immediately after
+     * the job is created.</p>
      */
     inline void SetInitialRun(bool value) { m_initialRunHasBeenSet = true; m_initialRun = value; }
 
     /**
-     * <p>Specifies whether to run the job immediately, after it's created.</p>
+     * <p>Specifies whether to analyze all existing, eligible objects immediately after
+     * the job is created.</p>
      */
     inline CreateClassificationJobRequest& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
 

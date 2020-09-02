@@ -19,6 +19,7 @@ using namespace Aws;
 GetBucketStatisticsResult::GetBucketStatisticsResult() : 
     m_bucketCount(0),
     m_classifiableObjectCount(0),
+    m_classifiableSizeInBytes(0),
     m_objectCount(0),
     m_sizeInBytes(0),
     m_sizeInBytesCompressed(0)
@@ -28,6 +29,7 @@ GetBucketStatisticsResult::GetBucketStatisticsResult() :
 GetBucketStatisticsResult::GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_bucketCount(0),
     m_classifiableObjectCount(0),
+    m_classifiableSizeInBytes(0),
     m_objectCount(0),
     m_sizeInBytes(0),
     m_sizeInBytesCompressed(0)
@@ -68,6 +70,12 @@ GetBucketStatisticsResult& GetBucketStatisticsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("classifiableSizeInBytes"))
+  {
+    m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
+
+  }
+
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetString("lastUpdated");
@@ -89,6 +97,18 @@ GetBucketStatisticsResult& GetBucketStatisticsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("sizeInBytesCompressed"))
   {
     m_sizeInBytesCompressed = jsonValue.GetInt64("sizeInBytesCompressed");
+
+  }
+
+  if(jsonValue.ValueExists("unclassifiableObjectCount"))
+  {
+    m_unclassifiableObjectCount = jsonValue.GetObject("unclassifiableObjectCount");
+
+  }
+
+  if(jsonValue.ValueExists("unclassifiableObjectSizeInBytes"))
+  {
+    m_unclassifiableObjectSizeInBytes = jsonValue.GetObject("unclassifiableObjectSizeInBytes");
 
   }
 

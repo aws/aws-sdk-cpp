@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
         static const int NOT_PUBLIC_HASH = HashingUtils::HashString("NOT_PUBLIC");
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 
         EffectivePermission GetEffectivePermissionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NOT_PUBLIC_HASH)
           {
             return EffectivePermission::NOT_PUBLIC;
+          }
+          else if (hashCode == UNKNOWN_HASH)
+          {
+            return EffectivePermission::UNKNOWN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "PUBLIC";
           case EffectivePermission::NOT_PUBLIC:
             return "NOT_PUBLIC";
+          case EffectivePermission::UNKNOWN:
+            return "UNKNOWN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

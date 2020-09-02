@@ -124,32 +124,38 @@ namespace Model
 
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline const TransitGatewayAttachmentResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline void SetResourceType(TransitGatewayAttachmentResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline TransitGatewayRouteTablePropagation& WithResourceType(const TransitGatewayAttachmentResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource. Note that the <code>tgw-peering</code> resource type
+     * has been deprecated.</p>
      */
     inline TransitGatewayRouteTablePropagation& WithResourceType(TransitGatewayAttachmentResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

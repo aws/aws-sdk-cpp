@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The account-level and bucket-level permissions settings for an S3
-   * bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the account-level and bucket-level permissions
+   * settings for an S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPermissionConfiguration">AWS
    * API Reference</a></p>
    */

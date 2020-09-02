@@ -193,17 +193,20 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the job has run for the first time.</p>
+     * <p>Specifies whether the job is configured to analyze all existing, eligible
+     * objects immediately after it's created.</p>
      */
     inline bool GetInitialRun() const{ return m_initialRun; }
 
     /**
-     * <p>Specifies whether the job has run for the first time.</p>
+     * <p>Specifies whether the job is configured to analyze all existing, eligible
+     * objects immediately after it's created.</p>
      */
     inline void SetInitialRun(bool value) { m_initialRun = value; }
 
     /**
-     * <p>Specifies whether the job has run for the first time.</p>
+     * <p>Specifies whether the job is configured to analyze all existing, eligible
+     * objects immediately after it's created.</p>
      */
     inline DescribeClassificationJobResult& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
 
@@ -282,76 +285,71 @@ namespace Model
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - The job was cancelled by you or a user of the master account for your
-     * organization. A job might also be cancelled if ownership of an S3 bucket changed
-     * while the job was running, and that change affected the job's access to the
-     * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
-     * specified for the job.</p></li> <li><p>IDLE - For a recurring job, the previous
-     * scheduled run is complete and the next scheduled run is pending. This value
-     * doesn't apply to jobs that occur only once.</p></li> <li><p>PAUSED - Amazon
-     * Macie started the job, but completion of the job would exceed one or more quotas
-     * for your account.</p></li> <li><p>RUNNING - The job is in
-     * progress.</p></li></ul>
+     * - You cancelled the job. A job might also be cancelled if ownership of an S3
+     * bucket changed while the job was running, and that change affected the job's
+     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
+     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
+     * recurring job, the previous scheduled run is complete and the next scheduled run
+     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
+     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
+     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
+     * in progress.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
@@ -501,20 +499,20 @@ namespace Model
 
 
     /**
-     * <p>The sampling depth, as a percentage, that determines the number of objects
-     * that the job processes.</p>
+     * <p>The sampling depth, as a percentage, that determines the percentage of
+     * eligible objects that the job analyzes.</p>
      */
     inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
 
     /**
-     * <p>The sampling depth, as a percentage, that determines the number of objects
-     * that the job processes.</p>
+     * <p>The sampling depth, as a percentage, that determines the percentage of
+     * eligible objects that the job analyzes.</p>
      */
     inline void SetSamplingPercentage(int value) { m_samplingPercentage = value; }
 
     /**
-     * <p>The sampling depth, as a percentage, that determines the number of objects
-     * that the job processes.</p>
+     * <p>The sampling depth, as a percentage, that determines the percentage of
+     * eligible objects that the job analyzes.</p>
      */
     inline DescribeClassificationJobResult& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
 

@@ -142,49 +142,49 @@ namespace Model
 
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline S3Object& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline S3Object& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
 
     /**
-     * <p>The file extension of the object. If the object doesn't have a file
+     * <p>The file name extension of the object. If the object doesn't have a file name
      * extension, this value is "".</p>
      */
     inline S3Object& WithExtension(const char* value) { SetExtension(value); return *this;}

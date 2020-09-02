@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EXTERNAL,
     INTERNAL,
-    NOT_SHARED
+    NOT_SHARED,
+    UNKNOWN
   };
 
 namespace SharedAccessMapper
