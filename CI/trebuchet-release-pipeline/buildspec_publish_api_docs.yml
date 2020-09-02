@@ -9,6 +9,7 @@ phases:
       - export VERSION_NUM=$(grep AWS_SDK_VERSION_STRING ./aws-cpp-sdk-core/include/aws/core/VersionConfig.h | cut -d '"' -f2)
       - sed -i "s/PROJECT_NUMBER .*/PROJECT_NUMBER         = $VERSION_NUM/" ./doxygen/doxygen.config
       - doxygen ./doxygen/doxygen.config
+      - cp LICENSE ./doxygen/html
       - python doc_crosslinks/generate_cross_link_data.py --apiDefinitionsPath ./code-generation/api-descriptions/ --templatePath ./doc_crosslinks/crosslink_redirect.html --outputPath ./crosslink_redirect.html
       - aws s3 cp ./doxygen/html s3://${DOCS_S3_BUCKET_NAME}/cpp/api/$VERSION_NUM --recursive
       - aws s3 cp s3://${DOCS_S3_BUCKET_NAME}/cpp/api/$VERSION_NUM s3://${DOCS_S3_BUCKET_NAME}/cpp/api/LATEST --recursive

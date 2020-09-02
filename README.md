@@ -37,25 +37,25 @@ __Jump To:__
 3. Build the project:
 
    * For Auto Make build systems:
-      ```sh
-      cd <BUILD_DIR>
-      cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug
-      make
-      sudo make install
-      ```
+   ```sh
+   cd <BUILD_DIR>
+   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug
+   make
+   sudo make install
+   ```
 
    * For Visual Studio:
-      ```sh
-      cd <BUILD_DIR>
-      cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug
-      msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
-      ```
+   ```sh
+   cd <BUILD_DIR>
+   cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug
+   msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
+   ```
 
    * For macOS - Xcode:
-      ```sh
-      cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug  
-      xcodebuild -target ALL_BUILD 
-      ```
+   ```sh
+   cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug
+   xcodebuild -target ALL_BUILD
+   ```
 
 ### Third party dependencies:
 Starting from version 1.7.0, we added several third party dependencies, including [`aws-c-common`](https://github.com/awslabs/aws-c-common), [`aws-checksums`](https://github.com/awslabs/aws-checksums) and [`aws-c-event-stream`](https://github.com/awslabs/aws-c-event-stream). By default, they will be built and installed in `<BUILD_DIR>/.deps/install`, and copied to default system directory during SDK installation. You can change the location by specifying `CMAKE_INSTALL_PREFIX`.

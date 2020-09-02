@@ -1,7 +1,7 @@
 # Breaking changes in AWS SDK for C++
 
 ## [1.8.0](https://github.com/aws/aws-sdk-cpp/tree/1.8.0) (2020-06-30)
-Check our [Wiki](https://github.com/aws/aws-sdk-cpp/wiki/What%E2%80%99s-New-in-AWS-SDK-for-C---Version-1.8) for a comprehensive list of the featuers introduced on this version.
+Check our [Wiki](https://github.com/aws/aws-sdk-cpp/wiki/What’s-New-in-AWS-SDK-for-CPP-Version-1.8) for a comprehensive list of the featuers introduced on this version.
 
 ## [1.7.0](https://github.com/aws/aws-sdk-cpp/tree/1.7.0) (2018-11-15)
 
