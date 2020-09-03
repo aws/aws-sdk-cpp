@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/HistoryEventExecutionDataDetails.h>
 #include <utility>
 
 namespace Aws
@@ -80,44 +81,83 @@ namespace Model
 
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline LambdaFunctionScheduledEventDetails& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline LambdaFunctionScheduledEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON data input to the lambda function.</p>
+     * <p>The JSON data input to the lambda function. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline LambdaFunctionScheduledEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
+
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline const HistoryEventExecutionDataDetails& GetInputDetails() const{ return m_inputDetails; }
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline bool InputDetailsHasBeenSet() const { return m_inputDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline void SetInputDetails(const HistoryEventExecutionDataDetails& value) { m_inputDetailsHasBeenSet = true; m_inputDetails = value; }
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline void SetInputDetails(HistoryEventExecutionDataDetails&& value) { m_inputDetailsHasBeenSet = true; m_inputDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline LambdaFunctionScheduledEventDetails& WithInputDetails(const HistoryEventExecutionDataDetails& value) { SetInputDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about input for an execution history event.</p>
+     */
+    inline LambdaFunctionScheduledEventDetails& WithInputDetails(HistoryEventExecutionDataDetails&& value) { SetInputDetails(std::move(value)); return *this;}
 
 
     /**
@@ -147,6 +187,9 @@ namespace Model
 
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
+    HistoryEventExecutionDataDetails m_inputDetails;
+    bool m_inputDetailsHasBeenSet;
 
     long long m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;

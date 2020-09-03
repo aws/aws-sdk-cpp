@@ -162,42 +162,58 @@ namespace Model
 
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const char* value) { SetParameters(value); return *this;}
 
@@ -222,6 +238,27 @@ namespace Model
      */
     inline TaskScheduledEventDetails& WithTimeoutInSeconds(long long value) { SetTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline long long GetHeartbeatInSeconds() const{ return m_heartbeatInSeconds; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline bool HeartbeatInSecondsHasBeenSet() const { return m_heartbeatInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline void SetHeartbeatInSeconds(long long value) { m_heartbeatInSecondsHasBeenSet = true; m_heartbeatInSeconds = value; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline TaskScheduledEventDetails& WithHeartbeatInSeconds(long long value) { SetHeartbeatInSeconds(value); return *this;}
+
   private:
 
     Aws::String m_resourceType;
@@ -238,6 +275,9 @@ namespace Model
 
     long long m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
+    long long m_heartbeatInSeconds;
+    bool m_heartbeatInSecondsHasBeenSet;
   };
 
 } // namespace Model

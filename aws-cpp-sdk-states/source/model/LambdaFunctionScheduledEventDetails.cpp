@@ -21,6 +21,7 @@ namespace Model
 LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() :
 LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonView jsonValue) : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false)
 {
@@ -49,6 +51,13 @@ LambdaFunctionScheduledEventDetails& LambdaFunctionScheduledEventDetails::operat
     m_input = jsonValue.GetString("input");
 
     m_inputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputDetails"))
+  {
+    m_inputDetails = jsonValue.GetObject("inputDetails");
+
+    m_inputDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timeoutInSeconds"))
@@ -74,6 +83,12 @@ JsonValue LambdaFunctionScheduledEventDetails::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_inputDetailsHasBeenSet)
+  {
+   payload.WithObject("inputDetails", m_inputDetails.Jsonize());
 
   }
 

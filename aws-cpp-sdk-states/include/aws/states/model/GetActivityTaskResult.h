@@ -90,37 +90,44 @@ namespace Model
 
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_input = value; }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const char* value) { m_input.assign(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
 

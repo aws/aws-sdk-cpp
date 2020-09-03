@@ -22,6 +22,7 @@ AwsApiCallAction::AwsApiCallAction() :
     m_apiHasBeenSet(false),
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) :
     m_apiHasBeenSet(false),
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_domainDetails = jsonValue.GetObject("domainDetails");
 
     m_domainDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = jsonValue.GetString("errorCode");
+
+    m_errorCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteIpDetails"))
@@ -96,6 +105,12 @@ JsonValue AwsApiCallAction::Jsonize() const
   if(m_domainDetailsHasBeenSet)
   {
    payload.WithObject("domainDetails", m_domainDetails.Jsonize());
+
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", m_errorCode);
 
   }
 

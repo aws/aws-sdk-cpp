@@ -20,13 +20,15 @@ namespace Model
 
 StateEnteredEventDetails::StateEnteredEventDetails() : 
     m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false)
+    m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false)
 {
 }
 
 StateEnteredEventDetails::StateEnteredEventDetails(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false)
+    m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ StateEnteredEventDetails& StateEnteredEventDetails::operator =(JsonView jsonValu
     m_inputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inputDetails"))
+  {
+    m_inputDetails = jsonValue.GetObject("inputDetails");
+
+    m_inputDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue StateEnteredEventDetails::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_inputDetailsHasBeenSet)
+  {
+   payload.WithObject("inputDetails", m_inputDetails.Jsonize());
 
   }
 

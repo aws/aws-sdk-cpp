@@ -213,6 +213,31 @@ namespace Model
      */
     inline GetExecutionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline GetExecutionHistoryRequest& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
+
   private:
 
     Aws::String m_executionArn;
@@ -226,6 +251,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    bool m_includeExecutionData;
+    bool m_includeExecutionDataHasBeenSet;
   };
 
 } // namespace Model

@@ -73,25 +73,25 @@ namespace Model
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline LoggingConfiguration& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
 

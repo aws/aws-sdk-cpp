@@ -9,6 +9,7 @@
 #include <aws/kendra/model/QueryResultType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/TextWithHighlights.h>
+#include <aws/kendra/model/ScoreAttributes.h>
 #include <aws/kendra/model/AdditionalResultAttribute.h>
 #include <aws/kendra/model/DocumentAttribute.h>
 #include <utility>
@@ -118,42 +119,42 @@ namespace Model
 
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline const Aws::Vector<AdditionalResultAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline void SetAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline void SetAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { SetAdditionalAttributes(value); return *this;}
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(const AdditionalResultAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
 
     /**
-     * <p>One or more additional attribues associated with the query result.</p>
+     * <p>One or more additional attributes associated with the query result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(AdditionalResultAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
 
@@ -370,6 +371,79 @@ namespace Model
      */
     inline QueryResultItem& AddDocumentAttributes(DocumentAttribute&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline const ScoreAttributes& GetScoreAttributes() const{ return m_scoreAttributes; }
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline bool ScoreAttributesHasBeenSet() const { return m_scoreAttributesHasBeenSet; }
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline void SetScoreAttributes(const ScoreAttributes& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = value; }
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline void SetScoreAttributes(ScoreAttributes&& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = std::move(value); }
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline QueryResultItem& WithScoreAttributes(const ScoreAttributes& value) { SetScoreAttributes(value); return *this;}
+
+    /**
+     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
+     * query that you provided. Each result is placed into a bin that indicates the
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
+     * You can use the score to determine if a response meets the confidence needed for
+     * your application.</p> <p>Confidence scores are only returned for results with
+     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
+     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
+     * is set to <code>DOCUMENT</code>.</p>
+     */
+    inline QueryResultItem& WithScoreAttributes(ScoreAttributes&& value) { SetScoreAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -395,6 +469,9 @@ namespace Model
 
     Aws::Vector<DocumentAttribute> m_documentAttributes;
     bool m_documentAttributesHasBeenSet;
+
+    ScoreAttributes m_scoreAttributes;
+    bool m_scoreAttributesHasBeenSet;
   };
 
 } // namespace Model

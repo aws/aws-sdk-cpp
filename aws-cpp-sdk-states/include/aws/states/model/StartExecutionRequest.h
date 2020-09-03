@@ -200,7 +200,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
@@ -208,7 +210,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
@@ -216,7 +220,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
@@ -224,7 +230,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
@@ -232,7 +240,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
@@ -240,7 +250,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StartExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
@@ -248,7 +260,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
@@ -256,7 +270,9 @@ namespace Model
      * <p>The string that contains the JSON input data for the execution, for
      * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> 
+     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StartExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 

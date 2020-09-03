@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/HistoryEventExecutionDataDetails.h>
 #include <utility>
 
 namespace Aws
@@ -80,44 +81,91 @@ namespace Model
 
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StateEnteredEventDetails& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StateEnteredEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the state.</p>
+     * <p>The string that contains the JSON input data for the state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline StateEnteredEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
+
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline const HistoryEventExecutionDataDetails& GetInputDetails() const{ return m_inputDetails; }
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline bool InputDetailsHasBeenSet() const { return m_inputDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline void SetInputDetails(const HistoryEventExecutionDataDetails& value) { m_inputDetailsHasBeenSet = true; m_inputDetails = value; }
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline void SetInputDetails(HistoryEventExecutionDataDetails&& value) { m_inputDetailsHasBeenSet = true; m_inputDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline StateEnteredEventDetails& WithInputDetails(const HistoryEventExecutionDataDetails& value) { SetInputDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about the input for an execution history event.</p>
+     */
+    inline StateEnteredEventDetails& WithInputDetails(HistoryEventExecutionDataDetails&& value) { SetInputDetails(std::move(value)); return *this;}
 
   private:
 
@@ -126,6 +174,9 @@ namespace Model
 
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
+    HistoryEventExecutionDataDetails m_inputDetails;
+    bool m_inputDetailsHasBeenSet;
   };
 
 } // namespace Model

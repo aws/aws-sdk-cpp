@@ -72,9 +72,21 @@ DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("inputDetails"))
+  {
+    m_inputDetails = jsonValue.GetObject("inputDetails");
+
+  }
+
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetString("output");
+
+  }
+
+  if(jsonValue.ValueExists("outputDetails"))
+  {
+    m_outputDetails = jsonValue.GetObject("outputDetails");
 
   }
 

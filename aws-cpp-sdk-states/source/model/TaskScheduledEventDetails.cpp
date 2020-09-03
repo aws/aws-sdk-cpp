@@ -24,7 +24,9 @@ TaskScheduledEventDetails::TaskScheduledEventDetails() :
     m_regionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_heartbeatInSeconds(0),
+    m_heartbeatInSecondsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ TaskScheduledEventDetails::TaskScheduledEventDetails(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_heartbeatInSeconds(0),
+    m_heartbeatInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ TaskScheduledEventDetails& TaskScheduledEventDetails::operator =(JsonView jsonVa
     m_timeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("heartbeatInSeconds"))
+  {
+    m_heartbeatInSeconds = jsonValue.GetInt64("heartbeatInSeconds");
+
+    m_heartbeatInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +121,12 @@ JsonValue TaskScheduledEventDetails::Jsonize() const
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInt64("timeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_heartbeatInSecondsHasBeenSet)
+  {
+   payload.WithInt64("heartbeatInSeconds", m_heartbeatInSeconds);
 
   }
 

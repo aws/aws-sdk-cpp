@@ -108,42 +108,50 @@ namespace Model
 
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline SendTaskSuccessRequest& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline SendTaskSuccessRequest& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON output of the task.</p>
+     * <p>The JSON output of the task. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline SendTaskSuccessRequest& WithOutput(const char* value) { SetOutput(value); return *this;}
 

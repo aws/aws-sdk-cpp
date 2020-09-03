@@ -40,7 +40,10 @@ DashPackage::DashPackage() :
     m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
+    m_suggestedPresentationDelaySecondsHasBeenSet(false),
+    m_utcTiming(UtcTiming::NOT_SET),
+    m_utcTimingHasBeenSet(false),
+    m_utcTimingUriHasBeenSet(false)
 {
 }
 
@@ -66,7 +69,10 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
+    m_suggestedPresentationDelaySecondsHasBeenSet(false),
+    m_utcTiming(UtcTiming::NOT_SET),
+    m_utcTimingHasBeenSet(false),
+    m_utcTimingUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +176,20 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_suggestedPresentationDelaySecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("utcTiming"))
+  {
+    m_utcTiming = UtcTimingMapper::GetUtcTimingForName(jsonValue.GetString("utcTiming"));
+
+    m_utcTimingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("utcTimingUri"))
+  {
+    m_utcTimingUri = jsonValue.GetString("utcTimingUri");
+
+    m_utcTimingUriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +278,17 @@ JsonValue DashPackage::Jsonize() const
   if(m_suggestedPresentationDelaySecondsHasBeenSet)
   {
    payload.WithInteger("suggestedPresentationDelaySeconds", m_suggestedPresentationDelaySeconds);
+
+  }
+
+  if(m_utcTimingHasBeenSet)
+  {
+   payload.WithString("utcTiming", UtcTimingMapper::GetNameForUtcTiming(m_utcTiming));
+  }
+
+  if(m_utcTimingUriHasBeenSet)
+  {
+   payload.WithString("utcTimingUri", m_utcTimingUri);
 
   }
 

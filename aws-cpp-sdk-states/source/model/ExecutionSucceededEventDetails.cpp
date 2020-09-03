@@ -19,12 +19,14 @@ namespace Model
 {
 
 ExecutionSucceededEventDetails::ExecutionSucceededEventDetails() : 
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_outputDetailsHasBeenSet(false)
 {
 }
 
 ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(JsonView jsonValue) : 
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_outputDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ExecutionSucceededEventDetails& ExecutionSucceededEventDetails::operator =(JsonV
     m_outputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputDetails"))
+  {
+    m_outputDetails = jsonValue.GetObject("outputDetails");
+
+    m_outputDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ExecutionSucceededEventDetails::Jsonize() const
   if(m_outputHasBeenSet)
   {
    payload.WithString("output", m_output);
+
+  }
+
+  if(m_outputDetailsHasBeenSet)
+  {
+   payload.WithObject("outputDetails", m_outputDetails.Jsonize());
 
   }
 

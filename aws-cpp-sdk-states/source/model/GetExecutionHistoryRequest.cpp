@@ -18,7 +18,9 @@ GetExecutionHistoryRequest::GetExecutionHistoryRequest() :
     m_maxResultsHasBeenSet(false),
     m_reverseOrder(false),
     m_reverseOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeExecutionData(false),
+    m_includeExecutionDataHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,12 @@ Aws::String GetExecutionHistoryRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_includeExecutionDataHasBeenSet)
+  {
+   payload.WithBool("includeExecutionData", m_includeExecutionData);
 
   }
 

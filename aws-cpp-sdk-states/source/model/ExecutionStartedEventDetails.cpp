@@ -20,12 +20,14 @@ namespace Model
 
 ExecutionStartedEventDetails::ExecutionStartedEventDetails() : 
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
 
 ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ ExecutionStartedEventDetails& ExecutionStartedEventDetails::operator =(JsonView 
     m_input = jsonValue.GetString("input");
 
     m_inputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputDetails"))
+  {
+    m_inputDetails = jsonValue.GetObject("inputDetails");
+
+    m_inputDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -57,6 +66,12 @@ JsonValue ExecutionStartedEventDetails::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_inputDetailsHasBeenSet)
+  {
+   payload.WithObject("inputDetails", m_inputDetails.Jsonize());
 
   }
 

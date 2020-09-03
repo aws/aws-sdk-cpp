@@ -193,42 +193,42 @@ namespace Model
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline const DocumentAttribute& GetContainsAll() const{ return m_containsAll; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline bool ContainsAllHasBeenSet() const { return m_containsAllHasBeenSet; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline void SetContainsAll(const DocumentAttribute& value) { m_containsAllHasBeenSet = true; m_containsAll = value; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline void SetContainsAll(DocumentAttribute&& value) { m_containsAllHasBeenSet = true; m_containsAll = std::move(value); }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline AttributeFilter& WithContainsAll(const DocumentAttribute& value) { SetContainsAll(value); return *this;}
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes. This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline AttributeFilter& WithContainsAll(DocumentAttribute&& value) { SetContainsAll(std::move(value)); return *this;}
@@ -236,42 +236,42 @@ namespace Model
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline const DocumentAttribute& GetContainsAny() const{ return m_containsAny; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline bool ContainsAnyHasBeenSet() const { return m_containsAnyHasBeenSet; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline void SetContainsAny(const DocumentAttribute& value) { m_containsAnyHasBeenSet = true; m_containsAny = value; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline void SetContainsAny(DocumentAttribute&& value) { m_containsAnyHasBeenSet = true; m_containsAny = std::move(value); }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline AttributeFilter& WithContainsAny(const DocumentAttribute& value) { SetContainsAny(value); return *this;}
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.This filter is only appicable to <code>StringListValue</code>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
      * metadata.</p>
      */
     inline AttributeFilter& WithContainsAny(DocumentAttribute&& value) { SetContainsAny(std::move(value)); return *this;}

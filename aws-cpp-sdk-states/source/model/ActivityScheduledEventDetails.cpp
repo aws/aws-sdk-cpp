@@ -21,6 +21,7 @@ namespace Model
 ActivityScheduledEventDetails::ActivityScheduledEventDetails() : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_heartbeatInSeconds(0),
@@ -31,6 +32,7 @@ ActivityScheduledEventDetails::ActivityScheduledEventDetails() :
 ActivityScheduledEventDetails::ActivityScheduledEventDetails(JsonView jsonValue) : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_heartbeatInSeconds(0),
@@ -53,6 +55,13 @@ ActivityScheduledEventDetails& ActivityScheduledEventDetails::operator =(JsonVie
     m_input = jsonValue.GetString("input");
 
     m_inputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputDetails"))
+  {
+    m_inputDetails = jsonValue.GetObject("inputDetails");
+
+    m_inputDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timeoutInSeconds"))
@@ -85,6 +94,12 @@ JsonValue ActivityScheduledEventDetails::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_inputDetailsHasBeenSet)
+  {
+   payload.WithObject("inputDetails", m_inputDetails.Jsonize());
 
   }
 
