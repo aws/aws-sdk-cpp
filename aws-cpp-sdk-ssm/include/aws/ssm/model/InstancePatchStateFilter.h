@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to
-   * scope down the information returned by the API.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used
+   * to scope down the information returned by the API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchStateFilter">AWS
    * API Reference</a></p>
    */

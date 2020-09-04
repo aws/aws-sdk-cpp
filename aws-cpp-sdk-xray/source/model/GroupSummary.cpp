@@ -21,14 +21,16 @@ namespace Model
 GroupSummary::GroupSummary() : 
     m_groupNameHasBeenSet(false),
     m_groupARNHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false)
 {
 }
 
 GroupSummary::GroupSummary(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_groupARNHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ GroupSummary& GroupSummary::operator =(JsonView jsonValue)
     m_filterExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InsightsConfiguration"))
+  {
+    m_insightsConfiguration = jsonValue.GetObject("InsightsConfiguration");
+
+    m_insightsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue GroupSummary::Jsonize() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("FilterExpression", m_filterExpression);
+
+  }
+
+  if(m_insightsConfigurationHasBeenSet)
+  {
+   payload.WithObject("InsightsConfiguration", m_insightsConfiguration.Jsonize());
 
   }
 

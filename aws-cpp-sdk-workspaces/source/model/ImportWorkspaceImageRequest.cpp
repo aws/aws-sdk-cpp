@@ -18,7 +18,8 @@ ImportWorkspaceImageRequest::ImportWorkspaceImageRequest() :
     m_ingestionProcessHasBeenSet(false),
     m_imageNameHasBeenSet(false),
     m_imageDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,17 @@ Aws::String ImportWorkspaceImageRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsString(ApplicationMapper::GetNameForApplication(m_applications[applicationsIndex]));
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
 
   }
 

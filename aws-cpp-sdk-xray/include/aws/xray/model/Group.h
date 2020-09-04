@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/xray/model/InsightsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -159,6 +160,49 @@ namespace Model
      */
     inline Group& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline const InsightsConfiguration& GetInsightsConfiguration() const{ return m_insightsConfiguration; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline bool InsightsConfigurationHasBeenSet() const { return m_insightsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline void SetInsightsConfiguration(const InsightsConfiguration& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = value; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline void SetInsightsConfiguration(InsightsConfiguration&& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = std::move(value); }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline Group& WithInsightsConfiguration(const InsightsConfiguration& value) { SetInsightsConfiguration(value); return *this;}
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the group or
+     * false to disable insights for the group.</p>
+     */
+    inline Group& WithInsightsConfiguration(InsightsConfiguration&& value) { SetInsightsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_groupName;
@@ -169,6 +213,9 @@ namespace Model
 
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
+    InsightsConfiguration m_insightsConfiguration;
+    bool m_insightsConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -445,38 +445,50 @@ namespace Model
 
 
     /**
-     * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> 
+     * <p>The number of patches installed on an instance that are specified in a
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
+     * 
      */
     inline int GetInstalledRejectedCount() const{ return m_installedRejectedCount; }
 
     /**
-     * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> 
+     * <p>The number of patches installed on an instance that are specified in a
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
+     * 
      */
     inline bool InstalledRejectedCountHasBeenSet() const { return m_installedRejectedCountHasBeenSet; }
 
     /**
-     * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> 
+     * <p>The number of patches installed on an instance that are specified in a
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
+     * 
      */
     inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
 
     /**
-     * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> 
+     * <p>The number of patches installed on an instance that are specified in a
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
+     * 
      */
     inline InstancePatchState& WithInstalledRejectedCount(int value) { SetInstalledRejectedCount(value); return *this;}
 
@@ -656,38 +668,38 @@ namespace Model
 
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline const PatchOperationType& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline void SetOperation(const PatchOperationType& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline void SetOperation(PatchOperationType&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline InstancePatchState& WithOperation(const PatchOperationType& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The type of patching operation that was performed: SCAN (assess patch
-     * compliance state) or INSTALL (install missing patches).</p>
+     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
+     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
      */
     inline InstancePatchState& WithOperation(PatchOperationType&& value) { SetOperation(std::move(value)); return *this;}
 

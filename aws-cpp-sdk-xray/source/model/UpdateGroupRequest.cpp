@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateGroupRequest::UpdateGroupRequest() : 
     m_groupNameHasBeenSet(false),
     m_groupARNHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdateGroupRequest::SerializePayload() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("FilterExpression", m_filterExpression);
+
+  }
+
+  if(m_insightsConfigurationHasBeenSet)
+  {
+   payload.WithObject("InsightsConfiguration", m_insightsConfiguration.Jsonize());
 
   }
 

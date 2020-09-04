@@ -1000,20 +1000,24 @@ namespace Model
         virtual void DisassociateIpGroupsAsync(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
-         * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
-         * that is in your AWS account, and you must own the image. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
+         * Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
+         * your AWS account, and you must own the image. For more information about
+         * creating BYOL images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+         * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportWorkspaceImageOutcome ImportWorkspaceImage(const Model::ImportWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
-         * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
-         * that is in your AWS account, and you must own the image. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
+         * Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
+         * your AWS account, and you must own the image. For more information about
+         * creating BYOL images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+         * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
          * API Reference</a></p>
          *
@@ -1022,10 +1026,12 @@ namespace Model
         virtual Model::ImportWorkspaceImageOutcomeCallable ImportWorkspaceImageCallable(const Model::ImportWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
-         * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
-         * that is in your AWS account, and you must own the image. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
+         * Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
+         * your AWS account, and you must own the image. For more information about
+         * creating BYOL images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+         * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
          * API Reference</a></p>
          *

@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateGroupRequest::CreateGroupRequest() : 
     m_groupNameHasBeenSet(false),
     m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String CreateGroupRequest::SerializePayload() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("FilterExpression", m_filterExpression);
+
+  }
+
+  if(m_insightsConfigurationHasBeenSet)
+  {
+   payload.WithObject("InsightsConfiguration", m_insightsConfiguration.Jsonize());
 
   }
 

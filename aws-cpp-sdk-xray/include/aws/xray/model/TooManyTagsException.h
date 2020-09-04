@@ -23,6 +23,12 @@ namespace XRay
 namespace Model
 {
 
+  /**
+   * <p>You have exceeded the maximum number of tags you can apply to this
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TooManyTagsException">AWS
+   * API Reference</a></p>
+   */
   class AWS_XRAY_API TooManyTagsException
   {
   public:

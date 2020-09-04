@@ -34,36 +34,36 @@ namespace Model
 
     /**
      * <p>The group that was created. Contains the name of the group that was created,
-     * the ARN of the group that was generated based on the group name, and the filter
-     * expression that was assigned to the group.</p>
+     * the ARN of the group that was generated based on the group name, the filter
+     * expression, and the insight configuration that was assigned to the group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
 
     /**
      * <p>The group that was created. Contains the name of the group that was created,
-     * the ARN of the group that was generated based on the group name, and the filter
-     * expression that was assigned to the group.</p>
+     * the ARN of the group that was generated based on the group name, the filter
+     * expression, and the insight configuration that was assigned to the group.</p>
      */
     inline void SetGroup(const Group& value) { m_group = value; }
 
     /**
      * <p>The group that was created. Contains the name of the group that was created,
-     * the ARN of the group that was generated based on the group name, and the filter
-     * expression that was assigned to the group.</p>
+     * the ARN of the group that was generated based on the group name, the filter
+     * expression, and the insight configuration that was assigned to the group.</p>
      */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
 
     /**
      * <p>The group that was created. Contains the name of the group that was created,
-     * the ARN of the group that was generated based on the group name, and the filter
-     * expression that was assigned to the group.</p>
+     * the ARN of the group that was generated based on the group name, the filter
+     * expression, and the insight configuration that was assigned to the group.</p>
      */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
     /**
      * <p>The group that was created. Contains the name of the group that was created,
-     * the ARN of the group that was generated based on the group name, and the filter
-     * expression that was assigned to the group.</p>
+     * the ARN of the group that was generated based on the group name, the filter
+     * expression, and the insight configuration that was assigned to the group.</p>
      */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 

@@ -21,14 +21,16 @@ namespace Model
 Group::Group() : 
     m_groupNameHasBeenSet(false),
     m_groupARNHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false)
 {
 }
 
 Group::Group(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_groupARNHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_insightsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Group& Group::operator =(JsonView jsonValue)
     m_filterExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InsightsConfiguration"))
+  {
+    m_insightsConfiguration = jsonValue.GetObject("InsightsConfiguration");
+
+    m_insightsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Group::Jsonize() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("FilterExpression", m_filterExpression);
+
+  }
+
+  if(m_insightsConfigurationHasBeenSet)
+  {
+   payload.WithObject("InsightsConfiguration", m_insightsConfiguration.Jsonize());
 
   }
 

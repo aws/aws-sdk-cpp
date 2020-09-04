@@ -10,6 +10,7 @@
 #include <aws/workspaces/model/WorkspaceImageIngestionProcess.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tag.h>
+#include <aws/workspaces/model/Application.h>
 #include <utility>
 
 namespace Aws
@@ -79,32 +80,44 @@ namespace Model
 
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline const WorkspaceImageIngestionProcess& GetIngestionProcess() const{ return m_ingestionProcess; }
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline bool IngestionProcessHasBeenSet() const { return m_ingestionProcessHasBeenSet; }
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline void SetIngestionProcess(const WorkspaceImageIngestionProcess& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = value; }
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline void SetIngestionProcess(WorkspaceImageIngestionProcess&& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = std::move(value); }
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(const WorkspaceImageIngestionProcess& value) { SetIngestionProcess(value); return *this;}
 
     /**
-     * <p>The ingestion process to be used when importing the image.</p>
+     * <p>The ingestion process to be used when importing the image. For
+     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     * <code>BYOL_REGULAR</code>.</p>
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(WorkspaceImageIngestionProcess&& value) { SetIngestionProcess(std::move(value)); return *this;}
 
@@ -231,6 +244,87 @@ namespace Model
      */
     inline ImportWorkspaceImageRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline ImportWorkspaceImageRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline ImportWorkspaceImageRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline ImportWorkspaceImageRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
+     * Windows 10 BYOL images. For more information about subscribing to Office for
+     * BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
+     * parameter is an array, only one item is allowed at this time.</p> 
+     */
+    inline ImportWorkspaceImageRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ec2ImageId;
@@ -247,6 +341,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<Application> m_applications;
+    bool m_applicationsHasBeenSet;
   };
 
 } // namespace Model

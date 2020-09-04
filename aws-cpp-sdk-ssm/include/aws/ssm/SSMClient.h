@@ -2610,15 +2610,17 @@ namespace Model
          * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
-         * major operating system type:</p> <dl> <dt>WINDOWS</dt> <dd> <p>Valid properties:
-         * PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
-         * <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: PRODUCT,
-         * CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU </dt> <dd> <p>Valid properties:
-         * PRODUCT, PRIORITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd>
-         * <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>CENTOS</dt>
+         * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
          * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
+         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
+         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
+         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
+         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
+         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -2632,15 +2634,17 @@ namespace Model
          * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
-         * major operating system type:</p> <dl> <dt>WINDOWS</dt> <dd> <p>Valid properties:
-         * PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
-         * <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: PRODUCT,
-         * CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU </dt> <dd> <p>Valid properties:
-         * PRODUCT, PRIORITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd>
-         * <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>CENTOS</dt>
+         * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
          * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
+         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
+         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
+         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
+         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
+         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -2656,15 +2660,17 @@ namespace Model
          * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
-         * major operating system type:</p> <dl> <dt>WINDOWS</dt> <dd> <p>Valid properties:
-         * PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
-         * <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: PRODUCT,
-         * CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU </dt> <dd> <p>Valid properties:
-         * PRODUCT, PRIORITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd>
-         * <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>CENTOS</dt>
+         * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
          * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
+         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
+         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
+         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
+         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
+         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
+         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -4819,12 +4825,22 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
-         * is null, then the corresponding field is not modified. Also, if you set Replace
-         * to true, then all fields required by the
-         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
-         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
+         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
+         * corresponding field is not modified. If you set <code>Replace</code> to true,
+         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
+         * are required for this request. Optional fields that aren't specified are set to
+         * null.</p>  <p>When you update a maintenance window task that has
+         * options specified in <code>TaskInvocationParameters</code>, you must provide
+         * again all the <code>TaskInvocationParameters</code> values that you want to
+         * retain. The values you do not specify again are removed. For example, suppose
+         * that when you registered a Run Command task, you specified
+         * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+         * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+         * update the maintenance window task and specify only a different
+         * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+         * <code>NotificationConfig</code> are removed.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
@@ -4836,12 +4852,22 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
-         * is null, then the corresponding field is not modified. Also, if you set Replace
-         * to true, then all fields required by the
-         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
-         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
+         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
+         * corresponding field is not modified. If you set <code>Replace</code> to true,
+         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
+         * are required for this request. Optional fields that aren't specified are set to
+         * null.</p>  <p>When you update a maintenance window task that has
+         * options specified in <code>TaskInvocationParameters</code>, you must provide
+         * again all the <code>TaskInvocationParameters</code> values that you want to
+         * retain. The values you do not specify again are removed. For example, suppose
+         * that when you registered a Run Command task, you specified
+         * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+         * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+         * update the maintenance window task and specify only a different
+         * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+         * <code>NotificationConfig</code> are removed.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -4855,12 +4881,22 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
-         * is null, then the corresponding field is not modified. Also, if you set Replace
-         * to true, then all fields required by the
-         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
-         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
+         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
+         * corresponding field is not modified. If you set <code>Replace</code> to true,
+         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
+         * are required for this request. Optional fields that aren't specified are set to
+         * null.</p>  <p>When you update a maintenance window task that has
+         * options specified in <code>TaskInvocationParameters</code>, you must provide
+         * again all the <code>TaskInvocationParameters</code> values that you want to
+         * retain. The values you do not specify again are removed. For example, suppose
+         * that when you registered a Run Command task, you specified
+         * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+         * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+         * update the maintenance window task and specify only a different
+         * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+         * <code>NotificationConfig</code> are removed.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *

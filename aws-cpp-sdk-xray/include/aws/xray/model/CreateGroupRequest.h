@@ -7,6 +7,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/xray/XRayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/xray/model/InsightsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/Tag.h>
 #include <utility>
@@ -124,28 +125,175 @@ namespace Model
     inline CreateGroupRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 
 
-    
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline const InsightsConfiguration& GetInsightsConfiguration() const{ return m_insightsConfiguration; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline bool InsightsConfigurationHasBeenSet() const { return m_insightsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline void SetInsightsConfiguration(const InsightsConfiguration& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = value; }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline void SetInsightsConfiguration(InsightsConfiguration&& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = std::move(value); }
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline CreateGroupRequest& WithInsightsConfiguration(const InsightsConfiguration& value) { SetInsightsConfiguration(value); return *this;}
+
+    /**
+     * <p>The structure containing configurations related to insights. The
+     * InsightsEnabled boolean can be set to true to enable insights for the new group
+     * or false to disable insights for the new group.</p>
+     */
+    inline CreateGroupRequest& WithInsightsConfiguration(InsightsConfiguration&& value) { SetInsightsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline CreateGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline CreateGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline CreateGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
+     * group. For more information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
+     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
+     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
+     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
+     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
+     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
+     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
+     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
+     * </ul>
+     */
     inline CreateGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
@@ -155,6 +303,9 @@ namespace Model
 
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
+    InsightsConfiguration m_insightsConfiguration;
+    bool m_insightsConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

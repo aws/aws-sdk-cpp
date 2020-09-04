@@ -497,36 +497,96 @@ namespace Model
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const{ return m_taskInvocationParameters; }
 
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline bool TaskInvocationParametersHasBeenSet() const { return m_taskInvocationParametersHasBeenSet; }
 
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = value; }
 
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline void SetTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = std::move(value); }
 
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { SetTaskInvocationParameters(value); return *this;}
 
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
+     *  <p>When you update a maintenance window task that has options
+     * specified in <code>TaskInvocationParameters</code>, you must provide again all
+     * the <code>TaskInvocationParameters</code> values that you want to retain. The
+     * values you do not specify again are removed. For example, suppose that when you
+     * registered a Run Command task, you specified
+     * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+     * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
+     * update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     * <code>NotificationConfig</code> are removed.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
@@ -821,28 +881,28 @@ namespace Model
 
     /**
      * <p>If True, then all fields that are required by the
-     * RegisterTaskWithMaintenanceWndow action are also required for this API request.
+     * RegisterTaskWithMaintenanceWindow action are also required for this API request.
      * Optional fields that are not specified are set to null.</p>
      */
     inline bool GetReplace() const{ return m_replace; }
 
     /**
      * <p>If True, then all fields that are required by the
-     * RegisterTaskWithMaintenanceWndow action are also required for this API request.
+     * RegisterTaskWithMaintenanceWindow action are also required for this API request.
      * Optional fields that are not specified are set to null.</p>
      */
     inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
      * <p>If True, then all fields that are required by the
-     * RegisterTaskWithMaintenanceWndow action are also required for this API request.
+     * RegisterTaskWithMaintenanceWindow action are also required for this API request.
      * Optional fields that are not specified are set to null.</p>
      */
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
 
     /**
      * <p>If True, then all fields that are required by the
-     * RegisterTaskWithMaintenanceWndow action are also required for this API request.
+     * RegisterTaskWithMaintenanceWindow action are also required for this API request.
      * Optional fields that are not specified are set to null.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithReplace(bool value) { SetReplace(value); return *this;}
