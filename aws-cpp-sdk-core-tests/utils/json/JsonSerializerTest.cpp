@@ -45,11 +45,29 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
     }
 }
 
-const Aws::String simpleValue3 = "{\"testBoolKey\":false}";
+
+const Aws::String simpleValue3 = "{\"testInt64Key\":8765432109876543210}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString3)
 {
     JsonValue value(simpleValue3);
+    if (value.WasParseSuccessful())
+    {
+        ASSERT_TRUE(value.GetErrorMessage().empty());
+        auto view = value.View();
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
+    }
+    else
+    {
+        GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
+    }
+}
+
+const Aws::String simpleValue4 = "{\"testBoolKey\":false}";
+
+TEST(JsonSerializerTest, TestParseSimpleJsonString4)
+{
+    JsonValue value(simpleValue4);
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
@@ -82,7 +100,7 @@ TEST(JsonSerializerTest, TestParseJsonArrayString)
 }
 
 const Aws::String jsonValue =
-    "{\"testStringKey\":\"testStringValue\", \"testIntKey\":10, "
+    "{\"testStringKey\":\"testStringValue\", \"testIntKey\":10, \"testInt64Key\":8765432109876543210, "
     "\"testBoolKey\":false, \"array\": [\"stringArrayEntry1\", \"stringArrayEntry2\"], "
     "\"object\": {\"testObjectStringKey\":\"testObjectStringValue\"}}";
 
@@ -95,6 +113,7 @@ TEST(JsonSerializerTest, TestParseJsonString)
         ASSERT_TRUE(value.GetErrorMessage().empty());
         ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_TRUE(view.GetObject("object").AsString().empty());
         ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
@@ -118,6 +137,7 @@ TEST(JsonSerializerTest, TestParseJsonStream)
         ASSERT_TRUE(value.GetErrorMessage().empty());
         ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
         ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
@@ -163,6 +183,36 @@ TEST(JsonSerializerTest, TestJsonIntegerValue)
 
     value.AsInteger(15);
     ASSERT_EQ(15, value.View().AsInteger());
+}
+
+TEST(JsonSerializerTest, TestJsonInt64Value)
+{
+    JsonValue value;
+    value.WithInt64("testKey", INT64_MIN);
+    ASSERT_EQ(INT64_MIN, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MIN + 1);
+    ASSERT_EQ(INT64_MIN + 1, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MAX);
+    ASSERT_EQ(INT64_MAX, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MAX - 1);
+    ASSERT_EQ(INT64_MAX - 1, value.View().GetInt64("testKey"));
+
+    value.AsInt64(INT64_MIN);
+    ASSERT_EQ(INT64_MIN, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MIN + 1);
+    ASSERT_EQ(INT64_MIN + 1, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MAX);
+    ASSERT_EQ(INT64_MAX, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MAX - 1);
+    ASSERT_EQ(INT64_MAX - 1, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
 }
 
 TEST(JsonSerializerTest, TestJsonBoolValue)
@@ -214,6 +264,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     value.WithArray("testArray", arrayValue);
     value.WithString("testStringKey", "testStringValue");
     value.WithInteger("testIntegerKey", 10);
+    value.WithInt64("testInt64Key", -8765432109876543210);
     value.WithBool("testBoolKey", false);
 
     JsonValue object;
@@ -224,6 +275,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_EQ("testValue1", objectView.GetObject("testObjectKey").GetArray("testArray")[0].AsString());
     ASSERT_EQ("testValue2", objectView.GetObject("testObjectKey").GetArray("testArray")[1].AsString());
     ASSERT_EQ(10, objectView.GetObject("testObjectKey").GetInteger("testIntegerKey"));
+    ASSERT_EQ(-8765432109876543210, objectView.GetObject("testObjectKey").GetInt64("testInt64Key"));
     ASSERT_FALSE(objectView.GetObject("testObjectKey").GetBool("testBoolKey"));
 
     object.AsObject(value);
@@ -232,6 +284,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_EQ("testValue1", objectView.AsObject().GetArray("testArray")[0].AsString());
     ASSERT_EQ("testValue2", objectView.AsObject().GetArray("testArray")[1].AsString());
     ASSERT_EQ(10, objectView.AsObject().GetInteger("testIntegerKey"));
+    ASSERT_EQ(-8765432109876543210, objectView.AsObject().GetInt64("testInt64Key"));
     ASSERT_FALSE(objectView.AsObject().GetBool("testBoolKey"));
 }
 
@@ -245,6 +298,7 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
         auto view = reparsedValue.View();
         ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
         ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
@@ -269,6 +323,7 @@ TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
         auto view = reparsedValue.View();
         ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
         ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
