@@ -18,7 +18,8 @@ using namespace Aws::Http;
 CreateAccountCustomizationRequest::CreateAccountCustomizationRequest() : 
     m_awsAccountIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_accountCustomizationHasBeenSet(false)
+    m_accountCustomizationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,17 @@ Aws::String CreateAccountCustomizationRequest::SerializePayload() const
   if(m_accountCustomizationHasBeenSet)
   {
    payload.WithObject("AccountCustomization", m_accountCustomization.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

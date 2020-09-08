@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     en_US,
     en_GB,
-    de_DE
+    de_DE,
+    en_AU
   };
 
 namespace LocaleMapper

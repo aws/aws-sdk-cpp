@@ -426,42 +426,42 @@ namespace Model
 
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline LoadBalancer& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline LoadBalancer& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline LoadBalancer& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The Availability Zones for the load balancer.</p>
+     * <p>The subnets for the load balancer.</p>
      */
     inline LoadBalancer& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
@@ -554,6 +554,55 @@ namespace Model
      */
     inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline LoadBalancer& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline LoadBalancer& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the customer-owned address
+     * pool.</p>
+     */
+    inline LoadBalancer& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
+
   private:
 
     Aws::String m_loadBalancerArn;
@@ -591,6 +640,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
+
+    Aws::String m_customerOwnedIpv4Pool;
+    bool m_customerOwnedIpv4PoolHasBeenSet;
   };
 
 } // namespace Model

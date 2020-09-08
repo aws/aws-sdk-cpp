@@ -721,28 +721,16 @@ namespace Model
         virtual void DeleteReportAsync(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
-         * report group, you must delete its reports. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-         * to get the reports in a report group. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
-         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a report group. Before you delete a report group, you must delete its
+         * reports. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteReportGroupOutcome DeleteReportGroup(const Model::DeleteReportGroupRequest& request) const;
 
         /**
-         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
-         * report group, you must delete its reports. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-         * to get the reports in a report group. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
-         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a report group. Before you delete a report group, you must delete its
+         * reports. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
          * API Reference</a></p>
          *
@@ -751,14 +739,8 @@ namespace Model
         virtual Model::DeleteReportGroupOutcomeCallable DeleteReportGroupCallable(const Model::DeleteReportGroupRequest& request) const;
 
         /**
-         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
-         * report group, you must delete its reports. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-         * to get the reports in a report group. Use <a
-         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
-         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a report group. Before you delete a report group, you must delete its
+         * reports. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
          * API Reference</a></p>
          *

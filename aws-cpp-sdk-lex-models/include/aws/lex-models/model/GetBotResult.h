@@ -155,23 +155,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline GetBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
 
@@ -183,9 +183,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
 
@@ -196,9 +196,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
 
@@ -209,9 +209,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline GetBotResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 

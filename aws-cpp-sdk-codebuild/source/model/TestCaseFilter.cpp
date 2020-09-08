@@ -19,12 +19,14 @@ namespace Model
 {
 
 TestCaseFilter::TestCaseFilter() : 
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
 TestCaseFilter::TestCaseFilter(JsonView jsonValue) : 
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ TestCaseFilter& TestCaseFilter::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("keyword"))
+  {
+    m_keyword = jsonValue.GetString("keyword");
+
+    m_keywordHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue TestCaseFilter::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", m_status);
+
+  }
+
+  if(m_keywordHasBeenSet)
+  {
+   payload.WithString("keyword", m_keyword);
 
   }
 

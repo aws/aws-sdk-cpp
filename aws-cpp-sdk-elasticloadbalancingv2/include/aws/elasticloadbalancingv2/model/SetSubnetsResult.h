@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZones = value; }
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZones = std::move(value); }
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline SetSubnetsResult& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline SetSubnetsResult& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline SetSubnetsResult& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>Information about the subnet and Availability Zone.</p>
+     * <p>Information about the subnets.</p>
      */
     inline SetSubnetsResult& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(std::move(value)); return *this; }
 

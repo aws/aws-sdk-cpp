@@ -16,11 +16,14 @@ UpdateAuthorizerRequest::UpdateAuthorizerRequest() :
     m_apiIdHasBeenSet(false),
     m_authorizerCredentialsArnHasBeenSet(false),
     m_authorizerIdHasBeenSet(false),
+    m_authorizerPayloadFormatVersionHasBeenSet(false),
     m_authorizerResultTtlInSeconds(0),
     m_authorizerResultTtlInSecondsHasBeenSet(false),
     m_authorizerType(AuthorizerType::NOT_SET),
     m_authorizerTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
+    m_enableSimpleResponses(false),
+    m_enableSimpleResponsesHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
     m_jwtConfigurationHasBeenSet(false),
@@ -38,6 +41,12 @@ Aws::String UpdateAuthorizerRequest::SerializePayload() const
 
   }
 
+  if(m_authorizerPayloadFormatVersionHasBeenSet)
+  {
+   payload.WithString("authorizerPayloadFormatVersion", m_authorizerPayloadFormatVersion);
+
+  }
+
   if(m_authorizerResultTtlInSecondsHasBeenSet)
   {
    payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
@@ -52,6 +61,12 @@ Aws::String UpdateAuthorizerRequest::SerializePayload() const
   if(m_authorizerUriHasBeenSet)
   {
    payload.WithString("authorizerUri", m_authorizerUri);
+
+  }
+
+  if(m_enableSimpleResponsesHasBeenSet)
+  {
+   payload.WithBool("enableSimpleResponses", m_enableSimpleResponses);
 
   }
 

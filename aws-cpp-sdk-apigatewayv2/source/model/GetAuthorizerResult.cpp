@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetAuthorizerResult::GetAuthorizerResult() : 
     m_authorizerResultTtlInSeconds(0),
-    m_authorizerType(AuthorizerType::NOT_SET)
+    m_authorizerType(AuthorizerType::NOT_SET),
+    m_enableSimpleResponses(false)
 {
 }
 
 GetAuthorizerResult::GetAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_authorizerResultTtlInSeconds(0),
-    m_authorizerType(AuthorizerType::NOT_SET)
+    m_authorizerType(AuthorizerType::NOT_SET),
+    m_enableSimpleResponses(false)
 {
   *this = result;
 }
@@ -44,6 +46,12 @@ GetAuthorizerResult& GetAuthorizerResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("authorizerPayloadFormatVersion"))
+  {
+    m_authorizerPayloadFormatVersion = jsonValue.GetString("authorizerPayloadFormatVersion");
+
+  }
+
   if(jsonValue.ValueExists("authorizerResultTtlInSeconds"))
   {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
@@ -59,6 +67,12 @@ GetAuthorizerResult& GetAuthorizerResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("authorizerUri"))
   {
     m_authorizerUri = jsonValue.GetString("authorizerUri");
+
+  }
+
+  if(jsonValue.ValueExists("enableSimpleResponses"))
+  {
+    m_enableSimpleResponses = jsonValue.GetBool("enableSimpleResponses");
 
   }
 

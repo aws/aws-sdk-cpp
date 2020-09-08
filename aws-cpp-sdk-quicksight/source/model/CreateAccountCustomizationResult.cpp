@@ -30,6 +30,12 @@ CreateAccountCustomizationResult::CreateAccountCustomizationResult(const Aws::Am
 CreateAccountCustomizationResult& CreateAccountCustomizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");

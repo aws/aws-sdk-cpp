@@ -199,7 +199,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
@@ -207,7 +208,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
 
@@ -215,7 +217,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
@@ -223,7 +226,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
@@ -231,7 +235,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline Route& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
@@ -239,7 +244,8 @@ namespace Model
      * <p>The authorization type for the route. For WebSocket APIs, valid values are
      * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
      * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * or JWT for using JSON Web Tokens.</p>
+     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+     * for using a Lambda authorizer.</p>
      */
     inline Route& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 

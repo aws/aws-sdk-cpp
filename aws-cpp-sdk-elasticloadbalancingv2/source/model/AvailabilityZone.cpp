@@ -23,6 +23,7 @@ namespace Model
 AvailabilityZone::AvailabilityZone() : 
     m_zoneNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_outpostIdHasBeenSet(false),
     m_loadBalancerAddressesHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ AvailabilityZone::AvailabilityZone() :
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
     m_zoneNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_outpostIdHasBeenSet(false),
     m_loadBalancerAddressesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -52,6 +54,12 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+    }
+    XmlNode outpostIdNode = resultNode.FirstChild("OutpostId");
+    if(!outpostIdNode.IsNull())
+    {
+      m_outpostId = Aws::Utils::Xml::DecodeEscapedXmlText(outpostIdNode.GetText());
+      m_outpostIdHasBeenSet = true;
     }
     XmlNode loadBalancerAddressesNode = resultNode.FirstChild("LoadBalancerAddresses");
     if(!loadBalancerAddressesNode.IsNull())
@@ -82,6 +90,11 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_outpostIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostId=" << StringUtils::URLEncode(m_outpostId.c_str()) << "&";
+  }
+
   if(m_loadBalancerAddressesHasBeenSet)
   {
       unsigned loadBalancerAddressesIdx = 1;
@@ -104,6 +117,10 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_outpostIdHasBeenSet)
+  {
+      oStream << location << ".OutpostId=" << StringUtils::URLEncode(m_outpostId.c_str()) << "&";
   }
   if(m_loadBalancerAddressesHasBeenSet)
   {

@@ -156,23 +156,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline PutBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
 
@@ -184,9 +184,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
 
@@ -197,9 +197,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
 
@@ -210,9 +210,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
      * or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-     * response. <code>AMAZON.FallbackIntent</code> and
-     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
-     * for the bot.</p>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
      */
     inline PutBotResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 
@@ -249,31 +249,31 @@ namespace Model
 
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline PutBotResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline PutBotResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}

@@ -21,7 +21,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_type(LoadBalancerTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   if(m_ipAddressTypeHasBeenSet)
   {
     ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+    ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
   ss << "Version=2015-12-01";

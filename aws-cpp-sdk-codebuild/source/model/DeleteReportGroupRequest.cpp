@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteReportGroupRequest::DeleteReportGroupRequest() : 
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_deleteReports(false),
+    m_deleteReportsHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String DeleteReportGroupRequest::SerializePayload() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_deleteReportsHasBeenSet)
+  {
+   payload.WithBool("deleteReports", m_deleteReports);
 
   }
 

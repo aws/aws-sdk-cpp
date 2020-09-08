@@ -174,14 +174,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline const EnvironmentVariableType& GetType() const{ return m_type; }
 
@@ -190,14 +190,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -206,14 +206,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline void SetType(const EnvironmentVariableType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -222,14 +222,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline void SetType(EnvironmentVariableType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -238,14 +238,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline EnvironmentVariable& WithType(const EnvironmentVariableType& value) { SetType(value); return *this;}
 
@@ -254,14 +254,14 @@ namespace Model
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store. To learn how to specify a parameter store
      * environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-     * parameter store reference-key in the buildspec file</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> <li> <p>
      * <code>PLAINTEXT</code>: An environment variable in plain text format. This is
      * the default value.</p> </li> <li> <p> <code>SECRETS_MANAGER</code>: An
      * environment variable stored in AWS Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-     * secrets manager reference-key in the buildspec file</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p> </li> </ul>
      */
     inline EnvironmentVariable& WithType(EnvironmentVariableType&& value) { SetType(std::move(value)); return *this;}
 

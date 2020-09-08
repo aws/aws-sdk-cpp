@@ -162,12 +162,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
@@ -175,12 +178,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
@@ -188,12 +194,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
@@ -201,12 +210,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
@@ -214,12 +226,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
@@ -227,12 +242,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const Aws::String& value) { SetImage(value); return *this;}
@@ -240,12 +258,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
@@ -253,12 +274,15 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
+     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
+     * </li> <li> <p>For an image digest:
+     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
      * specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}

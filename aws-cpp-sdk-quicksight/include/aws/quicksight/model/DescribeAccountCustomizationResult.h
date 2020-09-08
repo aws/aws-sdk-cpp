@@ -34,6 +34,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline DescribeAccountCustomizationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline DescribeAccountCustomizationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customization that's associated with
+     * this AWS account.</p>
+     */
+    inline DescribeAccountCustomizationResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The ID for the AWS account that you're describing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
@@ -183,6 +226,8 @@ namespace Model
     inline DescribeAccountCustomizationResult& WithStatus(int value) { SetStatus(value); return *this;}
 
   private:
+
+    Aws::String m_arn;
 
     Aws::String m_awsAccountId;
 

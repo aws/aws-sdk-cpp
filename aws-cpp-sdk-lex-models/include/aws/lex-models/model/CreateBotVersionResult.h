@@ -186,31 +186,31 @@ namespace Model
 
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
@@ -605,23 +605,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
 
     /**
-     * <p>Indicates whether the bot uses the new natural language understanding (NLU)
-     * model or the original NLU. True indicates that the bot is using the new model,
-     * otherwise, false.</p>
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the imoprovements, otherwise,
+     * <code>false</code>.</p>
      */
     inline CreateBotVersionResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
 

@@ -49,6 +49,7 @@
 #include <aws/apigatewayv2/model/DeleteStageRequest.h>
 #include <aws/apigatewayv2/model/DeleteVpcLinkRequest.h>
 #include <aws/apigatewayv2/model/ExportApiRequest.h>
+#include <aws/apigatewayv2/model/ResetAuthorizersCacheRequest.h>
 #include <aws/apigatewayv2/model/GetApiRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingsRequest.h>
@@ -1251,6 +1252,47 @@ void ApiGatewayV2Client::ExportApiAsync(const ExportApiRequest& request, const E
 void ApiGatewayV2Client::ExportApiAsyncHelper(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExportApi(request), context);
+}
+
+ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const ResetAuthorizersCacheRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetAuthorizersCache", "Required field: ApiId, is not set");
+    return ResetAuthorizersCacheOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  if (!request.StageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetAuthorizersCache", "Required field: StageName, is not set");
+    return ResetAuthorizersCacheOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/stages/";
+  ss << request.GetStageName();
+  ss << "/cache/authorizers";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ResetAuthorizersCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetAuthorizersCacheOutcomeCallable ApiGatewayV2Client::ResetAuthorizersCacheCallable(const ResetAuthorizersCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetAuthorizersCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetAuthorizersCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::ResetAuthorizersCacheAsync(const ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetAuthorizersCacheAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::ResetAuthorizersCacheAsyncHelper(const ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetAuthorizersCache(request), context);
 }
 
 GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const

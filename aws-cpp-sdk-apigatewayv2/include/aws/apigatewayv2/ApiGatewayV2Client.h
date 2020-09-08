@@ -135,6 +135,7 @@ namespace Model
         class DeleteStageRequest;
         class DeleteVpcLinkRequest;
         class ExportApiRequest;
+        class ResetAuthorizersCacheRequest;
         class GetApiRequest;
         class GetApiMappingRequest;
         class GetApiMappingsRequest;
@@ -207,6 +208,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteStageOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcLinkResult, ApiGatewayV2Error> DeleteVpcLinkOutcome;
         typedef Aws::Utils::Outcome<ExportApiResult, ApiGatewayV2Error> ExportApiOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> ResetAuthorizersCacheOutcome;
         typedef Aws::Utils::Outcome<GetApiResult, ApiGatewayV2Error> GetApiOutcome;
         typedef Aws::Utils::Outcome<GetApiMappingResult, ApiGatewayV2Error> GetApiMappingOutcome;
         typedef Aws::Utils::Outcome<GetApiMappingsResult, ApiGatewayV2Error> GetApiMappingsOutcome;
@@ -279,6 +281,7 @@ namespace Model
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
         typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
         typedef std::future<ExportApiOutcome> ExportApiOutcomeCallable;
+        typedef std::future<ResetAuthorizersCacheOutcome> ResetAuthorizersCacheOutcomeCallable;
         typedef std::future<GetApiOutcome> GetApiOutcomeCallable;
         typedef std::future<GetApiMappingOutcome> GetApiMappingOutcomeCallable;
         typedef std::future<GetApiMappingsOutcome> GetApiMappingsOutcomeCallable;
@@ -354,6 +357,7 @@ namespace Model
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcLinkResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::ExportApiRequest&, Model::ExportApiOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportApiResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::ResetAuthorizersCacheRequest&, const Model::ResetAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiRequest&, const Model::GetApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingRequest&, const Model::GetApiMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingsRequest&, const Model::GetApiMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingsResponseReceivedHandler;
@@ -1148,6 +1152,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportApiAsync(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAuthorizersCacheOutcome ResetAuthorizersCache(const Model::ResetAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetAuthorizersCacheOutcomeCallable ResetAuthorizersCacheCallable(const Model::ResetAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetAuthorizersCacheAsync(const Model::ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an Api resource.</p><p><h3>See Also:</h3>   <a
@@ -2235,6 +2267,7 @@ namespace Model
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcLinkAsyncHelper(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportApiAsyncHelper(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetAuthorizersCacheAsyncHelper(const Model::ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiAsyncHelper(const Model::GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingAsyncHelper(const Model::GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingsAsyncHelper(const Model::GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

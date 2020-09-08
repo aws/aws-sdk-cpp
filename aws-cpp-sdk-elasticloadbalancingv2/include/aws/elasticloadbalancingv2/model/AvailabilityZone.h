@@ -124,6 +124,47 @@ namespace Model
 
 
     /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline AvailabilityZone& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline AvailabilityZone& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
+
+    /**
+     * <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+     */
+    inline AvailabilityZone& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+
+
+    /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
      * create an internal-facing load balancer. For internal load balancers, you can
@@ -194,6 +235,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::String m_outpostId;
+    bool m_outpostIdHasBeenSet;
 
     Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
     bool m_loadBalancerAddressesHasBeenSet;

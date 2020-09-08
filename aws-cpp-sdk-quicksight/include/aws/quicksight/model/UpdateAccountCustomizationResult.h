@@ -34,6 +34,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline UpdateAccountCustomizationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline UpdateAccountCustomizationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the updated customization for this AWS
+     * account.</p>
+     */
+    inline UpdateAccountCustomizationResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The ID for the AWS account that you want to update QuickSight customizations
      * for.</p>
      */
@@ -190,6 +233,8 @@ namespace Model
     inline UpdateAccountCustomizationResult& WithStatus(int value) { SetStatus(value); return *this;}
 
   private:
+
+    Aws::String m_arn;
 
     Aws::String m_awsAccountId;
 
