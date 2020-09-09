@@ -19,6 +19,7 @@ namespace GlueErrorMapper
 {
 
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
 static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
@@ -48,6 +49,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == OPERATION_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_TIMEOUT), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONFLICT), false);
   }
   else if (hashCode == VERSION_MISMATCH_HASH)
   {

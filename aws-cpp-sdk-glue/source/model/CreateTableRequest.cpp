@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateTableRequest::CreateTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableInputHasBeenSet(false)
+    m_tableInputHasBeenSet(false),
+    m_partitionIndexesHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_tableInputHasBeenSet)
   {
    payload.WithObject("TableInput", m_tableInput.Jsonize());
+
+  }
+
+  if(m_partitionIndexesHasBeenSet)
+  {
+   Array<JsonValue> partitionIndexesJsonList(m_partitionIndexes.size());
+   for(unsigned partitionIndexesIndex = 0; partitionIndexesIndex < partitionIndexesJsonList.GetLength(); ++partitionIndexesIndex)
+   {
+     partitionIndexesJsonList[partitionIndexesIndex].AsObject(m_partitionIndexes[partitionIndexesIndex].Jsonize());
+   }
+   payload.WithArray("PartitionIndexes", std::move(partitionIndexesJsonList));
 
   }
 

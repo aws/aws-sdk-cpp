@@ -247,14 +247,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -303,14 +296,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -359,14 +345,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -415,14 +394,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -471,14 +443,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -527,14 +492,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -583,14 +541,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -639,14 +590,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -695,14 +639,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -751,14 +688,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -807,14 +737,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -863,14 +786,7 @@ namespace Model
      * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
      * comma-separated list of host and port pairs that are the addresses of the Apache
      * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. AWS Glue validates for three
-     * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

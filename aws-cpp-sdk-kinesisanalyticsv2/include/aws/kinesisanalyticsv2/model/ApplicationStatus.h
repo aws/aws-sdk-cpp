@@ -21,7 +21,8 @@ namespace Model
     STOPPING,
     READY,
     RUNNING,
-    UPDATING
+    UPDATING,
+    AUTOSCALING
   };
 
 namespace ApplicationStatusMapper

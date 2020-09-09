@@ -91,6 +91,7 @@
 #include <aws/glue/model/GetMLTransformsRequest.h>
 #include <aws/glue/model/GetMappingRequest.h>
 #include <aws/glue/model/GetPartitionRequest.h>
+#include <aws/glue/model/GetPartitionIndexesRequest.h>
 #include <aws/glue/model/GetPartitionsRequest.h>
 #include <aws/glue/model/GetPlanRequest.h>
 #include <aws/glue/model/GetResourcePoliciesRequest.h>
@@ -2142,6 +2143,33 @@ void GlueClient::GetPartitionAsync(const GetPartitionRequest& request, const Get
 void GlueClient::GetPartitionAsyncHelper(const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPartition(request), context);
+}
+
+GetPartitionIndexesOutcome GlueClient::GetPartitionIndexes(const GetPartitionIndexesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPartitionIndexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPartitionIndexesOutcomeCallable GlueClient::GetPartitionIndexesCallable(const GetPartitionIndexesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPartitionIndexesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPartitionIndexes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetPartitionIndexesAsync(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPartitionIndexesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetPartitionIndexesAsyncHelper(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPartitionIndexes(request), context);
 }
 
 GetPartitionsOutcome GlueClient::GetPartitions(const GetPartitionsRequest& request) const

@@ -19,12 +19,14 @@ namespace Model
 {
 
 RunConfigurationDescription::RunConfigurationDescription() : 
-    m_applicationRestoreConfigurationDescriptionHasBeenSet(false)
+    m_applicationRestoreConfigurationDescriptionHasBeenSet(false),
+    m_flinkRunConfigurationDescriptionHasBeenSet(false)
 {
 }
 
 RunConfigurationDescription::RunConfigurationDescription(JsonView jsonValue) : 
-    m_applicationRestoreConfigurationDescriptionHasBeenSet(false)
+    m_applicationRestoreConfigurationDescriptionHasBeenSet(false),
+    m_flinkRunConfigurationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RunConfigurationDescription& RunConfigurationDescription::operator =(JsonView js
     m_applicationRestoreConfigurationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlinkRunConfigurationDescription"))
+  {
+    m_flinkRunConfigurationDescription = jsonValue.GetObject("FlinkRunConfigurationDescription");
+
+    m_flinkRunConfigurationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RunConfigurationDescription::Jsonize() const
   if(m_applicationRestoreConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("ApplicationRestoreConfigurationDescription", m_applicationRestoreConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_flinkRunConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("FlinkRunConfigurationDescription", m_flinkRunConfigurationDescription.Jsonize());
 
   }
 

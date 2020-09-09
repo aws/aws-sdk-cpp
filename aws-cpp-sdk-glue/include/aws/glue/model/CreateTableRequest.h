@@ -8,6 +8,8 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableInput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/PartitionIndex.h>
 #include <utility>
 
 namespace Aws
@@ -169,6 +171,55 @@ namespace Model
      */
     inline CreateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline const Aws::Vector<PartitionIndex>& GetPartitionIndexes() const{ return m_partitionIndexes; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline bool PartitionIndexesHasBeenSet() const { return m_partitionIndexesHasBeenSet; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline void SetPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = value; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline void SetPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = std::move(value); }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& WithPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { SetPartitionIndexes(value); return *this;}
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& WithPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { SetPartitionIndexes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& AddPartitionIndexes(const PartitionIndex& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& AddPartitionIndexes(PartitionIndex&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_catalogId;
@@ -179,6 +230,9 @@ namespace Model
 
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet;
+
+    Aws::Vector<PartitionIndex> m_partitionIndexes;
+    bool m_partitionIndexesHasBeenSet;
   };
 
 } // namespace Model

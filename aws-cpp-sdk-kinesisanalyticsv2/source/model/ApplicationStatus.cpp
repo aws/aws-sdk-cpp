@@ -26,6 +26,7 @@ namespace Aws
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int AUTOSCALING_HASH = HashingUtils::HashString("AUTOSCALING");
 
 
         ApplicationStatus GetApplicationStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ApplicationStatus::UPDATING;
           }
+          else if (hashCode == AUTOSCALING_HASH)
+          {
+            return ApplicationStatus::AUTOSCALING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "RUNNING";
           case ApplicationStatus::UPDATING:
             return "UPDATING";
+          case ApplicationStatus::AUTOSCALING:
+            return "AUTOSCALING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationRestoreConfiguration.h>
+#include <aws/kinesisanalyticsv2/model/FlinkRunConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,32 @@ namespace Model
      */
     inline RunConfigurationDescription& WithApplicationRestoreConfigurationDescription(ApplicationRestoreConfiguration&& value) { SetApplicationRestoreConfigurationDescription(std::move(value)); return *this;}
 
+
+    
+    inline const FlinkRunConfiguration& GetFlinkRunConfigurationDescription() const{ return m_flinkRunConfigurationDescription; }
+
+    
+    inline bool FlinkRunConfigurationDescriptionHasBeenSet() const { return m_flinkRunConfigurationDescriptionHasBeenSet; }
+
+    
+    inline void SetFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = value; }
+
+    
+    inline void SetFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = std::move(value); }
+
+    
+    inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { SetFlinkRunConfigurationDescription(value); return *this;}
+
+    
+    inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { SetFlinkRunConfigurationDescription(std::move(value)); return *this;}
+
   private:
 
     ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;
     bool m_applicationRestoreConfigurationDescriptionHasBeenSet;
+
+    FlinkRunConfiguration m_flinkRunConfigurationDescription;
+    bool m_flinkRunConfigurationDescriptionHasBeenSet;
   };
 
 } // namespace Model

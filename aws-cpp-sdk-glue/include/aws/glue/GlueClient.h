@@ -82,6 +82,7 @@
 #include <aws/glue/model/GetMLTransformsResult.h>
 #include <aws/glue/model/GetMappingResult.h>
 #include <aws/glue/model/GetPartitionResult.h>
+#include <aws/glue/model/GetPartitionIndexesResult.h>
 #include <aws/glue/model/GetPartitionsResult.h>
 #include <aws/glue/model/GetPlanResult.h>
 #include <aws/glue/model/GetResourcePoliciesResult.h>
@@ -254,6 +255,7 @@ namespace Model
         class GetMLTransformsRequest;
         class GetMappingRequest;
         class GetPartitionRequest;
+        class GetPartitionIndexesRequest;
         class GetPartitionsRequest;
         class GetPlanRequest;
         class GetResourcePoliciesRequest;
@@ -388,6 +390,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMLTransformsResult, GlueError> GetMLTransformsOutcome;
         typedef Aws::Utils::Outcome<GetMappingResult, GlueError> GetMappingOutcome;
         typedef Aws::Utils::Outcome<GetPartitionResult, GlueError> GetPartitionOutcome;
+        typedef Aws::Utils::Outcome<GetPartitionIndexesResult, GlueError> GetPartitionIndexesOutcome;
         typedef Aws::Utils::Outcome<GetPartitionsResult, GlueError> GetPartitionsOutcome;
         typedef Aws::Utils::Outcome<GetPlanResult, GlueError> GetPlanOutcome;
         typedef Aws::Utils::Outcome<GetResourcePoliciesResult, GlueError> GetResourcePoliciesOutcome;
@@ -522,6 +525,7 @@ namespace Model
         typedef std::future<GetMLTransformsOutcome> GetMLTransformsOutcomeCallable;
         typedef std::future<GetMappingOutcome> GetMappingOutcomeCallable;
         typedef std::future<GetPartitionOutcome> GetPartitionOutcomeCallable;
+        typedef std::future<GetPartitionIndexesOutcome> GetPartitionIndexesOutcomeCallable;
         typedef std::future<GetPartitionsOutcome> GetPartitionsOutcomeCallable;
         typedef std::future<GetPlanOutcome> GetPlanOutcomeCallable;
         typedef std::future<GetResourcePoliciesOutcome> GetResourcePoliciesOutcomeCallable;
@@ -659,6 +663,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetMLTransformsRequest&, const Model::GetMLTransformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLTransformsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetMappingRequest&, const Model::GetMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMappingResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPartitionRequest&, const Model::GetPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetPartitionIndexesRequest&, const Model::GetPartitionIndexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionIndexesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPartitionsRequest&, const Model::GetPartitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPlanRequest&, const Model::GetPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlanResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetResourcePoliciesRequest&, const Model::GetResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePoliciesResponseReceivedHandler;
@@ -2922,6 +2927,34 @@ namespace Model
         virtual void GetPartitionAsync(const Model::GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the partition indexes associated with a table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPartitionIndexesOutcome GetPartitionIndexes(const Model::GetPartitionIndexesRequest& request) const;
+
+        /**
+         * <p>Retrieves the partition indexes associated with a table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPartitionIndexesOutcomeCallable GetPartitionIndexesCallable(const Model::GetPartitionIndexesRequest& request) const;
+
+        /**
+         * <p>Retrieves the partition indexes associated with a table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPartitionIndexesAsync(const Model::GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about the partitions in a table.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">AWS
@@ -4969,6 +5002,7 @@ namespace Model
         void GetMLTransformsAsyncHelper(const Model::GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMappingAsyncHelper(const Model::GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartitionAsyncHelper(const Model::GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPartitionIndexesAsyncHelper(const Model::GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartitionsAsyncHelper(const Model::GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPlanAsyncHelper(const Model::GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcePoliciesAsyncHelper(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
