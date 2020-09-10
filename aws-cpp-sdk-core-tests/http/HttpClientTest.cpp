@@ -11,17 +11,18 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <future>
+#include <chrono>
 
 using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Client;
 
 #ifndef NO_HTTP_CLIENT
-TEST(HttpClientTest, TestRandomURL)
+static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient)
 {
     auto request = CreateHttpRequest(Aws::String("http://some.unknown1234xxx.test.aws"),
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
     auto response = httpClient->MakeRequest(request);
     ASSERT_NE(nullptr, response);
     //Modified the tests so that we catch an edge case where ISP's would try to get a response to the weird url
@@ -35,6 +36,47 @@ TEST(HttpClientTest, TestRandomURL)
     {
         ASSERT_EQ(HttpResponseCode::FORBIDDEN, response->GetResponseCode());
     }
+}
+
+TEST(HttpClientTest, TestRandomURL)
+{
+    auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
+    makeRandomHttpRequest(httpClient);
+}
+
+TEST(HttpClientTest, TestRandomURLMultiThreaded)
+{
+    const int threadCount = 50;
+    const int timeoutSecs = 5;
+    auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
+    std::vector<std::future<void>> futures;
+    for (int thread = 0; thread < threadCount; ++thread)
+    {
+        futures.push_back(std::move(std::async(std::launch::async, &makeRandomHttpRequest, httpClient)));
+    }
+
+    auto start = std::chrono::system_clock::now();
+    bool hasPendingTasks = true;
+    while (hasPendingTasks)
+    {
+        hasPendingTasks = false;
+        for (auto& future : futures)
+        {
+            auto status = future.wait_for(std::chrono::milliseconds(1));
+            if (status != std::future_status::ready)
+            {
+                hasPendingTasks = true;
+                break;
+            }
+        }
+        auto end  = std::chrono::system_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        if (elapsed.count() > timeoutSecs)
+        {
+            break;
+        }
+    }
+    ASSERT_FALSE(hasPendingTasks);
 }
 
 // Test Http Client timeout
