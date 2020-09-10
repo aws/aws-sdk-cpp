@@ -38,6 +38,7 @@ GetObjectRequest::GetObjectRequest() :
     m_requestPayerHasBeenSet(false),
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -184,6 +185,13 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
   if(m_requestPayerHasBeenSet)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
   }
 
   return headers;

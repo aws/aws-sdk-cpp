@@ -21,6 +21,7 @@ GetObjectTorrentRequest::GetObjectTorrentRequest() :
     m_keyHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -59,6 +60,13 @@ Aws::Http::HeaderValueCollection GetObjectTorrentRequest::GetRequestSpecificHead
   if(m_requestPayerHasBeenSet)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
   }
 
   return headers;

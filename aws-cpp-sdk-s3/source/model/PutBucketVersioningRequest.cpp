@@ -20,6 +20,7 @@ PutBucketVersioningRequest::PutBucketVersioningRequest() :
     m_bucketHasBeenSet(false),
     m_mFAHasBeenSet(false),
     m_versioningConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -70,6 +71,13 @@ Aws::Http::HeaderValueCollection PutBucketVersioningRequest::GetRequestSpecificH
   {
     ss << m_mFA;
     headers.emplace("x-amz-mfa",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

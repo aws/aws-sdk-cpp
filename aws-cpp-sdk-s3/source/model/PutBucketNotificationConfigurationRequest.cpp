@@ -19,6 +19,7 @@ using namespace Aws::Http;
 PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationRequest() : 
     m_bucketHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -57,3 +58,16 @@ void PutBucketNotificationConfigurationRequest::AddQueryStringParameters(URI& ur
     }
 }
 
+Aws::Http::HeaderValueCollection PutBucketNotificationConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

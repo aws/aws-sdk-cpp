@@ -19,6 +19,7 @@ using namespace Aws::Http;
 GetBucketMetricsConfigurationRequest::GetBucketMetricsConfigurationRequest() : 
     m_bucketHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -57,3 +58,16 @@ void GetBucketMetricsConfigurationRequest::AddQueryStringParameters(URI& uri) co
     }
 }
 
+Aws::Http::HeaderValueCollection GetBucketMetricsConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

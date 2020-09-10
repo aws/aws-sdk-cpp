@@ -88,18 +88,23 @@ namespace Model
     typedef std::function<void(const EBSClient*, const Model::StartSnapshotRequest&, const Model::StartSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSnapshotResponseReceivedHandler;
 
   /**
-   * <p>You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read
-   * the data on your EBS snapshots, and identify the difference between two
-   * snapshots. You can view the details of blocks in an EBS snapshot, compare the
-   * block difference between two snapshots, and directly access the data in a
-   * snapshot. If you're an independent software vendor (ISV) who offers backup
-   * services for EBS, the EBS direct APIs make it easier and more cost-effective to
-   * track incremental changes on your EBS volumes via EBS snapshots. This can be
-   * done without having to create new volumes from EBS snapshots.</p> <p>This API
-   * reference provides detailed information about the actions, data types,
-   * parameters, and errors of the EBS direct APIs. For more information about the
-   * elements that make up the EBS direct APIs, and examples of how to use them
-   * effectively, see <a
+   * <p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create
+   * EBS snapshots, write data directly to your snapshots, read data on your
+   * snapshots, and identify the differences or changes between two snapshots. If
+   * you’re an independent software vendor (ISV) who offers backup services for
+   * Amazon EBS, the EBS direct APIs make it more efficient and cost-effective to
+   * track incremental changes on your EBS volumes through snapshots. This can be
+   * done without having to create new volumes from snapshots, and then use Amazon
+   * Elastic Compute Cloud (Amazon EC2) instances to compare the differences.</p>
+   * <p>You can create incremental snapshots directly from data on-premises into EBS
+   * volumes and the cloud to use for quick disaster recovery. With the ability to
+   * write and read snapshots, you can write your on-premises data to an EBS snapshot
+   * during a disaster. Then after recovery, you can restore it back to AWS or
+   * on-premises from the snapshot. You no longer need to build and maintain complex
+   * mechanisms to copy data to and from Amazon EBS.</p> <p>This API reference
+   * provides detailed information about the actions, data types, parameters, and
+   * errors of the EBS direct APIs. For more information about the elements that make
+   * up the EBS direct APIs, and examples of how to use them effectively, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html">Accessing
    * the Contents of an EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
    * Guide</i>. For more information about the supported AWS Regions, endpoints, and
@@ -198,18 +203,18 @@ namespace Model
         virtual void GetSnapshotBlockAsync(const Model::GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks that are different
-         * between two Amazon Elastic Block Store snapshots of the same volume/snapshot
-         * lineage.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks that are different between two Amazon
+         * Elastic Block Store snapshots of the same volume/snapshot lineage.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChangedBlocksOutcome ListChangedBlocks(const Model::ListChangedBlocksRequest& request) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks that are different
-         * between two Amazon Elastic Block Store snapshots of the same volume/snapshot
-         * lineage.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks that are different between two Amazon
+         * Elastic Block Store snapshots of the same volume/snapshot lineage.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks">AWS
          * API Reference</a></p>
          *
@@ -218,9 +223,9 @@ namespace Model
         virtual Model::ListChangedBlocksOutcomeCallable ListChangedBlocksCallable(const Model::ListChangedBlocksRequest& request) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks that are different
-         * between two Amazon Elastic Block Store snapshots of the same volume/snapshot
-         * lineage.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks that are different between two Amazon
+         * Elastic Block Store snapshots of the same volume/snapshot lineage.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks">AWS
          * API Reference</a></p>
          *
@@ -229,16 +234,16 @@ namespace Model
         virtual void ListChangedBlocksAsync(const Model::ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks in an Amazon Elastic
-         * Block Store snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks in an Amazon Elastic Block Store
+         * snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSnapshotBlocksOutcome ListSnapshotBlocks(const Model::ListSnapshotBlocksRequest& request) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks in an Amazon Elastic
-         * Block Store snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks in an Amazon Elastic Block Store
+         * snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks">AWS
          * API Reference</a></p>
          *
@@ -247,8 +252,8 @@ namespace Model
         virtual Model::ListSnapshotBlocksOutcomeCallable ListSnapshotBlocksCallable(const Model::ListSnapshotBlocksRequest& request) const;
 
         /**
-         * <p>Returns the block indexes and block tokens for blocks in an Amazon Elastic
-         * Block Store snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the blocks in an Amazon Elastic Block Store
+         * snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks">AWS
          * API Reference</a></p>
          *
@@ -257,20 +262,20 @@ namespace Model
         virtual void ListSnapshotBlocksAsync(const Model::ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Writes a block of data to a block in the snapshot. If the specified block
-         * contains data, the existing data is overwritten. The target snapshot must be in
-         * the <code>pending</code> state.</p> <p>Data written to a snapshot must be
-         * aligned with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
+         * <p>Writes a block of data to a snapshot. If the specified block contains data,
+         * the existing data is overwritten. The target snapshot must be in the
+         * <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned
+         * with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::PutSnapshotBlockOutcome PutSnapshotBlock(const Model::PutSnapshotBlockRequest& request) const;
 
         /**
-         * <p>Writes a block of data to a block in the snapshot. If the specified block
-         * contains data, the existing data is overwritten. The target snapshot must be in
-         * the <code>pending</code> state.</p> <p>Data written to a snapshot must be
-         * aligned with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
+         * <p>Writes a block of data to a snapshot. If the specified block contains data,
+         * the existing data is overwritten. The target snapshot must be in the
+         * <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned
+         * with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">AWS
          * API Reference</a></p>
          *
@@ -279,10 +284,10 @@ namespace Model
         virtual Model::PutSnapshotBlockOutcomeCallable PutSnapshotBlockCallable(const Model::PutSnapshotBlockRequest& request) const;
 
         /**
-         * <p>Writes a block of data to a block in the snapshot. If the specified block
-         * contains data, the existing data is overwritten. The target snapshot must be in
-         * the <code>pending</code> state.</p> <p>Data written to a snapshot must be
-         * aligned with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
+         * <p>Writes a block of data to a snapshot. If the specified block contains data,
+         * the existing data is overwritten. The target snapshot must be in the
+         * <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned
+         * with 512-byte sectors.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">AWS
          * API Reference</a></p>
          *

@@ -19,6 +19,7 @@ using namespace Aws::Http;
 PutBucketLifecycleConfigurationRequest::PutBucketLifecycleConfigurationRequest() : 
     m_bucketHasBeenSet(false),
     m_lifecycleConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -61,3 +62,16 @@ void PutBucketLifecycleConfigurationRequest::AddQueryStringParameters(URI& uri) 
     }
 }
 
+Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

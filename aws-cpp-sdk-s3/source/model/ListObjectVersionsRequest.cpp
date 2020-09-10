@@ -26,6 +26,7 @@ ListObjectVersionsRequest::ListObjectVersionsRequest() :
     m_maxKeysHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_versionIdMarkerHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -99,3 +100,16 @@ void ListObjectVersionsRequest::AddQueryStringParameters(URI& uri) const
     }
 }
 
+Aws::Http::HeaderValueCollection ListObjectVersionsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

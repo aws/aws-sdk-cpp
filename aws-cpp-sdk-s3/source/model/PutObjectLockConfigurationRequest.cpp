@@ -22,6 +22,7 @@ PutObjectLockConfigurationRequest::PutObjectLockConfigurationRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_tokenHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -77,6 +78,13 @@ Aws::Http::HeaderValueCollection PutObjectLockConfigurationRequest::GetRequestSp
   {
     ss << m_token;
     headers.emplace("x-amz-bucket-object-lock-token",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

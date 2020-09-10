@@ -33,7 +33,7 @@ namespace Model
    * the origin. CloudFront sends a request when it can’t find an object in its cache
    * that matches the request’s cache key. If you want to send values to the origin
    * but <i>not</i> include them in the cache key, use
-   * <code>CreateOriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>OriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ParametersInCacheKeyAndForwardedToOrigin">AWS
    * API Reference</a></p>
    */
@@ -48,104 +48,205 @@ namespace Model
 
 
     /**
-     * <p>A flag that determines whether the <code>Accept-Encoding</code> HTTP header
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
      * is included in the cache key and included in requests that CloudFront sends to
-     * the origin.</p> <p>If this field is <code>true</code> <i>and</i> the viewer
-     * request includes the <code>Accept-Encoding</code> header, then CloudFront
-     * normalizes the value of the viewer’s <code>Accept-Encoding</code> header to one
-     * of the following:</p> <ul> <li> <p> <code>Accept-Encoding: gzip</code> (if
-     * <code>gzip</code> is in the viewer’s <code>Accept-Encoding</code> header)</p>
-     * </li> <li> <p> <code>Accept-Encoding: identity</code> (if <code>gzip</code> is
-     * <i>not</i> in the viewer’s <code>Accept-Encoding</code> header)</p> </li> </ul>
-     * <p>CloudFront includes the normalized header in the cache key and includes it in
-     * requests that CloudFront sends to the origin.</p> <p>If this field is
-     * <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     * header the same as any other HTTP header in the viewer request. By default, it’s
-     * not included in the cache key and it’s not included in origin requests. You can
-     * manually add <code>Accept-Encoding</code> to the headers whitelist like any
-     * other HTTP header.</p> <p>When this field is <code>true</code>, you should not
-     * whitelist the <code>Accept-Encoding</code> header in the cache policy or in an
-     * origin request policy attached to the same cache behavior.</p> <p>For more
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
      * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
      */
     inline bool GetEnableAcceptEncodingGzip() const{ return m_enableAcceptEncodingGzip; }
 
     /**
-     * <p>A flag that determines whether the <code>Accept-Encoding</code> HTTP header
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
      * is included in the cache key and included in requests that CloudFront sends to
-     * the origin.</p> <p>If this field is <code>true</code> <i>and</i> the viewer
-     * request includes the <code>Accept-Encoding</code> header, then CloudFront
-     * normalizes the value of the viewer’s <code>Accept-Encoding</code> header to one
-     * of the following:</p> <ul> <li> <p> <code>Accept-Encoding: gzip</code> (if
-     * <code>gzip</code> is in the viewer’s <code>Accept-Encoding</code> header)</p>
-     * </li> <li> <p> <code>Accept-Encoding: identity</code> (if <code>gzip</code> is
-     * <i>not</i> in the viewer’s <code>Accept-Encoding</code> header)</p> </li> </ul>
-     * <p>CloudFront includes the normalized header in the cache key and includes it in
-     * requests that CloudFront sends to the origin.</p> <p>If this field is
-     * <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     * header the same as any other HTTP header in the viewer request. By default, it’s
-     * not included in the cache key and it’s not included in origin requests. You can
-     * manually add <code>Accept-Encoding</code> to the headers whitelist like any
-     * other HTTP header.</p> <p>When this field is <code>true</code>, you should not
-     * whitelist the <code>Accept-Encoding</code> header in the cache policy or in an
-     * origin request policy attached to the same cache behavior.</p> <p>For more
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
      * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
      */
     inline bool EnableAcceptEncodingGzipHasBeenSet() const { return m_enableAcceptEncodingGzipHasBeenSet; }
 
     /**
-     * <p>A flag that determines whether the <code>Accept-Encoding</code> HTTP header
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
      * is included in the cache key and included in requests that CloudFront sends to
-     * the origin.</p> <p>If this field is <code>true</code> <i>and</i> the viewer
-     * request includes the <code>Accept-Encoding</code> header, then CloudFront
-     * normalizes the value of the viewer’s <code>Accept-Encoding</code> header to one
-     * of the following:</p> <ul> <li> <p> <code>Accept-Encoding: gzip</code> (if
-     * <code>gzip</code> is in the viewer’s <code>Accept-Encoding</code> header)</p>
-     * </li> <li> <p> <code>Accept-Encoding: identity</code> (if <code>gzip</code> is
-     * <i>not</i> in the viewer’s <code>Accept-Encoding</code> header)</p> </li> </ul>
-     * <p>CloudFront includes the normalized header in the cache key and includes it in
-     * requests that CloudFront sends to the origin.</p> <p>If this field is
-     * <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     * header the same as any other HTTP header in the viewer request. By default, it’s
-     * not included in the cache key and it’s not included in origin requests. You can
-     * manually add <code>Accept-Encoding</code> to the headers whitelist like any
-     * other HTTP header.</p> <p>When this field is <code>true</code>, you should not
-     * whitelist the <code>Accept-Encoding</code> header in the cache policy or in an
-     * origin request policy attached to the same cache behavior.</p> <p>For more
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
      * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
      */
     inline void SetEnableAcceptEncodingGzip(bool value) { m_enableAcceptEncodingGzipHasBeenSet = true; m_enableAcceptEncodingGzip = value; }
 
     /**
-     * <p>A flag that determines whether the <code>Accept-Encoding</code> HTTP header
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
      * is included in the cache key and included in requests that CloudFront sends to
-     * the origin.</p> <p>If this field is <code>true</code> <i>and</i> the viewer
-     * request includes the <code>Accept-Encoding</code> header, then CloudFront
-     * normalizes the value of the viewer’s <code>Accept-Encoding</code> header to one
-     * of the following:</p> <ul> <li> <p> <code>Accept-Encoding: gzip</code> (if
-     * <code>gzip</code> is in the viewer’s <code>Accept-Encoding</code> header)</p>
-     * </li> <li> <p> <code>Accept-Encoding: identity</code> (if <code>gzip</code> is
-     * <i>not</i> in the viewer’s <code>Accept-Encoding</code> header)</p> </li> </ul>
-     * <p>CloudFront includes the normalized header in the cache key and includes it in
-     * requests that CloudFront sends to the origin.</p> <p>If this field is
-     * <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     * header the same as any other HTTP header in the viewer request. By default, it’s
-     * not included in the cache key and it’s not included in origin requests. You can
-     * manually add <code>Accept-Encoding</code> to the headers whitelist like any
-     * other HTTP header.</p> <p>When this field is <code>true</code>, you should not
-     * whitelist the <code>Accept-Encoding</code> header in the cache policy or in an
-     * origin request policy attached to the same cache behavior.</p> <p>For more
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
      * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
      */
     inline ParametersInCacheKeyAndForwardedToOrigin& WithEnableAcceptEncodingGzip(bool value) { SetEnableAcceptEncodingGzip(value); return *this;}
+
+
+    /**
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
+     * is included in the cache key and included in requests that CloudFront sends to
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
+     * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
+     */
+    inline bool GetEnableAcceptEncodingBrotli() const{ return m_enableAcceptEncodingBrotli; }
+
+    /**
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
+     * is included in the cache key and included in requests that CloudFront sends to
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
+     * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
+     */
+    inline bool EnableAcceptEncodingBrotliHasBeenSet() const { return m_enableAcceptEncodingBrotliHasBeenSet; }
+
+    /**
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
+     * is included in the cache key and included in requests that CloudFront sends to
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
+     * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
+     */
+    inline void SetEnableAcceptEncodingBrotli(bool value) { m_enableAcceptEncodingBrotliHasBeenSet = true; m_enableAcceptEncodingBrotli = value; }
+
+    /**
+     * <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header
+     * is included in the cache key and included in requests that CloudFront sends to
+     * the origin.</p> <p>This field is related to the
+     * <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is
+     * <code>true</code> <i>and</i> the viewer request includes the
+     * <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+     * <ul> <li> <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+     * header</p> </li> <li> <p>Includes the normalized header in the cache key</p>
+     * </li> <li> <p>Includes the normalized header in the request to the origin</p>
+     * </li> </ul> <p>If one or both of these fields are <code>true</code>, you should
+     * not whitelist the <code>Accept-Encoding</code> header in the cache policy or in
+     * an origin request policy attached to the same cache behavior.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
+     * compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>If both of these fields are <code>false</code>, then CloudFront treats the
+     * <code>Accept-Encoding</code> header the same as any other HTTP header in the
+     * viewer request. By default, it’s not included in the cache key and it’s not
+     * included in origin requests. In this case, you can manually add
+     * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
+     * header.</p>
+     */
+    inline ParametersInCacheKeyAndForwardedToOrigin& WithEnableAcceptEncodingBrotli(bool value) { SetEnableAcceptEncodingBrotli(value); return *this;}
 
 
     /**
@@ -280,6 +381,9 @@ namespace Model
 
     bool m_enableAcceptEncodingGzip;
     bool m_enableAcceptEncodingGzipHasBeenSet;
+
+    bool m_enableAcceptEncodingBrotli;
+    bool m_enableAcceptEncodingBrotliHasBeenSet;
 
     CachePolicyHeadersConfig m_headersConfig;
     bool m_headersConfigHasBeenSet;

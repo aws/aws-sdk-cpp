@@ -20,6 +20,7 @@ PutBucketPolicyRequest::PutBucketPolicyRequest() :
     m_bucketHasBeenSet(false),
     m_confirmRemoveSelfBucketAccess(false),
     m_confirmRemoveSelfBucketAccessHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -54,6 +55,13 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
   {
     ss << m_confirmRemoveSelfBucketAccess;
     headers.emplace("x-amz-confirm-remove-self-bucket-access",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

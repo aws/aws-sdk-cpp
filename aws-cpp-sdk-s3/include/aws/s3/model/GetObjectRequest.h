@@ -773,7 +773,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
@@ -782,7 +782,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
@@ -791,7 +791,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
@@ -800,7 +800,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
@@ -809,7 +809,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
@@ -818,7 +818,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
@@ -827,7 +827,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
@@ -836,7 +836,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
@@ -946,6 +946,63 @@ namespace Model
     inline GetObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
 
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline GetObjectRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline GetObjectRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline GetObjectRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -1043,6 +1100,9 @@ namespace Model
 
     int m_partNumber;
     bool m_partNumberHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

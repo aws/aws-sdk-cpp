@@ -440,8 +440,8 @@ namespace Model
          * requests that CloudFront sends to the origin. CloudFront sends a request when it
          * can’t find an object in its cache that matches the request’s cache key. If you
          * want to send values to the origin but <i>not</i> include them in the cache key,
-         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
-         * cache policies, see <a
+         * use <code>OriginRequestPolicy</code>.</p> <p>For more information about cache
+         * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
          * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -463,8 +463,8 @@ namespace Model
          * requests that CloudFront sends to the origin. CloudFront sends a request when it
          * can’t find an object in its cache that matches the request’s cache key. If you
          * want to send values to the origin but <i>not</i> include them in the cache key,
-         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
-         * cache policies, see <a
+         * use <code>OriginRequestPolicy</code>.</p> <p>For more information about cache
+         * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
          * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -488,8 +488,8 @@ namespace Model
          * requests that CloudFront sends to the origin. CloudFront sends a request when it
          * can’t find an object in its cache that matches the request’s cache key. If you
          * want to send values to the origin but <i>not</i> include them in the cache key,
-         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
-         * cache policies, see <a
+         * use <code>OriginRequestPolicy</code>.</p> <p>For more information about cache
+         * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
          * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -765,8 +765,8 @@ namespace Model
          * headers, additional ones that are added by CloudFront.</p> </li> </ul>
          * <p>CloudFront sends a request when it can’t find a valid object in its cache
          * that matches the request. If you want to send values to the origin and also
-         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
-         * more information about origin request policies, see <a
+         * include them in the cache key, use <code>CachePolicy</code>.</p> <p>For more
+         * information about origin request policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
          * origin requests</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -790,8 +790,8 @@ namespace Model
          * headers, additional ones that are added by CloudFront.</p> </li> </ul>
          * <p>CloudFront sends a request when it can’t find a valid object in its cache
          * that matches the request. If you want to send values to the origin and also
-         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
-         * more information about origin request policies, see <a
+         * include them in the cache key, use <code>CachePolicy</code>.</p> <p>For more
+         * information about origin request policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
          * origin requests</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -817,8 +817,8 @@ namespace Model
          * headers, additional ones that are added by CloudFront.</p> </li> </ul>
          * <p>CloudFront sends a request when it can’t find a valid object in its cache
          * that matches the request. If you want to send values to the origin and also
-         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
-         * more information about origin request policies, see <a
+         * include them in the cache key, use <code>CachePolicy</code>.</p> <p>For more
+         * information about origin request policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
          * origin requests</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2206,34 +2206,34 @@ namespace Model
         virtual void ListDistributionsByOriginRequestPolicyId2020_05_31Async(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of distribution that have a cache behavior that’s associated with
-         * the specified real-time log configuration.</p> <p>You can specify the real-time
-         * log configuration by its name or its Amazon Resource Name (ARN). You must
-         * provide at least one. If you provide both, CloudFront uses the name to identify
-         * the real-time log configuration to list distributions for.</p> <p>You can
-         * optionally specify the maximum number of items to receive in the response. If
-         * the total number of items in the list exceeds the maximum that you specify, or
-         * the default maximum, the response is paginated. To get the next page of items,
-         * send a subsequent request that specifies the <code>NextMarker</code> value from
-         * the current response as the <code>Marker</code> value in the subsequent request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of distributions that have a cache behavior that’s associated
+         * with the specified real-time log configuration.</p> <p>You can specify the
+         * real-time log configuration by its name or its Amazon Resource Name (ARN). You
+         * must provide at least one. If you provide both, CloudFront uses the name to
+         * identify the real-time log configuration to list distributions for.</p> <p>You
+         * can optionally specify the maximum number of items to receive in the response.
+         * If the total number of items in the list exceeds the maximum that you specify,
+         * or the default maximum, the response is paginated. To get the next page of
+         * items, send a subsequent request that specifies the <code>NextMarker</code>
+         * value from the current response as the <code>Marker</code> value in the
+         * subsequent request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig2020_05_31">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDistributionsByRealtimeLogConfig2020_05_31Outcome ListDistributionsByRealtimeLogConfig2020_05_31(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const;
 
         /**
-         * <p>Gets a list of distribution that have a cache behavior that’s associated with
-         * the specified real-time log configuration.</p> <p>You can specify the real-time
-         * log configuration by its name or its Amazon Resource Name (ARN). You must
-         * provide at least one. If you provide both, CloudFront uses the name to identify
-         * the real-time log configuration to list distributions for.</p> <p>You can
-         * optionally specify the maximum number of items to receive in the response. If
-         * the total number of items in the list exceeds the maximum that you specify, or
-         * the default maximum, the response is paginated. To get the next page of items,
-         * send a subsequent request that specifies the <code>NextMarker</code> value from
-         * the current response as the <code>Marker</code> value in the subsequent request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of distributions that have a cache behavior that’s associated
+         * with the specified real-time log configuration.</p> <p>You can specify the
+         * real-time log configuration by its name or its Amazon Resource Name (ARN). You
+         * must provide at least one. If you provide both, CloudFront uses the name to
+         * identify the real-time log configuration to list distributions for.</p> <p>You
+         * can optionally specify the maximum number of items to receive in the response.
+         * If the total number of items in the list exceeds the maximum that you specify,
+         * or the default maximum, the response is paginated. To get the next page of
+         * items, send a subsequent request that specifies the <code>NextMarker</code>
+         * value from the current response as the <code>Marker</code> value in the
+         * subsequent request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2242,17 +2242,17 @@ namespace Model
         virtual Model::ListDistributionsByRealtimeLogConfig2020_05_31OutcomeCallable ListDistributionsByRealtimeLogConfig2020_05_31Callable(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const;
 
         /**
-         * <p>Gets a list of distribution that have a cache behavior that’s associated with
-         * the specified real-time log configuration.</p> <p>You can specify the real-time
-         * log configuration by its name or its Amazon Resource Name (ARN). You must
-         * provide at least one. If you provide both, CloudFront uses the name to identify
-         * the real-time log configuration to list distributions for.</p> <p>You can
-         * optionally specify the maximum number of items to receive in the response. If
-         * the total number of items in the list exceeds the maximum that you specify, or
-         * the default maximum, the response is paginated. To get the next page of items,
-         * send a subsequent request that specifies the <code>NextMarker</code> value from
-         * the current response as the <code>Marker</code> value in the subsequent request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of distributions that have a cache behavior that’s associated
+         * with the specified real-time log configuration.</p> <p>You can specify the
+         * real-time log configuration by its name or its Amazon Resource Name (ARN). You
+         * must provide at least one. If you provide both, CloudFront uses the name to
+         * identify the real-time log configuration to list distributions for.</p> <p>You
+         * can optionally specify the maximum number of items to receive in the response.
+         * If the total number of items in the list exceeds the maximum that you specify,
+         * or the default maximum, the response is paginated. To get the next page of
+         * items, send a subsequent request that specifies the <code>NextMarker</code>
+         * value from the current response as the <code>Marker</code> value in the
+         * subsequent request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig2020_05_31">AWS
          * API Reference</a></p>
          *

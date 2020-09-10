@@ -19,6 +19,7 @@ using namespace Aws::Http;
 PutBucketTaggingRequest::PutBucketTaggingRequest() : 
     m_bucketHasBeenSet(false),
     m_taggingHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -61,3 +62,16 @@ void PutBucketTaggingRequest::AddQueryStringParameters(URI& uri) const
     }
 }
 
+Aws::Http::HeaderValueCollection PutBucketTaggingRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

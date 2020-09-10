@@ -23,6 +23,8 @@ namespace Model
 ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin() : 
     m_enableAcceptEncodingGzip(false),
     m_enableAcceptEncodingGzipHasBeenSet(false),
+    m_enableAcceptEncodingBrotli(false),
+    m_enableAcceptEncodingBrotliHasBeenSet(false),
     m_headersConfigHasBeenSet(false),
     m_cookiesConfigHasBeenSet(false),
     m_queryStringsConfigHasBeenSet(false)
@@ -32,6 +34,8 @@ ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrig
 ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin(const XmlNode& xmlNode) : 
     m_enableAcceptEncodingGzip(false),
     m_enableAcceptEncodingGzipHasBeenSet(false),
+    m_enableAcceptEncodingBrotli(false),
+    m_enableAcceptEncodingBrotliHasBeenSet(false),
     m_headersConfigHasBeenSet(false),
     m_cookiesConfigHasBeenSet(false),
     m_queryStringsConfigHasBeenSet(false)
@@ -50,6 +54,12 @@ ParametersInCacheKeyAndForwardedToOrigin& ParametersInCacheKeyAndForwardedToOrig
     {
       m_enableAcceptEncodingGzip = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAcceptEncodingGzipNode.GetText()).c_str()).c_str());
       m_enableAcceptEncodingGzipHasBeenSet = true;
+    }
+    XmlNode enableAcceptEncodingBrotliNode = resultNode.FirstChild("EnableAcceptEncodingBrotli");
+    if(!enableAcceptEncodingBrotliNode.IsNull())
+    {
+      m_enableAcceptEncodingBrotli = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAcceptEncodingBrotliNode.GetText()).c_str()).c_str());
+      m_enableAcceptEncodingBrotliHasBeenSet = true;
     }
     XmlNode headersConfigNode = resultNode.FirstChild("HeadersConfig");
     if(!headersConfigNode.IsNull())
@@ -82,6 +92,14 @@ void ParametersInCacheKeyAndForwardedToOrigin::AddToNode(XmlNode& parentNode) co
    XmlNode enableAcceptEncodingGzipNode = parentNode.CreateChildElement("EnableAcceptEncodingGzip");
    ss << std::boolalpha << m_enableAcceptEncodingGzip;
    enableAcceptEncodingGzipNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_enableAcceptEncodingBrotliHasBeenSet)
+  {
+   XmlNode enableAcceptEncodingBrotliNode = parentNode.CreateChildElement("EnableAcceptEncodingBrotli");
+   ss << std::boolalpha << m_enableAcceptEncodingBrotli;
+   enableAcceptEncodingBrotliNode.SetText(ss.str());
    ss.str("");
   }
 

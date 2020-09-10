@@ -78,34 +78,38 @@ namespace Model
 
 
     /**
-     * <p>The block index of the block in which to write the data. A block index is the
-     * offset position of a block within a snapshot, and it is used to identify the
-     * block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).</p>
+     * <p>The block index of the block in which to write the data. A block index is a
+     * logical index in units of <code>512</code> KiB blocks. To identify the block
+     * index, divide the logical offset of the data in the logical volume by the block
+     * size (logical offset of data/<code>524288</code>). The logical offset of the
+     * data must be <code>512</code> KiB aligned.</p>
      */
     inline int GetBlockIndex() const{ return m_blockIndex; }
 
     /**
-     * <p>The block index of the block in which to write the data. A block index is the
-     * offset position of a block within a snapshot, and it is used to identify the
-     * block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).</p>
+     * <p>The block index of the block in which to write the data. A block index is a
+     * logical index in units of <code>512</code> KiB blocks. To identify the block
+     * index, divide the logical offset of the data in the logical volume by the block
+     * size (logical offset of data/<code>524288</code>). The logical offset of the
+     * data must be <code>512</code> KiB aligned.</p>
      */
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
 
     /**
-     * <p>The block index of the block in which to write the data. A block index is the
-     * offset position of a block within a snapshot, and it is used to identify the
-     * block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).</p>
+     * <p>The block index of the block in which to write the data. A block index is a
+     * logical index in units of <code>512</code> KiB blocks. To identify the block
+     * index, divide the logical offset of the data in the logical volume by the block
+     * size (logical offset of data/<code>524288</code>). The logical offset of the
+     * data must be <code>512</code> KiB aligned.</p>
      */
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
 
     /**
-     * <p>The block index of the block in which to write the data. A block index is the
-     * offset position of a block within a snapshot, and it is used to identify the
-     * block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).</p>
+     * <p>The block index of the block in which to write the data. A block index is a
+     * logical index in units of <code>512</code> KiB blocks. To identify the block
+     * index, divide the logical offset of the data in the logical volume by the block
+     * size (logical offset of data/<code>524288</code>). The logical offset of the
+     * data must be <code>512</code> KiB aligned.</p>
      */
     inline PutSnapshotBlockRequest& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
 

@@ -20,6 +20,7 @@ PutBucketReplicationRequest::PutBucketReplicationRequest() :
     m_bucketHasBeenSet(false),
     m_replicationConfigurationHasBeenSet(false),
     m_tokenHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -70,6 +71,13 @@ Aws::Http::HeaderValueCollection PutBucketReplicationRequest::GetRequestSpecific
   {
     ss << m_token;
     headers.emplace("x-amz-bucket-object-lock-token",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

@@ -24,6 +24,7 @@ DeleteObjectsRequest::DeleteObjectsRequest() :
     m_requestPayerHasBeenSet(false),
     m_bypassGovernanceRetention(false),
     m_bypassGovernanceRetentionHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -86,6 +87,13 @@ Aws::Http::HeaderValueCollection DeleteObjectsRequest::GetRequestSpecificHeaders
   {
     ss << m_bypassGovernanceRetention;
     headers.emplace("x-amz-bypass-governance-retention",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

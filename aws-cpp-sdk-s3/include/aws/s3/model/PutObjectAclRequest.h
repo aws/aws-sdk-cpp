@@ -553,6 +553,63 @@ namespace Model
     inline PutObjectAclRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline PutObjectAclRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline PutObjectAclRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * different account, the request will fail with an HTTP <code>403 (Access
+     * Denied)</code> error.</p>
+     */
+    inline PutObjectAclRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -626,6 +683,9 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

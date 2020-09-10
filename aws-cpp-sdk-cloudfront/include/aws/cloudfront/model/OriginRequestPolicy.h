@@ -38,7 +38,7 @@ namespace Model
    * are added by CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it
    * can’t find an object in its cache that matches the request. If you want to send
    * values to the origin and also include them in the cache key, use
-   * <code>CreateCachePolicy</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>CachePolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicy">AWS
    * API Reference</a></p>
    */

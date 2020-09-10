@@ -26,6 +26,7 @@ PutBucketAclRequest::PutBucketAclRequest() :
     m_grantReadACPHasBeenSet(false),
     m_grantWriteHasBeenSet(false),
     m_grantWriteACPHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -109,6 +110,13 @@ Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders(
   {
     ss << m_grantWriteACP;
     headers.emplace("x-amz-grant-write-acp",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 

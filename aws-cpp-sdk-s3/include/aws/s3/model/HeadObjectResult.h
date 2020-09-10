@@ -155,13 +155,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -170,13 +172,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -185,13 +189,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -200,13 +206,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -215,13 +223,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -230,13 +240,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -245,13 +257,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */

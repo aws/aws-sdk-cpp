@@ -29,6 +29,7 @@ SelectObjectContentRequest::SelectObjectContentRequest() :
     m_inputSerializationHasBeenSet(false),
     m_outputSerializationHasBeenSet(false),
     m_scanRangeHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
@@ -125,6 +126,13 @@ Aws::Http::HeaderValueCollection SelectObjectContentRequest::GetRequestSpecificH
   {
     ss << m_sSECustomerKeyMD5;
     headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
+    ss.str("");
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
   }
 
