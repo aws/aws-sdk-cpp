@@ -116,6 +116,11 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
+    // user doesn't override user agent string
+    if (m_userAgent.empty())
+    {
+        m_userAgent = ComputeUserAgent(GetServiceClientName());
+    }
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -133,6 +138,11 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
+    // user doesn't override user agent string
+    if (m_userAgent.empty())
+    {
+        m_userAgent = ComputeUserAgent(GetServiceClientName());
+    }
 }
 
 void AWSClient::DisableRequestProcessing()
@@ -686,11 +696,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 
 void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 {
-    // user doesn't override user agent string
-    if (m_userAgent.empty())
-    {
-        m_userAgent = ComputeUserAgent(GetServiceClientName());
-    }
     httpRequest.SetUserAgent(m_userAgent);
 }
 
