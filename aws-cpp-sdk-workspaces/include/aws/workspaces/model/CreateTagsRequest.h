@@ -38,57 +38,57 @@ namespace Model
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline CreateTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline CreateTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, and IP access
-     * control groups.</p>
+     * WorkSpaces, registered directories, images, custom bundles, IP access control
+     * groups, and connection aliases.</p>
      */
     inline CreateTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

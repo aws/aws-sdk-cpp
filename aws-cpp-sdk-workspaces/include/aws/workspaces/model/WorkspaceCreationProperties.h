@@ -135,42 +135,130 @@ namespace Model
 
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline const Aws::String& GetDefaultOu() const{ return m_defaultOu; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline bool DefaultOuHasBeenSet() const { return m_defaultOuHasBeenSet; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(const Aws::String& value) { m_defaultOuHasBeenSet = true; m_defaultOu = value; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::move(value); }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(const char* value) { m_defaultOuHasBeenSet = true; m_defaultOu.assign(value); }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(const Aws::String& value) { SetDefaultOu(value); return *this;}
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(std::move(value)); return *this;}
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(const char* value) { SetDefaultOu(value); return *this;}
 
