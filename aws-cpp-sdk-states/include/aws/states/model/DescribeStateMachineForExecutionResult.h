@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/states/model/LoggingConfiguration.h>
+#include <aws/states/model/TracingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,32 @@ namespace Model
     
     inline DescribeStateMachineForExecutionResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfiguration = value; }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfiguration = std::move(value); }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -265,6 +292,8 @@ namespace Model
     Aws::Utils::DateTime m_updateDate;
 
     LoggingConfiguration m_loggingConfiguration;
+
+    TracingConfiguration m_tracingConfiguration;
   };
 
 } // namespace Model

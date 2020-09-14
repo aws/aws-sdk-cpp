@@ -8,6 +8,7 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/LoggingConfiguration.h>
+#include <aws/states/model/TracingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -210,6 +211,37 @@ namespace Model
      */
     inline UpdateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline bool TracingConfigurationHasBeenSet() const { return m_tracingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = value; }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::move(value); }
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline UpdateStateMachineRequest& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
+
+    /**
+     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     */
+    inline UpdateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -223,6 +255,9 @@ namespace Model
 
     LoggingConfiguration m_loggingConfiguration;
     bool m_loggingConfigurationHasBeenSet;
+
+    TracingConfiguration m_tracingConfiguration;
+    bool m_tracingConfigurationHasBeenSet;
   };
 
 } // namespace Model

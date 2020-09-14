@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.</p><p><h3>See
+   * <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ResourcePendingMaintenanceActions">AWS
    * API Reference</a></p>

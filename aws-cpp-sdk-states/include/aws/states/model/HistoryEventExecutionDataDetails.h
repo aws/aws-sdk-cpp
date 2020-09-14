@@ -22,9 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about the data from an execution's events. Always
-   * <code>true</code> for API calls, but may be <code>false</code> for CloudWatch
-   * Logs.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details about input or output in an execution history
+   * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEventExecutionDataDetails">AWS
    * API Reference</a></p>
    */
@@ -39,25 +38,25 @@ namespace Model
 
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code>.</p>
+     * <code>false</code> for API calls.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
 
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code>.</p>
+     * <code>false</code> for API calls.</p>
      */
     inline bool TruncatedHasBeenSet() const { return m_truncatedHasBeenSet; }
 
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code>.</p>
+     * <code>false</code> for API calls.</p>
      */
     inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
 
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code>.</p>
+     * <code>false</code> for API calls.</p>
      */
     inline HistoryEventExecutionDataDetails& WithTruncated(bool value) { SetTruncated(value); return *this;}
 

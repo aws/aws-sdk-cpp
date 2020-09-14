@@ -159,32 +159,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline const MemberLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline MemberConfiguration& WithLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline MemberConfiguration& WithLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
 

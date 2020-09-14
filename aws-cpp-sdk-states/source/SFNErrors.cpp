@@ -48,6 +48,7 @@ static const int STATE_MACHINE_DELETING_HASH = HashingUtils::HashString("StateMa
 static const int INVALID_EXECUTION_INPUT_HASH = HashingUtils::HashString("InvalidExecutionInput");
 static const int EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ExecutionDoesNotExist");
 static const int STATE_MACHINE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("StateMachineDoesNotExist");
+static const int INVALID_TRACING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTracingConfiguration");
 static const int INVALID_DEFINITION_HASH = HashingUtils::HashString("InvalidDefinition");
 static const int EXECUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ExecutionAlreadyExists");
 static const int ACTIVITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityLimitExceeded");
@@ -120,6 +121,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STATE_MACHINE_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == INVALID_TRACING_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_TRACING_CONFIGURATION), false);
   }
   else if (hashCode == INVALID_DEFINITION_HASH)
   {

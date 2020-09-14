@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 StartExecutionRequest::StartExecutionRequest() : 
     m_stateMachineArnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false)
+    m_inputHasBeenSet(false),
+    m_traceHeaderHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String StartExecutionRequest::SerializePayload() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_traceHeaderHasBeenSet)
+  {
+   payload.WithString("traceHeader", m_traceHeader);
 
   }
 

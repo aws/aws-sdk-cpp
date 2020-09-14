@@ -345,16 +345,16 @@ namespace Model
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          */
         virtual Model::ApplyPendingMaintenanceActionOutcome ApplyPendingMaintenanceAction(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          *
@@ -363,8 +363,8 @@ namespace Model
         virtual Model::ApplyPendingMaintenanceActionOutcomeCallable ApplyPendingMaintenanceActionCallable(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          *
@@ -400,11 +400,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -413,11 +414,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -428,11 +430,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -467,21 +470,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         *  <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> <p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -490,21 +493,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         *  <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> <p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -515,21 +518,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         *  <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> <p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>

@@ -16,7 +16,8 @@ UpdateStateMachineRequest::UpdateStateMachineRequest() :
     m_stateMachineArnHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false)
+    m_loggingConfigurationHasBeenSet(false),
+    m_tracingConfigurationHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,12 @@ Aws::String UpdateStateMachineRequest::SerializePayload() const
   if(m_loggingConfigurationHasBeenSet)
   {
    payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
+  if(m_tracingConfigurationHasBeenSet)
+  {
+   payload.WithObject("tracingConfiguration", m_tracingConfiguration.Jsonize());
 
   }
 

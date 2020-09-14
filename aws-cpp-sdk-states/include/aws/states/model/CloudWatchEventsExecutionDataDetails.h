@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details about execution input.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details about execution input or output.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CloudWatchEventsExecutionDataDetails">AWS
    * API Reference</a></p>
    */
@@ -37,29 +38,25 @@ namespace Model
 
     /**
      * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls, but may be <code>false</code> for CloudWatch
-     * Events.</p>
+     * <code>true</code> for API calls. </p>
      */
     inline bool GetIncluded() const{ return m_included; }
 
     /**
      * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls, but may be <code>false</code> for CloudWatch
-     * Events.</p>
+     * <code>true</code> for API calls. </p>
      */
     inline bool IncludedHasBeenSet() const { return m_includedHasBeenSet; }
 
     /**
      * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls, but may be <code>false</code> for CloudWatch
-     * Events.</p>
+     * <code>true</code> for API calls. </p>
      */
     inline void SetIncluded(bool value) { m_includedHasBeenSet = true; m_included = value; }
 
     /**
      * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls, but may be <code>false</code> for CloudWatch
-     * Events.</p>
+     * <code>true</code> for API calls. </p>
      */
     inline CloudWatchEventsExecutionDataDetails& WithIncluded(bool value) { SetIncluded(value); return *this;}
 

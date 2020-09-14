@@ -479,16 +479,16 @@ namespace Model
         virtual void GetProposalAsync(const Model::GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a listing of all invitations made on the specified
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a listing of all invitations for the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Returns a listing of all invitations made on the specified
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a listing of all invitations for the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -497,8 +497,8 @@ namespace Model
         virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Returns a listing of all invitations made on the specified
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a listing of all invitations for the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">AWS
          * API Reference</a></p>
          *

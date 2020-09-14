@@ -21,14 +21,18 @@ namespace Model
 NodeConfiguration::NodeConfiguration() : 
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false)
+    m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false)
 {
 }
 
 NodeConfiguration::NodeConfiguration(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false)
+    m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ NodeConfiguration& NodeConfiguration::operator =(JsonView jsonValue)
     m_logPublishingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StateDB"))
+  {
+    m_stateDB = StateDBTypeMapper::GetStateDBTypeForName(jsonValue.GetString("StateDB"));
+
+    m_stateDBHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue NodeConfiguration::Jsonize() const
   {
    payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
+  }
+
+  if(m_stateDBHasBeenSet)
+  {
+   payload.WithString("StateDB", StateDBTypeMapper::GetNameForStateDBType(m_stateDB));
   }
 
   return payload;

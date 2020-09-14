@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/NodeFrameworkAttributes.h>
 #include <aws/managedblockchain/model/NodeLogPublishingConfiguration.h>
+#include <aws/managedblockchain/model/StateDBType.h>
 #include <aws/managedblockchain/model/NodeStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -278,34 +279,77 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline const NodeLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline Node& WithLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a peer node owned
+     * by a member in a Managed Blockchain network.</p>
      */
     inline Node& WithLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline const StateDBType& GetStateDB() const{ return m_stateDB; }
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline bool StateDBHasBeenSet() const { return m_stateDBHasBeenSet; }
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline void SetStateDB(const StateDBType& value) { m_stateDBHasBeenSet = true; m_stateDB = value; }
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline void SetStateDB(StateDBType&& value) { m_stateDBHasBeenSet = true; m_stateDB = std::move(value); }
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline Node& WithStateDB(const StateDBType& value) { SetStateDB(value); return *this;}
+
+    /**
+     * <p>The state database that the node uses. Values are <code>LevelDB</code> or
+     * <code>CouchDB</code>.</p>
+     */
+    inline Node& WithStateDB(StateDBType&& value) { SetStateDB(std::move(value)); return *this;}
 
 
     /**
@@ -391,6 +435,9 @@ namespace Model
 
     NodeLogPublishingConfiguration m_logPublishingConfiguration;
     bool m_logPublishingConfigurationHasBeenSet;
+
+    StateDBType m_stateDB;
+    bool m_stateDBHasBeenSet;
 
     NodeStatus m_status;
     bool m_statusHasBeenSet;

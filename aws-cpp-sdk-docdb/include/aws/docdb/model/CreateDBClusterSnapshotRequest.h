@@ -47,7 +47,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
@@ -56,7 +56,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
 
@@ -65,7 +65,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
@@ -74,7 +74,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
@@ -83,7 +83,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
@@ -92,7 +92,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
@@ -110,7 +110,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * hyphens. </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 

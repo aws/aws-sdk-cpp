@@ -90,6 +90,12 @@ DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("traceHeader"))
+  {
+    m_traceHeader = jsonValue.GetString("traceHeader");
+
+  }
+
 
 
   return *this;

@@ -30,6 +30,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_preSignedUrlHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false)
@@ -135,6 +136,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_preSignedUrlHasBeenSet)
+  {
+    ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
   if(m_enableCloudwatchLogsExportsHasBeenSet)

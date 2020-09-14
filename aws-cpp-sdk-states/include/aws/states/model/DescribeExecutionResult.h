@@ -401,6 +401,42 @@ namespace Model
     
     inline DescribeExecutionResult& WithOutputDetails(CloudWatchEventsExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
+
   private:
 
     Aws::String m_executionArn;
@@ -422,6 +458,8 @@ namespace Model
     Aws::String m_output;
 
     CloudWatchEventsExecutionDataDetails m_outputDetails;
+
+    Aws::String m_traceHeader;
   };
 
 } // namespace Model

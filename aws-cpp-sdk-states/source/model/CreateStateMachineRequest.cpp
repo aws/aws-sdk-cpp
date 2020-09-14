@@ -19,7 +19,8 @@ CreateStateMachineRequest::CreateStateMachineRequest() :
     m_type(StateMachineType::NOT_SET),
     m_typeHasBeenSet(false),
     m_loggingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tracingConfigurationHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String CreateStateMachineRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_tracingConfigurationHasBeenSet)
+  {
+   payload.WithObject("tracingConfiguration", m_tracingConfiguration.Jsonize());
 
   }
 

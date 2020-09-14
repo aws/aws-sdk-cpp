@@ -80,6 +80,12 @@ DescribeStateMachineResult& DescribeStateMachineResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("tracingConfiguration"))
+  {
+    m_tracingConfiguration = jsonValue.GetObject("tracingConfiguration");
+
+  }
+
 
 
   return *this;

@@ -84,49 +84,49 @@ namespace Model
 
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * <p>The database engine version to return.</p> <p>Example: <code>3.6.0</code>
      * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}

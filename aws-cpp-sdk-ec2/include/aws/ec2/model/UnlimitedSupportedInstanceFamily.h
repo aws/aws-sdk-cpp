@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     t2,
     t3,
-    t3a
+    t3a,
+    t4g
   };
 
 namespace UnlimitedSupportedInstanceFamilyMapper

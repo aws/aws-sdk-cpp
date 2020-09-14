@@ -26,6 +26,8 @@ Node::Node() :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -40,6 +42,8 @@ Node::Node(JsonView jsonValue) :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -96,6 +100,13 @@ Node& Node::operator =(JsonView jsonValue)
     m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
 
     m_logPublishingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateDB"))
+  {
+    m_stateDB = StateDBTypeMapper::GetStateDBTypeForName(jsonValue.GetString("StateDB"));
+
+    m_stateDBHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -159,6 +170,11 @@ JsonValue Node::Jsonize() const
   {
    payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
+  }
+
+  if(m_stateDBHasBeenSet)
+  {
+   payload.WithString("StateDB", StateDBTypeMapper::GetNameForStateDBType(m_stateDB));
   }
 
   if(m_statusHasBeenSet)
