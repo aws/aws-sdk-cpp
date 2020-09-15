@@ -15,7 +15,7 @@ public class ShapeMember {
     //Right now we need the real value of this field to do parameter validation before sending out the request.
     //It's preferred to use this value but it appears in multiple places. Change current value 'false' to it's 'real value' is risky.
     //It's safer to copy it's value to another variable (now isValidationNeeded) and validate based on that.
-    boolean isRequired; 
+    boolean isRequired;
     boolean isValidationNeeded;
     boolean streaming;
     String documentation;
@@ -26,6 +26,7 @@ public class ShapeMember {
     boolean isFlattened;
     boolean isCustomizedQuery;
     boolean isEventPayload;
+    boolean isEventHeader;
     boolean hostLabel;
     boolean endpointDiscoveryId;
     boolean xmlAttribute;

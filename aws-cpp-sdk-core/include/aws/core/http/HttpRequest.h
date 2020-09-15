@@ -69,7 +69,7 @@ namespace Aws
              * Initializes an HttpRequest object with uri and http method.
              */
             HttpRequest(const URI& uri, HttpMethod method) :
-                m_uri(uri), m_method(method)
+                m_uri(uri), m_method(method), m_isEvenStreamRequest(false)
             {}
 
             virtual ~HttpRequest() {}
@@ -523,9 +523,12 @@ namespace Aws
             Aws::String GetResolvedRemoteHost() const { return m_resolvedRemoteHost; }
             void SetResolvedRemoteHost(const Aws::String& ip) { m_resolvedRemoteHost = ip; }
 
+            bool IsEventStreamRequest() { return m_isEvenStreamRequest; }
+            void SetEventStreamRequest(bool eventStreamRequest) { m_isEvenStreamRequest = eventStreamRequest; }
         private:
             URI m_uri;
             HttpMethod m_method;
+            bool m_isEvenStreamRequest;
             DataReceivedEventHandler m_onDataReceived;
             DataSentEventHandler m_onDataSent;
             ContinueRequestHandler m_continueRequest;
@@ -537,6 +540,3 @@ namespace Aws
 
     } // namespace Http
 } // namespace Aws
-
-
-

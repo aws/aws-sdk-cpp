@@ -123,10 +123,12 @@ static char* strdup_callback(const char* str)
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(const CurlHttpClient* client,
+                             CURL* curlHandle,
                              HttpRequest* request,
                              HttpResponse* response,
                              Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
         m_client(client),
+        m_curlHandle(curlHandle),
         m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter),
@@ -134,6 +136,7 @@ struct CurlWriteCallbackContext
     {}
 
     const CurlHttpClient* m_client;
+    CURL* m_curlHandle;
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
@@ -142,15 +145,19 @@ struct CurlWriteCallbackContext
 
 struct CurlReadCallbackContext
 {
-    CurlReadCallbackContext(const CurlHttpClient* client, HttpRequest* request, Aws::Utils::RateLimits::RateLimiterInterface* limiter) :
+    CurlReadCallbackContext(const CurlHttpClient* client, CURL* curlHandle, HttpRequest* request, Aws::Utils::RateLimits::RateLimiterInterface* limiter) :
         m_client(client),
+        m_curlHandle(curlHandle),
         m_rateLimiter(limiter),
-        m_request(request)
+        m_request(request),
+        m_readPaused(false)
     {}
 
     const CurlHttpClient* m_client;
+    CURL* m_curlHandle;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     HttpRequest* m_request;
+    bool m_readPaused;
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -175,6 +182,10 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         }
 
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        if (context->m_request->IsEventStreamRequest())
+        {
+            response->GetResponseBody().flush();
+        }
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
         {
@@ -192,8 +203,9 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
+        CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, ptr);
-        HttpResponse* response = (HttpResponse*) userdata;
+        HttpResponse* response = context->m_response;
         Aws::String headerLine(ptr);
         Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(headerLine, ':', 2);
 
@@ -228,8 +240,28 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
     const size_t amountToRead = size * nmemb;
     if (ioStream != nullptr && amountToRead > 0)
     {
-        ioStream->read(ptr, amountToRead);
+        if (request->IsEventStreamRequest())
+        {
+            ioStream->readsome(ptr, amountToRead);
+        }
+        else
+        {
+            ioStream->read(ptr, amountToRead);
+        }
+
         size_t amountRead = static_cast<size_t>(ioStream->gcount());
+        if (amountRead == 0)
+        {
+            if (ioStream->eof())
+            {
+                return 0;
+            }
+            else
+            {
+                context->m_readPaused = true;
+                return CURL_READFUNC_PAUSE;
+            }
+        }
         auto& sentHandler = request->GetDataSentEventHandler();
         if (sentHandler)
         {
@@ -287,6 +319,22 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
     }
 
     return CURL_SEEKFUNC_OK;
+}
+
+static int CurlProgressCallback(void *userdata,   curl_off_t,   curl_off_t,   curl_off_t,   curl_off_t)
+{
+    CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
+    if (!context)
+    {
+        return CURLE_ABORTED_BY_CALLBACK;
+    }
+
+    if (context->m_readPaused)
+    {
+        context->m_readPaused = false;
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+    }
+    return 0;
 }
 
 void SetOptCodeForHttpMethod(CURL* requestHandle, const std::shared_ptr<HttpRequest>& request)
@@ -504,8 +552,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        CurlWriteCallbackContext writeContext(this, request.get(), response.get(), readLimiter);
-        CurlReadCallbackContext readContext(this, request.get(), writeLimiter);
+        CurlWriteCallbackContext writeContext(this, connectionHandle, request.get(), response.get(), readLimiter);
+        CurlReadCallbackContext readContext(this, connectionHandle, request.get(), writeLimiter);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
 
@@ -513,7 +561,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEFUNCTION, WriteData);
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, WriteHeader);
-        curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
+        curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, &writeContext);
 
         //we only want to override the default path if someone has explicitly told us to.
         if(!m_caPath.empty())
@@ -605,7 +653,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
+            if (request->IsEventStreamRequest())
+            {
+                curl_easy_setopt(connectionHandle, CURLOPT_NOPROGRESS, 0L);
+                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlProgressCallback);
+                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFODATA, &readContext);
+            }
         }
+
         OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);

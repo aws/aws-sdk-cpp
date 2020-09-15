@@ -63,7 +63,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                 } else {
                     template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
                 }
-            } else if (shape.isEventStream() && shape.hasNestedEventPayloadMembers()) { // streams with event-payload members are input event-streams
+            } else if (shape.isEventStream() && shape.isOutgoingEventStream()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/EventStreamHeader.vm", StandardCharsets.UTF_8.name());
             } else if (shape.isStructure()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm", StandardCharsets.UTF_8.name());
@@ -86,9 +86,9 @@ public class JsonCppClientGenerator extends CppClientGenerator {
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
 
-        // if the shape is an event and has a single blob member then we don't need a source file, because the whole
+        // if the shape is an event and its content type is "blob" then we don't need a source file, because the whole
         // class is implemented in the header file. See EventHeader.vm
-        if (shape.isEvent() && shape.getMembers().size() == 1 && shape.hasBlobMembers())
+        if (shape.isEvent() && shape.getEventPayloadType().equals("blob"))
             return null;
 
         if (shape.isException() && !shape.isJsonModeledException())

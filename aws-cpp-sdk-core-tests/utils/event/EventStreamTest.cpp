@@ -230,12 +230,12 @@ namespace
         }
 
         io.flush();
-        io.Close();
         ASSERT_TRUE(io);
 
         char output[1024];
-        io.read(output, sizeof(output));
+        io.readsome(output, sizeof(output));
         ASSERT_GE(io.gcount(), static_cast<long>(sizeof(payloadString) * iterations));
+        io.Close();
         ASSERT_TRUE(io.eof());
     }
 
@@ -262,12 +262,12 @@ namespace
         io.WriteEvent(msg);
 
         io.flush();
-        io.Close();
         ASSERT_TRUE(io);
 
         // read the event bits and attempt to deserialize them
         char output[1024];
-        io.read(output, sizeof(output));
+        io.readsome(output, sizeof(output));
+        io.Close();
         ASSERT_TRUE(io.eof());
 
         // verify that we get the same message out

@@ -165,6 +165,32 @@ public class C2jModelToGeneratorModelTransformer {
                 shape.RemoveMember("contentType");
                 shape.RemoveMember("ContentType");
             }
+
+            /**
+             * Decide event payload type, should be one of them: "blob" | "string" | "structure" | null
+             */
+            if (shape.isEvent()) {
+                if (!shape.getMembers().values().stream().anyMatch(member -> !member.isEventHeader())) {
+                    // Header only event
+                    shape.setEventPayloadType(null);
+                } else if (shape.hasEventPayloadMembers() || shape.getMembers().size() == 1) {
+                    if (shape.getMembers().size() == 1) {
+                        shape.getMembers().entrySet().stream().forEach(memberEntry -> {
+                            shape.setEventPayloadMemberName(memberEntry.getKey());
+                            shape.setEventPayloadType(memberEntry.getValue().getShape().getType());
+                        });
+                    } else {
+                        throw new RuntimeException("Event shape used in Event Stream should only has one member if it has event payload member.");
+                    }
+                } else if (shape.getMembers().size() > 1) {
+                    if (!shape.getType().equals("structure")) {
+                        throw new RuntimeException("Event shape should always has \"structure\" type if has multiple members.");
+                    }
+                    shape.setEventPayloadType(shape.getType());
+                } else {
+                    shape.setEventPayloadType(null);
+                }
+            }
         }
     }
 
@@ -286,6 +312,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
+        shapeMember.setEventHeader(c2jShapeMember.isEventheader());
         shapeMember.setHostLabel(c2jShapeMember.isHostLabel());
         shapeMember.setEndpointDiscoveryId(c2jShapeMember.isEndpointdiscoveryid());
         shapeMember.setXmlAttribute(c2jShapeMember.isXmlAttribute());
@@ -425,6 +452,8 @@ public class C2jModelToGeneratorModelTransformer {
             if(c2jOperation.isHttpChecksumRequired()) {
                 requestShape.setComputeContentMd5(true);
             }
+
+            requestShape.getMembers().values().stream().filter(member -> member.getShape().isEventStream()).forEach(member -> member.getShape().setOutgoingEventStream(true));
 
             ShapeMember requestMember = new ShapeMember();
             requestMember.setShape(requestShape);

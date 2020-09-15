@@ -20,6 +20,7 @@ public class C2jShapeMember {
     boolean deprecated;
     boolean flattened;
     boolean eventpayload;
+    boolean eventheader;
     boolean hostLabel;
     boolean endpointdiscoveryid;
     boolean xmlAttribute;

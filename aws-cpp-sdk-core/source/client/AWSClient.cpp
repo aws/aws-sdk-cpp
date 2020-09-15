@@ -233,6 +233,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     for (long retries = 0;; retries++)
     {
         m_retryStrategy->GetSendToken();
+        httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
+
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion);
         if (retries == 0)
         {

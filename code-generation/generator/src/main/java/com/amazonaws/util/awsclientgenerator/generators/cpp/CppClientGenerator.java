@@ -127,12 +127,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
             EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
         }
-        else if (shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
+        else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EventHeader.vm", StandardCharsets.UTF_8.name());
-            if (shape.getMembers().size() != 1) {
-                throw new RuntimeException("Blob event shape used in Event Stream should only has one member.");
-            }
-            shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getValue().getShape().isBlob()).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
+            shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getKey().equals(shape.getEventPayloadMemberName())).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
         }
         context.put("shape", shape);
         context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
