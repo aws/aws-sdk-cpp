@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-   * registry in your Amazon Virtual Private Cloud (VPC).</p><p><h3>See Also:</h3>  
-   * <a
+   * registry accessible from your Amazon Virtual Private Cloud (VPC).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageConfig">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline const RepositoryAccessMode& GetRepositoryAccessMode() const{ return m_repositoryAccessMode; }
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline bool RepositoryAccessModeHasBeenSet() const { return m_repositoryAccessModeHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline void SetRepositoryAccessMode(const RepositoryAccessMode& value) { m_repositoryAccessModeHasBeenSet = true; m_repositoryAccessMode = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline void SetRepositoryAccessMode(RepositoryAccessMode&& value) { m_repositoryAccessModeHasBeenSet = true; m_repositoryAccessMode = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline ImageConfig& WithRepositoryAccessMode(const RepositoryAccessMode& value) { SetRepositoryAccessMode(value); return *this;}
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>Set this to one of the following values:</p> <ul> <li> <p>
      * <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li> <li>
-     * <p> <code>VPC</code> - The model image is hosted in a private Docker registry in
+     * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
     inline ImageConfig& WithRepositoryAccessMode(RepositoryAccessMode&& value) { SetRepositoryAccessMode(std::move(value)); return *this;}

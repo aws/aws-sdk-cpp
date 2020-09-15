@@ -179,10 +179,11 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -192,10 +193,11 @@ namespace Model
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -205,10 +207,11 @@ namespace Model
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -218,10 +221,11 @@ namespace Model
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -231,10 +235,11 @@ namespace Model
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -244,10 +249,11 @@ namespace Model
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -257,10 +263,11 @@ namespace Model
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -270,10 +277,11 @@ namespace Model
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -285,8 +293,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */
@@ -294,8 +302,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */
@@ -303,8 +311,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */
@@ -312,8 +320,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */
@@ -321,8 +329,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */
@@ -330,8 +338,8 @@ namespace Model
 
     /**
      * <p>Specifies whether the model container is in Amazon ECR or a private Docker
-     * registry in your Amazon Virtual Private Cloud (VPC). For information about
-     * storing containers in a private Docker registry, see <a
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
      * a Private Docker Registry for Real-Time Inference Containers</a> </p>
      */

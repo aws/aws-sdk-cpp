@@ -145,11 +145,70 @@ namespace Model
      */
     inline GetBootstrapBrokersResult& WithBootstrapBrokerStringTls(const char* value) { SetBootstrapBrokerStringTls(value); return *this;}
 
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline const Aws::String& GetBootstrapBrokerStringSaslScram() const{ return m_bootstrapBrokerStringSaslScram; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringSaslScram(const Aws::String& value) { m_bootstrapBrokerStringSaslScram = value; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringSaslScram(Aws::String&& value) { m_bootstrapBrokerStringSaslScram = std::move(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringSaslScram(const char* value) { m_bootstrapBrokerStringSaslScram.assign(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringSaslScram(const Aws::String& value) { SetBootstrapBrokerStringSaslScram(value); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringSaslScram(Aws::String&& value) { SetBootstrapBrokerStringSaslScram(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and Sasl Scram
+     * port pairs.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringSaslScram(const char* value) { SetBootstrapBrokerStringSaslScram(value); return *this;}
+
   private:
 
     Aws::String m_bootstrapBrokerString;
 
     Aws::String m_bootstrapBrokerStringTls;
+
+    Aws::String m_bootstrapBrokerStringSaslScram;
   };
 
 } // namespace Model

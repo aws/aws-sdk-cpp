@@ -162,66 +162,66 @@ namespace Model
 
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline const Aws::String& GetInitialActiveLearningModelArn() const{ return m_initialActiveLearningModelArn; }
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline bool InitialActiveLearningModelArnHasBeenSet() const { return m_initialActiveLearningModelArnHasBeenSet; }
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline void SetInitialActiveLearningModelArn(const Aws::String& value) { m_initialActiveLearningModelArnHasBeenSet = true; m_initialActiveLearningModelArn = value; }
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline void SetInitialActiveLearningModelArn(Aws::String&& value) { m_initialActiveLearningModelArnHasBeenSet = true; m_initialActiveLearningModelArn = std::move(value); }
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline void SetInitialActiveLearningModelArn(const char* value) { m_initialActiveLearningModelArnHasBeenSet = true; m_initialActiveLearningModelArn.assign(value); }
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline LabelingJobAlgorithmsConfig& WithInitialActiveLearningModelArn(const Aws::String& value) { SetInitialActiveLearningModelArn(value); return *this;}
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline LabelingJobAlgorithmsConfig& WithInitialActiveLearningModelArn(Aws::String&& value) { SetInitialActiveLearningModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
-     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
-     * this model as the starting point for subsequent similar jobs by providing the
-     * ARN of the model here. </p>
+     * <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name
+     * (ARN) of the final model used for auto-labeling. You can use this model as the
+     * starting point for subsequent similar jobs by providing the ARN of the model
+     * here. </p>
      */
     inline LabelingJobAlgorithmsConfig& WithInitialActiveLearningModelArn(const char* value) { SetInitialActiveLearningModelArn(value); return *this;}
 

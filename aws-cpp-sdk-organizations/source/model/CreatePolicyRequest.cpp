@@ -17,7 +17,8 @@ CreatePolicyRequest::CreatePolicyRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(PolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreatePolicyRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", PolicyTypeMapper::GetNameForPolicyType(m_type));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

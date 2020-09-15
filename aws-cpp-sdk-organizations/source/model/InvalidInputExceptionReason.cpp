@@ -41,6 +41,7 @@ namespace Aws
         static const int UNRECOGNIZED_SERVICE_PRINCIPAL_HASH = HashingUtils::HashString("UNRECOGNIZED_SERVICE_PRINCIPAL");
         static const int INVALID_ROLE_NAME_HASH = HashingUtils::HashString("INVALID_ROLE_NAME");
         static const int INVALID_SYSTEM_TAGS_PARAMETER_HASH = HashingUtils::HashString("INVALID_SYSTEM_TAGS_PARAMETER");
+        static const int DUPLICATE_TAG_KEY_HASH = HashingUtils::HashString("DUPLICATE_TAG_KEY");
         static const int TARGET_NOT_SUPPORTED_HASH = HashingUtils::HashString("TARGET_NOT_SUPPORTED");
 
 
@@ -131,6 +132,10 @@ namespace Aws
           {
             return InvalidInputExceptionReason::INVALID_SYSTEM_TAGS_PARAMETER;
           }
+          else if (hashCode == DUPLICATE_TAG_KEY_HASH)
+          {
+            return InvalidInputExceptionReason::DUPLICATE_TAG_KEY;
+          }
           else if (hashCode == TARGET_NOT_SUPPORTED_HASH)
           {
             return InvalidInputExceptionReason::TARGET_NOT_SUPPORTED;
@@ -191,6 +196,8 @@ namespace Aws
             return "INVALID_ROLE_NAME";
           case InvalidInputExceptionReason::INVALID_SYSTEM_TAGS_PARAMETER:
             return "INVALID_SYSTEM_TAGS_PARAMETER";
+          case InvalidInputExceptionReason::DUPLICATE_TAG_KEY:
+            return "DUPLICATE_TAG_KEY";
           case InvalidInputExceptionReason::TARGET_NOT_SUPPORTED:
             return "TARGET_NOT_SUPPORTED";
           default:

@@ -912,33 +912,41 @@ STANDARD: Create an
 
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline int GetIndexNSegments() const{ return m_indexNSegments; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline bool IndexNSegmentsHasBeenSet() const { return m_indexNSegmentsHasBeenSet; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline void SetIndexNSegments(int value) { m_indexNSegmentsHasBeenSet = true; m_indexNSegments = value; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline HlsGroupSettings& WithIndexNSegments(int value) { SetIndexNSegments(value); return *this;}
@@ -1074,26 +1082,62 @@ STANDARD: Create an
 
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline int GetKeepSegments() const{ return m_keepSegments; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline bool KeepSegmentsHasBeenSet() const { return m_keepSegmentsHasBeenSet; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline void SetKeepSegments(int value) { m_keepSegmentsHasBeenSet = true; m_keepSegments = value; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline HlsGroupSettings& WithKeepSegments(int value) { SetKeepSegments(value); return *this;}
 

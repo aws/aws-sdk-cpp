@@ -85,6 +85,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline const IndexEdition& GetEdition() const{ return m_edition; }
 
@@ -93,6 +95,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
 
@@ -101,6 +105,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
 
@@ -109,6 +115,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
 
@@ -117,6 +125,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline CreateIndexRequest& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
 
@@ -125,6 +135,8 @@ namespace Model
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
+     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline CreateIndexRequest& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 

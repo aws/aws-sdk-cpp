@@ -14,6 +14,7 @@
 #include <aws/transcribe/model/ModelSettings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -747,6 +748,96 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -781,6 +872,12 @@ namespace Model
 
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    Aws::Vector<LanguageCode> m_languageOptions;
+    bool m_languageOptionsHasBeenSet;
   };
 
 } // namespace Model

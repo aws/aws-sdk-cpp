@@ -20,12 +20,16 @@ namespace Model
 
 FacetResult::FacetResult() : 
     m_documentAttributeKeyHasBeenSet(false),
+    m_documentAttributeValueType(DocumentAttributeValueType::NOT_SET),
+    m_documentAttributeValueTypeHasBeenSet(false),
     m_documentAttributeValueCountPairsHasBeenSet(false)
 {
 }
 
 FacetResult::FacetResult(JsonView jsonValue) : 
     m_documentAttributeKeyHasBeenSet(false),
+    m_documentAttributeValueType(DocumentAttributeValueType::NOT_SET),
+    m_documentAttributeValueTypeHasBeenSet(false),
     m_documentAttributeValueCountPairsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +42,13 @@ FacetResult& FacetResult::operator =(JsonView jsonValue)
     m_documentAttributeKey = jsonValue.GetString("DocumentAttributeKey");
 
     m_documentAttributeKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentAttributeValueType"))
+  {
+    m_documentAttributeValueType = DocumentAttributeValueTypeMapper::GetDocumentAttributeValueTypeForName(jsonValue.GetString("DocumentAttributeValueType"));
+
+    m_documentAttributeValueTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DocumentAttributeValueCountPairs"))
@@ -61,6 +72,11 @@ JsonValue FacetResult::Jsonize() const
   {
    payload.WithString("DocumentAttributeKey", m_documentAttributeKey);
 
+  }
+
+  if(m_documentAttributeValueTypeHasBeenSet)
+  {
+   payload.WithString("DocumentAttributeValueType", DocumentAttributeValueTypeMapper::GetNameForDocumentAttributeValueType(m_documentAttributeValueType));
   }
 
   if(m_documentAttributeValueCountPairsHasBeenSet)

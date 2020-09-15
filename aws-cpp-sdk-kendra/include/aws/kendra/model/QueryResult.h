@@ -165,20 +165,23 @@ namespace Model
 
 
     /**
-     * <p>The number of items returned by the search. Use this to determine when you
-     * have requested the last set of results.</p>
+     * <p>The total number of items found by the search; however, you can only retrieve
+     * up to 100 items. For example, if the search found 192 items, you can only
+     * retrieve the first 100 of the items.</p>
      */
     inline int GetTotalNumberOfResults() const{ return m_totalNumberOfResults; }
 
     /**
-     * <p>The number of items returned by the search. Use this to determine when you
-     * have requested the last set of results.</p>
+     * <p>The total number of items found by the search; however, you can only retrieve
+     * up to 100 items. For example, if the search found 192 items, you can only
+     * retrieve the first 100 of the items.</p>
      */
     inline void SetTotalNumberOfResults(int value) { m_totalNumberOfResults = value; }
 
     /**
-     * <p>The number of items returned by the search. Use this to determine when you
-     * have requested the last set of results.</p>
+     * <p>The total number of items found by the search; however, you can only retrieve
+     * up to 100 items. For example, if the search found 192 items, you can only
+     * retrieve the first 100 of the items.</p>
      */
     inline QueryResult& WithTotalNumberOfResults(int value) { SetTotalNumberOfResults(value); return *this;}
 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/Sasl.h>
 #include <aws/kafka/model/Tls.h>
 #include <utility>
 
@@ -38,6 +39,49 @@ namespace Model
     ClientAuthentication(Aws::Utils::Json::JsonView jsonValue);
     ClientAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline const Sasl& GetSasl() const{ return m_sasl; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline bool SaslHasBeenSet() const { return m_saslHasBeenSet; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline void SetSasl(const Sasl& value) { m_saslHasBeenSet = true; m_sasl = value; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline void SetSasl(Sasl&& value) { m_saslHasBeenSet = true; m_sasl = std::move(value); }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline ClientAuthentication& WithSasl(const Sasl& value) { SetSasl(value); return *this;}
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline ClientAuthentication& WithSasl(Sasl&& value) { SetSasl(std::move(value)); return *this;}
 
 
     /**
@@ -83,6 +127,9 @@ namespace Model
     inline ClientAuthentication& WithTls(Tls&& value) { SetTls(std::move(value)); return *this;}
 
   private:
+
+    Sasl m_sasl;
+    bool m_saslHasBeenSet;
 
     Tls m_tls;
     bool m_tlsHasBeenSet;

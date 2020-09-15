@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     VERY_HIGH,
     HIGH,
-    MEDIUM
+    MEDIUM,
+    LOW
   };
 
 namespace ScoreConfidenceMapper

@@ -28,6 +28,7 @@ namespace Aws
         static const int MP4_FILE_HASH = HashingUtils::HashString("MP4_FILE");
         static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
         static const int INPUT_DEVICE_HASH = HashingUtils::HashString("INPUT_DEVICE");
+        static const int AWS_CDI_HASH = HashingUtils::HashString("AWS_CDI");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return InputType::INPUT_DEVICE;
           }
+          else if (hashCode == AWS_CDI_HASH)
+          {
+            return InputType::AWS_CDI;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "MEDIACONNECT";
           case InputType::INPUT_DEVICE:
             return "INPUT_DEVICE";
+          case InputType::AWS_CDI:
+            return "AWS_CDI";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

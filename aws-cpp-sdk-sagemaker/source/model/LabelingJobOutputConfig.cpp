@@ -20,13 +20,15 @@ namespace Model
 
 LabelingJobOutputConfig::LabelingJobOutputConfig() : 
     m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_snsTopicArnHasBeenSet(false)
 {
 }
 
 LabelingJobOutputConfig::LabelingJobOutputConfig(JsonView jsonValue) : 
     m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_snsTopicArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ LabelingJobOutputConfig& LabelingJobOutputConfig::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsTopicArn"))
+  {
+    m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
+
+    m_snsTopicArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue LabelingJobOutputConfig::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_snsTopicArnHasBeenSet)
+  {
+   payload.WithString("SnsTopicArn", m_snsTopicArn);
 
   }
 

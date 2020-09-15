@@ -111,56 +111,56 @@ namespace Model
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline DescribeEffectivePolicyRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline DescribeEffectivePolicyRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p>When you're signed in as the master account, specify the ID of the account
      * that you want details about. Specifying an organization root or organizational
-     * unit (OU) as the target is not supported. </p>
+     * unit (OU) as the target is not supported.</p>
      */
     inline DescribeEffectivePolicyRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 

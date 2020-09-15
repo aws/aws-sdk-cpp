@@ -31,7 +31,11 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
     m_contentRedactionHasBeenSet(false),
-    m_modelSettingsHasBeenSet(false)
+    m_modelSettingsHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false)
 {
 }
 
@@ -48,7 +52,11 @@ TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) :
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
     m_contentRedactionHasBeenSet(false),
-    m_modelSettingsHasBeenSet(false)
+    m_modelSettingsHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +133,20 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     m_modelSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifyLanguage"))
+  {
+    m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
+
+    m_identifyLanguageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifiedLanguageScore"))
+  {
+    m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
+
+    m_identifiedLanguageScoreHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +205,18 @@ JsonValue TranscriptionJobSummary::Jsonize() const
   if(m_modelSettingsHasBeenSet)
   {
    payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
+
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+   payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_identifiedLanguageScoreHasBeenSet)
+  {
+   payload.WithDouble("IdentifiedLanguageScore", m_identifiedLanguageScore);
 
   }
 

@@ -17,7 +17,8 @@ CreateAccountRequest::CreateAccountRequest() :
     m_accountNameHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_iamUserAccessToBilling(IAMUserAccessToBilling::NOT_SET),
-    m_iamUserAccessToBillingHasBeenSet(false)
+    m_iamUserAccessToBillingHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreateAccountRequest::SerializePayload() const
   if(m_iamUserAccessToBillingHasBeenSet)
   {
    payload.WithString("IamUserAccessToBilling", IAMUserAccessToBillingMapper::GetNameForIAMUserAccessToBilling(m_iamUserAccessToBilling));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

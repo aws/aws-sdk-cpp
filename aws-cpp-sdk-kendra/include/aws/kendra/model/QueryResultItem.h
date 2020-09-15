@@ -375,72 +375,72 @@ namespace Model
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline const ScoreAttributes& GetScoreAttributes() const{ return m_scoreAttributes; }
 
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline bool ScoreAttributesHasBeenSet() const { return m_scoreAttributesHasBeenSet; }
 
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline void SetScoreAttributes(const ScoreAttributes& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = value; }
 
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline void SetScoreAttributes(ScoreAttributes&& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = std::move(value); }
 
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline QueryResultItem& WithScoreAttributes(const ScoreAttributes& value) { SetScoreAttributes(value); return *this;}
 
     /**
      * <p>Indicates the confidence that Amazon Kendra has that a result matches the
      * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and <code>MEDIUM</code>.
-     * You can use the score to determine if a response meets the confidence needed for
-     * your application.</p> <p>Confidence scores are only returned for results with
-     * the <code>Type</code> field set to <code>QUESTION_ANSWER</code> or
-     * <code>ANSWER</code>. This field is not returned if the <code>Type</code> field
-     * is set to <code>DOCUMENT</code>.</p>
+     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the
+     * confidence needed for your application.</p> <p>The field is only set to
+     * <code>LOW</code> when the <code>Type</code> field is set to
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+     * the query.</p>
      */
     inline QueryResultItem& WithScoreAttributes(ScoreAttributes&& value) { SetScoreAttributes(std::move(value)); return *this;}
 

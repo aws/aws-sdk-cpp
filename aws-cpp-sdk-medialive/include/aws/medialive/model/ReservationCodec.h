@@ -19,7 +19,8 @@ namespace Model
     MPEG2,
     AVC,
     HEVC,
-    AUDIO
+    AUDIO,
+    LINK
   };
 
 namespace ReservationCodecMapper

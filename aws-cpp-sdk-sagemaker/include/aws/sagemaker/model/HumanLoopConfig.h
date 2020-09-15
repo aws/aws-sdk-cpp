@@ -238,47 +238,51 @@ namespace Model
 
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline HumanLoopConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline HumanLoopConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
 

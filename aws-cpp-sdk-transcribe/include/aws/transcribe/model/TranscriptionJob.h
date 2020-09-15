@@ -16,6 +16,7 @@
 #include <aws/transcribe/model/ModelSettings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -754,6 +755,113 @@ namespace Model
      */
     inline TranscriptionJob& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that shows if automatic language identification was enabled for a
+     * transcription job.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>A value that shows if automatic language identification was enabled for a
+     * transcription job.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>A value that shows if automatic language identification was enabled for a
+     * transcription job.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>A value that shows if automatic language identification was enabled for a
+     * transcription job.</p>
+     */
+    inline TranscriptionJob& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline TranscriptionJob& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline TranscriptionJob& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline TranscriptionJob& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
+
+    /**
+     * <p>An object that shows the optional array of languages inputted for
+     * transcription jobs with automatic language identification enabled.</p>
+     */
+    inline TranscriptionJob& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The score that Amazon Transcribe gives for the predominant language that it
+     * identified in your collection of source audio files. This score reflects the
+     * confidence that the language that Amazon Transcribe identified is the correct
+     * language.</p>
+     */
+    inline double GetIdentifiedLanguageScore() const{ return m_identifiedLanguageScore; }
+
+    /**
+     * <p>The score that Amazon Transcribe gives for the predominant language that it
+     * identified in your collection of source audio files. This score reflects the
+     * confidence that the language that Amazon Transcribe identified is the correct
+     * language.</p>
+     */
+    inline bool IdentifiedLanguageScoreHasBeenSet() const { return m_identifiedLanguageScoreHasBeenSet; }
+
+    /**
+     * <p>The score that Amazon Transcribe gives for the predominant language that it
+     * identified in your collection of source audio files. This score reflects the
+     * confidence that the language that Amazon Transcribe identified is the correct
+     * language.</p>
+     */
+    inline void SetIdentifiedLanguageScore(double value) { m_identifiedLanguageScoreHasBeenSet = true; m_identifiedLanguageScore = value; }
+
+    /**
+     * <p>The score that Amazon Transcribe gives for the predominant language that it
+     * identified in your collection of source audio files. This score reflects the
+     * confidence that the language that Amazon Transcribe identified is the correct
+     * language.</p>
+     */
+    inline TranscriptionJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -800,6 +908,15 @@ namespace Model
 
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    Aws::Vector<LanguageCode> m_languageOptions;
+    bool m_languageOptionsHasBeenSet;
+
+    double m_identifiedLanguageScore;
+    bool m_identifiedLanguageScoreHasBeenSet;
   };
 
 } // namespace Model

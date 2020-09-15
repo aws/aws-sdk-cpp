@@ -38,63 +38,72 @@ namespace Model
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline const Aws::Vector<Aws::String>& GetBrokerIds() const{ return m_brokerIds; }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline bool BrokerIdsHasBeenSet() const { return m_brokerIdsHasBeenSet; }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline void SetBrokerIds(const Aws::Vector<Aws::String>& value) { m_brokerIdsHasBeenSet = true; m_brokerIds = value; }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline void SetBrokerIds(Aws::Vector<Aws::String>&& value) { m_brokerIdsHasBeenSet = true; m_brokerIds = std::move(value); }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline RebootBrokerRequest& WithBrokerIds(const Aws::Vector<Aws::String>& value) { SetBrokerIds(value); return *this;}
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline RebootBrokerRequest& WithBrokerIds(Aws::Vector<Aws::String>&& value) { SetBrokerIds(std::move(value)); return *this;}
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline RebootBrokerRequest& AddBrokerIds(const Aws::String& value) { m_brokerIdsHasBeenSet = true; m_brokerIds.push_back(value); return *this; }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline RebootBrokerRequest& AddBrokerIds(Aws::String&& value) { m_brokerIdsHasBeenSet = true; m_brokerIds.push_back(std::move(value)); return *this; }
 
     /**
      * 
-            <p>The list of broker IDs to be rebooted.</p>
+            <p>The list of broker IDs to be rebooted. The reboot-broker
+     * operation supports rebooting one broker at a time.</p>
          
      */
     inline RebootBrokerRequest& AddBrokerIds(const char* value) { m_brokerIdsHasBeenSet = true; m_brokerIds.push_back(value); return *this; }

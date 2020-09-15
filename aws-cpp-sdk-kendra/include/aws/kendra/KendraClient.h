@@ -722,7 +722,8 @@ namespace Model
          * results.</p> <ul> <li> <p>Relevant passages</p> </li> <li> <p>Matching FAQs</p>
          * </li> <li> <p>Relevant documents</p> </li> </ul> <p>You can specify that the
          * query return only one type of result using the
-         * <code>QueryResultTypeConfig</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <code>QueryResultTypeConfig</code> parameter.</p> <p>Each query returns the 100
+         * most relevant results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">AWS API
          * Reference</a></p>
          */
@@ -738,7 +739,8 @@ namespace Model
          * results.</p> <ul> <li> <p>Relevant passages</p> </li> <li> <p>Matching FAQs</p>
          * </li> <li> <p>Relevant documents</p> </li> </ul> <p>You can specify that the
          * query return only one type of result using the
-         * <code>QueryResultTypeConfig</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <code>QueryResultTypeConfig</code> parameter.</p> <p>Each query returns the 100
+         * most relevant results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">AWS API
          * Reference</a></p>
          *
@@ -756,7 +758,8 @@ namespace Model
          * results.</p> <ul> <li> <p>Relevant passages</p> </li> <li> <p>Matching FAQs</p>
          * </li> <li> <p>Relevant documents</p> </li> </ul> <p>You can specify that the
          * query return only one type of result using the
-         * <code>QueryResultTypeConfig</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <code>QueryResultTypeConfig</code> parameter.</p> <p>Each query returns the 100
+         * most relevant results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">AWS API
          * Reference</a></p>
          *

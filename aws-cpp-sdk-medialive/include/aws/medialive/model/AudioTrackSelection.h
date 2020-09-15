@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline const Aws::Vector<AudioTrack>& GetTracks() const{ return m_tracks; }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline bool TracksHasBeenSet() const { return m_tracksHasBeenSet; }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline void SetTracks(const Aws::Vector<AudioTrack>& value) { m_tracksHasBeenSet = true; m_tracks = value; }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline void SetTracks(Aws::Vector<AudioTrack>&& value) { m_tracksHasBeenSet = true; m_tracks = std::move(value); }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline AudioTrackSelection& WithTracks(const Aws::Vector<AudioTrack>& value) { SetTracks(value); return *this;}
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline AudioTrackSelection& WithTracks(Aws::Vector<AudioTrack>&& value) { SetTracks(std::move(value)); return *this;}
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline AudioTrackSelection& AddTracks(const AudioTrack& value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      */
     inline AudioTrackSelection& AddTracks(AudioTrack&& value) { m_tracksHasBeenSet = true; m_tracks.push_back(std::move(value)); return *this; }
 

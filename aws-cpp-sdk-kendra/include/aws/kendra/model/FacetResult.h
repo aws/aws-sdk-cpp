@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/model/DocumentAttributeValueType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/DocumentAttributeValueCountPair.h>
 #include <utility>
@@ -90,6 +91,43 @@ namespace Model
 
 
     /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline const DocumentAttributeValueType& GetDocumentAttributeValueType() const{ return m_documentAttributeValueType; }
+
+    /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline bool DocumentAttributeValueTypeHasBeenSet() const { return m_documentAttributeValueTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline void SetDocumentAttributeValueType(const DocumentAttributeValueType& value) { m_documentAttributeValueTypeHasBeenSet = true; m_documentAttributeValueType = value; }
+
+    /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline void SetDocumentAttributeValueType(DocumentAttributeValueType&& value) { m_documentAttributeValueTypeHasBeenSet = true; m_documentAttributeValueType = std::move(value); }
+
+    /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline FacetResult& WithDocumentAttributeValueType(const DocumentAttributeValueType& value) { SetDocumentAttributeValueType(value); return *this;}
+
+    /**
+     * <p>The data type of the facet value. This is the same as the type defined for
+     * the index field when it was created.</p>
+     */
+    inline FacetResult& WithDocumentAttributeValueType(DocumentAttributeValueType&& value) { SetDocumentAttributeValueType(std::move(value)); return *this;}
+
+
+    /**
      * <p>An array of key/value pairs, where the key is the value of the attribute and
      * the count is the number of documents that share the key value.</p>
      */
@@ -141,6 +179,9 @@ namespace Model
 
     Aws::String m_documentAttributeKey;
     bool m_documentAttributeKeyHasBeenSet;
+
+    DocumentAttributeValueType m_documentAttributeValueType;
+    bool m_documentAttributeValueTypeHasBeenSet;
 
     Aws::Vector<DocumentAttributeValueCountPair> m_documentAttributeValueCountPairs;
     bool m_documentAttributeValueCountPairsHasBeenSet;

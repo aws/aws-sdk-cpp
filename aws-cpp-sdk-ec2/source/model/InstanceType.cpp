@@ -42,6 +42,13 @@ namespace Aws
         static const int t3a_large_HASH = HashingUtils::HashString("t3a.large");
         static const int t3a_xlarge_HASH = HashingUtils::HashString("t3a.xlarge");
         static const int t3a_2xlarge_HASH = HashingUtils::HashString("t3a.2xlarge");
+        static const int t4g_nano_HASH = HashingUtils::HashString("t4g.nano");
+        static const int t4g_micro_HASH = HashingUtils::HashString("t4g.micro");
+        static const int t4g_small_HASH = HashingUtils::HashString("t4g.small");
+        static const int t4g_medium_HASH = HashingUtils::HashString("t4g.medium");
+        static const int t4g_large_HASH = HashingUtils::HashString("t4g.large");
+        static const int t4g_xlarge_HASH = HashingUtils::HashString("t4g.xlarge");
+        static const int t4g_2xlarge_HASH = HashingUtils::HashString("t4g.2xlarge");
         static const int m1_small_HASH = HashingUtils::HashString("m1.small");
         static const int m1_medium_HASH = HashingUtils::HashString("m1.medium");
         static const int m1_large_HASH = HashingUtils::HashString("m1.large");
@@ -478,6 +485,41 @@ namespace Aws
           else if (hashCode == t3a_2xlarge_HASH)
           {
             enumValue = InstanceType::t3a_2xlarge;
+            return true;
+          }
+          else if (hashCode == t4g_nano_HASH)
+          {
+            enumValue = InstanceType::t4g_nano;
+            return true;
+          }
+          else if (hashCode == t4g_micro_HASH)
+          {
+            enumValue = InstanceType::t4g_micro;
+            return true;
+          }
+          else if (hashCode == t4g_small_HASH)
+          {
+            enumValue = InstanceType::t4g_small;
+            return true;
+          }
+          else if (hashCode == t4g_medium_HASH)
+          {
+            enumValue = InstanceType::t4g_medium;
+            return true;
+          }
+          else if (hashCode == t4g_large_HASH)
+          {
+            enumValue = InstanceType::t4g_large;
+            return true;
+          }
+          else if (hashCode == t4g_xlarge_HASH)
+          {
+            enumValue = InstanceType::t4g_xlarge;
+            return true;
+          }
+          else if (hashCode == t4g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::t4g_2xlarge;
             return true;
           }
           else if (hashCode == m1_small_HASH)
@@ -945,7 +987,11 @@ namespace Aws
             enumValue = InstanceType::i2_8xlarge;
             return true;
           }
-          else if (hashCode == i3_large_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == i3_large_HASH)
           {
             enumValue = InstanceType::i3_large;
             return true;
@@ -980,11 +1026,7 @@ namespace Aws
             enumValue = InstanceType::i3_metal;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue)
-        {
-          if (hashCode == i3en_large_HASH)
+          else if (hashCode == i3en_large_HASH)
           {
             enumValue = InstanceType::i3en_large;
             return true;
@@ -1559,7 +1601,11 @@ namespace Aws
             enumValue = InstanceType::m5_8xlarge;
             return true;
           }
-          else if (hashCode == m5_12xlarge_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper2(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == m5_12xlarge_HASH)
           {
             enumValue = InstanceType::m5_12xlarge;
             return true;
@@ -1594,11 +1640,7 @@ namespace Aws
             enumValue = InstanceType::m5a_2xlarge;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper2(int hashCode, InstanceType& enumValue)
-        {
-          if (hashCode == m5a_4xlarge_HASH)
+          else if (hashCode == m5a_4xlarge_HASH)
           {
             enumValue = InstanceType::m5a_4xlarge;
             return true;
@@ -2161,6 +2203,27 @@ namespace Aws
           case InstanceType::t3a_2xlarge:
             value = "t3a.2xlarge";
             return true;
+          case InstanceType::t4g_nano:
+            value = "t4g.nano";
+            return true;
+          case InstanceType::t4g_micro:
+            value = "t4g.micro";
+            return true;
+          case InstanceType::t4g_small:
+            value = "t4g.small";
+            return true;
+          case InstanceType::t4g_medium:
+            value = "t4g.medium";
+            return true;
+          case InstanceType::t4g_large:
+            value = "t4g.large";
+            return true;
+          case InstanceType::t4g_xlarge:
+            value = "t4g.xlarge";
+            return true;
+          case InstanceType::t4g_2xlarge:
+            value = "t4g.2xlarge";
+            return true;
           case InstanceType::m1_small:
             value = "m1.small";
             return true;
@@ -2440,6 +2503,14 @@ namespace Aws
           case InstanceType::i2_8xlarge:
             value = "i2.8xlarge";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case InstanceType::i3_large:
             value = "i3.large";
             return true;
@@ -2461,14 +2532,6 @@ namespace Aws
           case InstanceType::i3_metal:
             value = "i3.metal";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case InstanceType::i3en_large:
             value = "i3en.large";
             return true;
@@ -2814,6 +2877,14 @@ namespace Aws
           case InstanceType::m5_8xlarge:
             value = "m5.8xlarge";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper2(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case InstanceType::m5_12xlarge:
             value = "m5.12xlarge";
             return true;
@@ -2835,14 +2906,6 @@ namespace Aws
           case InstanceType::m5a_2xlarge:
             value = "m5a.2xlarge";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper2(InstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case InstanceType::m5a_4xlarge:
             value = "m5a.4xlarge";
             return true;

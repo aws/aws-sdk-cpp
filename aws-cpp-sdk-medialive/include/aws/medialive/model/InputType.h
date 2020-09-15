@@ -23,7 +23,8 @@ namespace Model
     URL_PULL,
     MP4_FILE,
     MEDIACONNECT,
-    INPUT_DEVICE
+    INPUT_DEVICE,
+    AWS_CDI
   };
 
 namespace InputTypeMapper

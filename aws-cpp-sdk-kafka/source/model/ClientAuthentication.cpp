@@ -19,11 +19,13 @@ namespace Model
 {
 
 ClientAuthentication::ClientAuthentication() : 
+    m_saslHasBeenSet(false),
     m_tlsHasBeenSet(false)
 {
 }
 
 ClientAuthentication::ClientAuthentication(JsonView jsonValue) : 
+    m_saslHasBeenSet(false),
     m_tlsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ ClientAuthentication::ClientAuthentication(JsonView jsonValue) :
 
 ClientAuthentication& ClientAuthentication::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("sasl"))
+  {
+    m_sasl = jsonValue.GetObject("sasl");
+
+    m_saslHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
@@ -44,6 +53,12 @@ ClientAuthentication& ClientAuthentication::operator =(JsonView jsonValue)
 JsonValue ClientAuthentication::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_saslHasBeenSet)
+  {
+   payload.WithObject("sasl", m_sasl.Jsonize());
+
+  }
 
   if(m_tlsHasBeenSet)
   {

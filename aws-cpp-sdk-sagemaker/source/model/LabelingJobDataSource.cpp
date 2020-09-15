@@ -19,12 +19,14 @@ namespace Model
 {
 
 LabelingJobDataSource::LabelingJobDataSource() : 
-    m_s3DataSourceHasBeenSet(false)
+    m_s3DataSourceHasBeenSet(false),
+    m_snsDataSourceHasBeenSet(false)
 {
 }
 
 LabelingJobDataSource::LabelingJobDataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+    m_s3DataSourceHasBeenSet(false),
+    m_snsDataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ LabelingJobDataSource& LabelingJobDataSource::operator =(JsonView jsonValue)
     m_s3DataSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsDataSource"))
+  {
+    m_snsDataSource = jsonValue.GetObject("SnsDataSource");
+
+    m_snsDataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue LabelingJobDataSource::Jsonize() const
   if(m_s3DataSourceHasBeenSet)
   {
    payload.WithObject("S3DataSource", m_s3DataSource.Jsonize());
+
+  }
+
+  if(m_snsDataSourceHasBeenSet)
+  {
+   payload.WithObject("SnsDataSource", m_snsDataSource.Jsonize());
 
   }
 

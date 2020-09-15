@@ -23,6 +23,7 @@ namespace Aws
         static const int VERY_HIGH_HASH = HashingUtils::HashString("VERY_HIGH");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
         static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
+        static const int LOW_HASH = HashingUtils::HashString("LOW");
 
 
         ScoreConfidence GetScoreConfidenceForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == MEDIUM_HASH)
           {
             return ScoreConfidence::MEDIUM;
+          }
+          else if (hashCode == LOW_HASH)
+          {
+            return ScoreConfidence::LOW;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "HIGH";
           case ScoreConfidence::MEDIUM:
             return "MEDIUM";
+          case ScoreConfidence::LOW:
+            return "LOW";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
