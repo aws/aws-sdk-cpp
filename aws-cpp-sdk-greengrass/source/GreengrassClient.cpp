@@ -74,6 +74,7 @@
 #include <aws/greengrass/model/GetServiceRoleForAccountRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionRequest.h>
+#include <aws/greengrass/model/GetThingRuntimeConfigurationRequest.h>
 #include <aws/greengrass/model/ListBulkDeploymentDetailedReportsRequest.h>
 #include <aws/greengrass/model/ListBulkDeploymentsRequest.h>
 #include <aws/greengrass/model/ListConnectorDefinitionVersionsRequest.h>
@@ -110,6 +111,7 @@
 #include <aws/greengrass/model/UpdateLoggerDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateResourceDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionRequest.h>
+#include <aws/greengrass/model/UpdateThingRuntimeConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1981,6 +1983,40 @@ void GreengrassClient::GetSubscriptionDefinitionVersionAsyncHelper(const GetSubs
   handler(this, request, GetSubscriptionDefinitionVersion(request), context);
 }
 
+GetThingRuntimeConfigurationOutcome GreengrassClient::GetThingRuntimeConfiguration(const GetThingRuntimeConfigurationRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetThingRuntimeConfiguration", "Required field: ThingName, is not set");
+    return GetThingRuntimeConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/things/";
+  ss << request.GetThingName();
+  ss << "/runtimeconfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetThingRuntimeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetThingRuntimeConfigurationOutcomeCallable GreengrassClient::GetThingRuntimeConfigurationCallable(const GetThingRuntimeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetThingRuntimeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetThingRuntimeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetThingRuntimeConfigurationAsync(const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetThingRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetThingRuntimeConfigurationAsyncHelper(const GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetThingRuntimeConfiguration(request), context);
+}
+
 ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDetailedReports(const ListBulkDeploymentDetailedReportsRequest& request) const
 {
   if (!request.BulkDeploymentIdHasBeenSet())
@@ -3127,5 +3163,39 @@ void GreengrassClient::UpdateSubscriptionDefinitionAsync(const UpdateSubscriptio
 void GreengrassClient::UpdateSubscriptionDefinitionAsyncHelper(const UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSubscriptionDefinition(request), context);
+}
+
+UpdateThingRuntimeConfigurationOutcome GreengrassClient::UpdateThingRuntimeConfiguration(const UpdateThingRuntimeConfigurationRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThingRuntimeConfiguration", "Required field: ThingName, is not set");
+    return UpdateThingRuntimeConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/things/";
+  ss << request.GetThingName();
+  ss << "/runtimeconfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateThingRuntimeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateThingRuntimeConfigurationOutcomeCallable GreengrassClient::UpdateThingRuntimeConfigurationCallable(const UpdateThingRuntimeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateThingRuntimeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateThingRuntimeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::UpdateThingRuntimeConfigurationAsync(const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingRuntimeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::UpdateThingRuntimeConfigurationAsyncHelper(const UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateThingRuntimeConfiguration(request), context);
 }
 

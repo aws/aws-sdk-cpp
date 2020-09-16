@@ -192,7 +192,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline const Filters& GetFilters() const{ return m_filters; }
 
@@ -200,7 +201,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -208,7 +210,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -216,7 +219,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -224,7 +228,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline GetMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
 
@@ -232,7 +237,8 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
+     * supported.</p>
      */
     inline GetMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
 

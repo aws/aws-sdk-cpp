@@ -688,96 +688,96 @@ namespace Model
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
-     * response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
@@ -785,96 +785,96 @@ namespace Model
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
-     * example, in the following response:</p> <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * example, in the following response:</p>
+     * <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * </p> <p>doc-example-bucket is the name of the S3 bucket;</p>
      * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-     * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
-     * the plugin.</p>
+     * <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name
+     * of the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 

@@ -37,64 +37,64 @@ namespace Model
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline const Aws::String& GetSyncType() const{ return m_syncType; }
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline ListResourceDataSyncRequest& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline ListResourceDataSyncRequest& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
 
     /**
      * <p>View a list of resource data syncs according to the sync type. Specify
      * <code>SyncToDestination</code> to view resource data syncs that synchronize data
-     * to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource
-     * data syncs from AWS Organizations or from multiple AWS Regions. </p>
+     * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
+     * data syncs from AWS Organizations or from multiple AWS Regions.</p>
      */
     inline ListResourceDataSyncRequest& WithSyncType(const char* value) { SetSyncType(value); return *this;}
 

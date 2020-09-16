@@ -65,6 +65,7 @@
 #include <aws/greengrass/model/GetServiceRoleForAccountResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
+#include <aws/greengrass/model/GetThingRuntimeConfigurationResult.h>
 #include <aws/greengrass/model/ListBulkDeploymentDetailedReportsResult.h>
 #include <aws/greengrass/model/ListBulkDeploymentsResult.h>
 #include <aws/greengrass/model/ListConnectorDefinitionVersionsResult.h>
@@ -99,6 +100,7 @@
 #include <aws/greengrass/model/UpdateLoggerDefinitionResult.h>
 #include <aws/greengrass/model/UpdateResourceDefinitionResult.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionResult.h>
+#include <aws/greengrass/model/UpdateThingRuntimeConfigurationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -193,6 +195,7 @@ namespace Model
         class GetServiceRoleForAccountRequest;
         class GetSubscriptionDefinitionRequest;
         class GetSubscriptionDefinitionVersionRequest;
+        class GetThingRuntimeConfigurationRequest;
         class ListBulkDeploymentDetailedReportsRequest;
         class ListBulkDeploymentsRequest;
         class ListConnectorDefinitionVersionsRequest;
@@ -229,6 +232,7 @@ namespace Model
         class UpdateLoggerDefinitionRequest;
         class UpdateResourceDefinitionRequest;
         class UpdateSubscriptionDefinitionRequest;
+        class UpdateThingRuntimeConfigurationRequest;
 
         typedef Aws::Utils::Outcome<AssociateRoleToGroupResult, GreengrassError> AssociateRoleToGroupOutcome;
         typedef Aws::Utils::Outcome<AssociateServiceRoleToAccountResult, GreengrassError> AssociateServiceRoleToAccountOutcome;
@@ -284,6 +288,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, GreengrassError> GetServiceRoleForAccountOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionResult, GreengrassError> GetSubscriptionDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionVersionResult, GreengrassError> GetSubscriptionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetThingRuntimeConfigurationResult, GreengrassError> GetThingRuntimeConfigurationOutcome;
         typedef Aws::Utils::Outcome<ListBulkDeploymentDetailedReportsResult, GreengrassError> ListBulkDeploymentDetailedReportsOutcome;
         typedef Aws::Utils::Outcome<ListBulkDeploymentsResult, GreengrassError> ListBulkDeploymentsOutcome;
         typedef Aws::Utils::Outcome<ListConnectorDefinitionVersionsResult, GreengrassError> ListConnectorDefinitionVersionsOutcome;
@@ -320,6 +325,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateLoggerDefinitionResult, GreengrassError> UpdateLoggerDefinitionOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceDefinitionResult, GreengrassError> UpdateResourceDefinitionOutcome;
         typedef Aws::Utils::Outcome<UpdateSubscriptionDefinitionResult, GreengrassError> UpdateSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateThingRuntimeConfigurationResult, GreengrassError> UpdateThingRuntimeConfigurationOutcome;
 
         typedef std::future<AssociateRoleToGroupOutcome> AssociateRoleToGroupOutcomeCallable;
         typedef std::future<AssociateServiceRoleToAccountOutcome> AssociateServiceRoleToAccountOutcomeCallable;
@@ -375,6 +381,7 @@ namespace Model
         typedef std::future<GetServiceRoleForAccountOutcome> GetServiceRoleForAccountOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionOutcome> GetSubscriptionDefinitionOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionVersionOutcome> GetSubscriptionDefinitionVersionOutcomeCallable;
+        typedef std::future<GetThingRuntimeConfigurationOutcome> GetThingRuntimeConfigurationOutcomeCallable;
         typedef std::future<ListBulkDeploymentDetailedReportsOutcome> ListBulkDeploymentDetailedReportsOutcomeCallable;
         typedef std::future<ListBulkDeploymentsOutcome> ListBulkDeploymentsOutcomeCallable;
         typedef std::future<ListConnectorDefinitionVersionsOutcome> ListConnectorDefinitionVersionsOutcomeCallable;
@@ -411,6 +418,7 @@ namespace Model
         typedef std::future<UpdateLoggerDefinitionOutcome> UpdateLoggerDefinitionOutcomeCallable;
         typedef std::future<UpdateResourceDefinitionOutcome> UpdateResourceDefinitionOutcomeCallable;
         typedef std::future<UpdateSubscriptionDefinitionOutcome> UpdateSubscriptionDefinitionOutcomeCallable;
+        typedef std::future<UpdateThingRuntimeConfigurationOutcome> UpdateThingRuntimeConfigurationOutcomeCallable;
 } // namespace Model
 
   class GreengrassClient;
@@ -469,6 +477,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::GetServiceRoleForAccountRequest&, const Model::GetServiceRoleForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceRoleForAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionRequest&, const Model::GetSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionVersionRequest&, const Model::GetSubscriptionDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::GetThingRuntimeConfigurationRequest&, const Model::GetThingRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentDetailedReportsRequest&, const Model::ListBulkDeploymentDetailedReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentDetailedReportsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentsRequest&, const Model::ListBulkDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListConnectorDefinitionVersionsRequest&, const Model::ListConnectorDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorDefinitionVersionsResponseReceivedHandler;
@@ -505,6 +514,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::UpdateLoggerDefinitionRequest&, const Model::UpdateLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggerDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateResourceDefinitionRequest&, const Model::UpdateResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateSubscriptionDefinitionRequest&, const Model::UpdateSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::UpdateThingRuntimeConfigurationRequest&, const Model::UpdateThingRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingRuntimeConfigurationResponseReceivedHandler;
 
   /**
    * AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act
@@ -2063,6 +2073,31 @@ namespace Model
         virtual void GetSubscriptionDefinitionVersionAsync(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetThingRuntimeConfigurationOutcome GetThingRuntimeConfiguration(const Model::GetThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetThingRuntimeConfigurationOutcomeCallable GetThingRuntimeConfigurationCallable(const Model::GetThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetThingRuntimeConfigurationAsync(const Model::GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Gets a paginated list of the deployments that have been started in a bulk
          * deployment operation, and their current deployment status.<p><h3>See Also:</h3> 
          * <a
@@ -3019,6 +3054,31 @@ namespace Model
          */
         virtual void UpdateSubscriptionDefinitionAsync(const Model::UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThingRuntimeConfigurationOutcome UpdateThingRuntimeConfiguration(const Model::UpdateThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateThingRuntimeConfigurationOutcomeCallable UpdateThingRuntimeConfigurationCallable(const Model::UpdateThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateThingRuntimeConfigurationAsync(const Model::UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3077,6 +3137,7 @@ namespace Model
         void GetServiceRoleForAccountAsyncHelper(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionAsyncHelper(const Model::GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionVersionAsyncHelper(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetThingRuntimeConfigurationAsyncHelper(const Model::GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBulkDeploymentDetailedReportsAsyncHelper(const Model::ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBulkDeploymentsAsyncHelper(const Model::ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConnectorDefinitionVersionsAsyncHelper(const Model::ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3113,6 +3174,7 @@ namespace Model
         void UpdateLoggerDefinitionAsyncHelper(const Model::UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceDefinitionAsyncHelper(const Model::UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSubscriptionDefinitionAsyncHelper(const Model::UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateThingRuntimeConfigurationAsyncHelper(const Model::UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

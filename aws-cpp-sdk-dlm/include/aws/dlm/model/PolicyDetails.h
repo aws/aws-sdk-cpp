@@ -179,42 +179,50 @@ namespace Model
 
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline const Aws::Vector<Schedule>& GetSchedules() const{ return m_schedules; }
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline void SetSchedules(const Aws::Vector<Schedule>& value) { m_schedulesHasBeenSet = true; m_schedules = value; }
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline void SetSchedules(Aws::Vector<Schedule>&& value) { m_schedulesHasBeenSet = true; m_schedules = std::move(value); }
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline PolicyDetails& WithSchedules(const Aws::Vector<Schedule>& value) { SetSchedules(value); return *this;}
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline PolicyDetails& WithSchedules(Aws::Vector<Schedule>&& value) { SetSchedules(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline PolicyDetails& AddSchedules(const Schedule& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(value); return *this; }
 
     /**
-     * <p>The schedule of policy-defined actions.</p>
+     * <p>The schedules of policy-defined actions. A policy can have up to four
+     * schedules - one mandatory schedule and up to three optional schedules.</p>
      */
     inline PolicyDetails& AddSchedules(Schedule&& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(std::move(value)); return *this; }
 
