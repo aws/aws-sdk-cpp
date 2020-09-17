@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeFaqResult::DescribeFaqResult() : 
-    m_status(FaqStatus::NOT_SET)
+    m_status(FaqStatus::NOT_SET),
+    m_fileFormat(FaqFileFormat::NOT_SET)
 {
 }
 
 DescribeFaqResult::DescribeFaqResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FaqStatus::NOT_SET)
+    m_status(FaqStatus::NOT_SET),
+    m_fileFormat(FaqFileFormat::NOT_SET)
 {
   *this = result;
 }
@@ -87,6 +89,12 @@ DescribeFaqResult& DescribeFaqResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+  }
+
+  if(jsonValue.ValueExists("FileFormat"))
+  {
+    m_fileFormat = FaqFileFormatMapper::GetFaqFileFormatForName(jsonValue.GetString("FileFormat"));
 
   }
 

@@ -26,7 +26,8 @@ Result::Result() :
     m_endTimeHasBeenSet(false),
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false)
+    m_alternativesHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Result::Result(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false)
+    m_alternativesHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ Result& Result::operator =(JsonView jsonValue)
     m_alternativesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChannelId"))
+  {
+    m_channelId = jsonValue.GetString("ChannelId");
+
+    m_channelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +131,12 @@ JsonValue Result::Jsonize() const
      alternativesJsonList[alternativesIndex].AsObject(m_alternatives[alternativesIndex].Jsonize());
    }
    payload.WithArray("Alternatives", std::move(alternativesJsonList));
+
+  }
+
+  if(m_channelIdHasBeenSet)
+  {
+   payload.WithString("ChannelId", m_channelId);
 
   }
 

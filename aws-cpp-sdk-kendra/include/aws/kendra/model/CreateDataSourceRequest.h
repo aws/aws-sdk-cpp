@@ -168,38 +168,38 @@ namespace Model
 
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * <p>The data source connector configuration information that is required to
+     * access the repository.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

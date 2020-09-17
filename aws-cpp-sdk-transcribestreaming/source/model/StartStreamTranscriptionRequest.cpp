@@ -28,6 +28,10 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_vocabularyFilterMethodHasBeenSet(false),
     m_showSpeakerLabel(false),
     m_showSpeakerLabelHasBeenSet(false),
+    m_enableChannelIdentification(false),
+    m_enableChannelIdentificationHasBeenSet(false),
+    m_numberOfChannels(0),
+    m_numberOfChannelsHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -90,6 +94,20 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   {
     ss << m_showSpeakerLabel;
     headers.emplace("x-amzn-transcribe-show-speaker-label",  ss.str());
+    ss.str("");
+  }
+
+  if(m_enableChannelIdentificationHasBeenSet)
+  {
+    ss << m_enableChannelIdentification;
+    headers.emplace("x-amzn-transcribe-enable-channel-identification",  ss.str());
+    ss.str("");
+  }
+
+  if(m_numberOfChannelsHasBeenSet)
+  {
+    ss << m_numberOfChannels;
+    headers.emplace("x-amzn-transcribe-number-of-channels",  ss.str());
     ss.str("");
   }
 

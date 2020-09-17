@@ -408,6 +408,72 @@ namespace Model
      */
     inline StartStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
+
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -435,6 +501,12 @@ namespace Model
 
     bool m_showSpeakerLabel;
     bool m_showSpeakerLabelHasBeenSet;
+
+    bool m_enableChannelIdentification;
+    bool m_enableChannelIdentificationHasBeenSet;
+
+    int m_numberOfChannels;
+    bool m_numberOfChannelsHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

@@ -49,6 +49,12 @@ GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("mutualTlsAuthentication"))
+  {
+    m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

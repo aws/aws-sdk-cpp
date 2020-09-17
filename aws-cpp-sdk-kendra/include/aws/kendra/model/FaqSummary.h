@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/FaqStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kendra/model/FaqFileFormat.h>
 #include <utility>
 
 namespace Aws
@@ -220,6 +221,37 @@ namespace Model
      */
     inline FaqSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline FaqSummary& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline FaqSummary& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -236,6 +268,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
+
+    FaqFileFormat m_fileFormat;
+    bool m_fileFormatHasBeenSet;
   };
 
 } // namespace Model

@@ -47,7 +47,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the
@@ -62,7 +62,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the
@@ -77,7 +77,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the
@@ -92,7 +92,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the
@@ -107,7 +107,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the
@@ -122,7 +122,7 @@ namespace Model
      * requests that CloudFront sends to the origin. Even when this field is set to
      * <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li> <li>
-     * <p> <code>whitelist</code> �� The query strings in viewer requests that are
+     * <p> <code>whitelist</code> – The query strings in viewer requests that are
      * listed in the <code>QueryStringNames</code> type are included in requests that
      * CloudFront sends to the origin.</p> </li> <li> <p> <code>all</code> – All query
      * strings in viewer requests are included in requests that CloudFront sends to the

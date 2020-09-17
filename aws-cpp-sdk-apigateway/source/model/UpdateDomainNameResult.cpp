@@ -125,6 +125,12 @@ UpdateDomainNameResult& UpdateDomainNameResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("mutualTlsAuthentication"))
+  {
+    m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
+
+  }
+
 
 
   return *this;

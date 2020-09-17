@@ -19,6 +19,8 @@ CreateApiRequest::CreateApiRequest() :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
     m_protocolTypeHasBeenSet(false),
@@ -61,6 +63,12 @@ Aws::String CreateApiRequest::SerializePayload() const
   if(m_disableSchemaValidationHasBeenSet)
   {
    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
+
+  }
+
+  if(m_disableExecuteApiEndpointHasBeenSet)
+  {
+   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
 
   }
 

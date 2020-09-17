@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     INDEX_SLOW_LOGS,
     SEARCH_SLOW_LOGS,
-    ES_APPLICATION_LOGS
+    ES_APPLICATION_LOGS,
+    AUDIT_LOGS
   };
 
 namespace LogTypeMapper

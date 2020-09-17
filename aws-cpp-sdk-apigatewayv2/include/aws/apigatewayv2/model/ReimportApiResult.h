@@ -303,6 +303,34 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * execute-api endpoint. By default, clients can invoke your API with the default
+     * https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default
+     * endpoint.</p>
+     */
+    inline bool GetDisableExecuteApiEndpoint() const{ return m_disableExecuteApiEndpoint; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * execute-api endpoint. By default, clients can invoke your API with the default
+     * https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default
+     * endpoint.</p>
+     */
+    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpoint = value; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * execute-api endpoint. By default, clients can invoke your API with the default
+     * https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default
+     * endpoint.</p>
+     */
+    inline ReimportApiResult& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
+
+
+    /**
      * <p>The validation information during API import. This may include particular
      * properties of your OpenAPI definition which are ignored during import. Supported
      * only for HTTP APIs.</p>
@@ -640,6 +668,8 @@ namespace Model
     Aws::String m_description;
 
     bool m_disableSchemaValidation;
+
+    bool m_disableExecuteApiEndpoint;
 
     Aws::Vector<Aws::String> m_importInfo;
 

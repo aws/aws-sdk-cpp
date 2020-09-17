@@ -224,6 +224,71 @@ namespace Model
      */
     inline Result& AddAlternatives(Alternative&& value) { m_alternativesHasBeenSet = true; m_alternatives.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline Result& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline Result& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>When channel identification is enabled, Amazon Transcribe transcribes the
+     * speech from each audio channel separately.</p> <p>You can use
+     * <code>ChannelId</code> to retrieve the transcription results for a single
+     * channel in your audio stream.</p>
+     */
+    inline Result& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
   private:
 
     Aws::String m_resultId;
@@ -240,6 +305,9 @@ namespace Model
 
     Aws::Vector<Alternative> m_alternatives;
     bool m_alternativesHasBeenSet;
+
+    Aws::String m_channelId;
+    bool m_channelIdHasBeenSet;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/apigateway/model/DomainNameStatus.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/MutualTlsAuthentication.h>
 #include <utility>
 
 namespace Aws
@@ -930,6 +931,49 @@ namespace Model
      */
     inline DomainName& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline const MutualTlsAuthentication& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthentication& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline void SetMutualTlsAuthentication(MutualTlsAuthentication&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline DomainName& WithMutualTlsAuthentication(const MutualTlsAuthentication& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline DomainName& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -976,6 +1020,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    MutualTlsAuthentication m_mutualTlsAuthentication;
+    bool m_mutualTlsAuthenticationHasBeenSet;
   };
 
 } // namespace Model

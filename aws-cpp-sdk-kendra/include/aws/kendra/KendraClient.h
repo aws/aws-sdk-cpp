@@ -289,13 +289,12 @@ namespace Model
 
         /**
          * <p>Creates a data source that you use to with an Amazon Kendra index. </p>
-         * <p>You specify a name, connector type and description for your data source. You
-         * can choose between an S3 connector, a SharePoint Online connector, and a
-         * database connector.</p> <p>You also specify configuration information such as
-         * document metadata (author, source URI, and so on) and user context
-         * information.</p> <p> <code>CreateDataSource</code> is a synchronous operation.
-         * The operation returns 200 if the data source was successfully created.
-         * Otherwise, an exception is raised.</p><p><h3>See Also:</h3>   <a
+         * <p>You specify a name, data source connector type and description for your data
+         * source. You also specify configuration information such as document metadata
+         * (author, source URI, and so on) and user context information.</p> <p>
+         * <code>CreateDataSource</code> is a synchronous operation. The operation returns
+         * 200 if the data source was successfully created. Otherwise, an exception is
+         * raised.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          */
@@ -303,13 +302,12 @@ namespace Model
 
         /**
          * <p>Creates a data source that you use to with an Amazon Kendra index. </p>
-         * <p>You specify a name, connector type and description for your data source. You
-         * can choose between an S3 connector, a SharePoint Online connector, and a
-         * database connector.</p> <p>You also specify configuration information such as
-         * document metadata (author, source URI, and so on) and user context
-         * information.</p> <p> <code>CreateDataSource</code> is a synchronous operation.
-         * The operation returns 200 if the data source was successfully created.
-         * Otherwise, an exception is raised.</p><p><h3>See Also:</h3>   <a
+         * <p>You specify a name, data source connector type and description for your data
+         * source. You also specify configuration information such as document metadata
+         * (author, source URI, and so on) and user context information.</p> <p>
+         * <code>CreateDataSource</code> is a synchronous operation. The operation returns
+         * 200 if the data source was successfully created. Otherwise, an exception is
+         * raised.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          *
@@ -319,13 +317,12 @@ namespace Model
 
         /**
          * <p>Creates a data source that you use to with an Amazon Kendra index. </p>
-         * <p>You specify a name, connector type and description for your data source. You
-         * can choose between an S3 connector, a SharePoint Online connector, and a
-         * database connector.</p> <p>You also specify configuration information such as
-         * document metadata (author, source URI, and so on) and user context
-         * information.</p> <p> <code>CreateDataSource</code> is a synchronous operation.
-         * The operation returns 200 if the data source was successfully created.
-         * Otherwise, an exception is raised.</p><p><h3>See Also:</h3>   <a
+         * <p>You specify a name, data source connector type and description for your data
+         * source. You also specify configuration information such as document metadata
+         * (author, source URI, and so on) and user context information.</p> <p>
+         * <code>CreateDataSource</code> is a synchronous operation. The operation returns
+         * 200 if the data source was successfully created. Otherwise, an exception is
+         * raised.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          *

@@ -125,6 +125,12 @@ GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("mutualTlsAuthentication"))
+  {
+    m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
+
+  }
+
 
 
   return *this;

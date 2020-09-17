@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Maps a batch delete document request to a specific data source sync job. This
-   * is optional and should only be supplied when documents are deleted by a
-   * connector.</p><p><h3>See Also:</h3>   <a
+   * is optional and should only be supplied when documents are deleted by a data
+   * source connector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSyncJobMetrics">AWS
    * API Reference</a></p>
    */

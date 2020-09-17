@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigatewayv2/model/MutualTlsAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigatewayv2/model/DomainNameConfiguration.h>
 #include <utility>
@@ -144,6 +145,32 @@ namespace Model
 
 
     /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline const MutualTlsAuthentication& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthentication& value) { m_mutualTlsAuthentication = value; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline void SetMutualTlsAuthentication(MutualTlsAuthentication&& value) { m_mutualTlsAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline UpdateDomainNameResult& WithMutualTlsAuthentication(const MutualTlsAuthentication& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline UpdateDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
+
+    /**
      * <p>The collection of tags associated with a domain name.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -210,6 +237,8 @@ namespace Model
     Aws::String m_domainName;
 
     Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
+
+    MutualTlsAuthentication m_mutualTlsAuthentication;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

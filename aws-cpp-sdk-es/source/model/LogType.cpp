@@ -23,6 +23,7 @@ namespace Aws
         static const int INDEX_SLOW_LOGS_HASH = HashingUtils::HashString("INDEX_SLOW_LOGS");
         static const int SEARCH_SLOW_LOGS_HASH = HashingUtils::HashString("SEARCH_SLOW_LOGS");
         static const int ES_APPLICATION_LOGS_HASH = HashingUtils::HashString("ES_APPLICATION_LOGS");
+        static const int AUDIT_LOGS_HASH = HashingUtils::HashString("AUDIT_LOGS");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ES_APPLICATION_LOGS_HASH)
           {
             return LogType::ES_APPLICATION_LOGS;
+          }
+          else if (hashCode == AUDIT_LOGS_HASH)
+          {
+            return LogType::AUDIT_LOGS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SEARCH_SLOW_LOGS";
           case LogType::ES_APPLICATION_LOGS:
             return "ES_APPLICATION_LOGS";
+          case LogType::AUDIT_LOGS:
+            return "AUDIT_LOGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

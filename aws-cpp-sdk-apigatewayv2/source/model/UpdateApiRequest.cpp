@@ -20,6 +20,8 @@ UpdateApiRequest::UpdateApiRequest() :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_routeKeyHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
@@ -59,6 +61,12 @@ Aws::String UpdateApiRequest::SerializePayload() const
   if(m_disableSchemaValidationHasBeenSet)
   {
    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
+
+  }
+
+  if(m_disableExecuteApiEndpointHasBeenSet)
+  {
+   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
 
   }
 

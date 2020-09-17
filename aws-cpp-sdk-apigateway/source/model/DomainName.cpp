@@ -35,7 +35,8 @@ DomainName::DomainName() :
     m_domainNameStatusMessageHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_mutualTlsAuthenticationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ DomainName::DomainName(JsonView jsonValue) :
     m_domainNameStatusMessageHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_mutualTlsAuthenticationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +173,13 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mutualTlsAuthentication"))
+  {
+    m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
+
+    m_mutualTlsAuthenticationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -267,6 +276,12 @@ JsonValue DomainName::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_mutualTlsAuthenticationHasBeenSet)
+  {
+   payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
 
   }
 

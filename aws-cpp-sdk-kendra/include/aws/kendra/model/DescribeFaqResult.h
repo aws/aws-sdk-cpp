@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kendra/model/S3Path.h>
 #include <aws/kendra/model/FaqStatus.h>
+#include <aws/kendra/model/FaqFileFormat.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,32 @@ namespace Model
      */
     inline DescribeFaqResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>The file format used by the input files for the FAQ.</p>
+     */
+    inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
+
+    /**
+     * <p>The file format used by the input files for the FAQ.</p>
+     */
+    inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormat = value; }
+
+    /**
+     * <p>The file format used by the input files for the FAQ.</p>
+     */
+    inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormat = std::move(value); }
+
+    /**
+     * <p>The file format used by the input files for the FAQ.</p>
+     */
+    inline DescribeFaqResult& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
+
+    /**
+     * <p>The file format used by the input files for the FAQ.</p>
+     */
+    inline DescribeFaqResult& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -384,6 +411,8 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_errorMessage;
+
+    FaqFileFormat m_fileFormat;
   };
 
 } // namespace Model

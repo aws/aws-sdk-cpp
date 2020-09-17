@@ -353,43 +353,43 @@ namespace Model
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline const DataSourceSyncJobMetrics& GetMetrics() const{ return m_metrics; }
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline void SetMetrics(const DataSourceSyncJobMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline void SetMetrics(DataSourceSyncJobMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline DataSourceSyncJob& WithMetrics(const DataSourceSyncJobMetrics& value) { SetMetrics(value); return *this;}
 
     /**
      * <p>Maps a batch delete document request to a specific data source sync job. This
-     * is optional and should only be supplied when documents are deleted by a
-     * connector.</p>
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
      */
     inline DataSourceSyncJob& WithMetrics(DataSourceSyncJobMetrics&& value) { SetMetrics(std::move(value)); return *this;}
 

@@ -18,7 +18,9 @@ CreateFaqRequest::CreateFaqRequest() :
     m_descriptionHasBeenSet(false),
     m_s3PathHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileFormat(FaqFileFormat::NOT_SET),
+    m_fileFormatHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,11 @@ Aws::String CreateFaqRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_fileFormatHasBeenSet)
+  {
+   payload.WithString("FileFormat", FaqFileFormatMapper::GetNameForFaqFileFormat(m_fileFormat));
   }
 
   return payload.View().WriteReadable();

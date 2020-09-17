@@ -19,6 +19,7 @@ using namespace Aws;
 ReimportApiResult::ReimportApiResult() : 
     m_apiGatewayManaged(false),
     m_disableSchemaValidation(false),
+    m_disableExecuteApiEndpoint(false),
     m_protocolType(ProtocolType::NOT_SET)
 {
 }
@@ -26,6 +27,7 @@ ReimportApiResult::ReimportApiResult() :
 ReimportApiResult::ReimportApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_apiGatewayManaged(false),
     m_disableSchemaValidation(false),
+    m_disableExecuteApiEndpoint(false),
     m_protocolType(ProtocolType::NOT_SET)
 {
   *this = result;
@@ -79,6 +81,12 @@ ReimportApiResult& ReimportApiResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("disableSchemaValidation"))
   {
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
+
+  }
+
+  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
+  {
+    m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
 
   }
 

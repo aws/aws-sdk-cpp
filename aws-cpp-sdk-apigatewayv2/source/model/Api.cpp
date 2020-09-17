@@ -29,6 +29,8 @@ Api::Api() :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
@@ -51,6 +53,8 @@ Api::Api(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
@@ -119,6 +123,13 @@ Api& Api::operator =(JsonView jsonValue)
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
 
     m_disableSchemaValidationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
+  {
+    m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
+
+    m_disableExecuteApiEndpointHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("importInfo"))
@@ -230,6 +241,12 @@ JsonValue Api::Jsonize() const
   if(m_disableSchemaValidationHasBeenSet)
   {
    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
+
+  }
+
+  if(m_disableExecuteApiEndpointHasBeenSet)
+  {
+   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
 
   }
 

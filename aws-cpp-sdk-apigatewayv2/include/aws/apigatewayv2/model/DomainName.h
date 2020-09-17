@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigatewayv2/model/MutualTlsAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigatewayv2/model/DomainNameConfiguration.h>
 #include <utility>
@@ -164,6 +165,37 @@ namespace Model
 
 
     /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline const MutualTlsAuthentication& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthentication& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline void SetMutualTlsAuthentication(MutualTlsAuthentication&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline DomainName& WithMutualTlsAuthentication(const MutualTlsAuthentication& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
+     */
+    inline DomainName& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
+
+    /**
      * <p>The collection of tags associated with a domain name.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -238,6 +270,9 @@ namespace Model
 
     Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
     bool m_domainNameConfigurationsHasBeenSet;
+
+    MutualTlsAuthentication m_mutualTlsAuthentication;
+    bool m_mutualTlsAuthenticationHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

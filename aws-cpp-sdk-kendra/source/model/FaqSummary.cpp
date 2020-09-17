@@ -24,7 +24,9 @@ FaqSummary::FaqSummary() :
     m_status(FaqStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_fileFormat(FaqFileFormat::NOT_SET),
+    m_fileFormatHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ FaqSummary::FaqSummary(JsonView jsonValue) :
     m_status(FaqStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_fileFormat(FaqFileFormat::NOT_SET),
+    m_fileFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ FaqSummary& FaqSummary::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileFormat"))
+  {
+    m_fileFormat = FaqFileFormatMapper::GetFaqFileFormatForName(jsonValue.GetString("FileFormat"));
+
+    m_fileFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,11 @@ JsonValue FaqSummary::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_fileFormatHasBeenSet)
+  {
+   payload.WithString("FileFormat", FaqFileFormatMapper::GetNameForFaqFileFormat(m_fileFormat));
   }
 
   return payload;

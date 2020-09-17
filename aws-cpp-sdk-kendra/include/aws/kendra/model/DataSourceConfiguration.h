@@ -44,106 +44,112 @@ namespace Model
 
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline const S3DataSourceConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline void SetS3Configuration(const S3DataSourceConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline void SetS3Configuration(S3DataSourceConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline DataSourceConfiguration& WithS3Configuration(const S3DataSourceConfiguration& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>Provides information to create a connector for a document repository in an
-     * Amazon S3 bucket.</p>
+     * <p>Provides information to create a data source connector for a document
+     * repository in an Amazon S3 bucket.</p>
      */
     inline DataSourceConfiguration& WithS3Configuration(S3DataSourceConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline const SharePointConfiguration& GetSharePointConfiguration() const{ return m_sharePointConfiguration; }
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline bool SharePointConfigurationHasBeenSet() const { return m_sharePointConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline void SetSharePointConfiguration(const SharePointConfiguration& value) { m_sharePointConfigurationHasBeenSet = true; m_sharePointConfiguration = value; }
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline void SetSharePointConfiguration(SharePointConfiguration&& value) { m_sharePointConfigurationHasBeenSet = true; m_sharePointConfiguration = std::move(value); }
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline DataSourceConfiguration& WithSharePointConfiguration(const SharePointConfiguration& value) { SetSharePointConfiguration(value); return *this;}
 
     /**
-     * <p>Provides information necessary to create a connector for a Microsoft
-     * SharePoint site.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * Microsoft SharePoint site.</p>
      */
     inline DataSourceConfiguration& WithSharePointConfiguration(SharePointConfiguration&& value) { SetSharePointConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline const DatabaseConfiguration& GetDatabaseConfiguration() const{ return m_databaseConfiguration; }
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline bool DatabaseConfigurationHasBeenSet() const { return m_databaseConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline void SetDatabaseConfiguration(const DatabaseConfiguration& value) { m_databaseConfigurationHasBeenSet = true; m_databaseConfiguration = value; }
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline void SetDatabaseConfiguration(DatabaseConfiguration&& value) { m_databaseConfigurationHasBeenSet = true; m_databaseConfiguration = std::move(value); }
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline DataSourceConfiguration& WithDatabaseConfiguration(const DatabaseConfiguration& value) { SetDatabaseConfiguration(value); return *this;}
 
     /**
-     * <p>Provides information necessary to create a connector for a database.</p>
+     * <p>Provides information necessary to create a data source connector for a
+     * database.</p>
      */
     inline DataSourceConfiguration& WithDatabaseConfiguration(DatabaseConfiguration&& value) { SetDatabaseConfiguration(std::move(value)); return *this;}
 

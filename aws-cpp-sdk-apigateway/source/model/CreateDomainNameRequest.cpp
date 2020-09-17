@@ -24,7 +24,8 @@ CreateDomainNameRequest::CreateDomainNameRequest() :
     m_endpointConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false)
+    m_securityPolicyHasBeenSet(false),
+    m_mutualTlsAuthenticationHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,12 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
   if(m_securityPolicyHasBeenSet)
   {
    payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
+  }
+
+  if(m_mutualTlsAuthenticationHasBeenSet)
+  {
+   payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

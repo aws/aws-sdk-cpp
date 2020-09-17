@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/S3Path.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/FaqFileFormat.h>
 #include <aws/kendra/model/Tag.h>
 #include <utility>
 
@@ -304,6 +305,73 @@ namespace Model
      */
     inline CreateFaqRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline CreateFaqRequest& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline CreateFaqRequest& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -323,6 +391,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    FaqFileFormat m_fileFormat;
+    bool m_fileFormatHasBeenSet;
   };
 
 } // namespace Model

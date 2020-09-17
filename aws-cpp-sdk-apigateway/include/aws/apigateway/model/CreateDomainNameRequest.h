@@ -10,6 +10,7 @@
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
+#include <aws/apigateway/model/MutualTlsAuthenticationInput.h>
 #include <utility>
 
 namespace Aws
@@ -657,6 +658,25 @@ namespace Model
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const MutualTlsAuthenticationInput& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    
+    inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
+
+    
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
+
+    
+    inline void SetMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -691,6 +711,9 @@ namespace Model
 
     SecurityPolicy m_securityPolicy;
     bool m_securityPolicyHasBeenSet;
+
+    MutualTlsAuthenticationInput m_mutualTlsAuthentication;
+    bool m_mutualTlsAuthenticationHasBeenSet;
   };
 
 } // namespace Model
