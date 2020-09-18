@@ -220,16 +220,22 @@ namespace Model
 
 
         /**
-         * <p>Attaches an IAM managed policy ARN to a permission set.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches an IAM managed policy ARN to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachManagedPolicyToPermissionSetOutcome AttachManagedPolicyToPermissionSet(const Model::AttachManagedPolicyToPermissionSetRequest& request) const;
 
         /**
-         * <p>Attaches an IAM managed policy ARN to a permission set.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches an IAM managed policy ARN to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          *
@@ -238,8 +244,11 @@ namespace Model
         virtual Model::AttachManagedPolicyToPermissionSetOutcomeCallable AttachManagedPolicyToPermissionSetCallable(const Model::AttachManagedPolicyToPermissionSetRequest& request) const;
 
         /**
-         * <p>Attaches an IAM managed policy ARN to a permission set.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches an IAM managed policy ARN to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          *
@@ -250,7 +259,14 @@ namespace Model
         /**
          * <p>Assigns access to a principal for a specified AWS account using a specified
          * permission set.</p>  <p>The term <i>principal</i> here refers to a user or
-         * group that is defined in AWS SSO.</p> <p><h3>See Also:</h3>   <a
+         * group that is defined in AWS SSO.</p>   <p>As part of a successful
+         * <code>CreateAccountAssignment</code> call, the specified permission set will
+         * automatically be provisioned to the account in the form of an IAM policy
+         * attached to the SSO-created IAM role. If the permission set is subsequently
+         * updated, the corresponding IAM policies attached to roles in your accounts will
+         * not be updated automatically. In this case, you will need to call <code>
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
          * API Reference</a></p>
          */
@@ -259,7 +275,14 @@ namespace Model
         /**
          * <p>Assigns access to a principal for a specified AWS account using a specified
          * permission set.</p>  <p>The term <i>principal</i> here refers to a user or
-         * group that is defined in AWS SSO.</p> <p><h3>See Also:</h3>   <a
+         * group that is defined in AWS SSO.</p>   <p>As part of a successful
+         * <code>CreateAccountAssignment</code> call, the specified permission set will
+         * automatically be provisioned to the account in the form of an IAM policy
+         * attached to the SSO-created IAM role. If the permission set is subsequently
+         * updated, the corresponding IAM policies attached to roles in your accounts will
+         * not be updated automatically. In this case, you will need to call <code>
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
          * API Reference</a></p>
          *
@@ -270,7 +293,14 @@ namespace Model
         /**
          * <p>Assigns access to a principal for a specified AWS account using a specified
          * permission set.</p>  <p>The term <i>principal</i> here refers to a user or
-         * group that is defined in AWS SSO.</p> <p><h3>See Also:</h3>   <a
+         * group that is defined in AWS SSO.</p>   <p>As part of a successful
+         * <code>CreateAccountAssignment</code> call, the specified permission set will
+         * automatically be provisioned to the account in the form of an IAM policy
+         * attached to the SSO-created IAM role. If the permission set is subsequently
+         * updated, the corresponding IAM policies attached to roles in your accounts will
+         * not be updated automatically. In this case, you will need to call <code>
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
          * API Reference</a></p>
          *
@@ -279,16 +309,18 @@ namespace Model
         virtual void CreateAccountAssignmentAsync(const Model::CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a permission set within a specified SSO instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a permission set within a specified SSO instance.</p>  <p>To
+         * grant users and groups access to AWS account resources, use <code>
+         * <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePermissionSetOutcome CreatePermissionSet(const Model::CreatePermissionSetRequest& request) const;
 
         /**
-         * <p>Creates a permission set within a specified SSO instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a permission set within a specified SSO instance.</p>  <p>To
+         * grant users and groups access to AWS account resources, use <code>
+         * <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">AWS
          * API Reference</a></p>
          *
@@ -297,8 +329,9 @@ namespace Model
         virtual Model::CreatePermissionSetOutcomeCallable CreatePermissionSetCallable(const Model::CreatePermissionSetRequest& request) const;
 
         /**
-         * <p>Creates a permission set within a specified SSO instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a permission set within a specified SSO instance.</p>  <p>To
+         * grant users and groups access to AWS account resources, use <code>
+         * <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">AWS
          * API Reference</a></p>
          *
@@ -861,16 +894,22 @@ namespace Model
         virtual void ProvisionPermissionSetAsync(const Model::ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an IAM inline policy to a permission set.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attaches an IAM inline policy to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">AWS
          * API Reference</a></p>
          */
         virtual Model::PutInlinePolicyToPermissionSetOutcome PutInlinePolicyToPermissionSet(const Model::PutInlinePolicyToPermissionSetRequest& request) const;
 
         /**
-         * <p>Attaches an IAM inline policy to a permission set.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attaches an IAM inline policy to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">AWS
          * API Reference</a></p>
          *
@@ -879,8 +918,11 @@ namespace Model
         virtual Model::PutInlinePolicyToPermissionSetOutcomeCallable PutInlinePolicyToPermissionSetCallable(const Model::PutInlinePolicyToPermissionSetRequest& request) const;
 
         /**
-         * <p>Attaches an IAM inline policy to a permission set.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attaches an IAM inline policy to a permission set.</p>  <p>If the
+         * permission set is already referenced by one or more account assignments, you
+         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
+         * to apply the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">AWS
          * API Reference</a></p>
          *

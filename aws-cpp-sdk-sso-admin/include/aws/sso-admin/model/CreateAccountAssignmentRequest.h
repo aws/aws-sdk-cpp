@@ -102,42 +102,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline CreateAccountAssignmentRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline CreateAccountAssignmentRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline CreateAccountAssignmentRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
@@ -254,42 +262,74 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline CreateAccountAssignmentRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline CreateAccountAssignmentRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline CreateAccountAssignmentRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 

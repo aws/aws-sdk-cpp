@@ -11,6 +11,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/BatchDeleteResult.h>
+#include <aws/medialive/model/BatchStartResult.h>
+#include <aws/medialive/model/BatchStopResult.h>
 #include <aws/medialive/model/BatchUpdateScheduleResult.h>
 #include <aws/medialive/model/CreateChannelResult.h>
 #include <aws/medialive/model/CreateInputResult.h>
@@ -96,6 +99,9 @@ namespace MediaLive
 
 namespace Model
 {
+        class BatchDeleteRequest;
+        class BatchStartRequest;
+        class BatchStopRequest;
         class BatchUpdateScheduleRequest;
         class CreateChannelRequest;
         class CreateInputRequest;
@@ -144,6 +150,9 @@ namespace Model
         class UpdateMultiplexProgramRequest;
         class UpdateReservationRequest;
 
+        typedef Aws::Utils::Outcome<BatchDeleteResult, MediaLiveError> BatchDeleteOutcome;
+        typedef Aws::Utils::Outcome<BatchStartResult, MediaLiveError> BatchStartOutcome;
+        typedef Aws::Utils::Outcome<BatchStopResult, MediaLiveError> BatchStopOutcome;
         typedef Aws::Utils::Outcome<BatchUpdateScheduleResult, MediaLiveError> BatchUpdateScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, MediaLiveError> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateInputResult, MediaLiveError> CreateInputOutcome;
@@ -192,6 +201,9 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMultiplexProgramResult, MediaLiveError> UpdateMultiplexProgramOutcome;
         typedef Aws::Utils::Outcome<UpdateReservationResult, MediaLiveError> UpdateReservationOutcome;
 
+        typedef std::future<BatchDeleteOutcome> BatchDeleteOutcomeCallable;
+        typedef std::future<BatchStartOutcome> BatchStartOutcomeCallable;
+        typedef std::future<BatchStopOutcome> BatchStopOutcomeCallable;
         typedef std::future<BatchUpdateScheduleOutcome> BatchUpdateScheduleOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
@@ -243,6 +255,9 @@ namespace Model
 
   class MediaLiveClient;
 
+    typedef std::function<void(const MediaLiveClient*, const Model::BatchDeleteRequest&, const Model::BatchDeleteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::BatchStartRequest&, const Model::BatchStartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStartResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::BatchStopRequest&, const Model::BatchStopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::BatchUpdateScheduleRequest&, const Model::BatchUpdateScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputRequest&, const Model::CreateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputResponseReceivedHandler;
@@ -320,6 +335,81 @@ namespace Model
 
         virtual ~MediaLiveClient();
 
+
+        /**
+         * Starts delete of resources.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteOutcome BatchDelete(const Model::BatchDeleteRequest& request) const;
+
+        /**
+         * Starts delete of resources.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteOutcomeCallable BatchDeleteCallable(const Model::BatchDeleteRequest& request) const;
+
+        /**
+         * Starts delete of resources.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteAsync(const Model::BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Starts existing resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchStartOutcome BatchStart(const Model::BatchStartRequest& request) const;
+
+        /**
+         * Starts existing resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchStartOutcomeCallable BatchStartCallable(const Model::BatchStartRequest& request) const;
+
+        /**
+         * Starts existing resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchStartAsync(const Model::BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Stops running resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchStopOutcome BatchStop(const Model::BatchStopRequest& request) const;
+
+        /**
+         * Stops running resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchStopOutcomeCallable BatchStopCallable(const Model::BatchStopRequest& request) const;
+
+        /**
+         * Stops running resources<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchStopAsync(const Model::BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Update a channel schedule<p><h3>See Also:</h3>   <a
@@ -1518,6 +1608,9 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchDeleteAsyncHelper(const Model::BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchStartAsyncHelper(const Model::BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchStopAsyncHelper(const Model::BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdateScheduleAsyncHelper(const Model::BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInputAsyncHelper(const Model::CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

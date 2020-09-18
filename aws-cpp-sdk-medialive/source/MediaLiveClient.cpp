@@ -20,6 +20,9 @@
 #include <aws/medialive/MediaLiveClient.h>
 #include <aws/medialive/MediaLiveEndpoint.h>
 #include <aws/medialive/MediaLiveErrorMarshaller.h>
+#include <aws/medialive/model/BatchDeleteRequest.h>
+#include <aws/medialive/model/BatchStartRequest.h>
+#include <aws/medialive/model/BatchStopRequest.h>
 #include <aws/medialive/model/BatchUpdateScheduleRequest.h>
 #include <aws/medialive/model/CreateChannelRequest.h>
 #include <aws/medialive/model/CreateInputRequest.h>
@@ -139,6 +142,87 @@ void MediaLiveClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/batch/delete";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchDeleteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteOutcomeCallable MediaLiveClient::BatchDeleteCallable(const BatchDeleteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDelete(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::BatchDeleteAsync(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::BatchDeleteAsyncHelper(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDelete(request), context);
+}
+
+BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/batch/start";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchStartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchStartOutcomeCallable MediaLiveClient::BatchStartCallable(const BatchStartRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchStartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStart(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::BatchStartAsync(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchStartAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::BatchStartAsyncHelper(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchStart(request), context);
+}
+
+BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/batch/stop";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchStopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchStopOutcomeCallable MediaLiveClient::BatchStopCallable(const BatchStopRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchStopOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStop(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::BatchStopAsync(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchStopAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::BatchStopAsyncHelper(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchStop(request), context);
 }
 
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const

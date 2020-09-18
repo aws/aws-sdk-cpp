@@ -171,42 +171,74 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline AccountAssignment& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline AccountAssignment& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the principal.</p>
+     * <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds
+     * are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more
+     * information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO
+     * Identity Store API Reference</a>.</p>
      */
     inline AccountAssignment& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 

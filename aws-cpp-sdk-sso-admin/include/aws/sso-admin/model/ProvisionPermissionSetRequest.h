@@ -142,42 +142,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline ProvisionPermissionSetRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline ProvisionPermissionSetRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the chosen target.</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline ProvisionPermissionSetRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Bitbucket_HASH = HashingUtils::HashString("Bitbucket");
+        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
         static const int GitHubEnterpriseServer_HASH = HashingUtils::HashString("GitHubEnterpriseServer");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == Bitbucket_HASH)
           {
             return ProviderType::Bitbucket;
+          }
+          else if (hashCode == GitHub_HASH)
+          {
+            return ProviderType::GitHub;
           }
           else if (hashCode == GitHubEnterpriseServer_HASH)
           {
@@ -51,6 +56,8 @@ namespace Aws
           {
           case ProviderType::Bitbucket:
             return "Bitbucket";
+          case ProviderType::GitHub:
+            return "GitHub";
           case ProviderType::GitHubEnterpriseServer:
             return "GitHubEnterpriseServer";
           default:
