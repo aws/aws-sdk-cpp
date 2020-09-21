@@ -48,19 +48,19 @@ namespace Aws
         {
             public:
                 PartState();
-                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes, bool lastPart = false);
+                PartState(int partId, uint64_t bestProgressInBytes, uint64_t sizeInBytes, bool lastPart = false);
 
                 int GetPartId() const { return m_partId; }
 
-                size_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
-                void SetBestProgressInBytes(size_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
+                uint64_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
+                void SetBestProgressInBytes(uint64_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
 
-                size_t GetSizeInBytes() const { return m_sizeInBytes; }
-                void SetSizeInBytes(size_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
+                uint64_t GetSizeInBytes() const { return m_sizeInBytes; }
+                void SetSizeInBytes(uint64_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
 
                 void Reset();
 
-                void OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle);
+                void OnDataTransferred(uint64_t amount, const std::shared_ptr<TransferHandle> &transferHandle);
 
                 void SetETag(const Aws::String& eTag) { m_eTag = eTag; }
                 const Aws::String& GetETag() const { return m_eTag; }
@@ -71,8 +71,8 @@ namespace Aws
                 unsigned char* GetDownloadBuffer() const { return m_downloadBuffer; }
                 void SetDownloadBuffer(unsigned char* downloadBuffer) { m_downloadBuffer = downloadBuffer; }
 
-                void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
-                size_t GetRangeBegin() const { return m_rangeBegin; }
+                void SetRangeBegin(uint64_t rangeBegin) { m_rangeBegin = rangeBegin; }
+                uint64_t GetRangeBegin() const { return m_rangeBegin; }
 
                 bool IsLastPart() { return m_lastPart; }
                 void SetLastPart() { m_lastPart = true; }
@@ -82,10 +82,10 @@ namespace Aws
                 int m_partId;
 
                 Aws::String m_eTag;
-                size_t m_currentProgressInBytes;
-                size_t m_bestProgressInBytes;
-                size_t m_sizeInBytes;
-                size_t m_rangeBegin;
+                uint64_t m_currentProgressInBytes;
+                uint64_t m_bestProgressInBytes;
+                uint64_t m_sizeInBytes;
+                uint64_t m_rangeBegin;
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<unsigned char*> m_downloadBuffer;
@@ -98,8 +98,8 @@ namespace Aws
         enum class TransferStatus
         {
             //this value is only used for directory synchronization
-            EXACT_OBJECT_ALREADY_EXISTS,    
-            //Operation is still queued and has not begun processing        
+            EXACT_OBJECT_ALREADY_EXISTS,
+            //Operation is still queued and has not begun processing
             NOT_STARTED,
             //Operation is now running
             IN_PROGRESS,
@@ -147,8 +147,8 @@ namespace Aws
             /**
              * Alternate DOWNLOAD constructor
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, 
-                const uint64_t fileOffset, const uint64_t downloadBytes, 
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName,
+                const uint64_t fileOffset, const uint64_t downloadBytes,
                 CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
 
 
@@ -243,7 +243,7 @@ namespace Aws
              *  (1) Never lock; given a callback that can happen hundreds of times a second or more on a solid connection, it isn't acceptable to lock each time
              *  (2) Never go backwards, in spite of part upload/download failures.  Negative progress (canceling a highly concurrent transfer can
              *      lead to an enormous step backwards if many parts are aborted at once) is a confusing and undesirable user experience.
-             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the 
+             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the
              * necessary retries exceed the previous high-water mark.
              */
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
@@ -296,7 +296,7 @@ namespace Aws
             /**
              * Content type of the object being transferred
              */
-            inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; } 
+            inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; }
             /**
              * In case of an upload, this is the metadata that was placed on the object when it was uploaded.
              * In the case of a download, this is the object metadata from the GetObject operation.
@@ -345,7 +345,7 @@ namespace Aws
             /**
              * Blocks the calling thread until the operation has finished. This function does not busy wait. It is safe for your CPU.
              */
-            void WaitUntilFinished() const;      
+            void WaitUntilFinished() const;
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
 
@@ -353,7 +353,7 @@ namespace Aws
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
-            bool LockForCompletion() 
+            bool LockForCompletion()
             {
                 bool expected = false;
                 return m_lastPart.compare_exchange_strong(expected, true/*desired*/);

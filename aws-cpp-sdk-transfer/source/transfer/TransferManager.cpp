@@ -301,7 +301,7 @@ namespace Aws
                     {
                         uint64_t partSize = (std::min)(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
                         bool lastPart = (i == partCount - 1) ? true : false;
-                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize, lastPart));
                     }
                 }
                 else
@@ -319,7 +319,7 @@ namespace Aws
             }
             else
             {
-                size_t bytesLeft = 0;
+                uint64_t bytesLeft = 0;
                 //at this point we've been going synchronously so this is consistent
                 const auto failedPartsSize = handle->GetFailedParts().size();
                 for (auto failedParts : handle->GetFailedParts())
@@ -424,7 +424,7 @@ namespace Aws
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
-            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()), true);
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, handle->GetBytesTotalSize(), true);
 
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
@@ -755,7 +755,7 @@ namespace Aws
                     return false;
                 }
 
-                std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
+                auto downloadSize = static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength());
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
@@ -1160,7 +1160,7 @@ namespace Aws
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Seeking input stream to determine content-length to upload file to bucket: "
                     << bucketName << " with key: " << keyName);
             fileStream->seekg(0, std::ios_base::end);
-            size_t length = static_cast<size_t>(fileStream->tellg());
+            auto length = static_cast<uint64_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting content-length to " << length << " bytes. To upload file to bucket: "
                     << bucketName << " with key: " << keyName);
