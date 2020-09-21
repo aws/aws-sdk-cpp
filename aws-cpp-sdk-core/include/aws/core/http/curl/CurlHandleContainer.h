@@ -53,6 +53,7 @@ private:
     CurlHandleContainer(const CurlHandleContainer&&) = delete;
     const CurlHandleContainer& operator = (const CurlHandleContainer&&) = delete;
 
+    CURL* CreateCurlHandleInPool();
     bool CheckAndGrowPool();
     void SetDefaultOptionsOnHandle(CURL* handle);
 

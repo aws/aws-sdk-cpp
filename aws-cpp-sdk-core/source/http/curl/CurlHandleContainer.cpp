@@ -68,11 +68,35 @@ void CurlHandleContainer::DestroyCurlHandle(CURL* handle)
     }
 
     curl_easy_cleanup(handle);
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Destroy curl handle: " << handle);
     {
         std::lock_guard<std::mutex> locker(m_containerLock);
-        m_poolSize--;
+        // Other threads could be blocked and waiting on m_handleContainer.Acquire()
+        // If the handle is not released back to the pool, it could create a deadlock
+        // Create a new handle and release that into the pool
+        handle = CreateCurlHandleInPool();
     }
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Destroy curl handle: " << handle << " and decrease pool size by 1.");
+    if (handle)
+    {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Created replacement handle and released to pool: " << handle);
+    }
+}
+
+
+CURL* CurlHandleContainer::CreateCurlHandleInPool()
+{
+    CURL* curlHandle = curl_easy_init();
+
+    if (curlHandle)
+    {
+        SetDefaultOptionsOnHandle(curlHandle);
+        m_handleContainer.Release(curlHandle);
+    }
+    else
+    {
+        AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
+    }
+    return curlHandle;
 }
 
 bool CurlHandleContainer::CheckAndGrowPool()
@@ -87,17 +111,14 @@ bool CurlHandleContainer::CheckAndGrowPool()
         unsigned actuallyAdded = 0;
         for (unsigned i = 0; i < amountToAdd; ++i)
         {
-            CURL* curlHandle = curl_easy_init();
+            CURL* curlHandle = CreateCurlHandleInPool();
 
             if (curlHandle)
             {
-                SetDefaultOptionsOnHandle(curlHandle);
-                m_handleContainer.Release(curlHandle);
                 ++actuallyAdded;
             }
             else
             {
-                AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
                 break;
             }
         }
