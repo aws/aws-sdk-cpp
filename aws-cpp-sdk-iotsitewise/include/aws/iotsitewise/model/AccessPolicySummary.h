@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains an access policy that defines an AWS SSO identity's access to an AWS
-   * IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains an access policy that defines an identity's access to an AWS IoT
+   * SiteWise Monitor resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AccessPolicySummary">AWS
    * API Reference</a></p>
    */
@@ -84,32 +84,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline const Identity& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline void SetIdentity(const Identity& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline void SetIdentity(Identity&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(const Identity& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The AWS SSO identity (a user or group).</p>
+     * <p>The identity (an AWS SSO user, an AWS SSO group, or an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(Identity&& value) { SetIdentity(std::move(value)); return *this;}
 

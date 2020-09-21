@@ -154,42 +154,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(const char* value) { SetEngine(value); return *this;}
 

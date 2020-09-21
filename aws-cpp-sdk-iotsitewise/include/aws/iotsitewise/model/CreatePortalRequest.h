@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/ImageFile.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iotsitewise/model/AuthMode.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -458,6 +459,115 @@ namespace Model
      */
     inline CreatePortalRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline const AuthMode& GetPortalAuthMode() const{ return m_portalAuthMode; }
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline bool PortalAuthModeHasBeenSet() const { return m_portalAuthModeHasBeenSet; }
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline void SetPortalAuthMode(const AuthMode& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline void SetPortalAuthMode(AuthMode&& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = std::move(value); }
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline CreatePortalRequest& WithPortalAuthMode(const AuthMode& value) { SetPortalAuthMode(value); return *this;}
+
+    /**
+     * <p>The service to use to authenticate users to the portal. Choose from the
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
+     * Single Sign-On to authenticate users and manage user permissions. Before you can
+     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
+     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
+     * authenticate users and manage user permissions. IAM users must have the
+     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
+     * portal. This option is only available in the China Regions.</p> </li> </ul>
+     * <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
+     */
+    inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portalName;
@@ -480,6 +590,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    AuthMode m_portalAuthMode;
+    bool m_portalAuthModeHasBeenSet;
   };
 
 } // namespace Model

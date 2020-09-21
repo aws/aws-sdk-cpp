@@ -41,87 +41,87 @@ namespace Model
 
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The type of identity (user or group). This parameter is required if you
-     * specify <code>identityId</code>.</p>
+     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
+     * parameter is required if you specify <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the identity. This parameter is required if you specify
-     * <code>identityType</code>.</p>
+     * <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
@@ -213,6 +213,71 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline const Aws::String& GetIamArn() const{ return m_iamArn; }
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline bool IamArnHasBeenSet() const { return m_iamArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline void SetIamArn(const Aws::String& value) { m_iamArnHasBeenSet = true; m_iamArn = value; }
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline void SetIamArn(Aws::String&& value) { m_iamArnHasBeenSet = true; m_iamArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline void SetIamArn(const char* value) { m_iamArnHasBeenSet = true; m_iamArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline ListAccessPoliciesRequest& WithIamArn(const Aws::String& value) { SetIamArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline ListAccessPoliciesRequest& WithIamArn(Aws::String&& value) { SetIamArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify
+     * <code>IAM</code> for <code>identityType</code>.</p>
+     */
+    inline ListAccessPoliciesRequest& WithIamArn(const char* value) { SetIamArn(value); return *this;}
+
+
+    /**
      * <p>The token to be used for the next set of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -290,6 +355,9 @@ namespace Model
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
+    Aws::String m_iamArn;
+    bool m_iamArnHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

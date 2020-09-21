@@ -93,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -102,7 +102,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -111,7 +111,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -120,7 +120,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -129,7 +129,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -138,7 +138,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline AssetModelHierarchy& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline AssetModelHierarchy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -156,7 +156,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API.</p>
+     * API operation.</p>
      */
     inline AssetModelHierarchy& WithName(const char* value) { SetName(value); return *this;}
 

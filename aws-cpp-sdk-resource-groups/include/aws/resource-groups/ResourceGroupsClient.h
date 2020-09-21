@@ -140,7 +140,7 @@ namespace Model
    * resource types specified in a query, and share one or more tags or portions of
    * tags. You can create a group of resources based on their roles in your cloud
    * infrastructure, lifecycle stages, regions, application layers, or virtually any
-   * criteria. Resource groups enable you to automate management tasks, such as those
+   * criteria. Resource Groups enable you to automate management tasks, such as those
    * in AWS Systems Manager Automation documents, on tag-related resources in AWS
    * Systems Manager. Groups of tagged resources also let you quickly view a custom
    * console in AWS Systems Manager that shows AWS Config compliance and other
@@ -459,7 +459,7 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
+         * <p>Returns a list of AWS resource identifiers that matches the specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
@@ -468,7 +468,7 @@ namespace Model
         virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
+         * <p>Returns a list of AWS resource identifiers that matches the specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
@@ -479,7 +479,7 @@ namespace Model
         virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches tne specified query.
+         * <p>Returns a list of AWS resource identifiers that matches the specified query.
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS

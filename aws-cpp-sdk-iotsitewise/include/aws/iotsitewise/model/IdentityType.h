@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     USER,
-    GROUP
+    GROUP,
+    IAM
   };
 
 namespace IdentityTypeMapper

@@ -30,7 +30,8 @@ Target::Target() :
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
     m_sqsParametersHasBeenSet(false),
-    m_httpParametersHasBeenSet(false)
+    m_httpParametersHasBeenSet(false),
+    m_redshiftDataParametersHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Target::Target(JsonView jsonValue) :
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
     m_sqsParametersHasBeenSet(false),
-    m_httpParametersHasBeenSet(false)
+    m_httpParametersHasBeenSet(false),
+    m_redshiftDataParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ Target& Target::operator =(JsonView jsonValue)
     m_httpParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedshiftDataParameters"))
+  {
+    m_redshiftDataParameters = jsonValue.GetObject("RedshiftDataParameters");
+
+    m_redshiftDataParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue Target::Jsonize() const
   if(m_httpParametersHasBeenSet)
   {
    payload.WithObject("HttpParameters", m_httpParameters.Jsonize());
+
+  }
+
+  if(m_redshiftDataParametersHasBeenSet)
+  {
+   payload.WithObject("RedshiftDataParameters", m_redshiftDataParameters.Jsonize());
 
   }
 

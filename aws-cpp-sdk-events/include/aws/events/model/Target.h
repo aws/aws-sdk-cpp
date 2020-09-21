@@ -13,6 +13,7 @@
 #include <aws/events/model/BatchParameters.h>
 #include <aws/events/model/SqsParameters.h>
 #include <aws/events/model/HttpParameters.h>
+#include <aws/events/model/RedshiftDataParameters.h>
 #include <utility>
 
 namespace Aws
@@ -640,6 +641,55 @@ namespace Model
      */
     inline Target& WithHttpParameters(HttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline const RedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline void SetRedshiftDataParameters(const RedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline void SetRedshiftDataParameters(RedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline Target& WithRedshiftDataParameters(const RedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -677,6 +727,9 @@ namespace Model
 
     HttpParameters m_httpParameters;
     bool m_httpParametersHasBeenSet;
+
+    RedshiftDataParameters m_redshiftDataParameters;
+    bool m_redshiftDataParametersHasBeenSet;
   };
 
 } // namespace Model

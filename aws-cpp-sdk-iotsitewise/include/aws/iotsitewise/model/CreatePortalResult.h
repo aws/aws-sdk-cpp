@@ -134,37 +134,72 @@ namespace Model
 
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline const Aws::String& GetPortalStartUrl() const{ return m_portalStartUrl; }
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(const Aws::String& value) { m_portalStartUrl = value; }
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(Aws::String&& value) { m_portalStartUrl = std::move(value); }
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(const char* value) { m_portalStartUrl.assign(value); }
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(const Aws::String& value) { SetPortalStartUrl(value); return *this;}
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(Aws::String&& value) { SetPortalStartUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The public URL for the AWS IoT SiteWise Monitor portal.</p>
+     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
+     * access portals that use AWS SSO for authentication. For portals that use IAM for
+     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
+     * SiteWise API
+     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+     * operation to create a URL that you can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(const char* value) { SetPortalStartUrl(value); return *this;}
 
@@ -201,37 +236,37 @@ namespace Model
 
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline const Aws::String& GetSsoApplicationId() const{ return m_ssoApplicationId; }
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline void SetSsoApplicationId(const Aws::String& value) { m_ssoApplicationId = value; }
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline void SetSsoApplicationId(Aws::String&& value) { m_ssoApplicationId = std::move(value); }
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline void SetSsoApplicationId(const char* value) { m_ssoApplicationId.assign(value); }
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline CreatePortalResult& WithSsoApplicationId(const Aws::String& value) { SetSsoApplicationId(value); return *this;}
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline CreatePortalResult& WithSsoApplicationId(Aws::String&& value) { SetSsoApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The associated AWS SSO application Id.</p>
+     * <p>The associated AWS SSO application ID, if the portal uses AWS SSO.</p>
      */
     inline CreatePortalResult& WithSsoApplicationId(const char* value) { SetSsoApplicationId(value); return *this;}
 

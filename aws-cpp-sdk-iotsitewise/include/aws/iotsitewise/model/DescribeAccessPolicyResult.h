@@ -137,27 +137,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS SSO identity (user or group) to which this access policy applies.</p>
+     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
+     * policy applies.</p>
      */
     inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
 
     /**
-     * <p>The AWS SSO identity (user or group) to which this access policy applies.</p>
+     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
+     * policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentity = value; }
 
     /**
-     * <p>The AWS SSO identity (user or group) to which this access policy applies.</p>
+     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
+     * policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentity = std::move(value); }
 
     /**
-     * <p>The AWS SSO identity (user or group) to which this access policy applies.</p>
+     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
+     * policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
 
     /**
-     * <p>The AWS SSO identity (user or group) to which this access policy applies.</p>
+     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
+     * policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
 

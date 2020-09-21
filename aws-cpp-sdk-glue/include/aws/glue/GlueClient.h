@@ -23,6 +23,7 @@
 #include <aws/glue/model/BatchGetTriggersResult.h>
 #include <aws/glue/model/BatchGetWorkflowsResult.h>
 #include <aws/glue/model/BatchStopJobRunResult.h>
+#include <aws/glue/model/BatchUpdatePartitionResult.h>
 #include <aws/glue/model/CancelMLTaskRunResult.h>
 #include <aws/glue/model/CreateClassifierResult.h>
 #include <aws/glue/model/CreateConnectionResult.h>
@@ -196,6 +197,7 @@ namespace Model
         class BatchGetTriggersRequest;
         class BatchGetWorkflowsRequest;
         class BatchStopJobRunRequest;
+        class BatchUpdatePartitionRequest;
         class CancelMLTaskRunRequest;
         class CreateClassifierRequest;
         class CreateConnectionRequest;
@@ -331,6 +333,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetTriggersResult, GlueError> BatchGetTriggersOutcome;
         typedef Aws::Utils::Outcome<BatchGetWorkflowsResult, GlueError> BatchGetWorkflowsOutcome;
         typedef Aws::Utils::Outcome<BatchStopJobRunResult, GlueError> BatchStopJobRunOutcome;
+        typedef Aws::Utils::Outcome<BatchUpdatePartitionResult, GlueError> BatchUpdatePartitionOutcome;
         typedef Aws::Utils::Outcome<CancelMLTaskRunResult, GlueError> CancelMLTaskRunOutcome;
         typedef Aws::Utils::Outcome<CreateClassifierResult, GlueError> CreateClassifierOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, GlueError> CreateConnectionOutcome;
@@ -466,6 +469,7 @@ namespace Model
         typedef std::future<BatchGetTriggersOutcome> BatchGetTriggersOutcomeCallable;
         typedef std::future<BatchGetWorkflowsOutcome> BatchGetWorkflowsOutcomeCallable;
         typedef std::future<BatchStopJobRunOutcome> BatchStopJobRunOutcomeCallable;
+        typedef std::future<BatchUpdatePartitionOutcome> BatchUpdatePartitionOutcomeCallable;
         typedef std::future<CancelMLTaskRunOutcome> CancelMLTaskRunOutcomeCallable;
         typedef std::future<CreateClassifierOutcome> CreateClassifierOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
@@ -604,6 +608,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::BatchGetTriggersRequest&, const Model::BatchGetTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetWorkflowsRequest&, const Model::BatchGetWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchStopJobRunRequest&, const Model::BatchStopJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopJobRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::BatchUpdatePartitionRequest&, const Model::BatchUpdatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CancelMLTaskRunRequest&, const Model::CancelMLTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMLTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateClassifierRequest&, const Model::CreateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassifierResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
@@ -1156,6 +1161,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchStopJobRunAsync(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdatePartitionOutcome BatchUpdatePartition(const Model::BatchUpdatePartitionRequest& request) const;
+
+        /**
+         * <p>Updates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchUpdatePartitionOutcomeCallable BatchUpdatePartitionCallable(const Model::BatchUpdatePartitionRequest& request) const;
+
+        /**
+         * <p>Updates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchUpdatePartitionAsync(const Model::BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
@@ -4943,6 +4976,7 @@ namespace Model
         void BatchGetTriggersAsyncHelper(const Model::BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetWorkflowsAsyncHelper(const Model::BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchStopJobRunAsyncHelper(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchUpdatePartitionAsyncHelper(const Model::BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelMLTaskRunAsyncHelper(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClassifierAsyncHelper(const Model::CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

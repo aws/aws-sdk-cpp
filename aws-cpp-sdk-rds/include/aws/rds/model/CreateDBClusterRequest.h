@@ -1817,7 +1817,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -1827,7 +1830,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -1837,7 +1843,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -1847,7 +1856,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -1857,7 +1869,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -1867,7 +1882,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -1877,7 +1895,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1887,7 +1908,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -1897,7 +1921,10 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible
+     * values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 

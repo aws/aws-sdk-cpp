@@ -22,6 +22,7 @@ namespace Aws
 
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int GROUP_HASH = HashingUtils::HashString("GROUP");
+        static const int IAM_HASH = HashingUtils::HashString("IAM");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == GROUP_HASH)
           {
             return IdentityType::GROUP;
+          }
+          else if (hashCode == IAM_HASH)
+          {
+            return IdentityType::IAM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "USER";
           case IdentityType::GROUP:
             return "GROUP";
+          case IdentityType::IAM:
+            return "IAM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

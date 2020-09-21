@@ -20,7 +20,9 @@ CreatePortalRequest::CreatePortalRequest() :
     m_clientTokenHasBeenSet(true),
     m_portalLogoImageFileHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_portalAuthMode(AuthMode::NOT_SET),
+    m_portalAuthModeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,11 @@ Aws::String CreatePortalRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_portalAuthModeHasBeenSet)
+  {
+   payload.WithString("portalAuthMode", AuthModeMapper::GetNameForAuthMode(m_portalAuthMode));
   }
 
   return payload.View().WriteReadable();

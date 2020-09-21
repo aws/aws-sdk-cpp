@@ -20,13 +20,15 @@ namespace Model
 
 Identity::Identity() : 
     m_userHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_iamUserHasBeenSet(false)
 {
 }
 
 Identity::Identity(JsonView jsonValue) : 
     m_userHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_iamUserHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ Identity& Identity::operator =(JsonView jsonValue)
     m_groupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iamUser"))
+  {
+    m_iamUser = jsonValue.GetObject("iamUser");
+
+    m_iamUserHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue Identity::Jsonize() const
   if(m_groupHasBeenSet)
   {
    payload.WithObject("group", m_group.Jsonize());
+
+  }
+
+  if(m_iamUserHasBeenSet)
+  {
+   payload.WithObject("iamUser", m_iamUser.Jsonize());
 
   }
 

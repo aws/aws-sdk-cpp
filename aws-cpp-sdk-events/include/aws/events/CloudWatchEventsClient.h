@@ -1288,7 +1288,8 @@ namespace Model
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
          * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
          * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
          * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
@@ -1366,7 +1367,8 @@ namespace Model
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
          * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
          * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
          * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
@@ -1446,7 +1448,8 @@ namespace Model
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
          * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
          * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
          * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For

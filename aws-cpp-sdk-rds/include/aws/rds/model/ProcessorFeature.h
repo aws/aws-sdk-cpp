@@ -40,8 +40,13 @@ namespace Model
    * addition, you can use the following actions for DB instance class processor
    * information:</p> <ul> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li>
    * <p> <code>DescribeDBSnapshots</code> </p> </li> <li> <p>
-   * <code>DescribeValidDBInstanceModifications</code> </p> </li> </ul> <p>For more
-   * information, see <a
+   * <code>DescribeValidDBInstanceModifications</code> </p> </li> </ul> <p>If you
+   * call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns
+   * non-null values only if the following conditions are met:</p> <ul> <li> <p>You
+   * are accessing an Oracle DB instance.</p> </li> <li> <p>Your Oracle DB instance
+   * class supports configuring the number of CPU cores and threads per core.</p>
+   * </li> <li> <p>The current number CPU cores and threads is set to a non-default
+   * value.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
    * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    * </p><p><h3>See Also:</h3>   <a

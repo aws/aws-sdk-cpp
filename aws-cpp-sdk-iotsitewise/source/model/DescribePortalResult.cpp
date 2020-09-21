@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePortalResult::DescribePortalResult()
+DescribePortalResult::DescribePortalResult() : 
+    m_portalAuthMode(AuthMode::NOT_SET)
 {
 }
 
-DescribePortalResult::DescribePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribePortalResult::DescribePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_portalAuthMode(AuthMode::NOT_SET)
 {
   *this = result;
 }
@@ -97,6 +99,12 @@ DescribePortalResult& DescribePortalResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
+  if(jsonValue.ValueExists("portalAuthMode"))
+  {
+    m_portalAuthMode = AuthModeMapper::GetAuthModeForName(jsonValue.GetString("portalAuthMode"));
 
   }
 

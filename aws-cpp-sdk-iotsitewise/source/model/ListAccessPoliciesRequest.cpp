@@ -22,6 +22,7 @@ ListAccessPoliciesRequest::ListAccessPoliciesRequest() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_iamArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -61,6 +62,13 @@ void ListAccessPoliciesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_resourceId;
       uri.AddQueryStringParameter("resourceId", ss.str());
+      ss.str("");
+    }
+
+    if(m_iamArnHasBeenSet)
+    {
+      ss << m_iamArn;
+      uri.AddQueryStringParameter("iamArn", ss.str());
       ss.str("");
     }
 

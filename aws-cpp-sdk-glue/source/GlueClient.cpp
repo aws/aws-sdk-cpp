@@ -32,6 +32,7 @@
 #include <aws/glue/model/BatchGetTriggersRequest.h>
 #include <aws/glue/model/BatchGetWorkflowsRequest.h>
 #include <aws/glue/model/BatchStopJobRunRequest.h>
+#include <aws/glue/model/BatchUpdatePartitionRequest.h>
 #include <aws/glue/model/CancelMLTaskRunRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
@@ -550,6 +551,33 @@ void GlueClient::BatchStopJobRunAsync(const BatchStopJobRunRequest& request, con
 void GlueClient::BatchStopJobRunAsyncHelper(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchStopJobRun(request), context);
+}
+
+BatchUpdatePartitionOutcome GlueClient::BatchUpdatePartition(const BatchUpdatePartitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchUpdatePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchUpdatePartitionOutcomeCallable GlueClient::BatchUpdatePartitionCallable(const BatchUpdatePartitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdatePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdatePartition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchUpdatePartitionAsync(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdatePartitionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchUpdatePartitionAsyncHelper(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchUpdatePartition(request), context);
 }
 
 CancelMLTaskRunOutcome GlueClient::CancelMLTaskRun(const CancelMLTaskRunRequest& request) const

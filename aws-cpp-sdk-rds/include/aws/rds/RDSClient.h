@@ -1338,10 +1338,11 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
-         * another. In that case, the AWS Region where you call the
-         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
+         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
+         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
+         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
+         * Region for the DB snapshot copy. </p> <p>For more information about copying
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1352,10 +1353,11 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
-         * another. In that case, the AWS Region where you call the
-         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
+         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
+         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
+         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
+         * Region for the DB snapshot copy. </p> <p>For more information about copying
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1368,10 +1370,11 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
-         * another. In that case, the AWS Region where you call the
-         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
+         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
+         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
+         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
+         * Region for the DB snapshot copy. </p> <p>For more information about copying
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -2039,13 +2042,13 @@ namespace Aws
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates an Aurora global database spread across multiple regions. The global
-         * database contains a single primary cluster with read-write capability, and a
-         * read-only secondary cluster that receives data from the primary cluster through
-         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
-         * can create a global database that is initially empty, and then add a primary
-         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
-         * cluster during the create operation, and this cluster becomes the primary
+         * <p> Creates an Aurora global database spread across multiple AWS Regions. The
+         * global database contains a single primary cluster with read-write capability,
+         * and a read-only secondary cluster that receives data from the primary cluster
+         * through high-speed replication performed by the Aurora storage subsystem. </p>
+         * <p> You can create a global database that is initially empty, and then add a
+         * primary cluster and a secondary cluster to it. Or you can specify an existing
+         * Aurora cluster during the create operation, and this cluster becomes the primary
          * cluster of the global database. </p>  <p>This action only applies to
          * Aurora DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
@@ -2054,13 +2057,13 @@ namespace Aws
         virtual Model::CreateGlobalClusterOutcome CreateGlobalCluster(const Model::CreateGlobalClusterRequest& request) const;
 
         /**
-         * <p> Creates an Aurora global database spread across multiple regions. The global
-         * database contains a single primary cluster with read-write capability, and a
-         * read-only secondary cluster that receives data from the primary cluster through
-         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
-         * can create a global database that is initially empty, and then add a primary
-         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
-         * cluster during the create operation, and this cluster becomes the primary
+         * <p> Creates an Aurora global database spread across multiple AWS Regions. The
+         * global database contains a single primary cluster with read-write capability,
+         * and a read-only secondary cluster that receives data from the primary cluster
+         * through high-speed replication performed by the Aurora storage subsystem. </p>
+         * <p> You can create a global database that is initially empty, and then add a
+         * primary cluster and a secondary cluster to it. Or you can specify an existing
+         * Aurora cluster during the create operation, and this cluster becomes the primary
          * cluster of the global database. </p>  <p>This action only applies to
          * Aurora DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
@@ -2071,13 +2074,13 @@ namespace Aws
         virtual Model::CreateGlobalClusterOutcomeCallable CreateGlobalClusterCallable(const Model::CreateGlobalClusterRequest& request) const;
 
         /**
-         * <p> Creates an Aurora global database spread across multiple regions. The global
-         * database contains a single primary cluster with read-write capability, and a
-         * read-only secondary cluster that receives data from the primary cluster through
-         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
-         * can create a global database that is initially empty, and then add a primary
-         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
-         * cluster during the create operation, and this cluster becomes the primary
+         * <p> Creates an Aurora global database spread across multiple AWS Regions. The
+         * global database contains a single primary cluster with read-write capability,
+         * and a read-only secondary cluster that receives data from the primary cluster
+         * through high-speed replication performed by the Aurora storage subsystem. </p>
+         * <p> You can create a global database that is initially empty, and then add a
+         * primary cluster and a secondary cluster to it. Or you can specify an existing
+         * Aurora cluster during the create operation, and this cluster becomes the primary
          * cluster of the global database. </p>  <p>This action only applies to
          * Aurora DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
@@ -3676,8 +3679,8 @@ namespace Aws
          * security groups, DB snapshots, and DB cluster snapshots for the past 14 days.
          * Events specific to a particular DB instances, DB clusters, DB parameter groups,
          * DB security groups, DB snapshots, and DB cluster snapshots group can be obtained
-         * by providing the name as a parameter. By default, the past hour of events are
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * by providing the name as a parameter.</p>  <p>By default, the past hour of
+         * events are returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
          * API Reference</a></p>
          */
@@ -3688,8 +3691,8 @@ namespace Aws
          * security groups, DB snapshots, and DB cluster snapshots for the past 14 days.
          * Events specific to a particular DB instances, DB clusters, DB parameter groups,
          * DB security groups, DB snapshots, and DB cluster snapshots group can be obtained
-         * by providing the name as a parameter. By default, the past hour of events are
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * by providing the name as a parameter.</p>  <p>By default, the past hour of
+         * events are returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -3702,8 +3705,8 @@ namespace Aws
          * security groups, DB snapshots, and DB cluster snapshots for the past 14 days.
          * Events specific to a particular DB instances, DB clusters, DB parameter groups,
          * DB security groups, DB snapshots, and DB cluster snapshots group can be obtained
-         * by providing the name as a parameter. By default, the past hour of events are
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * by providing the name as a parameter.</p>  <p>By default, the past hour of
+         * events are returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
          * API Reference</a></p>
          *

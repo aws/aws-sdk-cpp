@@ -20,6 +20,7 @@
 #include <aws/iotsitewise/model/CreateDashboardResult.h>
 #include <aws/iotsitewise/model/CreateGatewayResult.h>
 #include <aws/iotsitewise/model/CreatePortalResult.h>
+#include <aws/iotsitewise/model/CreatePresignedPortalUrlResult.h>
 #include <aws/iotsitewise/model/CreateProjectResult.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyResult.h>
 #include <aws/iotsitewise/model/DeleteAssetResult.h>
@@ -110,6 +111,7 @@ namespace Model
         class CreateDashboardRequest;
         class CreateGatewayRequest;
         class CreatePortalRequest;
+        class CreatePresignedPortalUrlRequest;
         class CreateProjectRequest;
         class DeleteAccessPolicyRequest;
         class DeleteAssetRequest;
@@ -165,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDashboardResult, IoTSiteWiseError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateGatewayResult, IoTSiteWiseError> CreateGatewayOutcome;
         typedef Aws::Utils::Outcome<CreatePortalResult, IoTSiteWiseError> CreatePortalOutcome;
+        typedef Aws::Utils::Outcome<CreatePresignedPortalUrlResult, IoTSiteWiseError> CreatePresignedPortalUrlOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, IoTSiteWiseError> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteAccessPolicyResult, IoTSiteWiseError> DeleteAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteAssetResult, IoTSiteWiseError> DeleteAssetOutcome;
@@ -220,6 +223,7 @@ namespace Model
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
         typedef std::future<CreatePortalOutcome> CreatePortalOutcomeCallable;
+        typedef std::future<CreatePresignedPortalUrlOutcome> CreatePresignedPortalUrlOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteAccessPolicyOutcome> DeleteAccessPolicyOutcomeCallable;
         typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
@@ -278,6 +282,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePortalRequest&, const Model::CreatePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePortalResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePresignedPortalUrlRequest&, const Model::CreatePresignedPortalUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedPortalUrlResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAccessPolicyRequest&, const Model::DeleteAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
@@ -549,18 +554,18 @@ namespace Model
         virtual void BatchPutAssetPropertyValueAsync(const Model::BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an access policy that grants the specified AWS Single Sign-On user or
-         * group access to the specified AWS IoT SiteWise Monitor portal or project
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
+         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
+         * portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAccessPolicyOutcome CreateAccessPolicy(const Model::CreateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Creates an access policy that grants the specified AWS Single Sign-On user or
-         * group access to the specified AWS IoT SiteWise Monitor portal or project
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
+         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
+         * portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -569,9 +574,9 @@ namespace Model
         virtual Model::CreateAccessPolicyOutcomeCallable CreateAccessPolicyCallable(const Model::CreateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Creates an access policy that grants the specified AWS Single Sign-On user or
-         * group access to the specified AWS IoT SiteWise Monitor portal or project
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
+         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
+         * portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -728,13 +733,10 @@ namespace Model
         virtual void CreateGatewayAsync(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
-         * uses AWS SSO to manage user permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
-         * can sign in to a new portal, you must add at least one AWS SSO user or group to
-         * that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
+         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
+         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
+         * at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -744,13 +746,10 @@ namespace Model
         virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
-         * uses AWS SSO to manage user permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
-         * can sign in to a new portal, you must add at least one AWS SSO user or group to
-         * that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
+         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
+         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
+         * at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -762,13 +761,10 @@ namespace Model
         virtual Model::CreatePortalOutcomeCallable CreatePortalCallable(const Model::CreatePortalRequest& request) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. Before you can
-         * create a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor
-         * uses AWS SSO to manage user permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
-         * can sign in to a new portal, you must add at least one AWS SSO user or group to
-         * that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
+         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
+         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
+         * at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -778,6 +774,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortalAsync(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedPortalUrlOutcome CreatePresignedPortalUrl(const Model::CreatePresignedPortalUrlRequest& request) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePresignedPortalUrlOutcomeCallable CreatePresignedPortalUrlCallable(const Model::CreatePresignedPortalUrlRequest& request) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePresignedPortalUrlAsync(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
@@ -805,20 +838,20 @@ namespace Model
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an access policy that grants the specified AWS Single Sign-On
-         * identity access to the specified AWS IoT SiteWise Monitor resource. You can use
-         * this operation to revoke access to an AWS IoT SiteWise Monitor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an access policy that grants the specified identity access to the
+         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
+         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAccessPolicyOutcome DeleteAccessPolicy(const Model::DeleteAccessPolicyRequest& request) const;
 
         /**
-         * <p>Deletes an access policy that grants the specified AWS Single Sign-On
-         * identity access to the specified AWS IoT SiteWise Monitor resource. You can use
-         * this operation to revoke access to an AWS IoT SiteWise Monitor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an access policy that grants the specified identity access to the
+         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
+         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -827,10 +860,10 @@ namespace Model
         virtual Model::DeleteAccessPolicyOutcomeCallable DeleteAccessPolicyCallable(const Model::DeleteAccessPolicyRequest& request) const;
 
         /**
-         * <p>Deletes an access policy that grants the specified AWS Single Sign-On
-         * identity access to the specified AWS IoT SiteWise Monitor resource. You can use
-         * this operation to revoke access to an AWS IoT SiteWise Monitor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an access policy that grants the specified identity access to the
+         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
+         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -957,10 +990,7 @@ namespace Model
 
         /**
          * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-         * retention</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * the gateway's files remain in your gateway's file system.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
@@ -969,10 +999,7 @@ namespace Model
 
         /**
          * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-         * retention</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * the gateway's files remain in your gateway's file system.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
@@ -983,10 +1010,7 @@ namespace Model
 
         /**
          * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-         * retention</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * the gateway's files remain in your gateway's file system.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
@@ -1049,16 +1073,16 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an access policy, which specifies an AWS SSO user or group's access
-         * to an AWS IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an AWS
+         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAccessPolicyOutcome DescribeAccessPolicy(const Model::DescribeAccessPolicyRequest& request) const;
 
         /**
-         * <p>Describes an access policy, which specifies an AWS SSO user or group's access
-         * to an AWS IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an AWS
+         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1067,8 +1091,8 @@ namespace Model
         virtual Model::DescribeAccessPolicyOutcomeCallable DescribeAccessPolicyCallable(const Model::DescribeAccessPolicyRequest& request) const;
 
         /**
-         * <p>Describes an access policy, which specifies an AWS SSO user or group's access
-         * to an AWS IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an AWS
+         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1531,18 +1555,18 @@ namespace Model
         virtual void GetAssetPropertyValueHistoryAsync(const Model::GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an AWS SSO identity (a user
-         * or group) or an AWS IoT SiteWise Monitor resource (a portal or
-         * project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
+         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
+         * (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAccessPoliciesOutcome ListAccessPolicies(const Model::ListAccessPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an AWS SSO identity (a user
-         * or group) or an AWS IoT SiteWise Monitor resource (a portal or
-         * project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
+         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
+         * (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          *
@@ -1551,9 +1575,9 @@ namespace Model
         virtual Model::ListAccessPoliciesOutcomeCallable ListAccessPoliciesCallable(const Model::ListAccessPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an AWS SSO identity (a user
-         * or group) or an AWS IoT SiteWise Monitor resource (a portal or
-         * project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
+         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
+         * (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          *
@@ -1916,18 +1940,18 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing access policy that specifies an AWS SSO user or group's
-         * access to an AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing access policy that specifies an identity's access to an
+         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAccessPolicyOutcome UpdateAccessPolicy(const Model::UpdateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Updates an existing access policy that specifies an AWS SSO user or group's
-         * access to an AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing access policy that specifies an identity's access to an
+         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1936,9 +1960,9 @@ namespace Model
         virtual Model::UpdateAccessPolicyOutcomeCallable UpdateAccessPolicyCallable(const Model::UpdateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Updates an existing access policy that specifies an AWS SSO user or group's
-         * access to an AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing access policy that specifies an identity's access to an
+         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1991,12 +2015,11 @@ namespace Model
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model or update a property's formula
-         * expression, AWS IoT SiteWise deletes all previous data for that property. If you
-         * remove a hierarchy definition from an asset model, AWS IoT SiteWise
-         * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
-         * <a
+         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * previous data for that property. If you remove a hierarchy definition from an
+         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * hierarchy. You can't change the type or data type of an existing property.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
          */
@@ -2013,12 +2036,11 @@ namespace Model
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model or update a property's formula
-         * expression, AWS IoT SiteWise deletes all previous data for that property. If you
-         * remove a hierarchy definition from an asset model, AWS IoT SiteWise
-         * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
-         * <a
+         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * previous data for that property. If you remove a hierarchy definition from an
+         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * hierarchy. You can't change the type or data type of an existing property.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
          *
@@ -2037,12 +2059,11 @@ namespace Model
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model or update a property's formula
-         * expression, AWS IoT SiteWise deletes all previous data for that property. If you
-         * remove a hierarchy definition from an asset model, AWS IoT SiteWise
-         * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
-         * <a
+         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * previous data for that property. If you remove a hierarchy definition from an
+         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * hierarchy. You can't change the type or data type of an existing property.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
          *
@@ -2253,6 +2274,7 @@ namespace Model
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGatewayAsyncHelper(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePortalAsyncHelper(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePresignedPortalUrlAsyncHelper(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPolicyAsyncHelper(const Model::DeleteAccessPolicyRequest& request, const DeleteAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssetAsyncHelper(const Model::DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

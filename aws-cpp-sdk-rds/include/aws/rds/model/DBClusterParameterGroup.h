@@ -43,91 +43,91 @@ namespace Model
 
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the DB cluster parameter group.</p>
+     * <p>The name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with.</p>
+     * <p>The name of the DB parameter group family that this DB cluster parameter
+     * group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

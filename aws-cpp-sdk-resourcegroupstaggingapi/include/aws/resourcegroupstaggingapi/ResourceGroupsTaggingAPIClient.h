@@ -160,9 +160,11 @@ namespace Model
    * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codebuild">AWS
    * CodeBuild</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/codecommit">AWS CodeCommit</a> </p> </li> <li>
-   * <p> <a href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a> </p>
-   * </li> <li> <p> <a href="https://docs.aws.amazon.com/codestar">AWS CodeStar</a>
-   * </p> </li> <li> <p> <a
+   * <p> <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/">AWS
+   * CodeGuru Profiler</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a> </p> </li>
+   * <li> <p> <a href="https://docs.aws.amazon.com/codestar">AWS CodeStar</a> </p>
+   * </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/">AWS
    * CodeStar Connections</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/cognito">Amazon Cognito Identity</a> </p>
@@ -195,6 +197,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/efs">Amazon Elastic File System</a> </p> </li>
    * <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing">Elastic Load
    * Balancing</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/elastic-inference">Amazon Elastic
+   * Inference</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/elasticache">Amazon ElastiCache</a> </p> </li>
    * <li> <p> <a href="https://docs.aws.amazon.com/elasticsearch-service">Amazon
    * Elasticsearch Service</a> </p> </li> <li> <p> <a
@@ -208,8 +212,11 @@ namespace Model
    * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/eventbridge">Amazon
    * EventBridge Schema</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/firewall-manager">AWS Firewall Manager</a>
-   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
-   * </p> </li> <li> <p> <a
+   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/forecast">Amazon
+   * Forecast</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a> </p>
+   * </li> <li> <p> <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a> </p>
+   * </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/s3/?id=docs_gateway#amazon-s3-glacier">Amazon
    * S3 Glacier</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/global-accelerator">AWS Global Accelerator</a>
@@ -218,11 +225,12 @@ namespace Model
    * href="https://docs.aws.amazon.com/glue">AWS Glue</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/guardduty">Amazon GuardDuty</a> </p> </li>
    * <li> <p> <a href="https://docs.aws.amazon.com/inspector">Amazon Inspector</a>
-   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iotanalytics">AWS IoT
-   * Analytics</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/iot">AWS
-   * IoT Core</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/iot-device-defender">AWS IoT Device
-   * Defender</a> </p> </li> <li> <p> <a
+   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/ivs">Amazon Interactive
+   * Video Service</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/iotanalytics">AWS IoT Analytics</a> </p> </li>
+   * <li> <p> <a href="https://docs.aws.amazon.com/iot">AWS IoT Core</a> </p> </li>
+   * <li> <p> <a href="https://docs.aws.amazon.com/iot-device-defender">AWS IoT
+   * Device Defender</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/iot-device-management">AWS IoT Device
    * Management</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/iotevents">AWS IoT Events</a> </p> </li> <li>
@@ -243,15 +251,20 @@ namespace Model
    * href="https://docs.aws.amazon.com/lambda">AWS Lambda</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/lex">Amazon Lex</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/license-manager">AWS License Manager</a> </p>
-   * </li> <li> <p> <a href="https://docs.aws.amazon.com/macie">Amazon Macie</a> </p>
-   * </li> <li> <p> <a href="https://docs.aws.amazon.com/machine-learning">Amazon
-   * Machine Learning</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/amazon-mq">Amazon MQ</a> </p> </li> <li> <p>
-   * <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/neptune">Amazon Neptune</a> </p> </li> <li>
-   * <p> <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks</a> </p> </li>
-   * <li> <p> <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks CM</a> </p>
-   * </li> <li> <p> <a href="https://docs.aws.amazon.com/organizations">AWS
+   * </li> <li> <p> <a href="https://docs.aws.amazon.com/lightsail">Amazon
+   * Lightsail</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/macie">Amazon Macie</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/machine-learning">Amazon Machine Learning</a>
+   * </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/amazon-mq">Amazon
+   * MQ</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/msk">Amazon
+   * MSK</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/msk">Amazon
+   * MSK</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/neptune">Amazon
+   * Neptune</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html">AWS
+   * Network Manager</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks</a> </p> </li> <li> <p>
+   * <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks CM</a> </p> </li>
+   * <li> <p> <a href="https://docs.aws.amazon.com/organizations">AWS
    * Organizations</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/pinpoint">Amazon Pinpoint</a> </p> </li> <li>
    * <p> <a href="https://docs.aws.amazon.com/qldb">Amazon Quantum Ledger Database
@@ -285,7 +298,7 @@ namespace Model
    * Manager</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/transfer">AWS Transfer for SFTP</a> </p> </li>
    * <li> <p> <a href="https://docs.aws.amazon.com/vpc">Amazon VPC</a> </p> </li>
-   * <li> <p> <a href="https://docs.aws.amazon.com/waf">AWS WAFv2</a> </p> </li> <li>
+   * <li> <p> <a href="https://docs.aws.amazon.com/waf">AWS WAF</a> </p> </li> <li>
    * <p> <a href="https://docs.aws.amazon.com/waf">AWS WAF Regional</a> </p> </li>
    * <li> <p> <a href="https://docs.aws.amazon.com/worklink">Amazon WorkLink</a> </p>
    * </li> <li> <p> <a href="https://docs.aws.amazon.com/workspaces">Amazon
