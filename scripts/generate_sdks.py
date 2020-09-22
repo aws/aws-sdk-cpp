@@ -50,7 +50,8 @@ serviceNameRemaps = {
     "entitlement.marketplace" : "marketplace-entitlement",
     "runtime.sagemaker" : "sagemaker-runtime",
     "transfer" : "awstransfer",
-    "transcribe-streaming" : "transcribestreaming"
+    "transcribe-streaming" : "transcribestreaming",
+    "streams.dynamodb" : "dynamodbstreams"
 }
 
 def DiscoverAllAvailableSDKs(discoveryPath):
