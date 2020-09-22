@@ -78,24 +78,12 @@ namespace Model
     typedef std::function<void(const DynamoDBStreamsClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon DynamoDB Streams</fullname> <p>This is the Amazon DynamoDB
-   * Streams API Reference. This guide describes the low-level API actions for
-   * accessing streams and processing stream records. For information about
-   * application development with DynamoDB Streams, see the <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide//Streams.html">Amazon
-   * DynamoDB Developer Guide</a>.</p> <p>Note that this document is intended for use
-   * with the following DynamoDB documentation:</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
-   * DynamoDB Developer Guide</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/">Amazon
-   * DynamoDB API Reference</a> </p> </li> </ul> <p>The following are short
-   * descriptions of each low-level DynamoDB Streams API action, organized by
-   * function.</p> <ul> <li><p><i>DescribeStream</i> - Returns detailed information
-   * about a particular stream.</p></li> <li> <p><i>GetRecords</i> - Retrieves the
-   * stream records from within a shard.</p> </li> <li> <p><i>GetShardIterator</i> -
-   * Returns information on how to retrieve the streams record from a shard with a
-   * given shard ID.</p> </li> <li> <p><i>ListStreams</i> - Returns a list of all the
-   * streams associated with the current AWS account and endpoint.</p> </li> </ul>
+   * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API
+   * actions for accessing streams and processing stream records. To learn more about
+   * application development with Streams, see <a
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
+   * Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer
+   * Guide.</p>
    */
   class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient
   {
@@ -127,28 +115,34 @@ namespace Model
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
-         * has a <code>SequenceNumberRange</code> associated with it. If the
-         * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
-         * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
-         * receive more stream records). If both <code>StartingSequenceNumber</code> and
-         * <code>EndingSequenceNumber</code> are present, the that shared is closed and can
-         * no longer receive more data.</p>
+         * corresponding DynamoDB table.</p>  <p>You can call
+         * <code>DescribeStream</code> at a maximum rate of 10 times per second.</p>
+         *  <p>Each shard in the stream has a <code>SequenceNumberRange</code>
+         * associated with it. If the <code>SequenceNumberRange</code> has a
+         * <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>,
+         * then the shard is still open (able to receive more stream records). If both
+         * <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are
+         * present, then that shard is closed and can no longer receive more
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
-         * has a <code>SequenceNumberRange</code> associated with it. If the
-         * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
-         * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
-         * receive more stream records). If both <code>StartingSequenceNumber</code> and
-         * <code>EndingSequenceNumber</code> are present, the that shared is closed and can
-         * no longer receive more data.</p>
+         * corresponding DynamoDB table.</p>  <p>You can call
+         * <code>DescribeStream</code> at a maximum rate of 10 times per second.</p>
+         *  <p>Each shard in the stream has a <code>SequenceNumberRange</code>
+         * associated with it. If the <code>SequenceNumberRange</code> has a
+         * <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>,
+         * then the shard is still open (able to receive more stream records). If both
+         * <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are
+         * present, then that shard is closed and can no longer receive more
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -157,14 +151,17 @@ namespace Model
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
-         * has a <code>SequenceNumberRange</code> associated with it. If the
-         * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
-         * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
-         * receive more stream records). If both <code>StartingSequenceNumber</code> and
-         * <code>EndingSequenceNumber</code> are present, the that shared is closed and can
-         * no longer receive more data.</p>
+         * corresponding DynamoDB table.</p>  <p>You can call
+         * <code>DescribeStream</code> at a maximum rate of 10 times per second.</p>
+         *  <p>Each shard in the stream has a <code>SequenceNumberRange</code>
+         * associated with it. If the <code>SequenceNumberRange</code> has a
+         * <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>,
+         * then the shard is still open (able to receive more stream records). If both
+         * <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are
+         * present, then that shard is closed and can no longer receive more
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -177,9 +174,11 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <p><function>GetRecords</function> can
-         * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p>
+         * that contains stream records.</p>  <p> <code>GetRecords</code> can
+         * retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes
+         * first.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
@@ -190,9 +189,11 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <p><function>GetRecords</function> can
-         * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p>
+         * that contains stream records.</p>  <p> <code>GetRecords</code> can
+         * retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes
+         * first.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -205,9 +206,11 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <p><function>GetRecords</function> can
-         * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p>
+         * that contains stream records.</p>  <p> <code>GetRecords</code> can
+         * retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes
+         * first.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -217,8 +220,10 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p>
+         * shard.</p>  <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetShardIteratorOutcome GetShardIterator(const Model::GetShardIteratorRequest& request) const;
 
@@ -226,8 +231,10 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p>
+         * shard.</p>  <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -237,8 +244,10 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p>
+         * shard.</p>  <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -247,18 +256,22 @@ namespace Model
         /**
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
-         * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p>
+         * <code>ListStreams</code> will return only the streams ARNs for that table.</p>
+         *  <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per
+         * second.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
         /**
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
-         * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p>
+         * <code>ListStreams</code> will return only the streams ARNs for that table.</p>
+         *  <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per
+         * second.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -267,9 +280,11 @@ namespace Model
         /**
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
-         * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p>
+         * <code>ListStreams</code> will return only the streams ARNs for that table.</p>
+         *  <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per
+         * second.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

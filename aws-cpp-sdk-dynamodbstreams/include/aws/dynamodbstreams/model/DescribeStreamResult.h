@@ -25,7 +25,10 @@ namespace DynamoDBStreams
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeStream</i> operation.</p>
+   * <p>Represents the output of a <code>DescribeStream</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStreamOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API DescribeStreamResult
   {

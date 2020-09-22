@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A uniquely identified group of stream records within a stream.</p>
+   * <p>A uniquely identified group of stream records within a stream.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Shard">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API Shard
   {

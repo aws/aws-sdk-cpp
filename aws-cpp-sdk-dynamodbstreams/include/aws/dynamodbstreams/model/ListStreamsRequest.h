@@ -17,7 +17,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ListStreams</i> operation.</p>
+   * <p>Represents the input of a <code>ListStreams</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreamsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API ListStreamsRequest : public DynamoDBStreamsRequest
   {

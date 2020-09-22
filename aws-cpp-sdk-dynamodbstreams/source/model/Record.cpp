@@ -25,7 +25,8 @@ Record::Record() :
     m_eventVersionHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
-    m_dynamodbHasBeenSet(false)
+    m_dynamodbHasBeenSet(false),
+    m_userIdentityHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ Record::Record(JsonView jsonValue) :
     m_eventVersionHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
-    m_dynamodbHasBeenSet(false)
+    m_dynamodbHasBeenSet(false),
+    m_userIdentityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ Record& Record::operator =(JsonView jsonValue)
     m_dynamodbHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userIdentity"))
+  {
+    m_userIdentity = jsonValue.GetObject("userIdentity");
+
+    m_userIdentityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue Record::Jsonize() const
   if(m_dynamodbHasBeenSet)
   {
    payload.WithObject("dynamodb", m_dynamodb.Jsonize());
+
+  }
+
+  if(m_userIdentityHasBeenSet)
+  {
+   payload.WithObject("userIdentity", m_userIdentity.Jsonize());
 
   }
 

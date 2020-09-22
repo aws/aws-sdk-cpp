@@ -19,6 +19,7 @@ namespace Model
 {
 
 StreamRecord::StreamRecord() : 
+    m_approximateCreationDateTimeHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_newImageHasBeenSet(false),
     m_oldImageHasBeenSet(false),
@@ -31,6 +32,7 @@ StreamRecord::StreamRecord() :
 }
 
 StreamRecord::StreamRecord(JsonView jsonValue) : 
+    m_approximateCreationDateTimeHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_newImageHasBeenSet(false),
     m_oldImageHasBeenSet(false),
@@ -45,6 +47,13 @@ StreamRecord::StreamRecord(JsonView jsonValue) :
 
 StreamRecord& StreamRecord::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ApproximateCreationDateTime"))
+  {
+    m_approximateCreationDateTime = jsonValue.GetDouble("ApproximateCreationDateTime");
+
+    m_approximateCreationDateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
@@ -102,6 +111,11 @@ StreamRecord& StreamRecord::operator =(JsonView jsonValue)
 JsonValue StreamRecord::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_approximateCreationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("ApproximateCreationDateTime", m_approximateCreationDateTime.SecondsWithMSPrecision());
+  }
 
   if(m_keysHasBeenSet)
   {

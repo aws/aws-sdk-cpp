@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline const ModelStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline DocumentClassifierFilter& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline DocumentClassifierFilter& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -20,30 +20,35 @@ namespace Aws
       namespace LocaleMapper
       {
 
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
-        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
         static const int de_DE_HASH = HashingUtils::HashString("de-DE");
         static const int en_AU_HASH = HashingUtils::HashString("en-AU");
+        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
+        static const int en_US_HASH = HashingUtils::HashString("en-US");
+        static const int es_US_HASH = HashingUtils::HashString("es-US");
 
 
         Locale GetLocaleForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == en_US_HASH)
-          {
-            return Locale::en_US;
-          }
-          else if (hashCode == en_GB_HASH)
-          {
-            return Locale::en_GB;
-          }
-          else if (hashCode == de_DE_HASH)
+          if (hashCode == de_DE_HASH)
           {
             return Locale::de_DE;
           }
           else if (hashCode == en_AU_HASH)
           {
             return Locale::en_AU;
+          }
+          else if (hashCode == en_GB_HASH)
+          {
+            return Locale::en_GB;
+          }
+          else if (hashCode == en_US_HASH)
+          {
+            return Locale::en_US;
+          }
+          else if (hashCode == es_US_HASH)
+          {
+            return Locale::es_US;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +64,16 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case Locale::en_US:
-            return "en-US";
-          case Locale::en_GB:
-            return "en-GB";
           case Locale::de_DE:
             return "de-DE";
           case Locale::en_AU:
             return "en-AU";
+          case Locale::en_GB:
+            return "en-GB";
+          case Locale::en_US:
+            return "en-US";
+          case Locale::es_US:
+            return "es-US";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -157,21 +157,21 @@ namespace Model
 
     /**
      * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
-     * indicates that the bot is using the imoprovements, otherwise,
+     * indicates that the bot is using the improvements, otherwise,
      * <code>false</code>.</p>
      */
     inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
 
     /**
      * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
-     * indicates that the bot is using the imoprovements, otherwise,
+     * indicates that the bot is using the improvements, otherwise,
      * <code>false</code>.</p>
      */
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
 
     /**
      * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
-     * indicates that the bot is using the imoprovements, otherwise,
+     * indicates that the bot is using the improvements, otherwise,
      * <code>false</code>.</p>
      */
     inline PutBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}

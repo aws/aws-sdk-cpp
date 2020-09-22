@@ -22,6 +22,7 @@
 #include <aws/workmail/WorkMailErrorMarshaller.h>
 #include <aws/workmail/model/AssociateDelegateToResourceRequest.h>
 #include <aws/workmail/model/AssociateMemberToGroupRequest.h>
+#include <aws/workmail/model/CancelMailboxExportJobRequest.h>
 #include <aws/workmail/model/CreateAliasRequest.h>
 #include <aws/workmail/model/CreateGroupRequest.h>
 #include <aws/workmail/model/CreateResourceRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
+#include <aws/workmail/model/DescribeMailboxExportJobRequest.h>
 #include <aws/workmail/model/DescribeOrganizationRequest.h>
 #include <aws/workmail/model/DescribeResourceRequest.h>
 #include <aws/workmail/model/DescribeUserRequest.h>
@@ -47,6 +49,7 @@
 #include <aws/workmail/model/ListAliasesRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
+#include <aws/workmail/model/ListMailboxExportJobsRequest.h>
 #include <aws/workmail/model/ListMailboxPermissionsRequest.h>
 #include <aws/workmail/model/ListOrganizationsRequest.h>
 #include <aws/workmail/model/ListResourceDelegatesRequest.h>
@@ -58,6 +61,7 @@
 #include <aws/workmail/model/PutRetentionPolicyRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
+#include <aws/workmail/model/StartMailboxExportJobRequest.h>
 #include <aws/workmail/model/TagResourceRequest.h>
 #include <aws/workmail/model/UntagResourceRequest.h>
 #include <aws/workmail/model/UpdateMailboxQuotaRequest.h>
@@ -189,6 +193,33 @@ void WorkMailClient::AssociateMemberToGroupAsync(const AssociateMemberToGroupReq
 void WorkMailClient::AssociateMemberToGroupAsyncHelper(const AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateMemberToGroup(request), context);
+}
+
+CancelMailboxExportJobOutcome WorkMailClient::CancelMailboxExportJob(const CancelMailboxExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelMailboxExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelMailboxExportJobOutcomeCallable WorkMailClient::CancelMailboxExportJobCallable(const CancelMailboxExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelMailboxExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelMailboxExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::CancelMailboxExportJobAsync(const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelMailboxExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::CancelMailboxExportJobAsyncHelper(const CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelMailboxExportJob(request), context);
 }
 
 CreateAliasOutcome WorkMailClient::CreateAlias(const CreateAliasRequest& request) const
@@ -542,6 +573,33 @@ void WorkMailClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& reques
   handler(this, request, DescribeGroup(request), context);
 }
 
+DescribeMailboxExportJobOutcome WorkMailClient::DescribeMailboxExportJob(const DescribeMailboxExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeMailboxExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMailboxExportJobOutcomeCallable WorkMailClient::DescribeMailboxExportJobCallable(const DescribeMailboxExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMailboxExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMailboxExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DescribeMailboxExportJobAsync(const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMailboxExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DescribeMailboxExportJobAsyncHelper(const DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMailboxExportJob(request), context);
+}
+
 DescribeOrganizationOutcome WorkMailClient::DescribeOrganization(const DescribeOrganizationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -866,6 +924,33 @@ void WorkMailClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, con
   handler(this, request, ListGroups(request), context);
 }
 
+ListMailboxExportJobsOutcome WorkMailClient::ListMailboxExportJobs(const ListMailboxExportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListMailboxExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMailboxExportJobsOutcomeCallable WorkMailClient::ListMailboxExportJobsCallable(const ListMailboxExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMailboxExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMailboxExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListMailboxExportJobsAsync(const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMailboxExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::ListMailboxExportJobsAsyncHelper(const ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMailboxExportJobs(request), context);
+}
+
 ListMailboxPermissionsOutcome WorkMailClient::ListMailboxPermissions(const ListMailboxPermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1161,6 +1246,33 @@ void WorkMailClient::ResetPasswordAsync(const ResetPasswordRequest& request, con
 void WorkMailClient::ResetPasswordAsyncHelper(const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetPassword(request), context);
+}
+
+StartMailboxExportJobOutcome WorkMailClient::StartMailboxExportJob(const StartMailboxExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartMailboxExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMailboxExportJobOutcomeCallable WorkMailClient::StartMailboxExportJobCallable(const StartMailboxExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMailboxExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMailboxExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::StartMailboxExportJobAsync(const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMailboxExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::StartMailboxExportJobAsyncHelper(const StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMailboxExportJob(request), context);
 }
 
 TagResourceOutcome WorkMailClient::TagResource(const TagResourceRequest& request) const

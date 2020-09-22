@@ -74,7 +74,7 @@ DynamoDBStreamsClient::~DynamoDBStreamsClient()
 
 void DynamoDBStreamsClient::init(const ClientConfiguration& config)
 {
-  SetServiceClientName("streams.dynamodb");
+  SetServiceClientName("DynamoDB Streams");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -18,7 +18,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>GetShardIterator</i> operation.</p>
+   * <p>Represents the input of a <code>GetShardIterator</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIteratorInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API GetShardIteratorRequest : public DynamoDBStreamsRequest
   {
@@ -128,97 +131,91 @@ namespace Model
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = std::move(value); }
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline GetShardIteratorRequest& WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
-     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
-     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
-     * denoted by a specific sequence number.</p> </li> <li>
-     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
-     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
-     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
-     * subject to removal (trimming) from the stream.</p> </li> <li>
-     * <p><code>LATEST</code> - Start reading just after the most recent stream record
-     * in the shard, so that you always read the most recent data in the shard.</p>
-     * </li> </ul>
+     * from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start
+     * reading exactly from the position denoted by a specific sequence number.</p>
+     * </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after
+     * the position denoted by a specific sequence number.</p> </li> <li> <p>
+     * <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
+     * which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour
+     * limit on data retention. Stream records whose age exceeds this limit are subject
+     * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
+     * Start reading just after the most recent stream record in the shard, so that you
+     * always read the most recent data in the shard.</p> </li> </ul>
      */
     inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
 

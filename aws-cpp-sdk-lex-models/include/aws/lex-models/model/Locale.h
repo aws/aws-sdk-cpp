@@ -16,10 +16,11 @@ namespace Model
   enum class Locale
   {
     NOT_SET,
-    en_US,
-    en_GB,
     de_DE,
-    en_AU
+    en_AU,
+    en_GB,
+    en_US,
+    es_US
   };
 
 namespace LocaleMapper

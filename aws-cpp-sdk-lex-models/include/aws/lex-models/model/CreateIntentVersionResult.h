@@ -539,31 +539,31 @@ namespace Model
 
 
     /**
-     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * <p>Configuration information, if any, for connecting an Amazon Kendra index with
      * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
      */
     inline const KendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
 
     /**
-     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * <p>Configuration information, if any, for connecting an Amazon Kendra index with
      * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
      */
     inline void SetKendraConfiguration(const KendraConfiguration& value) { m_kendraConfiguration = value; }
 
     /**
-     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * <p>Configuration information, if any, for connecting an Amazon Kendra index with
      * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
      */
     inline void SetKendraConfiguration(KendraConfiguration&& value) { m_kendraConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * <p>Configuration information, if any, for connecting an Amazon Kendra index with
      * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
      */
     inline CreateIntentVersionResult& WithKendraConfiguration(const KendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * <p>Configuration information, if any, for connecting an Amazon Kendra index with
      * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
      */
     inline CreateIntentVersionResult& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
