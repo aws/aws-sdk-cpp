@@ -88,6 +88,7 @@ public class CppViewHelperTest {
         Shape shape = new Shape();
         shape.setType("structure");
         assertEquals(".Jsonize()", CppViewHelper.computeJsonizeString(shape));
+        assertEquals("->Jsonize()", CppViewHelper.computeJsonizeString(shape, true));
         shape.setType("any thing else");
         assertEquals("", CppViewHelper.computeJsonizeString(shape));
     }
@@ -203,6 +204,32 @@ public class CppViewHelperTest {
         assertNull(CppViewHelper.computeJsonCppType(shape));
     }
 
+    // The following model is used in the next test:
+    // "StructureShape":{
+    //     "type":"structure",
+    //     "members":{
+    //         "AnotherStructureShape":{"shape":"AnotherStructureShape"},
+    //         "EnumShape":{"shape":"EnumShape"},
+    //         "ListShape":{"shape":"ListShape"},
+    //         "MapShape":{"shape":"MapShape"}
+    //     }
+    // },
+    // "AnotherStructureShape":{"type":"structure"},
+    // "EnumShape":{
+    //     "type":"string",
+    //     "enum":["EnumValue"]
+    // },
+    // "ListShape":{
+    //     "type":"list",
+    //     "member":{"shape":"StringName"}
+    // },
+    // "MapShape":{
+    //     "type":"map",
+    //     "key":{"shape":"StringName"},
+    //     "value":{"shape":"MapValueStructureShape"}
+    // },
+    // "StringName":{"type":"string"},
+    // "MapValueStructureShape":{"type":"structure"}
     @Test
     public void testComputeHeaderIncludes() {
         Shape structShape = new Shape();

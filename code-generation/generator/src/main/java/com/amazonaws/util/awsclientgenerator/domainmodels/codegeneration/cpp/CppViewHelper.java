@@ -116,28 +116,32 @@ public class CppViewHelper {
         return String.format("%sHasBeenSet", computeMemberVariableName(memberName));
     }
 
-    public static String computeJsonizeString(Shape shape) {
-        String jsonizeString = ".Jsonize()";
+    public static String computeJsonizeString(Shape shape, boolean isPointer) {
+        String memberAccessOp = isPointer ? "->" : ".";
 
         if(shape.isStructure()) {
-            return jsonizeString;
+            return memberAccessOp + "Jsonize()";
         }
 
         if(shape.isTimeStamp()) {
             if(shape.getTimestampFormat() == null || CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase()).equalsIgnoreCase("Double")) {
-                return ".SecondsWithMSPrecision()";
+                return memberAccessOp + "SecondsWithMSPrecision()";
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("rfc822")) {
-                return ".ToGmtString(DateFormat::RFC822)";
+                return memberAccessOp + "ToGmtString(DateFormat::RFC822)";
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("iso8601")) {
-                return ".ToGmtString(DateFormat::ISO_8601)";
+                return memberAccessOp + "ToGmtString(DateFormat::ISO_8601)";
             }
         }
 
         return "";
+    }
+
+    public static String computeJsonizeString(Shape shape) {
+        return computeJsonizeString(shape, false);
     }
 
     public static String computeCppType(Shape shape) {
@@ -200,7 +204,7 @@ public class CppViewHelper {
         Set<String> visited = new LinkedHashSet<>();
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
         boolean includeUtilityHeader = false;
-        boolean includeAWSVectorHeader = false;
+        boolean includeMemoryHeader = false;
 
         while(!toVisit.isEmpty()) {
             Shape next = toVisit.remove();
@@ -221,15 +225,11 @@ public class CppViewHelper {
                 }
             }
             if(!next.isPrimitive()) {
-                if(next.isMutuallyReferencedWith(shape)) {
-                    includeAWSVectorHeader = true;
+                if(next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next)) {
+                    includeMemoryHeader = true;
                 }
-                if(!next.isListMemberAndMutuallyReferencedWith(shape)) {
+                else {
                     headers.add(formatModelIncludeName(projectName, next));
-                }
-                if(next.getMembers() != null) {
-                    // If shapeA.isListMemberAndMutuallyReferencedWith(shapeB) == true, then includes shapeA everywhere includes shapeB in the header files.
-                    next.getMembers().values().stream().map(ShapeMember::getShape).filter(memberShape -> memberShape.isList() && memberShape.getListMember().getShape().isListMemberAndMutuallyReferencedWith(next) && memberShape.getListMember().getShape().getName() != shape.getName()).forEach(listMemberShape -> headers.add(formatModelIncludeName(projectName, listMemberShape.getListMember().getShape())));
                 }
                 includeUtilityHeader = true;
             }
@@ -238,8 +238,8 @@ public class CppViewHelper {
         if(includeUtilityHeader) {
             headers.add("<utility>");
         }
-        if(includeAWSVectorHeader) {
-            headers.add("<aws/core/utils/memory/stl/AWSVector.h>");
+        if(includeMemoryHeader) {
+            headers.add("<memory>");
         }
 
         headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));
@@ -294,7 +294,7 @@ public class CppViewHelper {
                     toVisit.add(next.getListMember().getShape());
                 }
             }
-            if(!next.isPrimitive() && next.isListMemberAndMutuallyReferencedWith(shape)) {
+            if(!next.isPrimitive() && (next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next))) {
                 headers.add(formatModelIncludeName(projectName, next));
             }
         }
