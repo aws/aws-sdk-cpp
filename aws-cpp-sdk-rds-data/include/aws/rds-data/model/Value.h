@@ -8,9 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds-data/model/StructValue.h>
 #include <aws/rds-data/model/Value.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -26,6 +26,7 @@ namespace RDSDataService
 {
 namespace Model
 {
+  class StructValue;
 
   /**
    * <p>Contains the value of a column.</p> <pre><code> &lt;important&gt;
@@ -285,32 +286,32 @@ namespace Model
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline const StructValue& GetStructValue() const{ return m_structValue; }
+    const StructValue& GetStructValue() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline bool StructValueHasBeenSet() const { return m_structValueHasBeenSet; }
+    bool StructValueHasBeenSet() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline void SetStructValue(const StructValue& value) { m_structValueHasBeenSet = true; m_structValue = value; }
+    void SetStructValue(const StructValue& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline void SetStructValue(StructValue&& value) { m_structValueHasBeenSet = true; m_structValue = std::move(value); }
+    void SetStructValue(StructValue&& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline Value& WithStructValue(const StructValue& value) { SetStructValue(value); return *this;}
+    Value& WithStructValue(const StructValue& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    inline Value& WithStructValue(StructValue&& value) { SetStructValue(std::move(value)); return *this;}
+    Value& WithStructValue(StructValue&& value);
 
   private:
 
@@ -341,7 +342,7 @@ namespace Model
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
 
-    StructValue m_structValue;
+    std::shared_ptr<StructValue> m_structValue;
     bool m_structValueHasBeenSet;
   };
 

@@ -5,7 +5,6 @@
 
 #include <aws/rds-data/model/StructValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/rds-data/model/Value.h>
 
 #include <utility>
 

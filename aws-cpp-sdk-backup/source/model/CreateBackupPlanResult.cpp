@@ -52,6 +52,15 @@ CreateBackupPlanResult& CreateBackupPlanResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("AdvancedBackupSettings"))
+  {
+    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+    {
+      m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

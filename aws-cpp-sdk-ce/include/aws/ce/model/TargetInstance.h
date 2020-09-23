@@ -122,75 +122,75 @@ namespace Model
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline bool GetDefaultTargetInstance() const{ return m_defaultTargetInstance; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline bool DefaultTargetInstanceHasBeenSet() const { return m_defaultTargetInstanceHasBeenSet; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline void SetDefaultTargetInstance(bool value) { m_defaultTargetInstanceHasBeenSet = true; m_defaultTargetInstance = value; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline TargetInstance& WithDefaultTargetInstance(bool value) { SetDefaultTargetInstance(value); return *this;}
 

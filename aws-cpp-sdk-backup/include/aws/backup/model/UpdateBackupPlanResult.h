@@ -7,6 +7,8 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +204,42 @@ namespace Model
      */
     inline UpdateBackupPlanResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettings = value; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettings = std::move(value); }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline UpdateBackupPlanResult& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline UpdateBackupPlanResult& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline UpdateBackupPlanResult& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettings.push_back(value); return *this; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline UpdateBackupPlanResult& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_backupPlanId;
@@ -211,6 +249,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     Aws::String m_versionId;
+
+    Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
   };
 
 } // namespace Model

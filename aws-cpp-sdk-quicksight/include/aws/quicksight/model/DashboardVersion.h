@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/DashboardError.h>
+#include <aws/quicksight/model/Sheet.h>
 #include <utility>
 
 namespace Aws
@@ -383,6 +384,55 @@ namespace Model
      */
     inline DashboardVersion& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline const Aws::Vector<Sheet>& GetSheets() const{ return m_sheets; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline bool SheetsHasBeenSet() const { return m_sheetsHasBeenSet; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline void SetSheets(const Aws::Vector<Sheet>& value) { m_sheetsHasBeenSet = true; m_sheets = value; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline void SetSheets(Aws::Vector<Sheet>&& value) { m_sheetsHasBeenSet = true; m_sheets = std::move(value); }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline DashboardVersion& WithSheets(const Aws::Vector<Sheet>& value) { SetSheets(value); return *this;}
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline DashboardVersion& WithSheets(Aws::Vector<Sheet>&& value) { SetSheets(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline DashboardVersion& AddSheets(const Sheet& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline DashboardVersion& AddSheets(Sheet&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Utils::DateTime m_createdTime;
@@ -411,6 +461,9 @@ namespace Model
 
     Aws::String m_themeArn;
     bool m_themeArnHasBeenSet;
+
+    Aws::Vector<Sheet> m_sheets;
+    bool m_sheetsHasBeenSet;
   };
 
 } // namespace Model

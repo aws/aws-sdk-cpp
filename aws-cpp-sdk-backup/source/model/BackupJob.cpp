@@ -39,7 +39,9 @@ BackupJob::BackupJob() :
     m_startByHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false)
+    m_bytesTransferredHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false),
+    m_backupTypeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ BackupJob::BackupJob(JsonView jsonValue) :
     m_startByHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false)
+    m_bytesTransferredHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false),
+    m_backupTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +201,23 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_bytesTransferredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackupOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> backupOptionsJsonMap = jsonValue.GetObject("BackupOptions").GetAllObjects();
+    for(auto& backupOptionsItem : backupOptionsJsonMap)
+    {
+      m_backupOptions[backupOptionsItem.first] = backupOptionsItem.second.AsString();
+    }
+    m_backupOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = jsonValue.GetString("BackupType");
+
+    m_backupTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -304,6 +325,23 @@ JsonValue BackupJob::Jsonize() const
   if(m_bytesTransferredHasBeenSet)
   {
    payload.WithInt64("BytesTransferred", m_bytesTransferred);
+
+  }
+
+  if(m_backupOptionsHasBeenSet)
+  {
+   JsonValue backupOptionsJsonMap;
+   for(auto& backupOptionsItem : m_backupOptions)
+   {
+     backupOptionsJsonMap.WithString(backupOptionsItem.first, backupOptionsItem.second);
+   }
+   payload.WithObject("BackupOptions", std::move(backupOptionsJsonMap));
+
+  }
+
+  if(m_backupTypeHasBeenSet)
+  {
+   payload.WithString("BackupType", m_backupType);
 
   }
 

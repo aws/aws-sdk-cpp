@@ -5,7 +5,6 @@
 
 #include <aws/fsx/model/FileSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/fsx/model/AdministrativeAction.h>
 
 #include <utility>
 

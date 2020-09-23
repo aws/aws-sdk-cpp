@@ -204,18 +204,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -267,18 +267,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -330,18 +330,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -393,18 +393,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -456,18 +456,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -519,18 +519,18 @@ namespace Model
      * <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The
      * response for the <code>GetDimensionValues</code> operation includes a unit
      * attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The
-     * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
+     * grouping of common usage types. An example is Amazon EC2: CloudWatch �� Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
-     * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
-     * of the resource. ResourceId is an opt-in feature only available for last 14 days
-     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
-     * <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
-     * operating system. Examples are Windows or Linux.</p> </li> <li>
-     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * <p>REGION - The AWS Region.</p> </li> <li> <p>RECORD_TYPE - The different types
+     * of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+     * <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an
+     * opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+     * </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use
+     * the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability
+     * Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE -
+     * The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+     * </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database
+     * Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member

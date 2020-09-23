@@ -35,55 +35,55 @@ namespace Model
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const{ return m_resourceTypeOptInPreference; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline bool ResourceTypeOptInPreferenceHasBeenSet() const { return m_resourceTypeOptInPreferenceHasBeenSet; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline void SetResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = value; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline void SetResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = std::move(value); }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeOptInPreference(value); return *this;}
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeOptInPreference(std::move(value)); return *this;}
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const Aws::String& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(Aws::String&& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * region.</p>
+     * Region.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const char* key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 

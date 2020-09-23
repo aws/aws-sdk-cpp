@@ -8,9 +8,9 @@
 #include <aws/fsx/model/AdministrativeActionType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/fsx/model/Status.h>
-#include <aws/fsx/model/FileSystem.h>
 #include <aws/fsx/model/AdministrativeActionFailureDetails.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -26,6 +26,7 @@ namespace FSx
 {
 namespace Model
 {
+  class FileSystem;
 
   /**
    * <p>Describes a specific Amazon FSx Administrative Action for the current Windows
@@ -220,7 +221,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline const FileSystem& GetTargetFileSystemValues() const{ return m_targetFileSystemValues; }
+    const FileSystem& GetTargetFileSystemValues() const;
 
     /**
      * <p>Describes the target <code>StorageCapacity</code> or
@@ -228,7 +229,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline bool TargetFileSystemValuesHasBeenSet() const { return m_targetFileSystemValuesHasBeenSet; }
+    bool TargetFileSystemValuesHasBeenSet() const;
 
     /**
      * <p>Describes the target <code>StorageCapacity</code> or
@@ -236,7 +237,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline void SetTargetFileSystemValues(const FileSystem& value) { m_targetFileSystemValuesHasBeenSet = true; m_targetFileSystemValues = value; }
+    void SetTargetFileSystemValues(const FileSystem& value);
 
     /**
      * <p>Describes the target <code>StorageCapacity</code> or
@@ -244,7 +245,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline void SetTargetFileSystemValues(FileSystem&& value) { m_targetFileSystemValuesHasBeenSet = true; m_targetFileSystemValues = std::move(value); }
+    void SetTargetFileSystemValues(FileSystem&& value);
 
     /**
      * <p>Describes the target <code>StorageCapacity</code> or
@@ -252,7 +253,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value) { SetTargetFileSystemValues(value); return *this;}
+    AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value);
 
     /**
      * <p>Describes the target <code>StorageCapacity</code> or
@@ -260,7 +261,7 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    inline AdministrativeAction& WithTargetFileSystemValues(FileSystem&& value) { SetTargetFileSystemValues(std::move(value)); return *this;}
+    AdministrativeAction& WithTargetFileSystemValues(FileSystem&& value);
 
 
     
@@ -295,7 +296,7 @@ namespace Model
     Status m_status;
     bool m_statusHasBeenSet;
 
-    FileSystem m_targetFileSystemValues;
+    std::shared_ptr<FileSystem> m_targetFileSystemValues;
     bool m_targetFileSystemValuesHasBeenSet;
 
     AdministrativeActionFailureDetails m_failureDetails;

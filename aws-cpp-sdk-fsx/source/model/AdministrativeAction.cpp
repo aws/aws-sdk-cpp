@@ -5,6 +5,7 @@
 
 #include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/FileSystem.h>
 
 #include <utility>
 
@@ -45,6 +46,13 @@ AdministrativeAction::AdministrativeAction(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const FileSystem& AdministrativeAction::GetTargetFileSystemValues() const{ return *m_targetFileSystemValues; }
+bool AdministrativeAction::TargetFileSystemValuesHasBeenSet() const { return m_targetFileSystemValuesHasBeenSet; }
+void AdministrativeAction::SetTargetFileSystemValues(const FileSystem& value) { m_targetFileSystemValuesHasBeenSet = true; m_targetFileSystemValues = Aws::MakeShared<FileSystem>("AdministrativeAction", value); }
+void AdministrativeAction::SetTargetFileSystemValues(FileSystem&& value) { m_targetFileSystemValuesHasBeenSet = true; m_targetFileSystemValues = Aws::MakeShared<FileSystem>("AdministrativeAction", std::move(value)); }
+AdministrativeAction& AdministrativeAction::WithTargetFileSystemValues(const FileSystem& value) { SetTargetFileSystemValues(value); return *this;}
+AdministrativeAction& AdministrativeAction::WithTargetFileSystemValues(FileSystem&& value) { SetTargetFileSystemValues(std::move(value)); return *this;}
+
 AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdministrativeActionType"))
@@ -77,7 +85,7 @@ AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetFileSystemValues"))
   {
-    m_targetFileSystemValues = jsonValue.GetObject("TargetFileSystemValues");
+    m_targetFileSystemValues = Aws::MakeShared<FileSystem>("AdministrativeAction", jsonValue.GetObject("TargetFileSystemValues"));
 
     m_targetFileSystemValuesHasBeenSet = true;
   }
@@ -119,7 +127,7 @@ JsonValue AdministrativeAction::Jsonize() const
 
   if(m_targetFileSystemValuesHasBeenSet)
   {
-   payload.WithObject("TargetFileSystemValues", m_targetFileSystemValues.Jsonize());
+   payload.WithObject("TargetFileSystemValues", m_targetFileSystemValues->Jsonize());
 
   }
 

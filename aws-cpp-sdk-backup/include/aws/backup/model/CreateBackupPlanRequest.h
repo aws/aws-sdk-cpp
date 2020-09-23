@@ -165,7 +165,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -173,7 +173,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -189,7 +189,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -197,7 +197,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -205,7 +205,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -213,7 +213,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */
@@ -221,7 +221,7 @@ namespace Model
 
     /**
      * <p>Identifies the request and allows failed requests to be retried without the
-     * risk of executing the operation twice. If the request includes a
+     * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
      * returned. This parameter is optional.</p>
      */

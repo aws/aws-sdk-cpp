@@ -163,7 +163,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -175,7 +178,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -187,7 +193,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -199,7 +208,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -211,7 +223,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -223,7 +238,10 @@ namespace Model
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
-     * you either group by or filter by a <code>ResourceId</code>.</p>
+     * you either group by or filter by a <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
+     * filter.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

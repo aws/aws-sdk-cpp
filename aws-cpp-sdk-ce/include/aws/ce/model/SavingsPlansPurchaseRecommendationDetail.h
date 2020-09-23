@@ -217,50 +217,50 @@ namespace Model
 
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p>The currency code Amazon Web Services used to generate the recommendations
-     * and present potential savings.</p>
+     * <p>The currency code AWS used to generate the recommendations and present
+     * potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 

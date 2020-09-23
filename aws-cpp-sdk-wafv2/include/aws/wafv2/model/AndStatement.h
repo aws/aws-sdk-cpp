@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/Statement.h>
 #include <utility>
 
 namespace Aws
@@ -22,7 +23,6 @@ namespace WAFV2
 {
 namespace Model
 {
-  class Statement;
 
   /**
    *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,

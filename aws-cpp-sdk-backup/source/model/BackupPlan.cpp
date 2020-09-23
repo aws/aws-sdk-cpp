@@ -20,13 +20,15 @@ namespace Model
 
 BackupPlan::BackupPlan() : 
     m_backupPlanNameHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
 }
 
 BackupPlan::BackupPlan(JsonView jsonValue) : 
     m_backupPlanNameHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ BackupPlan& BackupPlan::operator =(JsonView jsonValue)
     m_rulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvancedBackupSettings"))
+  {
+    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+    {
+      m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
+    }
+    m_advancedBackupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue BackupPlan::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_advancedBackupSettingsHasBeenSet)
+  {
+   Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+   for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+   {
+     advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
+   }
+   payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
 
   }
 

@@ -20,9 +20,16 @@
 #include <aws/ce/CostExplorerClient.h>
 #include <aws/ce/CostExplorerEndpoint.h>
 #include <aws/ce/CostExplorerErrorMarshaller.h>
+#include <aws/ce/model/CreateAnomalyMonitorRequest.h>
+#include <aws/ce/model/CreateAnomalySubscriptionRequest.h>
 #include <aws/ce/model/CreateCostCategoryDefinitionRequest.h>
+#include <aws/ce/model/DeleteAnomalyMonitorRequest.h>
+#include <aws/ce/model/DeleteAnomalySubscriptionRequest.h>
 #include <aws/ce/model/DeleteCostCategoryDefinitionRequest.h>
 #include <aws/ce/model/DescribeCostCategoryDefinitionRequest.h>
+#include <aws/ce/model/GetAnomaliesRequest.h>
+#include <aws/ce/model/GetAnomalyMonitorsRequest.h>
+#include <aws/ce/model/GetAnomalySubscriptionsRequest.h>
 #include <aws/ce/model/GetCostAndUsageRequest.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesRequest.h>
 #include <aws/ce/model/GetCostForecastRequest.h>
@@ -38,6 +45,9 @@
 #include <aws/ce/model/GetTagsRequest.h>
 #include <aws/ce/model/GetUsageForecastRequest.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsRequest.h>
+#include <aws/ce/model/ProvideAnomalyFeedbackRequest.h>
+#include <aws/ce/model/UpdateAnomalyMonitorRequest.h>
+#include <aws/ce/model/UpdateAnomalySubscriptionRequest.h>
 #include <aws/ce/model/UpdateCostCategoryDefinitionRequest.h>
 
 using namespace Aws;
@@ -113,6 +123,60 @@ void CostExplorerClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateAnomalyMonitorOutcome CostExplorerClient::CreateAnomalyMonitor(const CreateAnomalyMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAnomalyMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAnomalyMonitorOutcomeCallable CostExplorerClient::CreateAnomalyMonitorCallable(const CreateAnomalyMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAnomalyMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnomalyMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::CreateAnomalyMonitorAsync(const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAnomalyMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::CreateAnomalyMonitorAsyncHelper(const CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAnomalyMonitor(request), context);
+}
+
+CreateAnomalySubscriptionOutcome CostExplorerClient::CreateAnomalySubscription(const CreateAnomalySubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAnomalySubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAnomalySubscriptionOutcomeCallable CostExplorerClient::CreateAnomalySubscriptionCallable(const CreateAnomalySubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAnomalySubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnomalySubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::CreateAnomalySubscriptionAsync(const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::CreateAnomalySubscriptionAsyncHelper(const CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAnomalySubscription(request), context);
+}
+
 CreateCostCategoryDefinitionOutcome CostExplorerClient::CreateCostCategoryDefinition(const CreateCostCategoryDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -138,6 +202,60 @@ void CostExplorerClient::CreateCostCategoryDefinitionAsync(const CreateCostCateg
 void CostExplorerClient::CreateCostCategoryDefinitionAsyncHelper(const CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCostCategoryDefinition(request), context);
+}
+
+DeleteAnomalyMonitorOutcome CostExplorerClient::DeleteAnomalyMonitor(const DeleteAnomalyMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAnomalyMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAnomalyMonitorOutcomeCallable CostExplorerClient::DeleteAnomalyMonitorCallable(const DeleteAnomalyMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalyMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnomalyMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::DeleteAnomalyMonitorAsync(const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalyMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::DeleteAnomalyMonitorAsyncHelper(const DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAnomalyMonitor(request), context);
+}
+
+DeleteAnomalySubscriptionOutcome CostExplorerClient::DeleteAnomalySubscription(const DeleteAnomalySubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAnomalySubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAnomalySubscriptionOutcomeCallable CostExplorerClient::DeleteAnomalySubscriptionCallable(const DeleteAnomalySubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalySubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnomalySubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::DeleteAnomalySubscriptionAsync(const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::DeleteAnomalySubscriptionAsyncHelper(const DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAnomalySubscription(request), context);
 }
 
 DeleteCostCategoryDefinitionOutcome CostExplorerClient::DeleteCostCategoryDefinition(const DeleteCostCategoryDefinitionRequest& request) const
@@ -192,6 +310,87 @@ void CostExplorerClient::DescribeCostCategoryDefinitionAsync(const DescribeCostC
 void CostExplorerClient::DescribeCostCategoryDefinitionAsyncHelper(const DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCostCategoryDefinition(request), context);
+}
+
+GetAnomaliesOutcome CostExplorerClient::GetAnomalies(const GetAnomaliesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAnomaliesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAnomaliesOutcomeCallable CostExplorerClient::GetAnomaliesCallable(const GetAnomaliesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAnomaliesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnomalies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetAnomaliesAsync(const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAnomaliesAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetAnomaliesAsyncHelper(const GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAnomalies(request), context);
+}
+
+GetAnomalyMonitorsOutcome CostExplorerClient::GetAnomalyMonitors(const GetAnomalyMonitorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAnomalyMonitorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAnomalyMonitorsOutcomeCallable CostExplorerClient::GetAnomalyMonitorsCallable(const GetAnomalyMonitorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAnomalyMonitorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnomalyMonitors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetAnomalyMonitorsAsync(const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAnomalyMonitorsAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetAnomalyMonitorsAsyncHelper(const GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAnomalyMonitors(request), context);
+}
+
+GetAnomalySubscriptionsOutcome CostExplorerClient::GetAnomalySubscriptions(const GetAnomalySubscriptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAnomalySubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAnomalySubscriptionsOutcomeCallable CostExplorerClient::GetAnomalySubscriptionsCallable(const GetAnomalySubscriptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAnomalySubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnomalySubscriptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAnomalySubscriptionsAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetAnomalySubscriptionsAsyncHelper(const GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAnomalySubscriptions(request), context);
 }
 
 GetCostAndUsageOutcome CostExplorerClient::GetCostAndUsage(const GetCostAndUsageRequest& request) const
@@ -597,6 +796,87 @@ void CostExplorerClient::ListCostCategoryDefinitionsAsync(const ListCostCategory
 void CostExplorerClient::ListCostCategoryDefinitionsAsyncHelper(const ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCostCategoryDefinitions(request), context);
+}
+
+ProvideAnomalyFeedbackOutcome CostExplorerClient::ProvideAnomalyFeedback(const ProvideAnomalyFeedbackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ProvideAnomalyFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ProvideAnomalyFeedbackOutcomeCallable CostExplorerClient::ProvideAnomalyFeedbackCallable(const ProvideAnomalyFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ProvideAnomalyFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ProvideAnomalyFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ProvideAnomalyFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::ProvideAnomalyFeedbackAsyncHelper(const ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ProvideAnomalyFeedback(request), context);
+}
+
+UpdateAnomalyMonitorOutcome CostExplorerClient::UpdateAnomalyMonitor(const UpdateAnomalyMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAnomalyMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAnomalyMonitorOutcomeCallable CostExplorerClient::UpdateAnomalyMonitorCallable(const UpdateAnomalyMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAnomalyMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnomalyMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::UpdateAnomalyMonitorAsync(const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnomalyMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::UpdateAnomalyMonitorAsyncHelper(const UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAnomalyMonitor(request), context);
+}
+
+UpdateAnomalySubscriptionOutcome CostExplorerClient::UpdateAnomalySubscription(const UpdateAnomalySubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAnomalySubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAnomalySubscriptionOutcomeCallable CostExplorerClient::UpdateAnomalySubscriptionCallable(const UpdateAnomalySubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAnomalySubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnomalySubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::UpdateAnomalySubscriptionAsync(const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAnomalySubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::UpdateAnomalySubscriptionAsyncHelper(const UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAnomalySubscription(request), context);
 }
 
 UpdateCostCategoryDefinitionOutcome CostExplorerClient::UpdateCostCategoryDefinition(const UpdateCostCategoryDefinitionRequest& request) const

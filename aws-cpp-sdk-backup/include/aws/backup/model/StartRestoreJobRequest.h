@@ -91,8 +91,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -116,8 +116,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -141,8 +141,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -166,8 +166,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -191,8 +191,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -216,8 +216,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -241,8 +241,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -266,8 +266,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -291,8 +291,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -316,8 +316,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -341,8 +341,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -366,8 +366,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,
@@ -391,8 +391,8 @@ namespace Model
      * to restore a resource. For example, you might need to provide a new resource
      * name if the original already exists.</p> <p>You need to specify specific
      * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that
-     * is backed up by AWS Backup. Returned in
+     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
+     * that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
      * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
      * system is encrypted. If <code>KmsKeyId</code> is specified,

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/backup/model/BackupRuleInput.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,55 @@ namespace Model
      */
     inline BackupPlanInput& AddRules(BackupRuleInput&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline bool AdvancedBackupSettingsHasBeenSet() const { return m_advancedBackupSettingsHasBeenSet; }
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = value; }
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = std::move(value); }
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline BackupPlanInput& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline BackupPlanInput& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline BackupPlanInput& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies a list of <code>BackupOptions</code> for each resource type. These
+     * settings are only available for Windows VSS backup jobs.</p>
+     */
+    inline BackupPlanInput& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_backupPlanName;
@@ -138,6 +188,9 @@ namespace Model
 
     Aws::Vector<BackupRuleInput> m_rules;
     bool m_rulesHasBeenSet;
+
+    Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
+    bool m_advancedBackupSettingsHasBeenSet;
   };
 
 } // namespace Model

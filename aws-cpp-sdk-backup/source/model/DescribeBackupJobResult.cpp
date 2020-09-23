@@ -142,6 +142,21 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("BackupOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> backupOptionsJsonMap = jsonValue.GetObject("BackupOptions").GetAllObjects();
+    for(auto& backupOptionsItem : backupOptionsJsonMap)
+    {
+      m_backupOptions[backupOptionsItem.first] = backupOptionsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = jsonValue.GetString("BackupType");
+
+  }
+
 
 
   return *this;

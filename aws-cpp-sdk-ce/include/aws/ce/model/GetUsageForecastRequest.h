@@ -43,7 +43,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
@@ -53,7 +54,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
@@ -63,7 +65,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
@@ -73,7 +76,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
@@ -83,7 +87,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
@@ -93,7 +98,8 @@ namespace Model
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>.</p>
+     * including <code>2017-05-01</code>. The start date must be equal to or later than
+     * the current date to avoid a validation error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 

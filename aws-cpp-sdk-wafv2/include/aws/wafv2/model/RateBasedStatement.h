@@ -6,10 +6,9 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/RateBasedStatementAggregateKeyType.h>
-#include <aws/wafv2/model/Statement.h>
 #include <aws/wafv2/model/ForwardedIPConfig.h>
 #include <utility>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <memory>
 
 namespace Aws
 {
@@ -273,7 +272,7 @@ namespace Model
     RateBasedStatementAggregateKeyType m_aggregateKeyType;
     bool m_aggregateKeyTypeHasBeenSet;
 
-    Aws::Vector<Statement> m_scopeDownStatement;
+    std::shared_ptr<Statement> m_scopeDownStatement;
     bool m_scopeDownStatementHasBeenSet;
 
     ForwardedIPConfig m_forwardedIPConfig;

@@ -26,7 +26,8 @@ BackupPlansListMember::BackupPlansListMember() :
     m_versionIdHasBeenSet(false),
     m_backupPlanNameHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false)
+    m_lastExecutionDateHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ BackupPlansListMember::BackupPlansListMember(JsonView jsonValue) :
     m_versionIdHasBeenSet(false),
     m_backupPlanNameHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false)
+    m_lastExecutionDateHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,16 @@ BackupPlansListMember& BackupPlansListMember::operator =(JsonView jsonValue)
     m_lastExecutionDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvancedBackupSettings"))
+  {
+    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+    {
+      m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
+    }
+    m_advancedBackupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -151,6 +163,17 @@ JsonValue BackupPlansListMember::Jsonize() const
   if(m_lastExecutionDateHasBeenSet)
   {
    payload.WithDouble("LastExecutionDate", m_lastExecutionDate.SecondsWithMSPrecision());
+  }
+
+  if(m_advancedBackupSettingsHasBeenSet)
+  {
+   Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+   for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+   {
+     advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
+   }
+   payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
+
   }
 
   return payload;

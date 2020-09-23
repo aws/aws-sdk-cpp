@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/FileSystem.h>
-#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws

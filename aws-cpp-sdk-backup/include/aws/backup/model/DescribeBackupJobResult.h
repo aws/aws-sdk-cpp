@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/BackupJobState.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -764,6 +765,136 @@ namespace Model
      */
     inline DescribeBackupJobResult& WithStartBy(Aws::Utils::DateTime&& value) { SetStartBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptions = value; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptions = std::move(value); }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Represents the options specified as part of backup plan or on-demand backup
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& AddBackupOptions(const char* key, const char* value) { m_backupOptions.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline const Aws::String& GetBackupType() const{ return m_backupType; }
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline void SetBackupType(const Aws::String& value) { m_backupType = value; }
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline void SetBackupType(Aws::String&& value) { m_backupType = std::move(value); }
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline void SetBackupType(const char* value) { m_backupType.assign(value); }
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithBackupType(const Aws::String& value) { SetBackupType(value); return *this;}
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithBackupType(Aws::String&& value) { SetBackupType(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the actual backup type selected for a backup job. For example, if
+     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
+     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithBackupType(const char* value) { SetBackupType(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -801,6 +932,10 @@ namespace Model
     Aws::Utils::DateTime m_expectedCompletionDate;
 
     Aws::Utils::DateTime m_startBy;
+
+    Aws::Map<Aws::String, Aws::String> m_backupOptions;
+
+    Aws::String m_backupType;
   };
 
 } // namespace Model

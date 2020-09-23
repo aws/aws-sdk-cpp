@@ -15,6 +15,7 @@
 #include <aws/fsx/model/WindowsFileSystemConfiguration.h>
 #include <aws/fsx/model/LustreFileSystemConfiguration.h>
 #include <aws/fsx/model/Tag.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws
@@ -31,7 +32,6 @@ namespace FSx
 {
 namespace Model
 {
-  class AdministrativeAction;
 
   /**
    * <p>A description of a specific Amazon FSx file system.</p><p><h3>See Also:</h3> 

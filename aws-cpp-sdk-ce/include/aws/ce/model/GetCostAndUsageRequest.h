@@ -393,9 +393,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -404,9 +404,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -415,9 +415,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -426,9 +426,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -437,9 +437,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -448,9 +448,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -459,9 +459,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
@@ -470,9 +470,9 @@ namespace Model
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
-     * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * tag keys, cost categories, or any two group by types.</p> <p>When you group by
+     * tag key, you get all tag values, including empty strings.</p> <p>Valid values
+     * are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
      * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>

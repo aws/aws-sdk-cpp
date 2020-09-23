@@ -5,6 +5,7 @@
 
 #include <aws/rds-data/model/Value.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rds-data/model/StructValue.h>
 #include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
@@ -59,6 +60,13 @@ Value::Value(JsonView jsonValue) :
 {
   *this = jsonValue;
 }
+
+const StructValue& Value::GetStructValue() const{ return *m_structValue; }
+bool Value::StructValueHasBeenSet() const { return m_structValueHasBeenSet; }
+void Value::SetStructValue(const StructValue& value) { m_structValueHasBeenSet = true; m_structValue = Aws::MakeShared<StructValue>("Value", value); }
+void Value::SetStructValue(StructValue&& value) { m_structValueHasBeenSet = true; m_structValue = Aws::MakeShared<StructValue>("Value", std::move(value)); }
+Value& Value::WithStructValue(const StructValue& value) { SetStructValue(value); return *this;}
+Value& Value::WithStructValue(StructValue&& value) { SetStructValue(std::move(value)); return *this;}
 
 Value& Value::operator =(JsonView jsonValue)
 {
@@ -129,7 +137,7 @@ Value& Value::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("structValue"))
   {
-    m_structValue = jsonValue.GetObject("structValue");
+    m_structValue = Aws::MakeShared<StructValue>("Value", jsonValue.GetObject("structValue"));
 
     m_structValueHasBeenSet = true;
   }
@@ -201,7 +209,7 @@ JsonValue Value::Jsonize() const
 
   if(m_structValueHasBeenSet)
   {
-   payload.WithObject("structValue", m_structValue.Jsonize());
+   payload.WithObject("structValue", m_structValue->Jsonize());
 
   }
 

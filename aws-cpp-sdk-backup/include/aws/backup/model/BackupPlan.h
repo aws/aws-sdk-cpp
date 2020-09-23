@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/backup/model/BackupRule.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,47 @@ namespace Model
      */
     inline BackupPlan& AddRules(BackupRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline bool AdvancedBackupSettingsHasBeenSet() const { return m_advancedBackupSettingsHasBeenSet; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = value; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = std::move(value); }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline BackupPlan& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline BackupPlan& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline BackupPlan& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(value); return *this; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+     */
+    inline BackupPlan& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_backupPlanName;
@@ -138,6 +180,9 @@ namespace Model
 
     Aws::Vector<BackupRule> m_rules;
     bool m_rulesHasBeenSet;
+
+    Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
+    bool m_advancedBackupSettingsHasBeenSet;
   };
 
 } // namespace Model

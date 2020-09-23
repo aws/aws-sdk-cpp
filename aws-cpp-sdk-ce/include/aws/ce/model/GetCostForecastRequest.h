@@ -38,32 +38,38 @@ namespace Model
 
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline GetCostForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline GetCostForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 

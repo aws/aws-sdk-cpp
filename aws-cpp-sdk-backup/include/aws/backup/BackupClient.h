@@ -320,8 +320,9 @@ namespace Model
 
 
         /**
-         * <p>Backup plans are documents that contain information that AWS Backup uses to
-         * schedule tasks that create recovery points of resources.</p> <p>If you call
+         * <p>Creates a backup plan using a backup plan name and backup rules. A backup
+         * plan is a document that contains information that AWS Backup uses to schedule
+         * tasks that create recovery points for resources.</p> <p>If you call
          * <code>CreateBackupPlan</code> with a plan that already exists, an
          * <code>AlreadyExistsException</code> is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupPlan">AWS
@@ -330,8 +331,9 @@ namespace Model
         virtual Model::CreateBackupPlanOutcome CreateBackupPlan(const Model::CreateBackupPlanRequest& request) const;
 
         /**
-         * <p>Backup plans are documents that contain information that AWS Backup uses to
-         * schedule tasks that create recovery points of resources.</p> <p>If you call
+         * <p>Creates a backup plan using a backup plan name and backup rules. A backup
+         * plan is a document that contains information that AWS Backup uses to schedule
+         * tasks that create recovery points for resources.</p> <p>If you call
          * <code>CreateBackupPlan</code> with a plan that already exists, an
          * <code>AlreadyExistsException</code> is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupPlan">AWS
@@ -342,8 +344,9 @@ namespace Model
         virtual Model::CreateBackupPlanOutcomeCallable CreateBackupPlanCallable(const Model::CreateBackupPlanRequest& request) const;
 
         /**
-         * <p>Backup plans are documents that contain information that AWS Backup uses to
-         * schedule tasks that create recovery points of resources.</p> <p>If you call
+         * <p>Creates a backup plan using a backup plan name and backup rules. A backup
+         * plan is a document that contains information that AWS Backup uses to schedule
+         * tasks that create recovery points for resources.</p> <p>If you call
          * <code>CreateBackupPlan</code> with a plan that already exists, an
          * <code>AlreadyExistsException</code> is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupPlan">AWS
@@ -368,10 +371,10 @@ namespace Model
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the
-         * specified volume Id.</p> <p>Resources and conditions are additive in that all
+         * specified volume ID.</p> <p>Resources and conditions are additive in that all
          * resources that match the pattern are selected. This shouldn't be confused with a
          * logical AND, where all conditions must match. The matching patterns are
-         * logically 'put together using the OR operator. In other words, all patterns that
+         * logically put together using the OR operator. In other words, all patterns that
          * match are selected for backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupSelection">AWS
          * API Reference</a></p>
@@ -393,10 +396,10 @@ namespace Model
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the
-         * specified volume Id.</p> <p>Resources and conditions are additive in that all
+         * specified volume ID.</p> <p>Resources and conditions are additive in that all
          * resources that match the pattern are selected. This shouldn't be confused with a
          * logical AND, where all conditions must match. The matching patterns are
-         * logically 'put together using the OR operator. In other words, all patterns that
+         * logically put together using the OR operator. In other words, all patterns that
          * match are selected for backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupSelection">AWS
          * API Reference</a></p>
@@ -420,10 +423,10 @@ namespace Model
          * patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that
          * are tagged as <code>"department=finance"</code>,
          * <code>"importance=critical"</code>, in addition to an EBS volume with the
-         * specified volume Id.</p> <p>Resources and conditions are additive in that all
+         * specified volume ID.</p> <p>Resources and conditions are additive in that all
          * resources that match the pattern are selected. This shouldn't be confused with a
          * logical AND, where all conditions must match. The matching patterns are
-         * logically 'put together using the OR operator. In other words, all patterns that
+         * logically put together using the OR operator. In other words, all patterns that
          * match are selected for backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupSelection">AWS
          * API Reference</a></p>
@@ -644,16 +647,16 @@ namespace Model
         virtual void DeleteRecoveryPointAsync(const Model::DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata associated with creating a backup of a
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns backup job details for the specified
+         * <code>BackupJobId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBackupJobOutcome DescribeBackupJob(const Model::DescribeBackupJobRequest& request) const;
 
         /**
-         * <p>Returns metadata associated with creating a backup of a
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns backup job details for the specified
+         * <code>BackupJobId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">AWS
          * API Reference</a></p>
          *
@@ -662,8 +665,8 @@ namespace Model
         virtual Model::DescribeBackupJobOutcomeCallable DescribeBackupJobCallable(const Model::DescribeBackupJobRequest& request) const;
 
         /**
-         * <p>Returns metadata associated with creating a backup of a
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns backup job details for the specified
+         * <code>BackupJobId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">AWS
          * API Reference</a></p>
          *
@@ -788,11 +791,11 @@ namespace Model
 
         /**
          * <p>Returns the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          */
@@ -800,11 +803,11 @@ namespace Model
 
         /**
          * <p>Returns the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -814,11 +817,11 @@ namespace Model
 
         /**
          * <p>Returns the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -883,16 +886,18 @@ namespace Model
         virtual void ExportBackupPlanTemplateAsync(const Model::ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the body of a backup plan in JSON format, in addition to plan
-         * metadata.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns <code>BackupPlan</code> details for the specified
+         * <code>BackupPlanId</code>. Returns the body of a backup plan in JSON format, in
+         * addition to plan metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlan">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBackupPlanOutcome GetBackupPlan(const Model::GetBackupPlanRequest& request) const;
 
         /**
-         * <p>Returns the body of a backup plan in JSON format, in addition to plan
-         * metadata.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns <code>BackupPlan</code> details for the specified
+         * <code>BackupPlanId</code>. Returns the body of a backup plan in JSON format, in
+         * addition to plan metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlan">AWS
          * API Reference</a></p>
          *
@@ -901,8 +906,9 @@ namespace Model
         virtual Model::GetBackupPlanOutcomeCallable GetBackupPlanCallable(const Model::GetBackupPlanRequest& request) const;
 
         /**
-         * <p>Returns the body of a backup plan in JSON format, in addition to plan
-         * metadata.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns <code>BackupPlan</code> details for the specified
+         * <code>BackupPlanId</code>. Returns the body of a backup plan in JSON format, in
+         * addition to plan metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlan">AWS
          * API Reference</a></p>
          *
@@ -1109,14 +1115,16 @@ namespace Model
          */
         virtual void GetSupportedResourceTypesAsync(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * <p>Returns metadata about your backup jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup jobs for an authenticated
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBackupJobsOutcome ListBackupJobs(const Model::ListBackupJobsRequest& request) const;
 
         /**
-         * <p>Returns metadata about your backup jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup jobs for an authenticated
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">AWS
          * API Reference</a></p>
          *
@@ -1125,7 +1133,8 @@ namespace Model
         virtual Model::ListBackupJobsOutcomeCallable ListBackupJobsCallable(const Model::ListBackupJobsRequest& request) const;
 
         /**
-         * <p>Returns metadata about your backup jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup jobs for an authenticated
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">AWS
          * API Reference</a></p>
          *
@@ -1193,18 +1202,22 @@ namespace Model
         virtual void ListBackupPlanVersionsAsync(const Model::ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata of your saved backup plans, including Amazon Resource Names
-         * (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and
-         * creator request IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup plans for an authenticated account. The
+         * list is populated only if the advanced option is set for the backup plan. The
+         * list contains information such as Amazon Resource Names (ARNs), plan IDs,
+         * creation and deletion dates, version IDs, plan names, and creator request
+         * IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBackupPlansOutcome ListBackupPlans(const Model::ListBackupPlansRequest& request) const;
 
         /**
-         * <p>Returns metadata of your saved backup plans, including Amazon Resource Names
-         * (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and
-         * creator request IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup plans for an authenticated account. The
+         * list is populated only if the advanced option is set for the backup plan. The
+         * list contains information such as Amazon Resource Names (ARNs), plan IDs,
+         * creation and deletion dates, version IDs, plan names, and creator request
+         * IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">AWS
          * API Reference</a></p>
          *
@@ -1213,9 +1226,11 @@ namespace Model
         virtual Model::ListBackupPlansOutcomeCallable ListBackupPlansCallable(const Model::ListBackupPlansRequest& request) const;
 
         /**
-         * <p>Returns metadata of your saved backup plans, including Amazon Resource Names
-         * (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and
-         * creator request IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of existing backup plans for an authenticated account. The
+         * list is populated only if the advanced option is set for the backup plan. The
+         * list contains information such as Amazon Resource Names (ARNs), plan IDs,
+         * creation and deletion dates, version IDs, plan names, and creator request
+         * IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">AWS
          * API Reference</a></p>
          *
@@ -1510,16 +1525,16 @@ namespace Model
         virtual void PutBackupVaultNotificationsAsync(const Model::PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a job to create a one-time backup of the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand backup job for the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">AWS
          * API Reference</a></p>
          */
         virtual Model::StartBackupJobOutcome StartBackupJob(const Model::StartBackupJobRequest& request) const;
 
         /**
-         * <p>Starts a job to create a one-time backup of the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand backup job for the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">AWS
          * API Reference</a></p>
          *
@@ -1528,8 +1543,8 @@ namespace Model
         virtual Model::StartBackupJobOutcomeCallable StartBackupJobCallable(const Model::StartBackupJobRequest& request) const;
 
         /**
-         * <p>Starts a job to create a one-time backup of the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand backup job for the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">AWS
          * API Reference</a></p>
          *
@@ -1687,20 +1702,18 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Replaces the body of a saved backup plan identified by its
-         * <code>backupPlanId</code> with the input document in JSON format. The new
-         * version is uniquely identified by a <code>VersionId</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing backup plan identified by its <code>backupPlanId</code>
+         * with the input document in JSON format. The new version is uniquely identified
+         * by a <code>VersionId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateBackupPlanOutcome UpdateBackupPlan(const Model::UpdateBackupPlanRequest& request) const;
 
         /**
-         * <p>Replaces the body of a saved backup plan identified by its
-         * <code>backupPlanId</code> with the input document in JSON format. The new
-         * version is uniquely identified by a <code>VersionId</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing backup plan identified by its <code>backupPlanId</code>
+         * with the input document in JSON format. The new version is uniquely identified
+         * by a <code>VersionId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">AWS
          * API Reference</a></p>
          *
@@ -1709,10 +1722,9 @@ namespace Model
         virtual Model::UpdateBackupPlanOutcomeCallable UpdateBackupPlanCallable(const Model::UpdateBackupPlanRequest& request) const;
 
         /**
-         * <p>Replaces the body of a saved backup plan identified by its
-         * <code>backupPlanId</code> with the input document in JSON format. The new
-         * version is uniquely identified by a <code>VersionId</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing backup plan identified by its <code>backupPlanId</code>
+         * with the input document in JSON format. The new version is uniquely identified
+         * by a <code>VersionId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">AWS
          * API Reference</a></p>
          *
@@ -1768,11 +1780,11 @@ namespace Model
 
         /**
          * <p>Updates the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          */
@@ -1780,11 +1792,11 @@ namespace Model
 
         /**
          * <p>Updates the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -1794,11 +1806,11 @@ namespace Model
 
         /**
          * <p>Updates the current service opt-in settings for the Region. If the service
-         * has a value set to <code>true</code>, AWS Backup attempts to protect that
-         * service's resources in this Region, when included in an on-demand backup or
-         * scheduled backup plan. If the value is set to <code>false</code> for a service,
-         * AWS Backup does not attempt to protect that service's resources in this
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * has a value set to <code>true</code>, AWS Backup tries to protect that service's
+         * resources in this Region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to <code>false</code> for a service, AWS Backup
+         * does not try to protect that service's resources in this Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          *

@@ -363,90 +363,50 @@ namespace Model
 
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

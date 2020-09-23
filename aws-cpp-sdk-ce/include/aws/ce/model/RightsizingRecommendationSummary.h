@@ -128,50 +128,42 @@ namespace Model
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline const Aws::String& GetSavingsCurrencyCode() const{ return m_savingsCurrencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline bool SavingsCurrencyCodeHasBeenSet() const { return m_savingsCurrencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(const Aws::String& value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(Aws::String&& value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(const char* value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(const Aws::String& value) { SetSavingsCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(Aws::String&& value) { SetSavingsCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(const char* value) { SetSavingsCurrencyCode(value); return *this;}
 

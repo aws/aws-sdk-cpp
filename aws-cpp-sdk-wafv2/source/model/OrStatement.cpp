@@ -5,7 +5,6 @@
 
 #include <aws/wafv2/model/OrStatement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/wafv2/model/Statement.h>
 
 #include <utility>
 

@@ -5,9 +5,8 @@
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
-#include <aws/wafv2/model/Statement.h>
 #include <utility>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <memory>
 
 namespace Aws
 {
@@ -77,7 +76,7 @@ namespace Model
 
   private:
 
-    Aws::Vector<Statement> m_statement;
+    std::shared_ptr<Statement> m_statement;
     bool m_statementHasBeenSet;
   };
 

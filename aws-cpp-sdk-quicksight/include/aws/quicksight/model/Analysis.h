@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/AnalysisError.h>
+#include <aws/quicksight/model/Sheet.h>
 #include <utility>
 
 namespace Aws
@@ -385,6 +386,55 @@ namespace Model
      */
     inline Analysis& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline const Aws::Vector<Sheet>& GetSheets() const{ return m_sheets; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline bool SheetsHasBeenSet() const { return m_sheetsHasBeenSet; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline void SetSheets(const Aws::Vector<Sheet>& value) { m_sheetsHasBeenSet = true; m_sheets = value; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline void SetSheets(Aws::Vector<Sheet>&& value) { m_sheetsHasBeenSet = true; m_sheets = std::move(value); }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline Analysis& WithSheets(const Aws::Vector<Sheet>& value) { SetSheets(value); return *this;}
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline Analysis& WithSheets(Aws::Vector<Sheet>&& value) { SetSheets(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline Analysis& AddSheets(const Sheet& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the associated sheets with the unique identifier and name of each
+     * sheet.</p>
+     */
+    inline Analysis& AddSheets(Sheet&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_analysisId;
@@ -413,6 +463,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    Aws::Vector<Sheet> m_sheets;
+    bool m_sheetsHasBeenSet;
   };
 
 } // namespace Model

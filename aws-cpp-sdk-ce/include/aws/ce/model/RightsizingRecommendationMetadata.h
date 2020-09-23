@@ -80,79 +80,79 @@ namespace Model
 
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const Aws::String& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = value; }
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(Aws::String&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::move(value); }
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const char* value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp.assign(value); }
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(const Aws::String& value) { SetGenerationTimestamp(value); return *this;}
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(Aws::String&& value) { SetGenerationTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when AWS made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(const char* value) { SetGenerationTimestamp(value); return *this;}
 
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p> How many days of previous usage that Amazon Web Services considers when
-     * making this recommendation.</p>
+     * <p> How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 

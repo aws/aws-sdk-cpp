@@ -21,10 +21,12 @@ namespace CostExplorerErrorMapper
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
 static const int UNRESOLVABLE_USAGE_UNIT_HASH = HashingUtils::HashString("UnresolvableUsageUnitException");
+static const int UNKNOWN_SUBSCRIPTION_HASH = HashingUtils::HashString("UnknownSubscriptionException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int UNKNOWN_MONITOR_HASH = HashingUtils::HashString("UnknownMonitorException");
 static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
-static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -43,21 +45,29 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNRESOLVABLE_USAGE_UNIT), false);
   }
+  else if (hashCode == UNKNOWN_SUBSCRIPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_SUBSCRIPTION), false);
+  }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == UNKNOWN_MONITOR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_MONITOR), false);
   }
   else if (hashCode == BILL_EXPIRATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILL_EXPIRATION), false);
   }
-  else if (hashCode == DATA_UNAVAILABLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), false);
-  }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == DATA_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

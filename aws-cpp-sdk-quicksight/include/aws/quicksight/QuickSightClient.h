@@ -622,15 +622,19 @@ namespace Model
          * QuickSight by removing QuickSight sample assets and videos for all new users,
          * see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the Amazon QuickSight User Guide.</p> <p>You can create
-         * customizations for your AWS account or, if you specify a namespace, for a
+         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
+         * create customizations for your AWS account or, if you specify a namespace, for a
          * QuickSight namespace instead. Customizations that apply to a namespace always
          * override customizations that apply to an AWS account. To find out which
          * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation.</p> <p>Before you add a theme as the namespace default, make sure
-         * that you first share the theme with the namespace. If you don't share it with
-         * the namespace, the theme won't be visible to your users even if you use this API
-         * operation to make it the default theme. </p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>Before you use the <code>CreateAccountCustomization</code> API
+         * operation to add a theme as the namespace default, make sure that you first
+         * share the theme with the namespace. If you don't share it with the namespace,
+         * the theme isn't visible to your users even if you make it the default theme. To
+         * check if the theme is shared, view the current permissions by using the <code>
+         * <a>DescribeThemePermissions</a> </code> API operation. To share the theme, grant
+         * permissions by using the <code> <a>UpdateThemePermissions</a> </code> API
+         * operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">AWS
          * API Reference</a></p>
          */
@@ -644,15 +648,19 @@ namespace Model
          * QuickSight by removing QuickSight sample assets and videos for all new users,
          * see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the Amazon QuickSight User Guide.</p> <p>You can create
-         * customizations for your AWS account or, if you specify a namespace, for a
+         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
+         * create customizations for your AWS account or, if you specify a namespace, for a
          * QuickSight namespace instead. Customizations that apply to a namespace always
          * override customizations that apply to an AWS account. To find out which
          * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation.</p> <p>Before you add a theme as the namespace default, make sure
-         * that you first share the theme with the namespace. If you don't share it with
-         * the namespace, the theme won't be visible to your users even if you use this API
-         * operation to make it the default theme. </p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>Before you use the <code>CreateAccountCustomization</code> API
+         * operation to add a theme as the namespace default, make sure that you first
+         * share the theme with the namespace. If you don't share it with the namespace,
+         * the theme isn't visible to your users even if you make it the default theme. To
+         * check if the theme is shared, view the current permissions by using the <code>
+         * <a>DescribeThemePermissions</a> </code> API operation. To share the theme, grant
+         * permissions by using the <code> <a>UpdateThemePermissions</a> </code> API
+         * operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -668,15 +676,19 @@ namespace Model
          * QuickSight by removing QuickSight sample assets and videos for all new users,
          * see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the Amazon QuickSight User Guide.</p> <p>You can create
-         * customizations for your AWS account or, if you specify a namespace, for a
+         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
+         * create customizations for your AWS account or, if you specify a namespace, for a
          * QuickSight namespace instead. Customizations that apply to a namespace always
          * override customizations that apply to an AWS account. To find out which
          * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation.</p> <p>Before you add a theme as the namespace default, make sure
-         * that you first share the theme with the namespace. If you don't share it with
-         * the namespace, the theme won't be visible to your users even if you use this API
-         * operation to make it the default theme. </p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>Before you use the <code>CreateAccountCustomization</code> API
+         * operation to add a theme as the namespace default, make sure that you first
+         * share the theme with the namespace. If you don't share it with the namespace,
+         * the theme isn't visible to your users even if you make it the default theme. To
+         * check if the theme is shared, view the current permissions by using the <code>
+         * <a>DescribeThemePermissions</a> </code> API operation. To share the theme, grant
+         * permissions by using the <code> <a>UpdateThemePermissions</a> </code> API
+         * operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1125,7 +1137,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this AWS Region for the
-         * specified AWS Account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
+         * specified AWS account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          */
@@ -1133,7 +1145,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this AWS Region for the
-         * specified AWS Account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
+         * specified AWS account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1143,7 +1155,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this AWS Region for the
-         * specified AWS Account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
+         * specified AWS account and QuickSight namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1582,14 +1594,14 @@ namespace Model
          * the entities involved. </p> <ul> <li> <p> <code>AWS Account</code> - The AWS
          * account exists at the top of the hierarchy. It has the potential to use all of
          * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose
-         * one AWS Region to use as your home region. That's where your free SPICE capacity
+         * one AWS Region to use as your home Region. That's where your free SPICE capacity
          * is located. You can use QuickSight in any supported AWS Region. </p> </li> <li>
          * <p> <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight
          * at least once, QuickSight acts as a separate instance of the same service. If
          * you have a user directory, it resides in us-east-1, which is the US East (N.
          * Virginia). Generally speaking, these users have access to QuickSight in any AWS
          * Region, unless they are constrained to a namespace. </p> <p>To run the command
-         * in a different AWS Region, you change your region settings. If you're using the
+         * in a different AWS Region, you change your Region settings. If you're using the
          * AWS CLI, you can use one of the following options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
@@ -1607,7 +1619,7 @@ namespace Model
          * </li> <li> <p> <code>Applied customizations</code> - Within an AWS Region, a set
          * of QuickSight customizations can apply to an AWS account or to a namespace.
          * Settings that you apply to a namespace override settings that you apply to an
-         * AWS Account. All settings are isolated to a single AWS Region. To apply them in
+         * AWS account. All settings are isolated to a single AWS Region. To apply them in
          * other AWS Regions, run the <code>CreateAccountCustomization</code> command in
          * each AWS Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -1625,14 +1637,14 @@ namespace Model
          * the entities involved. </p> <ul> <li> <p> <code>AWS Account</code> - The AWS
          * account exists at the top of the hierarchy. It has the potential to use all of
          * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose
-         * one AWS Region to use as your home region. That's where your free SPICE capacity
+         * one AWS Region to use as your home Region. That's where your free SPICE capacity
          * is located. You can use QuickSight in any supported AWS Region. </p> </li> <li>
          * <p> <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight
          * at least once, QuickSight acts as a separate instance of the same service. If
          * you have a user directory, it resides in us-east-1, which is the US East (N.
          * Virginia). Generally speaking, these users have access to QuickSight in any AWS
          * Region, unless they are constrained to a namespace. </p> <p>To run the command
-         * in a different AWS Region, you change your region settings. If you're using the
+         * in a different AWS Region, you change your Region settings. If you're using the
          * AWS CLI, you can use one of the following options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
@@ -1650,7 +1662,7 @@ namespace Model
          * </li> <li> <p> <code>Applied customizations</code> - Within an AWS Region, a set
          * of QuickSight customizations can apply to an AWS account or to a namespace.
          * Settings that you apply to a namespace override settings that you apply to an
-         * AWS Account. All settings are isolated to a single AWS Region. To apply them in
+         * AWS account. All settings are isolated to a single AWS Region. To apply them in
          * other AWS Regions, run the <code>CreateAccountCustomization</code> command in
          * each AWS Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -1670,14 +1682,14 @@ namespace Model
          * the entities involved. </p> <ul> <li> <p> <code>AWS Account</code> - The AWS
          * account exists at the top of the hierarchy. It has the potential to use all of
          * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose
-         * one AWS Region to use as your home region. That's where your free SPICE capacity
+         * one AWS Region to use as your home Region. That's where your free SPICE capacity
          * is located. You can use QuickSight in any supported AWS Region. </p> </li> <li>
          * <p> <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight
          * at least once, QuickSight acts as a separate instance of the same service. If
          * you have a user directory, it resides in us-east-1, which is the US East (N.
          * Virginia). Generally speaking, these users have access to QuickSight in any AWS
          * Region, unless they are constrained to a namespace. </p> <p>To run the command
-         * in a different AWS Region, you change your region settings. If you're using the
+         * in a different AWS Region, you change your Region settings. If you're using the
          * AWS CLI, you can use one of the following options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
@@ -1695,7 +1707,7 @@ namespace Model
          * </li> <li> <p> <code>Applied customizations</code> - Within an AWS Region, a set
          * of QuickSight customizations can apply to an AWS account or to a namespace.
          * Settings that you apply to a namespace override settings that you apply to an
-         * AWS Account. All settings are isolated to a single AWS Region. To apply them in
+         * AWS account. All settings are isolated to a single AWS Region. To apply them in
          * other AWS Regions, run the <code>CreateAccountCustomization</code> command in
          * each AWS Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -1708,7 +1720,7 @@ namespace Model
 
         /**
          * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this AWS Account.</p><p><h3>See Also:</h3>   <a
+         * first created in this AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -1716,7 +1728,7 @@ namespace Model
 
         /**
          * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this AWS Account.</p><p><h3>See Also:</h3>   <a
+         * first created in this AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1726,7 +1738,7 @@ namespace Model
 
         /**
          * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this AWS Account.</p><p><h3>See Also:</h3>   <a
+         * first created in this AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -3172,7 +3184,7 @@ namespace Model
         virtual void UpdateAccountCustomizationAsync(const Model::UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the Amazon QuickSight settings in your AWS Account.</p><p><h3>See
+         * <p>Updates the Amazon QuickSight settings in your AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
@@ -3180,7 +3192,7 @@ namespace Model
         virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
 
         /**
-         * <p>Updates the Amazon QuickSight settings in your AWS Account.</p><p><h3>See
+         * <p>Updates the Amazon QuickSight settings in your AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
@@ -3190,7 +3202,7 @@ namespace Model
         virtual Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const Model::UpdateAccountSettingsRequest& request) const;
 
         /**
-         * <p>Updates the Amazon QuickSight settings in your AWS Account.</p><p><h3>See
+         * <p>Updates the Amazon QuickSight settings in your AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>

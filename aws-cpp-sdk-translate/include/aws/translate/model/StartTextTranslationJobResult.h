@@ -82,7 +82,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -98,7 +98,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -114,7 +114,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -130,7 +130,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -146,7 +146,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>

@@ -5,6 +5,7 @@
 
 #include <aws/wafv2/model/RateBasedStatement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/Statement.h>
 
 #include <utility>
 
@@ -39,10 +40,10 @@ RateBasedStatement::RateBasedStatement(JsonView jsonValue) :
   *this = jsonValue;
 }
 
-const Statement& RateBasedStatement::GetScopeDownStatement() const{ return m_scopeDownStatement[0]; }
+const Statement& RateBasedStatement::GetScopeDownStatement() const{ return *m_scopeDownStatement; }
 bool RateBasedStatement::ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
-void RateBasedStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement.resize(1); m_scopeDownStatement[0] = value; }
-void RateBasedStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement.resize(1); m_scopeDownStatement[0] = std::move(value); }
+void RateBasedStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", value); }
+void RateBasedStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", std::move(value)); }
 RateBasedStatement& RateBasedStatement::WithScopeDownStatement(const Statement& value) { SetScopeDownStatement(value); return *this;}
 RateBasedStatement& RateBasedStatement::WithScopeDownStatement(Statement&& value) { SetScopeDownStatement(std::move(value)); return *this;}
 
@@ -64,8 +65,7 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ScopeDownStatement"))
   {
-    m_scopeDownStatement.resize(1);
-    m_scopeDownStatement[0] = jsonValue.GetObject("ScopeDownStatement");
+    m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", jsonValue.GetObject("ScopeDownStatement"));
 
     m_scopeDownStatementHasBeenSet = true;
   }
@@ -97,7 +97,7 @@ JsonValue RateBasedStatement::Jsonize() const
 
   if(m_scopeDownStatementHasBeenSet)
   {
-   payload.WithObject("ScopeDownStatement", m_scopeDownStatement[0].Jsonize());
+   payload.WithObject("ScopeDownStatement", m_scopeDownStatement->Jsonize());
 
   }
 

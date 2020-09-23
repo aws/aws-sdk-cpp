@@ -11,9 +11,16 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ce/model/CreateAnomalyMonitorResult.h>
+#include <aws/ce/model/CreateAnomalySubscriptionResult.h>
 #include <aws/ce/model/CreateCostCategoryDefinitionResult.h>
+#include <aws/ce/model/DeleteAnomalyMonitorResult.h>
+#include <aws/ce/model/DeleteAnomalySubscriptionResult.h>
 #include <aws/ce/model/DeleteCostCategoryDefinitionResult.h>
 #include <aws/ce/model/DescribeCostCategoryDefinitionResult.h>
+#include <aws/ce/model/GetAnomaliesResult.h>
+#include <aws/ce/model/GetAnomalyMonitorsResult.h>
+#include <aws/ce/model/GetAnomalySubscriptionsResult.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostForecastResult.h>
@@ -29,6 +36,9 @@
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
+#include <aws/ce/model/ProvideAnomalyFeedbackResult.h>
+#include <aws/ce/model/UpdateAnomalyMonitorResult.h>
+#include <aws/ce/model/UpdateAnomalySubscriptionResult.h>
 #include <aws/ce/model/UpdateCostCategoryDefinitionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -69,9 +79,16 @@ namespace CostExplorer
 
 namespace Model
 {
+        class CreateAnomalyMonitorRequest;
+        class CreateAnomalySubscriptionRequest;
         class CreateCostCategoryDefinitionRequest;
+        class DeleteAnomalyMonitorRequest;
+        class DeleteAnomalySubscriptionRequest;
         class DeleteCostCategoryDefinitionRequest;
         class DescribeCostCategoryDefinitionRequest;
+        class GetAnomaliesRequest;
+        class GetAnomalyMonitorsRequest;
+        class GetAnomalySubscriptionsRequest;
         class GetCostAndUsageRequest;
         class GetCostAndUsageWithResourcesRequest;
         class GetCostForecastRequest;
@@ -87,11 +104,21 @@ namespace Model
         class GetTagsRequest;
         class GetUsageForecastRequest;
         class ListCostCategoryDefinitionsRequest;
+        class ProvideAnomalyFeedbackRequest;
+        class UpdateAnomalyMonitorRequest;
+        class UpdateAnomalySubscriptionRequest;
         class UpdateCostCategoryDefinitionRequest;
 
+        typedef Aws::Utils::Outcome<CreateAnomalyMonitorResult, CostExplorerError> CreateAnomalyMonitorOutcome;
+        typedef Aws::Utils::Outcome<CreateAnomalySubscriptionResult, CostExplorerError> CreateAnomalySubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateCostCategoryDefinitionResult, CostExplorerError> CreateCostCategoryDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnomalyMonitorResult, CostExplorerError> DeleteAnomalyMonitorOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnomalySubscriptionResult, CostExplorerError> DeleteAnomalySubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteCostCategoryDefinitionResult, CostExplorerError> DeleteCostCategoryDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeCostCategoryDefinitionResult, CostExplorerError> DescribeCostCategoryDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetAnomaliesResult, CostExplorerError> GetAnomaliesOutcome;
+        typedef Aws::Utils::Outcome<GetAnomalyMonitorsResult, CostExplorerError> GetAnomalyMonitorsOutcome;
+        typedef Aws::Utils::Outcome<GetAnomalySubscriptionsResult, CostExplorerError> GetAnomalySubscriptionsOutcome;
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, CostExplorerError> GetCostAndUsageOutcome;
         typedef Aws::Utils::Outcome<GetCostAndUsageWithResourcesResult, CostExplorerError> GetCostAndUsageWithResourcesOutcome;
         typedef Aws::Utils::Outcome<GetCostForecastResult, CostExplorerError> GetCostForecastOutcome;
@@ -107,11 +134,21 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTagsResult, CostExplorerError> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, CostExplorerError> GetUsageForecastOutcome;
         typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, CostExplorerError> ListCostCategoryDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ProvideAnomalyFeedbackResult, CostExplorerError> ProvideAnomalyFeedbackOutcome;
+        typedef Aws::Utils::Outcome<UpdateAnomalyMonitorResult, CostExplorerError> UpdateAnomalyMonitorOutcome;
+        typedef Aws::Utils::Outcome<UpdateAnomalySubscriptionResult, CostExplorerError> UpdateAnomalySubscriptionOutcome;
         typedef Aws::Utils::Outcome<UpdateCostCategoryDefinitionResult, CostExplorerError> UpdateCostCategoryDefinitionOutcome;
 
+        typedef std::future<CreateAnomalyMonitorOutcome> CreateAnomalyMonitorOutcomeCallable;
+        typedef std::future<CreateAnomalySubscriptionOutcome> CreateAnomalySubscriptionOutcomeCallable;
         typedef std::future<CreateCostCategoryDefinitionOutcome> CreateCostCategoryDefinitionOutcomeCallable;
+        typedef std::future<DeleteAnomalyMonitorOutcome> DeleteAnomalyMonitorOutcomeCallable;
+        typedef std::future<DeleteAnomalySubscriptionOutcome> DeleteAnomalySubscriptionOutcomeCallable;
         typedef std::future<DeleteCostCategoryDefinitionOutcome> DeleteCostCategoryDefinitionOutcomeCallable;
         typedef std::future<DescribeCostCategoryDefinitionOutcome> DescribeCostCategoryDefinitionOutcomeCallable;
+        typedef std::future<GetAnomaliesOutcome> GetAnomaliesOutcomeCallable;
+        typedef std::future<GetAnomalyMonitorsOutcome> GetAnomalyMonitorsOutcomeCallable;
+        typedef std::future<GetAnomalySubscriptionsOutcome> GetAnomalySubscriptionsOutcomeCallable;
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
         typedef std::future<GetCostAndUsageWithResourcesOutcome> GetCostAndUsageWithResourcesOutcomeCallable;
         typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
@@ -127,14 +164,24 @@ namespace Model
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
         typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
+        typedef std::future<ProvideAnomalyFeedbackOutcome> ProvideAnomalyFeedbackOutcomeCallable;
+        typedef std::future<UpdateAnomalyMonitorOutcome> UpdateAnomalyMonitorOutcomeCallable;
+        typedef std::future<UpdateAnomalySubscriptionOutcome> UpdateAnomalySubscriptionOutcomeCallable;
         typedef std::future<UpdateCostCategoryDefinitionOutcome> UpdateCostCategoryDefinitionOutcomeCallable;
 } // namespace Model
 
   class CostExplorerClient;
 
+    typedef std::function<void(const CostExplorerClient*, const Model::CreateAnomalyMonitorRequest&, const Model::CreateAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnomalyMonitorResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::CreateAnomalySubscriptionRequest&, const Model::CreateAnomalySubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnomalySubscriptionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::CreateCostCategoryDefinitionRequest&, const Model::CreateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCostCategoryDefinitionResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::DeleteAnomalyMonitorRequest&, const Model::DeleteAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalyMonitorResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::DeleteAnomalySubscriptionRequest&, const Model::DeleteAnomalySubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalySubscriptionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::DeleteCostCategoryDefinitionRequest&, const Model::DeleteCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCostCategoryDefinitionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::DescribeCostCategoryDefinitionRequest&, const Model::DescribeCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCostCategoryDefinitionResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetAnomaliesRequest&, const Model::GetAnomaliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomaliesResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetAnomalyMonitorsRequest&, const Model::GetAnomalyMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalyMonitorsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetAnomalySubscriptionsRequest&, const Model::GetAnomalySubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalySubscriptionsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageWithResourcesRequest&, const Model::GetCostAndUsageWithResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageWithResourcesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostForecastRequest&, const Model::GetCostForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostForecastResponseReceivedHandler;
@@ -150,6 +197,9 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&, const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostCategoryDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::ProvideAnomalyFeedbackRequest&, const Model::ProvideAnomalyFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvideAnomalyFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalyMonitorRequest&, const Model::UpdateAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyMonitorResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalySubscriptionRequest&, const Model::UpdateAnomalySubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalySubscriptionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateCostCategoryDefinitionRequest&, const Model::UpdateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCostCategoryDefinitionResponseReceivedHandler;
 
   /**
@@ -192,6 +242,68 @@ namespace Model
 
 
         /**
+         * <p>Creates a new cost anomaly detection monitor with the requested type and
+         * monitor specification. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAnomalyMonitorOutcome CreateAnomalyMonitor(const Model::CreateAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Creates a new cost anomaly detection monitor with the requested type and
+         * monitor specification. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAnomalyMonitorOutcomeCallable CreateAnomalyMonitorCallable(const Model::CreateAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Creates a new cost anomaly detection monitor with the requested type and
+         * monitor specification. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAnomalyMonitorAsync(const Model::CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a subscription to a cost anomaly detection monitor. You can use each
+         * subscription to define subscribers with email or SNS notifications. Email
+         * subscribers can set a dollar threshold and a time frequency for receiving
+         * notifications. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAnomalySubscriptionOutcome CreateAnomalySubscription(const Model::CreateAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p>Adds a subscription to a cost anomaly detection monitor. You can use each
+         * subscription to define subscribers with email or SNS notifications. Email
+         * subscribers can set a dollar threshold and a time frequency for receiving
+         * notifications. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAnomalySubscriptionOutcomeCallable CreateAnomalySubscriptionCallable(const Model::CreateAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p>Adds a subscription to a cost anomaly detection monitor. You can use each
+         * subscription to define subscribers with email or SNS notifications. Email
+         * subscribers can set a dollar threshold and a time frequency for receiving
+         * notifications. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAnomalySubscriptionAsync(const Model::CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
@@ -218,6 +330,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCostCategoryDefinitionAsync(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a cost anomaly monitor. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAnomalyMonitorOutcome DeleteAnomalyMonitor(const Model::DeleteAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Deletes a cost anomaly monitor. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAnomalyMonitorOutcomeCallable DeleteAnomalyMonitorCallable(const Model::DeleteAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Deletes a cost anomaly monitor. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAnomalyMonitorAsync(const Model::DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a cost anomaly subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAnomalySubscriptionOutcome DeleteAnomalySubscription(const Model::DeleteAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes a cost anomaly subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAnomalySubscriptionOutcomeCallable DeleteAnomalySubscriptionCallable(const Model::DeleteAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes a cost anomaly subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAnomalySubscriptionAsync(const Model::DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Cost Category. Expenses from this month going forward will no
@@ -289,6 +451,99 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCostCategoryDefinitionAsync(const Model::DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all of the cost anomalies detected on your account, during the time
+         * period specified by the <code>DateInterval</code> object. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetAnomaliesOutcome GetAnomalies(const Model::GetAnomaliesRequest& request) const;
+
+        /**
+         * <p>Retrieves all of the cost anomalies detected on your account, during the time
+         * period specified by the <code>DateInterval</code> object. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAnomaliesOutcomeCallable GetAnomaliesCallable(const Model::GetAnomaliesRequest& request) const;
+
+        /**
+         * <p>Retrieves all of the cost anomalies detected on your account, during the time
+         * period specified by the <code>DateInterval</code> object. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAnomaliesAsync(const Model::GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the cost anomaly monitor definitions for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAnomalyMonitorsOutcome GetAnomalyMonitors(const Model::GetAnomalyMonitorsRequest& request) const;
+
+        /**
+         * <p>Retrieves the cost anomaly monitor definitions for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAnomalyMonitorsOutcomeCallable GetAnomalyMonitorsCallable(const Model::GetAnomalyMonitorsRequest& request) const;
+
+        /**
+         * <p>Retrieves the cost anomaly monitor definitions for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAnomalyMonitorsAsync(const Model::GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the cost anomaly subscription objects for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAnomalySubscriptionsOutcome GetAnomalySubscriptions(const Model::GetAnomalySubscriptionsRequest& request) const;
+
+        /**
+         * <p>Retrieves the cost anomaly subscription objects for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAnomalySubscriptionsOutcomeCallable GetAnomalySubscriptionsCallable(const Model::GetAnomalySubscriptionsRequest& request) const;
+
+        /**
+         * <p>Retrieves the cost anomaly subscription objects for your account. You can
+         * filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAnomalySubscriptionsAsync(const Model::GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves cost and usage metrics for your account. You can specify which cost
@@ -960,6 +1215,93 @@ namespace Model
         virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the feedback property of a given cost anomaly. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvideAnomalyFeedbackOutcome ProvideAnomalyFeedback(const Model::ProvideAnomalyFeedbackRequest& request) const;
+
+        /**
+         * <p>Modifies the feedback property of a given cost anomaly. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ProvideAnomalyFeedbackOutcomeCallable ProvideAnomalyFeedbackCallable(const Model::ProvideAnomalyFeedbackRequest& request) const;
+
+        /**
+         * <p>Modifies the feedback property of a given cost anomaly. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ProvideAnomalyFeedbackAsync(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing cost anomaly monitor. The changes made are applied going
+         * forward, and does not change anomalies detected in the past. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnomalyMonitorOutcome UpdateAnomalyMonitor(const Model::UpdateAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Updates an existing cost anomaly monitor. The changes made are applied going
+         * forward, and does not change anomalies detected in the past. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAnomalyMonitorOutcomeCallable UpdateAnomalyMonitorCallable(const Model::UpdateAnomalyMonitorRequest& request) const;
+
+        /**
+         * <p>Updates an existing cost anomaly monitor. The changes made are applied going
+         * forward, and does not change anomalies detected in the past. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAnomalyMonitorAsync(const Model::UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Updates an existing cost anomaly monitor subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnomalySubscriptionOutcome UpdateAnomalySubscription(const Model::UpdateAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p> Updates an existing cost anomaly monitor subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAnomalySubscriptionOutcomeCallable UpdateAnomalySubscriptionCallable(const Model::UpdateAnomalySubscriptionRequest& request) const;
+
+        /**
+         * <p> Updates an existing cost anomaly monitor subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAnomalySubscriptionAsync(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
          * will be used to categorize the current month’s expenses and future expenses.
          * This won’t change categorization for the previous months.</p><p><h3>See
@@ -997,9 +1339,16 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateAnomalyMonitorAsyncHelper(const Model::CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAnomalySubscriptionAsyncHelper(const Model::CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCostCategoryDefinitionAsyncHelper(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAnomalyMonitorAsyncHelper(const Model::DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAnomalySubscriptionAsyncHelper(const Model::DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCostCategoryDefinitionAsyncHelper(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCostCategoryDefinitionAsyncHelper(const Model::DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAnomaliesAsyncHelper(const Model::GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAnomalyMonitorsAsyncHelper(const Model::GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAnomalySubscriptionsAsyncHelper(const Model::GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostAndUsageAsyncHelper(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostAndUsageWithResourcesAsyncHelper(const Model::GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostForecastAsyncHelper(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1015,6 +1364,9 @@ namespace Model
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCostCategoryDefinitionsAsyncHelper(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ProvideAnomalyFeedbackAsyncHelper(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAnomalyMonitorAsyncHelper(const Model::UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAnomalySubscriptionAsyncHelper(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCostCategoryDefinitionAsyncHelper(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

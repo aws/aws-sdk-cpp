@@ -323,42 +323,42 @@ namespace Model
 
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline const Aws::String& GetOnDemandHoursInLookbackPeriod() const{ return m_onDemandHoursInLookbackPeriod; }
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline bool OnDemandHoursInLookbackPeriodHasBeenSet() const { return m_onDemandHoursInLookbackPeriodHasBeenSet; }
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(const Aws::String& value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod = value; }
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(Aws::String&& value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod = std::move(value); }
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(const char* value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod.assign(value); }
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(const Aws::String& value) { SetOnDemandHoursInLookbackPeriod(value); return *this;}
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(Aws::String&& value) { SetOnDemandHoursInLookbackPeriod(std::move(value)); return *this;}
 
     /**
-     * <p> Number of hours during the lookback period billed at On Demand rates.</p>
+     * <p> Number of hours during the lookback period billed at On-Demand rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(const char* value) { SetOnDemandHoursInLookbackPeriod(value); return *this;}
 
@@ -405,91 +405,91 @@ namespace Model
 
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline const Aws::String& GetMonthlyCost() const{ return m_monthlyCost; }
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline bool MonthlyCostHasBeenSet() const { return m_monthlyCostHasBeenSet; }
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline void SetMonthlyCost(const Aws::String& value) { m_monthlyCostHasBeenSet = true; m_monthlyCost = value; }
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline void SetMonthlyCost(Aws::String&& value) { m_monthlyCostHasBeenSet = true; m_monthlyCost = std::move(value); }
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline void SetMonthlyCost(const char* value) { m_monthlyCostHasBeenSet = true; m_monthlyCost.assign(value); }
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline CurrentInstance& WithMonthlyCost(const Aws::String& value) { SetMonthlyCost(value); return *this;}
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline CurrentInstance& WithMonthlyCost(Aws::String&& value) { SetMonthlyCost(std::move(value)); return *this;}
 
     /**
-     * <p> Current On Demand cost of operating this instance on a monthly basis.</p>
+     * <p> Current On-Demand cost of operating this instance on a monthly basis.</p>
      */
     inline CurrentInstance& WithMonthlyCost(const char* value) { SetMonthlyCost(value); return *this;}
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 

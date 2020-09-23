@@ -35,49 +35,49 @@ namespace Model
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const{ return m_resourceTypeOptInPreference; }
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline void SetResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeOptInPreference = value; }
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline void SetResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeOptInPreference = std::move(value); }
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline DescribeRegionSettingsResult& WithResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeOptInPreference(value); return *this;}
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline DescribeRegionSettingsResult& WithResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeOptInPreference(std::move(value)); return *this;}
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeOptInPreference(const Aws::String& key, bool value) { m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeOptInPreference(Aws::String&& key, bool value) { m_resourceTypeOptInPreference.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Returns a list of all services along with the opt-in preferences in the
-     * region.</p>
+     * Region.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeOptInPreference(const char* key, bool value) { m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 

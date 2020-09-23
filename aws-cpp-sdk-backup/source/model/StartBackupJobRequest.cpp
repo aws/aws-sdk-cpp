@@ -22,7 +22,8 @@ StartBackupJobRequest::StartBackupJobRequest() :
     m_completeWindowMinutes(0),
     m_completeWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
-    m_recoveryPointTagsHasBeenSet(false)
+    m_recoveryPointTagsHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,17 @@ Aws::String StartBackupJobRequest::SerializePayload() const
      recoveryPointTagsJsonMap.WithString(recoveryPointTagsItem.first, recoveryPointTagsItem.second);
    }
    payload.WithObject("RecoveryPointTags", std::move(recoveryPointTagsJsonMap));
+
+  }
+
+  if(m_backupOptionsHasBeenSet)
+  {
+   JsonValue backupOptionsJsonMap;
+   for(auto& backupOptionsItem : m_backupOptions)
+   {
+     backupOptionsJsonMap.WithString(backupOptionsItem.first, backupOptionsItem.second);
+   }
+   payload.WithObject("BackupOptions", std::move(backupOptionsJsonMap));
 
   }
 

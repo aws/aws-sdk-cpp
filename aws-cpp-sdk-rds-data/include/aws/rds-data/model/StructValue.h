@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds-data/model/Value.h>
 #include <utility>
 
 namespace Aws
@@ -22,7 +23,6 @@ namespace RDSDataService
 {
 namespace Model
 {
-  class Value;
 
   /**
    * <p>A structure value returned by a call.</p><p><h3>See Also:</h3>   <a
