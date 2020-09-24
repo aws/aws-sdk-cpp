@@ -17,7 +17,8 @@ StartDocumentAnalysisRequest::StartDocumentAnalysisRequest() :
     m_featureTypesHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_jobTagHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false)
+    m_notificationChannelHasBeenSet(false),
+    m_outputConfigHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String StartDocumentAnalysisRequest::SerializePayload() const
   if(m_notificationChannelHasBeenSet)
   {
    payload.WithObject("NotificationChannel", m_notificationChannel.Jsonize());
+
+  }
+
+  if(m_outputConfigHasBeenSet)
+  {
+   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
 
   }
 

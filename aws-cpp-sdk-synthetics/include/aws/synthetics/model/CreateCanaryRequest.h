@@ -236,7 +236,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
@@ -250,7 +250,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
@@ -278,7 +278,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
@@ -292,7 +292,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
@@ -306,7 +306,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline CreateCanaryRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
@@ -320,7 +320,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline CreateCanaryRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
@@ -334,7 +334,7 @@ namespace Model
      * <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p>
      * <code>logs:CreateLogGroup</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
-     * <code>logs:CreateLogStream</code> </p> </li> </ul>
+     * <code>logs:PutLogEvents</code> </p> </li> </ul>
      */
     inline CreateCanaryRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -473,8 +473,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -482,8 +482,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -491,8 +491,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -500,8 +500,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -509,8 +509,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -518,8 +518,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -527,8 +527,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
@@ -536,8 +536,8 @@ namespace Model
 
     /**
      * <p>Specifies the runtime version to use for the canary. Currently, the only
-     * valid value is <code>syn-1.0</code>. For more information about runtime
-     * versions, see <a
+     * valid values are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>,
+     * and <code>syn-1.0</code>. For more information about runtime versions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */

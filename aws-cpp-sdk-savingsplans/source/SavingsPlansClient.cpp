@@ -21,6 +21,7 @@
 #include <aws/savingsplans/SavingsPlansEndpoint.h>
 #include <aws/savingsplans/SavingsPlansErrorMarshaller.h>
 #include <aws/savingsplans/model/CreateSavingsPlanRequest.h>
+#include <aws/savingsplans/model/DeleteQueuedSavingsPlanRequest.h>
 #include <aws/savingsplans/model/DescribeSavingsPlanRatesRequest.h>
 #include <aws/savingsplans/model/DescribeSavingsPlansRequest.h>
 #include <aws/savingsplans/model/DescribeSavingsPlansOfferingRatesRequest.h>
@@ -127,6 +128,33 @@ void SavingsPlansClient::CreateSavingsPlanAsync(const CreateSavingsPlanRequest& 
 void SavingsPlansClient::CreateSavingsPlanAsyncHelper(const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSavingsPlan(request), context);
+}
+
+DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/DeleteQueuedSavingsPlan";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteQueuedSavingsPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteQueuedSavingsPlanOutcomeCallable SavingsPlansClient::DeleteQueuedSavingsPlanCallable(const DeleteQueuedSavingsPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteQueuedSavingsPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueuedSavingsPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SavingsPlansClient::DeleteQueuedSavingsPlanAsync(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueuedSavingsPlanAsyncHelper( request, handler, context ); } );
+}
+
+void SavingsPlansClient::DeleteQueuedSavingsPlanAsyncHelper(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteQueuedSavingsPlan(request), context);
 }
 
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const

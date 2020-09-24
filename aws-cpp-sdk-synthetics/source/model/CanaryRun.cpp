@@ -19,6 +19,7 @@ namespace Model
 {
 
 CanaryRun::CanaryRun() : 
+    m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_timelineHasBeenSet(false),
@@ -27,6 +28,7 @@ CanaryRun::CanaryRun() :
 }
 
 CanaryRun::CanaryRun(JsonView jsonValue) : 
+    m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_timelineHasBeenSet(false),
@@ -37,6 +39,13 @@ CanaryRun::CanaryRun(JsonView jsonValue) :
 
 CanaryRun& CanaryRun::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+
+    m_idHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -71,6 +80,12 @@ CanaryRun& CanaryRun::operator =(JsonView jsonValue)
 JsonValue CanaryRun::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("Id", m_id);
+
+  }
 
   if(m_nameHasBeenSet)
   {

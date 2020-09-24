@@ -19,7 +19,9 @@ namespace Model
     payment_pending,
     payment_failed,
     active,
-    retired
+    retired,
+    queued,
+    queued_deleted
   };
 
 namespace SavingsPlanStateMapper

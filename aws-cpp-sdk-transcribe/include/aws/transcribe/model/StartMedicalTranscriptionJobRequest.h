@@ -385,6 +385,151 @@ namespace Model
 
 
     /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
      * used to encrypt the output of the transcription job. The user calling the
      * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
@@ -674,6 +819,9 @@ namespace Model
 
     Aws::String m_outputBucketName;
     bool m_outputBucketNameHasBeenSet;
+
+    Aws::String m_outputKey;
+    bool m_outputKeyHasBeenSet;
 
     Aws::String m_outputEncryptionKMSKeyId;
     bool m_outputEncryptionKMSKeyIdHasBeenSet;

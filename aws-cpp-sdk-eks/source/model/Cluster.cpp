@@ -26,6 +26,7 @@ Cluster::Cluster() :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_kubernetesNetworkConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
@@ -46,6 +47,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_kubernetesNetworkConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
@@ -108,6 +110,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_resourcesVpcConfig = jsonValue.GetObject("resourcesVpcConfig");
 
     m_resourcesVpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesNetworkConfig"))
+  {
+    m_kubernetesNetworkConfig = jsonValue.GetObject("kubernetesNetworkConfig");
+
+    m_kubernetesNetworkConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logging"))
@@ -217,6 +226,12 @@ JsonValue Cluster::Jsonize() const
   if(m_resourcesVpcConfigHasBeenSet)
   {
    payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
+
+  }
+
+  if(m_kubernetesNetworkConfigHasBeenSet)
+  {
+   payload.WithObject("kubernetesNetworkConfig", m_kubernetesNetworkConfig.Jsonize());
 
   }
 

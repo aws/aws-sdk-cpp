@@ -19,7 +19,10 @@ namespace Model
     mp3,
     mp4,
     wav,
-    flac
+    flac,
+    ogg,
+    amr,
+    webm
   };
 
 namespace MediaFormatMapper

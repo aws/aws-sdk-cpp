@@ -22,7 +22,9 @@ CanaryRunConfigInput::CanaryRunConfigInput() :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_memoryInMB(0),
-    m_memoryInMBHasBeenSet(false)
+    m_memoryInMBHasBeenSet(false),
+    m_activeTracing(false),
+    m_activeTracingHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ CanaryRunConfigInput::CanaryRunConfigInput(JsonView jsonValue) :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_memoryInMB(0),
-    m_memoryInMBHasBeenSet(false)
+    m_memoryInMBHasBeenSet(false),
+    m_activeTracing(false),
+    m_activeTracingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ CanaryRunConfigInput& CanaryRunConfigInput::operator =(JsonView jsonValue)
     m_memoryInMBHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ActiveTracing"))
+  {
+    m_activeTracing = jsonValue.GetBool("ActiveTracing");
+
+    m_activeTracingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue CanaryRunConfigInput::Jsonize() const
   if(m_memoryInMBHasBeenSet)
   {
    payload.WithInteger("MemoryInMB", m_memoryInMB);
+
+  }
+
+  if(m_activeTracingHasBeenSet)
+  {
+   payload.WithBool("ActiveTracing", m_activeTracing);
 
   }
 

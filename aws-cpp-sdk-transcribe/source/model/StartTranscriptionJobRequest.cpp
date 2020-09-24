@@ -22,6 +22,7 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_mediaFormatHasBeenSet(false),
     m_mediaHasBeenSet(false),
     m_outputBucketNameHasBeenSet(false),
+    m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_modelSettingsHasBeenSet(false),
@@ -68,6 +69,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_outputBucketNameHasBeenSet)
   {
    payload.WithString("OutputBucketName", m_outputBucketName);
+
+  }
+
+  if(m_outputKeyHasBeenSet)
+  {
+   payload.WithString("OutputKey", m_outputKey);
 
   }
 

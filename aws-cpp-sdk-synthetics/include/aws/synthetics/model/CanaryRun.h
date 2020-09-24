@@ -41,6 +41,47 @@ namespace Model
 
 
     /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline CanaryRun& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline CanaryRun& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique ID that identifies this canary run.</p>
+     */
+    inline CanaryRun& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
      * <p>The name of the canary.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -192,6 +233,9 @@ namespace Model
     inline CanaryRun& WithArtifactS3Location(const char* value) { SetArtifactS3Location(value); return *this;}
 
   private:
+
+    Aws::String m_id;
+    bool m_idHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

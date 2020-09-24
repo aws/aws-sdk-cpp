@@ -42,58 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline RuntimeVersion& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline RuntimeVersion& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid value is
-     * <code>syn-1.0</code>. </p> <p>Specifies the runtime version to use for the
-     * canary. Currently, the only valid value is <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
+     * <code>syn-1.0</code>.</p>
      */
     inline RuntimeVersion& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 

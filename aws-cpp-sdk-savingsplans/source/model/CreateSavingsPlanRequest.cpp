@@ -16,6 +16,7 @@ CreateSavingsPlanRequest::CreateSavingsPlanRequest() :
     m_savingsPlanOfferingIdHasBeenSet(false),
     m_commitmentHasBeenSet(false),
     m_upfrontPaymentAmountHasBeenSet(false),
+    m_purchaseTimeHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
@@ -42,6 +43,11 @@ Aws::String CreateSavingsPlanRequest::SerializePayload() const
   {
    payload.WithString("upfrontPaymentAmount", m_upfrontPaymentAmount);
 
+  }
+
+  if(m_purchaseTimeHasBeenSet)
+  {
+   payload.WithDouble("purchaseTime", m_purchaseTime.SecondsWithMSPrecision());
   }
 
   if(m_clientTokenHasBeenSet)

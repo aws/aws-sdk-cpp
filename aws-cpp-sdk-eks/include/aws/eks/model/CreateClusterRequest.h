@@ -8,6 +8,7 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
+#include <aws/eks/model/KubernetesNetworkConfigRequest.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -287,6 +288,37 @@ namespace Model
 
 
     /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { SetKubernetesNetworkConfig(value); return *this;}
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
      * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
@@ -559,6 +591,9 @@ namespace Model
 
     VpcConfigRequest m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
+    bool m_kubernetesNetworkConfigHasBeenSet;
 
     Logging m_logging;
     bool m_loggingHasBeenSet;

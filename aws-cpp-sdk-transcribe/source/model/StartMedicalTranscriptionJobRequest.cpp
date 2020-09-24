@@ -22,6 +22,7 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_mediaFormatHasBeenSet(false),
     m_mediaHasBeenSet(false),
     m_outputBucketNameHasBeenSet(false),
+    m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
@@ -66,6 +67,12 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   if(m_outputBucketNameHasBeenSet)
   {
    payload.WithString("OutputBucketName", m_outputBucketName);
+
+  }
+
+  if(m_outputKeyHasBeenSet)
+  {
+   payload.WithString("OutputKey", m_outputKey);
 
   }
 

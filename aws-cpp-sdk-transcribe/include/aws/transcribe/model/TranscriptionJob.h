@@ -831,34 +831,30 @@ namespace Model
 
 
     /**
-     * <p>The score that Amazon Transcribe gives for the predominant language that it
-     * identified in your collection of source audio files. This score reflects the
-     * confidence that the language that Amazon Transcribe identified is the correct
-     * language.</p>
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * that it identified in the source audio. Larger values indicate that Amazon
+     * Transcribe has higher confidence in the language it identified.</p>
      */
     inline double GetIdentifiedLanguageScore() const{ return m_identifiedLanguageScore; }
 
     /**
-     * <p>The score that Amazon Transcribe gives for the predominant language that it
-     * identified in your collection of source audio files. This score reflects the
-     * confidence that the language that Amazon Transcribe identified is the correct
-     * language.</p>
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * that it identified in the source audio. Larger values indicate that Amazon
+     * Transcribe has higher confidence in the language it identified.</p>
      */
     inline bool IdentifiedLanguageScoreHasBeenSet() const { return m_identifiedLanguageScoreHasBeenSet; }
 
     /**
-     * <p>The score that Amazon Transcribe gives for the predominant language that it
-     * identified in your collection of source audio files. This score reflects the
-     * confidence that the language that Amazon Transcribe identified is the correct
-     * language.</p>
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * that it identified in the source audio. Larger values indicate that Amazon
+     * Transcribe has higher confidence in the language it identified.</p>
      */
     inline void SetIdentifiedLanguageScore(double value) { m_identifiedLanguageScoreHasBeenSet = true; m_identifiedLanguageScore = value; }
 
     /**
-     * <p>The score that Amazon Transcribe gives for the predominant language that it
-     * identified in your collection of source audio files. This score reflects the
-     * confidence that the language that Amazon Transcribe identified is the correct
-     * language.</p>
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * that it identified in the source audio. Larger values indicate that Amazon
+     * Transcribe has higher confidence in the language it identified.</p>
      */
     inline TranscriptionJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
 

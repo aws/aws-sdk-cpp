@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     VALUE,
-    CHILD
+    CHILD,
+    COMPLEX_FEATURES
   };
 
 namespace RelationshipTypeMapper

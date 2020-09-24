@@ -422,72 +422,63 @@ namespace Model
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * instance type that is associated with the node group. If the node group was
-     * deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.</p>
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
@@ -550,48 +541,42 @@ namespace Model
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline const RemoteAccessConfig& GetRemoteAccess() const{ return m_remoteAccess; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetRemoteAccess(const RemoteAccessConfig& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetRemoteAccess(RemoteAccessConfig&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::move(value); }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithRemoteAccess(const RemoteAccessConfig& value) { SetRemoteAccess(value); return *this;}
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * remote access configuration that is associated with the node group. If the node
-     * group was deployed with a launch template, then <code>remoteAccess</code> is
-     * <code>null</code>.</p>
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithRemoteAccess(RemoteAccessConfig&& value) { SetRemoteAccess(std::move(value)); return *this;}
 
@@ -842,28 +827,28 @@ namespace Model
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * disk size in the node group configuration. If the node group was deployed with a
-     * launch template, then <code>diskSize</code> is <code>null</code>.</p>
+     * launch template, then this is <code>null</code>.</p>
      */
     inline int GetDiskSize() const{ return m_diskSize; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * disk size in the node group configuration. If the node group was deployed with a
-     * launch template, then <code>diskSize</code> is <code>null</code>.</p>
+     * launch template, then this is <code>null</code>.</p>
      */
     inline bool DiskSizeHasBeenSet() const { return m_diskSizeHasBeenSet; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * disk size in the node group configuration. If the node group was deployed with a
-     * launch template, then <code>diskSize</code> is <code>null</code>.</p>
+     * launch template, then this is <code>null</code>.</p>
      */
     inline void SetDiskSize(int value) { m_diskSizeHasBeenSet = true; m_diskSize = value; }
 
     /**
      * <p>If the node group wasn't deployed with a launch template, then this is the
      * disk size in the node group configuration. If the node group was deployed with a
-     * launch template, then <code>diskSize</code> is <code>null</code>.</p>
+     * launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithDiskSize(int value) { SetDiskSize(value); return *this;}
 

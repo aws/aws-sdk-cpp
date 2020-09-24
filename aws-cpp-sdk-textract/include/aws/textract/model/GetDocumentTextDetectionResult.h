@@ -229,44 +229,44 @@ namespace Model
 
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

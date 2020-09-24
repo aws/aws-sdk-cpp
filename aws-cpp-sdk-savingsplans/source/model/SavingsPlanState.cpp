@@ -24,6 +24,8 @@ namespace Aws
         static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
         static const int active_HASH = HashingUtils::HashString("active");
         static const int retired_HASH = HashingUtils::HashString("retired");
+        static const int queued_HASH = HashingUtils::HashString("queued");
+        static const int queued_deleted_HASH = HashingUtils::HashString("queued-deleted");
 
 
         SavingsPlanState GetSavingsPlanStateForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == retired_HASH)
           {
             return SavingsPlanState::retired;
+          }
+          else if (hashCode == queued_HASH)
+          {
+            return SavingsPlanState::queued;
+          }
+          else if (hashCode == queued_deleted_HASH)
+          {
+            return SavingsPlanState::queued_deleted;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "active";
           case SavingsPlanState::retired:
             return "retired";
+          case SavingsPlanState::queued:
+            return "queued";
+          case SavingsPlanState::queued_deleted:
+            return "queued-deleted";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

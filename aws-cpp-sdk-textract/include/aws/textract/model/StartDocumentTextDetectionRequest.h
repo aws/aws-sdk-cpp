@@ -9,6 +9,7 @@
 #include <aws/textract/model/DocumentLocation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/textract/model/NotificationChannel.h>
+#include <aws/textract/model/OutputConfig.h>
 #include <utility>
 
 namespace Aws
@@ -257,6 +258,49 @@ namespace Model
      */
     inline StartDocumentTextDetectionRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline void SetOutputConfig(OutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline StartDocumentTextDetectionRequest& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default Amazon
+     * Textract will save the results internally to be accessed with the
+     * GetDocumentTextDetection operation.</p>
+     */
+    inline StartDocumentTextDetectionRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+
   private:
 
     DocumentLocation m_documentLocation;
@@ -270,6 +314,9 @@ namespace Model
 
     NotificationChannel m_notificationChannel;
     bool m_notificationChannelHasBeenSet;
+
+    OutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet;
   };
 
 } // namespace Model

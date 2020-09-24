@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/VpcConfigResponse.h>
+#include <aws/eks/model/KubernetesNetworkConfigResponse.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/Identity.h>
 #include <aws/eks/model/ClusterStatus.h>
@@ -363,6 +364,37 @@ namespace Model
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline Cluster& WithResourcesVpcConfig(VpcConfigResponse&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline const KubernetesNetworkConfigResponse& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigResponse& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigResponse&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline Cluster& WithKubernetesNetworkConfig(const KubernetesNetworkConfigResponse& value) { SetKubernetesNetworkConfig(value); return *this;}
+
+    /**
+     * <p>Network configuration settings for your cluster.</p>
+     */
+    inline Cluster& WithKubernetesNetworkConfig(KubernetesNetworkConfigResponse&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
 
 
     /**
@@ -762,6 +794,9 @@ namespace Model
 
     VpcConfigResponse m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    KubernetesNetworkConfigResponse m_kubernetesNetworkConfig;
+    bool m_kubernetesNetworkConfigHasBeenSet;
 
     Logging m_logging;
     bool m_loggingHasBeenSet;
