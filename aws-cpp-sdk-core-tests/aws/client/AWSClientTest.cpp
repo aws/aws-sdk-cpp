@@ -195,6 +195,26 @@ TEST_F(AWSClientTestSuite, TestValidateInvalidURI)
     ASSERT_EQ(CoreErrors::VALIDATION, outcome.GetError().GetErrorType());
 }
 
+TEST_F(AWSClientTestSuite, TestRetryURIPath)
+{
+    HeaderValueCollection responseHeaders;
+    responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822));
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    const Aws::Http::URI uri("wwww.uri.com/path with space");
+    AmazonWebServiceRequestMock request;
+
+    auto outcome = client->MakeRequest(uri, request);
+    ASSERT_TRUE(outcome.IsSuccess());
+
+    const auto &requests = mockHttpClient->GetAllRequestsMade();
+    ASSERT_EQ(2u, requests.size());
+
+    Aws::String path = "/path%20with%20space";
+    ASSERT_EQ(path, requests[0].GetUri().GetURLEncodedPath());
+    ASSERT_EQ(path, requests[1].GetUri().GetURLEncodedPath());
+}
+
 TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
 {
     HeaderValueCollection responseHeaders;
