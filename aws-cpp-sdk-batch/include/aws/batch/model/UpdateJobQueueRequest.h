@@ -77,32 +77,50 @@ namespace Model
 
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline UpdateJobQueueRequest& WithState(const JQState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Describes the queue's ability to accept new jobs.</p>
+     * <p>Describes the queue's ability to accept new jobs. If the job queue state is
+     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
+     * in the queue can finish.</p>
      */
     inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 

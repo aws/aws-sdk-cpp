@@ -253,7 +253,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline const Aws::String& GetVariableType() const{ return m_variableType; }
 
@@ -267,7 +267,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
 
@@ -281,7 +281,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
 
@@ -295,7 +295,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
 
@@ -309,7 +309,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
 
@@ -323,7 +323,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline VariableEntry& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
 
@@ -337,7 +337,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline VariableEntry& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
 
@@ -351,7 +351,7 @@ namespace Model
      * IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE |
      * PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY |
      * SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE |
-     * SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code> </p>
+     * SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline VariableEntry& WithVariableType(const char* value) { SetVariableType(value); return *this;}
 

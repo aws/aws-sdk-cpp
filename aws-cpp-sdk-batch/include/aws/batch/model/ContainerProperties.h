@@ -8,11 +8,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/LinuxParameters.h>
+#include <aws/batch/model/LogConfiguration.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
 #include <aws/batch/model/ResourceRequirement.h>
+#include <aws/batch/model/Secret.h>
 #include <utility>
 
 namespace Aws
@@ -254,7 +256,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
+     * required but can be specified in several places for multi-node parallel (MNP)
+     * jobs; it must be specified for each node at least once.</p>
      */
     inline int GetVcpus() const{ return m_vcpus; }
 
@@ -266,7 +270,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
+     * required but can be specified in several places for multi-node parallel (MNP)
+     * jobs; it must be specified for each node at least once.</p>
      */
     inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
 
@@ -278,7 +284,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
+     * required but can be specified in several places for multi-node parallel (MNP)
+     * jobs; it must be specified for each node at least once.</p>
      */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
@@ -290,7 +298,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
+     * required but can be specified in several places for multi-node parallel (MNP)
+     * jobs; it must be specified for each node at least once.</p>
      */
     inline ContainerProperties& WithVcpus(int value) { SetVcpus(value); return *this;}
 
@@ -304,7 +314,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
+     * specify at least 4 MiB of memory for a job. This is required but can be
+     * specified in several places for multi-node parallel (MNP) jobs; it must be
+     * specified for each node at least once.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
@@ -321,7 +333,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
+     * specify at least 4 MiB of memory for a job. This is required but can be
+     * specified in several places for multi-node parallel (MNP) jobs; it must be
+     * specified for each node at least once.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
@@ -338,7 +352,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
+     * specify at least 4 MiB of memory for a job. This is required but can be
+     * specified in several places for multi-node parallel (MNP) jobs; it must be
+     * specified for each node at least once.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
@@ -355,7 +371,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
+     * specify at least 4 MiB of memory for a job. This is required but can be
+     * specified in several places for multi-node parallel (MNP) jobs; it must be
+     * specified for each node at least once.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
@@ -529,6 +547,71 @@ namespace Model
      * for AWS permissions.</p>
      */
     inline ContainerProperties& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline ContainerProperties& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline ContainerProperties& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
+     * assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a>.</p>
+     */
+    inline ContainerProperties& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
 
     /**
@@ -1200,6 +1283,276 @@ namespace Model
      */
     inline ContainerProperties& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline ContainerProperties& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--log-driver</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
+     * containers use the same logging driver that the Docker daemon uses. However the
+     * container may use a different logging driver than the Docker daemon by
+     * specifying a log driver with this parameter in the container definition. To use
+     * a different logging driver for a container, the log system must be configured
+     * properly on the container instance (or on a different log server for remote
+     * logging options). For more information on the options for different supported
+     * log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type).</p>  <p>This parameter
+     * requires version 1.18 of the Docker Remote API or greater on your container
+     * instance. To check the Docker Remote API version on your container instance, log
+     * into your container instance and run the following command: <code>sudo docker
+     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
+     * container agent running on a container instance must register the logging
+     * drivers available on that instance with the
+     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> 
+     */
+    inline ContainerProperties& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool SecretsHasBeenSet() const { return m_secretsHasBeenSet; }
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ContainerProperties& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ContainerProperties& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ContainerProperties& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
+
+    /**
+     * <p>The secrets for the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ContainerProperties& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_image;
@@ -1216,6 +1569,9 @@ namespace Model
 
     Aws::String m_jobRoleArn;
     bool m_jobRoleArnHasBeenSet;
+
+    Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet;
 
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
@@ -1246,6 +1602,12 @@ namespace Model
 
     LinuxParameters m_linuxParameters;
     bool m_linuxParametersHasBeenSet;
+
+    LogConfiguration m_logConfiguration;
+    bool m_logConfigurationHasBeenSet;
+
+    Aws::Vector<Secret> m_secrets;
+    bool m_secretsHasBeenSet;
   };
 
 } // namespace Model

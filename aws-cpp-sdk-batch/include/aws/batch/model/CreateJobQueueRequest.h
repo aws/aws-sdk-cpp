@@ -78,37 +78,43 @@ namespace Model
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline CreateJobQueueRequest& WithState(const JQState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
-     * it is able to accept jobs.</p>
+     * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
+     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline CreateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 

@@ -393,42 +393,66 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. The --engine-version will
+     * default to the latest major engine version. For production workloads, we
+     * recommend explicitly declaring this parameter with the intended major engine
+     * version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

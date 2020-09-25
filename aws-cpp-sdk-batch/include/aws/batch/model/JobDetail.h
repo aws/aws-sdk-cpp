@@ -325,36 +325,36 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
-     * created. For non-array jobs and parent array jobs, this is when the job entered
-     * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
      * entered the <code>PENDING</code> state.</p>
      */
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
-     * created. For non-array jobs and parent array jobs, this is when the job entered
-     * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
      * entered the <code>PENDING</code> state.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
-     * created. For non-array jobs and parent array jobs, this is when the job entered
-     * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
      * entered the <code>PENDING</code> state.</p>
      */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
-     * created. For non-array jobs and parent array jobs, this is when the job entered
-     * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
      * entered the <code>PENDING</code> state.</p>
      */
@@ -393,59 +393,63 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
-     * (when the job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
+     * job transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * array jobs or multi-node parallel jobs.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
-     * (when the job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
+     * job transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * array jobs or multi-node parallel jobs.</p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
-     * (when the job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
+     * job transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * array jobs or multi-node parallel jobs.</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
-     * (when the job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
+     * job transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * array jobs or multi-node parallel jobs.</p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
-     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
-     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
+     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
+     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
-     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
-     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
+     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
+     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
-     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
-     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
+     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
+     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
-     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
-     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
+     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
+     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline JobDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 

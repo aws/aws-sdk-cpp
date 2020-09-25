@@ -26,6 +26,7 @@ ContainerDetail::ContainerDetail() :
     m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
@@ -44,7 +45,9 @@ ContainerDetail::ContainerDetail() :
     m_instanceTypeHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false)
+    m_linuxParametersHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_secretsHasBeenSet(false)
 {
 }
 
@@ -56,6 +59,7 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
@@ -74,7 +78,9 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false)
+    m_linuxParametersHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_secretsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +123,13 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_jobRoleArn = jsonValue.GetString("jobRoleArn");
 
     m_jobRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("volumes"))
@@ -249,6 +262,23 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_linuxParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("logConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secrets"))
+  {
+    Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
+    for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+    {
+      m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
+    }
+    m_secretsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -288,6 +318,12 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_jobRoleArnHasBeenSet)
   {
    payload.WithString("jobRoleArn", m_jobRoleArn);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("executionRoleArn", m_executionRoleArn);
 
   }
 
@@ -414,6 +450,23 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_linuxParametersHasBeenSet)
   {
    payload.WithObject("linuxParameters", m_linuxParameters.Jsonize());
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_secretsHasBeenSet)
+  {
+   Array<JsonValue> secretsJsonList(m_secrets.size());
+   for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+   {
+     secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
+   }
+   payload.WithArray("secrets", std::move(secretsJsonList));
 
   }
 

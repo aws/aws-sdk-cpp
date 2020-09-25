@@ -25,6 +25,8 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVi
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayIdHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayRouteTableArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -35,6 +37,8 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVi
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayIdHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayRouteTableArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -70,6 +74,18 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation& LocalGatewayRouteTableVi
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
+    }
+    XmlNode localGatewayRouteTableArnNode = resultNode.FirstChild("localGatewayRouteTableArn");
+    if(!localGatewayRouteTableArnNode.IsNull())
+    {
+      m_localGatewayRouteTableArn = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableArnNode.GetText());
+      m_localGatewayRouteTableArnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -116,6 +132,16 @@ void LocalGatewayRouteTableVirtualInterfaceGroupAssociation::OutputToStream(Aws:
       oStream << location << index << locationValue << ".LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
   }
 
+  if(m_localGatewayRouteTableArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalGatewayRouteTableArn=" << StringUtils::URLEncode(m_localGatewayRouteTableArn.c_str()) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
@@ -151,6 +177,14 @@ void LocalGatewayRouteTableVirtualInterfaceGroupAssociation::OutputToStream(Aws:
   if(m_localGatewayRouteTableIdHasBeenSet)
   {
       oStream << location << ".LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
+  }
+  if(m_localGatewayRouteTableArnHasBeenSet)
+  {
+      oStream << location << ".LocalGatewayRouteTableArn=" << StringUtils::URLEncode(m_localGatewayRouteTableArn.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {
