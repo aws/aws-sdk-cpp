@@ -7,6 +7,7 @@
 #include <aws/core/Aws.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/logging/AWSLogging.h>
+#include <aws/core/utils/logging/CRTLogging.h>
 #include <aws/core/utils/logging/DefaultLogSystem.h>
 #include <aws/core/Globals.h>
 #include <aws/core/external/cjson/cJSON.h>
@@ -39,6 +40,15 @@ namespace Aws
             {
                 Aws::Utils::Logging::InitializeAWSLogging(
                         Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>(ALLOCATION_TAG, options.loggingOptions.logLevel, options.loggingOptions.defaultLogPrefix));
+            }
+            if(options.loggingOptions.crt_logger_create_fn)
+            {
+                Aws::Utils::Logging::InitializeCRTLogging(options.loggingOptions.crt_logger_create_fn());
+            }
+            else
+            {
+                Aws::Utils::Logging::InitializeCRTLogging(
+                        Aws::MakeShared<Aws::Utils::Logging::DefaultCRTLogSystem>(ALLOCATION_TAG, options.loggingOptions.logLevel));
             }
             // For users to better debugging in case multiple versions of SDK installed
             AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
@@ -125,6 +135,7 @@ namespace Aws
 
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
+            Aws::Utils::Logging::ShutdownCRTLogging();
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
 
