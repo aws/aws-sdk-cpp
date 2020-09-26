@@ -6,6 +6,7 @@
 
 #include <aws/core/utils/logging/LogLevel.h>
 #include <aws/core/utils/logging/LogSystemInterface.h>
+#include <aws/core/utils/logging/CRTLogSystem.h>
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -35,10 +36,16 @@ namespace Aws
         const char* defaultLogPrefix;
 
         /**
-         * Defaults to empty, if logLevel has been set and this field is empty, then the default log interface will be used.
+         * Defaults to empty, if logLevel has been set and this field is empty, then the default log system will be used.
          * otherwise, we will call this closure to create a logger
          */
          std::function<std::shared_ptr<Aws::Utils::Logging::LogSystemInterface>()> logger_create_fn;
+
+         /**
+          * Defaults to empty, if logLevel has been set and this field is empty, then the default CRT log system will be used.
+          * The default CRT log system will redirect all logs from common runtime libraries (CRT) to C++ SDK with the same log level and formatting.
+          */
+         std::function<std::shared_ptr<Aws::Utils::Logging::CRTLogSystemInterface>()> crt_logger_create_fn;
     };
 
     /**
