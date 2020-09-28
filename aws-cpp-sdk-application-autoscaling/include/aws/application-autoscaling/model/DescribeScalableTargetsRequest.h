@@ -114,6 +114,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -158,6 +161,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -202,6 +208,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -246,6 +255,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -290,6 +302,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -334,6 +349,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -378,6 +396,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -422,6 +443,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -466,6 +490,9 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> <li> <p>Amazon Comprehend entity recognizer endpoint - The resource type
+     * and unique identifier are specified using the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
      * </li> <li> <p>Lambda provisioned concurrency - The resource type is
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
@@ -505,6 +532,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -542,6 +572,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -579,6 +612,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -616,6 +652,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -653,6 +692,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -690,6 +732,9 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> <li> <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The
+     * number of inference units for an Amazon Comprehend entity recognizer
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
      * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity

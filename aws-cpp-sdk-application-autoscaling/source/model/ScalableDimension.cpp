@@ -32,6 +32,7 @@ namespace Aws
         static const int sagemaker_variant_DesiredInstanceCount_HASH = HashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
         static const int custom_resource_ResourceType_Property_HASH = HashingUtils::HashString("custom-resource:ResourceType:Property");
         static const int comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
+        static const int comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
         static const int lambda_function_ProvisionedConcurrency_HASH = HashingUtils::HashString("lambda:function:ProvisionedConcurrency");
         static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
         static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
@@ -88,6 +89,10 @@ namespace Aws
           {
             return ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits;
           }
+          else if (hashCode == comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH)
+          {
+            return ScalableDimension::comprehend_entity_recognizer_endpoint_DesiredInferenceUnits;
+          }
           else if (hashCode == lambda_function_ProvisionedConcurrency_HASH)
           {
             return ScalableDimension::lambda_function_ProvisionedConcurrency;
@@ -138,6 +143,8 @@ namespace Aws
             return "custom-resource:ResourceType:Property";
           case ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits:
             return "comprehend:document-classifier-endpoint:DesiredInferenceUnits";
+          case ScalableDimension::comprehend_entity_recognizer_endpoint_DesiredInferenceUnits:
+            return "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits";
           case ScalableDimension::lambda_function_ProvisionedConcurrency:
             return "lambda:function:ProvisionedConcurrency";
           case ScalableDimension::cassandra_table_ReadCapacityUnits:

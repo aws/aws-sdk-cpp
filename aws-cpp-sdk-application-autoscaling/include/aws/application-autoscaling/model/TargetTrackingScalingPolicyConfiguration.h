@@ -153,8 +153,9 @@ namespace Model
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
-     * classification endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p>
-     * </li> <li> <p>Amazon Keyspaces tables</p> </li> </ul>
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li>
+     * </ul>
      */
     inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
 
@@ -173,8 +174,9 @@ namespace Model
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
-     * classification endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p>
-     * </li> <li> <p>Amazon Keyspaces tables</p> </li> </ul>
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li>
+     * </ul>
      */
     inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
 
@@ -193,8 +195,9 @@ namespace Model
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
-     * classification endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p>
-     * </li> <li> <p>Amazon Keyspaces tables</p> </li> </ul>
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li>
+     * </ul>
      */
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
 
@@ -213,8 +216,9 @@ namespace Model
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
-     * classification endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p>
-     * </li> <li> <p>Amazon Keyspaces tables</p> </li> </ul>
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li>
+     * </ul>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
 
@@ -234,9 +238,9 @@ namespace Model
      * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
      * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
      * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
-     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>Amazon Keyspaces tables</p> </li> </ul>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
 
@@ -255,9 +259,9 @@ namespace Model
      * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
      * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
      * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
-     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>Amazon Keyspaces tables</p> </li> </ul>
      */
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
 
@@ -276,9 +280,9 @@ namespace Model
      * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
      * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
      * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
-     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>Amazon Keyspaces tables</p> </li> </ul>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
 
@@ -297,9 +301,9 @@ namespace Model
      * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
      * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
      * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
-     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>Amazon Keyspaces tables</p> </li> </ul>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 

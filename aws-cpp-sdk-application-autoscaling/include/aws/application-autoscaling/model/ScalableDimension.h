@@ -28,6 +28,7 @@ namespace Model
     sagemaker_variant_DesiredInstanceCount,
     custom_resource_ResourceType_Property,
     comprehend_document_classifier_endpoint_DesiredInferenceUnits,
+    comprehend_entity_recognizer_endpoint_DesiredInferenceUnits,
     lambda_function_ProvisionedConcurrency,
     cassandra_table_ReadCapacityUnits,
     cassandra_table_WriteCapacityUnits

@@ -115,19 +115,19 @@ namespace Model
    * tables and global secondary indexes throughput capacity</p> </li> <li> <p>Amazon
    * Aurora Replicas</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li>
    * <li> <p>Custom resources provided by your own applications or services</p> </li>
-   * <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
-   * <p>AWS Lambda function provisioned concurrency</p> </li> <li> <p>Amazon
-   * Keyspaces (for Apache Cassandra) tables</p> </li> </ul> <p> <b>API Summary</b>
-   * </p> <p>The Application Auto Scaling service API includes three key sets of
-   * actions: </p> <ul> <li> <p>Register and manage scalable targets - Register AWS
-   * or custom resources as scalable targets (a resource that Application Auto
-   * Scaling can scale), set minimum and maximum capacity limits, and retrieve
-   * information on existing scalable targets.</p> </li> <li> <p>Configure and manage
-   * automatic scaling - Define scaling policies to dynamically scale your resources
-   * in response to CloudWatch alarms, schedule one-time or recurring scaling
-   * actions, and retrieve your recent scaling activity history.</p> </li> <li>
-   * <p>Suspend and resume scaling - Temporarily suspend and later resume automatic
-   * scaling by calling the <a
+   * <li> <p>Amazon Comprehend document classification and entity recognizer
+   * endpoints</p> </li> <li> <p>AWS Lambda function provisioned concurrency</p>
+   * </li> <li> <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> </ul> <p>
+   * <b>API Summary</b> </p> <p>The Application Auto Scaling service API includes
+   * three key sets of actions: </p> <ul> <li> <p>Register and manage scalable
+   * targets - Register AWS or custom resources as scalable targets (a resource that
+   * Application Auto Scaling can scale), set minimum and maximum capacity limits,
+   * and retrieve information on existing scalable targets.</p> </li> <li>
+   * <p>Configure and manage automatic scaling - Define scaling policies to
+   * dynamically scale your resources in response to CloudWatch alarms, schedule
+   * one-time or recurring scaling actions, and retrieve your recent scaling activity
+   * history.</p> </li> <li> <p>Suspend and resume scaling - Temporarily suspend and
+   * later resume automatic scaling by calling the <a
    * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html">RegisterScalableTarget</a>
    * API action for any Application Auto Scaling scalable target. You can suspend and
    * resume (individually or in combination) scale-out activities that are triggered
@@ -632,10 +632,11 @@ namespace Model
          * resource that Application Auto Scaling can scale out and scale in. Scalable
          * targets are uniquely identified by the combination of resource ID, scalable
          * dimension, and namespace. </p> <p>When you register a new scalable target, you
-         * must specify values for minimum and maximum capacity. Application Auto Scaling
-         * scaling policies will not scale capacity to values that are outside of this
-         * range.</p> <p>After you register a scalable target, you do not need to register
-         * it again to use other Application Auto Scaling operations. To see which
+         * must specify values for minimum and maximum capacity. Current capacity will be
+         * adjusted within the specified range when scaling starts. Application Auto
+         * Scaling scaling policies will not scale capacity to values that are outside of
+         * this range.</p> <p>After you register a scalable target, you do not need to
+         * register it again to use other Application Auto Scaling operations. To see which
          * resources have been registered, use <a
          * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html">DescribeScalableTargets</a>.
          * You can also view the scaling policies for a service namespace by using <a
@@ -656,10 +657,11 @@ namespace Model
          * resource that Application Auto Scaling can scale out and scale in. Scalable
          * targets are uniquely identified by the combination of resource ID, scalable
          * dimension, and namespace. </p> <p>When you register a new scalable target, you
-         * must specify values for minimum and maximum capacity. Application Auto Scaling
-         * scaling policies will not scale capacity to values that are outside of this
-         * range.</p> <p>After you register a scalable target, you do not need to register
-         * it again to use other Application Auto Scaling operations. To see which
+         * must specify values for minimum and maximum capacity. Current capacity will be
+         * adjusted within the specified range when scaling starts. Application Auto
+         * Scaling scaling policies will not scale capacity to values that are outside of
+         * this range.</p> <p>After you register a scalable target, you do not need to
+         * register it again to use other Application Auto Scaling operations. To see which
          * resources have been registered, use <a
          * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html">DescribeScalableTargets</a>.
          * You can also view the scaling policies for a service namespace by using <a
@@ -682,10 +684,11 @@ namespace Model
          * resource that Application Auto Scaling can scale out and scale in. Scalable
          * targets are uniquely identified by the combination of resource ID, scalable
          * dimension, and namespace. </p> <p>When you register a new scalable target, you
-         * must specify values for minimum and maximum capacity. Application Auto Scaling
-         * scaling policies will not scale capacity to values that are outside of this
-         * range.</p> <p>After you register a scalable target, you do not need to register
-         * it again to use other Application Auto Scaling operations. To see which
+         * must specify values for minimum and maximum capacity. Current capacity will be
+         * adjusted within the specified range when scaling starts. Application Auto
+         * Scaling scaling policies will not scale capacity to values that are outside of
+         * this range.</p> <p>After you register a scalable target, you do not need to
+         * register it again to use other Application Auto Scaling operations. To see which
          * resources have been registered, use <a
          * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html">DescribeScalableTargets</a>.
          * You can also view the scaling policies for a service namespace by using <a
