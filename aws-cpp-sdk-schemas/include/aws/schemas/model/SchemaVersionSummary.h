@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/schemas/model/Type.h>
 #include <utility>
 
 namespace Aws
@@ -154,6 +155,37 @@ namespace Model
      */
     inline SchemaVersionSummary& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline SchemaVersionSummary& WithType(const Type& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of schema.</p>
+     */
+    inline SchemaVersionSummary& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaArn;
@@ -164,6 +196,9 @@ namespace Model
 
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
+    Type m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

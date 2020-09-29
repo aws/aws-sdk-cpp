@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OpenApi3_HASH = HashingUtils::HashString("OpenApi3");
+        static const int JSONSchemaDraft4_HASH = HashingUtils::HashString("JSONSchemaDraft4");
 
 
         Type GetTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OpenApi3_HASH)
           {
             return Type::OpenApi3;
+          }
+          else if (hashCode == JSONSchemaDraft4_HASH)
+          {
+            return Type::JSONSchemaDraft4;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case Type::OpenApi3:
             return "OpenApi3";
+          case Type::JSONSchemaDraft4:
+            return "JSONSchemaDraft4";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

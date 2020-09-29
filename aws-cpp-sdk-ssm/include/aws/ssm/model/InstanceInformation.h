@@ -85,32 +85,38 @@ namespace Model
 
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline const PingStatus& GetPingStatus() const{ return m_pingStatus; }
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline bool PingStatusHasBeenSet() const { return m_pingStatusHasBeenSet; }
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline void SetPingStatus(const PingStatus& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline void SetPingStatus(PingStatus&& value) { m_pingStatusHasBeenSet = true; m_pingStatus = std::move(value); }
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline InstanceInformation& WithPingStatus(const PingStatus& value) { SetPingStatus(value); return *this;}
 
     /**
-     * <p>Connection status of SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>  <p>The status
+     * <code>Inactive</code> has been deprecated and is no longer in use.</p> 
      */
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(std::move(value)); return *this;}
 

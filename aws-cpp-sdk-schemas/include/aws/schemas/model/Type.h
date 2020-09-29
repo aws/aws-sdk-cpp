@@ -16,7 +16,8 @@ namespace Model
   enum class Type
   {
     NOT_SET,
-    OpenApi3
+    OpenApi3,
+    JSONSchemaDraft4
   };
 
 namespace TypeMapper

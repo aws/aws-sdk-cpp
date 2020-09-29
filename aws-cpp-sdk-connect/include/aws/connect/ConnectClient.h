@@ -291,7 +291,10 @@ namespace Model
    * <p>To connect programmatically to an AWS service, you use an endpoint. For a
    * list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect Endpoints</a>.</p>
+   * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
+   * <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+   * Connect Flow language</a>.</p> 
    */
   class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient
   {
@@ -349,16 +352,20 @@ namespace Model
         virtual void AssociateRoutingProfileQueuesAsync(const Model::AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a contact flow for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a contact flow for the specified Amazon Connect instance.</p> <p>You
+         * can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateContactFlowOutcome CreateContactFlow(const Model::CreateContactFlowRequest& request) const;
 
         /**
-         * <p>Creates a contact flow for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a contact flow for the specified Amazon Connect instance.</p> <p>You
+         * can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
          * API Reference</a></p>
          *
@@ -367,8 +374,10 @@ namespace Model
         virtual Model::CreateContactFlowOutcomeCallable CreateContactFlowCallable(const Model::CreateContactFlowRequest& request) const;
 
         /**
-         * <p>Creates a contact flow for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a contact flow for the specified Amazon Connect instance.</p> <p>You
+         * can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
          * API Reference</a></p>
          *
@@ -482,14 +491,20 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeContactFlowOutcome DescribeContactFlow(const Model::DescribeContactFlowRequest& request) const;
 
         /**
-         * <p>Describes the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          *
@@ -498,7 +513,10 @@ namespace Model
         virtual Model::DescribeContactFlowOutcomeCallable DescribeContactFlowCallable(const Model::DescribeContactFlowRequest& request) const;
 
         /**
-         * <p>Describes the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          *
@@ -775,7 +793,10 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
+         * instance.</p> <p>You can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p> <p>For more information about contact flows, see
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
          * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -786,7 +807,10 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
+         * instance.</p> <p>You can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p> <p>For more information about contact flows, see
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
          * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -799,7 +823,10 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
+         * instance.</p> <p>You can also create and update contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p> <p>For more information about contact flows, see
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
          * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1498,7 +1525,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
+         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
+         * policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1509,7 +1537,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
+         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
+         * policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1522,7 +1551,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
+         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
+         * policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1571,13 +1601,16 @@ namespace Model
          * application and save the data with the contact in Amazon Connect. You could also
          * flag calls for additional analysis, such as legal review or identifying abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * months, and are then deleted.</p> <p>This operation is also available in the
+         * Amazon Connect Flow language. See <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.</p>
+         * <p> <b>Important:</b> You cannot use the operation to update attributes for
+         * contacts that occurred prior to the release of the API, September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          */
@@ -1593,13 +1626,16 @@ namespace Model
          * application and save the data with the contact in Amazon Connect. You could also
          * flag calls for additional analysis, such as legal review or identifying abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * months, and are then deleted.</p> <p>This operation is also available in the
+         * Amazon Connect Flow language. See <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.</p>
+         * <p> <b>Important:</b> You cannot use the operation to update attributes for
+         * contacts that occurred prior to the release of the API, September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *
@@ -1617,13 +1653,16 @@ namespace Model
          * application and save the data with the contact in Amazon Connect. You could also
          * flag calls for additional analysis, such as legal review or identifying abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * months, and are then deleted.</p> <p>This operation is also available in the
+         * Amazon Connect Flow language. See <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.</p>
+         * <p> <b>Important:</b> You cannot use the operation to update attributes for
+         * contacts that occurred prior to the release of the API, September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *
@@ -1632,14 +1671,20 @@ namespace Model
         virtual void UpdateContactAttributesAsync(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateContactFlowContentOutcome UpdateContactFlowContent(const Model::UpdateContactFlowContentRequest& request) const;
 
         /**
-         * <p>Updates the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
          *
@@ -1648,7 +1693,10 @@ namespace Model
         virtual Model::UpdateContactFlowContentOutcomeCallable UpdateContactFlowContentCallable(const Model::UpdateContactFlowContentRequest& request) const;
 
         /**
-         * <p>Updates the specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified contact flow.</p> <p>You can also create and update
+         * contact flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
          *

@@ -306,38 +306,44 @@ namespace Model
 
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline ComplianceItem& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the compliance item. An item is either COMPLIANT or
-     * NON_COMPLIANT.</p>
+     * <p>The status of the compliance item. An item is either COMPLIANT,
+     * NON_COMPLIANT, or an empty string (for Windows patches that aren't
+     * applicable).</p>
      */
     inline ComplianceItem& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

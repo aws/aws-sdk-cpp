@@ -32,6 +32,7 @@
 #include <aws/schemas/model/DescribeDiscovererRequest.h>
 #include <aws/schemas/model/DescribeRegistryRequest.h>
 #include <aws/schemas/model/DescribeSchemaRequest.h>
+#include <aws/schemas/model/ExportSchemaRequest.h>
 #include <aws/schemas/model/GetCodeBindingSourceRequest.h>
 #include <aws/schemas/model/GetDiscoveredSchemaRequest.h>
 #include <aws/schemas/model/GetResourcePolicyRequest.h>
@@ -555,6 +556,52 @@ void SchemasClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, co
 void SchemasClient::DescribeSchemaAsyncHelper(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSchema(request), context);
+}
+
+ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& request) const
+{
+  if (!request.RegistryNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportSchema", "Required field: RegistryName, is not set");
+    return ExportSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
+  }
+  if (!request.SchemaNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportSchema", "Required field: SchemaName, is not set");
+    return ExportSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
+  }
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportSchema", "Required field: Type, is not set");
+    return ExportSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/registries/name/";
+  ss << request.GetRegistryName();
+  ss << "/schemas/name/";
+  ss << request.GetSchemaName();
+  ss << "/export";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExportSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportSchemaOutcomeCallable SchemasClient::ExportSchemaCallable(const ExportSchemaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportSchema(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SchemasClient::ExportSchemaAsync(const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportSchemaAsyncHelper( request, handler, context ); } );
+}
+
+void SchemasClient::ExportSchemaAsyncHelper(const ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportSchema(request), context);
 }
 
 GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBindingSourceRequest& request) const

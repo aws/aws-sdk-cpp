@@ -17355,7 +17355,7 @@ namespace Model
         virtual void ModifyVpnConnectionAsync(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
          * the AWS side do not change, and the tunnel options do not change. Your VPN
          * connection will be temporarily unavailable for a brief period while the VPN
@@ -17366,7 +17366,7 @@ namespace Model
         virtual Model::ModifyVpnConnectionOptionsOutcome ModifyVpnConnectionOptions(const Model::ModifyVpnConnectionOptionsRequest& request) const;
 
         /**
-         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
          * the AWS side do not change, and the tunnel options do not change. Your VPN
          * connection will be temporarily unavailable for a brief period while the VPN
@@ -17379,7 +17379,7 @@ namespace Model
         virtual Model::ModifyVpnConnectionOptionsOutcomeCallable ModifyVpnConnectionOptionsCallable(const Model::ModifyVpnConnectionOptionsRequest& request) const;
 
         /**
-         * <p>Modifies the connection options for your Site-to-Site VPN VPN connection.</p>
+         * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
          * the AWS side do not change, and the tunnel options do not change. Your VPN
          * connection will be temporarily unavailable for a brief period while the VPN

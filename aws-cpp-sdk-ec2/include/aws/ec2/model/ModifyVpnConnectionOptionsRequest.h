@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline ModifyVpnConnectionOptionsRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline ModifyVpnConnectionOptionsRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Site-to-Site VPN VPN connection. </p>
+     * <p>The ID of the Site-to-Site VPN connection. </p>
      */
     inline ModifyVpnConnectionOptionsRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
 

@@ -21,14 +21,18 @@ namespace Model
 SchemaVersionSummary::SchemaVersionSummary() : 
     m_schemaArnHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+    m_schemaVersionHasBeenSet(false),
+    m_type(Type::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 SchemaVersionSummary::SchemaVersionSummary(JsonView jsonValue) : 
     m_schemaArnHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+    m_schemaVersionHasBeenSet(false),
+    m_type(Type::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ SchemaVersionSummary& SchemaVersionSummary::operator =(JsonView jsonValue)
     m_schemaVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue SchemaVersionSummary::Jsonize() const
   {
    payload.WithString("SchemaVersion", m_schemaVersion);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", TypeMapper::GetNameForType(m_type));
   }
 
   return payload;

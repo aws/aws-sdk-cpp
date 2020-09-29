@@ -18,6 +18,7 @@
 #include <aws/schemas/model/DescribeDiscovererResult.h>
 #include <aws/schemas/model/DescribeRegistryResult.h>
 #include <aws/schemas/model/DescribeSchemaResult.h>
+#include <aws/schemas/model/ExportSchemaResult.h>
 #include <aws/schemas/model/GetCodeBindingSourceResult.h>
 #include <aws/schemas/model/GetDiscoveredSchemaResult.h>
 #include <aws/schemas/model/GetResourcePolicyResult.h>
@@ -86,6 +87,7 @@ namespace Model
         class DescribeDiscovererRequest;
         class DescribeRegistryRequest;
         class DescribeSchemaRequest;
+        class ExportSchemaRequest;
         class GetCodeBindingSourceRequest;
         class GetDiscoveredSchemaRequest;
         class GetResourcePolicyRequest;
@@ -117,6 +119,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDiscovererResult, SchemasError> DescribeDiscovererOutcome;
         typedef Aws::Utils::Outcome<DescribeRegistryResult, SchemasError> DescribeRegistryOutcome;
         typedef Aws::Utils::Outcome<DescribeSchemaResult, SchemasError> DescribeSchemaOutcome;
+        typedef Aws::Utils::Outcome<ExportSchemaResult, SchemasError> ExportSchemaOutcome;
         typedef Aws::Utils::Outcome<GetCodeBindingSourceResult, SchemasError> GetCodeBindingSourceOutcome;
         typedef Aws::Utils::Outcome<GetDiscoveredSchemaResult, SchemasError> GetDiscoveredSchemaOutcome;
         typedef Aws::Utils::Outcome<GetResourcePolicyResult, SchemasError> GetResourcePolicyOutcome;
@@ -148,6 +151,7 @@ namespace Model
         typedef std::future<DescribeDiscovererOutcome> DescribeDiscovererOutcomeCallable;
         typedef std::future<DescribeRegistryOutcome> DescribeRegistryOutcomeCallable;
         typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
+        typedef std::future<ExportSchemaOutcome> ExportSchemaOutcomeCallable;
         typedef std::future<GetCodeBindingSourceOutcome> GetCodeBindingSourceOutcomeCallable;
         typedef std::future<GetDiscoveredSchemaOutcome> GetDiscoveredSchemaOutcomeCallable;
         typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
@@ -182,6 +186,7 @@ namespace Model
     typedef std::function<void(const SchemasClient*, const Model::DescribeDiscovererRequest&, const Model::DescribeDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDiscovererResponseReceivedHandler;
     typedef std::function<void(const SchemasClient*, const Model::DescribeRegistryRequest&, const Model::DescribeRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegistryResponseReceivedHandler;
     typedef std::function<void(const SchemasClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
+    typedef std::function<void(const SchemasClient*, const Model::ExportSchemaRequest&, const Model::ExportSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportSchemaResponseReceivedHandler;
     typedef std::function<void(const SchemasClient*, const Model::GetCodeBindingSourceRequest&, Model::GetCodeBindingSourceOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeBindingSourceResponseReceivedHandler;
     typedef std::function<void(const SchemasClient*, const Model::GetDiscoveredSchemaRequest&, const Model::GetDiscoveredSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredSchemaResponseReceivedHandler;
     typedef std::function<void(const SchemasClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
@@ -536,6 +541,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSchemaAsync(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::ExportSchemaOutcome ExportSchema(const Model::ExportSchemaRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportSchemaOutcomeCallable ExportSchemaCallable(const Model::ExportSchemaRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportSchemaAsync(const Model::ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the code binding source URI.</p><p><h3>See Also:</h3>   <a
@@ -1015,6 +1039,7 @@ namespace Model
         void DescribeDiscovererAsyncHelper(const Model::DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRegistryAsyncHelper(const Model::DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSchemaAsyncHelper(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportSchemaAsyncHelper(const Model::ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCodeBindingSourceAsyncHelper(const Model::GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiscoveredSchemaAsyncHelper(const Model::GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

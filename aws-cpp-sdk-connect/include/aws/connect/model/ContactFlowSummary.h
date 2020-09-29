@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about a contact flow.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains summary information about a contact flow.</p> <p>You can also create
+   * and update contact flows using the <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+   * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSummary">AWS
    * API Reference</a></p>
    */
