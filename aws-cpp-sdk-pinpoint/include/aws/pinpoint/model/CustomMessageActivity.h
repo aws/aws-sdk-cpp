@@ -43,82 +43,82 @@ namespace Model
 
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline const Aws::String& GetDeliveryUri() const{ return m_deliveryUri; }
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline bool DeliveryUriHasBeenSet() const { return m_deliveryUriHasBeenSet; }
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline void SetDeliveryUri(const Aws::String& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = value; }
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline void SetDeliveryUri(Aws::String&& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = std::move(value); }
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline void SetDeliveryUri(const char* value) { m_deliveryUriHasBeenSet = true; m_deliveryUri.assign(value); }
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline CustomMessageActivity& WithDeliveryUri(const Aws::String& value) { SetDeliveryUri(value); return *this;}
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline CustomMessageActivity& WithDeliveryUri(Aws::String&& value) { SetDeliveryUri(std::move(value)); return *this;}
 
     /**
-     * <p>The destination to send the custom message to. This value can be one of the
-     * following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS
-     * Lambda function to invoke to handle delivery of the custom message.</p></li>
-     * <li><p>The URL for a web application or service that supports HTTPS and can
-     * receive the message. The URL has to be a full URL, including the HTTPS
-     * protocol.</p></li></ul>
+     * <p>The destination to send the campaign or treatment to. This value can be one
+     * of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an
+     * AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.</p></li> <li><p>The URL for a web application or service that
+     * supports HTTPS and can receive the message. The URL has to be a full URL,
+     * including the HTTPS protocol.</p></li></ul>
      */
     inline CustomMessageActivity& WithDeliveryUri(const char* value) { SetDeliveryUri(value); return *this;}
 

@@ -324,37 +324,37 @@ namespace Model
 
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
 

@@ -26,6 +26,7 @@ namespace Aws
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int INVALID_HASH = HashingUtils::HashString("INVALID");
 
 
         CampaignStatus GetCampaignStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return CampaignStatus::DELETED;
           }
+          else if (hashCode == INVALID_HASH)
+          {
+            return CampaignStatus::INVALID;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "PAUSED";
           case CampaignStatus::DELETED:
             return "DELETED";
+          case CampaignStatus::INVALID:
+            return "INVALID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

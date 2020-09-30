@@ -19,22 +19,30 @@ namespace Model
 {
 
 AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails() : 
+    m_cacheBehaviorsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
+    m_defaultRootObjectHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_originsHasBeenSet(false),
+    m_originGroupsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_webAclIdHasBeenSet(false)
 {
 }
 
 AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView jsonValue) : 
+    m_cacheBehaviorsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
+    m_defaultRootObjectHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_originsHasBeenSet(false),
+    m_originGroupsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_webAclIdHasBeenSet(false)
 {
@@ -43,6 +51,27 @@ AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView json
 
 AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CacheBehaviors"))
+  {
+    m_cacheBehaviors = jsonValue.GetObject("CacheBehaviors");
+
+    m_cacheBehaviorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultCacheBehavior"))
+  {
+    m_defaultCacheBehavior = jsonValue.GetObject("DefaultCacheBehavior");
+
+    m_defaultCacheBehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultRootObject"))
+  {
+    m_defaultRootObject = jsonValue.GetString("DefaultRootObject");
+
+    m_defaultRootObjectHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
@@ -78,6 +107,13 @@ AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator =(J
     m_originsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OriginGroups"))
+  {
+    m_originGroups = jsonValue.GetObject("OriginGroups");
+
+    m_originGroupsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
@@ -98,6 +134,24 @@ AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator =(J
 JsonValue AwsCloudFrontDistributionDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cacheBehaviorsHasBeenSet)
+  {
+   payload.WithObject("CacheBehaviors", m_cacheBehaviors.Jsonize());
+
+  }
+
+  if(m_defaultCacheBehaviorHasBeenSet)
+  {
+   payload.WithObject("DefaultCacheBehavior", m_defaultCacheBehavior.Jsonize());
+
+  }
+
+  if(m_defaultRootObjectHasBeenSet)
+  {
+   payload.WithString("DefaultRootObject", m_defaultRootObject);
+
+  }
 
   if(m_domainNameHasBeenSet)
   {
@@ -126,6 +180,12 @@ JsonValue AwsCloudFrontDistributionDetails::Jsonize() const
   if(m_originsHasBeenSet)
   {
    payload.WithObject("Origins", m_origins.Jsonize());
+
+  }
+
+  if(m_originGroupsHasBeenSet)
+  {
+   payload.WithObject("OriginGroups", m_originGroups.Jsonize());
 
   }
 

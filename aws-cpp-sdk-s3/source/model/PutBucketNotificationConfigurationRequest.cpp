@@ -32,7 +32,7 @@ Aws::String PutBucketNotificationConfigurationRequest::SerializePayload() const
   parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
 
   m_notificationConfiguration.AddToNode(parentNode);
-  
+
   return payloadDoc.ConvertToString();
 }
 

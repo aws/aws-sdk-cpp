@@ -227,6 +227,47 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
+
+    /**
+     * <p/>
+     */
+    inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
+
+
+    /**
      * <p>A list of AWS tags associated with a resource at the time the finding was
      * processed.</p>
      */
@@ -348,6 +389,9 @@ namespace Model
 
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
+    Aws::String m_resourceRole;
+    bool m_resourceRoleHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

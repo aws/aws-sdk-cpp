@@ -114,7 +114,8 @@ namespace Model
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
      * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline const NetworkOrigin& GetNetworkOrigin() const{ return m_networkOrigin; }
 
@@ -124,7 +125,8 @@ namespace Model
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
      * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline void SetNetworkOrigin(const NetworkOrigin& value) { m_networkOrigin = value; }
 
@@ -134,7 +136,8 @@ namespace Model
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
      * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline void SetNetworkOrigin(NetworkOrigin&& value) { m_networkOrigin = std::move(value); }
 
@@ -144,7 +147,8 @@ namespace Model
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
      * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline GetAccessPointResult& WithNetworkOrigin(const NetworkOrigin& value) { SetNetworkOrigin(value); return *this;}
 
@@ -154,7 +158,8 @@ namespace Model
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
      * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline GetAccessPointResult& WithNetworkOrigin(NetworkOrigin&& value) { SetNetworkOrigin(std::move(value)); return *this;}
 

@@ -23,7 +23,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch
+   * Operations job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectLockLegalHold">AWS
    * API Reference</a></p>
    */
@@ -38,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline const S3ObjectLockLegalHoldStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline void SetStatus(const S3ObjectLockLegalHoldStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline void SetStatus(S3ObjectLockLegalHoldStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline S3ObjectLockLegalHold& WithStatus(const S3ObjectLockLegalHoldStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
-     * job.</p>
+     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+     * Operations job.</p>
      */
     inline S3ObjectLockLegalHold& WithStatus(S3ObjectLockLegalHoldStatus&& value) { SetStatus(std::move(value)); return *this;}
 

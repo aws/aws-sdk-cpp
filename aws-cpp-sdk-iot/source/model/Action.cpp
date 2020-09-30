@@ -37,6 +37,7 @@ Action::Action() :
     m_iotEventsHasBeenSet(false),
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
+    m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false)
 {
 }
@@ -60,6 +61,7 @@ Action::Action(JsonView jsonValue) :
     m_iotEventsHasBeenSet(false),
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
+    m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false)
 {
   *this = jsonValue;
@@ -193,6 +195,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_stepFunctionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timestream"))
+  {
+    m_timestream = jsonValue.GetObject("timestream");
+
+    m_timestreamHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("http"))
   {
     m_http = jsonValue.GetObject("http");
@@ -312,6 +321,12 @@ JsonValue Action::Jsonize() const
   if(m_stepFunctionsHasBeenSet)
   {
    payload.WithObject("stepFunctions", m_stepFunctions.Jsonize());
+
+  }
+
+  if(m_timestreamHasBeenSet)
+  {
+   payload.WithObject("timestream", m_timestream.Jsonize());
 
   }
 

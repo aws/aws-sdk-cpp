@@ -123,7 +123,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
@@ -170,7 +174,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
@@ -217,7 +225,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
@@ -264,7 +276,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
@@ -311,7 +327,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
@@ -358,7 +378,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
@@ -405,7 +429,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
@@ -452,7 +480,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
@@ -499,7 +531,11 @@ namespace Model
      * <code>function:my-function:prod</code> or
      * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
      * The resource type is <code>table</code> and the unique identifier is the table
-     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> <li>
+     * <p>Amazon MSK cluster - The resource type and unique identifier are specified
+     * using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+     * </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
@@ -540,7 +576,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -580,7 +618,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -620,7 +660,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -660,7 +702,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -700,7 +744,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -740,7 +786,9 @@ namespace Model
      * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
-     * for an Amazon Keyspaces table.</p> </li> </ul>
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

@@ -47,6 +47,7 @@ void PutBucketPolicyRequest::AddQueryStringParameters(URI& uri) const
         }
     }
 }
+
 Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

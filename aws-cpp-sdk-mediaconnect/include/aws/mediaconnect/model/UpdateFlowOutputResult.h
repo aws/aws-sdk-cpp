@@ -69,19 +69,29 @@ namespace Model
     inline UpdateFlowOutputResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
 
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline const Output& GetOutput() const{ return m_output; }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline void SetOutput(const Output& value) { m_output = value; }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline void SetOutput(Output&& value) { m_output = std::move(value); }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline UpdateFlowOutputResult& WithOutput(const Output& value) { SetOutput(value); return *this;}
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline UpdateFlowOutputResult& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
 
   private:

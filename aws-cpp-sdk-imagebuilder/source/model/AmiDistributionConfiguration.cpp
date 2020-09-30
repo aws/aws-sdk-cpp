@@ -21,6 +21,7 @@ namespace Model
 AmiDistributionConfiguration::AmiDistributionConfiguration() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_targetAccountIdsHasBeenSet(false),
     m_amiTagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_launchPermissionHasBeenSet(false)
@@ -30,6 +31,7 @@ AmiDistributionConfiguration::AmiDistributionConfiguration() :
 AmiDistributionConfiguration::AmiDistributionConfiguration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_targetAccountIdsHasBeenSet(false),
     m_amiTagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_launchPermissionHasBeenSet(false)
@@ -51,6 +53,16 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetAccountIds"))
+  {
+    Array<JsonView> targetAccountIdsJsonList = jsonValue.GetArray("targetAccountIds");
+    for(unsigned targetAccountIdsIndex = 0; targetAccountIdsIndex < targetAccountIdsJsonList.GetLength(); ++targetAccountIdsIndex)
+    {
+      m_targetAccountIds.push_back(targetAccountIdsJsonList[targetAccountIdsIndex].AsString());
+    }
+    m_targetAccountIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("amiTags"))
@@ -93,6 +105,17 @@ JsonValue AmiDistributionConfiguration::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_targetAccountIdsHasBeenSet)
+  {
+   Array<JsonValue> targetAccountIdsJsonList(m_targetAccountIds.size());
+   for(unsigned targetAccountIdsIndex = 0; targetAccountIdsIndex < targetAccountIdsJsonList.GetLength(); ++targetAccountIdsIndex)
+   {
+     targetAccountIdsJsonList[targetAccountIdsIndex].AsString(m_targetAccountIds[targetAccountIdsIndex]);
+   }
+   payload.WithArray("targetAccountIds", std::move(targetAccountIdsJsonList));
 
   }
 

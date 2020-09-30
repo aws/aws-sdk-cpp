@@ -36,3 +36,4 @@ void PublishRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

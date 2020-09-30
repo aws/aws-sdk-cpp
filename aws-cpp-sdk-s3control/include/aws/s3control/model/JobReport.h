@@ -147,57 +147,57 @@ namespace Model
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

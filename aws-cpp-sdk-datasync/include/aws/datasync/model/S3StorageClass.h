@@ -21,7 +21,8 @@ namespace Model
     ONEZONE_IA,
     INTELLIGENT_TIERING,
     GLACIER,
-    DEEP_ARCHIVE
+    DEEP_ARCHIVE,
+    OUTPOSTS
   };
 
 namespace S3StorageClassMapper

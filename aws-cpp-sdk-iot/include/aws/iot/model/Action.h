@@ -23,6 +23,7 @@
 #include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/IotSiteWiseAction.h>
 #include <aws/iot/model/StepFunctionsAction.h>
+#include <aws/iot/model/TimestreamAction.h>
 #include <aws/iot/model/HttpAction.h>
 #include <utility>
 
@@ -632,6 +633,55 @@ namespace Model
 
 
     /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline const TimestreamAction& GetTimestream() const{ return m_timestream; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline bool TimestreamHasBeenSet() const { return m_timestreamHasBeenSet; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline void SetTimestream(const TimestreamAction& value) { m_timestreamHasBeenSet = true; m_timestream = value; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline void SetTimestream(TimestreamAction&& value) { m_timestreamHasBeenSet = true; m_timestream = std::move(value); }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline Action& WithTimestream(const TimestreamAction& value) { SetTimestream(value); return *this;}
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline Action& WithTimestream(TimestreamAction&& value) { SetTimestream(std::move(value)); return *this;}
+
+
+    /**
      * <p>Send data to an HTTPS endpoint.</p>
      */
     inline const HttpAction& GetHttp() const{ return m_http; }
@@ -716,6 +766,9 @@ namespace Model
 
     StepFunctionsAction m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;
+
+    TimestreamAction m_timestream;
+    bool m_timestreamHasBeenSet;
 
     HttpAction m_http;
     bool m_httpHasBeenSet;

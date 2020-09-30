@@ -92,7 +92,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
@@ -101,7 +101,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
@@ -110,7 +110,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
@@ -119,7 +119,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
@@ -128,7 +128,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
@@ -137,7 +137,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline JourneySMSMessage& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
@@ -146,7 +146,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline JourneySMSMessage& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
@@ -155,7 +155,7 @@ namespace Model
      * <p>The sender ID to display as the sender of the message on a recipient's
      * device. Support for sender IDs varies by country or region. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
     inline JourneySMSMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}

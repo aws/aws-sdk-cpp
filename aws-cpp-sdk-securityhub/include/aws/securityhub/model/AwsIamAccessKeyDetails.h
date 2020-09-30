@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AwsIamAccessKeyStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/AwsIamAccessKeySessionContext.h>
 #include <utility>
 
 namespace Aws
@@ -264,6 +265,119 @@ namespace Model
      */
     inline AwsIamAccessKeyDetails& WithPrincipalName(const char* value) { SetPrincipalName(value); return *this;}
 
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the account for the key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline const AwsIamAccessKeySessionContext& GetSessionContext() const{ return m_sessionContext; }
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline bool SessionContextHasBeenSet() const { return m_sessionContextHasBeenSet; }
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline void SetSessionContext(const AwsIamAccessKeySessionContext& value) { m_sessionContextHasBeenSet = true; m_sessionContext = value; }
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline void SetSessionContext(AwsIamAccessKeySessionContext&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::move(value); }
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithSessionContext(const AwsIamAccessKeySessionContext& value) { SetSessionContext(value); return *this;}
+
+    /**
+     * <p>Information about the session that the key was used for.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithSessionContext(AwsIamAccessKeySessionContext&& value) { SetSessionContext(std::move(value)); return *this;}
+
   private:
 
     AwsIamAccessKeyStatus m_status;
@@ -280,6 +394,15 @@ namespace Model
 
     Aws::String m_principalName;
     bool m_principalNameHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
+
+    Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
+
+    AwsIamAccessKeySessionContext m_sessionContext;
+    bool m_sessionContextHasBeenSet;
   };
 
 } // namespace Model

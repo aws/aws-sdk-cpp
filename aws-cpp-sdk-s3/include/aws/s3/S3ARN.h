@@ -23,6 +23,7 @@ namespace Aws
         namespace ARNResourceType
         {
             static const char ACCESSPOINT[] = "accesspoint";
+            static const char OUTPOST[] = "outpost";
         }
 
         typedef Aws::Utils::Outcome<bool, Aws::Client::AWSError<S3Errors>> S3ARNOutcome;
@@ -34,6 +35,8 @@ namespace Aws
 
             const Aws::String& GetResourceType() const { return m_resourceType; }
             const Aws::String& GetResourceId() const { return m_resourceId; }
+            const Aws::String& GetSubResourceType() const { return m_subResourceType; }
+            const Aws::String& GetSubResourceId() const { return m_subResourceId; }
             const Aws::String& GetResourceQualifier() const { return m_resourceQualifier; }
 
             // Check if S3ARN is valid.
@@ -46,6 +49,8 @@ namespace Aws
 
             Aws::String m_resourceType;
             Aws::String m_resourceId;
+            Aws::String m_subResourceType;
+            Aws::String m_subResourceId;
             Aws::String m_resourceQualifier;
         };
     }

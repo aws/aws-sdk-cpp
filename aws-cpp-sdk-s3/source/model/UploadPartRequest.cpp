@@ -72,6 +72,7 @@ void UploadPartRequest::AddQueryStringParameters(URI& uri) const
         }
     }
 }
+
 Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

@@ -34,3 +34,4 @@ void UpdateProjectRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

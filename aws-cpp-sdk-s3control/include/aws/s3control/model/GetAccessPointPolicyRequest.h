@@ -76,42 +76,98 @@ namespace Model
 
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline GetAccessPointPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline GetAccessPointPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the access point whose policy you want to retrieve.</p>
+     * <p>The name of the access point whose policy you want to retrieve.</p> <p>For
+     * Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
+     * For example, to access the access point <code>reports-ap</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+     * The value must be URL encoded. </p>
      */
     inline GetAccessPointPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 

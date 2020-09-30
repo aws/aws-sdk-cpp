@@ -20,12 +20,14 @@ namespace Model
 
 StartCondition::StartCondition() : 
     m_descriptionHasBeenSet(false),
+    m_eventStartConditionHasBeenSet(false),
     m_segmentStartConditionHasBeenSet(false)
 {
 }
 
 StartCondition::StartCondition(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
+    m_eventStartConditionHasBeenSet(false),
     m_segmentStartConditionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ StartCondition& StartCondition::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventStartCondition"))
+  {
+    m_eventStartCondition = jsonValue.GetObject("EventStartCondition");
+
+    m_eventStartConditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SegmentStartCondition"))
@@ -57,6 +66,12 @@ JsonValue StartCondition::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_eventStartConditionHasBeenSet)
+  {
+   payload.WithObject("EventStartCondition", m_eventStartCondition.Jsonize());
 
   }
 

@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Errors.h>
-#include <aws/s3/S3Endpoint.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
@@ -461,9 +460,18 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::SelectObjectContentRequest&, const Model::SelectObjectContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectObjectContentResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartRequest&, const Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartCopyRequest&, const Model::UploadPartCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartCopyResponseReceivedHandler;
-    // A pair of endpoint and request region.
-    typedef std::pair<Aws::String, Aws::String> EndpointRegionPair;
-    typedef Aws::Utils::Outcome<EndpointRegionPair, Aws::Client::AWSError<S3Errors>> ComputeEndpointOutcome;
+
+    // Get endpoint, signer region and signer service name after computing the endpoint.
+    struct ComputeEndpointResult
+    {
+      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}) :
+        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName) {}
+
+      Aws::String endpoint;
+      Aws::String signerRegion;
+      Aws::String signerServiceName;
+    };
+    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3Errors>> ComputeEndpointOutcome;
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -1165,17 +1173,20 @@ namespace Aws
         virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new bucket. To create a bucket, you must register with Amazon S3
+         * <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3
          * and have a valid AWS Access Key ID to authenticate requests. Anonymous requests
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
-         * information on bucket naming restrictions, see <a
+         * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>.</p> <p>By default, the bucket is created in the US
-         * East (N. Virginia) Region. You can optionally specify a Region in the request
-         * body. You might choose a Region to optimize latency, minimize costs, or address
-         * regulatory requirements. For example, if you reside in Europe, you will probably
-         * find it advantageous to create buckets in the Europe (Ireland) Region. For more
+         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
+         * Outposts</b> bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+         * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
+         * Virginia) Region. You can optionally specify a Region in the request body. You
+         * might choose a Region to optimize latency, minimize costs, or address regulatory
+         * requirements. For example, if you reside in Europe, you will probably find it
+         * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
          * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
@@ -1230,17 +1241,20 @@ namespace Aws
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
         /**
-         * <p>Creates a new bucket. To create a bucket, you must register with Amazon S3
+         * <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3
          * and have a valid AWS Access Key ID to authenticate requests. Anonymous requests
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
-         * information on bucket naming restrictions, see <a
+         * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>.</p> <p>By default, the bucket is created in the US
-         * East (N. Virginia) Region. You can optionally specify a Region in the request
-         * body. You might choose a Region to optimize latency, minimize costs, or address
-         * regulatory requirements. For example, if you reside in Europe, you will probably
-         * find it advantageous to create buckets in the Europe (Ireland) Region. For more
+         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
+         * Outposts</b> bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+         * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
+         * Virginia) Region. You can optionally specify a Region in the request body. You
+         * might choose a Region to optimize latency, minimize costs, or address regulatory
+         * requirements. For example, if you reside in Europe, you will probably find it
+         * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
          * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
@@ -1297,17 +1311,20 @@ namespace Aws
         virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
 
         /**
-         * <p>Creates a new bucket. To create a bucket, you must register with Amazon S3
+         * <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3
          * and have a valid AWS Access Key ID to authenticate requests. Anonymous requests
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
-         * information on bucket naming restrictions, see <a
+         * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>.</p> <p>By default, the bucket is created in the US
-         * East (N. Virginia) Region. You can optionally specify a Region in the request
-         * body. You might choose a Region to optimize latency, minimize costs, or address
-         * regulatory requirements. For example, if you reside in Europe, you will probably
-         * find it advantageous to create buckets in the Europe (Ireland) Region. For more
+         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
+         * Outposts</b> bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+         * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
+         * Virginia) Region. You can optionally specify a Region in the request body. You
+         * might choose a Region to optimize latency, minimize costs, or address regulatory
+         * requirements. For example, if you reside in Europe, you will probably find it
+         * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
          * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
@@ -1833,7 +1850,7 @@ namespace Aws
         virtual void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the bucket. All objects (including all object versions and delete
+         * <p>Deletes the S3 bucket. All objects (including all object versions and delete
          * markers) in the bucket must be deleted before the bucket itself can be
          * deleted.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
@@ -1846,7 +1863,7 @@ namespace Aws
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
         /**
-         * <p>Deletes the bucket. All objects (including all object versions and delete
+         * <p>Deletes the S3 bucket. All objects (including all object versions and delete
          * markers) in the bucket must be deleted before the bucket itself can be
          * deleted.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
@@ -1861,7 +1878,7 @@ namespace Aws
         virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
 
         /**
-         * <p>Deletes the bucket. All objects (including all object versions and delete
+         * <p>Deletes the S3 bucket. All objects (including all object versions and delete
          * markers) in the bucket must be deleted before the bucket itself can be
          * deleted.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
@@ -3427,8 +3444,8 @@ namespace Aws
          * rule using an object key name prefix, one or more object tags, or a combination
          * of both. Accordingly, this section describes the latest API. The response
          * describes the new filter element that you can use to specify a filter to select
-         * a subset of objects to which the rule applies. If you are still using previous
-         * version of the lifecycle configuration, it works. For the earlier API
+         * a subset of objects to which the rule applies. If you are using a previous
+         * version of the lifecycle configuration, it still works. For the earlier API
          * description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.</p>
          *  <p>Returns the lifecycle configuration information set on the bucket.
@@ -3464,8 +3481,8 @@ namespace Aws
          * rule using an object key name prefix, one or more object tags, or a combination
          * of both. Accordingly, this section describes the latest API. The response
          * describes the new filter element that you can use to specify a filter to select
-         * a subset of objects to which the rule applies. If you are still using previous
-         * version of the lifecycle configuration, it works. For the earlier API
+         * a subset of objects to which the rule applies. If you are using a previous
+         * version of the lifecycle configuration, it still works. For the earlier API
          * description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.</p>
          *  <p>Returns the lifecycle configuration information set on the bucket.
@@ -3503,8 +3520,8 @@ namespace Aws
          * rule using an object key name prefix, one or more object tags, or a combination
          * of both. Accordingly, this section describes the latest API. The response
          * describes the new filter element that you can use to specify a filter to select
-         * a subset of objects to which the rule applies. If you are still using previous
-         * version of the lifecycle configuration, it works. For the earlier API
+         * a subset of objects to which the rule applies. If you are using a previous
+         * version of the lifecycle configuration, it still works. For the earlier API
          * description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.</p>
          *  <p>Returns the lifecycle configuration information set on the bucket.
@@ -4598,9 +4615,10 @@ namespace Aws
 
         /**
          * <p>Returns the access control list (ACL) of an object. To use this operation,
-         * you must have READ_ACP access to the object.</p> <p> <b>Versioning</b> </p>
-         * <p>By default, GET returns ACL information about the current version of an
-         * object. To return ACL information about a different version, use the versionId
+         * you must have <code>READ_ACP</code> access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p> <b>Versioning</b> </p> <p>By
+         * default, GET returns ACL information about the current version of an object. To
+         * return ACL information about a different version, use the versionId
          * subresource.</p> <p>The following operations are related to
          * <code>GetObjectAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4616,9 +4634,10 @@ namespace Aws
 
         /**
          * <p>Returns the access control list (ACL) of an object. To use this operation,
-         * you must have READ_ACP access to the object.</p> <p> <b>Versioning</b> </p>
-         * <p>By default, GET returns ACL information about the current version of an
-         * object. To return ACL information about a different version, use the versionId
+         * you must have <code>READ_ACP</code> access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p> <b>Versioning</b> </p> <p>By
+         * default, GET returns ACL information about the current version of an object. To
+         * return ACL information about a different version, use the versionId
          * subresource.</p> <p>The following operations are related to
          * <code>GetObjectAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4636,9 +4655,10 @@ namespace Aws
 
         /**
          * <p>Returns the access control list (ACL) of an object. To use this operation,
-         * you must have READ_ACP access to the object.</p> <p> <b>Versioning</b> </p>
-         * <p>By default, GET returns ACL information about the current version of an
-         * object. To return ACL information about a different version, use the versionId
+         * you must have <code>READ_ACP</code> access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p> <b>Versioning</b> </p> <p>By
+         * default, GET returns ACL information about the current version of an object. To
+         * return ACL information about a different version, use the versionId
          * subresource.</p> <p>The following operations are related to
          * <code>GetObjectAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4657,7 +4677,8 @@ namespace Aws
         /**
          * <p>Gets an object's current Legal Hold status. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
          * API Reference</a></p>
          */
@@ -4666,7 +4687,8 @@ namespace Aws
         /**
          * <p>Gets an object's current Legal Hold status. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
          * API Reference</a></p>
          *
@@ -4677,7 +4699,8 @@ namespace Aws
         /**
          * <p>Gets an object's current Legal Hold status. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
          * API Reference</a></p>
          *
@@ -4725,7 +4748,8 @@ namespace Aws
         /**
          * <p>Retrieves an object's retention settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
          * API Reference</a></p>
          */
@@ -4734,7 +4758,8 @@ namespace Aws
         /**
          * <p>Retrieves an object's retention settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
          * API Reference</a></p>
          *
@@ -4745,7 +4770,8 @@ namespace Aws
         /**
          * <p>Retrieves an object's retention settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
          * API Reference</a></p>
          *
@@ -4821,14 +4847,15 @@ namespace Aws
         virtual void GetObjectTaggingAsync(const Model::GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return torrent files from a bucket. BitTorrent can save you bandwidth when
+         * <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when
          * you're distributing large files. For more information about BitTorrent, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
-         * Torrent</a>.</p>  <p>You can get torrent only for objects that are less
-         * than 5 GB in size and that are not encrypted using server-side encryption with
-         * customer-provided encryption key.</p>  <p>To use GET, you must have READ
-         * access to the object.</p> <p>The following operation is related to
-         * <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+         * BitTorrent with Amazon S3</a>.</p>  <p>You can get torrent only for
+         * objects that are less than 5 GB in size, and that are not encrypted using
+         * server-side encryption with a customer-provided encryption key.</p> 
+         * <p>To use GET, you must have READ access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p>The following operation is
+         * related to <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
@@ -4837,14 +4864,15 @@ namespace Aws
         virtual Model::GetObjectTorrentOutcome GetObjectTorrent(const Model::GetObjectTorrentRequest& request) const;
 
         /**
-         * <p>Return torrent files from a bucket. BitTorrent can save you bandwidth when
+         * <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when
          * you're distributing large files. For more information about BitTorrent, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
-         * Torrent</a>.</p>  <p>You can get torrent only for objects that are less
-         * than 5 GB in size and that are not encrypted using server-side encryption with
-         * customer-provided encryption key.</p>  <p>To use GET, you must have READ
-         * access to the object.</p> <p>The following operation is related to
-         * <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+         * BitTorrent with Amazon S3</a>.</p>  <p>You can get torrent only for
+         * objects that are less than 5 GB in size, and that are not encrypted using
+         * server-side encryption with a customer-provided encryption key.</p> 
+         * <p>To use GET, you must have READ access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p>The following operation is
+         * related to <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
@@ -4855,14 +4883,15 @@ namespace Aws
         virtual Model::GetObjectTorrentOutcomeCallable GetObjectTorrentCallable(const Model::GetObjectTorrentRequest& request) const;
 
         /**
-         * <p>Return torrent files from a bucket. BitTorrent can save you bandwidth when
+         * <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when
          * you're distributing large files. For more information about BitTorrent, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
-         * Torrent</a>.</p>  <p>You can get torrent only for objects that are less
-         * than 5 GB in size and that are not encrypted using server-side encryption with
-         * customer-provided encryption key.</p>  <p>To use GET, you must have READ
-         * access to the object.</p> <p>The following operation is related to
-         * <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+         * BitTorrent with Amazon S3</a>.</p>  <p>You can get torrent only for
+         * objects that are less than 5 GB in size, and that are not encrypted using
+         * server-side encryption with a customer-provided encryption key.</p> 
+         * <p>To use GET, you must have READ access to the object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p>The following operation is
+         * related to <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
@@ -5657,13 +5686,14 @@ namespace Aws
         virtual void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata about all of the versions of objects in a bucket. You can
-         * also use request parameters as selection criteria to return metadata about a
-         * subset of all the object versions. </p>  <p> A 200 OK response can contain
-         * valid or invalid XML. Make sure to design your application to parse the contents
-         * of the response and handle it appropriately.</p>  <p>To use this
-         * operation, you must have READ access to the bucket.</p> <p>The following
-         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * <p>Returns metadata about all versions of the objects in a bucket. You can also
+         * use request parameters as selection criteria to return metadata about a subset
+         * of all the object versions. </p>  <p> A 200 OK response can contain valid
+         * or invalid XML. Make sure to design your application to parse the contents of
+         * the response and handle it appropriately.</p>  <p>To use this operation,
+         * you must have READ access to the bucket.</p> <p>This action is not supported by
+         * Amazon S3 on Outposts.</p> <p>The following operations are related to
+         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -5678,13 +5708,14 @@ namespace Aws
         virtual Model::ListObjectVersionsOutcome ListObjectVersions(const Model::ListObjectVersionsRequest& request) const;
 
         /**
-         * <p>Returns metadata about all of the versions of objects in a bucket. You can
-         * also use request parameters as selection criteria to return metadata about a
-         * subset of all the object versions. </p>  <p> A 200 OK response can contain
-         * valid or invalid XML. Make sure to design your application to parse the contents
-         * of the response and handle it appropriately.</p>  <p>To use this
-         * operation, you must have READ access to the bucket.</p> <p>The following
-         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * <p>Returns metadata about all versions of the objects in a bucket. You can also
+         * use request parameters as selection criteria to return metadata about a subset
+         * of all the object versions. </p>  <p> A 200 OK response can contain valid
+         * or invalid XML. Make sure to design your application to parse the contents of
+         * the response and handle it appropriately.</p>  <p>To use this operation,
+         * you must have READ access to the bucket.</p> <p>This action is not supported by
+         * Amazon S3 on Outposts.</p> <p>The following operations are related to
+         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -5701,13 +5732,14 @@ namespace Aws
         virtual Model::ListObjectVersionsOutcomeCallable ListObjectVersionsCallable(const Model::ListObjectVersionsRequest& request) const;
 
         /**
-         * <p>Returns metadata about all of the versions of objects in a bucket. You can
-         * also use request parameters as selection criteria to return metadata about a
-         * subset of all the object versions. </p>  <p> A 200 OK response can contain
-         * valid or invalid XML. Make sure to design your application to parse the contents
-         * of the response and handle it appropriately.</p>  <p>To use this
-         * operation, you must have READ access to the bucket.</p> <p>The following
-         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * <p>Returns metadata about all versions of the objects in a bucket. You can also
+         * use request parameters as selection criteria to return metadata about a subset
+         * of all the object versions. </p>  <p> A 200 OK response can contain valid
+         * or invalid XML. Make sure to design your application to parse the contents of
+         * the response and handle it appropriately.</p>  <p>To use this operation,
+         * you must have READ access to the bucket.</p> <p>This action is not supported by
+         * Amazon S3 on Outposts.</p> <p>The following operations are related to
+         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -8364,15 +8396,16 @@ namespace Aws
 
         /**
          * <p>Uses the <code>acl</code> subresource to set the access control list (ACL)
-         * permissions for an object that already exists in an S3 bucket. You must have
+         * permissions for a new or existing object in an S3 bucket. You must have
          * <code>WRITE_ACP</code> permission to set the ACL of an object. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What
          * permissions can I grant?</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>.</p> <p>Depending on your application needs, you can choose to set the
-         * ACL on an object using either the request body or the headers. For example, if
-         * you have an existing application that updates a bucket ACL using the request
-         * body, you can continue to use that approach. For more information, see <a
+         * Guide</i>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+         * <p>Depending on your application needs, you can choose to set the ACL on an
+         * object using either the request body or the headers. For example, if you have an
+         * existing application that updates a bucket ACL using the request body, you can
+         * continue to use that approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
@@ -8449,15 +8482,16 @@ namespace Aws
 
         /**
          * <p>Uses the <code>acl</code> subresource to set the access control list (ACL)
-         * permissions for an object that already exists in an S3 bucket. You must have
+         * permissions for a new or existing object in an S3 bucket. You must have
          * <code>WRITE_ACP</code> permission to set the ACL of an object. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What
          * permissions can I grant?</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>.</p> <p>Depending on your application needs, you can choose to set the
-         * ACL on an object using either the request body or the headers. For example, if
-         * you have an existing application that updates a bucket ACL using the request
-         * body, you can continue to use that approach. For more information, see <a
+         * Guide</i>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+         * <p>Depending on your application needs, you can choose to set the ACL on an
+         * object using either the request body or the headers. For example, if you have an
+         * existing application that updates a bucket ACL using the request body, you can
+         * continue to use that approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
@@ -8536,15 +8570,16 @@ namespace Aws
 
         /**
          * <p>Uses the <code>acl</code> subresource to set the access control list (ACL)
-         * permissions for an object that already exists in an S3 bucket. You must have
+         * permissions for a new or existing object in an S3 bucket. You must have
          * <code>WRITE_ACP</code> permission to set the ACL of an object. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What
          * permissions can I grant?</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>.</p> <p>Depending on your application needs, you can choose to set the
-         * ACL on an object using either the request body or the headers. For example, if
-         * you have an existing application that updates a bucket ACL using the request
-         * body, you can continue to use that approach. For more information, see <a
+         * Guide</i>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+         * <p>Depending on your application needs, you can choose to set the ACL on an
+         * object using either the request body or the headers. For example, if you have an
+         * existing application that updates a bucket ACL using the request body, you can
+         * continue to use that approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
@@ -8622,8 +8657,9 @@ namespace Aws
         virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
+         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
@@ -8632,8 +8668,9 @@ namespace Aws
         virtual Model::PutObjectLegalHoldOutcome PutObjectLegalHold(const Model::PutObjectLegalHoldRequest& request) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
+         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
@@ -8644,8 +8681,9 @@ namespace Aws
         virtual Model::PutObjectLegalHoldOutcomeCallable PutObjectLegalHoldCallable(const Model::PutObjectLegalHoldRequest& request) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
+         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
@@ -8702,8 +8740,9 @@ namespace Aws
         virtual void PutObjectLockConfigurationAsync(const Model::PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
@@ -8712,8 +8751,9 @@ namespace Aws
         virtual Model::PutObjectRetentionOutcome PutObjectRetention(const Model::PutObjectRetentionRequest& request) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
@@ -8724,8 +8764,9 @@ namespace Aws
         virtual Model::PutObjectRetentionOutcomeCallable PutObjectRetentionCallable(const Model::PutObjectRetentionRequest& request) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
+         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
          * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
@@ -8751,20 +8792,20 @@ namespace Aws
          * also need permission for the <code>s3:PutObjectVersionTagging</code> action.</p>
          * <p>For information about the Amazon S3 object tagging feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidTagError </i> </p> </li>
-         * <li> <p> <i>Cause: The tag provided was not a valid tag. This error can occur if
-         * the tag did not pass input validation. For more information, see <a
+         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul>
+         * <li> <p> <i>Code: InvalidTagError </i> </p> </li> <li> <p> <i>Cause: The tag
+         * provided was not a valid tag. This error can occur if the tag did not pass input
+         * validation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <p class="title"> <b/> </p> <ul>
-         * <li> <p> <i>Code: MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML
-         * provided does not match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li>
-         * <p> <i>Code: OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A
-         * conflicting conditional operation is currently in progress against this
-         * resource. Please try again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p>
-         * <i>Code: InternalError</i> </p> </li> <li> <p> <i>Cause: The service was unable
-         * to apply the provided tag to the object.</i> </p> </li> </ul> </li> </ul> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML provided does not
+         * match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A conflicting
+         * conditional operation is currently in progress against this resource. Please try
+         * again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code: InternalError</i>
+         * </p> </li> <li> <p> <i>Cause: The service was unable to apply the provided tag
+         * to the object.</i> </p> </li> </ul> </li> </ul> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
@@ -8788,20 +8829,20 @@ namespace Aws
          * also need permission for the <code>s3:PutObjectVersionTagging</code> action.</p>
          * <p>For information about the Amazon S3 object tagging feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidTagError </i> </p> </li>
-         * <li> <p> <i>Cause: The tag provided was not a valid tag. This error can occur if
-         * the tag did not pass input validation. For more information, see <a
+         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul>
+         * <li> <p> <i>Code: InvalidTagError </i> </p> </li> <li> <p> <i>Cause: The tag
+         * provided was not a valid tag. This error can occur if the tag did not pass input
+         * validation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <p class="title"> <b/> </p> <ul>
-         * <li> <p> <i>Code: MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML
-         * provided does not match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li>
-         * <p> <i>Code: OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A
-         * conflicting conditional operation is currently in progress against this
-         * resource. Please try again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p>
-         * <i>Code: InternalError</i> </p> </li> <li> <p> <i>Cause: The service was unable
-         * to apply the provided tag to the object.</i> </p> </li> </ul> </li> </ul> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML provided does not
+         * match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A conflicting
+         * conditional operation is currently in progress against this resource. Please try
+         * again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code: InternalError</i>
+         * </p> </li> <li> <p> <i>Cause: The service was unable to apply the provided tag
+         * to the object.</i> </p> </li> </ul> </li> </ul> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
@@ -8827,20 +8868,20 @@ namespace Aws
          * also need permission for the <code>s3:PutObjectVersionTagging</code> action.</p>
          * <p>For information about the Amazon S3 object tagging feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidTagError </i> </p> </li>
-         * <li> <p> <i>Cause: The tag provided was not a valid tag. This error can occur if
-         * the tag did not pass input validation. For more information, see <a
+         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul>
+         * <li> <p> <i>Code: InvalidTagError </i> </p> </li> <li> <p> <i>Cause: The tag
+         * provided was not a valid tag. This error can occur if the tag did not pass input
+         * validation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <p class="title"> <b/> </p> <ul>
-         * <li> <p> <i>Code: MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML
-         * provided does not match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li>
-         * <p> <i>Code: OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A
-         * conflicting conditional operation is currently in progress against this
-         * resource. Please try again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p>
-         * <i>Code: InternalError</i> </p> </li> <li> <p> <i>Cause: The service was unable
-         * to apply the provided tag to the object.</i> </p> </li> </ul> </li> </ul> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Tagging</a>.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML provided does not
+         * match the schema.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * OperationAbortedError </i> </p> </li> <li> <p> <i>Cause: A conflicting
+         * conditional operation is currently in progress against this resource. Please try
+         * again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code: InternalError</i>
+         * </p> </li> <li> <p> <i>Cause: The service was unable to apply the provided tag
+         * to the object.</i> </p> </li> </ul> </li> </ul> <p class="title"> <b>Related
+         * Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
@@ -8945,11 +8986,12 @@ namespace Aws
         virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This
-         * operation performs the following types of requests: </p> <ul> <li> <p>
-         * <code>select</code> - Perform a select query on an archived object</p> </li>
-         * <li> <p> <code>restore an archive</code> - Restore an archived object</p> </li>
-         * </ul> <p>To use this operation, you must have permissions to perform the
+         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This action
+         * is not supported by Amazon S3 on Outposts.</p> <p>This action performs the
+         * following types of requests: </p> <ul> <li> <p> <code>select</code> - Perform a
+         * select query on an archived object</p> </li> <li> <p> <code>restore an
+         * archive</code> - Restore an archived object</p> </li> </ul> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:RestoreObject</code> action. The bucket owner has this permission by
          * default and can grant this permission to others. For more information about
          * permissions, see <a
@@ -9087,12 +9129,11 @@ namespace Aws
          * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
          * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
          * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <p class="title"> <b/> </p> <ul> <li> <p> <i>Code:
-         * RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object restore is
-         * already in progress. (This error does not apply to SELECT type requests.)</i>
-         * </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p> </li> <li> <p>
-         * <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code:
+         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
+         * <i>Cause: Object restore is already in progress. (This error does not apply to
+         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
+         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
+         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
          * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
          * Glacier expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
@@ -9113,11 +9154,12 @@ namespace Aws
         virtual Model::RestoreObjectOutcome RestoreObject(const Model::RestoreObjectRequest& request) const;
 
         /**
-         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This
-         * operation performs the following types of requests: </p> <ul> <li> <p>
-         * <code>select</code> - Perform a select query on an archived object</p> </li>
-         * <li> <p> <code>restore an archive</code> - Restore an archived object</p> </li>
-         * </ul> <p>To use this operation, you must have permissions to perform the
+         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This action
+         * is not supported by Amazon S3 on Outposts.</p> <p>This action performs the
+         * following types of requests: </p> <ul> <li> <p> <code>select</code> - Perform a
+         * select query on an archived object</p> </li> <li> <p> <code>restore an
+         * archive</code> - Restore an archived object</p> </li> </ul> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:RestoreObject</code> action. The bucket owner has this permission by
          * default and can grant this permission to others. For more information about
          * permissions, see <a
@@ -9255,12 +9297,11 @@ namespace Aws
          * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
          * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
          * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <p class="title"> <b/> </p> <ul> <li> <p> <i>Code:
-         * RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object restore is
-         * already in progress. (This error does not apply to SELECT type requests.)</i>
-         * </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p> </li> <li> <p>
-         * <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code:
+         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
+         * <i>Cause: Object restore is already in progress. (This error does not apply to
+         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
+         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
+         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
          * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
          * Glacier expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
@@ -9283,11 +9324,12 @@ namespace Aws
         virtual Model::RestoreObjectOutcomeCallable RestoreObjectCallable(const Model::RestoreObjectRequest& request) const;
 
         /**
-         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This
-         * operation performs the following types of requests: </p> <ul> <li> <p>
-         * <code>select</code> - Perform a select query on an archived object</p> </li>
-         * <li> <p> <code>restore an archive</code> - Restore an archived object</p> </li>
-         * </ul> <p>To use this operation, you must have permissions to perform the
+         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This action
+         * is not supported by Amazon S3 on Outposts.</p> <p>This action performs the
+         * following types of requests: </p> <ul> <li> <p> <code>select</code> - Perform a
+         * select query on an archived object</p> </li> <li> <p> <code>restore an
+         * archive</code> - Restore an archived object</p> </li> </ul> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:RestoreObject</code> action. The bucket owner has this permission by
          * default and can grant this permission to others. For more information about
          * permissions, see <a
@@ -9425,12 +9467,11 @@ namespace Aws
          * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
          * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
          * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <p class="title"> <b/> </p> <ul> <li> <p> <i>Code:
-         * RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object restore is
-         * already in progress. (This error does not apply to SELECT type requests.)</i>
-         * </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p> </li> <li> <p>
-         * <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code:
+         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
+         * <i>Cause: Object restore is already in progress. (This error does not apply to
+         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
+         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
+         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
          * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
          * Glacier expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
@@ -9458,8 +9499,9 @@ namespace Aws
          * expression, you must also specify a data serialization format (JSON, CSV, or
          * Apache Parquet) of the object. Amazon S3 uses this format to parse object data
          * into records, and returns only records that match the specified SQL expression.
-         * You must also specify the data serialization format for the response.</p> <p>For
-         * more information about Amazon S3 Select, see <a
+         * You must also specify the data serialization format for the response.</p>
+         * <p>This action is not supported by Amazon S3 on Outposts.</p> <p>For more
+         * information about Amazon S3 Select, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p>For more information about using SQL with Amazon S3 Select,
@@ -9538,8 +9580,9 @@ namespace Aws
          * expression, you must also specify a data serialization format (JSON, CSV, or
          * Apache Parquet) of the object. Amazon S3 uses this format to parse object data
          * into records, and returns only records that match the specified SQL expression.
-         * You must also specify the data serialization format for the response.</p> <p>For
-         * more information about Amazon S3 Select, see <a
+         * You must also specify the data serialization format for the response.</p>
+         * <p>This action is not supported by Amazon S3 on Outposts.</p> <p>For more
+         * information about Amazon S3 Select, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p>For more information about using SQL with Amazon S3 Select,
@@ -9620,8 +9663,9 @@ namespace Aws
          * expression, you must also specify a data serialization format (JSON, CSV, or
          * Apache Parquet) of the object. Amazon S3 uses this format to parse object data
          * into records, and returns only records that match the specified SQL expression.
-         * You must also specify the data serialization format for the response.</p> <p>For
-         * more information about Amazon S3 Select, see <a
+         * You must also specify the data serialization format for the response.</p>
+         * <p>This action is not supported by Amazon S3 on Outposts.</p> <p>For more
+         * information about Amazon S3 Select, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p>For more information about using SQL with Amazon S3 Select,
@@ -9750,13 +9794,13 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i> HTTP Status Code: 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault
-         * Code Prefix: Client</i> </p> </li> </ul> </li> </ul> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i> HTTP Status Code:
+         * 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i>
+         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
@@ -9826,13 +9870,13 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i> HTTP Status Code: 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault
-         * Code Prefix: Client</i> </p> </li> </ul> </li> </ul> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i> HTTP Status Code:
+         * 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i>
+         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
@@ -9904,13 +9948,13 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i> HTTP Status Code: 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault
-         * Code Prefix: Client</i> </p> </li> </ul> </li> </ul> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i> HTTP Status Code:
+         * 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i>
+         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
@@ -9990,16 +10034,15 @@ namespace Aws
          * optionally specify a specific version of the source object to copy by adding the
          * <code>versionId</code> subresource as shown in the following example:</p> <p>
          * <code>x-amz-copy-source: /bucket/object?versionId=version id</code> </p> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i>HTTP Status Code: 404 Not Found</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidRequest</i> </p> </li>
-         * <li> <p> <i>Cause: The specified copy source is not supported as a byte-range
-         * copy source.</i> </p> </li> <li> <p> <i>HTTP Status Code: 400 Bad Request</i>
-         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
-         * <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i>HTTP Status Code: 404
+         * Not Found</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * InvalidRequest</i> </p> </li> <li> <p> <i>Cause: The specified copy source is
+         * not supported as a byte-range copy source.</i> </p> </li> <li> <p> <i>HTTP
+         * Status Code: 400 Bad Request</i> </p> </li> </ul> </li> </ul> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
@@ -10079,16 +10122,15 @@ namespace Aws
          * optionally specify a specific version of the source object to copy by adding the
          * <code>versionId</code> subresource as shown in the following example:</p> <p>
          * <code>x-amz-copy-source: /bucket/object?versionId=version id</code> </p> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i>HTTP Status Code: 404 Not Found</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidRequest</i> </p> </li>
-         * <li> <p> <i>Cause: The specified copy source is not supported as a byte-range
-         * copy source.</i> </p> </li> <li> <p> <i>HTTP Status Code: 400 Bad Request</i>
-         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
-         * <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i>HTTP Status Code: 404
+         * Not Found</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * InvalidRequest</i> </p> </li> <li> <p> <i>Cause: The specified copy source is
+         * not supported as a byte-range copy source.</i> </p> </li> <li> <p> <i>HTTP
+         * Status Code: 400 Bad Request</i> </p> </li> </ul> </li> </ul> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
@@ -10170,16 +10212,15 @@ namespace Aws
          * optionally specify a specific version of the source object to copy by adding the
          * <code>versionId</code> subresource as shown in the following example:</p> <p>
          * <code>x-amz-copy-source: /bucket/object?versionId=version id</code> </p> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <p class="title"> <b/> </p>
-         * <ul> <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The
-         * specified multipart upload does not exist. The upload ID might be invalid, or
-         * the multipart upload might have been aborted or completed.</i> </p> </li> <li>
-         * <p> <i>HTTP Status Code: 404 Not Found</i> </p> </li> </ul> </li> <li> <p
-         * class="title"> <b/> </p> <ul> <li> <p> <i>Code: InvalidRequest</i> </p> </li>
-         * <li> <p> <i>Cause: The specified copy source is not supported as a byte-range
-         * copy source.</i> </p> </li> <li> <p> <i>HTTP Status Code: 400 Bad Request</i>
-         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
-         * <ul> <li> <p> <a
+         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
+         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
+         * does not exist. The upload ID might be invalid, or the multipart upload might
+         * have been aborted or completed.</i> </p> </li> <li> <p> <i>HTTP Status Code: 404
+         * Not Found</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
+         * InvalidRequest</i> </p> </li> <li> <p> <i>Cause: The specified copy source is
+         * not supported as a byte-range copy source.</i> </p> </li> <li> <p> <i>HTTP
+         * Status Code: 400 Bad Request</i> </p> </li> </ul> </li> </ul> <p class="title">
+         * <b>Related Resources</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>

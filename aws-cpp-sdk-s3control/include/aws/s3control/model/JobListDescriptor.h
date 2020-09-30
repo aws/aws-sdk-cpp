@@ -290,37 +290,37 @@ namespace Model
 
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline const JobProgressSummary& GetProgressSummary() const{ return m_progressSummary; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline bool ProgressSummaryHasBeenSet() const { return m_progressSummaryHasBeenSet; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(const JobProgressSummary& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = value; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(JobProgressSummary&& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = std::move(value); }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobListDescriptor& WithProgressSummary(const JobProgressSummary& value) { SetProgressSummary(value); return *this;}
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobListDescriptor& WithProgressSummary(JobProgressSummary&& value) { SetProgressSummary(std::move(value)); return *this;}

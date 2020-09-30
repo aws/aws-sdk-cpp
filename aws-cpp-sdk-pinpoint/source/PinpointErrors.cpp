@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/pinpoint/PinpointErrors.h>
+#include <aws/pinpoint/model/ConflictException.h>
 #include <aws/pinpoint/model/NotFoundException.h>
 #include <aws/pinpoint/model/ForbiddenException.h>
 #include <aws/pinpoint/model/PayloadTooLargeException.h>
@@ -23,6 +24,12 @@ namespace Aws
 {
 namespace Pinpoint
 {
+template<> AWS_PINPOINT_API ConflictException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template<> AWS_PINPOINT_API NotFoundException PinpointError::GetModeledError()
 {
   assert(this->GetErrorType() == PinpointErrors::NOT_FOUND);
@@ -68,6 +75,7 @@ template<> AWS_PINPOINT_API MethodNotAllowedException PinpointError::GetModeledE
 namespace PinpointErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int PAYLOAD_TOO_LARGE_HASH = HashingUtils::HashString("PayloadTooLargeException");
@@ -81,7 +89,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::NOT_FOUND), false);
   }

@@ -36,3 +36,4 @@ void PostAgentProfileRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

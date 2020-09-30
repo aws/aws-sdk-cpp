@@ -40,6 +40,7 @@ void InvokeRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+
 Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

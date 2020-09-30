@@ -36,6 +36,7 @@ namespace Aws
         static const int LambdaProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("LambdaProvisionedConcurrencyUtilization");
         static const int CassandraReadCapacityUtilization_HASH = HashingUtils::HashString("CassandraReadCapacityUtilization");
         static const int CassandraWriteCapacityUtilization_HASH = HashingUtils::HashString("CassandraWriteCapacityUtilization");
+        static const int KafkaBrokerStorageUtilization_HASH = HashingUtils::HashString("KafkaBrokerStorageUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return MetricType::CassandraWriteCapacityUtilization;
           }
+          else if (hashCode == KafkaBrokerStorageUtilization_HASH)
+          {
+            return MetricType::KafkaBrokerStorageUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,6 +156,8 @@ namespace Aws
             return "CassandraReadCapacityUtilization";
           case MetricType::CassandraWriteCapacityUtilization:
             return "CassandraWriteCapacityUtilization";
+          case MetricType::KafkaBrokerStorageUtilization:
+            return "KafkaBrokerStorageUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

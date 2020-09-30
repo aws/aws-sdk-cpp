@@ -26,10 +26,15 @@
 #include <aws/mediaconnect/model/CreateFlowRequest.h>
 #include <aws/mediaconnect/model/DeleteFlowRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowRequest.h>
+#include <aws/mediaconnect/model/DescribeOfferingRequest.h>
+#include <aws/mediaconnect/model/DescribeReservationRequest.h>
 #include <aws/mediaconnect/model/GrantFlowEntitlementsRequest.h>
 #include <aws/mediaconnect/model/ListEntitlementsRequest.h>
 #include <aws/mediaconnect/model/ListFlowsRequest.h>
+#include <aws/mediaconnect/model/ListOfferingsRequest.h>
+#include <aws/mediaconnect/model/ListReservationsRequest.h>
 #include <aws/mediaconnect/model/ListTagsForResourceRequest.h>
+#include <aws/mediaconnect/model/PurchaseOfferingRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowVpcInterfaceRequest.h>
@@ -311,6 +316,72 @@ void MediaConnectClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& requ
   handler(this, request, DescribeFlow(request), context);
 }
 
+DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOfferingRequest& request) const
+{
+  if (!request.OfferingArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeOffering", "Required field: OfferingArn, is not set");
+    return DescribeOfferingOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OfferingArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/offerings/";
+  ss << request.GetOfferingArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOfferingOutcomeCallable MediaConnectClient::DescribeOfferingCallable(const DescribeOfferingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOffering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOfferingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::DescribeOfferingAsyncHelper(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOffering(request), context);
+}
+
+DescribeReservationOutcome MediaConnectClient::DescribeReservation(const DescribeReservationRequest& request) const
+{
+  if (!request.ReservationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeReservation", "Required field: ReservationArn, is not set");
+    return DescribeReservationOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReservationArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/reservations/";
+  ss << request.GetReservationArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReservationOutcomeCallable MediaConnectClient::DescribeReservationCallable(const DescribeReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservationAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::DescribeReservationAsyncHelper(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReservation(request), context);
+}
+
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
 {
   if (!request.FlowArnHasBeenSet())
@@ -399,6 +470,60 @@ void MediaConnectClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, c
   handler(this, request, ListFlows(request), context);
 }
 
+ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/offerings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOfferingsOutcomeCallable MediaConnectClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOfferings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOfferings(request), context);
+}
+
+ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/reservations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListReservationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReservationsOutcomeCallable MediaConnectClient::ListReservationsCallable(const ListReservationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReservationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReservations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReservationsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::ListReservationsAsyncHelper(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReservations(request), context);
+}
+
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -430,6 +555,39 @@ void MediaConnectClient::ListTagsForResourceAsync(const ListTagsForResourceReque
 void MediaConnectClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
+{
+  if (!request.OfferingArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PurchaseOffering", "Required field: OfferingArn, is not set");
+    return PurchaseOfferingOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OfferingArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/offerings/";
+  ss << request.GetOfferingArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PurchaseOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PurchaseOfferingOutcomeCallable MediaConnectClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PurchaseOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseOffering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseOfferingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PurchaseOffering(request), context);
 }
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const

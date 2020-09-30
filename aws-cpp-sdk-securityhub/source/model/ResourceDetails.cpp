@@ -36,7 +36,16 @@ ResourceDetails::ResourceDetails() :
     m_awsIamAccessKeyHasBeenSet(false),
     m_awsIamUserHasBeenSet(false),
     m_awsIamPolicyHasBeenSet(false),
+    m_awsApiGatewayV2StageHasBeenSet(false),
+    m_awsApiGatewayV2ApiHasBeenSet(false),
     m_awsDynamoDbTableHasBeenSet(false),
+    m_awsApiGatewayStageHasBeenSet(false),
+    m_awsApiGatewayRestApiHasBeenSet(false),
+    m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsCertificateManagerCertificateHasBeenSet(false),
+    m_awsRedshiftClusterHasBeenSet(false),
+    m_awsElbLoadBalancerHasBeenSet(false),
+    m_awsIamGroupHasBeenSet(false),
     m_awsIamRoleHasBeenSet(false),
     m_awsKmsKeyHasBeenSet(false),
     m_awsLambdaFunctionHasBeenSet(false),
@@ -71,7 +80,16 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsIamAccessKeyHasBeenSet(false),
     m_awsIamUserHasBeenSet(false),
     m_awsIamPolicyHasBeenSet(false),
+    m_awsApiGatewayV2StageHasBeenSet(false),
+    m_awsApiGatewayV2ApiHasBeenSet(false),
     m_awsDynamoDbTableHasBeenSet(false),
+    m_awsApiGatewayStageHasBeenSet(false),
+    m_awsApiGatewayRestApiHasBeenSet(false),
+    m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsCertificateManagerCertificateHasBeenSet(false),
+    m_awsRedshiftClusterHasBeenSet(false),
+    m_awsElbLoadBalancerHasBeenSet(false),
+    m_awsIamGroupHasBeenSet(false),
     m_awsIamRoleHasBeenSet(false),
     m_awsKmsKeyHasBeenSet(false),
     m_awsLambdaFunctionHasBeenSet(false),
@@ -210,11 +228,74 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsIamPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsApiGatewayV2Stage"))
+  {
+    m_awsApiGatewayV2Stage = jsonValue.GetObject("AwsApiGatewayV2Stage");
+
+    m_awsApiGatewayV2StageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsApiGatewayV2Api"))
+  {
+    m_awsApiGatewayV2Api = jsonValue.GetObject("AwsApiGatewayV2Api");
+
+    m_awsApiGatewayV2ApiHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsDynamoDbTable"))
   {
     m_awsDynamoDbTable = jsonValue.GetObject("AwsDynamoDbTable");
 
     m_awsDynamoDbTableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsApiGatewayStage"))
+  {
+    m_awsApiGatewayStage = jsonValue.GetObject("AwsApiGatewayStage");
+
+    m_awsApiGatewayStageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsApiGatewayRestApi"))
+  {
+    m_awsApiGatewayRestApi = jsonValue.GetObject("AwsApiGatewayRestApi");
+
+    m_awsApiGatewayRestApiHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsCloudTrailTrail"))
+  {
+    m_awsCloudTrailTrail = jsonValue.GetObject("AwsCloudTrailTrail");
+
+    m_awsCloudTrailTrailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsCertificateManagerCertificate"))
+  {
+    m_awsCertificateManagerCertificate = jsonValue.GetObject("AwsCertificateManagerCertificate");
+
+    m_awsCertificateManagerCertificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsRedshiftCluster"))
+  {
+    m_awsRedshiftCluster = jsonValue.GetObject("AwsRedshiftCluster");
+
+    m_awsRedshiftClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsElbLoadBalancer"))
+  {
+    m_awsElbLoadBalancer = jsonValue.GetObject("AwsElbLoadBalancer");
+
+    m_awsElbLoadBalancerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsIamGroup"))
+  {
+    m_awsIamGroup = jsonValue.GetObject("AwsIamGroup");
+
+    m_awsIamGroupHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsIamRole"))
@@ -420,9 +501,63 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsApiGatewayV2StageHasBeenSet)
+  {
+   payload.WithObject("AwsApiGatewayV2Stage", m_awsApiGatewayV2Stage.Jsonize());
+
+  }
+
+  if(m_awsApiGatewayV2ApiHasBeenSet)
+  {
+   payload.WithObject("AwsApiGatewayV2Api", m_awsApiGatewayV2Api.Jsonize());
+
+  }
+
   if(m_awsDynamoDbTableHasBeenSet)
   {
    payload.WithObject("AwsDynamoDbTable", m_awsDynamoDbTable.Jsonize());
+
+  }
+
+  if(m_awsApiGatewayStageHasBeenSet)
+  {
+   payload.WithObject("AwsApiGatewayStage", m_awsApiGatewayStage.Jsonize());
+
+  }
+
+  if(m_awsApiGatewayRestApiHasBeenSet)
+  {
+   payload.WithObject("AwsApiGatewayRestApi", m_awsApiGatewayRestApi.Jsonize());
+
+  }
+
+  if(m_awsCloudTrailTrailHasBeenSet)
+  {
+   payload.WithObject("AwsCloudTrailTrail", m_awsCloudTrailTrail.Jsonize());
+
+  }
+
+  if(m_awsCertificateManagerCertificateHasBeenSet)
+  {
+   payload.WithObject("AwsCertificateManagerCertificate", m_awsCertificateManagerCertificate.Jsonize());
+
+  }
+
+  if(m_awsRedshiftClusterHasBeenSet)
+  {
+   payload.WithObject("AwsRedshiftCluster", m_awsRedshiftCluster.Jsonize());
+
+  }
+
+  if(m_awsElbLoadBalancerHasBeenSet)
+  {
+   payload.WithObject("AwsElbLoadBalancer", m_awsElbLoadBalancer.Jsonize());
+
+  }
+
+  if(m_awsIamGroupHasBeenSet)
+  {
+   payload.WithObject("AwsIamGroup", m_awsIamGroup.Jsonize());
 
   }
 

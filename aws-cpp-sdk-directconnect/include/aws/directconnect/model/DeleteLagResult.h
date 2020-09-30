@@ -87,20 +87,20 @@ namespace Model
 
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline int GetNumberOfConnections() const{ return m_numberOfConnections; }
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline void SetNumberOfConnections(int value) { m_numberOfConnections = value; }
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline DeleteLagResult& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
 
@@ -357,20 +357,20 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline int GetMinimumLinks() const{ return m_minimumLinks; }
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline void SetMinimumLinks(int value) { m_minimumLinks = value; }
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline DeleteLagResult& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 

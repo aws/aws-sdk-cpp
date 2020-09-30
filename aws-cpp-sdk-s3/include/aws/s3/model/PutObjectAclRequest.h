@@ -453,42 +453,170 @@ namespace Model
 
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Key for which the PUT operation was initiated.</p>
+     * <p>Key for which the PUT operation was initiated.</p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
+     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

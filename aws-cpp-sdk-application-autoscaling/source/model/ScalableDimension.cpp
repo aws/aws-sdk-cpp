@@ -36,6 +36,7 @@ namespace Aws
         static const int lambda_function_ProvisionedConcurrency_HASH = HashingUtils::HashString("lambda:function:ProvisionedConcurrency");
         static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
         static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
+        static const int kafka_broker_storage_VolumeSize_HASH = HashingUtils::HashString("kafka:broker-storage:VolumeSize");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return ScalableDimension::cassandra_table_WriteCapacityUnits;
           }
+          else if (hashCode == kafka_broker_storage_VolumeSize_HASH)
+          {
+            return ScalableDimension::kafka_broker_storage_VolumeSize;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,6 +156,8 @@ namespace Aws
             return "cassandra:table:ReadCapacityUnits";
           case ScalableDimension::cassandra_table_WriteCapacityUnits:
             return "cassandra:table:WriteCapacityUnits";
+          case ScalableDimension::kafka_broker_storage_VolumeSize:
+            return "kafka:broker-storage:VolumeSize";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

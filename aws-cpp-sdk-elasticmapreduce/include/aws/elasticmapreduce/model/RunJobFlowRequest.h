@@ -19,6 +19,7 @@
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/Tag.h>
+#include <aws/elasticmapreduce/model/PlacementGroupConfig.h>
 #include <utility>
 
 namespace Aws
@@ -1637,6 +1638,31 @@ namespace Model
      */
     inline RunJobFlowRequest& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroupConfigs() const{ return m_placementGroupConfigs; }
+
+    
+    inline bool PlacementGroupConfigsHasBeenSet() const { return m_placementGroupConfigsHasBeenSet; }
+
+    
+    inline void SetPlacementGroupConfigs(const Aws::Vector<PlacementGroupConfig>& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs = value; }
+
+    
+    inline void SetPlacementGroupConfigs(Aws::Vector<PlacementGroupConfig>&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs = std::move(value); }
+
+    
+    inline RunJobFlowRequest& WithPlacementGroupConfigs(const Aws::Vector<PlacementGroupConfig>& value) { SetPlacementGroupConfigs(value); return *this;}
+
+    
+    inline RunJobFlowRequest& WithPlacementGroupConfigs(Aws::Vector<PlacementGroupConfig>&& value) { SetPlacementGroupConfigs(std::move(value)); return *this;}
+
+    
+    inline RunJobFlowRequest& AddPlacementGroupConfigs(const PlacementGroupConfig& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(value); return *this; }
+
+    
+    inline RunJobFlowRequest& AddPlacementGroupConfigs(PlacementGroupConfig&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1716,6 +1742,9 @@ namespace Model
 
     ManagedScalingPolicy m_managedScalingPolicy;
     bool m_managedScalingPolicyHasBeenSet;
+
+    Aws::Vector<PlacementGroupConfig> m_placementGroupConfigs;
+    bool m_placementGroupConfigsHasBeenSet;
   };
 
 } // namespace Model

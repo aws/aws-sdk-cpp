@@ -24,7 +24,10 @@ AwsIamAccessKeyDetails::AwsIamAccessKeyDetails() :
     m_createdAtHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_principalTypeHasBeenSet(false),
-    m_principalNameHasBeenSet(false)
+    m_principalNameHasBeenSet(false),
+    m_accountIdHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ AwsIamAccessKeyDetails::AwsIamAccessKeyDetails(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_principalTypeHasBeenSet(false),
-    m_principalNameHasBeenSet(false)
+    m_principalNameHasBeenSet(false),
+    m_accountIdHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +82,27 @@ AwsIamAccessKeyDetails& AwsIamAccessKeyDetails::operator =(JsonView jsonValue)
     m_principalNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessKeyId"))
+  {
+    m_accessKeyId = jsonValue.GetString("AccessKeyId");
+
+    m_accessKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SessionContext"))
+  {
+    m_sessionContext = jsonValue.GetObject("SessionContext");
+
+    m_sessionContextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +136,24 @@ JsonValue AwsIamAccessKeyDetails::Jsonize() const
   if(m_principalNameHasBeenSet)
   {
    payload.WithString("PrincipalName", m_principalName);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
+
+  if(m_accessKeyIdHasBeenSet)
+  {
+   payload.WithString("AccessKeyId", m_accessKeyId);
+
+  }
+
+  if(m_sessionContextHasBeenSet)
+  {
+   payload.WithObject("SessionContext", m_sessionContext.Jsonize());
 
   }
 

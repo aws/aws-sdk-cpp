@@ -23,12 +23,12 @@ namespace Model
 {
 
   /**
-   * <p>Contains the configuration parameters for a Set Object Legal Hold operation.
-   * Amazon S3 Batch Operations passes each value through to the underlying PUT
-   * Object Legal Hold API. For more information about the parameters for this
-   * operation, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT
-   * Object Legal Hold</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the configuration for an S3 Object Lock legal hold operation that an
+   * S3 Batch Operations job passes each object through to the underlying
+   * <code>PutObjectLegalHold</code> API. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using
+   * S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon Simple
+   * Storage Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectLegalHoldOperation">AWS
    * API Reference</a></p>
    */
@@ -43,38 +43,38 @@ namespace Model
 
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline const S3ObjectLockLegalHold& GetLegalHold() const{ return m_legalHold; }
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline bool LegalHoldHasBeenSet() const { return m_legalHoldHasBeenSet; }
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline void SetLegalHold(const S3ObjectLockLegalHold& value) { m_legalHoldHasBeenSet = true; m_legalHold = value; }
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline void SetLegalHold(S3ObjectLockLegalHold&& value) { m_legalHoldHasBeenSet = true; m_legalHold = std::move(value); }
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline S3SetObjectLegalHoldOperation& WithLegalHold(const S3ObjectLockLegalHold& value) { SetLegalHold(value); return *this;}
 
     /**
-     * <p>The Legal Hold contains the status to be applied to all objects in the Batch
-     * Operations job.</p>
+     * <p>Contains the Object Lock legal hold status to be applied to all objects in
+     * the Batch Operations job.</p>
      */
     inline S3SetObjectLegalHoldOperation& WithLegalHold(S3ObjectLockLegalHold&& value) { SetLegalHold(std::move(value)); return *this;}
 

@@ -80,6 +80,7 @@ void PutObjectRequest::AddQueryStringParameters(URI& uri) const
         }
     }
 }
+
 Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

@@ -24,6 +24,7 @@ Resource::Resource() :
     m_partition(Partition::NOT_SET),
     m_partitionHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ Resource::Resource(JsonView jsonValue) :
     m_partition(Partition::NOT_SET),
     m_partitionHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
@@ -69,6 +71,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_region = jsonValue.GetString("Region");
 
     m_regionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceRole"))
+  {
+    m_resourceRole = jsonValue.GetString("ResourceRole");
+
+    m_resourceRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -115,6 +124,12 @@ JsonValue Resource::Jsonize() const
   if(m_regionHasBeenSet)
   {
    payload.WithString("Region", m_region);
+
+  }
+
+  if(m_resourceRoleHasBeenSet)
+  {
+   payload.WithString("ResourceRole", m_resourceRole);
 
   }
 

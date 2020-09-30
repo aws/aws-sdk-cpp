@@ -23,7 +23,8 @@ Ami::Ami() :
     m_imageHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Ami::Ami(JsonView jsonValue) :
     m_imageHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ Ami& Ami::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accountId"))
+  {
+    m_accountId = jsonValue.GetString("accountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue Ami::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithObject("state", m_state.Jsonize());
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("accountId", m_accountId);
 
   }
 

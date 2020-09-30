@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A managed policy that is attached to an IAM user.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A managed policy that is attached to an IAM principal.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAttachedManagedPolicy">AWS
    * API Reference</a></p>
    */

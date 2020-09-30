@@ -22,7 +22,16 @@
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
 #include <aws/securityhub/model/AwsIamUserDetails.h>
 #include <aws/securityhub/model/AwsIamPolicyDetails.h>
+#include <aws/securityhub/model/AwsApiGatewayV2StageDetails.h>
+#include <aws/securityhub/model/AwsApiGatewayV2ApiDetails.h>
 #include <aws/securityhub/model/AwsDynamoDbTableDetails.h>
+#include <aws/securityhub/model/AwsApiGatewayStageDetails.h>
+#include <aws/securityhub/model/AwsApiGatewayRestApiDetails.h>
+#include <aws/securityhub/model/AwsCloudTrailTrailDetails.h>
+#include <aws/securityhub/model/AwsCertificateManagerCertificateDetails.h>
+#include <aws/securityhub/model/AwsRedshiftClusterDetails.h>
+#include <aws/securityhub/model/AwsElbLoadBalancerDetails.h>
+#include <aws/securityhub/model/AwsIamGroupDetails.h>
 #include <aws/securityhub/model/AwsIamRoleDetails.h>
 #include <aws/securityhub/model/AwsKmsKeyDetails.h>
 #include <aws/securityhub/model/AwsLambdaFunctionDetails.h>
@@ -604,6 +613,68 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const AwsApiGatewayV2StageDetails& GetAwsApiGatewayV2Stage() const{ return m_awsApiGatewayV2Stage; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsApiGatewayV2StageHasBeenSet() const { return m_awsApiGatewayV2StageHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayV2Stage(const AwsApiGatewayV2StageDetails& value) { m_awsApiGatewayV2StageHasBeenSet = true; m_awsApiGatewayV2Stage = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails&& value) { m_awsApiGatewayV2StageHasBeenSet = true; m_awsApiGatewayV2Stage = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayV2Stage(const AwsApiGatewayV2StageDetails& value) { SetAwsApiGatewayV2Stage(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails&& value) { SetAwsApiGatewayV2Stage(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsApiGatewayV2ApiDetails& GetAwsApiGatewayV2Api() const{ return m_awsApiGatewayV2Api; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsApiGatewayV2ApiHasBeenSet() const { return m_awsApiGatewayV2ApiHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayV2Api(const AwsApiGatewayV2ApiDetails& value) { m_awsApiGatewayV2ApiHasBeenSet = true; m_awsApiGatewayV2Api = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails&& value) { m_awsApiGatewayV2ApiHasBeenSet = true; m_awsApiGatewayV2Api = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayV2Api(const AwsApiGatewayV2ApiDetails& value) { SetAwsApiGatewayV2Api(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails&& value) { SetAwsApiGatewayV2Api(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a DynamoDB table.</p>
      */
     inline const AwsDynamoDbTableDetails& GetAwsDynamoDbTable() const{ return m_awsDynamoDbTable; }
@@ -632,6 +703,223 @@ namespace Model
      * <p>Details about a DynamoDB table.</p>
      */
     inline ResourceDetails& WithAwsDynamoDbTable(AwsDynamoDbTableDetails&& value) { SetAwsDynamoDbTable(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsApiGatewayStageDetails& GetAwsApiGatewayStage() const{ return m_awsApiGatewayStage; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsApiGatewayStageHasBeenSet() const { return m_awsApiGatewayStageHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayStage(const AwsApiGatewayStageDetails& value) { m_awsApiGatewayStageHasBeenSet = true; m_awsApiGatewayStage = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayStage(AwsApiGatewayStageDetails&& value) { m_awsApiGatewayStageHasBeenSet = true; m_awsApiGatewayStage = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayStage(const AwsApiGatewayStageDetails& value) { SetAwsApiGatewayStage(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayStage(AwsApiGatewayStageDetails&& value) { SetAwsApiGatewayStage(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsApiGatewayRestApiDetails& GetAwsApiGatewayRestApi() const{ return m_awsApiGatewayRestApi; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsApiGatewayRestApiHasBeenSet() const { return m_awsApiGatewayRestApiHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayRestApi(const AwsApiGatewayRestApiDetails& value) { m_awsApiGatewayRestApiHasBeenSet = true; m_awsApiGatewayRestApi = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails&& value) { m_awsApiGatewayRestApiHasBeenSet = true; m_awsApiGatewayRestApi = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayRestApi(const AwsApiGatewayRestApiDetails& value) { SetAwsApiGatewayRestApi(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails&& value) { SetAwsApiGatewayRestApi(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsCloudTrailTrailDetails& GetAwsCloudTrailTrail() const{ return m_awsCloudTrailTrail; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsCloudTrailTrailHasBeenSet() const { return m_awsCloudTrailTrailHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsCloudTrailTrail(const AwsCloudTrailTrailDetails& value) { m_awsCloudTrailTrailHasBeenSet = true; m_awsCloudTrailTrail = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsCloudTrailTrail(AwsCloudTrailTrailDetails&& value) { m_awsCloudTrailTrailHasBeenSet = true; m_awsCloudTrailTrail = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsCloudTrailTrail(const AwsCloudTrailTrailDetails& value) { SetAwsCloudTrailTrail(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsCloudTrailTrail(AwsCloudTrailTrailDetails&& value) { SetAwsCloudTrailTrail(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsCertificateManagerCertificateDetails& GetAwsCertificateManagerCertificate() const{ return m_awsCertificateManagerCertificate; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsCertificateManagerCertificateHasBeenSet() const { return m_awsCertificateManagerCertificateHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { SetAwsCertificateManagerCertificate(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { SetAwsCertificateManagerCertificate(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsRedshiftClusterDetails& GetAwsRedshiftCluster() const{ return m_awsRedshiftCluster; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsRedshiftClusterHasBeenSet() const { return m_awsRedshiftClusterHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsRedshiftCluster(const AwsRedshiftClusterDetails& value) { m_awsRedshiftClusterHasBeenSet = true; m_awsRedshiftCluster = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsRedshiftCluster(AwsRedshiftClusterDetails&& value) { m_awsRedshiftClusterHasBeenSet = true; m_awsRedshiftCluster = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsRedshiftCluster(const AwsRedshiftClusterDetails& value) { SetAwsRedshiftCluster(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsRedshiftCluster(AwsRedshiftClusterDetails&& value) { SetAwsRedshiftCluster(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsElbLoadBalancerDetails& GetAwsElbLoadBalancer() const{ return m_awsElbLoadBalancer; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsElbLoadBalancerHasBeenSet() const { return m_awsElbLoadBalancerHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { SetAwsElbLoadBalancer(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { SetAwsElbLoadBalancer(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const AwsIamGroupDetails& GetAwsIamGroup() const{ return m_awsIamGroup; }
+
+    /**
+     * <p/>
+     */
+    inline bool AwsIamGroupHasBeenSet() const { return m_awsIamGroupHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsIamGroup(const AwsIamGroupDetails& value) { m_awsIamGroupHasBeenSet = true; m_awsIamGroup = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAwsIamGroup(AwsIamGroupDetails&& value) { m_awsIamGroupHasBeenSet = true; m_awsIamGroup = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsIamGroup(const AwsIamGroupDetails& value) { SetAwsIamGroup(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ResourceDetails& WithAwsIamGroup(AwsIamGroupDetails&& value) { SetAwsIamGroup(std::move(value)); return *this;}
 
 
     /**
@@ -1215,8 +1503,35 @@ namespace Model
     AwsIamPolicyDetails m_awsIamPolicy;
     bool m_awsIamPolicyHasBeenSet;
 
+    AwsApiGatewayV2StageDetails m_awsApiGatewayV2Stage;
+    bool m_awsApiGatewayV2StageHasBeenSet;
+
+    AwsApiGatewayV2ApiDetails m_awsApiGatewayV2Api;
+    bool m_awsApiGatewayV2ApiHasBeenSet;
+
     AwsDynamoDbTableDetails m_awsDynamoDbTable;
     bool m_awsDynamoDbTableHasBeenSet;
+
+    AwsApiGatewayStageDetails m_awsApiGatewayStage;
+    bool m_awsApiGatewayStageHasBeenSet;
+
+    AwsApiGatewayRestApiDetails m_awsApiGatewayRestApi;
+    bool m_awsApiGatewayRestApiHasBeenSet;
+
+    AwsCloudTrailTrailDetails m_awsCloudTrailTrail;
+    bool m_awsCloudTrailTrailHasBeenSet;
+
+    AwsCertificateManagerCertificateDetails m_awsCertificateManagerCertificate;
+    bool m_awsCertificateManagerCertificateHasBeenSet;
+
+    AwsRedshiftClusterDetails m_awsRedshiftCluster;
+    bool m_awsRedshiftClusterHasBeenSet;
+
+    AwsElbLoadBalancerDetails m_awsElbLoadBalancer;
+    bool m_awsElbLoadBalancerHasBeenSet;
+
+    AwsIamGroupDetails m_awsIamGroup;
+    bool m_awsIamGroupHasBeenSet;
 
     AwsIamRoleDetails m_awsIamRole;
     bool m_awsIamRoleHasBeenSet;

@@ -48,6 +48,7 @@ enum class PinpointErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,
   METHOD_NOT_ALLOWED,

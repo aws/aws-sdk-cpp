@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginS3OriginConfig.h>
 #include <utility>
 
 namespace Aws
@@ -177,6 +178,43 @@ namespace Model
      */
     inline AwsCloudFrontDistributionOriginItem& WithOriginPath(const char* value) { SetOriginPath(value); return *this;}
 
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline const AwsCloudFrontDistributionOriginS3OriginConfig& GetS3OriginConfig() const{ return m_s3OriginConfig; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline bool S3OriginConfigHasBeenSet() const { return m_s3OriginConfigHasBeenSet; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline void SetS3OriginConfig(const AwsCloudFrontDistributionOriginS3OriginConfig& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = value; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline void SetS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig&& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = std::move(value); }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithS3OriginConfig(const AwsCloudFrontDistributionOriginS3OriginConfig& value) { SetS3OriginConfig(value); return *this;}
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -187,6 +225,9 @@ namespace Model
 
     Aws::String m_originPath;
     bool m_originPathHasBeenSet;
+
+    AwsCloudFrontDistributionOriginS3OriginConfig m_s3OriginConfig;
+    bool m_s3OriginConfigHasBeenSet;
   };
 
 } // namespace Model

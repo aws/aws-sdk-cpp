@@ -43,42 +43,42 @@ namespace Model
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline ListAuditTasksRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The beginning of the time period. Audit information is retained for a limited
-     * time (180 days). Requesting a start time prior to what is retained results in an
+     * time (90 days). Requesting a start time prior to what is retained results in an
      * "InvalidRequestException".</p>
      */
     inline ListAuditTasksRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}

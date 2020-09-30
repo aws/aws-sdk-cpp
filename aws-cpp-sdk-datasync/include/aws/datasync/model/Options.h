@@ -835,50 +835,68 @@ namespace Model
 
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline const TransferMode& GetTransferMode() const{ return m_transferMode; }
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline bool TransferModeHasBeenSet() const { return m_transferModeHasBeenSet; }
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline void SetTransferMode(const TransferMode& value) { m_transferModeHasBeenSet = true; m_transferMode = value; }
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline void SetTransferMode(TransferMode&& value) { m_transferModeHasBeenSet = true; m_transferMode = std::move(value); }
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline Options& WithTransferMode(const TransferMode& value) { SetTransferMode(value); return *this;}
 
     /**
-     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
-     * "incremental" or "delta sync", it compares file modification time between source
-     * and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.</p>
+     * <p>A value that determines whether DataSync transfers only the data and metadata
+     * that differ between the source and the destination location, or whether DataSync
+     * transfers all the content from the source, without comparing to the destination
+     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
+     * different content from the source location to the destination location.</p>
+     * <p>ALL: DataSync copies all source location content to the destination, without
+     * comparing to existing content on the destination.</p>
      */
     inline Options& WithTransferMode(TransferMode&& value) { SetTransferMode(std::move(value)); return *this;}
 

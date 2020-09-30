@@ -45,3 +45,4 @@ void ImportDocumentationPartsRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

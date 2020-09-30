@@ -220,6 +220,47 @@ namespace Model
     
     inline Ami& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline Ami& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline Ami& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p> The account ID of the owner of the AMI. </p>
+     */
+    inline Ami& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_region;
@@ -236,6 +277,9 @@ namespace Model
 
     ImageState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
   };
 
 } // namespace Model

@@ -293,12 +293,16 @@ namespace Model
    * <code>us-west-2</code> Region. Security Hub must be enabled for the member
    * account in the same Region that the invitation was sent from.</p> <p>The
    * following throttling limits apply to using Security Hub API operations.</p> <ul>
+   * <li> <p> <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of
+   * 1 request per second, <code>BurstLimit</code> of 1 request per second.</p> </li>
    * <li> <p> <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3
    * requests per second. <code>BurstLimit</code> of 6 requests per second.</p> </li>
    * <li> <p> <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1
    * request per second. <code>BurstLimit</code> of 5 requests per second.</p> </li>
-   * <li> <p>All other operations - <code>RateLimit</code> of 10 requests per second.
-   * <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
+   * <li> <p> <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code>
+   * of 1 request per second, <code>BurstLimit</code> of 5 requests per second.</p>
+   * </li> <li> <p>All other operations - <code>RateLimit</code> of 10 requests per
+   * second. <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
    */
   class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient
   {
@@ -508,7 +512,7 @@ namespace Model
          * Master accounts can update findings for their account and their member accounts.
          * Member accounts can update findings for their account.</p> <p>Updates from
          * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
          * <code>BatchUpdateFindings</code> to update the following finding fields and
          * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
@@ -516,8 +520,12 @@ namespace Model
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
          * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
-         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>You can configure IAM policies to restrict access to fields and
+         * field values. For example, you might not want member accounts to be able to
+         * suppress findings or change the finding severity. See <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
          */
@@ -529,7 +537,7 @@ namespace Model
          * Master accounts can update findings for their account and their member accounts.
          * Member accounts can update findings for their account.</p> <p>Updates from
          * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
          * <code>BatchUpdateFindings</code> to update the following finding fields and
          * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
@@ -537,8 +545,12 @@ namespace Model
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
          * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
-         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>You can configure IAM policies to restrict access to fields and
+         * field values. For example, you might not want member accounts to be able to
+         * suppress findings or change the finding severity. See <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
          *
@@ -552,7 +564,7 @@ namespace Model
          * Master accounts can update findings for their account and their member accounts.
          * Member accounts can update findings for their account.</p> <p>Updates from
          * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
          * <code>BatchUpdateFindings</code> to update the following finding fields and
          * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
@@ -560,8 +572,12 @@ namespace Model
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
          * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
-         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>You can configure IAM policies to restrict access to fields and
+         * field values. For example, you might not want member accounts to be able to
+         * suppress findings or change the finding severity. See <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
          *

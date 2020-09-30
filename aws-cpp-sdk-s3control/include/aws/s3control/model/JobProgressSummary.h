@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the total number of tasks that the specified job has executed, the
+   * <p>Describes the total number of tasks that the specified job has started, the
    * number of tasks that succeeded, and the number of tasks that
    * failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobProgressSummary">AWS

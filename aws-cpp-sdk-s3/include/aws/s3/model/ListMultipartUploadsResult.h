@@ -37,37 +37,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 

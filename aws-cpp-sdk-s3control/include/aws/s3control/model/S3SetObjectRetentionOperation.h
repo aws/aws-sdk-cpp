@@ -23,12 +23,12 @@ namespace Model
 {
 
   /**
-   * <p>Contains the configuration parameters for a Set Object Retention operation.
-   * Amazon S3 Batch Operations passes each value through to the underlying PUT
-   * Object Retention API. For more information about the parameters for this
-   * operation, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT
-   * Object Retention</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the configuration parameters for the Object Lock retention action
+   * for an S3 Batch Operations job. Batch Operations passes each value through to
+   * the underlying <code>PutObjectRetention</code> API. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+   * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+   * Storage Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectRetentionOperation">AWS
    * API Reference</a></p>
    */
@@ -43,63 +43,81 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the operation should be applied to objects in the Batch
-     * Operations job even if they have Governance-type Object Lock in place.</p>
+     * <p>Indicates if the action should be applied to objects in the Batch Operations
+     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
-     * <p>Indicates if the operation should be applied to objects in the Batch
-     * Operations job even if they have Governance-type Object Lock in place.</p>
+     * <p>Indicates if the action should be applied to objects in the Batch Operations
+     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
-     * <p>Indicates if the operation should be applied to objects in the Batch
-     * Operations job even if they have Governance-type Object Lock in place.</p>
+     * <p>Indicates if the action should be applied to objects in the Batch Operations
+     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
-     * <p>Indicates if the operation should be applied to objects in the Batch
-     * Operations job even if they have Governance-type Object Lock in place.</p>
+     * <p>Indicates if the action should be applied to objects in the Batch Operations
+     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
     inline S3SetObjectRetentionOperation& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline const S3Retention& GetRetention() const{ return m_retention; }
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline void SetRetention(const S3Retention& value) { m_retentionHasBeenSet = true; m_retention = value; }
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline void SetRetention(S3Retention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline S3SetObjectRetentionOperation& WithRetention(const S3Retention& value) { SetRetention(value); return *this;}
 
     /**
-     * <p>Amazon S3 object lock Retention contains the retention mode to be applied to
-     * all objects in the Batch Operations job.</p>
+     * <p>Contains the Object Lock retention mode to be applied to all objects in the
+     * Batch Operations job. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline S3SetObjectRetentionOperation& WithRetention(S3Retention&& value) { SetRetention(std::move(value)); return *this;}
 

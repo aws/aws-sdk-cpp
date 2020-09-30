@@ -21,7 +21,8 @@ namespace Model
     PENDING_NEXT_RUN,
     COMPLETED,
     PAUSED,
-    DELETED
+    DELETED,
+    INVALID
   };
 
 namespace CampaignStatusMapper

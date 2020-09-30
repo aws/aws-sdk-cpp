@@ -50,3 +50,4 @@ void CreateProjectRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

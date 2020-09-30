@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>For a campaign, specifies limits on the messages that the campaign can send.
-   * For an application, specifies the default limits for messages that campaigns and
-   * journeys in the application can send.</p><p><h3>See Also:</h3>   <a
+   * For an application, specifies the default limits for messages that campaigns in
+   * the application can send.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
@@ -102,32 +102,32 @@ namespace Model
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns and journeys can send each second. The minimum value is 50. The
-     * maximum value is 20,000.</p>
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
 
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns and journeys can send each second. The minimum value is 50. The
-     * maximum value is 20,000.</p>
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
 
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns and journeys can send each second. The minimum value is 50. The
-     * maximum value is 20,000.</p>
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns and journeys can send each second. The minimum value is 50. The
-     * maximum value is 20,000.</p>
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
 

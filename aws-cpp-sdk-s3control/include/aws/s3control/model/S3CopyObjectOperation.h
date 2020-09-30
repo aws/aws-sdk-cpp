@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the configuration parameters for a PUT Copy object operation. Amazon
-   * S3 Batch Operations passes each value through to the underlying PUT Copy object
+   * <p>Contains the configuration parameters for a PUT Copy object operation. S3
+   * Batch Operations passes each value through to the underlying PUT Copy object
    * API. For more information about the parameters for this operation, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
    * Object - Copy</a>.</p><p><h3>See Also:</h3>   <a
@@ -505,111 +505,111 @@ namespace Model
 
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline const S3ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline void SetObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline void SetObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
 
     /**
-     * <p>The Legal Hold status to be applied to all objects in the Batch Operations
+     * <p>The legal hold status to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline const S3ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline void SetObjectLockMode(const S3ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline void SetObjectLockMode(S3ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockMode(const S3ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The Retention mode to be applied to all objects in the Batch Operations
+     * <p>The retention mode to be applied to all objects in the Batch Operations
      * job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockMode(S3ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date when the applied Object Retention configuration will expire on all
+     * <p>The date when the applied object retention configuration expires on all
      * objects in the Batch Operations job.</p>
      */
     inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}

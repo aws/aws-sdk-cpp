@@ -33,19 +33,29 @@ namespace Model
     UpdateFlowEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline const Entitlement& GetEntitlement() const{ return m_entitlement; }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline void SetEntitlement(const Entitlement& value) { m_entitlement = value; }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline void SetEntitlement(Entitlement&& value) { m_entitlement = std::move(value); }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline UpdateFlowEntitlementResult& WithEntitlement(const Entitlement& value) { SetEntitlement(value); return *this;}
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline UpdateFlowEntitlementResult& WithEntitlement(Entitlement&& value) { SetEntitlement(std::move(value)); return *this;}
 
 

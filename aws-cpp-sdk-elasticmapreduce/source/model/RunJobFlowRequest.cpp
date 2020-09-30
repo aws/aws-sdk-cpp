@@ -43,7 +43,8 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_kerberosAttributesHasBeenSet(false),
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
-    m_managedScalingPolicyHasBeenSet(false)
+    m_managedScalingPolicyHasBeenSet(false),
+    m_placementGroupConfigsHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,17 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_managedScalingPolicyHasBeenSet)
   {
    payload.WithObject("ManagedScalingPolicy", m_managedScalingPolicy.Jsonize());
+
+  }
+
+  if(m_placementGroupConfigsHasBeenSet)
+  {
+   Array<JsonValue> placementGroupConfigsJsonList(m_placementGroupConfigs.size());
+   for(unsigned placementGroupConfigsIndex = 0; placementGroupConfigsIndex < placementGroupConfigsJsonList.GetLength(); ++placementGroupConfigsIndex)
+   {
+     placementGroupConfigsJsonList[placementGroupConfigsIndex].AsObject(m_placementGroupConfigs[placementGroupConfigsIndex].Jsonize());
+   }
+   payload.WithArray("PlacementGroupConfigs", std::move(placementGroupConfigsJsonList));
 
   }
 

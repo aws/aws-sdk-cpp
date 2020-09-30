@@ -132,42 +132,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 

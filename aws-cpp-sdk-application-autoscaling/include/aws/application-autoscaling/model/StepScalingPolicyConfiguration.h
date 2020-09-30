@@ -206,125 +206,133 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, to wait for a previous scaling activity to
-     * take effect.</p> <p>With scale-out policies, the intention is to continuously
+     * take effect. </p> <p>With scale-out policies, the intention is to continuously
      * (but not excessively) scale out. After Application Auto Scaling successfully
      * scales out using a step scaling policy, it starts to calculate the cooldown
-     * time. While the cooldown period is in effect, capacity added by the initiating
-     * scale-out activity is calculated as part of the desired capacity for the next
-     * scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period
-     * but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     * considered part of the current capacity. Therefore, only 1 is added to the
-     * capacity.</p> <p>With scale-in policies, the intention is to scale in
-     * conservatively to protect your application’s availability, so scale-in
-     * activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the cooldown period after a
-     * scale-in activity, Application Auto Scaling scales out the target immediately.
-     * In this case, the cooldown period for the scale-in activity stops and doesn't
-     * complete.</p> <p>Application Auto Scaling provides a default value of 300 for
-     * the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li>
-     * <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> </ul>
+     * time. The scaling policy won't increase the desired capacity again unless either
+     * a larger scale out is triggered or the cooldown period ends. While the cooldown
+     * period is in effect, capacity added by the initiating scale-out activity is
+     * calculated as part of the desired capacity for the next scale-out activity. For
+     * example, when an alarm triggers a step scaling policy to increase the capacity
+     * by 2, the scaling activity completes successfully, and a cooldown period starts.
+     * If the alarm triggers again during the cooldown period but at a more aggressive
+     * step adjustment of 3, the previous increase of 2 is considered part of the
+     * current capacity. Therefore, only 1 is added to the capacity.</p> <p>With
+     * scale-in policies, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the
+     * cooldown period has expired. However, if another alarm triggers a scale-out
+     * activity during the cooldown period after a scale-in activity, Application Auto
+     * Scaling scales out the target immediately. In this case, the cooldown period for
+     * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
+     * Scaling provides a default value of 300 for the following scalable targets:</p>
+     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
+     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
+     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
+     * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Amazon MSK cluster storage</p> </li> </ul>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
      * <p>The amount of time, in seconds, to wait for a previous scaling activity to
-     * take effect.</p> <p>With scale-out policies, the intention is to continuously
+     * take effect. </p> <p>With scale-out policies, the intention is to continuously
      * (but not excessively) scale out. After Application Auto Scaling successfully
      * scales out using a step scaling policy, it starts to calculate the cooldown
-     * time. While the cooldown period is in effect, capacity added by the initiating
-     * scale-out activity is calculated as part of the desired capacity for the next
-     * scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period
-     * but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     * considered part of the current capacity. Therefore, only 1 is added to the
-     * capacity.</p> <p>With scale-in policies, the intention is to scale in
-     * conservatively to protect your application’s availability, so scale-in
-     * activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the cooldown period after a
-     * scale-in activity, Application Auto Scaling scales out the target immediately.
-     * In this case, the cooldown period for the scale-in activity stops and doesn't
-     * complete.</p> <p>Application Auto Scaling provides a default value of 300 for
-     * the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li>
-     * <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> </ul>
+     * time. The scaling policy won't increase the desired capacity again unless either
+     * a larger scale out is triggered or the cooldown period ends. While the cooldown
+     * period is in effect, capacity added by the initiating scale-out activity is
+     * calculated as part of the desired capacity for the next scale-out activity. For
+     * example, when an alarm triggers a step scaling policy to increase the capacity
+     * by 2, the scaling activity completes successfully, and a cooldown period starts.
+     * If the alarm triggers again during the cooldown period but at a more aggressive
+     * step adjustment of 3, the previous increase of 2 is considered part of the
+     * current capacity. Therefore, only 1 is added to the capacity.</p> <p>With
+     * scale-in policies, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the
+     * cooldown period has expired. However, if another alarm triggers a scale-out
+     * activity during the cooldown period after a scale-in activity, Application Auto
+     * Scaling scales out the target immediately. In this case, the cooldown period for
+     * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
+     * Scaling provides a default value of 300 for the following scalable targets:</p>
+     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
+     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
+     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
+     * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Amazon MSK cluster storage</p> </li> </ul>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, to wait for a previous scaling activity to
-     * take effect.</p> <p>With scale-out policies, the intention is to continuously
+     * take effect. </p> <p>With scale-out policies, the intention is to continuously
      * (but not excessively) scale out. After Application Auto Scaling successfully
      * scales out using a step scaling policy, it starts to calculate the cooldown
-     * time. While the cooldown period is in effect, capacity added by the initiating
-     * scale-out activity is calculated as part of the desired capacity for the next
-     * scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period
-     * but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     * considered part of the current capacity. Therefore, only 1 is added to the
-     * capacity.</p> <p>With scale-in policies, the intention is to scale in
-     * conservatively to protect your application’s availability, so scale-in
-     * activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the cooldown period after a
-     * scale-in activity, Application Auto Scaling scales out the target immediately.
-     * In this case, the cooldown period for the scale-in activity stops and doesn't
-     * complete.</p> <p>Application Auto Scaling provides a default value of 300 for
-     * the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li>
-     * <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> </ul>
+     * time. The scaling policy won't increase the desired capacity again unless either
+     * a larger scale out is triggered or the cooldown period ends. While the cooldown
+     * period is in effect, capacity added by the initiating scale-out activity is
+     * calculated as part of the desired capacity for the next scale-out activity. For
+     * example, when an alarm triggers a step scaling policy to increase the capacity
+     * by 2, the scaling activity completes successfully, and a cooldown period starts.
+     * If the alarm triggers again during the cooldown period but at a more aggressive
+     * step adjustment of 3, the previous increase of 2 is considered part of the
+     * current capacity. Therefore, only 1 is added to the capacity.</p> <p>With
+     * scale-in policies, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the
+     * cooldown period has expired. However, if another alarm triggers a scale-out
+     * activity during the cooldown period after a scale-in activity, Application Auto
+     * Scaling scales out the target immediately. In this case, the cooldown period for
+     * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
+     * Scaling provides a default value of 300 for the following scalable targets:</p>
+     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
+     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
+     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
+     * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Amazon MSK cluster storage</p> </li> </ul>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, to wait for a previous scaling activity to
-     * take effect.</p> <p>With scale-out policies, the intention is to continuously
+     * take effect. </p> <p>With scale-out policies, the intention is to continuously
      * (but not excessively) scale out. After Application Auto Scaling successfully
      * scales out using a step scaling policy, it starts to calculate the cooldown
-     * time. While the cooldown period is in effect, capacity added by the initiating
-     * scale-out activity is calculated as part of the desired capacity for the next
-     * scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period
-     * but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     * considered part of the current capacity. Therefore, only 1 is added to the
-     * capacity.</p> <p>With scale-in policies, the intention is to scale in
-     * conservatively to protect your application’s availability, so scale-in
-     * activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the cooldown period after a
-     * scale-in activity, Application Auto Scaling scales out the target immediately.
-     * In this case, the cooldown period for the scale-in activity stops and doesn't
-     * complete.</p> <p>Application Auto Scaling provides a default value of 300 for
-     * the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li>
-     * <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> </ul>
+     * time. The scaling policy won't increase the desired capacity again unless either
+     * a larger scale out is triggered or the cooldown period ends. While the cooldown
+     * period is in effect, capacity added by the initiating scale-out activity is
+     * calculated as part of the desired capacity for the next scale-out activity. For
+     * example, when an alarm triggers a step scaling policy to increase the capacity
+     * by 2, the scaling activity completes successfully, and a cooldown period starts.
+     * If the alarm triggers again during the cooldown period but at a more aggressive
+     * step adjustment of 3, the previous increase of 2 is considered part of the
+     * current capacity. Therefore, only 1 is added to the capacity.</p> <p>With
+     * scale-in policies, the intention is to scale in conservatively to protect your
+     * application’s availability, so scale-in activities are blocked until the
+     * cooldown period has expired. However, if another alarm triggers a scale-out
+     * activity during the cooldown period after a scale-in activity, Application Auto
+     * Scaling scales out the target immediately. In this case, the cooldown period for
+     * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
+     * Scaling provides a default value of 300 for the following scalable targets:</p>
+     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
+     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
+     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
+     * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
+     * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Amazon MSK cluster storage</p> </li> </ul>
      */
     inline StepScalingPolicyConfiguration& WithCooldown(int value) { SetCooldown(value); return *this;}
 

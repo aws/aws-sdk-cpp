@@ -31,7 +31,8 @@ namespace Model
     comprehend_entity_recognizer_endpoint_DesiredInferenceUnits,
     lambda_function_ProvisionedConcurrency,
     cassandra_table_ReadCapacityUnits,
-    cassandra_table_WriteCapacityUnits
+    cassandra_table_WriteCapacityUnits,
+    kafka_broker_storage_VolumeSize
   };
 
 namespace ScalableDimensionMapper

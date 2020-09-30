@@ -4574,7 +4574,7 @@ namespace Model
 
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
-         * performed during a specified time period. (Findings are retained for 180
+         * performed during a specified time period. (Findings are retained for 90
          * days.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
@@ -4583,7 +4583,7 @@ namespace Model
 
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
-         * performed during a specified time period. (Findings are retained for 180
+         * performed during a specified time period. (Findings are retained for 90
          * days.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
@@ -4594,7 +4594,7 @@ namespace Model
 
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
-         * performed during a specified time period. (Findings are retained for 180
+         * performed during a specified time period. (Findings are retained for 90
          * days.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>

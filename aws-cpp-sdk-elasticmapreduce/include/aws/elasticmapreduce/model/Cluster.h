@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <aws/elasticmapreduce/model/PlacementGroupConfig.h>
 #include <utility>
 
 namespace Aws
@@ -1399,6 +1400,31 @@ namespace Model
      */
     inline Cluster& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
 
+
+    
+    inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroups() const{ return m_placementGroups; }
+
+    
+    inline bool PlacementGroupsHasBeenSet() const { return m_placementGroupsHasBeenSet; }
+
+    
+    inline void SetPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = value; }
+
+    
+    inline void SetPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = std::move(value); }
+
+    
+    inline Cluster& WithPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { SetPlacementGroups(value); return *this;}
+
+    
+    inline Cluster& WithPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { SetPlacementGroups(std::move(value)); return *this;}
+
+    
+    inline Cluster& AddPlacementGroups(const PlacementGroupConfig& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(value); return *this; }
+
+    
+    inline Cluster& AddPlacementGroups(PlacementGroupConfig&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -1487,6 +1513,9 @@ namespace Model
 
     int m_stepConcurrencyLevel;
     bool m_stepConcurrencyLevelHasBeenSet;
+
+    Aws::Vector<PlacementGroupConfig> m_placementGroups;
+    bool m_placementGroupsHasBeenSet;
   };
 
 } // namespace Model

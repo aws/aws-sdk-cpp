@@ -45,109 +45,145 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline const Aws::Map<Aws::String, AddressConfiguration>& GetAddresses() const{ return m_addresses; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline bool AddressesHasBeenSet() const { return m_addressesHasBeenSet; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline void SetAddresses(const Aws::Map<Aws::String, AddressConfiguration>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline void SetAddresses(Aws::Map<Aws::String, AddressConfiguration>&& value) { m_addressesHasBeenSet = true; m_addresses = std::move(value); }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& WithAddresses(const Aws::Map<Aws::String, AddressConfiguration>& value) { SetAddresses(value); return *this;}
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& WithAddresses(Aws::Map<Aws::String, AddressConfiguration>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(const Aws::String& key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(Aws::String&& key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(const Aws::String& key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(Aws::String&& key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(const char* key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs, where each key is an address and each value is an
-     * AddressConfiguration object. An address can be a push notification token, a
-     * phone number, or an email address. You can use an AddressConfiguration object to
-     * tailor the message for an address by specifying settings such as content
-     * overrides and message variables.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object. An address can be a push notification token, a phone number, or an email
+     * address. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+     * object to tailor the message for an address by specifying settings such as
+     * content overrides and message variables.</p>
      */
     inline MessageRequest& AddAddresses(const char* key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
 
@@ -246,7 +282,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -254,7 +293,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -262,7 +304,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -270,7 +315,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -278,7 +326,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -286,7 +337,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -294,7 +348,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -302,7 +359,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -310,7 +370,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -318,7 +381,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -326,7 +392,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */
@@ -334,7 +403,10 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs, where each key is an endpoint ID and each value is
-     * an EndpointSendConfiguration object. You can use an EndpointSendConfiguration
+     * an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
      * object to tailor the message for an endpoint by specifying settings such as
      * content overrides and message variables.</p>
      */

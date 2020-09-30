@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Information about the policy used to set the permissions boundary for an IAM
-   * user.</p><p><h3>See Also:</h3>   <a
+   * principal.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamPermissionsBoundary">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline void SetPermissionsBoundaryArn(const Aws::String& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = value; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline void SetPermissionsBoundaryArn(Aws::String&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::move(value); }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline void SetPermissionsBoundaryArn(const char* value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn.assign(value); }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const Aws::String& value) { SetPermissionsBoundaryArn(value); return *this;}
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(Aws::String&& value) { SetPermissionsBoundaryArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const char* value) { SetPermissionsBoundaryArn(value); return *this;}
 

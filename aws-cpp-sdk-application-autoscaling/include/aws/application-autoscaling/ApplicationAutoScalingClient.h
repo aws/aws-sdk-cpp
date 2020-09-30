@@ -117,7 +117,8 @@ namespace Model
    * <li> <p>Custom resources provided by your own applications or services</p> </li>
    * <li> <p>Amazon Comprehend document classification and entity recognizer
    * endpoints</p> </li> <li> <p>AWS Lambda function provisioned concurrency</p>
-   * </li> <li> <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> </ul> <p>
+   * </li> <li> <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> <li>
+   * <p>Amazon Managed Streaming for Apache Kafka cluster storage</p> </li> </ul> <p>
    * <b>API Summary</b> </p> <p>The Application Auto Scaling service API includes
    * three key sets of actions: </p> <ul> <li> <p>Register and manage scalable
    * targets - Register AWS or custom resources as scalable targets (a resource that

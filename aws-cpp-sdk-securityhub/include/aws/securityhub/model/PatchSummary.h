@@ -213,26 +213,26 @@ namespace Model
 
 
     /**
-     * <p>The number of patches that were installed since the last time the instance
-     * was rebooted.</p>
+     * <p>The number of patches that were applied, but that require the instance to be
+     * rebooted in order to be marked as installed.</p>
      */
     inline int GetInstalledPendingReboot() const{ return m_installedPendingReboot; }
 
     /**
-     * <p>The number of patches that were installed since the last time the instance
-     * was rebooted.</p>
+     * <p>The number of patches that were applied, but that require the instance to be
+     * rebooted in order to be marked as installed.</p>
      */
     inline bool InstalledPendingRebootHasBeenSet() const { return m_installedPendingRebootHasBeenSet; }
 
     /**
-     * <p>The number of patches that were installed since the last time the instance
-     * was rebooted.</p>
+     * <p>The number of patches that were applied, but that require the instance to be
+     * rebooted in order to be marked as installed.</p>
      */
     inline void SetInstalledPendingReboot(int value) { m_installedPendingRebootHasBeenSet = true; m_installedPendingReboot = value; }
 
     /**
-     * <p>The number of patches that were installed since the last time the instance
-     * was rebooted.</p>
+     * <p>The number of patches that were applied, but that require the instance to be
+     * rebooted in order to be marked as installed.</p>
      */
     inline PatchSummary& WithInstalledPendingReboot(int value) { SetInstalledPendingReboot(value); return *this;}
 

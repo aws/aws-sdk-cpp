@@ -56,7 +56,8 @@ Cluster::Cluster() :
     m_clusterArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_placementGroupsHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_clusterArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_placementGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -317,6 +319,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_stepConcurrencyLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlacementGroups"))
+  {
+    Array<JsonView> placementGroupsJsonList = jsonValue.GetArray("PlacementGroups");
+    for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
+    {
+      m_placementGroups.push_back(placementGroupsJsonList[placementGroupsIndex].AsObject());
+    }
+    m_placementGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -507,6 +519,17 @@ JsonValue Cluster::Jsonize() const
   if(m_stepConcurrencyLevelHasBeenSet)
   {
    payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
+
+  }
+
+  if(m_placementGroupsHasBeenSet)
+  {
+   Array<JsonValue> placementGroupsJsonList(m_placementGroups.size());
+   for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
+   {
+     placementGroupsJsonList[placementGroupsIndex].AsObject(m_placementGroups[placementGroupsIndex].Jsonize());
+   }
+   payload.WithArray("PlacementGroups", std::move(placementGroupsJsonList));
 
   }
 

@@ -5,9 +5,12 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionCacheBehaviors.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionDefaultCacheBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionLogging.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOrigins.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroups.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +40,133 @@ namespace Model
     AwsCloudFrontDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
     AwsCloudFrontDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline const AwsCloudFrontDistributionCacheBehaviors& GetCacheBehaviors() const{ return m_cacheBehaviors; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline bool CacheBehaviorsHasBeenSet() const { return m_cacheBehaviorsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline void SetCacheBehaviors(const AwsCloudFrontDistributionCacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline void SetCacheBehaviors(AwsCloudFrontDistributionCacheBehaviors&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::move(value); }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithCacheBehaviors(const AwsCloudFrontDistributionCacheBehaviors& value) { SetCacheBehaviors(value); return *this;}
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithCacheBehaviors(AwsCloudFrontDistributionCacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline const AwsCloudFrontDistributionDefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline bool DefaultCacheBehaviorHasBeenSet() const { return m_defaultCacheBehaviorHasBeenSet; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline void SetDefaultCacheBehavior(const AwsCloudFrontDistributionDefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline void SetDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehavior&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::move(value); }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultCacheBehavior(const AwsCloudFrontDistributionDefaultCacheBehavior& value) { SetDefaultCacheBehavior(value); return *this;}
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline const Aws::String& GetDefaultRootObject() const{ return m_defaultRootObject; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(const Aws::String& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = value; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(Aws::String&& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = std::move(value); }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(const char* value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject.assign(value); }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(const Aws::String& value) { SetDefaultRootObject(value); return *this;}
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(Aws::String&& value) { SetDefaultRootObject(std::move(value)); return *this;}
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(const char* value) { SetDefaultRootObject(value); return *this;}
 
 
     /**
@@ -269,6 +399,37 @@ namespace Model
 
 
     /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline const AwsCloudFrontDistributionOriginGroups& GetOriginGroups() const{ return m_originGroups; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline void SetOriginGroups(const AwsCloudFrontDistributionOriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline void SetOriginGroups(AwsCloudFrontDistributionOriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithOriginGroups(const AwsCloudFrontDistributionOriginGroups& value) { SetOriginGroups(value); return *this;}
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithOriginGroups(AwsCloudFrontDistributionOriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates the current status of the distribution.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -359,6 +520,15 @@ namespace Model
 
   private:
 
+    AwsCloudFrontDistributionCacheBehaviors m_cacheBehaviors;
+    bool m_cacheBehaviorsHasBeenSet;
+
+    AwsCloudFrontDistributionDefaultCacheBehavior m_defaultCacheBehavior;
+    bool m_defaultCacheBehaviorHasBeenSet;
+
+    Aws::String m_defaultRootObject;
+    bool m_defaultRootObjectHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
 
@@ -373,6 +543,9 @@ namespace Model
 
     AwsCloudFrontDistributionOrigins m_origins;
     bool m_originsHasBeenSet;
+
+    AwsCloudFrontDistributionOriginGroups m_originGroups;
+    bool m_originGroupsHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

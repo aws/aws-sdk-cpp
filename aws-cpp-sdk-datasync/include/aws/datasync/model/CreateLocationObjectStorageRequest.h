@@ -267,98 +267,130 @@ namespace Model
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline const Aws::String& GetAccessKey() const{ return m_accessKey; }
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline bool AccessKeyHasBeenSet() const { return m_accessKeyHasBeenSet; }
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetAccessKey(const Aws::String& value) { m_accessKeyHasBeenSet = true; m_accessKey = value; }
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetAccessKey(Aws::String&& value) { m_accessKeyHasBeenSet = true; m_accessKey = std::move(value); }
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetAccessKey(const char* value) { m_accessKeyHasBeenSet = true; m_accessKey.assign(value); }
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithAccessKey(const Aws::String& value) { SetAccessKey(value); return *this;}
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithAccessKey(Aws::String&& value) { SetAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithAccessKey(const char* value) { SetAccessKey(value); return *this;}
 
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::move(value); }
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithSecretKey(Aws::String&& value) { SetSecretKey(std::move(value)); return *this;}
 
     /**
      * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server.</p>
+     * self-managed object storage server. If your object storage requires a user name
+     * and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
      */
     inline CreateLocationObjectStorageRequest& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
 

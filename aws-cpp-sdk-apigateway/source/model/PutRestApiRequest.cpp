@@ -56,3 +56,4 @@ void PutRestApiRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

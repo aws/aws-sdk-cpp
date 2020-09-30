@@ -31,7 +31,8 @@ namespace Model
     ComprehendInferenceUtilization,
     LambdaProvisionedConcurrencyUtilization,
     CassandraReadCapacityUtilization,
-    CassandraWriteCapacityUtilization
+    CassandraWriteCapacityUtilization,
+    KafkaBrokerStorageUtilization
   };
 
 namespace MetricTypeMapper

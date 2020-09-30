@@ -35,3 +35,4 @@ void UpdateThingShadowRequest::AddQueryStringParameters(URI& uri) const
     }
 
 }
+

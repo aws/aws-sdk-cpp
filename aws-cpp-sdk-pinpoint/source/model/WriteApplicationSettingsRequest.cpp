@@ -22,6 +22,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() :
     m_campaignHookHasBeenSet(false),
     m_cloudWatchMetricsEnabled(false),
     m_cloudWatchMetricsEnabledHasBeenSet(false),
+    m_eventTaggingEnabled(false),
+    m_eventTaggingEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -31,6 +33,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonVa
     m_campaignHookHasBeenSet(false),
     m_cloudWatchMetricsEnabled(false),
     m_cloudWatchMetricsEnabledHasBeenSet(false),
+    m_eventTaggingEnabled(false),
+    m_eventTaggingEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -51,6 +55,13 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(Jso
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
 
     m_cloudWatchMetricsEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventTaggingEnabled"))
+  {
+    m_eventTaggingEnabled = jsonValue.GetBool("EventTaggingEnabled");
+
+    m_eventTaggingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Limits"))
@@ -83,6 +94,12 @@ JsonValue WriteApplicationSettingsRequest::Jsonize() const
   if(m_cloudWatchMetricsEnabledHasBeenSet)
   {
    payload.WithBool("CloudWatchMetricsEnabled", m_cloudWatchMetricsEnabled);
+
+  }
+
+  if(m_eventTaggingEnabledHasBeenSet)
+  {
+   payload.WithBool("EventTaggingEnabled", m_eventTaggingEnabled);
 
   }
 

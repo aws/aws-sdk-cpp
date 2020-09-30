@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/S3StorageClass.h>
 #include <aws/datasync/model/S3Config.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -41,37 +42,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline DescribeLocationS3Result& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline DescribeLocationS3Result& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
      */
     inline DescribeLocationS3Result& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
@@ -180,6 +181,71 @@ namespace Model
 
 
     /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArns = value; }
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArns = std::move(value); }
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline DescribeLocationS3Result& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline DescribeLocationS3Result& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline DescribeLocationS3Result& AddAgentArns(const Aws::String& value) { m_agentArns.push_back(value); return *this; }
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline DescribeLocationS3Result& AddAgentArns(Aws::String&& value) { m_agentArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If you are using DataSync on an Amazon Outpost, the Amazon Resource Name
+     * (ARNs) of the EC2 agents deployed on your AWS Outpost. For more information
+     * about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.</p>
+     */
+    inline DescribeLocationS3Result& AddAgentArns(const char* value) { m_agentArns.push_back(value); return *this; }
+
+
+    /**
      * <p>The time that the Amazon S3 bucket location was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -213,6 +279,8 @@ namespace Model
     S3StorageClass m_s3StorageClass;
 
     S3Config m_s3Config;
+
+    Aws::Vector<Aws::String> m_agentArns;
 
     Aws::Utils::DateTime m_creationTime;
   };

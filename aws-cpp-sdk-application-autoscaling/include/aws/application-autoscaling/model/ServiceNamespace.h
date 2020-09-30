@@ -26,7 +26,8 @@ namespace Model
     custom_resource,
     comprehend,
     lambda,
-    cassandra
+    cassandra,
+    kafka
   };
 
 namespace ServiceNamespaceMapper
