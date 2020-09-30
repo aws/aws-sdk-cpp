@@ -20,13 +20,25 @@ public class Operation {
     private boolean supportsPresigning;
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
-    private boolean arnEndpointAllowed;
-    private String arnEndpointMemberName;
-    private boolean hasAccountIdInHostname;
-    private String accountIdMemberName;
     private String authtype;
     private String authorizer;
     private boolean eventStream;
+
+    // ARN supports.
+    private boolean arnEndpointAllowed;
+    private String arnLocation; // uri | querystring | body
+    private String arnEndpointMemberName;
+
+    // For S3 Control.
+    private boolean hasAccountIdMember;
+    private String accountIdMemberName;
+    private boolean hasAccountIdInArn;
+
+    // For S3 Outposts.
+    private boolean hasOutpostIdMember;
+    private String outpostIdMemberName;
+    private boolean outpostUseNonArnEndpoint;
+    private boolean hasOutpostIdInArn;
 
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;

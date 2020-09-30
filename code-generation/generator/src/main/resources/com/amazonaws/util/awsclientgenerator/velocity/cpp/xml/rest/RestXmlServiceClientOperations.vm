@@ -1,10 +1,12 @@
 #foreach($operation in $serviceModel.operations)
 #if($arnEndpointSupported)
 #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
-#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/")
+#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
+#set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
 #else
 #set($signerName = "")
 #set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
 #end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
@@ -73,11 +75,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
+  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #else
-  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #end
 }
 
@@ -109,21 +111,14 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   {
     return ${operation.name}Outcome(computeEndpointOutcome.GetError());
   }
-  ss << computeEndpointOutcome.GetResult().first;
-#elseif($accountIdInHostnameSupported)
-  ss << ComputeEndpointString();
-#if($metadata.hasEndpointTrait)
-  ss << m_baseUri << "${operation.http.requestUri}";
-#else
-  ss << m_uri << "${operation.http.requestUri}";
-#end
+  ss << computeEndpointOutcome.GetResult().endpoint;
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}));
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.request)
-  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}${signerRegionOverride}"));
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #else
-  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}));
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #end
 }
 

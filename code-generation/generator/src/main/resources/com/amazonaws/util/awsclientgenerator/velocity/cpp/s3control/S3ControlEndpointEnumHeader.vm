@@ -20,17 +20,9 @@ namespace ${metadata.classNamePrefix}Endpoint
    * Compute endpoint based on region.
    * @param regionName The AWS region used in the endpoint
    * @param useDualStack Using dual-stack endpoint if true
-   * @param USEast1UseRegionalEndpoint Using global endpoint for us-east-1 if the value is LEGACY, or using regional endpoint if it's REGIONAL
+   * @param hasOutpostId Using s3-outposts as service name if true
    */
-  ${exportValue} Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool USEast1UseRegionalEndpoint = false);
-
-  /**
-   * Compute endpoint based on Access Point ARN.
-   * @param arn The S3 Access Point ARN
-   * @param regionNameOverride Override region name in ARN if it's not empty
-   * @param useDualStack Using dual-stack endpoint if true
-   */
-  ${exportValue} Aws::String ForAccessPointArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false);
+  ${exportValue} Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool hasOutpostId = false);
 
   /**
    * Compute endpoint based on Outposts ARN.

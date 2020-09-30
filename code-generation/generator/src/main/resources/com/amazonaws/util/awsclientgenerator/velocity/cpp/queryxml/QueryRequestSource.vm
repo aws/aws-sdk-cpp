@@ -184,7 +184,6 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
-
 #end
 
 #if($shape.supportsPresigning)

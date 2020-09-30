@@ -64,7 +64,7 @@ namespace ${rootNamespace}
                 ss << "Invalid partition in ARN: " << this->GetPartition() << ". Valid options: aws, aws-cn, and etc.";
             }
             // Validation on service.
-            else if (this->GetService() != "s3"  && this->GetService() != "s3-outposts")
+            else if (this->GetService() != "s3" && this->GetService() != "s3-outposts")
             {
                 ss.str("");
                 ss << "Invalid service in ARN: " << this->GetService() << ". Valid options: s3, s3-outposts";
@@ -89,32 +89,6 @@ namespace ${rootNamespace}
                 ss << "Invalid account ID in ARN: " << this->GetAccountId() << ". Account ID should be a RFC 3986 Host label.";
                 errorMessage = ss.str();
             }
-            // Validation on Access Point ARN:
-            else if (this->GetResourceType() == ARNResourceType::ACCESSPOINT)
-            {
-                if (!Utils::IsValidDnsLabel(this->GetResourceId()))
-                {
-                    ss.str("");
-                    ss << "Invalid resource ID in accesspoint ARN: " << this->GetResourceId() << ". Resource ID should be a RFC 3986 Host label.";
-                    errorMessage = ss.str();
-                }
-                else if (!this->GetResourceQualifier().empty())
-                {
-                    ss.str("");
-                    ss << "Invalid accesspoint ARN with non empty resource qualifier: " << this->GetResourceQualifier();
-                    errorMessage = ss.str();
-                }
-                else if (!this->GetSubResourceType().empty() || !this->GetSubResourceId().empty())
-                {
-                    ss.str("");
-                    ss << "Invalid accesspoint ARN with non empty sub resource type: " << this->GetSubResourceType() << ", sub resource ID: " << this->GetSubResourceId();
-                    errorMessage = ss.str();
-                }
-                else
-                {
-                    success = true;
-                }
-            }
             // Validation on Outposts ARN:
             else if (this->GetResourceType() == ARNResourceType::OUTPOST)
             {
@@ -130,16 +104,16 @@ namespace ${rootNamespace}
                     ss << "Invalid outpost ID in Outposts ARN: " << this->GetResourceId() << ". Outpost ID should be a RFC 3986 Host label.";
                     errorMessage = ss.str();
                 }
-                else if (this->GetSubResourceType() != ARNResourceType::ACCESSPOINT)
+                else if (this->GetSubResourceType() != ARNResourceType::ACCESSPOINT && this->GetSubResourceType() != ARNResourceType::BUCKET)
                 {
                     ss.str("");
-                    ss << "Invalid sub resource type in Outposts ARN: " << this->GetSubResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT;
+                    ss << "Invalid sub resource type in Outposts ARN: " << this->GetSubResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT << ", " << ARNResourceType::BUCKET;
                     errorMessage = ss.str();
                 }
                 else if (!Utils::IsValidDnsLabel(this->GetSubResourceId()))
                 {
                     ss.str("");
-                    ss << "Invalid accesspoint name in Outposts ARN: " << this->GetSubResourceId() << ", accesspoint name should be a RFC 3986 Host label.";
+                    ss << "Invalid " << this->GetSubResourceType() << " name in Outposts ARN: " << this->GetSubResourceId() << ", " << this->GetSubResourceType() << " name should be a RFC 3986 Host label.";
                     errorMessage = ss.str();
                 }
                 else
@@ -147,7 +121,7 @@ namespace ${rootNamespace}
                     success = true;
                 }
             }
-            // Neither Access Point ARN nor Outposts ARN.
+            // Neither Access Point ARN, Bucket ARN nor Outposts ARN.
             else
             {
                 ss.str("");

@@ -88,6 +88,20 @@ namespace Aws
                 return SignRequest(request);
             }
 
+            /**
+             * Signs the request itself (usually by adding a signature header) based on info in the request and uri.
+             * If signBody is false and https is being used then the body of the payload will not be signed.
+             * The default virtual function, just calls SignRequest.
+             * Using m_region by default if parameter region is nullptr.
+             * Using m_serviceName by default if parameter serviceName is nullptr.
+             */
+            virtual bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
+            {
+                AWS_UNREFERENCED_PARAM(signBody);
+                AWS_UNREFERENCED_PARAM(region);
+                AWS_UNREFERENCED_PARAM(serviceName);
+                return SignRequest(request);
+            }
 
             /**
              * Signs a single event message in an event stream.
@@ -199,7 +213,7 @@ namespace Aws
              */
             bool SignRequest(Aws::Http::HttpRequest& request) const override
             {
-                return SignRequest(request, m_region.c_str(), true/*signBody*/);
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true/*signBody*/);
             }
 
             /**
@@ -209,7 +223,7 @@ namespace Aws
             */
             bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override
             {
-                return SignRequest(request, m_region.c_str(), signBody);
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), signBody);
             }
 
             /**
@@ -217,7 +231,17 @@ namespace Aws
              * and https is being used then the body of the payload will not be signed.
              * Using m_region by default if parameter region is nullptr.
              */
-            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override;
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override
+            {
+                return SignRequest(request, region, m_serviceName.c_str(), signBody);
+            }
+
+            /**
+             * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm. If signBody is false
+             * and https is being used then the body of the payload will not be signed.
+             * Using m_region by default if parameter region is nullptr.
+             */
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
 
             /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
@@ -304,15 +328,20 @@ namespace Aws
 
             bool SignRequest(Aws::Http::HttpRequest& request) const override
             {
-                return SignRequest(request, m_region.c_str(), true);
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true);
             }
 
             bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override
             {
-                return SignRequest(request, m_region.c_str(), signBody);
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), signBody);
             }
 
-            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override;
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override
+            {
+                return SignRequest(request, region, m_serviceName.c_str(), signBody);
+            }
+
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
 
             /**
              * Do nothing

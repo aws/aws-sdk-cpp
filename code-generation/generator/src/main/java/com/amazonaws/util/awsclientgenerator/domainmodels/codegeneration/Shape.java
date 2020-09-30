@@ -142,8 +142,8 @@ public class Shape {
         return members.values().parallelStream().anyMatch(member -> member.isEventPayload());
     }
 
-    public boolean hasAccountIdMembers() {
-        return members.keySet().stream().anyMatch(key -> key.equals("AccountId"));
+    public boolean hasMember(String member) {
+        return members.keySet().stream().anyMatch(key -> key.equals(member));
     }
 
     public ShapeMember getMemberByLocationName(String locationName) {

@@ -23,7 +23,6 @@ import java.util.Set;
 
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
-    private static Set<String> opsThatNeedMd5 = new HashSet<>();
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();

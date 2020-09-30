@@ -140,11 +140,11 @@ ClientConfiguration::ClientConfiguration() :
     region = Aws::String(Aws::Region::US_EAST_1);
 }
 
-ClientConfiguration::ClientConfiguration(const char* profileName) : ClientConfiguration()
+ClientConfiguration::ClientConfiguration(const char* profile) : ClientConfiguration()
 {
-    if (profileName && Aws::Config::HasCachedConfigProfile(profileName))
+    if (profile && Aws::Config::HasCachedConfigProfile(profile))
     {
-        this->profileName = Aws::String(profileName);
+        this->profileName = Aws::String(profile);
         AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Use user specified profile: [" << this->profileName << "] for ClientConfiguration.");
         auto tmpRegion = Aws::Config::GetCachedConfigProfile(this->profileName).GetRegion();
         if (!tmpRegion.empty())
@@ -153,7 +153,7 @@ ClientConfiguration::ClientConfiguration(const char* profileName) : ClientConfig
         }
         return;
     }
-    AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profileName << "] is not found, will use the SDK resolved one.");
+    AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");
 }
 
 } // namespace Client

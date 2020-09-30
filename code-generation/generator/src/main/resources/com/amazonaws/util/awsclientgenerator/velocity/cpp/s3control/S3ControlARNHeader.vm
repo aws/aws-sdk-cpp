@@ -24,6 +24,7 @@ namespace ${rootNamespace}
         {
             static const char ACCESSPOINT[] = "accesspoint";
             static const char OUTPOST[] = "outpost";
+            static const char BUCKET[] = "bucket";
         }
 
 #set($className = "${metadata.classNamePrefix}ARN")

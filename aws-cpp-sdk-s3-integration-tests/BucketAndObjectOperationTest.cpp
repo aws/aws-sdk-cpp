@@ -1621,74 +1621,6 @@ namespace
         ASSERT_TRUE(isErrorEventReceived);
     }
 
-    TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
-    {
-        // The followings are examples for valid S3 ARN:
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
-        // Pseudo region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
-
-        // The followings are examples for invalid S3 ARN:
-        // S3ARN partition
-        // Invalid partition: cn-aws
-        ASSERT_FALSE(S3ARN("arn:cn-aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        // Empty partition name
-        ASSERT_FALSE(S3ARN("arn::s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-
-        // S3ARN service
-        // Invalid service: EC2
-        ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        // Empty service name
-        ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-
-        // S3ARN region
-        // Cross region ARN when useArnRegion = false
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
-        // Invalid region name with upper case
-        ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        // Empty region name
-        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
-
-        // S3ARN account id
-        // Invalid account ID with non RFC 3986 Host label
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:12345.678912:accesspoint:endpoint").Validate().IsSuccess());
-        // Empty account ID
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1::accesspoint:endpoint").Validate().IsSuccess());
-
-        // S3ARN resource type
-        // Invalid resource type: bucket_name
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:bucket_name:bucket").Validate().IsSuccess());
-        // Empty resource ID
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:").Validate().IsSuccess());
-        // Invalid resource ID with non RFC 3986 Host label
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint.1").Validate().IsSuccess());
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:*").Validate().IsSuccess());
-        // Invalid resource ID with qualifier, namely, the third part of the resource segments.
-        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:bucket:qualifier").Validate().IsSuccess());
-    }
-
-    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForAccessPointARN)
-    {
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint"), "", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.us-east-1.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", true).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.cn-north-1.amazonaws.com.cn",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.cn-north-1.amazonaws.com.cn",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", true).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1-fips.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "us-east-1-fips", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.fips-us-gov-west-1.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.fips-us-gov-west-1.amazonaws.com",
-            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", true).c_str());
-    }
-
     TEST_F(BucketAndObjectOperationTest, TestCrossRegionOperations)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_CROSS_REGION_BUCKET_NAME.c_str());
@@ -1718,6 +1650,143 @@ namespace
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = globalClient->DeleteBucket(deleteBucketRequest);
         ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
+        // Pseudo region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: EC2
+        ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN region
+        // Cross region ARN when useArnRegion = false
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
+        // Empty region name
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:12345.678912:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1::accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:bucket_name:bucket").Validate().IsSuccess());
+        // Empty resource ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:").Validate().IsSuccess());
+        // Invalid resource ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint.1").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:*").Validate().IsSuccess());
+        // Invalid resource ID with qualifier, namely, the third part of the resource segments.
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:bucket:qualifier").Validate().IsSuccess());
+        // Non empty sub resource.
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint:bucket:bucket-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint::object-name").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForAccessPointARN)
+    {
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", true).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", true).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1-fips.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "us-east-1-fips", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.fips-us-gov-west-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.fips-us-gov-west-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", true).c_str());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3OutpostsARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name").Validate().IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: EC2
+        ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN region
+        // Outposts ARN doesn't support fips region right now
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("us-east-1-fips").IsSuccess());
+        // Cross region ARN when useArnRegion = false
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("us-east-1").IsSuccess());
+        // Empty region name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts::123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:12345.678912:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1::outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:bucket_name:bucket:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty outpost ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost::accesspoint:access-point-name").Validate().IsSuccess());
+        // Missing access point
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint").Validate().IsSuccess());
+        // Invalid outpost ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost.id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:*:accesspoint:access-point-name").Validate().IsSuccess());
+        // Invalid sub resource type: access-point
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:access-point:access-point-name").Validate().IsSuccess());
+        // Invald access point name with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access.point.name").Validate().IsSuccess());
+        // Empty access point name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForOutpostsARN)
+    {
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.us-east-1.amazonaws.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name"), "").c_str());
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.us-east-1.amazonaws.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name"), "").c_str());
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws-cn:s3-outposts:cn-north-1:123456789120:outpost:outpost-id:accesspoint:access-point-name"), "").c_str());
     }
 
 }

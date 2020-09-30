@@ -209,7 +209,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method,
     const char* signerName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
@@ -235,7 +236,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         m_retryStrategy->GetSendToken();
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
 
-        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion);
+        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
@@ -333,7 +334,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     HttpMethod method,
     const char* signerName,
     const char* requestName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
@@ -358,7 +360,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     for (long retries = 0;; retries++)
     {
         m_retryStrategy->GetSendToken();
-        outcome = AttemptOneRequest(httpRequest, signerName, signerRegion);
+        outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
@@ -451,12 +453,12 @@ static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& respo
 
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest,
-    const Aws::AmazonWebServiceRequest& request, const char* signerName, const char* signerRegionOverride) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
+    const char* signerName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
 {
     BuildHttpRequest(request, httpRequest);
     auto signer = GetSignerByName(signerName);
-    if (!signer->SignRequest(*httpRequest, signerRegionOverride, request.SignBody()))
+    if (!signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, request.SignBody()))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
@@ -484,12 +486,12 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
 }
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest,
-    const char* signerName, const char* requestName, const char* signerRegionOverride) const
+    const char* signerName, const char* requestName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
 {
     AWS_UNREFERENCED_PARAM(requestName);
 
     auto signer = GetSignerByName(signerName);
-    if (!signer->SignRequest(*httpRequest, signerRegionOverride, true))
+    if (!signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
@@ -518,9 +520,10 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
     const char* signerName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride);
+    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
     if (httpResponseOutcome.IsSuccess())
     {
         return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
@@ -531,10 +534,14 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(std::move(httpResponseOutcome));
 }
 
-StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri, Http::HttpMethod method,
-    const char* signerName, const char* requestName, const char* signerRegionOverride) const
+StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
+    Http::HttpMethod method,
+    const char* signerName,
+    const char* requestName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride);
+    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
     if (httpResponseOutcome.IsSuccess())
     {
         return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
@@ -549,9 +556,10 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
     const char* signerName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride);
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
     if (httpOutcome.IsSuccess())
     {
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
@@ -560,10 +568,14 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     return XmlOutcome(std::move(httpOutcome));
 }
 
-XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri, Http::HttpMethod method,
-    const char* signerName, const char* requestName, const char* signerRegionOverride) const
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
+    Http::HttpMethod method,
+    const char* signerName,
+    const char* requestName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride);
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
     if (httpOutcome.IsSuccess())
     {
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
@@ -724,6 +736,18 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const A
     return {};
 }
 
+Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
+    if (signer->PresignRequest(*request, region, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -752,11 +776,15 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first.c_str(), it.second);
+    }
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, region, expirationInSeconds))
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
     {
         return request->GetURIString();
     }
@@ -846,9 +874,10 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
     const char* signerName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
         return JsonOutcome(std::move(httpOutcome));
@@ -868,9 +897,10 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method,
     const char* signerName,
     const char* requestName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
         return JsonOutcome(std::move(httpOutcome));
@@ -977,9 +1007,10 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
     const char* signerName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
         return XmlOutcome(std::move(httpOutcome));
@@ -1006,9 +1037,10 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method,
     const char* signerName,
     const char* requestName,
-    const char* signerRegionOverride) const
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
         return XmlOutcome(std::move(httpOutcome));
