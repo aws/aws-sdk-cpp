@@ -4,8 +4,7 @@ set(DEPS_RPATH "$ORIGIN")
 if(TARGET_ARCH STREQUAL "ANDROID")
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_TAG}
+        URL "${AWS_EVENT_STREAM_URL}/archive/${AWS_EVENT_STREAM_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -26,8 +25,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
     message("Cross compiling aws-c-event-stream for architecture ${CMAKE_OSX_ARCHITECTURES}")
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_TAG}
+        URL "${AWS_EVENT_STREAM_URL}/archive/${AWS_EVENT_STREAM_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -45,8 +43,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
 else()
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_TAG}
+        URL "${AWS_EVENT_STREAM_URL}/archive/${AWS_EVENT_STREAM_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS

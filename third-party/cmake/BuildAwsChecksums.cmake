@@ -1,8 +1,7 @@
 if(TARGET_ARCH STREQUAL "ANDROID")
     ExternalProject_Add(AwsChecksums
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_CHECKSUMS_URL}
-        GIT_TAG ${AWS_CHECKSUMS_TAG}
+        URL "${AWS_CHECKSUMS_URL}/archive/${AWS_CHECKSUMS_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -20,8 +19,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
     message("Cross compiling aws-checksums for architecture ${CMAKE_OSX_ARCHITECTURES}")
     ExternalProject_Add(AwsChecksums
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_CHECKSUMS_URL}
-        GIT_TAG ${AWS_CHECKSUMS_TAG}
+        URL "${AWS_CHECKSUMS_URL}/archive/${AWS_CHECKSUMS_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -37,8 +35,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
 else()
     ExternalProject_Add(AwsChecksums
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_CHECKSUMS_URL}
-        GIT_TAG ${AWS_CHECKSUMS_TAG}
+        URL "${AWS_CHECKSUMS_URL}/archive/${AWS_CHECKSUMS_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -50,5 +47,3 @@ else()
         -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
         )
 endif()
-
-

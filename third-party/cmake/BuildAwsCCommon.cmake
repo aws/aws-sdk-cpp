@@ -1,8 +1,7 @@
 if(TARGET_ARCH STREQUAL "ANDROID")
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_TAG}
+        URL "${AWS_C_COMMON_URL}/archive/${AWS_C_COMMON_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -21,8 +20,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
     message("Cross compiling aws-c-common for architecture ${CMAKE_OSX_ARCHITECTURES}")
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_TAG}
+        URL "${AWS_C_COMMON_URL}/archive/${AWS_C_COMMON_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -38,8 +36,7 @@ elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT 
 else()
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
-        GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_TAG}
+        URL "${AWS_C_COMMON_URL}/archive/${AWS_C_COMMON_TAG}.tar.gz"
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
