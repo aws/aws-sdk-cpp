@@ -148,6 +148,31 @@ Please make sure to check out our resources too before opening an issue:
 * Our [Changelog](./CHANGELOG.md) for recent breaking changes.
 * Our [Contribute](./CONTRIBUTING.md) guide.
 * Our [samples repo](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp).
+create number we find 
+#include<stdio.h>
+#include<conio.h>
+
+	int main( int argc, char* arg[])
+	{
+		int a,b,c;
+		printf("enter the number");
+		scanf("%D,%d",&a,&b,&c);
+		if((a>b)&(a>c))
+		{
+			printf("\n %d is larger",a);
+		}
+		else
+		if((b>a)&(b>c))
+		{
+			printf("\n %d is largest",b);
+		}
+		else
+		{
+			printf("\n %d is greatest",c);
+		}
+		return 0;
+		}
+		
 
 # Using the SDK and Other Topics
 * [Using the SDK](./Docs/SDK_usage_guide.md)
