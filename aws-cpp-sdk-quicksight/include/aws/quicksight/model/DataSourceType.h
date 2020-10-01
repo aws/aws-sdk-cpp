@@ -36,7 +36,8 @@ namespace Model
     SPARK,
     SQLSERVER,
     TERADATA,
-    TWITTER
+    TWITTER,
+    TIMESTREAM
   };
 
 namespace DataSourceTypeMapper

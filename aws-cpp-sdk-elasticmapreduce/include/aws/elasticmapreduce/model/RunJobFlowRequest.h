@@ -1639,28 +1639,44 @@ namespace Model
     inline RunJobFlowRequest& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroupConfigs() const{ return m_placementGroupConfigs; }
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline bool PlacementGroupConfigsHasBeenSet() const { return m_placementGroupConfigsHasBeenSet; }
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline void SetPlacementGroupConfigs(const Aws::Vector<PlacementGroupConfig>& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs = value; }
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline void SetPlacementGroupConfigs(Aws::Vector<PlacementGroupConfig>&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs = std::move(value); }
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline RunJobFlowRequest& WithPlacementGroupConfigs(const Aws::Vector<PlacementGroupConfig>& value) { SetPlacementGroupConfigs(value); return *this;}
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline RunJobFlowRequest& WithPlacementGroupConfigs(Aws::Vector<PlacementGroupConfig>&& value) { SetPlacementGroupConfigs(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline RunJobFlowRequest& AddPlacementGroupConfigs(const PlacementGroupConfig& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+     */
     inline RunJobFlowRequest& AddPlacementGroupConfigs(PlacementGroupConfig&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(std::move(value)); return *this; }
 
   private:

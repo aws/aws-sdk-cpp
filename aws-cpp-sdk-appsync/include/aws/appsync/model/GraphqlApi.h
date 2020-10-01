@@ -496,6 +496,55 @@ namespace Model
      */
     inline GraphqlApi& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline const Aws::String& GetWafWebAclArn() const{ return m_wafWebAclArn; }
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline bool WafWebAclArnHasBeenSet() const { return m_wafWebAclArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline void SetWafWebAclArn(const Aws::String& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = value; }
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline void SetWafWebAclArn(Aws::String&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline void SetWafWebAclArn(const char* value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn.assign(value); }
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(const Aws::String& value) { SetWafWebAclArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(Aws::String&& value) { SetWafWebAclArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if
+     * one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(const char* value) { SetWafWebAclArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -530,6 +579,9 @@ namespace Model
 
     bool m_xrayEnabled;
     bool m_xrayEnabledHasBeenSet;
+
+    Aws::String m_wafWebAclArn;
+    bool m_wafWebAclArnHasBeenSet;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ GetPlanRequest::GetPlanRequest() :
     m_sinksHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_additionalPlanOptionsMapHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,17 @@ Aws::String GetPlanRequest::SerializePayload() const
   if(m_languageHasBeenSet)
   {
    payload.WithString("Language", LanguageMapper::GetNameForLanguage(m_language));
+  }
+
+  if(m_additionalPlanOptionsMapHasBeenSet)
+  {
+   JsonValue additionalPlanOptionsMapJsonMap;
+   for(auto& additionalPlanOptionsMapItem : m_additionalPlanOptionsMap)
+   {
+     additionalPlanOptionsMapJsonMap.WithString(additionalPlanOptionsMapItem.first, additionalPlanOptionsMapItem.second);
+   }
+   payload.WithObject("AdditionalPlanOptionsMap", std::move(additionalPlanOptionsMapJsonMap));
+
   }
 
   return payload.View().WriteReadable();

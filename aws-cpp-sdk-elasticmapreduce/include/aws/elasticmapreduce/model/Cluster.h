@@ -1401,28 +1401,44 @@ namespace Model
     inline Cluster& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
 
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroups() const{ return m_placementGroups; }
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline bool PlacementGroupsHasBeenSet() const { return m_placementGroupsHasBeenSet; }
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline void SetPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = value; }
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline void SetPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = std::move(value); }
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline Cluster& WithPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { SetPlacementGroups(value); return *this;}
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline Cluster& WithPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { SetPlacementGroups(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline Cluster& AddPlacementGroups(const PlacementGroupConfig& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Placement group configured for an Amazon EMR cluster.</p>
+     */
     inline Cluster& AddPlacementGroups(PlacementGroupConfig&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(std::move(value)); return *this; }
 
   private:

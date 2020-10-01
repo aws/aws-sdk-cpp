@@ -31,7 +31,8 @@ GraphqlApi::GraphqlApi() :
     m_tagsHasBeenSet(false),
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
-    m_xrayEnabledHasBeenSet(false)
+    m_xrayEnabledHasBeenSet(false),
+    m_wafWebAclArnHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
-    m_xrayEnabledHasBeenSet(false)
+    m_xrayEnabledHasBeenSet(false),
+    m_wafWebAclArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -141,6 +143,13 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_xrayEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("wafWebAclArn"))
+  {
+    m_wafWebAclArn = jsonValue.GetString("wafWebAclArn");
+
+    m_wafWebAclArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +234,12 @@ JsonValue GraphqlApi::Jsonize() const
   if(m_xrayEnabledHasBeenSet)
   {
    payload.WithBool("xrayEnabled", m_xrayEnabled);
+
+  }
+
+  if(m_wafWebAclArnHasBeenSet)
+  {
+   payload.WithString("wafWebAclArn", m_wafWebAclArn);
 
   }
 

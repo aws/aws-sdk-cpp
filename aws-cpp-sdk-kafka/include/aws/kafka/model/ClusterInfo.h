@@ -896,6 +896,71 @@ namespace Model
      */
     inline ClusterInfo& WithZookeeperConnectString(const char* value) { SetZookeeperConnectString(value); return *this;}
 
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline const Aws::String& GetZookeeperConnectStringTls() const{ return m_zookeeperConnectStringTls; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline bool ZookeeperConnectStringTlsHasBeenSet() const { return m_zookeeperConnectStringTlsHasBeenSet; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(const Aws::String& value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls = value; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(Aws::String&& value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls = std::move(value); }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(const char* value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls.assign(value); }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(const Aws::String& value) { SetZookeeperConnectStringTls(value); return *this;}
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(Aws::String&& value) { SetZookeeperConnectStringTls(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(const char* value) { SetZookeeperConnectStringTls(value); return *this;}
+
   private:
 
     Aws::String m_activeOperationArn;
@@ -948,6 +1013,9 @@ namespace Model
 
     Aws::String m_zookeeperConnectString;
     bool m_zookeeperConnectStringHasBeenSet;
+
+    Aws::String m_zookeeperConnectStringTls;
+    bool m_zookeeperConnectStringTlsHasBeenSet;
   };
 
 } // namespace Model

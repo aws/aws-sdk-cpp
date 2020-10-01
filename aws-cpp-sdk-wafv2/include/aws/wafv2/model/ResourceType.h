@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     APPLICATION_LOAD_BALANCER,
-    API_GATEWAY
+    API_GATEWAY,
+    APPSYNC
   };
 
 namespace ResourceTypeMapper

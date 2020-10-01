@@ -38,7 +38,8 @@ ClusterInfo::ClusterInfo() :
     m_stateHasBeenSet(false),
     m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false)
+    m_zookeeperConnectStringHasBeenSet(false),
+    m_zookeeperConnectStringTlsHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false)
+    m_zookeeperConnectStringHasBeenSet(false),
+    m_zookeeperConnectStringTlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +193,13 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     m_zookeeperConnectStringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("zookeeperConnectStringTls"))
+  {
+    m_zookeeperConnectStringTls = jsonValue.GetString("zookeeperConnectStringTls");
+
+    m_zookeeperConnectStringTlsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -299,6 +308,12 @@ JsonValue ClusterInfo::Jsonize() const
   if(m_zookeeperConnectStringHasBeenSet)
   {
    payload.WithString("zookeeperConnectString", m_zookeeperConnectString);
+
+  }
+
+  if(m_zookeeperConnectStringTlsHasBeenSet)
+  {
+   payload.WithString("zookeeperConnectStringTls", m_zookeeperConnectStringTls);
 
   }
 

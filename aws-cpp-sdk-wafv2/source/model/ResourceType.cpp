@@ -22,6 +22,7 @@ namespace Aws
 
         static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
         static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static const int APPSYNC_HASH = HashingUtils::HashString("APPSYNC");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == API_GATEWAY_HASH)
           {
             return ResourceType::API_GATEWAY;
+          }
+          else if (hashCode == APPSYNC_HASH)
+          {
+            return ResourceType::APPSYNC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "APPLICATION_LOAD_BALANCER";
           case ResourceType::API_GATEWAY:
             return "API_GATEWAY";
+          case ResourceType::APPSYNC:
+            return "APPSYNC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,7 +22,9 @@ ApiKey::ApiKey() :
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_expires(0),
-    m_expiresHasBeenSet(false)
+    m_expiresHasBeenSet(false),
+    m_deletes(0),
+    m_deletesHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ApiKey::ApiKey(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_expires(0),
-    m_expiresHasBeenSet(false)
+    m_expiresHasBeenSet(false),
+    m_deletes(0),
+    m_deletesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
     m_expiresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deletes"))
+  {
+    m_deletes = jsonValue.GetInt64("deletes");
+
+    m_deletesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +91,12 @@ JsonValue ApiKey::Jsonize() const
   if(m_expiresHasBeenSet)
   {
    payload.WithInt64("expires", m_expires);
+
+  }
+
+  if(m_deletesHasBeenSet)
+  {
+   payload.WithInt64("deletes", m_deletes);
 
   }
 

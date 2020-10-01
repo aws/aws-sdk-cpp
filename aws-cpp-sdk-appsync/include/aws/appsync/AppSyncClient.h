@@ -891,7 +891,7 @@ namespace Model
 
         /**
          * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
          * deleted.</p> <p><h3>See Also:</h3>   <a
@@ -902,7 +902,7 @@ namespace Model
 
         /**
          * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
          * deleted.</p> <p><h3>See Also:</h3>   <a
@@ -915,7 +915,7 @@ namespace Model
 
         /**
          * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
          * deleted.</p> <p><h3>See Also:</h3>   <a
@@ -1208,14 +1208,16 @@ namespace Model
         virtual void UpdateApiCacheAsync(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApiKeyOutcome UpdateApiKey(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          *
@@ -1224,7 +1226,8 @@ namespace Model
         virtual Model::UpdateApiKeyOutcomeCallable UpdateApiKeyCallable(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          *

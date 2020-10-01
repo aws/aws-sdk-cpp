@@ -10,7 +10,9 @@
 #include <aws/glue/model/CatalogEntry.h>
 #include <aws/glue/model/Location.h>
 #include <aws/glue/model/Language.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/MappingEntry.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +214,72 @@ namespace Model
      */
     inline GetPlanRequest& WithLanguage(Language&& value) { SetLanguage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalPlanOptionsMap() const{ return m_additionalPlanOptionsMap; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline bool AdditionalPlanOptionsMapHasBeenSet() const { return m_additionalPlanOptionsMapHasBeenSet; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline void SetAdditionalPlanOptionsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap = value; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline void SetAdditionalPlanOptionsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap = std::move(value); }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& WithAdditionalPlanOptionsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalPlanOptionsMap(value); return *this;}
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& WithAdditionalPlanOptionsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalPlanOptionsMap(std::move(value)); return *this;}
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(const Aws::String& key, const Aws::String& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(Aws::String&& key, const Aws::String& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(const Aws::String& key, Aws::String&& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(Aws::String&& key, Aws::String&& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(const char* key, Aws::String&& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(Aws::String&& key, const char* value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map to hold additional optional key-value parameters.</p>
+     */
+    inline GetPlanRequest& AddAdditionalPlanOptionsMap(const char* key, const char* value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(key, value); return *this; }
+
   private:
 
     Aws::Vector<MappingEntry> m_mapping;
@@ -228,6 +296,9 @@ namespace Model
 
     Language m_language;
     bool m_languageHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_additionalPlanOptionsMap;
+    bool m_additionalPlanOptionsMapHasBeenSet;
   };
 
 } // namespace Model

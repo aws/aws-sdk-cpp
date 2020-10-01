@@ -78,43 +78,43 @@ namespace Model
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
