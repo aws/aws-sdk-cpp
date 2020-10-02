@@ -376,6 +376,8 @@ static int GetMonthNumberFromStr(const char* timeString, size_t startIndex, size
         return -1;
     }
 }
+// Ensure local classes with generic names have internal linkage
+namespace {
 
 class DateParser
 {
@@ -1103,6 +1105,8 @@ private:
 
     int m_state;
 };
+    
+} // namespace 
 
 DateTime::DateTime(const std::chrono::system_clock::time_point& timepointToAssign) : m_time(timepointToAssign), m_valid(true)
 {
