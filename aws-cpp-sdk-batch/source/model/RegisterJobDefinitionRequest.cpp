@@ -20,7 +20,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_containerPropertiesHasBeenSet(false),
     m_nodePropertiesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,17 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

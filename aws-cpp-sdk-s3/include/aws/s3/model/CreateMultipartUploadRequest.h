@@ -49,32 +49,38 @@ namespace Model
 
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
@@ -84,9 +90,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -95,8 +101,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -105,9 +113,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -116,8 +124,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -126,9 +136,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -137,8 +147,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -147,9 +159,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -158,8 +170,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -168,9 +182,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -179,8 +193,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -189,9 +205,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -200,8 +216,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -210,9 +228,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -221,8 +239,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -231,9 +251,9 @@ namespace Model
      * API with an access point, you must direct requests to the access point hostname.
      * The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -242,8 +262,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -502,172 +524,196 @@ namespace Model
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline CreateMultipartUploadRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
@@ -817,32 +863,68 @@ namespace Model
 
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

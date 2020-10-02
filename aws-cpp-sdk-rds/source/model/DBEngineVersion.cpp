@@ -28,6 +28,7 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
+    m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
@@ -53,6 +54,7 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
+    m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
@@ -124,6 +126,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       }
 
       m_supportedCharacterSetsHasBeenSet = true;
+    }
+    XmlNode supportedNcharCharacterSetsNode = resultNode.FirstChild("SupportedNcharCharacterSets");
+    if(!supportedNcharCharacterSetsNode.IsNull())
+    {
+      XmlNode supportedNcharCharacterSetsMember = supportedNcharCharacterSetsNode.FirstChild("CharacterSet");
+      while(!supportedNcharCharacterSetsMember.IsNull())
+      {
+        m_supportedNcharCharacterSets.push_back(supportedNcharCharacterSetsMember);
+        supportedNcharCharacterSetsMember = supportedNcharCharacterSetsMember.NextNode("CharacterSet");
+      }
+
+      m_supportedNcharCharacterSetsHasBeenSet = true;
     }
     XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
     if(!validUpgradeTargetNode.IsNull())
@@ -265,6 +279,17 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_supportedNcharCharacterSetsHasBeenSet)
+  {
+      unsigned supportedNcharCharacterSetsIdx = 1;
+      for(auto& item : m_supportedNcharCharacterSets)
+      {
+        Aws::StringStream supportedNcharCharacterSetsSs;
+        supportedNcharCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedNcharCharacterSetsIdx++;
+        item.OutputToStream(oStream, supportedNcharCharacterSetsSs.str().c_str());
+      }
+  }
+
   if(m_validUpgradeTargetHasBeenSet)
   {
       unsigned validUpgradeTargetIdx = 1;
@@ -377,6 +402,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         Aws::StringStream supportedCharacterSetsSs;
         supportedCharacterSetsSs << location <<  ".CharacterSet." << supportedCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
+      }
+  }
+  if(m_supportedNcharCharacterSetsHasBeenSet)
+  {
+      unsigned supportedNcharCharacterSetsIdx = 1;
+      for(auto& item : m_supportedNcharCharacterSets)
+      {
+        Aws::StringStream supportedNcharCharacterSetsSs;
+        supportedNcharCharacterSetsSs << location <<  ".CharacterSet." << supportedNcharCharacterSetsIdx++;
+        item.OutputToStream(oStream, supportedNcharCharacterSetsSs.str().c_str());
       }
   }
   if(m_validUpgradeTargetHasBeenSet)

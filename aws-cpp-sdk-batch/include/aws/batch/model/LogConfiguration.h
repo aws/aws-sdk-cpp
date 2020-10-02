@@ -48,21 +48,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
 
@@ -72,21 +98,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
 
@@ -96,21 +148,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
@@ -120,21 +198,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
@@ -144,21 +248,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
 
@@ -168,21 +298,47 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that is not listed earlier
-     * that you would like to work with the Amazon ECS container agent, you can fork
-     * the Amazon ECS container agent project that is <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, Amazon Web Services
-     * does not currently support running modified copies of this software.</p> 
-     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-     * your container instance. To check the Docker Remote API version on your
-     * container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>splunk</code>.</p> <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>gelf</dt> <dd>
+     * <p>Specifies the Graylog Extended Format (GELF) logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended
+     * Format logging driver</a> in the Docker documentation.</p> </dd>
+     * <dt>journald</dt> <dd> <p>Specifies the journald logging driver. For more
+     * information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>json-file</dt>
+     * <dd> <p>Specifies the JSON file logging driver. For more information, including
+     * usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+     * logging driver</a> in the Docker documentation.</p> </dd> <dt>splunk</dt> <dd>
+     * <p>Specifies the Splunk logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+     * driver</a> in the Docker documentation.</p> </dd> <dt>syslog</dt> <dd>
+     * <p>Specifies the syslog logging driver. For more information, including usage
+     * and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+     * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
+     * custom driver that is not listed earlier that you would like to work with the
+     * Amazon ECS container agent, you can fork the Amazon ECS container agent project
+     * that is <a href="https://github.com/aws/amazon-ecs-agent">available on
+     * GitHub</a> and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However, Amazon
+     * Web Services does not currently support running modified copies of this
+     * software.</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log into your container instance and run the
+     * following command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
      */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
 
@@ -307,65 +463,57 @@ namespace Model
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
 

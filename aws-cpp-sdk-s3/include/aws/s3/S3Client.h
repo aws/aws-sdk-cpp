@@ -32,6 +32,7 @@
 #include <aws/s3/model/GetBucketLoggingResult.h>
 #include <aws/s3/model/GetBucketMetricsConfigurationResult.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationResult.h>
+#include <aws/s3/model/GetBucketOwnershipControlsResult.h>
 #include <aws/s3/model/GetBucketPolicyResult.h>
 #include <aws/s3/model/GetBucketPolicyStatusResult.h>
 #include <aws/s3/model/GetBucketReplicationResult.h>
@@ -122,6 +123,7 @@ namespace Aws
         class DeleteBucketInventoryConfigurationRequest;
         class DeleteBucketLifecycleRequest;
         class DeleteBucketMetricsConfigurationRequest;
+        class DeleteBucketOwnershipControlsRequest;
         class DeleteBucketPolicyRequest;
         class DeleteBucketReplicationRequest;
         class DeleteBucketTaggingRequest;
@@ -141,6 +143,7 @@ namespace Aws
         class GetBucketLoggingRequest;
         class GetBucketMetricsConfigurationRequest;
         class GetBucketNotificationConfigurationRequest;
+        class GetBucketOwnershipControlsRequest;
         class GetBucketPolicyRequest;
         class GetBucketPolicyStatusRequest;
         class GetBucketReplicationRequest;
@@ -176,6 +179,7 @@ namespace Aws
         class PutBucketLoggingRequest;
         class PutBucketMetricsConfigurationRequest;
         class PutBucketNotificationConfigurationRequest;
+        class PutBucketOwnershipControlsRequest;
         class PutBucketPolicyRequest;
         class PutBucketReplicationRequest;
         class PutBucketRequestPaymentRequest;
@@ -206,6 +210,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketInventoryConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketLifecycleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketMetricsConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketOwnershipControlsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketReplicationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketTaggingOutcome;
@@ -225,6 +230,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetBucketLoggingResult, S3Error> GetBucketLoggingOutcome;
         typedef Aws::Utils::Outcome<GetBucketMetricsConfigurationResult, S3Error> GetBucketMetricsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketNotificationConfigurationResult, S3Error> GetBucketNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetBucketOwnershipControlsResult, S3Error> GetBucketOwnershipControlsOutcome;
         typedef Aws::Utils::Outcome<GetBucketPolicyResult, S3Error> GetBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<GetBucketPolicyStatusResult, S3Error> GetBucketPolicyStatusOutcome;
         typedef Aws::Utils::Outcome<GetBucketReplicationResult, S3Error> GetBucketReplicationOutcome;
@@ -261,6 +267,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketLoggingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketMetricsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketOwnershipControlsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketReplicationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketRequestPaymentOutcome;
@@ -291,6 +298,7 @@ namespace Aws
         typedef std::future<DeleteBucketInventoryConfigurationOutcome> DeleteBucketInventoryConfigurationOutcomeCallable;
         typedef std::future<DeleteBucketLifecycleOutcome> DeleteBucketLifecycleOutcomeCallable;
         typedef std::future<DeleteBucketMetricsConfigurationOutcome> DeleteBucketMetricsConfigurationOutcomeCallable;
+        typedef std::future<DeleteBucketOwnershipControlsOutcome> DeleteBucketOwnershipControlsOutcomeCallable;
         typedef std::future<DeleteBucketPolicyOutcome> DeleteBucketPolicyOutcomeCallable;
         typedef std::future<DeleteBucketReplicationOutcome> DeleteBucketReplicationOutcomeCallable;
         typedef std::future<DeleteBucketTaggingOutcome> DeleteBucketTaggingOutcomeCallable;
@@ -310,6 +318,7 @@ namespace Aws
         typedef std::future<GetBucketLoggingOutcome> GetBucketLoggingOutcomeCallable;
         typedef std::future<GetBucketMetricsConfigurationOutcome> GetBucketMetricsConfigurationOutcomeCallable;
         typedef std::future<GetBucketNotificationConfigurationOutcome> GetBucketNotificationConfigurationOutcomeCallable;
+        typedef std::future<GetBucketOwnershipControlsOutcome> GetBucketOwnershipControlsOutcomeCallable;
         typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
         typedef std::future<GetBucketPolicyStatusOutcome> GetBucketPolicyStatusOutcomeCallable;
         typedef std::future<GetBucketReplicationOutcome> GetBucketReplicationOutcomeCallable;
@@ -346,6 +355,7 @@ namespace Aws
         typedef std::future<PutBucketLoggingOutcome> PutBucketLoggingOutcomeCallable;
         typedef std::future<PutBucketMetricsConfigurationOutcome> PutBucketMetricsConfigurationOutcomeCallable;
         typedef std::future<PutBucketNotificationConfigurationOutcome> PutBucketNotificationConfigurationOutcomeCallable;
+        typedef std::future<PutBucketOwnershipControlsOutcome> PutBucketOwnershipControlsOutcomeCallable;
         typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
         typedef std::future<PutBucketReplicationOutcome> PutBucketReplicationOutcomeCallable;
         typedef std::future<PutBucketRequestPaymentOutcome> PutBucketRequestPaymentOutcomeCallable;
@@ -388,6 +398,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::DeleteBucketInventoryConfigurationRequest&, const Model::DeleteBucketInventoryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketInventoryConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketLifecycleRequest&, const Model::DeleteBucketLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketLifecycleResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketMetricsConfigurationRequest&, const Model::DeleteBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketMetricsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::DeleteBucketOwnershipControlsRequest&, const Model::DeleteBucketOwnershipControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketOwnershipControlsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketReplicationRequest&, const Model::DeleteBucketReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketReplicationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketTaggingRequest&, const Model::DeleteBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketTaggingResponseReceivedHandler;
@@ -407,6 +418,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::GetBucketLoggingRequest&, const Model::GetBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLoggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketMetricsConfigurationRequest&, const Model::GetBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketMetricsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketNotificationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetBucketOwnershipControlsRequest&, const Model::GetBucketOwnershipControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketOwnershipControlsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketPolicyRequest&, Model::GetBucketPolicyOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketPolicyStatusRequest&, const Model::GetBucketPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyStatusResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketReplicationRequest&, const Model::GetBucketReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketReplicationResponseReceivedHandler;
@@ -443,6 +455,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::PutBucketLoggingRequest&, const Model::PutBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLoggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketMetricsConfigurationRequest&, const Model::PutBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketMetricsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketNotificationConfigurationRequest&, const Model::PutBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketNotificationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutBucketOwnershipControlsRequest&, const Model::PutBucketOwnershipControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketOwnershipControlsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketReplicationRequest&, const Model::PutBucketReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketReplicationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketRequestPaymentRequest&, const Model::PutBucketRequestPaymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketRequestPaymentResponseReceivedHandler;
@@ -1179,8 +1192,8 @@ namespace Aws
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
-         * Outposts</b> bucket, see <a
+         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
+         * Outposts bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1188,16 +1201,16 @@ namespace Aws
          * requirements. For example, if you reside in Europe, you will probably find it
          * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
-         * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
-         * bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes
-         * to the us-east-1 Region. Accordingly, the signature calculations in Signature
-         * Version 4 must use us-east-1 as the Region, even if the location constraint in
-         * the request specifies another Region where the bucket is to be created. If you
-         * create a bucket in a Region other than US East (N. Virginia), your application
-         * must be able to handle 307 redirect. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
+         * a bucket</a>.</p>  <p>If you send your create bucket request to the
+         * <code>s3.amazonaws.com</code> endpoint, the request goes to the us-east-1
+         * Region. Accordingly, the signature calculations in Signature Version 4 must use
+         * us-east-1 as the Region, even if the location constraint in the request
+         * specifies another Region where the bucket is to be created. If you create a
+         * bucket in a Region other than US East (N. Virginia), your application must be
+         * able to handle 307 redirect. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
-         * Hosting of Buckets</a>.</p>  <p>When creating a bucket using this
+         * hosting of buckets</a>.</p>  <p>When creating a bucket using this
          * operation, you can optionally specify the accounts or groups that should be
          * granted specific permissions on the bucket. There are two ways to grant the
          * appropriate permissions using the request headers.</p> <ul> <li> <p>Specify a
@@ -1211,7 +1224,7 @@ namespace Aws
          * <code>x-amz-grant-full-control</code> headers. These headers map to the set of
          * permissions Amazon S3 supports in an ACL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
+         * control list (ACL) overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p> <code>id</code>
          * – if the value specified is the canonical user ID of an AWS account</p> </li>
          * <li> <p> <code>uri</code> – if you are granting permissions to a predefined
@@ -1247,8 +1260,8 @@ namespace Aws
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
-         * Outposts</b> bucket, see <a
+         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
+         * Outposts bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1256,16 +1269,16 @@ namespace Aws
          * requirements. For example, if you reside in Europe, you will probably find it
          * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
-         * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
-         * bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes
-         * to the us-east-1 Region. Accordingly, the signature calculations in Signature
-         * Version 4 must use us-east-1 as the Region, even if the location constraint in
-         * the request specifies another Region where the bucket is to be created. If you
-         * create a bucket in a Region other than US East (N. Virginia), your application
-         * must be able to handle 307 redirect. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
+         * a bucket</a>.</p>  <p>If you send your create bucket request to the
+         * <code>s3.amazonaws.com</code> endpoint, the request goes to the us-east-1
+         * Region. Accordingly, the signature calculations in Signature Version 4 must use
+         * us-east-1 as the Region, even if the location constraint in the request
+         * specifies another Region where the bucket is to be created. If you create a
+         * bucket in a Region other than US East (N. Virginia), your application must be
+         * able to handle 307 redirect. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
-         * Hosting of Buckets</a>.</p>  <p>When creating a bucket using this
+         * hosting of buckets</a>.</p>  <p>When creating a bucket using this
          * operation, you can optionally specify the accounts or groups that should be
          * granted specific permissions on the bucket. There are two ways to grant the
          * appropriate permissions using the request headers.</p> <ul> <li> <p>Specify a
@@ -1279,7 +1292,7 @@ namespace Aws
          * <code>x-amz-grant-full-control</code> headers. These headers map to the set of
          * permissions Amazon S3 supports in an ACL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
+         * control list (ACL) overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p> <code>id</code>
          * – if the value specified is the canonical user ID of an AWS account</p> </li>
          * <li> <p> <code>uri</code> – if you are granting permissions to a predefined
@@ -1317,8 +1330,8 @@ namespace Aws
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 Buckets</a>. </p> <p>If you want to create an <b>Amazon S3 on
-         * Outposts</b> bucket, see <a
+         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
+         * Outposts bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1326,16 +1339,16 @@ namespace Aws
          * requirements. For example, if you reside in Europe, you will probably find it
          * advantageous to create buckets in the Europe (Ireland) Region. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
-         * to Select a Region for Your Buckets</a>.</p>  <p>If you send your create
-         * bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes
-         * to the us-east-1 Region. Accordingly, the signature calculations in Signature
-         * Version 4 must use us-east-1 as the Region, even if the location constraint in
-         * the request specifies another Region where the bucket is to be created. If you
-         * create a bucket in a Region other than US East (N. Virginia), your application
-         * must be able to handle 307 redirect. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
+         * a bucket</a>.</p>  <p>If you send your create bucket request to the
+         * <code>s3.amazonaws.com</code> endpoint, the request goes to the us-east-1
+         * Region. Accordingly, the signature calculations in Signature Version 4 must use
+         * us-east-1 as the Region, even if the location constraint in the request
+         * specifies another Region where the bucket is to be created. If you create a
+         * bucket in a Region other than US East (N. Virginia), your application must be
+         * able to handle 307 redirect. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
-         * Hosting of Buckets</a>.</p>  <p>When creating a bucket using this
+         * hosting of buckets</a>.</p>  <p>When creating a bucket using this
          * operation, you can optionally specify the accounts or groups that should be
          * granted specific permissions on the bucket. There are two ways to grant the
          * appropriate permissions using the request headers.</p> <ul> <li> <p>Specify a
@@ -1349,7 +1362,7 @@ namespace Aws
          * <code>x-amz-grant-full-control</code> headers. These headers map to the set of
          * permissions Amazon S3 supports in an ACL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
+         * control list (ACL) overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p> <code>id</code>
          * – if the value specified is the canonical user ID of an AWS account</p> </li>
          * <li> <p> <code>uri</code> – if you are granting permissions to a predefined
@@ -2350,6 +2363,61 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBucketMetricsConfigurationAsync(const Model::DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:PutBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>.</p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>DeleteBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBucketOwnershipControlsOutcome DeleteBucketOwnershipControls(const Model::DeleteBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:PutBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>.</p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>DeleteBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBucketOwnershipControlsOutcomeCallable DeleteBucketOwnershipControlsCallable(const Model::DeleteBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:PutBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>.</p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>DeleteBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBucketOwnershipControlsAsync(const Model::DeleteBucketOwnershipControlsRequest& request, const DeleteBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the DELETE operation uses the policy subresource to
@@ -3812,6 +3880,61 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:GetBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBucketOwnershipControlsOutcome GetBucketOwnershipControls(const Model::GetBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:GetBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBucketOwnershipControlsOutcomeCallable GetBucketOwnershipControlsCallable(const Model::GetBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
+         * operation, you must have the <code>s3:GetBucketOwnershipControls</code>
+         * permission. For more information about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>PutBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBucketOwnershipControlsAsync(const Model::GetBucketOwnershipControlsRequest& request, const GetBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the policy of a specified bucket. If you are using an identity other
@@ -7503,6 +7626,64 @@ namespace Aws
         virtual void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
+         * To use this operation, you must have the
+         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBucketOwnershipControlsOutcome PutBucketOwnershipControls(const Model::PutBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
+         * To use this operation, you must have the
+         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBucketOwnershipControlsOutcomeCallable PutBucketOwnershipControlsCallable(const Model::PutBucketOwnershipControlsRequest& request) const;
+
+        /**
+         * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
+         * To use this operation, you must have the
+         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * about Amazon S3 permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+         * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
+         * Ownership, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
+         * Object Ownership</a>. </p> <p>The following operations are related to
+         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
+         * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBucketOwnershipControlsAsync(const Model::PutBucketOwnershipControlsRequest& request, const PutBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using
          * an identity other than the root user of the AWS account that owns the bucket,
          * the calling identity must have the <code>PutBucketPolicy</code> permissions on
@@ -8244,10 +8425,11 @@ namespace Aws
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
          * ACLs Using the REST API</a>. </p> <p> <b>Storage Class Options</b> </p> <p>By
-         * default, Amazon S3 uses the STANDARD storage class to store newly created
+         * default, Amazon S3 uses the STANDARD Storage Class to store newly created
          * objects. The STANDARD storage class provides high durability and high
          * availability. Depending on performance needs, you can specify a different
-         * storage class. For more information, see <a
+         * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
          * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
          * <b>Versioning</b> </p> <p>If you enable versioning for a bucket, Amazon S3
@@ -8304,10 +8486,11 @@ namespace Aws
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
          * ACLs Using the REST API</a>. </p> <p> <b>Storage Class Options</b> </p> <p>By
-         * default, Amazon S3 uses the STANDARD storage class to store newly created
+         * default, Amazon S3 uses the STANDARD Storage Class to store newly created
          * objects. The STANDARD storage class provides high durability and high
          * availability. Depending on performance needs, you can specify a different
-         * storage class. For more information, see <a
+         * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
          * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
          * <b>Versioning</b> </p> <p>If you enable versioning for a bucket, Amazon S3
@@ -8366,10 +8549,11 @@ namespace Aws
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
          * ACLs Using the REST API</a>. </p> <p> <b>Storage Class Options</b> </p> <p>By
-         * default, Amazon S3 uses the STANDARD storage class to store newly created
+         * default, Amazon S3 uses the STANDARD Storage Class to store newly created
          * objects. The STANDARD storage class provides high durability and high
          * availability. Depending on performance needs, you can specify a different
-         * storage class. For more information, see <a
+         * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
          * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
          * <b>Versioning</b> </p> <p>If you enable versioning for a bucket, Amazon S3
@@ -9758,7 +9942,12 @@ namespace Aws
          * limit on the last part of your multipart upload.</p> <p>To ensure that data is
          * not corrupted when traversing the network, specify the <code>Content-MD5</code>
          * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>
+         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
+         * the upload request is signed with Signature Version 4, then AWS S3 uses the
+         * <code>x-amz-content-sha256</code> header as a checksum instead of
+         * <code>Content-MD5</code>. For more information see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+         * Requests: Using the Authorization Header (AWS Signature Version 4)</a>. </p> <p>
          * <b>Note:</b> After you initiate multipart upload and upload one or more parts,
          * you must either complete or abort multipart upload in order to stop getting
          * charged for storage of the uploaded parts. Only after you either complete or
@@ -9834,7 +10023,12 @@ namespace Aws
          * limit on the last part of your multipart upload.</p> <p>To ensure that data is
          * not corrupted when traversing the network, specify the <code>Content-MD5</code>
          * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>
+         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
+         * the upload request is signed with Signature Version 4, then AWS S3 uses the
+         * <code>x-amz-content-sha256</code> header as a checksum instead of
+         * <code>Content-MD5</code>. For more information see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+         * Requests: Using the Authorization Header (AWS Signature Version 4)</a>. </p> <p>
          * <b>Note:</b> After you initiate multipart upload and upload one or more parts,
          * you must either complete or abort multipart upload in order to stop getting
          * charged for storage of the uploaded parts. Only after you either complete or
@@ -9912,7 +10106,12 @@ namespace Aws
          * limit on the last part of your multipart upload.</p> <p>To ensure that data is
          * not corrupted when traversing the network, specify the <code>Content-MD5</code>
          * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>
+         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
+         * the upload request is signed with Signature Version 4, then AWS S3 uses the
+         * <code>x-amz-content-sha256</code> header as a checksum instead of
+         * <code>Content-MD5</code>. For more information see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+         * Requests: Using the Authorization Header (AWS Signature Version 4)</a>. </p> <p>
          * <b>Note:</b> After you initiate multipart upload and upload one or more parts,
          * you must either complete or abort multipart upload in order to stop getting
          * charged for storage of the uploaded parts. Only after you either complete or
@@ -10313,6 +10512,7 @@ namespace Aws
         void DeleteBucketInventoryConfigurationAsyncHelper(const Model::DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketLifecycleAsyncHelper(const Model::DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketMetricsConfigurationAsyncHelper(const Model::DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBucketOwnershipControlsAsyncHelper(const Model::DeleteBucketOwnershipControlsRequest& request, const DeleteBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketPolicyAsyncHelper(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketReplicationAsyncHelper(const Model::DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketTaggingAsyncHelper(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10332,6 +10532,7 @@ namespace Aws
         void GetBucketLoggingAsyncHelper(const Model::GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketMetricsConfigurationAsyncHelper(const Model::GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketNotificationConfigurationAsyncHelper(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBucketOwnershipControlsAsyncHelper(const Model::GetBucketOwnershipControlsRequest& request, const GetBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketPolicyStatusAsyncHelper(const Model::GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketReplicationAsyncHelper(const Model::GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10368,6 +10569,7 @@ namespace Aws
         void PutBucketLoggingAsyncHelper(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketMetricsConfigurationAsyncHelper(const Model::PutBucketMetricsConfigurationRequest& request, const PutBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketNotificationConfigurationAsyncHelper(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBucketOwnershipControlsAsyncHelper(const Model::PutBucketOwnershipControlsRequest& request, const PutBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketReplicationAsyncHelper(const Model::PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketRequestPaymentAsyncHelper(const Model::PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

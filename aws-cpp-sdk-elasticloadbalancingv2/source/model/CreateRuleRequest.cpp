@@ -15,7 +15,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_conditionsHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_actionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ Aws::String CreateRuleRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "Actions.member.", actionsCount, "");
       actionsCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

@@ -33,6 +33,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline SubmitJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline SubmitJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job.</p>
+     */
+    inline SubmitJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The name of the job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
@@ -104,6 +140,8 @@ namespace Model
     inline SubmitJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
+    Aws::String m_jobArn;
 
     Aws::String m_jobName;
 

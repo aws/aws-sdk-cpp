@@ -2312,6 +2312,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+
+
+    /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
      * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
      * private IP address from within the DB instance's VPC, and to the public IP
@@ -3789,6 +3830,9 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
+    Aws::String m_ncharCharacterSetName;
+    bool m_ncharCharacterSetNameHasBeenSet;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;

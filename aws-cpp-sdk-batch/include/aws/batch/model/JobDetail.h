@@ -49,6 +49,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobDetail& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobDetail& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobDetail& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The name of the job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
@@ -794,7 +835,76 @@ namespace Model
      */
     inline JobDetail& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags applied to the job.</p>
+     */
+    inline JobDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet;
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
@@ -849,6 +959,9 @@ namespace Model
 
     JobTimeout m_timeout;
     bool m_timeoutHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

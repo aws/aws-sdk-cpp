@@ -19,6 +19,7 @@ namespace Model
 {
 
 JobDetail::JobDetail() : 
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
@@ -40,11 +41,13 @@ JobDetail::JobDetail() :
     m_nodeDetailsHasBeenSet(false),
     m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 JobDetail::JobDetail(JsonView jsonValue) : 
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
@@ -66,13 +69,21 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_nodeDetailsHasBeenSet(false),
     m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 JobDetail& JobDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+
+    m_jobArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
@@ -208,12 +219,28 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_timeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue JobDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_jobArnHasBeenSet)
+  {
+   payload.WithString("jobArn", m_jobArn);
+
+  }
 
   if(m_jobNameHasBeenSet)
   {
@@ -334,6 +361,17 @@ JsonValue JobDetail::Jsonize() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -293,60 +293,117 @@ namespace Model
 
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const{ return m_supportedCharacterSets; }
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline bool SupportedCharacterSetsHasBeenSet() const { return m_supportedCharacterSetsHasBeenSet; }
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline void SetSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets = value; }
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline void SetSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets = std::move(value); }
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline DBEngineVersion& WithSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedCharacterSets(value); return *this;}
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline DBEngineVersion& WithSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedCharacterSets(std::move(value)); return *this;}
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline DBEngineVersion& AddSupportedCharacterSets(const CharacterSet& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(value); return *this; }
 
     /**
-     * <p> A list of the character sets supported by this engine for the
+     * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * action. </p>
+     * operation. </p>
      */
     inline DBEngineVersion& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline const Aws::Vector<CharacterSet>& GetSupportedNcharCharacterSets() const{ return m_supportedNcharCharacterSets; }
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline bool SupportedNcharCharacterSetsHasBeenSet() const { return m_supportedNcharCharacterSetsHasBeenSet; }
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline void SetSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets = value; }
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline void SetSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets = std::move(value); }
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline DBEngineVersion& WithSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedNcharCharacterSets(value); return *this;}
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline DBEngineVersion& WithSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedNcharCharacterSets(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline DBEngineVersion& AddSupportedNcharCharacterSets(const CharacterSet& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the character sets supported by the Oracle DB engine for the
+     * <code>NcharCharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> operation. </p>
+     */
+    inline DBEngineVersion& AddSupportedNcharCharacterSets(CharacterSet&& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -804,6 +861,9 @@ namespace Model
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet;
+
+    Aws::Vector<CharacterSet> m_supportedNcharCharacterSets;
+    bool m_supportedNcharCharacterSetsHasBeenSet;
 
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
     bool m_validUpgradeTargetHasBeenSet;

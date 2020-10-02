@@ -348,12 +348,12 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified Elastic Load Balancing resource. You
-         * can tag your Application Load Balancers, Network Load Balancers, and your target
-         * groups.</p> <p>Each tag consists of a key and an optional value. If a resource
-         * already has a tag with the same key, <code>AddTags</code> updates its value.</p>
-         * <p>To list the current tags for your resources, use <a>DescribeTags</a>. To
-         * remove tags from your resources, use <a>RemoveTags</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * can tag your Application Load Balancers, Network Load Balancers, target groups,
+         * listeners, and rules.</p> <p>Each tag consists of a key and an optional value.
+         * If a resource already has a tag with the same key, <code>AddTags</code> updates
+         * its value.</p> <p>To list the current tags for your resources, use
+         * <a>DescribeTags</a>. To remove tags from your resources, use
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -361,12 +361,12 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified Elastic Load Balancing resource. You
-         * can tag your Application Load Balancers, Network Load Balancers, and your target
-         * groups.</p> <p>Each tag consists of a key and an optional value. If a resource
-         * already has a tag with the same key, <code>AddTags</code> updates its value.</p>
-         * <p>To list the current tags for your resources, use <a>DescribeTags</a>. To
-         * remove tags from your resources, use <a>RemoveTags</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * can tag your Application Load Balancers, Network Load Balancers, target groups,
+         * listeners, and rules.</p> <p>Each tag consists of a key and an optional value.
+         * If a resource already has a tag with the same key, <code>AddTags</code> updates
+         * its value.</p> <p>To list the current tags for your resources, use
+         * <a>DescribeTags</a>. To remove tags from your resources, use
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -376,12 +376,12 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified Elastic Load Balancing resource. You
-         * can tag your Application Load Balancers, Network Load Balancers, and your target
-         * groups.</p> <p>Each tag consists of a key and an optional value. If a resource
-         * already has a tag with the same key, <code>AddTags</code> updates its value.</p>
-         * <p>To list the current tags for your resources, use <a>DescribeTags</a>. To
-         * remove tags from your resources, use <a>RemoveTags</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * can tag your Application Load Balancers, Network Load Balancers, target groups,
+         * listeners, and rules.</p> <p>Each tag consists of a key and an optional value.
+         * If a resource already has a tag with the same key, <code>AddTags</code> updates
+         * its value.</p> <p>To list the current tags for your resources, use
+         * <a>DescribeTags</a>. To remove tags from your resources, use
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -1108,18 +1108,18 @@ namespace Model
         virtual void DescribeSSLPoliciesAsync(const Model::DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the tags for the specified resources. You can describe the tags for
-         * one or more Application Load Balancers, Network Load Balancers, and target
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified Elastic Load Balancing resources. You
+         * can describe the tags for one or more Application Load Balancers, Network Load
+         * Balancers, target groups, listeners, or rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources. You can describe the tags for
-         * one or more Application Load Balancers, Network Load Balancers, and target
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified Elastic Load Balancing resources. You
+         * can describe the tags for one or more Application Load Balancers, Network Load
+         * Balancers, target groups, listeners, or rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -1128,9 +1128,9 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources. You can describe the tags for
-         * one or more Application Load Balancers, Network Load Balancers, and target
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified Elastic Load Balancing resources. You
+         * can describe the tags for one or more Application Load Balancers, Network Load
+         * Balancers, target groups, listeners, or rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -1528,8 +1528,10 @@ namespace Model
 
         /**
          * <p>Removes the specified tags from the specified Elastic Load Balancing
-         * resource.</p> <p>To list the current tags for your resources, use
-         * <a>DescribeTags</a>.</p><p><h3>See Also:</h3>   <a
+         * resources. You can remove the tags for one or more Application Load Balancers,
+         * Network Load Balancers, target groups, listeners, or rules.</p> <p>To list the
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
          * API Reference</a></p>
          */
@@ -1537,8 +1539,10 @@ namespace Model
 
         /**
          * <p>Removes the specified tags from the specified Elastic Load Balancing
-         * resource.</p> <p>To list the current tags for your resources, use
-         * <a>DescribeTags</a>.</p><p><h3>See Also:</h3>   <a
+         * resources. You can remove the tags for one or more Application Load Balancers,
+         * Network Load Balancers, target groups, listeners, or rules.</p> <p>To list the
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
          * API Reference</a></p>
          *
@@ -1548,8 +1552,10 @@ namespace Model
 
         /**
          * <p>Removes the specified tags from the specified Elastic Load Balancing
-         * resource.</p> <p>To list the current tags for your resources, use
-         * <a>DescribeTags</a>.</p><p><h3>See Also:</h3>   <a
+         * resources. You can remove the tags for one or more Application Load Balancers,
+         * Network Load Balancers, target groups, listeners, or rules.</p> <p>To list the
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
          * API Reference</a></p>
          *

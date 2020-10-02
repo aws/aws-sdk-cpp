@@ -21,6 +21,8 @@
 #include <aws/personalize-events/PersonalizeEventsEndpoint.h>
 #include <aws/personalize-events/PersonalizeEventsErrorMarshaller.h>
 #include <aws/personalize-events/model/PutEventsRequest.h>
+#include <aws/personalize-events/model/PutItemsRequest.h>
+#include <aws/personalize-events/model/PutUsersRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -120,5 +122,59 @@ void PersonalizeEventsClient::PutEventsAsync(const PutEventsRequest& request, co
 void PersonalizeEventsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEvents(request), context);
+}
+
+PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/items";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutItemsOutcomeCallable PersonalizeEventsClient::PutItemsCallable(const PutItemsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutItems(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeEventsClient::PutItemsAsync(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutItemsAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeEventsClient::PutItemsAsyncHelper(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutItems(request), context);
+}
+
+PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/users";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutUsersOutcomeCallable PersonalizeEventsClient::PutUsersCallable(const PutUsersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutUsers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeEventsClient::PutUsersAsync(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutUsersAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeEventsClient::PutUsersAsyncHelper(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutUsers(request), context);
 }
 

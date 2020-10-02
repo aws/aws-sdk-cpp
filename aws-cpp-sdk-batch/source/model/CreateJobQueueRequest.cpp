@@ -18,7 +18,8 @@ CreateJobQueueRequest::CreateJobQueueRequest() :
     m_stateHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String CreateJobQueueRequest::SerializePayload() const
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());
    }
    payload.WithArray("computeEnvironmentOrder", std::move(computeEnvironmentOrderJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

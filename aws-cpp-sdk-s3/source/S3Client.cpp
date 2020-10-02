@@ -34,6 +34,7 @@
 #include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
 #include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
+#include <aws/s3/model/DeleteBucketOwnershipControlsRequest.h>
 #include <aws/s3/model/DeleteBucketPolicyRequest.h>
 #include <aws/s3/model/DeleteBucketReplicationRequest.h>
 #include <aws/s3/model/DeleteBucketTaggingRequest.h>
@@ -53,6 +54,7 @@
 #include <aws/s3/model/GetBucketLoggingRequest.h>
 #include <aws/s3/model/GetBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
+#include <aws/s3/model/GetBucketOwnershipControlsRequest.h>
 #include <aws/s3/model/GetBucketPolicyRequest.h>
 #include <aws/s3/model/GetBucketPolicyStatusRequest.h>
 #include <aws/s3/model/GetBucketReplicationRequest.h>
@@ -88,6 +90,7 @@
 #include <aws/s3/model/PutBucketLoggingRequest.h>
 #include <aws/s3/model/PutBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/PutBucketNotificationConfigurationRequest.h>
+#include <aws/s3/model/PutBucketOwnershipControlsRequest.h>
 #include <aws/s3/model/PutBucketPolicyRequest.h>
 #include <aws/s3/model/PutBucketReplicationRequest.h>
 #include <aws/s3/model/PutBucketRequestPaymentRequest.h>
@@ -690,6 +693,43 @@ void S3Client::DeleteBucketMetricsConfigurationAsync(const DeleteBucketMetricsCo
 void S3Client::DeleteBucketMetricsConfigurationAsyncHelper(const DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBucketMetricsConfiguration(request), context);
+}
+
+DeleteBucketOwnershipControlsOutcome S3Client::DeleteBucketOwnershipControls(const DeleteBucketOwnershipControlsRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketOwnershipControls", "Required field: Bucket, is not set");
+    return DeleteBucketOwnershipControlsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketOwnershipControlsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?ownershipControls");
+  uri.SetQueryString(ss.str());
+  return DeleteBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteBucketOwnershipControlsOutcomeCallable S3Client::DeleteBucketOwnershipControlsCallable(const DeleteBucketOwnershipControlsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketOwnershipControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketOwnershipControls(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketOwnershipControlsAsync(const DeleteBucketOwnershipControlsRequest& request, const DeleteBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketOwnershipControlsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketOwnershipControlsAsyncHelper(const DeleteBucketOwnershipControlsRequest& request, const DeleteBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketOwnershipControls(request), context);
 }
 
 DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
@@ -1422,6 +1462,43 @@ void S3Client::GetBucketNotificationConfigurationAsync(const GetBucketNotificati
 void S3Client::GetBucketNotificationConfigurationAsyncHelper(const GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBucketNotificationConfiguration(request), context);
+}
+
+GetBucketOwnershipControlsOutcome S3Client::GetBucketOwnershipControls(const GetBucketOwnershipControlsRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketOwnershipControls", "Required field: Bucket, is not set");
+    return GetBucketOwnershipControlsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketOwnershipControlsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?ownershipControls");
+  uri.SetQueryString(ss.str());
+  return GetBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetBucketOwnershipControlsOutcomeCallable S3Client::GetBucketOwnershipControlsCallable(const GetBucketOwnershipControlsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketOwnershipControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketOwnershipControls(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketOwnershipControlsAsync(const GetBucketOwnershipControlsRequest& request, const GetBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketOwnershipControlsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketOwnershipControlsAsyncHelper(const GetBucketOwnershipControlsRequest& request, const GetBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketOwnershipControls(request), context);
 }
 
 GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& request) const
@@ -2823,6 +2900,43 @@ void S3Client::PutBucketNotificationConfigurationAsync(const PutBucketNotificati
 void S3Client::PutBucketNotificationConfigurationAsyncHelper(const PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBucketNotificationConfiguration(request), context);
+}
+
+PutBucketOwnershipControlsOutcome S3Client::PutBucketOwnershipControls(const PutBucketOwnershipControlsRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketOwnershipControls", "Required field: Bucket, is not set");
+    return PutBucketOwnershipControlsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketOwnershipControlsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?ownershipControls");
+  uri.SetQueryString(ss.str());
+  return PutBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutBucketOwnershipControlsOutcomeCallable S3Client::PutBucketOwnershipControlsCallable(const PutBucketOwnershipControlsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketOwnershipControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketOwnershipControls(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketOwnershipControlsAsync(const PutBucketOwnershipControlsRequest& request, const PutBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketOwnershipControlsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketOwnershipControlsAsyncHelper(const PutBucketOwnershipControlsRequest& request, const PutBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketOwnershipControls(request), context);
 }
 
 PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& request) const

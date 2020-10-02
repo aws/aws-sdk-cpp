@@ -57,6 +57,7 @@ DBInstance::DBInstance() :
     m_iopsHasBeenSet(false),
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -137,6 +138,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_iopsHasBeenSet(false),
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -402,6 +404,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
+    }
+    XmlNode ncharCharacterSetNameNode = resultNode.FirstChild("NcharCharacterSetName");
+    if(!ncharCharacterSetNameNode.IsNull())
+    {
+      m_ncharCharacterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(ncharCharacterSetNameNode.GetText());
+      m_ncharCharacterSetNameHasBeenSet = true;
     }
     XmlNode secondaryAvailabilityZoneNode = resultNode.FirstChild("SecondaryAvailabilityZone");
     if(!secondaryAvailabilityZoneNode.IsNull())
@@ -802,6 +810,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
 
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
+  }
+
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
@@ -1138,6 +1151,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_characterSetNameHasBeenSet)
   {
       oStream << location << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+      oStream << location << ".NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
   }
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {

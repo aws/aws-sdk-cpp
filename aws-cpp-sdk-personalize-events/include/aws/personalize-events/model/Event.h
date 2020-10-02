@@ -114,50 +114,58 @@ namespace Model
 
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline Event& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline Event& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of event. This property corresponds to the <code>EVENT_TYPE</code>
-     * field of the Interactions schema.</p>
+     * <p>The type of event, such as click or download. This property corresponds to
+     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
+     * types of events you are tracking.</p>
      */
     inline Event& WithEventType(const char* value) { SetEventType(value); return *this;}
 

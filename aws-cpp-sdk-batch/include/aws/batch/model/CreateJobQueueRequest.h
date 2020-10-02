@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/JQState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
 #include <utility>
 
@@ -232,6 +233,124 @@ namespace Model
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job queue to help you categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline CreateJobQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_jobQueueName;
@@ -245,6 +364,9 @@ namespace Model
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

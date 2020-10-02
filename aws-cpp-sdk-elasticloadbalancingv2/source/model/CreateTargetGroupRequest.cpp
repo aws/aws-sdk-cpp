@@ -33,7 +33,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_unhealthyThresholdCountHasBeenSet(false),
     m_matcherHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_targetTypeHasBeenSet)
   {
     ss << "TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2015-12-01";

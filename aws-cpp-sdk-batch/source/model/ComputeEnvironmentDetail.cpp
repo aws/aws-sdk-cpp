@@ -22,6 +22,7 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
     m_typeHasBeenSet(false),
     m_state(CEState::NOT_SET),
@@ -38,6 +39,7 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) :
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
     m_typeHasBeenSet(false),
     m_state(CEState::NOT_SET),
@@ -72,6 +74,16 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_ecsClusterArn = jsonValue.GetString("ecsClusterArn");
 
     m_ecsClusterArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -138,6 +150,17 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_ecsClusterArnHasBeenSet)
   {
    payload.WithString("ecsClusterArn", m_ecsClusterArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

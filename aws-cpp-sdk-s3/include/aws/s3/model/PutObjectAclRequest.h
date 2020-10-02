@@ -131,9 +131,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -145,9 +145,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -159,9 +159,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -173,9 +173,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -187,9 +187,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -201,9 +201,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -215,9 +215,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -229,9 +229,9 @@ namespace Model
      * </p> <p>When using this API with an access point, you must direct requests to
      * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -241,131 +241,147 @@ namespace Model
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.</p>
+     * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to list the objects in the bucket.</p>
+     * <p>Allows grantee to list the objects in the bucket.</p> <p>This action is not
+     * supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the bucket ACL.</p>
+     * <p>Allows grantee to read the bucket ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
@@ -412,42 +428,50 @@ namespace Model
 
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectAclRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
@@ -457,9 +481,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -468,8 +492,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -478,9 +504,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -489,8 +515,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -499,9 +527,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -510,8 +538,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -520,9 +550,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -531,8 +561,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -541,9 +573,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -552,8 +584,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -562,9 +596,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -573,8 +607,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -583,9 +619,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -594,8 +630,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -604,9 +642,9 @@ namespace Model
      * with an access point, you must direct requests to the access point hostname. The
      * access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
@@ -615,8 +653,10 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
      * When using this operation using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on
-     * Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

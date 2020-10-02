@@ -42,6 +42,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The ID of the job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -393,6 +434,9 @@ namespace Model
     inline JobSummary& WithNodeProperties(NodePropertiesSummary&& value) { SetNodeProperties(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;

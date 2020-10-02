@@ -18,6 +18,7 @@ DiscoverInstancesRequest::DiscoverInstancesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_queryParametersHasBeenSet(false),
+    m_optionalParametersHasBeenSet(false),
     m_healthStatus(HealthStatusFilter::NOT_SET),
     m_healthStatusHasBeenSet(false)
 {
@@ -53,6 +54,17 @@ Aws::String DiscoverInstancesRequest::SerializePayload() const
      queryParametersJsonMap.WithString(queryParametersItem.first, queryParametersItem.second);
    }
    payload.WithObject("QueryParameters", std::move(queryParametersJsonMap));
+
+  }
+
+  if(m_optionalParametersHasBeenSet)
+  {
+   JsonValue optionalParametersJsonMap;
+   for(auto& optionalParametersItem : m_optionalParameters)
+   {
+     optionalParametersJsonMap.WithString(optionalParametersItem.first, optionalParametersItem.second);
+   }
+   payload.WithObject("OptionalParameters", std::move(optionalParametersJsonMap));
 
   }
 

@@ -90,43 +90,47 @@ namespace Model
 
 
     /**
-     * <p>The number of VCPUs allocated for the job.</p>
+     * <p>The number of VCPUs allocated for the job. This is a required parameter.</p>
      */
     inline int GetVcpus() const{ return m_vcpus; }
 
     /**
-     * <p>The number of VCPUs allocated for the job.</p>
+     * <p>The number of VCPUs allocated for the job. This is a required parameter.</p>
      */
     inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
 
     /**
-     * <p>The number of VCPUs allocated for the job.</p>
+     * <p>The number of VCPUs allocated for the job. This is a required parameter.</p>
      */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
     /**
-     * <p>The number of VCPUs allocated for the job.</p>
+     * <p>The number of VCPUs allocated for the job. This is a required parameter.</p>
      */
     inline ContainerDetail& WithVcpus(int value) { SetVcpus(value); return *this;}
 
 
     /**
-     * <p>The number of MiB of memory reserved for the job.</p>
+     * <p>The number of MiB of memory reserved for the job. This is a required
+     * parameter.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The number of MiB of memory reserved for the job.</p>
+     * <p>The number of MiB of memory reserved for the job. This is a required
+     * parameter.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>The number of MiB of memory reserved for the job.</p>
+     * <p>The number of MiB of memory reserved for the job. This is a required
+     * parameter.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>The number of MiB of memory reserved for the job.</p>
+     * <p>The number of MiB of memory reserved for the job. This is a required
+     * parameter.</p>
      */
     inline ContainerDetail& WithMemory(int value) { SetMemory(value); return *this;}
 
@@ -221,64 +225,64 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline ContainerDetail& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline ContainerDetail& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
      * assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+     * Batch execution IAM role</a>.</p>
      */
     inline ContainerDetail& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

@@ -460,6 +460,124 @@ namespace Model
      */
     inline RegisterJobDefinitionRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job definition to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_jobDefinitionName;
@@ -482,6 +600,9 @@ namespace Model
 
     JobTimeout m_timeout;
     bool m_timeoutHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

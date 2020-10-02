@@ -1416,6 +1416,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+
+
+    /**
      * <p>If present, specifies the name of the secondary Availability Zone for a DB
      * instance with multi-AZ support.</p>
      */
@@ -2761,6 +2818,9 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
+    Aws::String m_ncharCharacterSetName;
+    bool m_ncharCharacterSetNameHasBeenSet;
 
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet;

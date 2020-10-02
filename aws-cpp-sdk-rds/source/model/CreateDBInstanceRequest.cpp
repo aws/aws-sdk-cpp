@@ -40,6 +40,7 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -205,6 +206,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_characterSetNameHasBeenSet)
   {
     ss << "CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+    ss << "NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
   }
 
   if(m_publiclyAccessibleHasBeenSet)

@@ -28,7 +28,8 @@ JobQueueDetail::JobQueueDetail() :
     m_statusReasonHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ JobQueueDetail::JobQueueDetail(JsonView jsonValue) :
     m_statusReasonHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,16 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     m_computeEnvironmentOrderHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +162,17 @@ JsonValue JobQueueDetail::Jsonize() const
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());
    }
    payload.WithArray("computeEnvironmentOrder", std::move(computeEnvironmentOrderJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

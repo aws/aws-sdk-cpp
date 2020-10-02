@@ -22,7 +22,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_containerOverridesHasBeenSet(false),
     m_nodeOverridesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,17 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

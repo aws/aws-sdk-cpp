@@ -22,9 +22,12 @@
 #include <aws/batch/model/DescribeJobQueuesResult.h>
 #include <aws/batch/model/DescribeJobsResult.h>
 #include <aws/batch/model/ListJobsResult.h>
+#include <aws/batch/model/ListTagsForResourceResult.h>
 #include <aws/batch/model/RegisterJobDefinitionResult.h>
 #include <aws/batch/model/SubmitJobResult.h>
+#include <aws/batch/model/TagResourceResult.h>
 #include <aws/batch/model/TerminateJobResult.h>
+#include <aws/batch/model/UntagResourceResult.h>
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -77,9 +80,12 @@ namespace Model
         class DescribeJobQueuesRequest;
         class DescribeJobsRequest;
         class ListJobsRequest;
+        class ListTagsForResourceRequest;
         class RegisterJobDefinitionRequest;
         class SubmitJobRequest;
+        class TagResourceRequest;
         class TerminateJobRequest;
+        class UntagResourceRequest;
         class UpdateComputeEnvironmentRequest;
         class UpdateJobQueueRequest;
 
@@ -94,9 +100,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
         typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BatchError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterJobDefinitionResult, BatchError> RegisterJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<SubmitJobResult, BatchError> SubmitJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, BatchError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TerminateJobResult, BatchError> TerminateJobOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, BatchError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateJobQueueResult, BatchError> UpdateJobQueueOutcome;
 
@@ -111,9 +120,12 @@ namespace Model
         typedef std::future<DescribeJobQueuesOutcome> DescribeJobQueuesOutcomeCallable;
         typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterJobDefinitionOutcome> RegisterJobDefinitionOutcomeCallable;
         typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TerminateJobOutcome> TerminateJobOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateComputeEnvironmentOutcome> UpdateComputeEnvironmentOutcomeCallable;
         typedef std::future<UpdateJobQueueOutcome> UpdateJobQueueOutcomeCallable;
 } // namespace Model
@@ -131,9 +143,12 @@ namespace Model
     typedef std::function<void(const BatchClient*, const Model::DescribeJobQueuesRequest&, const Model::DescribeJobQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobQueuesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::RegisterJobDefinitionRequest&, const Model::RegisterJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::SubmitJobRequest&, const Model::SubmitJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitJobResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::TerminateJobRequest&, const Model::TerminateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateJobResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::UpdateComputeEnvironmentRequest&, const Model::UpdateComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComputeEnvironmentResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::UpdateJobQueueRequest&, const Model::UpdateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobQueueResponseReceivedHandler;
 
@@ -656,6 +671,40 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the tags for an AWS Batch resource. AWS Batch resources that support
+         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
+         * child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an AWS Batch resource. AWS Batch resources that support
+         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
+         * child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an AWS Batch resource. AWS Batch resources that support
+         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
+         * child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">AWS
          * API Reference</a></p>
@@ -712,6 +761,49 @@ namespace Model
         virtual void SubmitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well. AWS Batch resources that
+         * support tags are compute environments, jobs, job definitions, and job queues.
+         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well. AWS Batch resources that
+         * support tags are compute environments, jobs, job definitions, and job queues.
+         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well. AWS Batch resources that
+         * support tags are compute environments, jobs, job definitions, and job queues.
+         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code>
          * or <code>RUNNING</code> state are terminated, which causes them to transition to
          * <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code>
@@ -744,6 +836,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TerminateJobAsync(const Model::TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an AWS Batch compute environment.</p><p><h3>See Also:</h3>   <a
@@ -810,9 +930,12 @@ namespace Model
         void DescribeJobQueuesAsyncHelper(const Model::DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobsAsyncHelper(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterJobDefinitionAsyncHelper(const Model::RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubmitJobAsyncHelper(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateJobAsyncHelper(const Model::TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateComputeEnvironmentAsyncHelper(const Model::UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobQueueAsyncHelper(const Model::UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

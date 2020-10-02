@@ -19,7 +19,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_sslPolicyHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false)
+    m_alpnPolicyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,16 @@ Aws::String CreateListenerRequest::SerializePayload() const
       ss << "AlpnPolicy.member." << alpnPolicyCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       alpnPolicyCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

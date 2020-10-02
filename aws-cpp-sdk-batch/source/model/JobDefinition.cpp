@@ -29,7 +29,8 @@ JobDefinition::JobDefinition() :
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ JobDefinition::JobDefinition(JsonView jsonValue) :
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,16 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_nodePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +205,17 @@ JsonValue JobDefinition::Jsonize() const
   if(m_nodePropertiesHasBeenSet)
   {
    payload.WithObject("nodeProperties", m_nodeProperties.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

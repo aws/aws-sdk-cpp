@@ -720,7 +720,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -728,7 +731,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -736,7 +742,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -744,7 +753,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -752,7 +764,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -760,7 +775,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -768,7 +786,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -776,7 +797,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -784,7 +808,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -792,7 +819,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -800,7 +830,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -808,7 +841,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -816,7 +852,10 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     * after the compute environment has been created; any changes require creating a
+     * new compute environment and removing the old compute environment. These tags are
+     * not seen when using the AWS Batch ListTagsForResource API operation.</p>
      */
     inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

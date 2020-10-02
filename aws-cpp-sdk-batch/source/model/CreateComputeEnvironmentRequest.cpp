@@ -19,7 +19,8 @@ CreateComputeEnvironmentRequest::CreateComputeEnvironmentRequest() :
     m_state(CEState::NOT_SET),
     m_stateHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String CreateComputeEnvironmentRequest::SerializePayload() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

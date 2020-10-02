@@ -52,15 +52,23 @@ namespace PersonalizeEvents
 namespace Model
 {
         class PutEventsRequest;
+        class PutItemsRequest;
+        class PutUsersRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutItemsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutUsersOutcome;
 
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
+        typedef std::future<PutItemsOutcome> PutItemsOutcomeCallable;
+        typedef std::future<PutUsersOutcome> PutUsersOutcomeCallable;
 } // namespace Model
 
   class PersonalizeEventsClient;
 
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutItemsRequest&, const Model::PutItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutItemsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutUsersRequest&, const Model::PutUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUsersResponseReceivedHandler;
 
   /**
    * <p>Amazon Personalize can consume real-time user event data, such as
@@ -123,11 +131,69 @@ namespace Model
          */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds one or more items to an Items dataset. For more information see
+         * <a>importing-items</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutItemsOutcome PutItems(const Model::PutItemsRequest& request) const;
+
+        /**
+         * <p>Adds one or more items to an Items dataset. For more information see
+         * <a>importing-items</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutItemsOutcomeCallable PutItemsCallable(const Model::PutItemsRequest& request) const;
+
+        /**
+         * <p>Adds one or more items to an Items dataset. For more information see
+         * <a>importing-items</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutItemsAsync(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more users to a Users dataset. For more information see
+         * <a>importing-users</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutUsersOutcome PutUsers(const Model::PutUsersRequest& request) const;
+
+        /**
+         * <p>Adds one or more users to a Users dataset. For more information see
+         * <a>importing-users</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutUsersOutcomeCallable PutUsersCallable(const Model::PutUsersRequest& request) const;
+
+        /**
+         * <p>Adds one or more users to a Users dataset. For more information see
+         * <a>importing-users</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutUsersAsync(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutItemsAsyncHelper(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutUsersAsyncHelper(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

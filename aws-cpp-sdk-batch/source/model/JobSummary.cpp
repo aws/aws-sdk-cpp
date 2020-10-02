@@ -19,6 +19,7 @@ namespace Model
 {
 
 JobSummary::JobSummary() : 
+    m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_createdAt(0),
@@ -37,6 +38,7 @@ JobSummary::JobSummary() :
 }
 
 JobSummary::JobSummary(JsonView jsonValue) : 
+    m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_createdAt(0),
@@ -57,6 +59,13 @@ JobSummary::JobSummary(JsonView jsonValue) :
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+
+    m_jobArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
@@ -133,6 +142,12 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
 JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_jobArnHasBeenSet)
+  {
+   payload.WithString("jobArn", m_jobArn);
+
+  }
 
   if(m_jobIdHasBeenSet)
   {
