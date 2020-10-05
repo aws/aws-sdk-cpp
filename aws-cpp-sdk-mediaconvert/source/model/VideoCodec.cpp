@@ -20,12 +20,14 @@ namespace Aws
       namespace VideoCodecMapper
       {
 
-        static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
         static const int AV1_HASH = HashingUtils::HashString("AV1");
+        static const int AVC_INTRA_HASH = HashingUtils::HashString("AVC_INTRA");
+        static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
         static const int H_264_HASH = HashingUtils::HashString("H_264");
         static const int H_265_HASH = HashingUtils::HashString("H_265");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
         static const int PRORES_HASH = HashingUtils::HashString("PRORES");
+        static const int VC3_HASH = HashingUtils::HashString("VC3");
         static const int VP8_HASH = HashingUtils::HashString("VP8");
         static const int VP9_HASH = HashingUtils::HashString("VP9");
 
@@ -33,13 +35,17 @@ namespace Aws
         VideoCodec GetVideoCodecForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FRAME_CAPTURE_HASH)
-          {
-            return VideoCodec::FRAME_CAPTURE;
-          }
-          else if (hashCode == AV1_HASH)
+          if (hashCode == AV1_HASH)
           {
             return VideoCodec::AV1;
+          }
+          else if (hashCode == AVC_INTRA_HASH)
+          {
+            return VideoCodec::AVC_INTRA;
+          }
+          else if (hashCode == FRAME_CAPTURE_HASH)
+          {
+            return VideoCodec::FRAME_CAPTURE;
           }
           else if (hashCode == H_264_HASH)
           {
@@ -56,6 +62,10 @@ namespace Aws
           else if (hashCode == PRORES_HASH)
           {
             return VideoCodec::PRORES;
+          }
+          else if (hashCode == VC3_HASH)
+          {
+            return VideoCodec::VC3;
           }
           else if (hashCode == VP8_HASH)
           {
@@ -79,10 +89,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case VideoCodec::FRAME_CAPTURE:
-            return "FRAME_CAPTURE";
           case VideoCodec::AV1:
             return "AV1";
+          case VideoCodec::AVC_INTRA:
+            return "AVC_INTRA";
+          case VideoCodec::FRAME_CAPTURE:
+            return "FRAME_CAPTURE";
           case VideoCodec::H_264:
             return "H_264";
           case VideoCodec::H_265:
@@ -91,6 +103,8 @@ namespace Aws
             return "MPEG2";
           case VideoCodec::PRORES:
             return "PRORES";
+          case VideoCodec::VC3:
+            return "VC3";
           case VideoCodec::VP8:
             return "VP8";
           case VideoCodec::VP9:

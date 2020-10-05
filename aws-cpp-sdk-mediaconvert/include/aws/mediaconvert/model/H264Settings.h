@@ -62,38 +62,56 @@ namespace Model
 
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline const H264AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(const H264AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(H264AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline H264Settings& WithAdaptiveQuantization(const H264AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Flicker adaptive
+     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
+     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -294,63 +312,111 @@ namespace Model
 
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline const H264FieldEncoding& GetFieldEncoding() const{ return m_fieldEncoding; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline bool FieldEncodingHasBeenSet() const { return m_fieldEncodingHasBeenSet; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline void SetFieldEncoding(const H264FieldEncoding& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline void SetFieldEncoding(H264FieldEncoding&& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = std::move(value); }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline H264Settings& WithFieldEncoding(const H264FieldEncoding& value) { SetFieldEncoding(value); return *this;}
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
+     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
+     * and create separate interlaced fields.
      */
     inline H264Settings& WithFieldEncoding(H264FieldEncoding&& value) { SetFieldEncoding(std::move(value)); return *this;}
 
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline const H264FlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline void SetFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline void SetFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
+     * as a visual flicker that can arise when the encoder saves bits by copying some
+     * macroblocks many times from frame to frame, and then refreshes them at the
+     * I-frame. When you enable this setting, the encoder updates these macroblocks
+     * slightly more often to smooth out the flicker. This setting is disabled by
+     * default. Related setting: In addition to enabling this setting, you must also
+     * set adaptiveQuantization to a value other than Off (OFF).
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -447,38 +513,86 @@ namespace Model
 
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline const H264FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -525,22 +639,42 @@ namespace Model
 
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline H264Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
@@ -710,104 +844,98 @@ namespace Model
 
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline const H264InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(const H264InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(H264InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline H264Settings& WithInterlaceMode(const H264InterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline H264Settings& WithInterlaceMode(H264InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
@@ -1322,100 +1450,238 @@ namespace Model
 
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline const H264SlowPal& GetSlowPal() const{ return m_slowPal; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(const H264SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(H264SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline H264Settings& WithSlowPal(const H264SlowPal& value) { SetSlowPal(value); return *this;}
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline H264Settings& WithSlowPal(H264SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline int GetSoftness() const{ return m_softness; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline H264Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline const H264SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1452,105 +1718,177 @@ namespace Model
 
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline const H264Telecine& GetTelecine() const{ return m_telecine; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(const H264Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(H264Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline H264Settings& WithTelecine(const H264Telecine& value) { SetTelecine(value); return *this;}
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline H264Settings& WithTelecine(H264Telecine&& value) { SetTelecine(std::move(value)); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline const H264TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline void SetTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline void SetTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 

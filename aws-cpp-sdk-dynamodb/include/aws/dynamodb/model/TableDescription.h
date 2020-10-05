@@ -967,9 +967,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1018,9 +1018,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1069,9 +1069,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1120,9 +1120,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1171,9 +1171,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1222,9 +1222,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1273,9 +1273,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1324,9 +1324,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total

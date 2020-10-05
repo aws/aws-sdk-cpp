@@ -35,6 +35,8 @@ Input::Input() :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_inputScanType(InputScanType::NOT_SET),
+    m_inputScanTypeHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -65,6 +67,8 @@ Input::Input(JsonView jsonValue) :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_inputScanType(InputScanType::NOT_SET),
+    m_inputScanTypeHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -175,6 +179,13 @@ Input& Input::operator =(JsonView jsonValue)
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());
     }
     m_inputClippingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputScanType"))
+  {
+    m_inputScanType = InputScanTypeMapper::GetInputScanTypeForName(jsonValue.GetString("inputScanType"));
+
+    m_inputScanTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("position"))
@@ -323,6 +334,11 @@ JsonValue Input::Jsonize() const
    }
    payload.WithArray("inputClippings", std::move(inputClippingsJsonList));
 
+  }
+
+  if(m_inputScanTypeHasBeenSet)
+  {
+   payload.WithString("inputScanType", InputScanTypeMapper::GetNameForInputScanType(m_inputScanType));
   }
 
   if(m_positionHasBeenSet)

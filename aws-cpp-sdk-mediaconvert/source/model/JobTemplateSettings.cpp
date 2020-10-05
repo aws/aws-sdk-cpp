@@ -26,6 +26,7 @@ JobTemplateSettings::JobTemplateSettings() :
     m_inputsHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
+    m_nielsenNonLinearWatermarkHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_timedMetadataInsertionHasBeenSet(false)
@@ -40,6 +41,7 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_inputsHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
+    m_nielsenNonLinearWatermarkHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_timedMetadataInsertionHasBeenSet(false)
@@ -92,6 +94,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_nielsenConfiguration = jsonValue.GetObject("nielsenConfiguration");
 
     m_nielsenConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenNonLinearWatermark"))
+  {
+    m_nielsenNonLinearWatermark = jsonValue.GetObject("nielsenNonLinearWatermark");
+
+    m_nielsenNonLinearWatermarkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outputGroups"))
@@ -163,6 +172,12 @@ JsonValue JobTemplateSettings::Jsonize() const
   if(m_nielsenConfigurationHasBeenSet)
   {
    payload.WithObject("nielsenConfiguration", m_nielsenConfiguration.Jsonize());
+
+  }
+
+  if(m_nielsenNonLinearWatermarkHasBeenSet)
+  {
+   payload.WithObject("nielsenNonLinearWatermark", m_nielsenNonLinearWatermark.Jsonize());
 
   }
 

@@ -42,7 +42,7 @@ namespace Model
   /**
    * Each job converts an input file into an output file or files. For more
    * information, see the User Guide at
-   * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Job">AWS
    * API Reference</a></p>
@@ -677,7 +677,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
 
@@ -685,7 +685,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
@@ -693,7 +693,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
@@ -701,7 +701,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
@@ -709,7 +709,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
 
@@ -717,7 +717,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
@@ -725,7 +725,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
@@ -733,7 +733,7 @@ namespace Model
      * When you create a job, you can specify a queue to send it to. If you don't
      * specify, the job will go to the default queue. For more about queues, see the
      * User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(const char* value) { SetQueue(value); return *this;}
 
@@ -807,56 +807,56 @@ namespace Model
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline Job& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline Job& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline Job& WithRole(const char* value) { SetRole(value); return *this;}
 

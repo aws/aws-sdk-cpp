@@ -21,6 +21,7 @@ namespace Model
 CrawlerTargets::CrawlerTargets() : 
     m_s3TargetsHasBeenSet(false),
     m_jdbcTargetsHasBeenSet(false),
+    m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
     m_catalogTargetsHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ CrawlerTargets::CrawlerTargets() :
 CrawlerTargets::CrawlerTargets(JsonView jsonValue) : 
     m_s3TargetsHasBeenSet(false),
     m_jdbcTargetsHasBeenSet(false),
+    m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
     m_catalogTargetsHasBeenSet(false)
 {
@@ -55,6 +57,16 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
       m_jdbcTargets.push_back(jdbcTargetsJsonList[jdbcTargetsIndex].AsObject());
     }
     m_jdbcTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MongoDBTargets"))
+  {
+    Array<JsonView> mongoDBTargetsJsonList = jsonValue.GetArray("MongoDBTargets");
+    for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
+    {
+      m_mongoDBTargets.push_back(mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject());
+    }
+    m_mongoDBTargetsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DynamoDBTargets"))
@@ -103,6 +115,17 @@ JsonValue CrawlerTargets::Jsonize() const
      jdbcTargetsJsonList[jdbcTargetsIndex].AsObject(m_jdbcTargets[jdbcTargetsIndex].Jsonize());
    }
    payload.WithArray("JdbcTargets", std::move(jdbcTargetsJsonList));
+
+  }
+
+  if(m_mongoDBTargetsHasBeenSet)
+  {
+   Array<JsonValue> mongoDBTargetsJsonList(m_mongoDBTargets.size());
+   for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
+   {
+     mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject(m_mongoDBTargets[mongoDBTargetsIndex].Jsonize());
+   }
+   payload.WithArray("MongoDBTargets", std::move(mongoDBTargetsJsonList));
 
   }
 

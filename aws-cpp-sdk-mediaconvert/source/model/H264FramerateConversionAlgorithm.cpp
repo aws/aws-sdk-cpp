@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DUPLICATE_DROP_HASH = HashingUtils::HashString("DUPLICATE_DROP");
         static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
+        static const int FRAMEFORMER_HASH = HashingUtils::HashString("FRAMEFORMER");
 
 
         H264FramerateConversionAlgorithm GetH264FramerateConversionAlgorithmForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INTERPOLATE_HASH)
           {
             return H264FramerateConversionAlgorithm::INTERPOLATE;
+          }
+          else if (hashCode == FRAMEFORMER_HASH)
+          {
+            return H264FramerateConversionAlgorithm::FRAMEFORMER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "DUPLICATE_DROP";
           case H264FramerateConversionAlgorithm::INTERPOLATE:
             return "INTERPOLATE";
+          case H264FramerateConversionAlgorithm::FRAMEFORMER:
+            return "FRAMEFORMER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

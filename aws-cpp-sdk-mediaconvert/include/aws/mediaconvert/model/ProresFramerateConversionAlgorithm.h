@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DUPLICATE_DROP,
-    INTERPOLATE
+    INTERPOLATE,
+    FRAMEFORMER
   };
 
 namespace ProresFramerateConversionAlgorithmMapper

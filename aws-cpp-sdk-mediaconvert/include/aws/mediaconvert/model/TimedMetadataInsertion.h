@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-   * your job. To include timed metadata, you must enable it here, enable it in each
-   * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-   * objects.<p><h3>See Also:</h3>   <a
+   * any HLS outputs. To include timed metadata, you must enable it here, enable it
+   * in each output container, and specify tags and timecodes in ID3 insertion
+   * (Id3Insertion) objects.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimedMetadataInsertion">AWS
    * API Reference</a></p>
    */

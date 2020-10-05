@@ -152,38 +152,32 @@ namespace Model
 
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline const TransformJob& GetTransformJob() const{ return m_transformJob; }
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline bool TransformJobHasBeenSet() const { return m_transformJobHasBeenSet; }
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline void SetTransformJob(const TransformJob& value) { m_transformJobHasBeenSet = true; m_transformJob = value; }
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline void SetTransformJob(TransformJob&& value) { m_transformJobHasBeenSet = true; m_transformJob = std::move(value); }
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline TrialComponentSourceDetail& WithTransformJob(const TransformJob& value) { SetTransformJob(value); return *this;}
 
     /**
-     * <p>Information about a transform job that's the source of the trial
-     * component.</p>
+     * <p>Information about a transform job that's the source of a trial component.</p>
      */
     inline TrialComponentSourceDetail& WithTransformJob(TransformJob&& value) { SetTransformJob(std::move(value)); return *this;}
 

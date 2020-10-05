@@ -25,6 +25,7 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int REGION_DISABLED_HASH = HashingUtils::HashString("REGION_DISABLED");
 
 
         ReplicaStatus GetReplicaStatusForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ReplicaStatus::ACTIVE;
           }
+          else if (hashCode == REGION_DISABLED_HASH)
+          {
+            return ReplicaStatus::REGION_DISABLED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "DELETING";
           case ReplicaStatus::ACTIVE:
             return "ACTIVE";
+          case ReplicaStatus::REGION_DISABLED:
+            return "REGION_DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

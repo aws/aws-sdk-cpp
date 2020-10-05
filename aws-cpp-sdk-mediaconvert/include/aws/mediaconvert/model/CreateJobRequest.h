@@ -341,7 +341,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
 
@@ -349,7 +349,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
@@ -357,7 +357,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
@@ -365,7 +365,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
@@ -373,7 +373,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
 
@@ -381,7 +381,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
@@ -389,7 +389,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
@@ -397,7 +397,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(const char* value) { SetQueue(value); return *this;}
 
@@ -405,56 +405,56 @@ namespace Model
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(const char* value) { SetRole(value); return *this;}
 

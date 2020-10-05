@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeDomainResult::DescribeDomainResult() : 
     m_status(DomainStatus::NOT_SET),
-    m_authMode(AuthMode::NOT_SET)
+    m_authMode(AuthMode::NOT_SET),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET)
 {
 }
 
 DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(DomainStatus::NOT_SET),
-    m_authMode(AuthMode::NOT_SET)
+    m_authMode(AuthMode::NOT_SET),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET)
 {
   *this = result;
 }
@@ -122,6 +124,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
+
+  }
+
+  if(jsonValue.ValueExists("AppNetworkAccessType"))
+  {
+    m_appNetworkAccessType = AppNetworkAccessTypeMapper::GetAppNetworkAccessTypeForName(jsonValue.GetString("AppNetworkAccessType"));
 
   }
 

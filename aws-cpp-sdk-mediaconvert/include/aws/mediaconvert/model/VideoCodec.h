@@ -16,12 +16,14 @@ namespace Model
   enum class VideoCodec
   {
     NOT_SET,
-    FRAME_CAPTURE,
     AV1,
+    AVC_INTRA,
+    FRAME_CAPTURE,
     H_264,
     H_265,
     MPEG2,
     PRORES,
+    VC3,
     VP8,
     VP9
   };

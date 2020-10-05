@@ -20,7 +20,9 @@ CreateDomainRequest::CreateDomainRequest() :
     m_subnetIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_homeEfsFileSystemKmsKeyIdHasBeenSet(false)
+    m_homeEfsFileSystemKmsKeyIdHasBeenSet(false),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appNetworkAccessTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,11 @@ Aws::String CreateDomainRequest::SerializePayload() const
   {
    payload.WithString("HomeEfsFileSystemKmsKeyId", m_homeEfsFileSystemKmsKeyId);
 
+  }
+
+  if(m_appNetworkAccessTypeHasBeenSet)
+  {
+   payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
   }
 
   return payload.View().WriteReadable();

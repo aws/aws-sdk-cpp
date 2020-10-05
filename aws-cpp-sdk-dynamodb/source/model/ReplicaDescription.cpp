@@ -26,7 +26,8 @@ ReplicaDescription::ReplicaDescription() :
     m_replicaStatusPercentProgressHasBeenSet(false),
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_replicaInaccessibleDateTimeHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ReplicaDescription::ReplicaDescription(JsonView jsonValue) :
     m_replicaStatusPercentProgressHasBeenSet(false),
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_replicaInaccessibleDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
     m_globalSecondaryIndexesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaInaccessibleDateTime"))
+  {
+    m_replicaInaccessibleDateTime = jsonValue.GetDouble("ReplicaInaccessibleDateTime");
+
+    m_replicaInaccessibleDateTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +157,11 @@ JsonValue ReplicaDescription::Jsonize() const
    }
    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
 
+  }
+
+  if(m_replicaInaccessibleDateTimeHasBeenSet)
+  {
+   payload.WithDouble("ReplicaInaccessibleDateTime", m_replicaInaccessibleDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

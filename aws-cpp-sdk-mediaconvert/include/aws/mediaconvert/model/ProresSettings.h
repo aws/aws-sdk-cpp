@@ -173,59 +173,127 @@ namespace Model
 
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline const ProresFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline ProresSettings& WithFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default
-     * behavior is to use duplicate drop conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline ProresSettings& WithFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline ProresSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
 
@@ -234,7 +302,9 @@ namespace Model
      * When you use the API for transcode jobs that use frame rate conversion, specify
      * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
-     * use 24000 for the value of FramerateNumerator.
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
@@ -242,7 +312,9 @@ namespace Model
      * When you use the API for transcode jobs that use frame rate conversion, specify
      * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
-     * use 24000 for the value of FramerateNumerator.
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
 
@@ -250,7 +322,9 @@ namespace Model
      * When you use the API for transcode jobs that use frame rate conversion, specify
      * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
-     * use 24000 for the value of FramerateNumerator.
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
@@ -258,110 +332,106 @@ namespace Model
      * When you use the API for transcode jobs that use frame rate conversion, specify
      * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
-     * use 24000 for the value of FramerateNumerator.
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline ProresSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline const ProresInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(const ProresInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(ProresInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline ProresSettings& WithInterlaceMode(const ProresInterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline ProresSettings& WithInterlaceMode(ProresInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
@@ -516,87 +586,123 @@ namespace Model
 
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline const ProresSlowPal& GetSlowPal() const{ return m_slowPal; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(const ProresSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(ProresSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline ProresSettings& WithSlowPal(const ProresSlowPal& value) { SetSlowPal(value); return *this;}
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline ProresSettings& WithSlowPal(ProresSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline const ProresTelecine& GetTelecine() const{ return m_telecine; }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(const ProresTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(ProresTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline ProresSettings& WithTelecine(const ProresTelecine& value) { SetTelecine(value); return *this;}
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard
+     * telecine (HARD) to create a smoother picture. When you keep the default value,
+     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     * doing anything with the field polarity to create a smoother picture.
      */
     inline ProresSettings& WithTelecine(ProresTelecine&& value) { SetTelecine(std::move(value)); return *this;}
 

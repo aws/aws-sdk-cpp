@@ -895,10 +895,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
@@ -907,10 +907,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
@@ -919,10 +919,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
@@ -931,10 +931,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
@@ -943,10 +943,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
@@ -955,10 +955,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 

@@ -6,12 +6,14 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1Settings.h>
+#include <aws/mediaconvert/model/AvcIntraSettings.h>
 #include <aws/mediaconvert/model/VideoCodec.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
 #include <aws/mediaconvert/model/H264Settings.h>
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
 #include <aws/mediaconvert/model/ProresSettings.h>
+#include <aws/mediaconvert/model/Vc3Settings.h>
 #include <aws/mediaconvert/model/Vp8Settings.h>
 #include <aws/mediaconvert/model/Vp9Settings.h>
 #include <utility>
@@ -36,10 +38,10 @@ namespace Model
    * group of settings related to video encoding. The settings in this group vary
    * depending on the value that you choose for Video codec (Codec). For each codec
    * enum that you choose, define the corresponding settings object. The following
-   * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
-   * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
-   * * VP9, Vp9Settings<p><h3>See Also:</h3>   <a
+   * lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
+   * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings *
+   * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3,
+   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -87,6 +89,55 @@ namespace Model
      * AV1.
      */
     inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline const AvcIntraSettings& GetAvcIntraSettings() const{ return m_avcIntraSettings; }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline bool AvcIntraSettingsHasBeenSet() const { return m_avcIntraSettingsHasBeenSet; }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline void SetAvcIntraSettings(const AvcIntraSettings& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = value; }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline void SetAvcIntraSettings(AvcIntraSettings&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::move(value); }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline VideoCodecSettings& WithAvcIntraSettings(const AvcIntraSettings& value) { SetAvcIntraSettings(value); return *this;}
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information
+     * about the AVC-I settings, see the relevant specification. For detailed
+     * information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    inline VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettings&& value) { SetAvcIntraSettings(std::move(value)); return *this;}
 
 
     /**
@@ -307,6 +358,43 @@ namespace Model
 
     /**
      * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline const Vc3Settings& GetVc3Settings() const{ return m_vc3Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline bool Vc3SettingsHasBeenSet() const { return m_vc3SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline void SetVc3Settings(const Vc3Settings& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline void SetVc3Settings(Vc3Settings&& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline VideoCodecSettings& WithVc3Settings(const Vc3Settings& value) { SetVc3Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline VideoCodecSettings& WithVc3Settings(Vc3Settings&& value) { SetVc3Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
      * value VP8.
      */
     inline const Vp8Settings& GetVp8Settings() const{ return m_vp8Settings; }
@@ -383,6 +471,9 @@ namespace Model
     Av1Settings m_av1Settings;
     bool m_av1SettingsHasBeenSet;
 
+    AvcIntraSettings m_avcIntraSettings;
+    bool m_avcIntraSettingsHasBeenSet;
+
     VideoCodec m_codec;
     bool m_codecHasBeenSet;
 
@@ -400,6 +491,9 @@ namespace Model
 
     ProresSettings m_proresSettings;
     bool m_proresSettingsHasBeenSet;
+
+    Vc3Settings m_vc3Settings;
+    bool m_vc3SettingsHasBeenSet;
 
     Vp8Settings m_vp8Settings;
     bool m_vp8SettingsHasBeenSet;

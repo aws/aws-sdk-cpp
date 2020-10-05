@@ -14,6 +14,7 @@
 #include <aws/mediaconvert/model/InputFilterEnable.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/InputScanType.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
@@ -557,68 +558,68 @@ namespace Model
 
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline void SetFilterEnable(InputFilterEnable&& value) { m_filterEnableHasBeenSet = true; m_filterEnable = std::move(value); }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline Input& WithFilterEnable(const InputFilterEnable& value) { SetFilterEnable(value); return *this;}
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline Input& WithFilterEnable(InputFilterEnable&& value) { SetFilterEnable(std::move(value)); return *this;}
 
@@ -770,6 +771,73 @@ namespace Model
      * outputs by stringing the clips together in the order you specify them.
      */
     inline Input& AddInputClippings(InputClipping&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline const InputScanType& GetInputScanType() const{ return m_inputScanType; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline bool InputScanTypeHasBeenSet() const { return m_inputScanTypeHasBeenSet; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline void SetInputScanType(const InputScanType& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = value; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline void SetInputScanType(InputScanType&& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = std::move(value); }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline Input& WithInputScanType(const InputScanType& value) { SetInputScanType(value); return *this;}
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline Input& WithInputScanType(InputScanType&& value) { SetInputScanType(std::move(value)); return *this;}
 
 
     /**
@@ -1243,6 +1311,9 @@ namespace Model
 
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet;
+
+    InputScanType m_inputScanType;
+    bool m_inputScanTypeHasBeenSet;
 
     Rectangle m_position;
     bool m_positionHasBeenSet;
