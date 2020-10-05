@@ -359,7 +359,7 @@ namespace Aws
             return !m_cancel.load();
         }
 
-        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset)
+        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, std::uint64_t writeOffset)
         {
             std::lock_guard<std::mutex> lock(m_downloadStreamLock);
 

@@ -769,12 +769,12 @@ namespace Aws
                 }
 
                 // For empty file, we create 1 part here to make downloading behaviors consistent for files with different size.
-                std::size_t partCount = (std::max)((downloadSize + bufferSize - 1) / bufferSize, static_cast<uint64_t>(1));
+                auto partCount = (std::max)((downloadSize + bufferSize - 1) / bufferSize, static_cast<uint64_t>(1));
                 handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
                 for(std::size_t i = 0; i < partCount; ++i)
                 {
-                    std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
+                    auto partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
                     bool lastPart = (i == partCount - 1) ? true : false;
                     auto partState = Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize, lastPart);
                     partState->SetRangeBegin(i * bufferSize);
