@@ -321,6 +321,8 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
     return CURL_SEEKFUNC_OK;
 }
 
+#if LIBCURL_VERSION_MAJOR >= 7
+#if LIBCURL_VERSION_MINOR >= 32
 static int CurlProgressCallback(void *userdata,   curl_off_t,   curl_off_t,   curl_off_t,   curl_off_t)
 {
     CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
@@ -336,6 +338,8 @@ static int CurlProgressCallback(void *userdata,   curl_off_t,   curl_off_t,   cu
     }
     return 0;
 }
+#endif //LIBCURL_VERSION_MINOR
+#endif //LIBCURL_VERSION_MAJOR
 
 void SetOptCodeForHttpMethod(CURL* requestHandle, const std::shared_ptr<HttpRequest>& request)
 {
@@ -653,12 +657,16 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
+#if LIBCURL_VERSION_MAJOR >= 7
+#if LIBCURL_VERSION_MINOR >= 32
             if (request->IsEventStreamRequest())
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_NOPROGRESS, 0L);
                 curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlProgressCallback);
                 curl_easy_setopt(connectionHandle, CURLOPT_XFERINFODATA, &readContext);
             }
+#endif //LIBCURL_VERSION_MINOR
+#endif //LIBCURL_VERSION_MAJOR
         }
 
         OverrideOptionsOnConnectionHandle(connectionHandle);
