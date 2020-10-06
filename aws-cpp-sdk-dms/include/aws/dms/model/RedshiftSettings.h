@@ -134,91 +134,163 @@ namespace Model
 
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline const Aws::String& GetBucketFolder() const{ return m_bucketFolder; }
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline bool BucketFolderHasBeenSet() const { return m_bucketFolderHasBeenSet; }
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(const Aws::String& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = value; }
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(Aws::String&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::move(value); }
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(const char* value) { m_bucketFolderHasBeenSet = true; m_bucketFolder.assign(value); }
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(const Aws::String& value) { SetBucketFolder(value); return *this;}
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(Aws::String&& value) { SetBucketFolder(std::move(value)); return *this;}
 
     /**
-     * <p>The location where the comma-separated value (.csv) files are stored before
-     * being uploaded to the S3 bucket. </p>
+     * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
+     * DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * command to upload the .csv files to the target table. The files are deleted once
+     * the <code>COPY</code> operation has finished. For more information, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
+     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(const char* value) { SetBucketFolder(value); return *this;}
 
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline RedshiftSettings& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline RedshiftSettings& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the S3 bucket you want to use</p>
+     * <p>The name of the intermediate S3 bucket used to store .csv files before
+     * uploading data to Redshift.</p>
      */
     inline RedshiftSettings& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
@@ -500,79 +572,99 @@ namespace Model
 
     /**
      * <p>The number of threads used to upload a single file. This parameter accepts a
+     * value from 1 through 64. It defaults to 10.</p> <p>The number of parallel
+     * streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     * Upload. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * upload overview</a>. </p> <p> <code>FileTransferUploadStreams</code> accepts a
      * value from 1 through 64. It defaults to 10.</p>
      */
     inline int GetFileTransferUploadStreams() const{ return m_fileTransferUploadStreams; }
 
     /**
      * <p>The number of threads used to upload a single file. This parameter accepts a
+     * value from 1 through 64. It defaults to 10.</p> <p>The number of parallel
+     * streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     * Upload. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * upload overview</a>. </p> <p> <code>FileTransferUploadStreams</code> accepts a
      * value from 1 through 64. It defaults to 10.</p>
      */
     inline bool FileTransferUploadStreamsHasBeenSet() const { return m_fileTransferUploadStreamsHasBeenSet; }
 
     /**
      * <p>The number of threads used to upload a single file. This parameter accepts a
+     * value from 1 through 64. It defaults to 10.</p> <p>The number of parallel
+     * streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     * Upload. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * upload overview</a>. </p> <p> <code>FileTransferUploadStreams</code> accepts a
      * value from 1 through 64. It defaults to 10.</p>
      */
     inline void SetFileTransferUploadStreams(int value) { m_fileTransferUploadStreamsHasBeenSet = true; m_fileTransferUploadStreams = value; }
 
     /**
      * <p>The number of threads used to upload a single file. This parameter accepts a
+     * value from 1 through 64. It defaults to 10.</p> <p>The number of parallel
+     * streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     * Upload. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * upload overview</a>. </p> <p> <code>FileTransferUploadStreams</code> accepts a
      * value from 1 through 64. It defaults to 10.</p>
      */
     inline RedshiftSettings& WithFileTransferUploadStreams(int value) { SetFileTransferUploadStreams(value); return *this;}
 
 
     /**
-     * <p>The amount of time to wait (in milliseconds) before timing out, beginning
-     * from when you begin loading.</p>
+     * <p>The amount of time to wait (in milliseconds) before timing out of operations
+     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
+     * DELETE, and UPDATE.</p>
      */
     inline int GetLoadTimeout() const{ return m_loadTimeout; }
 
     /**
-     * <p>The amount of time to wait (in milliseconds) before timing out, beginning
-     * from when you begin loading.</p>
+     * <p>The amount of time to wait (in milliseconds) before timing out of operations
+     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
+     * DELETE, and UPDATE.</p>
      */
     inline bool LoadTimeoutHasBeenSet() const { return m_loadTimeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time to wait (in milliseconds) before timing out, beginning
-     * from when you begin loading.</p>
+     * <p>The amount of time to wait (in milliseconds) before timing out of operations
+     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
+     * DELETE, and UPDATE.</p>
      */
     inline void SetLoadTimeout(int value) { m_loadTimeoutHasBeenSet = true; m_loadTimeout = value; }
 
     /**
-     * <p>The amount of time to wait (in milliseconds) before timing out, beginning
-     * from when you begin loading.</p>
+     * <p>The amount of time to wait (in milliseconds) before timing out of operations
+     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
+     * DELETE, and UPDATE.</p>
      */
     inline RedshiftSettings& WithLoadTimeout(int value) { SetLoadTimeout(value); return *this;}
 
 
     /**
-     * <p>The maximum size (in KB) of any .csv file used to transfer data to Amazon
-     * Redshift. This accepts a value from 1 through 1,048,576. It defaults to 32,768
-     * KB (32 MB).</p>
+     * <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket
+     * and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
      */
     inline int GetMaxFileSize() const{ return m_maxFileSize; }
 
     /**
-     * <p>The maximum size (in KB) of any .csv file used to transfer data to Amazon
-     * Redshift. This accepts a value from 1 through 1,048,576. It defaults to 32,768
-     * KB (32 MB).</p>
+     * <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket
+     * and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
      */
     inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size (in KB) of any .csv file used to transfer data to Amazon
-     * Redshift. This accepts a value from 1 through 1,048,576. It defaults to 32,768
-     * KB (32 MB).</p>
+     * <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket
+     * and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
      */
     inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
 
     /**
-     * <p>The maximum size (in KB) of any .csv file used to transfer data to Amazon
-     * Redshift. This accepts a value from 1 through 1,048,576. It defaults to 32,768
-     * KB (32 MB).</p>
+     * <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket
+     * and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
      */
     inline RedshiftSettings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
 
@@ -1118,26 +1210,30 @@ namespace Model
 
 
     /**
-     * <p>The size of the write buffer to use in rows. Valid values range from 1
-     * through 2,048. The default is 1,024. Use this setting to tune performance. </p>
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk at the DMS replication instance. The default value is
+     * 1000 (buffer size is 1000KB).</p>
      */
     inline int GetWriteBufferSize() const{ return m_writeBufferSize; }
 
     /**
-     * <p>The size of the write buffer to use in rows. Valid values range from 1
-     * through 2,048. The default is 1,024. Use this setting to tune performance. </p>
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk at the DMS replication instance. The default value is
+     * 1000 (buffer size is 1000KB).</p>
      */
     inline bool WriteBufferSizeHasBeenSet() const { return m_writeBufferSizeHasBeenSet; }
 
     /**
-     * <p>The size of the write buffer to use in rows. Valid values range from 1
-     * through 2,048. The default is 1,024. Use this setting to tune performance. </p>
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk at the DMS replication instance. The default value is
+     * 1000 (buffer size is 1000KB).</p>
      */
     inline void SetWriteBufferSize(int value) { m_writeBufferSizeHasBeenSet = true; m_writeBufferSize = value; }
 
     /**
-     * <p>The size of the write buffer to use in rows. Valid values range from 1
-     * through 2,048. The default is 1,024. Use this setting to tune performance. </p>
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk at the DMS replication instance. The default value is
+     * 1000 (buffer size is 1000KB).</p>
      */
     inline RedshiftSettings& WithWriteBufferSize(int value) { SetWriteBufferSize(value); return *this;}
 

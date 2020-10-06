@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>Describes updates to the input streams, destination streams, and reference
-   * data sources for an SQL-based Kinesis Data Analytics application.</p><p><h3>See
+   * data sources for a SQL-based Kinesis Data Analytics application.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlApplicationConfigurationUpdate">AWS
    * API Reference</a></p>

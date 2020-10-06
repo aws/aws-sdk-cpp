@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, provides a
-   * description of an Amazon S3 data source, including the Amazon Resource Name
-   * (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the
+   * <p>For a SQL-based Kinesis Data Analytics application, provides a description of
+   * an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3
+   * bucket and the name of the Amazon S3 object that contains the
    * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3Configuration">AWS
    * API Reference</a></p>

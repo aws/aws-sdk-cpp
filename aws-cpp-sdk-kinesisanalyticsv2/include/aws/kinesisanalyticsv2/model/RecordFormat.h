@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> For an SQL-based Amazon Kinesis Data Analytics application, describes the
-   * record format and relevant mapping information that should be applied to
-   * schematize the records on the stream. </p><p><h3>See Also:</h3>   <a
+   * <p> For a SQL-based Kinesis Data Analytics application, describes the record
+   * format and relevant mapping information that should be applied to schematize the
+   * records on the stream. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RecordFormat">AWS
    * API Reference</a></p>
    */

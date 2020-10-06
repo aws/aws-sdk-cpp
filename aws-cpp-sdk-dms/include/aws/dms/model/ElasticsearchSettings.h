@@ -80,67 +80,91 @@ namespace Model
 
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline const Aws::String& GetEndpointUri() const{ return m_endpointUri; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const Aws::String& value) { m_endpointUriHasBeenSet = true; m_endpointUri = value; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(Aws::String&& value) { m_endpointUriHasBeenSet = true; m_endpointUri = std::move(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const char* value) { m_endpointUriHasBeenSet = true; m_endpointUri.assign(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const Aws::String& value) { SetEndpointUri(value); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(Aws::String&& value) { SetEndpointUri(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster.</p>
+     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const char* value) { SetEndpointUri(value); return *this;}
 
 
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
-     * load operation stops. </p>
+     * load operation stops.</p> <p>To avoid early failure, this counter is only
+     * effective after 1000 records are transferred. Elasticsearch also has the concept
+     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * transfer of all records fail in the last 10 minutes, the full load operation
+     * stops. </p>
      */
     inline int GetFullLoadErrorPercentage() const{ return m_fullLoadErrorPercentage; }
 
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
-     * load operation stops. </p>
+     * load operation stops.</p> <p>To avoid early failure, this counter is only
+     * effective after 1000 records are transferred. Elasticsearch also has the concept
+     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * transfer of all records fail in the last 10 minutes, the full load operation
+     * stops. </p>
      */
     inline bool FullLoadErrorPercentageHasBeenSet() const { return m_fullLoadErrorPercentageHasBeenSet; }
 
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
-     * load operation stops. </p>
+     * load operation stops.</p> <p>To avoid early failure, this counter is only
+     * effective after 1000 records are transferred. Elasticsearch also has the concept
+     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * transfer of all records fail in the last 10 minutes, the full load operation
+     * stops. </p>
      */
     inline void SetFullLoadErrorPercentage(int value) { m_fullLoadErrorPercentageHasBeenSet = true; m_fullLoadErrorPercentage = value; }
 
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
-     * load operation stops. </p>
+     * load operation stops.</p> <p>To avoid early failure, this counter is only
+     * effective after 1000 records are transferred. Elasticsearch also has the concept
+     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * transfer of all records fail in the last 10 minutes, the full load operation
+     * stops. </p>
      */
     inline ElasticsearchSettings& WithFullLoadErrorPercentage(int value) { SetFullLoadErrorPercentage(value); return *this;}
 

@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopApplicationRequest::StopApplicationRequest() : 
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String StopApplicationRequest::SerializePayload() const
   if(m_applicationNameHasBeenSet)
   {
    payload.WithString("ApplicationName", m_applicationName);
+
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("Force", m_force);
 
   }
 

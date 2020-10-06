@@ -19,13 +19,51 @@ namespace Model
 {
 
 OracleSettings::OracleSettings() : 
+    m_addSupplementalLogging(false),
+    m_addSupplementalLoggingHasBeenSet(false),
+    m_archivedLogDestId(0),
+    m_archivedLogDestIdHasBeenSet(false),
+    m_additionalArchivedLogDestId(0),
+    m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_allowSelectNestedTables(false),
+    m_allowSelectNestedTablesHasBeenSet(false),
+    m_parallelAsmReadThreads(0),
+    m_parallelAsmReadThreadsHasBeenSet(false),
+    m_readAheadBlocks(0),
+    m_readAheadBlocksHasBeenSet(false),
+    m_accessAlternateDirectly(false),
+    m_accessAlternateDirectlyHasBeenSet(false),
+    m_useAlternateFolderForOnline(false),
+    m_useAlternateFolderForOnlineHasBeenSet(false),
+    m_oraclePathPrefixHasBeenSet(false),
+    m_usePathPrefixHasBeenSet(false),
+    m_replacePathPrefix(false),
+    m_replacePathPrefixHasBeenSet(false),
+    m_enableHomogenousTablespace(false),
+    m_enableHomogenousTablespaceHasBeenSet(false),
+    m_directPathNoLog(false),
+    m_directPathNoLogHasBeenSet(false),
+    m_archivedLogsOnly(false),
+    m_archivedLogsOnlyHasBeenSet(false),
     m_asmPasswordHasBeenSet(false),
     m_asmServerHasBeenSet(false),
     m_asmUserHasBeenSet(false),
+    m_charLengthSemantics(CharLengthSemantics::NOT_SET),
+    m_charLengthSemanticsHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
+    m_directPathParallelLoad(false),
+    m_directPathParallelLoadHasBeenSet(false),
+    m_failTasksOnLobTruncation(false),
+    m_failTasksOnLobTruncationHasBeenSet(false),
+    m_numberDatatypeScale(0),
+    m_numberDatatypeScaleHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_readTableSpaceName(false),
+    m_readTableSpaceNameHasBeenSet(false),
+    m_retryInterval(0),
+    m_retryIntervalHasBeenSet(false),
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
@@ -34,13 +72,51 @@ OracleSettings::OracleSettings() :
 }
 
 OracleSettings::OracleSettings(JsonView jsonValue) : 
+    m_addSupplementalLogging(false),
+    m_addSupplementalLoggingHasBeenSet(false),
+    m_archivedLogDestId(0),
+    m_archivedLogDestIdHasBeenSet(false),
+    m_additionalArchivedLogDestId(0),
+    m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_allowSelectNestedTables(false),
+    m_allowSelectNestedTablesHasBeenSet(false),
+    m_parallelAsmReadThreads(0),
+    m_parallelAsmReadThreadsHasBeenSet(false),
+    m_readAheadBlocks(0),
+    m_readAheadBlocksHasBeenSet(false),
+    m_accessAlternateDirectly(false),
+    m_accessAlternateDirectlyHasBeenSet(false),
+    m_useAlternateFolderForOnline(false),
+    m_useAlternateFolderForOnlineHasBeenSet(false),
+    m_oraclePathPrefixHasBeenSet(false),
+    m_usePathPrefixHasBeenSet(false),
+    m_replacePathPrefix(false),
+    m_replacePathPrefixHasBeenSet(false),
+    m_enableHomogenousTablespace(false),
+    m_enableHomogenousTablespaceHasBeenSet(false),
+    m_directPathNoLog(false),
+    m_directPathNoLogHasBeenSet(false),
+    m_archivedLogsOnly(false),
+    m_archivedLogsOnlyHasBeenSet(false),
     m_asmPasswordHasBeenSet(false),
     m_asmServerHasBeenSet(false),
     m_asmUserHasBeenSet(false),
+    m_charLengthSemantics(CharLengthSemantics::NOT_SET),
+    m_charLengthSemanticsHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
+    m_directPathParallelLoad(false),
+    m_directPathParallelLoadHasBeenSet(false),
+    m_failTasksOnLobTruncation(false),
+    m_failTasksOnLobTruncationHasBeenSet(false),
+    m_numberDatatypeScale(0),
+    m_numberDatatypeScaleHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_readTableSpaceName(false),
+    m_readTableSpaceNameHasBeenSet(false),
+    m_retryInterval(0),
+    m_retryIntervalHasBeenSet(false),
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
@@ -51,6 +127,104 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
 
 OracleSettings& OracleSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AddSupplementalLogging"))
+  {
+    m_addSupplementalLogging = jsonValue.GetBool("AddSupplementalLogging");
+
+    m_addSupplementalLoggingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ArchivedLogDestId"))
+  {
+    m_archivedLogDestId = jsonValue.GetInteger("ArchivedLogDestId");
+
+    m_archivedLogDestIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalArchivedLogDestId"))
+  {
+    m_additionalArchivedLogDestId = jsonValue.GetInteger("AdditionalArchivedLogDestId");
+
+    m_additionalArchivedLogDestIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowSelectNestedTables"))
+  {
+    m_allowSelectNestedTables = jsonValue.GetBool("AllowSelectNestedTables");
+
+    m_allowSelectNestedTablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParallelAsmReadThreads"))
+  {
+    m_parallelAsmReadThreads = jsonValue.GetInteger("ParallelAsmReadThreads");
+
+    m_parallelAsmReadThreadsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadAheadBlocks"))
+  {
+    m_readAheadBlocks = jsonValue.GetInteger("ReadAheadBlocks");
+
+    m_readAheadBlocksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessAlternateDirectly"))
+  {
+    m_accessAlternateDirectly = jsonValue.GetBool("AccessAlternateDirectly");
+
+    m_accessAlternateDirectlyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseAlternateFolderForOnline"))
+  {
+    m_useAlternateFolderForOnline = jsonValue.GetBool("UseAlternateFolderForOnline");
+
+    m_useAlternateFolderForOnlineHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OraclePathPrefix"))
+  {
+    m_oraclePathPrefix = jsonValue.GetString("OraclePathPrefix");
+
+    m_oraclePathPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UsePathPrefix"))
+  {
+    m_usePathPrefix = jsonValue.GetString("UsePathPrefix");
+
+    m_usePathPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplacePathPrefix"))
+  {
+    m_replacePathPrefix = jsonValue.GetBool("ReplacePathPrefix");
+
+    m_replacePathPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableHomogenousTablespace"))
+  {
+    m_enableHomogenousTablespace = jsonValue.GetBool("EnableHomogenousTablespace");
+
+    m_enableHomogenousTablespaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DirectPathNoLog"))
+  {
+    m_directPathNoLog = jsonValue.GetBool("DirectPathNoLog");
+
+    m_directPathNoLogHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ArchivedLogsOnly"))
+  {
+    m_archivedLogsOnly = jsonValue.GetBool("ArchivedLogsOnly");
+
+    m_archivedLogsOnlyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AsmPassword"))
   {
     m_asmPassword = jsonValue.GetString("AsmPassword");
@@ -72,11 +246,39 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_asmUserHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CharLengthSemantics"))
+  {
+    m_charLengthSemantics = CharLengthSemanticsMapper::GetCharLengthSemanticsForName(jsonValue.GetString("CharLengthSemantics"));
+
+    m_charLengthSemanticsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
 
     m_databaseNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DirectPathParallelLoad"))
+  {
+    m_directPathParallelLoad = jsonValue.GetBool("DirectPathParallelLoad");
+
+    m_directPathParallelLoadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailTasksOnLobTruncation"))
+  {
+    m_failTasksOnLobTruncation = jsonValue.GetBool("FailTasksOnLobTruncation");
+
+    m_failTasksOnLobTruncationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberDatatypeScale"))
+  {
+    m_numberDatatypeScale = jsonValue.GetInteger("NumberDatatypeScale");
+
+    m_numberDatatypeScaleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Password"))
@@ -91,6 +293,20 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_port = jsonValue.GetInteger("Port");
 
     m_portHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadTableSpaceName"))
+  {
+    m_readTableSpaceName = jsonValue.GetBool("ReadTableSpaceName");
+
+    m_readTableSpaceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryInterval"))
+  {
+    m_retryInterval = jsonValue.GetInteger("RetryInterval");
+
+    m_retryIntervalHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecurityDbEncryption"))
@@ -128,6 +344,90 @@ JsonValue OracleSettings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_addSupplementalLoggingHasBeenSet)
+  {
+   payload.WithBool("AddSupplementalLogging", m_addSupplementalLogging);
+
+  }
+
+  if(m_archivedLogDestIdHasBeenSet)
+  {
+   payload.WithInteger("ArchivedLogDestId", m_archivedLogDestId);
+
+  }
+
+  if(m_additionalArchivedLogDestIdHasBeenSet)
+  {
+   payload.WithInteger("AdditionalArchivedLogDestId", m_additionalArchivedLogDestId);
+
+  }
+
+  if(m_allowSelectNestedTablesHasBeenSet)
+  {
+   payload.WithBool("AllowSelectNestedTables", m_allowSelectNestedTables);
+
+  }
+
+  if(m_parallelAsmReadThreadsHasBeenSet)
+  {
+   payload.WithInteger("ParallelAsmReadThreads", m_parallelAsmReadThreads);
+
+  }
+
+  if(m_readAheadBlocksHasBeenSet)
+  {
+   payload.WithInteger("ReadAheadBlocks", m_readAheadBlocks);
+
+  }
+
+  if(m_accessAlternateDirectlyHasBeenSet)
+  {
+   payload.WithBool("AccessAlternateDirectly", m_accessAlternateDirectly);
+
+  }
+
+  if(m_useAlternateFolderForOnlineHasBeenSet)
+  {
+   payload.WithBool("UseAlternateFolderForOnline", m_useAlternateFolderForOnline);
+
+  }
+
+  if(m_oraclePathPrefixHasBeenSet)
+  {
+   payload.WithString("OraclePathPrefix", m_oraclePathPrefix);
+
+  }
+
+  if(m_usePathPrefixHasBeenSet)
+  {
+   payload.WithString("UsePathPrefix", m_usePathPrefix);
+
+  }
+
+  if(m_replacePathPrefixHasBeenSet)
+  {
+   payload.WithBool("ReplacePathPrefix", m_replacePathPrefix);
+
+  }
+
+  if(m_enableHomogenousTablespaceHasBeenSet)
+  {
+   payload.WithBool("EnableHomogenousTablespace", m_enableHomogenousTablespace);
+
+  }
+
+  if(m_directPathNoLogHasBeenSet)
+  {
+   payload.WithBool("DirectPathNoLog", m_directPathNoLog);
+
+  }
+
+  if(m_archivedLogsOnlyHasBeenSet)
+  {
+   payload.WithBool("ArchivedLogsOnly", m_archivedLogsOnly);
+
+  }
+
   if(m_asmPasswordHasBeenSet)
   {
    payload.WithString("AsmPassword", m_asmPassword);
@@ -146,9 +446,32 @@ JsonValue OracleSettings::Jsonize() const
 
   }
 
+  if(m_charLengthSemanticsHasBeenSet)
+  {
+   payload.WithString("CharLengthSemantics", CharLengthSemanticsMapper::GetNameForCharLengthSemantics(m_charLengthSemantics));
+  }
+
   if(m_databaseNameHasBeenSet)
   {
    payload.WithString("DatabaseName", m_databaseName);
+
+  }
+
+  if(m_directPathParallelLoadHasBeenSet)
+  {
+   payload.WithBool("DirectPathParallelLoad", m_directPathParallelLoad);
+
+  }
+
+  if(m_failTasksOnLobTruncationHasBeenSet)
+  {
+   payload.WithBool("FailTasksOnLobTruncation", m_failTasksOnLobTruncation);
+
+  }
+
+  if(m_numberDatatypeScaleHasBeenSet)
+  {
+   payload.WithInteger("NumberDatatypeScale", m_numberDatatypeScale);
 
   }
 
@@ -161,6 +484,18 @@ JsonValue OracleSettings::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("Port", m_port);
+
+  }
+
+  if(m_readTableSpaceNameHasBeenSet)
+  {
+   payload.WithBool("ReadTableSpaceName", m_readTableSpaceName);
+
+  }
+
+  if(m_retryIntervalHasBeenSet)
+  {
+   payload.WithInteger("RetryInterval", m_retryInterval);
 
   }
 

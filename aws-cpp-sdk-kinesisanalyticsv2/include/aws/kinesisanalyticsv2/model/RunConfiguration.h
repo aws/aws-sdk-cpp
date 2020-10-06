@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the starting parameters for an Amazon Kinesis Data Analytics
+   * <p>Describes the starting parameters for an Kinesis Data Analytics
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfiguration">AWS
    * API Reference</a></p>
@@ -42,87 +42,87 @@ namespace Model
 
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline const FlinkRunConfiguration& GetFlinkRunConfiguration() const{ return m_flinkRunConfiguration; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline bool FlinkRunConfigurationHasBeenSet() const { return m_flinkRunConfigurationHasBeenSet; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline void SetFlinkRunConfiguration(const FlinkRunConfiguration& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = value; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline void SetFlinkRunConfiguration(FlinkRunConfiguration&& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = std::move(value); }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline RunConfiguration& WithFlinkRunConfiguration(const FlinkRunConfiguration& value) { SetFlinkRunConfiguration(value); return *this;}
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline RunConfiguration& WithFlinkRunConfiguration(FlinkRunConfiguration&& value) { SetFlinkRunConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline const Aws::Vector<SqlRunConfiguration>& GetSqlRunConfigurations() const{ return m_sqlRunConfigurations; }
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline bool SqlRunConfigurationsHasBeenSet() const { return m_sqlRunConfigurationsHasBeenSet; }
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline void SetSqlRunConfigurations(const Aws::Vector<SqlRunConfiguration>& value) { m_sqlRunConfigurationsHasBeenSet = true; m_sqlRunConfigurations = value; }
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline void SetSqlRunConfigurations(Aws::Vector<SqlRunConfiguration>&& value) { m_sqlRunConfigurationsHasBeenSet = true; m_sqlRunConfigurations = std::move(value); }
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline RunConfiguration& WithSqlRunConfigurations(const Aws::Vector<SqlRunConfiguration>& value) { SetSqlRunConfigurations(value); return *this;}
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline RunConfiguration& WithSqlRunConfigurations(Aws::Vector<SqlRunConfiguration>&& value) { SetSqlRunConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline RunConfiguration& AddSqlRunConfigurations(const SqlRunConfiguration& value) { m_sqlRunConfigurationsHasBeenSet = true; m_sqlRunConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
-     * application.</p>
+     * <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics
+     * application application.</p>
      */
     inline RunConfiguration& AddSqlRunConfigurations(SqlRunConfiguration&& value) { m_sqlRunConfigurationsHasBeenSet = true; m_sqlRunConfigurations.push_back(std::move(value)); return *this; }
 

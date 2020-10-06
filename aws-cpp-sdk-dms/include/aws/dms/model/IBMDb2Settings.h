@@ -183,6 +183,105 @@ namespace Model
 
 
     /**
+     * <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is
+     * true.</p>
+     */
+    inline bool GetSetDataCaptureChanges() const{ return m_setDataCaptureChanges; }
+
+    /**
+     * <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is
+     * true.</p>
+     */
+    inline bool SetDataCaptureChangesHasBeenSet() const { return m_setDataCaptureChangesHasBeenSet; }
+
+    /**
+     * <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is
+     * true.</p>
+     */
+    inline void SetSetDataCaptureChanges(bool value) { m_setDataCaptureChangesHasBeenSet = true; m_setDataCaptureChanges = value; }
+
+    /**
+     * <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is
+     * true.</p>
+     */
+    inline IBMDb2Settings& WithSetDataCaptureChanges(bool value) { SetSetDataCaptureChanges(value); return *this;}
+
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline const Aws::String& GetCurrentLsn() const{ return m_currentLsn; }
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline bool CurrentLsnHasBeenSet() const { return m_currentLsnHasBeenSet; }
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline void SetCurrentLsn(const Aws::String& value) { m_currentLsnHasBeenSet = true; m_currentLsn = value; }
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline void SetCurrentLsn(Aws::String&& value) { m_currentLsnHasBeenSet = true; m_currentLsn = std::move(value); }
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline void SetCurrentLsn(const char* value) { m_currentLsnHasBeenSet = true; m_currentLsn.assign(value); }
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline IBMDb2Settings& WithCurrentLsn(const Aws::String& value) { SetCurrentLsn(value); return *this;}
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline IBMDb2Settings& WithCurrentLsn(Aws::String&& value) { SetCurrentLsn(std::move(value)); return *this;}
+
+    /**
+     * <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence
+     * number (LSN) where you want the replication to start.</p>
+     */
+    inline IBMDb2Settings& WithCurrentLsn(const char* value) { SetCurrentLsn(value); return *this;}
+
+
+    /**
+     * <p>Maximum number of bytes per read, as a NUMBER value. The default is 64
+     * KB.</p>
+     */
+    inline int GetMaxKBytesPerRead() const{ return m_maxKBytesPerRead; }
+
+    /**
+     * <p>Maximum number of bytes per read, as a NUMBER value. The default is 64
+     * KB.</p>
+     */
+    inline bool MaxKBytesPerReadHasBeenSet() const { return m_maxKBytesPerReadHasBeenSet; }
+
+    /**
+     * <p>Maximum number of bytes per read, as a NUMBER value. The default is 64
+     * KB.</p>
+     */
+    inline void SetMaxKBytesPerRead(int value) { m_maxKBytesPerReadHasBeenSet = true; m_maxKBytesPerRead = value; }
+
+    /**
+     * <p>Maximum number of bytes per read, as a NUMBER value. The default is 64
+     * KB.</p>
+     */
+    inline IBMDb2Settings& WithMaxKBytesPerRead(int value) { SetMaxKBytesPerRead(value); return *this;}
+
+
+    /**
      * <p>Endpoint connection user name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
@@ -235,6 +334,15 @@ namespace Model
 
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
+    bool m_setDataCaptureChanges;
+    bool m_setDataCaptureChangesHasBeenSet;
+
+    Aws::String m_currentLsn;
+    bool m_currentLsnHasBeenSet;
+
+    int m_maxKBytesPerRead;
+    bool m_maxKBytesPerReadHasBeenSet;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet;

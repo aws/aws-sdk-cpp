@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Identifies an Amazon Kinesis data stream as the streaming source. You
-   * provide the stream's Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+   * <p> Identifies a Kinesis data stream as the streaming source. You provide the
+   * stream's Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsInput">AWS
    * API Reference</a></p>
    */

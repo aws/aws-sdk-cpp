@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to parameters for how a Java-based Kinesis Data Analytics
+   * <p>Describes updates to parameters for how a Flink-based Kinesis Data Analytics
    * application executes multiple tasks simultaneously.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfigurationUpdate">AWS

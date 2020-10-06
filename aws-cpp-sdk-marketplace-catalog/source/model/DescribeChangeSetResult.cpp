@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeChangeSetResult::DescribeChangeSetResult() : 
-    m_status(ChangeStatus::NOT_SET)
+    m_status(ChangeStatus::NOT_SET),
+    m_failureCode(FailureCode::NOT_SET)
 {
 }
 
 DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ChangeStatus::NOT_SET)
+    m_status(ChangeStatus::NOT_SET),
+    m_failureCode(FailureCode::NOT_SET)
 {
   *this = result;
 }
@@ -63,6 +65,12 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChangeStatusMapper::GetChangeStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("FailureCode"))
+  {
+    m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("FailureCode"));
 
   }
 

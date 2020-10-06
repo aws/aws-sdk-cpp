@@ -52,7 +52,13 @@ S3Settings::S3Settings() :
     m_parquetTimestampInMillisecond(false),
     m_parquetTimestampInMillisecondHasBeenSet(false),
     m_cdcInsertsAndUpdates(false),
-    m_cdcInsertsAndUpdatesHasBeenSet(false)
+    m_cdcInsertsAndUpdatesHasBeenSet(false),
+    m_datePartitionEnabled(false),
+    m_datePartitionEnabledHasBeenSet(false),
+    m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
+    m_datePartitionSequenceHasBeenSet(false),
+    m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
+    m_datePartitionDelimiterHasBeenSet(false)
 {
 }
 
@@ -90,7 +96,13 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_parquetTimestampInMillisecond(false),
     m_parquetTimestampInMillisecondHasBeenSet(false),
     m_cdcInsertsAndUpdates(false),
-    m_cdcInsertsAndUpdatesHasBeenSet(false)
+    m_cdcInsertsAndUpdatesHasBeenSet(false),
+    m_datePartitionEnabled(false),
+    m_datePartitionEnabledHasBeenSet(false),
+    m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
+    m_datePartitionSequenceHasBeenSet(false),
+    m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
+    m_datePartitionDelimiterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -244,6 +256,27 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_cdcInsertsAndUpdatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatePartitionEnabled"))
+  {
+    m_datePartitionEnabled = jsonValue.GetBool("DatePartitionEnabled");
+
+    m_datePartitionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatePartitionSequence"))
+  {
+    m_datePartitionSequence = DatePartitionSequenceValueMapper::GetDatePartitionSequenceValueForName(jsonValue.GetString("DatePartitionSequence"));
+
+    m_datePartitionSequenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatePartitionDelimiter"))
+  {
+    m_datePartitionDelimiter = DatePartitionDelimiterValueMapper::GetDatePartitionDelimiterValueForName(jsonValue.GetString("DatePartitionDelimiter"));
+
+    m_datePartitionDelimiterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -370,6 +403,22 @@ JsonValue S3Settings::Jsonize() const
   {
    payload.WithBool("CdcInsertsAndUpdates", m_cdcInsertsAndUpdates);
 
+  }
+
+  if(m_datePartitionEnabledHasBeenSet)
+  {
+   payload.WithBool("DatePartitionEnabled", m_datePartitionEnabled);
+
+  }
+
+  if(m_datePartitionSequenceHasBeenSet)
+  {
+   payload.WithString("DatePartitionSequence", DatePartitionSequenceValueMapper::GetNameForDatePartitionSequenceValue(m_datePartitionSequence));
+  }
+
+  if(m_datePartitionDelimiterHasBeenSet)
+  {
+   payload.WithString("DatePartitionDelimiter", DatePartitionDelimiterValueMapper::GetNameForDatePartitionDelimiterValue(m_datePartitionDelimiter));
   }
 
   return payload;

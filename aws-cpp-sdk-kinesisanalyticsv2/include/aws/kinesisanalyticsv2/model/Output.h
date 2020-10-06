@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes an SQL-based Amazon Kinesis Data Analytics application's output
+   * <p> Describes a SQL-based Kinesis Data Analytics application's output
    * configuration, in which you identify an in-application stream and a destination
    * where you want the in-application stream data to be written. The destination can
    * be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p>
@@ -87,69 +87,63 @@ namespace Model
 
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline const KinesisStreamsOutput& GetKinesisStreamsOutput() const{ return m_kinesisStreamsOutput; }
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline bool KinesisStreamsOutputHasBeenSet() const { return m_kinesisStreamsOutputHasBeenSet; }
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline void SetKinesisStreamsOutput(const KinesisStreamsOutput& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = value; }
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline void SetKinesisStreamsOutput(KinesisStreamsOutput&& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = std::move(value); }
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline Output& WithKinesisStreamsOutput(const KinesisStreamsOutput& value) { SetKinesisStreamsOutput(value); return *this;}
 
     /**
-     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     * <p>Identifies a Kinesis data stream as the destination.</p>
      */
     inline Output& WithKinesisStreamsOutput(KinesisStreamsOutput&& value) { SetKinesisStreamsOutput(std::move(value)); return *this;}
 
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline const KinesisFirehoseOutput& GetKinesisFirehoseOutput() const{ return m_kinesisFirehoseOutput; }
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline bool KinesisFirehoseOutputHasBeenSet() const { return m_kinesisFirehoseOutputHasBeenSet; }
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline void SetKinesisFirehoseOutput(const KinesisFirehoseOutput& value) { m_kinesisFirehoseOutputHasBeenSet = true; m_kinesisFirehoseOutput = value; }
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline void SetKinesisFirehoseOutput(KinesisFirehoseOutput&& value) { m_kinesisFirehoseOutputHasBeenSet = true; m_kinesisFirehoseOutput = std::move(value); }
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline Output& WithKinesisFirehoseOutput(const KinesisFirehoseOutput& value) { SetKinesisFirehoseOutput(value); return *this;}
 
     /**
-     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
-     * destination.</p>
+     * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
     inline Output& WithKinesisFirehoseOutput(KinesisFirehoseOutput&& value) { SetKinesisFirehoseOutput(std::move(value)); return *this;}
 

@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, describes the
-   * mapping of each data element in the streaming source to the corresponding column
-   * in the in-application stream.</p> <p>Also used to describe the format of the
-   * reference data source.</p><p><h3>See Also:</h3>   <a
+   * <p>For a SQL-based Kinesis Data Analytics application, describes the mapping of
+   * each data element in the streaming source to the corresponding column in the
+   * in-application stream.</p> <p>Also used to describe the format of the reference
+   * data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RecordColumn">AWS
    * API Reference</a></p>
    */

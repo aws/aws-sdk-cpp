@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes configuration parameters for CloudWatch logging for a Java-based
+   * <p>Describes configuration parameters for CloudWatch logging for a Flink-based
    * Kinesis Data Analytics application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MonitoringConfigurationDescription">AWS
    * API Reference</a></p>

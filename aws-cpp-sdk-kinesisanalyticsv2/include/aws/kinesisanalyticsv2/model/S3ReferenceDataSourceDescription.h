@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, provides the
-   * bucket name and object key name that stores the reference data.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>For a SQL-based Kinesis Data Analytics application, provides the bucket name
+   * and object key name that stores the reference data.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ReferenceDataSourceDescription">AWS
    * API Reference</a></p>
    */

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, describes updates
-   * to an <a>InputProcessingConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>For a SQL-based Kinesis Data Analytics application, describes updates to an
+   * <a>InputProcessingConfiguration</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputProcessingConfigurationUpdate">AWS
    * API Reference</a></p>
    */

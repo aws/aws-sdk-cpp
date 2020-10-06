@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, when configuring
+   * <p>For a SQL-based Kinesis Data Analytics application, when configuring
    * application output, identifies a Kinesis Data Firehose delivery stream as the
    * destination. You provide the stream Amazon Resource Name (ARN) of the delivery
    * stream. </p><p><h3>See Also:</h3>   <a

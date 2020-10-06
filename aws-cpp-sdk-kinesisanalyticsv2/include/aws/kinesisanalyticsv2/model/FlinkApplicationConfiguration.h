@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes configuration parameters for a Java-based Amazon Kinesis Data
-   * Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -44,9 +44,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline const CheckpointConfiguration& GetCheckpointConfiguration() const{ return m_checkpointConfiguration; }
@@ -55,9 +55,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline bool CheckpointConfigurationHasBeenSet() const { return m_checkpointConfigurationHasBeenSet; }
@@ -66,9 +66,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline void SetCheckpointConfiguration(const CheckpointConfiguration& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = value; }
@@ -77,9 +77,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline void SetCheckpointConfiguration(CheckpointConfiguration&& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = std::move(value); }
@@ -88,9 +88,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline FlinkApplicationConfiguration& WithCheckpointConfiguration(const CheckpointConfiguration& value) { SetCheckpointConfiguration(value); return *this;}
@@ -99,9 +99,9 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
      * Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. </p>
      */
     inline FlinkApplicationConfiguration& WithCheckpointConfiguration(CheckpointConfiguration&& value) { SetCheckpointConfiguration(std::move(value)); return *this;}

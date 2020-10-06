@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>When you configure an SQL-based Amazon Kinesis Data Analytics application's
-   * output, identifies a Kinesis data stream as the destination. You provide the
-   * stream Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
+   * <p>When you configure a SQL-based Kinesis Data Analytics application's output,
+   * identifies a Kinesis data stream as the destination. You provide the stream
+   * Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsOutput">AWS
    * API Reference</a></p>
    */

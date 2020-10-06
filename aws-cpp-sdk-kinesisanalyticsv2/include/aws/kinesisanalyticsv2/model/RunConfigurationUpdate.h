@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline const FlinkRunConfiguration& GetFlinkRunConfiguration() const{ return m_flinkRunConfiguration; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline bool FlinkRunConfigurationHasBeenSet() const { return m_flinkRunConfigurationHasBeenSet; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline void SetFlinkRunConfiguration(const FlinkRunConfiguration& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = value; }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline void SetFlinkRunConfiguration(FlinkRunConfiguration&& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = std::move(value); }
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline RunConfigurationUpdate& WithFlinkRunConfiguration(const FlinkRunConfiguration& value) { SetFlinkRunConfiguration(value); return *this;}
 
     /**
-     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * application.</p>
      */
     inline RunConfigurationUpdate& WithFlinkRunConfiguration(FlinkRunConfiguration&& value) { SetFlinkRunConfiguration(std::move(value)); return *this;}
 

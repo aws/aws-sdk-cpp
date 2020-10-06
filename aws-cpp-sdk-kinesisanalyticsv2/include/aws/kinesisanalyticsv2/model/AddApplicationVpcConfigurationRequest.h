@@ -77,7 +77,7 @@ namespace Model
 
 
     /**
-     * <p>The version of the application to which you want to add the input processing
+     * <p>The version of the application to which you want to add the VPC
      * configuration. You can use the <a>DescribeApplication</a> operation to get the
      * current application version. If the version specified is not the current
      * version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -85,7 +85,7 @@ namespace Model
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The version of the application to which you want to add the input processing
+     * <p>The version of the application to which you want to add the VPC
      * configuration. You can use the <a>DescribeApplication</a> operation to get the
      * current application version. If the version specified is not the current
      * version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -93,7 +93,7 @@ namespace Model
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The version of the application to which you want to add the input processing
+     * <p>The version of the application to which you want to add the VPC
      * configuration. You can use the <a>DescribeApplication</a> operation to get the
      * current application version. If the version specified is not the current
      * version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -101,7 +101,7 @@ namespace Model
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The version of the application to which you want to add the input processing
+     * <p>The version of the application to which you want to add the VPC
      * configuration. You can use the <a>DescribeApplication</a> operation to get the
      * current application version. If the version specified is not the current
      * version, the <code>ConcurrentModificationException</code> is returned.</p>

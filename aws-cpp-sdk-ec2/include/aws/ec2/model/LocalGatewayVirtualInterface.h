@@ -273,6 +273,47 @@ namespace Model
 
 
     /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline LocalGatewayVirtualInterface& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline LocalGatewayVirtualInterface& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID that owns the local gateway virtual interface.</p>
+     */
+    inline LocalGatewayVirtualInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
      * <p>The tags assigned to the virtual interface.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -334,6 +375,9 @@ namespace Model
 
     int m_peerBgpAsn;
     bool m_peerBgpAsnHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -24,6 +24,11 @@ IBMDb2Settings::IBMDb2Settings() :
     m_port(0),
     m_portHasBeenSet(false),
     m_serverNameHasBeenSet(false),
+    m_setDataCaptureChanges(false),
+    m_setDataCaptureChangesHasBeenSet(false),
+    m_currentLsnHasBeenSet(false),
+    m_maxKBytesPerRead(0),
+    m_maxKBytesPerReadHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
@@ -34,6 +39,11 @@ IBMDb2Settings::IBMDb2Settings(JsonView jsonValue) :
     m_port(0),
     m_portHasBeenSet(false),
     m_serverNameHasBeenSet(false),
+    m_setDataCaptureChanges(false),
+    m_setDataCaptureChangesHasBeenSet(false),
+    m_currentLsnHasBeenSet(false),
+    m_maxKBytesPerRead(0),
+    m_maxKBytesPerReadHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -67,6 +77,27 @@ IBMDb2Settings& IBMDb2Settings::operator =(JsonView jsonValue)
     m_serverName = jsonValue.GetString("ServerName");
 
     m_serverNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SetDataCaptureChanges"))
+  {
+    m_setDataCaptureChanges = jsonValue.GetBool("SetDataCaptureChanges");
+
+    m_setDataCaptureChangesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CurrentLsn"))
+  {
+    m_currentLsn = jsonValue.GetString("CurrentLsn");
+
+    m_currentLsnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxKBytesPerRead"))
+  {
+    m_maxKBytesPerRead = jsonValue.GetInteger("MaxKBytesPerRead");
+
+    m_maxKBytesPerReadHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Username"))
@@ -104,6 +135,24 @@ JsonValue IBMDb2Settings::Jsonize() const
   if(m_serverNameHasBeenSet)
   {
    payload.WithString("ServerName", m_serverName);
+
+  }
+
+  if(m_setDataCaptureChangesHasBeenSet)
+  {
+   payload.WithBool("SetDataCaptureChanges", m_setDataCaptureChanges);
+
+  }
+
+  if(m_currentLsnHasBeenSet)
+  {
+   payload.WithString("CurrentLsn", m_currentLsn);
+
+  }
+
+  if(m_maxKBytesPerReadHasBeenSet)
+  {
+   payload.WithInteger("MaxKBytesPerRead", m_maxKBytesPerRead);
 
   }
 

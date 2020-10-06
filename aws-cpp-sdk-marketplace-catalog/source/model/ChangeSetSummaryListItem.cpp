@@ -26,7 +26,9 @@ ChangeSetSummaryListItem::ChangeSetSummaryListItem() :
     m_endTimeHasBeenSet(false),
     m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false)
+    m_entityIdListHasBeenSet(false),
+    m_failureCode(FailureCode::NOT_SET),
+    m_failureCodeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ChangeSetSummaryListItem::ChangeSetSummaryListItem(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false)
+    m_entityIdListHasBeenSet(false),
+    m_failureCode(FailureCode::NOT_SET),
+    m_failureCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +101,13 @@ ChangeSetSummaryListItem& ChangeSetSummaryListItem::operator =(JsonView jsonValu
     m_entityIdListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FailureCode"))
+  {
+    m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("FailureCode"));
+
+    m_failureCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,11 @@ JsonValue ChangeSetSummaryListItem::Jsonize() const
    }
    payload.WithArray("EntityIdList", std::move(entityIdListJsonList));
 
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("FailureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
   }
 
   return payload;

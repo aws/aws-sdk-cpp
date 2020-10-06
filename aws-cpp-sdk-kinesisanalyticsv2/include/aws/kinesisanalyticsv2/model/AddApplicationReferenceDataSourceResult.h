@@ -71,20 +71,20 @@ namespace Model
 
 
     /**
-     * <p>The updated application version ID. Amazon Kinesis Data Analytics increments
-     * this ID when the application is updated.</p>
+     * <p>The updated application version ID. Kinesis Data Analytics increments this ID
+     * when the application is updated.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
-     * <p>The updated application version ID. Amazon Kinesis Data Analytics increments
-     * this ID when the application is updated.</p>
+     * <p>The updated application version ID. Kinesis Data Analytics increments this ID
+     * when the application is updated.</p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
 
     /**
-     * <p>The updated application version ID. Amazon Kinesis Data Analytics increments
-     * this ID when the application is updated.</p>
+     * <p>The updated application version ID. Kinesis Data Analytics increments this ID
+     * when the application is updated.</p>
      */
     inline AddApplicationReferenceDataSourceResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 

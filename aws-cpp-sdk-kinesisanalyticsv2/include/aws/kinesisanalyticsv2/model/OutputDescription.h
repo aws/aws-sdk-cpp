@@ -28,10 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, describes the
-   * application output configuration, which includes the in-application stream name
-   * and the destination where the stream data is written. The destination can be a
-   * Kinesis data stream or a Kinesis Data Firehose delivery stream. </p><p><h3>See
+   * <p>For a SQL-based Kinesis Data Analytics application, describes the application
+   * output configuration, which includes the in-application stream name and the
+   * destination where the stream data is written. The destination can be a Kinesis
+   * data stream or a Kinesis Data Firehose delivery stream. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/OutputDescription">AWS
    * API Reference</a></p>

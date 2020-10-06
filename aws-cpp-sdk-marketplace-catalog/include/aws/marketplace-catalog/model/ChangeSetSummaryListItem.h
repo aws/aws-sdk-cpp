@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/model/ChangeStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/marketplace-catalog/model/FailureCode.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,61 @@ namespace Model
      */
     inline ChangeSetSummaryListItem& AddEntityIdList(const char* value) { m_entityIdListHasBeenSet = true; m_entityIdList.push_back(value); return *this; }
 
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline const FailureCode& GetFailureCode() const{ return m_failureCode; }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline void SetFailureCode(const FailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline void SetFailureCode(FailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline ChangeSetSummaryListItem& WithFailureCode(const FailureCode& value) { SetFailureCode(value); return *this;}
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or
+     * <code>SERVER_FAULT</code>, which means that there is a problem in the system,
+     * and you should retry your request.</p>
+     */
+    inline ChangeSetSummaryListItem& WithFailureCode(FailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_changeSetId;
@@ -385,6 +441,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_entityIdList;
     bool m_entityIdListHasBeenSet;
+
+    FailureCode m_failureCode;
+    bool m_failureCodeHasBeenSet;
   };
 
 } // namespace Model

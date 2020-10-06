@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, when updating
-   * application input configuration, provides information about a Kinesis Data
-   * Firehose delivery stream as the streaming source.</p><p><h3>See Also:</h3>   <a
+   * <p>For a SQL-based Kinesis Data Analytics application, when updating application
+   * input configuration, provides information about a Kinesis Data Firehose delivery
+   * stream as the streaming source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisFirehoseInputUpdate">AWS
    * API Reference</a></p>
    */

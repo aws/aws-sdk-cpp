@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The data format is not valid. Amazon Kinesis Data Analytics cannot detect the
-   * schema for the given streaming source.</p><p><h3>See Also:</h3>   <a
+   * <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema
+   * for the given streaming source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UnableToDetectSchemaException">AWS
    * API Reference</a></p>
    */

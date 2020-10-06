@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates for an SQL-based Amazon Kinesis Data Analytics
-   * application's input schema.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes updates for an SQL-based Kinesis Data Analytics application's input
+   * schema.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputSchemaUpdate">AWS
    * API Reference</a></p>
    */

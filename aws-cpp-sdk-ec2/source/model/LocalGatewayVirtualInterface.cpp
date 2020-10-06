@@ -31,6 +31,7 @@ LocalGatewayVirtualInterface::LocalGatewayVirtualInterface() :
     m_localBgpAsnHasBeenSet(false),
     m_peerBgpAsn(0),
     m_peerBgpAsnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -46,6 +47,7 @@ LocalGatewayVirtualInterface::LocalGatewayVirtualInterface(const XmlNode& xmlNod
     m_localBgpAsnHasBeenSet(false),
     m_peerBgpAsn(0),
     m_peerBgpAsnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -98,6 +100,12 @@ LocalGatewayVirtualInterface& LocalGatewayVirtualInterface::operator =(const Xml
     {
       m_peerBgpAsn = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerBgpAsnNode.GetText()).c_str()).c_str());
       m_peerBgpAsnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -153,6 +161,11 @@ void LocalGatewayVirtualInterface::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".PeerBgpAsn=" << m_peerBgpAsn << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -195,6 +208,10 @@ void LocalGatewayVirtualInterface::OutputToStream(Aws::OStream& oStream, const c
   if(m_peerBgpAsnHasBeenSet)
   {
       oStream << location << ".PeerBgpAsn=" << m_peerBgpAsn << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

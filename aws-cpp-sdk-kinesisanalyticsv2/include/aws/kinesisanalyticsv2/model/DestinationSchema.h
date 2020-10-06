@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the data format when records are written to the destination in an
-   * SQL-based Amazon Kinesis Data Analytics application. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes the data format when records are written to the destination in a
+   * SQL-based Kinesis Data Analytics application. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DestinationSchema">AWS
    * API Reference</a></p>
    */

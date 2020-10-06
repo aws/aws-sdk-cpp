@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/model/CharLengthSemantics.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +37,512 @@ namespace Model
     OracleSettings(Aws::Utils::Json::JsonView jsonValue);
     OracleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Set this attribute to set up table-level supplemental logging for the Oracle
+     * database. This attribute enables PRIMARY KEY supplemental logging on all tables
+     * selected for a migration task.</p> <p>If you use this option, you still need to
+     * enable database-level supplemental logging.</p>
+     */
+    inline bool GetAddSupplementalLogging() const{ return m_addSupplementalLogging; }
+
+    /**
+     * <p>Set this attribute to set up table-level supplemental logging for the Oracle
+     * database. This attribute enables PRIMARY KEY supplemental logging on all tables
+     * selected for a migration task.</p> <p>If you use this option, you still need to
+     * enable database-level supplemental logging.</p>
+     */
+    inline bool AddSupplementalLoggingHasBeenSet() const { return m_addSupplementalLoggingHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to set up table-level supplemental logging for the Oracle
+     * database. This attribute enables PRIMARY KEY supplemental logging on all tables
+     * selected for a migration task.</p> <p>If you use this option, you still need to
+     * enable database-level supplemental logging.</p>
+     */
+    inline void SetAddSupplementalLogging(bool value) { m_addSupplementalLoggingHasBeenSet = true; m_addSupplementalLogging = value; }
+
+    /**
+     * <p>Set this attribute to set up table-level supplemental logging for the Oracle
+     * database. This attribute enables PRIMARY KEY supplemental logging on all tables
+     * selected for a migration task.</p> <p>If you use this option, you still need to
+     * enable database-level supplemental logging.</p>
+     */
+    inline OracleSettings& WithAddSupplementalLogging(bool value) { SetAddSupplementalLogging(value); return *this;}
+
+
+    /**
+     * <p>Specifies the destination of the archived redo logs. The value should be the
+     * same as the DEST_ID number in the v$archived_log table. When working with
+     * multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by
+     * ensuring that the correct logs are accessed from the outset.</p>
+     */
+    inline int GetArchivedLogDestId() const{ return m_archivedLogDestId; }
+
+    /**
+     * <p>Specifies the destination of the archived redo logs. The value should be the
+     * same as the DEST_ID number in the v$archived_log table. When working with
+     * multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by
+     * ensuring that the correct logs are accessed from the outset.</p>
+     */
+    inline bool ArchivedLogDestIdHasBeenSet() const { return m_archivedLogDestIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination of the archived redo logs. The value should be the
+     * same as the DEST_ID number in the v$archived_log table. When working with
+     * multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by
+     * ensuring that the correct logs are accessed from the outset.</p>
+     */
+    inline void SetArchivedLogDestId(int value) { m_archivedLogDestIdHasBeenSet = true; m_archivedLogDestId = value; }
+
+    /**
+     * <p>Specifies the destination of the archived redo logs. The value should be the
+     * same as the DEST_ID number in the v$archived_log table. When working with
+     * multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by
+     * ensuring that the correct logs are accessed from the outset.</p>
+     */
+    inline OracleSettings& WithArchivedLogDestId(int value) { SetArchivedLogDestId(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, AWS
+     * DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby
+     * instance after switchover.</p>
+     */
+    inline int GetAdditionalArchivedLogDestId() const{ return m_additionalArchivedLogDestId; }
+
+    /**
+     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, AWS
+     * DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby
+     * instance after switchover.</p>
+     */
+    inline bool AdditionalArchivedLogDestIdHasBeenSet() const { return m_additionalArchivedLogDestIdHasBeenSet; }
+
+    /**
+     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, AWS
+     * DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby
+     * instance after switchover.</p>
+     */
+    inline void SetAdditionalArchivedLogDestId(int value) { m_additionalArchivedLogDestIdHasBeenSet = true; m_additionalArchivedLogDestId = value; }
+
+    /**
+     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, AWS
+     * DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby
+     * instance after switchover.</p>
+     */
+    inline OracleSettings& WithAdditionalArchivedLogDestId(int value) { SetAdditionalArchivedLogDestId(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to <code>true</code> to enable replication of Oracle
+     * tables containing columns that are nested tables or defined types.</p>
+     */
+    inline bool GetAllowSelectNestedTables() const{ return m_allowSelectNestedTables; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> to enable replication of Oracle
+     * tables containing columns that are nested tables or defined types.</p>
+     */
+    inline bool AllowSelectNestedTablesHasBeenSet() const { return m_allowSelectNestedTablesHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> to enable replication of Oracle
+     * tables containing columns that are nested tables or defined types.</p>
+     */
+    inline void SetAllowSelectNestedTables(bool value) { m_allowSelectNestedTablesHasBeenSet = true; m_allowSelectNestedTables = value; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> to enable replication of Oracle
+     * tables containing columns that are nested tables or defined types.</p>
+     */
+    inline OracleSettings& WithAllowSelectNestedTables(bool value) { SetAllowSelectNestedTables(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to change the number of threads that DMS configures to
+     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * Management (ASM). You can specify an integer value between 2 (the default) and 8
+     * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     * attribute.</p>
+     */
+    inline int GetParallelAsmReadThreads() const{ return m_parallelAsmReadThreads; }
+
+    /**
+     * <p>Set this attribute to change the number of threads that DMS configures to
+     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * Management (ASM). You can specify an integer value between 2 (the default) and 8
+     * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     * attribute.</p>
+     */
+    inline bool ParallelAsmReadThreadsHasBeenSet() const { return m_parallelAsmReadThreadsHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to change the number of threads that DMS configures to
+     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * Management (ASM). You can specify an integer value between 2 (the default) and 8
+     * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     * attribute.</p>
+     */
+    inline void SetParallelAsmReadThreads(int value) { m_parallelAsmReadThreadsHasBeenSet = true; m_parallelAsmReadThreads = value; }
+
+    /**
+     * <p>Set this attribute to change the number of threads that DMS configures to
+     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * Management (ASM). You can specify an integer value between 2 (the default) and 8
+     * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     * attribute.</p>
+     */
+    inline OracleSettings& WithParallelAsmReadThreads(int value) { SetParallelAsmReadThreads(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to change the number of read-ahead blocks that DMS
+     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).</p>
+     */
+    inline int GetReadAheadBlocks() const{ return m_readAheadBlocks; }
+
+    /**
+     * <p>Set this attribute to change the number of read-ahead blocks that DMS
+     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).</p>
+     */
+    inline bool ReadAheadBlocksHasBeenSet() const { return m_readAheadBlocksHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to change the number of read-ahead blocks that DMS
+     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).</p>
+     */
+    inline void SetReadAheadBlocks(int value) { m_readAheadBlocksHasBeenSet = true; m_readAheadBlocks = value; }
+
+    /**
+     * <p>Set this attribute to change the number of read-ahead blocks that DMS
+     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).</p>
+     */
+    inline OracleSettings& WithReadAheadBlocks(int value) { SetReadAheadBlocks(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to <code>false</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to not access redo logs through any specified path prefix
+     * replacement using direct file access.</p>
+     */
+    inline bool GetAccessAlternateDirectly() const{ return m_accessAlternateDirectly; }
+
+    /**
+     * <p>Set this attribute to <code>false</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to not access redo logs through any specified path prefix
+     * replacement using direct file access.</p>
+     */
+    inline bool AccessAlternateDirectlyHasBeenSet() const { return m_accessAlternateDirectlyHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to <code>false</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to not access redo logs through any specified path prefix
+     * replacement using direct file access.</p>
+     */
+    inline void SetAccessAlternateDirectly(bool value) { m_accessAlternateDirectlyHasBeenSet = true; m_accessAlternateDirectly = value; }
+
+    /**
+     * <p>Set this attribute to <code>false</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to not access redo logs through any specified path prefix
+     * replacement using direct file access.</p>
+     */
+    inline OracleSettings& WithAccessAlternateDirectly(bool value) { SetAccessAlternateDirectly(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to <code>true</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to use any specified prefix replacement to access all online redo
+     * logs.</p>
+     */
+    inline bool GetUseAlternateFolderForOnline() const{ return m_useAlternateFolderForOnline; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to use any specified prefix replacement to access all online redo
+     * logs.</p>
+     */
+    inline bool UseAlternateFolderForOnlineHasBeenSet() const { return m_useAlternateFolderForOnlineHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to use any specified prefix replacement to access all online redo
+     * logs.</p>
+     */
+    inline void SetUseAlternateFolderForOnline(bool value) { m_useAlternateFolderForOnlineHasBeenSet = true; m_useAlternateFolderForOnline = value; }
+
+    /**
+     * <p>Set this attribute to <code>true</code> in order to use the Binary Reader to
+     * capture change data for an Amazon RDS for Oracle as the source. This tells the
+     * DMS instance to use any specified prefix replacement to access all online redo
+     * logs.</p>
+     */
+    inline OracleSettings& WithUseAlternateFolderForOnline(bool value) { SetUseAlternateFolderForOnline(value); return *this;}
+
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline const Aws::String& GetOraclePathPrefix() const{ return m_oraclePathPrefix; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline bool OraclePathPrefixHasBeenSet() const { return m_oraclePathPrefixHasBeenSet; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline void SetOraclePathPrefix(const Aws::String& value) { m_oraclePathPrefixHasBeenSet = true; m_oraclePathPrefix = value; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline void SetOraclePathPrefix(Aws::String&& value) { m_oraclePathPrefixHasBeenSet = true; m_oraclePathPrefix = std::move(value); }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline void SetOraclePathPrefix(const char* value) { m_oraclePathPrefixHasBeenSet = true; m_oraclePathPrefix.assign(value); }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline OracleSettings& WithOraclePathPrefix(const Aws::String& value) { SetOraclePathPrefix(value); return *this;}
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline OracleSettings& WithOraclePathPrefix(Aws::String&& value) { SetOraclePathPrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the default Oracle root used to access the redo logs.</p>
+     */
+    inline OracleSettings& WithOraclePathPrefix(const char* value) { SetOraclePathPrefix(value); return *this;}
+
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline const Aws::String& GetUsePathPrefix() const{ return m_usePathPrefix; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline bool UsePathPrefixHasBeenSet() const { return m_usePathPrefixHasBeenSet; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline void SetUsePathPrefix(const Aws::String& value) { m_usePathPrefixHasBeenSet = true; m_usePathPrefix = value; }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline void SetUsePathPrefix(Aws::String&& value) { m_usePathPrefixHasBeenSet = true; m_usePathPrefix = std::move(value); }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline void SetUsePathPrefix(const char* value) { m_usePathPrefixHasBeenSet = true; m_usePathPrefix.assign(value); }
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline OracleSettings& WithUsePathPrefix(const Aws::String& value) { SetUsePathPrefix(value); return *this;}
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline OracleSettings& WithUsePathPrefix(Aws::String&& value) { SetUsePathPrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>Set this string attribute to the required value in order to use the Binary
+     * Reader to capture change data for an Amazon RDS for Oracle as the source. This
+     * value specifies the path prefix used to replace the default Oracle root to
+     * access the redo logs.</p>
+     */
+    inline OracleSettings& WithUsePathPrefix(const char* value) { SetUsePathPrefix(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to true in order to use the Binary Reader to capture
+     * change data for an Amazon RDS for Oracle as the source. This setting tells DMS
+     * instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.</p>
+     */
+    inline bool GetReplacePathPrefix() const{ return m_replacePathPrefix; }
+
+    /**
+     * <p>Set this attribute to true in order to use the Binary Reader to capture
+     * change data for an Amazon RDS for Oracle as the source. This setting tells DMS
+     * instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.</p>
+     */
+    inline bool ReplacePathPrefixHasBeenSet() const { return m_replacePathPrefixHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to true in order to use the Binary Reader to capture
+     * change data for an Amazon RDS for Oracle as the source. This setting tells DMS
+     * instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.</p>
+     */
+    inline void SetReplacePathPrefix(bool value) { m_replacePathPrefixHasBeenSet = true; m_replacePathPrefix = value; }
+
+    /**
+     * <p>Set this attribute to true in order to use the Binary Reader to capture
+     * change data for an Amazon RDS for Oracle as the source. This setting tells DMS
+     * instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.</p>
+     */
+    inline OracleSettings& WithReplacePathPrefix(bool value) { SetReplacePathPrefix(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to enable homogenous tablespace replication and create
+     * existing tables or indexes under the same tablespace on the target.</p>
+     */
+    inline bool GetEnableHomogenousTablespace() const{ return m_enableHomogenousTablespace; }
+
+    /**
+     * <p>Set this attribute to enable homogenous tablespace replication and create
+     * existing tables or indexes under the same tablespace on the target.</p>
+     */
+    inline bool EnableHomogenousTablespaceHasBeenSet() const { return m_enableHomogenousTablespaceHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to enable homogenous tablespace replication and create
+     * existing tables or indexes under the same tablespace on the target.</p>
+     */
+    inline void SetEnableHomogenousTablespace(bool value) { m_enableHomogenousTablespaceHasBeenSet = true; m_enableHomogenousTablespace = value; }
+
+    /**
+     * <p>Set this attribute to enable homogenous tablespace replication and create
+     * existing tables or indexes under the same tablespace on the target.</p>
+     */
+    inline OracleSettings& WithEnableHomogenousTablespace(bool value) { SetEnableHomogenousTablespace(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, this attribute helps to increase the commit
+     * rate on the Oracle target database by writing directly to tables and not writing
+     * a trail to database logs.</p>
+     */
+    inline bool GetDirectPathNoLog() const{ return m_directPathNoLog; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute helps to increase the commit
+     * rate on the Oracle target database by writing directly to tables and not writing
+     * a trail to database logs.</p>
+     */
+    inline bool DirectPathNoLogHasBeenSet() const { return m_directPathNoLogHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute helps to increase the commit
+     * rate on the Oracle target database by writing directly to tables and not writing
+     * a trail to database logs.</p>
+     */
+    inline void SetDirectPathNoLog(bool value) { m_directPathNoLogHasBeenSet = true; m_directPathNoLog = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute helps to increase the commit
+     * rate on the Oracle target database by writing directly to tables and not writing
+     * a trail to database logs.</p>
+     */
+    inline OracleSettings& WithDirectPathNoLog(bool value) { SetDirectPathNoLog(value); return *this;}
+
+
+    /**
+     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
+     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
+     * user account needs to be granted ASM privileges.</p>
+     */
+    inline bool GetArchivedLogsOnly() const{ return m_archivedLogsOnly; }
+
+    /**
+     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
+     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
+     * user account needs to be granted ASM privileges.</p>
+     */
+    inline bool ArchivedLogsOnlyHasBeenSet() const { return m_archivedLogsOnlyHasBeenSet; }
+
+    /**
+     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
+     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
+     * user account needs to be granted ASM privileges.</p>
+     */
+    inline void SetArchivedLogsOnly(bool value) { m_archivedLogsOnlyHasBeenSet = true; m_archivedLogsOnly = value; }
+
+    /**
+     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
+     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
+     * user account needs to be granted ASM privileges.</p>
+     */
+    inline OracleSettings& WithArchivedLogsOnly(bool value) { SetArchivedLogsOnly(value); return *this;}
 
 
     /**
@@ -290,6 +797,55 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline const CharLengthSemantics& GetCharLengthSemantics() const{ return m_charLengthSemantics; }
+
+    /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline bool CharLengthSemanticsHasBeenSet() const { return m_charLengthSemanticsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline void SetCharLengthSemantics(const CharLengthSemantics& value) { m_charLengthSemanticsHasBeenSet = true; m_charLengthSemantics = value; }
+
+    /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline void SetCharLengthSemantics(CharLengthSemantics&& value) { m_charLengthSemanticsHasBeenSet = true; m_charLengthSemantics = std::move(value); }
+
+    /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline OracleSettings& WithCharLengthSemantics(const CharLengthSemantics& value) { SetCharLengthSemantics(value); return *this;}
+
+    /**
+     * <p>Specifies whether the length of a character column is in bytes or in
+     * characters. To indicate that the character column length is in characters, set
+     * this attribute to <code>CHAR</code>. Otherwise, the character column length is
+     * in bytes.</p> <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+     */
+    inline OracleSettings& WithCharLengthSemantics(CharLengthSemantics&& value) { SetCharLengthSemantics(std::move(value)); return *this;}
+
+
+    /**
      * <p>Database name for the endpoint.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
@@ -328,6 +884,105 @@ namespace Model
      * <p>Database name for the endpoint.</p>
      */
     inline OracleSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, this attribute specifies a parallel load when
+     * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
+     * only applies when you use the AWS DMS parallel load feature. Note that the
+     * target table cannot have any constraints or indexes.</p>
+     */
+    inline bool GetDirectPathParallelLoad() const{ return m_directPathParallelLoad; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute specifies a parallel load when
+     * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
+     * only applies when you use the AWS DMS parallel load feature. Note that the
+     * target table cannot have any constraints or indexes.</p>
+     */
+    inline bool DirectPathParallelLoadHasBeenSet() const { return m_directPathParallelLoadHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute specifies a parallel load when
+     * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
+     * only applies when you use the AWS DMS parallel load feature. Note that the
+     * target table cannot have any constraints or indexes.</p>
+     */
+    inline void SetDirectPathParallelLoad(bool value) { m_directPathParallelLoadHasBeenSet = true; m_directPathParallelLoad = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute specifies a parallel load when
+     * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
+     * only applies when you use the AWS DMS parallel load feature. Note that the
+     * target table cannot have any constraints or indexes.</p>
+     */
+    inline OracleSettings& WithDirectPathParallelLoad(bool value) { SetDirectPathParallelLoad(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, this attribute causes a task to fail if the
+     * actual size of an LOB column is greater than the specified
+     * <code>LobMaxSize</code>.</p> <p>If a task is set to limited LOB mode and this
+     * option is set to <code>true</code>, the task fails instead of truncating the LOB
+     * data.</p>
+     */
+    inline bool GetFailTasksOnLobTruncation() const{ return m_failTasksOnLobTruncation; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute causes a task to fail if the
+     * actual size of an LOB column is greater than the specified
+     * <code>LobMaxSize</code>.</p> <p>If a task is set to limited LOB mode and this
+     * option is set to <code>true</code>, the task fails instead of truncating the LOB
+     * data.</p>
+     */
+    inline bool FailTasksOnLobTruncationHasBeenSet() const { return m_failTasksOnLobTruncationHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute causes a task to fail if the
+     * actual size of an LOB column is greater than the specified
+     * <code>LobMaxSize</code>.</p> <p>If a task is set to limited LOB mode and this
+     * option is set to <code>true</code>, the task fails instead of truncating the LOB
+     * data.</p>
+     */
+    inline void SetFailTasksOnLobTruncation(bool value) { m_failTasksOnLobTruncationHasBeenSet = true; m_failTasksOnLobTruncation = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute causes a task to fail if the
+     * actual size of an LOB column is greater than the specified
+     * <code>LobMaxSize</code>.</p> <p>If a task is set to limited LOB mode and this
+     * option is set to <code>true</code>, the task fails instead of truncating the LOB
+     * data.</p>
+     */
+    inline OracleSettings& WithFailTasksOnLobTruncation(bool value) { SetFailTasksOnLobTruncation(value); return *this;}
+
+
+    /**
+     * <p>Specifies the number scale. You can select a scale up to 38, or you can
+     * select FLOAT. By default, the NUMBER data type is converted to precision 38,
+     * scale 10.</p> <p>Example: <code>numberDataTypeScale=12</code> </p>
+     */
+    inline int GetNumberDatatypeScale() const{ return m_numberDatatypeScale; }
+
+    /**
+     * <p>Specifies the number scale. You can select a scale up to 38, or you can
+     * select FLOAT. By default, the NUMBER data type is converted to precision 38,
+     * scale 10.</p> <p>Example: <code>numberDataTypeScale=12</code> </p>
+     */
+    inline bool NumberDatatypeScaleHasBeenSet() const { return m_numberDatatypeScaleHasBeenSet; }
+
+    /**
+     * <p>Specifies the number scale. You can select a scale up to 38, or you can
+     * select FLOAT. By default, the NUMBER data type is converted to precision 38,
+     * scale 10.</p> <p>Example: <code>numberDataTypeScale=12</code> </p>
+     */
+    inline void SetNumberDatatypeScale(int value) { m_numberDatatypeScaleHasBeenSet = true; m_numberDatatypeScale = value; }
+
+    /**
+     * <p>Specifies the number scale. You can select a scale up to 38, or you can
+     * select FLOAT. By default, the NUMBER data type is converted to precision 38,
+     * scale 10.</p> <p>Example: <code>numberDataTypeScale=12</code> </p>
+     */
+    inline OracleSettings& WithNumberDatatypeScale(int value) { SetNumberDatatypeScale(value); return *this;}
 
 
     /**
@@ -390,6 +1045,56 @@ namespace Model
      * <p>Endpoint TCP port.</p>
      */
     inline OracleSettings& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, this attribute supports tablespace
+     * replication.</p>
+     */
+    inline bool GetReadTableSpaceName() const{ return m_readTableSpaceName; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute supports tablespace
+     * replication.</p>
+     */
+    inline bool ReadTableSpaceNameHasBeenSet() const { return m_readTableSpaceNameHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute supports tablespace
+     * replication.</p>
+     */
+    inline void SetReadTableSpaceName(bool value) { m_readTableSpaceNameHasBeenSet = true; m_readTableSpaceName = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this attribute supports tablespace
+     * replication.</p>
+     */
+    inline OracleSettings& WithReadTableSpaceName(bool value) { SetReadTableSpaceName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the number of seconds that the system waits before resending a
+     * query.</p> <p>Example: <code>retryInterval=6;</code> </p>
+     */
+    inline int GetRetryInterval() const{ return m_retryInterval; }
+
+    /**
+     * <p>Specifies the number of seconds that the system waits before resending a
+     * query.</p> <p>Example: <code>retryInterval=6;</code> </p>
+     */
+    inline bool RetryIntervalHasBeenSet() const { return m_retryIntervalHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of seconds that the system waits before resending a
+     * query.</p> <p>Example: <code>retryInterval=6;</code> </p>
+     */
+    inline void SetRetryInterval(int value) { m_retryIntervalHasBeenSet = true; m_retryInterval = value; }
+
+    /**
+     * <p>Specifies the number of seconds that the system waits before resending a
+     * query.</p> <p>Example: <code>retryInterval=6;</code> </p>
+     */
+    inline OracleSettings& WithRetryInterval(int value) { SetRetryInterval(value); return *this;}
 
 
     /**
@@ -701,6 +1406,48 @@ namespace Model
 
   private:
 
+    bool m_addSupplementalLogging;
+    bool m_addSupplementalLoggingHasBeenSet;
+
+    int m_archivedLogDestId;
+    bool m_archivedLogDestIdHasBeenSet;
+
+    int m_additionalArchivedLogDestId;
+    bool m_additionalArchivedLogDestIdHasBeenSet;
+
+    bool m_allowSelectNestedTables;
+    bool m_allowSelectNestedTablesHasBeenSet;
+
+    int m_parallelAsmReadThreads;
+    bool m_parallelAsmReadThreadsHasBeenSet;
+
+    int m_readAheadBlocks;
+    bool m_readAheadBlocksHasBeenSet;
+
+    bool m_accessAlternateDirectly;
+    bool m_accessAlternateDirectlyHasBeenSet;
+
+    bool m_useAlternateFolderForOnline;
+    bool m_useAlternateFolderForOnlineHasBeenSet;
+
+    Aws::String m_oraclePathPrefix;
+    bool m_oraclePathPrefixHasBeenSet;
+
+    Aws::String m_usePathPrefix;
+    bool m_usePathPrefixHasBeenSet;
+
+    bool m_replacePathPrefix;
+    bool m_replacePathPrefixHasBeenSet;
+
+    bool m_enableHomogenousTablespace;
+    bool m_enableHomogenousTablespaceHasBeenSet;
+
+    bool m_directPathNoLog;
+    bool m_directPathNoLogHasBeenSet;
+
+    bool m_archivedLogsOnly;
+    bool m_archivedLogsOnlyHasBeenSet;
+
     Aws::String m_asmPassword;
     bool m_asmPasswordHasBeenSet;
 
@@ -710,14 +1457,32 @@ namespace Model
     Aws::String m_asmUser;
     bool m_asmUserHasBeenSet;
 
+    CharLengthSemantics m_charLengthSemantics;
+    bool m_charLengthSemanticsHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
+    bool m_directPathParallelLoad;
+    bool m_directPathParallelLoadHasBeenSet;
+
+    bool m_failTasksOnLobTruncation;
+    bool m_failTasksOnLobTruncationHasBeenSet;
+
+    int m_numberDatatypeScale;
+    bool m_numberDatatypeScaleHasBeenSet;
 
     Aws::String m_password;
     bool m_passwordHasBeenSet;
 
     int m_port;
     bool m_portHasBeenSet;
+
+    bool m_readTableSpaceName;
+    bool m_readTableSpaceNameHasBeenSet;
+
+    int m_retryInterval;
+    bool m_retryIntervalHasBeenSet;
 
     Aws::String m_securityDbEncryption;
     bool m_securityDbEncryptionHasBeenSet;

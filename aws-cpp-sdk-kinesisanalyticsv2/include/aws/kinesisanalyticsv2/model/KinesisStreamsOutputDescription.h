@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application's output,
-   * describes the Kinesis data stream that is configured as its destination.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>For an SQL-based Kinesis Data Analytics application's output, describes the
+   * Kinesis data stream that is configured as its destination. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsOutputDescription">AWS
    * API Reference</a></p>
    */

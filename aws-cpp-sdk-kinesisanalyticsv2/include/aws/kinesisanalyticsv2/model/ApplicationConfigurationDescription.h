@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes details about the application code and starting parameters for an
-   * Amazon Kinesis Data Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes details about the application code and starting parameters for a
+   * Kinesis Data Analytics application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -46,74 +46,74 @@ namespace Model
 
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline const SqlApplicationConfigurationDescription& GetSqlApplicationConfigurationDescription() const{ return m_sqlApplicationConfigurationDescription; }
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline bool SqlApplicationConfigurationDescriptionHasBeenSet() const { return m_sqlApplicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetSqlApplicationConfigurationDescription(const SqlApplicationConfigurationDescription& value) { m_sqlApplicationConfigurationDescriptionHasBeenSet = true; m_sqlApplicationConfigurationDescription = value; }
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetSqlApplicationConfigurationDescription(SqlApplicationConfigurationDescription&& value) { m_sqlApplicationConfigurationDescriptionHasBeenSet = true; m_sqlApplicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithSqlApplicationConfigurationDescription(const SqlApplicationConfigurationDescription& value) { SetSqlApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The details about inputs, outputs, and reference data sources for an
-     * SQL-based Kinesis Data Analytics application.</p>
+     * <p>The details about inputs, outputs, and reference data sources for a SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithSqlApplicationConfigurationDescription(SqlApplicationConfigurationDescription&& value) { SetSqlApplicationConfigurationDescription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline const ApplicationCodeConfigurationDescription& GetApplicationCodeConfigurationDescription() const{ return m_applicationCodeConfigurationDescription; }
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline bool ApplicationCodeConfigurationDescriptionHasBeenSet() const { return m_applicationCodeConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline void SetApplicationCodeConfigurationDescription(const ApplicationCodeConfigurationDescription& value) { m_applicationCodeConfigurationDescriptionHasBeenSet = true; m_applicationCodeConfigurationDescription = value; }
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline void SetApplicationCodeConfigurationDescription(ApplicationCodeConfigurationDescription&& value) { m_applicationCodeConfigurationDescriptionHasBeenSet = true; m_applicationCodeConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithApplicationCodeConfigurationDescription(const ApplicationCodeConfigurationDescription& value) { SetApplicationCodeConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The details about the application code for a Java-based Kinesis Data
+     * <p>The details about the application code for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithApplicationCodeConfigurationDescription(ApplicationCodeConfigurationDescription&& value) { SetApplicationCodeConfigurationDescription(std::move(value)); return *this;}
@@ -157,105 +157,105 @@ namespace Model
 
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline const FlinkApplicationConfigurationDescription& GetFlinkApplicationConfigurationDescription() const{ return m_flinkApplicationConfigurationDescription; }
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline bool FlinkApplicationConfigurationDescriptionHasBeenSet() const { return m_flinkApplicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline void SetFlinkApplicationConfigurationDescription(const FlinkApplicationConfigurationDescription& value) { m_flinkApplicationConfigurationDescriptionHasBeenSet = true; m_flinkApplicationConfigurationDescription = value; }
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline void SetFlinkApplicationConfigurationDescription(FlinkApplicationConfigurationDescription&& value) { m_flinkApplicationConfigurationDescriptionHasBeenSet = true; m_flinkApplicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithFlinkApplicationConfigurationDescription(const FlinkApplicationConfigurationDescription& value) { SetFlinkApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The details about a Java-based Kinesis Data Analytics application.</p>
+     * <p>The details about a Flink-based Kinesis Data Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithFlinkApplicationConfigurationDescription(FlinkApplicationConfigurationDescription&& value) { SetFlinkApplicationConfigurationDescription(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline const EnvironmentPropertyDescriptions& GetEnvironmentPropertyDescriptions() const{ return m_environmentPropertyDescriptions; }
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline bool EnvironmentPropertyDescriptionsHasBeenSet() const { return m_environmentPropertyDescriptionsHasBeenSet; }
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline void SetEnvironmentPropertyDescriptions(const EnvironmentPropertyDescriptions& value) { m_environmentPropertyDescriptionsHasBeenSet = true; m_environmentPropertyDescriptions = value; }
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline void SetEnvironmentPropertyDescriptions(EnvironmentPropertyDescriptions&& value) { m_environmentPropertyDescriptionsHasBeenSet = true; m_environmentPropertyDescriptions = std::move(value); }
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline ApplicationConfigurationDescription& WithEnvironmentPropertyDescriptions(const EnvironmentPropertyDescriptions& value) { SetEnvironmentPropertyDescriptions(value); return *this;}
 
     /**
-     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
      * application.</p>
      */
     inline ApplicationConfigurationDescription& WithEnvironmentPropertyDescriptions(EnvironmentPropertyDescriptions&& value) { SetEnvironmentPropertyDescriptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline const ApplicationSnapshotConfigurationDescription& GetApplicationSnapshotConfigurationDescription() const{ return m_applicationSnapshotConfigurationDescription; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline bool ApplicationSnapshotConfigurationDescriptionHasBeenSet() const { return m_applicationSnapshotConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline void SetApplicationSnapshotConfigurationDescription(const ApplicationSnapshotConfigurationDescription& value) { m_applicationSnapshotConfigurationDescriptionHasBeenSet = true; m_applicationSnapshotConfigurationDescription = value; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline void SetApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescription&& value) { m_applicationSnapshotConfigurationDescriptionHasBeenSet = true; m_applicationSnapshotConfigurationDescription = std::move(value); }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithApplicationSnapshotConfigurationDescription(const ApplicationSnapshotConfigurationDescription& value) { SetApplicationSnapshotConfigurationDescription(value); return *this;}
 
     /**
-     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
      * Analytics application.</p>
      */
     inline ApplicationConfigurationDescription& WithApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescription&& value) { SetApplicationSnapshotConfigurationDescription(std::move(value)); return *this;}

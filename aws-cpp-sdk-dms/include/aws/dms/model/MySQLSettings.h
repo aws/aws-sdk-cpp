@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/model/TargetDbType.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +37,63 @@ namespace Model
     MySQLSettings(Aws::Utils::Json::JsonView jsonValue);
     MySQLSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline const Aws::String& GetAfterConnectScript() const{ return m_afterConnectScript; }
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline bool AfterConnectScriptHasBeenSet() const { return m_afterConnectScriptHasBeenSet; }
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline void SetAfterConnectScript(const Aws::String& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = value; }
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline void SetAfterConnectScript(Aws::String&& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = std::move(value); }
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline void SetAfterConnectScript(const char* value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript.assign(value); }
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline MySQLSettings& WithAfterConnectScript(const Aws::String& value) { SetAfterConnectScript(value); return *this;}
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline MySQLSettings& WithAfterConnectScript(Aws::String&& value) { SetAfterConnectScript(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
+     * The migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p>
+     */
+    inline MySQLSettings& WithAfterConnectScript(const char* value) { SetAfterConnectScript(value); return *this;}
 
 
     /**
@@ -77,6 +135,148 @@ namespace Model
      * <p>Database name for the endpoint.</p>
      */
     inline MySQLSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
+
+    /**
+     * <p>Specifies how often to check the binary log for new changes/events when the
+     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
+     * the example, AWS DMS checks for changes in the binary logs every five
+     * seconds.</p>
+     */
+    inline int GetEventsPollInterval() const{ return m_eventsPollInterval; }
+
+    /**
+     * <p>Specifies how often to check the binary log for new changes/events when the
+     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
+     * the example, AWS DMS checks for changes in the binary logs every five
+     * seconds.</p>
+     */
+    inline bool EventsPollIntervalHasBeenSet() const { return m_eventsPollIntervalHasBeenSet; }
+
+    /**
+     * <p>Specifies how often to check the binary log for new changes/events when the
+     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
+     * the example, AWS DMS checks for changes in the binary logs every five
+     * seconds.</p>
+     */
+    inline void SetEventsPollInterval(int value) { m_eventsPollIntervalHasBeenSet = true; m_eventsPollInterval = value; }
+
+    /**
+     * <p>Specifies how often to check the binary log for new changes/events when the
+     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
+     * the example, AWS DMS checks for changes in the binary logs every five
+     * seconds.</p>
+     */
+    inline MySQLSettings& WithEventsPollInterval(int value) { SetEventsPollInterval(value); return *this;}
+
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline const TargetDbType& GetTargetDbType() const{ return m_targetDbType; }
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline bool TargetDbTypeHasBeenSet() const { return m_targetDbTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline void SetTargetDbType(const TargetDbType& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = value; }
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline void SetTargetDbType(TargetDbType&& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = std::move(value); }
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline MySQLSettings& WithTargetDbType(const TargetDbType& value) { SetTargetDbType(value); return *this;}
+
+    /**
+     * <p>Specifies where to migrate source tables on the target, either to a single
+     * database or multiple databases.</p> <p>Example:
+     * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
+     */
+    inline MySQLSettings& WithTargetDbType(TargetDbType&& value) { SetTargetDbType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to
+     * a MySQL-compatible database.</p> <p>Example: <code>maxFileSize=512</code> </p>
+     */
+    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to
+     * a MySQL-compatible database.</p> <p>Example: <code>maxFileSize=512</code> </p>
+     */
+    inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to
+     * a MySQL-compatible database.</p> <p>Example: <code>maxFileSize=512</code> </p>
+     */
+    inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to
+     * a MySQL-compatible database.</p> <p>Example: <code>maxFileSize=512</code> </p>
+     */
+    inline MySQLSettings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
+
+
+    /**
+     * <p>Improves performance when loading data into the MySQLcompatible target
+     * database. Specifies how many threads to use to load the data into the
+     * MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is
+     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     */
+    inline int GetParallelLoadThreads() const{ return m_parallelLoadThreads; }
+
+    /**
+     * <p>Improves performance when loading data into the MySQLcompatible target
+     * database. Specifies how many threads to use to load the data into the
+     * MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is
+     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     */
+    inline bool ParallelLoadThreadsHasBeenSet() const { return m_parallelLoadThreadsHasBeenSet; }
+
+    /**
+     * <p>Improves performance when loading data into the MySQLcompatible target
+     * database. Specifies how many threads to use to load the data into the
+     * MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is
+     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     */
+    inline void SetParallelLoadThreads(int value) { m_parallelLoadThreadsHasBeenSet = true; m_parallelLoadThreads = value; }
+
+    /**
+     * <p>Improves performance when loading data into the MySQLcompatible target
+     * database. Specifies how many threads to use to load the data into the
+     * MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is
+     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     */
+    inline MySQLSettings& WithParallelLoadThreads(int value) { SetParallelLoadThreads(value); return *this;}
 
 
     /**
@@ -183,6 +383,63 @@ namespace Model
 
 
     /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline const Aws::String& GetServerTimezone() const{ return m_serverTimezone; }
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline bool ServerTimezoneHasBeenSet() const { return m_serverTimezoneHasBeenSet; }
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline void SetServerTimezone(const Aws::String& value) { m_serverTimezoneHasBeenSet = true; m_serverTimezone = value; }
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline void SetServerTimezone(Aws::String&& value) { m_serverTimezoneHasBeenSet = true; m_serverTimezone = std::move(value); }
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline void SetServerTimezone(const char* value) { m_serverTimezoneHasBeenSet = true; m_serverTimezone.assign(value); }
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline MySQLSettings& WithServerTimezone(const Aws::String& value) { SetServerTimezone(value); return *this;}
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline MySQLSettings& WithServerTimezone(Aws::String&& value) { SetServerTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the time zone for the source MySQL database.</p> <p>Example:
+     * <code>serverTimezone=US/Pacific;</code> </p> <p>Note: Do not enclose time zones
+     * in single quotes.</p>
+     */
+    inline MySQLSettings& WithServerTimezone(const char* value) { SetServerTimezone(value); return *this;}
+
+
+    /**
      * <p>Endpoint connection user name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
@@ -224,8 +481,23 @@ namespace Model
 
   private:
 
+    Aws::String m_afterConnectScript;
+    bool m_afterConnectScriptHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
+    int m_eventsPollInterval;
+    bool m_eventsPollIntervalHasBeenSet;
+
+    TargetDbType m_targetDbType;
+    bool m_targetDbTypeHasBeenSet;
+
+    int m_maxFileSize;
+    bool m_maxFileSizeHasBeenSet;
+
+    int m_parallelLoadThreads;
+    bool m_parallelLoadThreadsHasBeenSet;
 
     Aws::String m_password;
     bool m_passwordHasBeenSet;
@@ -235,6 +507,9 @@ namespace Model
 
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
+    Aws::String m_serverTimezone;
+    bool m_serverTimezoneHasBeenSet;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet;

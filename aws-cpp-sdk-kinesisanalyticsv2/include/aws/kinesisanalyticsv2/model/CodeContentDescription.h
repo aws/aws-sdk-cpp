@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes details about the application code for a Java-based Kinesis Data
+   * <p>Describes details about the application code for a Flink-based Kinesis Data
    * Analytics application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContentDescription">AWS
    * API Reference</a></p>

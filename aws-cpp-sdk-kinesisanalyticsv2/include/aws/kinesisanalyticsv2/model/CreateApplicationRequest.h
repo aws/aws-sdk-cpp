@@ -122,38 +122,38 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline CreateApplicationRequest& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline CreateApplicationRequest& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 

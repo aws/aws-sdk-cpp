@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>An object that contains the Amazon Resource Name (ARN) of the AWS Lambda
-   * function that is used to preprocess records in the stream in an SQL-based Amazon
-   * Kinesis Data Analytics application. </p><p><h3>See Also:</h3>   <a
+   * function that is used to preprocess records in the stream in a SQL-based Kinesis
+   * Data Analytics application. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputLambdaProcessor">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
@@ -54,7 +54,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
@@ -74,7 +74,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
@@ -84,7 +84,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
@@ -94,7 +94,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline InputLambdaProcessor& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
@@ -104,7 +104,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline InputLambdaProcessor& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
@@ -114,7 +114,7 @@ namespace Model
      * stream.</p>  <p>To specify an earlier version of the Lambda function than
      * the latest, include the Lambda function version in the Lambda function ARN. For
      * more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
     inline InputLambdaProcessor& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}

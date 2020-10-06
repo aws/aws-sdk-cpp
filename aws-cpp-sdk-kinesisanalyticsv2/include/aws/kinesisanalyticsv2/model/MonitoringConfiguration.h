@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>Describes configuration parameters for Amazon CloudWatch logging for a
-   * Java-based Kinesis Data Analytics application. For more information about
+   * Flink-based Kinesis Data Analytics application. For more information about
    * CloudWatch logging, see <a
    * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p><p><h3>See
    * Also:</h3>   <a
@@ -87,32 +87,44 @@ namespace Model
 
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline const MetricsLevel& GetMetricsLevel() const{ return m_metricsLevel; }
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline bool MetricsLevelHasBeenSet() const { return m_metricsLevelHasBeenSet; }
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline void SetMetricsLevel(const MetricsLevel& value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = value; }
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline void SetMetricsLevel(MetricsLevel&& value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = std::move(value); }
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline MonitoringConfiguration& WithMetricsLevel(const MetricsLevel& value) { SetMetricsLevel(value); return *this;}
 
     /**
-     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     * <p>Describes the granularity of the CloudWatch Logs for an application. The
+     * <code>Parallelism</code> level is not recommended for applications with a
+     * Parallelism over 64 due to excessive costs.</p>
      */
     inline MonitoringConfiguration& WithMetricsLevel(MetricsLevel&& value) { SetMetricsLevel(std::move(value)); return *this;}
 

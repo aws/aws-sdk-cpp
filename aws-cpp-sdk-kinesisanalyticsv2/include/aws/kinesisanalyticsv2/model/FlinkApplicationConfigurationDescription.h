@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes configuration parameters for a Java-based Amazon Kinesis Data
-   * Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -155,9 +155,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -167,9 +167,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -179,9 +179,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -191,9 +191,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -203,9 +203,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -215,9 +215,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -227,9 +227,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
@@ -239,9 +239,9 @@ namespace Model
     /**
      * <p>The job plan for an application. For more information about the job plan, see
      * <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
      * and Scheduling</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
      * Documentation</a>. To retrieve the job plan for the application, use the
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>

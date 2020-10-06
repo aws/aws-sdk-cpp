@@ -24,12 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes parameters for how a Java-based Amazon Kinesis Data Analytics
+   * <p>Describes parameters for how a Flink-based Kinesis Data Analytics application
    * application executes multiple tasks simultaneously. For more information about
    * parallelism, see <a
-   * href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html">Parallel
+   * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel
    * Execution</a> in the <a
-   * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+   * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
    * Documentation</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfiguration">AWS
    * API Reference</a></p>
@@ -99,64 +99,64 @@ namespace Model
 
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
-     * Analytics application can perform. If <code>AutoScalingEnabled</code> is set to
-     * True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value
-     * in response to application load. The service can increase the
-     * <code>CurrentParallelism</code> value up to the maximum parallelism, which is
-     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
-     * maximum KPUs for an application is 32 by default, and can be increased by
-     * requesting a limit increase. If application load is reduced, the service can
-     * reduce the <code>CurrentParallelism</code> value down to the
+     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
+     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
+     * set to True, Kinesis Data Analytics increases the
+     * <code>CurrentParallelism</code> value in response to application load. The
+     * service can increase the <code>CurrentParallelism</code> value up to the maximum
+     * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
+     * the application. The maximum KPUs for an application is 32 by default, and can
+     * be increased by requesting a limit increase. If application load is reduced, the
+     * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
      */
     inline int GetParallelism() const{ return m_parallelism; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
-     * Analytics application can perform. If <code>AutoScalingEnabled</code> is set to
-     * True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value
-     * in response to application load. The service can increase the
-     * <code>CurrentParallelism</code> value up to the maximum parallelism, which is
-     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
-     * maximum KPUs for an application is 32 by default, and can be increased by
-     * requesting a limit increase. If application load is reduced, the service can
-     * reduce the <code>CurrentParallelism</code> value down to the
+     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
+     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
+     * set to True, Kinesis Data Analytics increases the
+     * <code>CurrentParallelism</code> value in response to application load. The
+     * service can increase the <code>CurrentParallelism</code> value up to the maximum
+     * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
+     * the application. The maximum KPUs for an application is 32 by default, and can
+     * be increased by requesting a limit increase. If application load is reduced, the
+     * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
      */
     inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
-     * Analytics application can perform. If <code>AutoScalingEnabled</code> is set to
-     * True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value
-     * in response to application load. The service can increase the
-     * <code>CurrentParallelism</code> value up to the maximum parallelism, which is
-     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
-     * maximum KPUs for an application is 32 by default, and can be increased by
-     * requesting a limit increase. If application load is reduced, the service can
-     * reduce the <code>CurrentParallelism</code> value down to the
+     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
+     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
+     * set to True, Kinesis Data Analytics increases the
+     * <code>CurrentParallelism</code> value in response to application load. The
+     * service can increase the <code>CurrentParallelism</code> value up to the maximum
+     * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
+     * the application. The maximum KPUs for an application is 32 by default, and can
+     * be increased by requesting a limit increase. If application load is reduced, the
+     * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
      */
     inline void SetParallelism(int value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
-     * Analytics application can perform. If <code>AutoScalingEnabled</code> is set to
-     * True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value
-     * in response to application load. The service can increase the
-     * <code>CurrentParallelism</code> value up to the maximum parallelism, which is
-     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
-     * maximum KPUs for an application is 32 by default, and can be increased by
-     * requesting a limit increase. If application load is reduced, the service can
-     * reduce the <code>CurrentParallelism</code> value down to the
+     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
+     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
+     * set to True, Kinesis Data Analytics increases the
+     * <code>CurrentParallelism</code> value in response to application load. The
+     * service can increase the <code>CurrentParallelism</code> value up to the maximum
+     * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
+     * the application. The maximum KPUs for an application is 32 by default, and can
+     * be increased by requesting a limit increase. If application load is reduced, the
+     * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
      */
     inline ParallelismConfiguration& WithParallelism(int value) { SetParallelism(value); return *this;}
 
 
     /**
-     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
      * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
@@ -165,7 +165,7 @@ namespace Model
     inline int GetParallelismPerKPU() const{ return m_parallelismPerKPU; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
      * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
@@ -174,7 +174,7 @@ namespace Model
     inline bool ParallelismPerKPUHasBeenSet() const { return m_parallelismPerKPUHasBeenSet; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
      * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
@@ -183,7 +183,7 @@ namespace Model
     inline void SetParallelismPerKPU(int value) { m_parallelismPerKPUHasBeenSet = true; m_parallelismPerKPU = value; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
      * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data

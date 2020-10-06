@@ -25,11 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>When you configure an SQL-based Amazon Kinesis Data Analytics application's
-   * input at the time of creating or updating an application, provides additional
-   * mapping information specific to the record format (such as JSON, CSV, or record
-   * fields delimited by some delimiter) on the streaming source.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>When you configure a SQL-based Kinesis Data Analytics application's input at
+   * the time of creating or updating an application, provides additional mapping
+   * information specific to the record format (such as JSON, CSV, or record fields
+   * delimited by some delimiter) on the streaming source.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MappingParameters">AWS
    * API Reference</a></p>
    */

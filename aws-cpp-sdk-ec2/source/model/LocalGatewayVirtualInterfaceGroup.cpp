@@ -24,6 +24,7 @@ LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup() :
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
     m_localGatewayIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNo
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
     m_localGatewayIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -66,6 +68,12 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
     {
       m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
       m_localGatewayIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -105,6 +113,11 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -135,6 +148,10 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
   if(m_localGatewayIdHasBeenSet)
   {
       oStream << location << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

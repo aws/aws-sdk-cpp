@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes checkpointing parameters for a Java-based Amazon Kinesis Data
-   * Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes checkpointing parameters for a Flink-based Kinesis Data Analytics
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -106,7 +106,7 @@ namespace Model
 
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
      * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
@@ -116,7 +116,7 @@ namespace Model
     inline bool GetCheckpointingEnabled() const{ return m_checkpointingEnabled; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
      * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
@@ -126,7 +126,7 @@ namespace Model
     inline bool CheckpointingEnabledHasBeenSet() const { return m_checkpointingEnabledHasBeenSet; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
      * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
@@ -136,7 +136,7 @@ namespace Model
     inline void SetCheckpointingEnabled(bool value) { m_checkpointingEnabledHasBeenSet = true; m_checkpointingEnabled = value; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
      * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of

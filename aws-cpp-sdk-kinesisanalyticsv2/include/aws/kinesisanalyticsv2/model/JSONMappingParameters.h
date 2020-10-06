@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, provides
-   * additional mapping information when JSON is the record format on the streaming
+   * <p>For a SQL-based Kinesis Data Analytics application, provides additional
+   * mapping information when JSON is the record format on the streaming
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/JSONMappingParameters">AWS
    * API Reference</a></p>

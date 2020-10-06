@@ -11,6 +11,8 @@
 #include <aws/dms/model/DataFormatValue.h>
 #include <aws/dms/model/EncodingTypeValue.h>
 #include <aws/dms/model/ParquetVersionValue.h>
+#include <aws/dms/model/DatePartitionSequenceValue.h>
+#include <aws/dms/model/DatePartitionDelimiterValue.h>
 #include <utility>
 
 namespace Aws
@@ -1478,6 +1480,129 @@ namespace Model
      */
     inline S3Settings& WithCdcInsertsAndUpdates(bool value) { SetCdcInsertsAndUpdates(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
+     * date-based folder partitioning</a> </p>
+     */
+    inline bool GetDatePartitionEnabled() const{ return m_datePartitionEnabled; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
+     * date-based folder partitioning</a> </p>
+     */
+    inline bool DatePartitionEnabledHasBeenSet() const { return m_datePartitionEnabledHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
+     * date-based folder partitioning</a> </p>
+     */
+    inline void SetDatePartitionEnabled(bool value) { m_datePartitionEnabledHasBeenSet = true; m_datePartitionEnabled = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
+     * date-based folder partitioning</a> </p>
+     */
+    inline S3Settings& WithDatePartitionEnabled(bool value) { SetDatePartitionEnabled(value); return *this;}
+
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline const DatePartitionSequenceValue& GetDatePartitionSequence() const{ return m_datePartitionSequence; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool DatePartitionSequenceHasBeenSet() const { return m_datePartitionSequenceHasBeenSet; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionSequence(const DatePartitionSequenceValue& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = value; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionSequence(DatePartitionSequenceValue&& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = std::move(value); }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionSequence(const DatePartitionSequenceValue& value) { SetDatePartitionSequence(value); return *this;}
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionSequence(DatePartitionSequenceValue&& value) { SetDatePartitionSequence(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline const DatePartitionDelimiterValue& GetDatePartitionDelimiter() const{ return m_datePartitionDelimiter; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool DatePartitionDelimiterHasBeenSet() const { return m_datePartitionDelimiterHasBeenSet; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = value; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = std::move(value); }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { SetDatePartitionDelimiter(value); return *this;}
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code> (/). Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { SetDatePartitionDelimiter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
@@ -1542,6 +1667,15 @@ namespace Model
 
     bool m_cdcInsertsAndUpdates;
     bool m_cdcInsertsAndUpdatesHasBeenSet;
+
+    bool m_datePartitionEnabled;
+    bool m_datePartitionEnabledHasBeenSet;
+
+    DatePartitionSequenceValue m_datePartitionSequence;
+    bool m_datePartitionSequenceHasBeenSet;
+
+    DatePartitionDelimiterValue m_datePartitionDelimiter;
+    bool m_datePartitionDelimiterHasBeenSet;
   };
 
 } // namespace Model

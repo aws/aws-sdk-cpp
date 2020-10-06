@@ -87,50 +87,50 @@ namespace Model
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline void SetInputId(const Aws::String& value) { m_inputId = value; }
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline void SetInputId(Aws::String&& value) { m_inputId = std::move(value); }
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline void SetInputId(const char* value) { m_inputId.assign(value); }
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline AddApplicationInputProcessingConfigurationResult& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline AddApplicationInputProcessingConfigurationResult& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
 
     /**
      * <p>The input ID that is associated with the application input. This is the ID
-     * that Amazon Kinesis Data Analytics assigns to each input configuration that you
-     * add to your application.</p>
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application.</p>
      */
     inline AddApplicationInputProcessingConfigurationResult& WithInputId(const char* value) { SetInputId(value); return *this;}
 

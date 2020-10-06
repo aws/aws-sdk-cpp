@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>For an SQL-based Amazon Kinesis Data Analytics application, describes the
-   * format of the data in the streaming source, and how each data element maps to
+   * <p>For a SQL-based Kinesis Data Analytics application, describes the format of
+   * the data in the streaming source, and how each data element maps to
    * corresponding columns created in the in-application stream. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SourceSchema">AWS

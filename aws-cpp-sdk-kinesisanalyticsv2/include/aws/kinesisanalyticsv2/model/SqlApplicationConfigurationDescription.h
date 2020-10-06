@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs, outputs, and reference data sources for an SQL-based
+   * <p>Describes the inputs, outputs, and reference data sources for a SQL-based
    * Kinesis Data Analytics application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlApplicationConfigurationDescription">AWS
    * API Reference</a></p>
