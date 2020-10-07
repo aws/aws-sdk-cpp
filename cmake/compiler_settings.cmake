@@ -98,7 +98,7 @@ macro(set_msvc_flags)
 
         # special windows build options:
         #   debug info: pdbs with dlls, embedded in static libs
-        #   release optimisations to purely focus on size, override debug info settings as necessary
+        #   release optimizations to purely focus on size, override debug info settings as necessary
         if(BUILD_SHARED_LIBS)
             set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
             set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")

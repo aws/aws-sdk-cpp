@@ -17,5 +17,5 @@ jobs:
     - name: cspell
       run: |
         cd aws-sdk-cpp
-        export CSPELL_OUTPUT=$(sudo cspell --no-summary "aws-cpp-sdk-core/**/*.h" "aws-cpp-sdk-core/**/*.cpp")
+        export CSPELL_OUTPUT=$(sudo cspell --no-summary "**.txt" "aws-cpp-sdk-core/**/*.h" "aws-cpp-sdk-core/**/*.cpp")
         if [ -n "$CSPELL_OUTPUT" ]; then echo "$CSPELL_OUTPUT" && exit 1; fi;

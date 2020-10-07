@@ -36,7 +36,7 @@ find_package(Git)
 #   BUILD_ONLY - only build project identified by this variable, a semi-colon delimited list, if this is set we will build only the projects listed. Core will always be built as will its unit tests.
 #                    Also if a high level client is specified then we will build its dependencies as well. If a project has tests, the tests will be built.
 #   REGENERATE_CLIENTS - all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8, jdk 1.8, and maven
-#   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourserviceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
+#   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourServiceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
 #                          to use these arguments, you should add the api definition .normal.json file for your service to the api-description folder in the generator.
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
 #   CUSTOM_PLATFORM_DIR - directory where custom platform scripts, modules, and source resides
@@ -141,7 +141,7 @@ else()
     set(STATIC_CRT ON)
 endif()
 
-# Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled depenpent libraries in customer paths when linking executables.
+# Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled dependent libraries in customer paths when linking executables.
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 
 # build third-party targets
