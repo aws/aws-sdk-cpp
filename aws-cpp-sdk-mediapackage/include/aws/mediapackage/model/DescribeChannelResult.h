@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/EgressAccessLogs.h>
 #include <aws/mediapackage/model/HlsIngest.h>
+#include <aws/mediapackage/model/IngressAccessLogs.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -107,6 +109,22 @@ namespace Model
 
 
     
+    inline const EgressAccessLogs& GetEgressAccessLogs() const{ return m_egressAccessLogs; }
+
+    
+    inline void SetEgressAccessLogs(const EgressAccessLogs& value) { m_egressAccessLogs = value; }
+
+    
+    inline void SetEgressAccessLogs(EgressAccessLogs&& value) { m_egressAccessLogs = std::move(value); }
+
+    
+    inline DescribeChannelResult& WithEgressAccessLogs(const EgressAccessLogs& value) { SetEgressAccessLogs(value); return *this;}
+
+    
+    inline DescribeChannelResult& WithEgressAccessLogs(EgressAccessLogs&& value) { SetEgressAccessLogs(std::move(value)); return *this;}
+
+
+    
     inline const HlsIngest& GetHlsIngest() const{ return m_hlsIngest; }
 
     
@@ -159,6 +177,22 @@ namespace Model
 
 
     
+    inline const IngressAccessLogs& GetIngressAccessLogs() const{ return m_ingressAccessLogs; }
+
+    
+    inline void SetIngressAccessLogs(const IngressAccessLogs& value) { m_ingressAccessLogs = value; }
+
+    
+    inline void SetIngressAccessLogs(IngressAccessLogs&& value) { m_ingressAccessLogs = std::move(value); }
+
+    
+    inline DescribeChannelResult& WithIngressAccessLogs(const IngressAccessLogs& value) { SetIngressAccessLogs(value); return *this;}
+
+    
+    inline DescribeChannelResult& WithIngressAccessLogs(IngressAccessLogs&& value) { SetIngressAccessLogs(std::move(value)); return *this;}
+
+
+    
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     
@@ -200,9 +234,13 @@ namespace Model
 
     Aws::String m_description;
 
+    EgressAccessLogs m_egressAccessLogs;
+
     HlsIngest m_hlsIngest;
 
     Aws::String m_id;
+
+    IngressAccessLogs m_ingressAccessLogs;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

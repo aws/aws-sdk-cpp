@@ -21,14 +21,16 @@ namespace Model
 EC2ResourceUtilization::EC2ResourceUtilization() : 
     m_maxCpuUtilizationPercentageHasBeenSet(false),
     m_maxMemoryUtilizationPercentageHasBeenSet(false),
-    m_maxStorageUtilizationPercentageHasBeenSet(false)
+    m_maxStorageUtilizationPercentageHasBeenSet(false),
+    m_eBSResourceUtilizationHasBeenSet(false)
 {
 }
 
 EC2ResourceUtilization::EC2ResourceUtilization(JsonView jsonValue) : 
     m_maxCpuUtilizationPercentageHasBeenSet(false),
     m_maxMemoryUtilizationPercentageHasBeenSet(false),
-    m_maxStorageUtilizationPercentageHasBeenSet(false)
+    m_maxStorageUtilizationPercentageHasBeenSet(false),
+    m_eBSResourceUtilizationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ EC2ResourceUtilization& EC2ResourceUtilization::operator =(JsonView jsonValue)
     m_maxStorageUtilizationPercentageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EBSResourceUtilization"))
+  {
+    m_eBSResourceUtilization = jsonValue.GetObject("EBSResourceUtilization");
+
+    m_eBSResourceUtilizationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue EC2ResourceUtilization::Jsonize() const
   if(m_maxStorageUtilizationPercentageHasBeenSet)
   {
    payload.WithString("MaxStorageUtilizationPercentage", m_maxStorageUtilizationPercentage);
+
+  }
+
+  if(m_eBSResourceUtilizationHasBeenSet)
+  {
+   payload.WithObject("EBSResourceUtilization", m_eBSResourceUtilization.Jsonize());
 
   }
 

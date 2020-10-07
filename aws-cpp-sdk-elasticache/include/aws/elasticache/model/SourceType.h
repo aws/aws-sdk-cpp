@@ -20,7 +20,9 @@ namespace Model
     cache_parameter_group,
     cache_security_group,
     cache_subnet_group,
-    replication_group
+    replication_group,
+    user,
+    user_group
   };
 
 namespace SourceTypeMapper

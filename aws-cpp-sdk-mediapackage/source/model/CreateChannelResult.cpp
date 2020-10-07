@@ -40,6 +40,12 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("egressAccessLogs"))
+  {
+    m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
+
+  }
+
   if(jsonValue.ValueExists("hlsIngest"))
   {
     m_hlsIngest = jsonValue.GetObject("hlsIngest");
@@ -49,6 +55,12 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("ingressAccessLogs"))
+  {
+    m_ingressAccessLogs = jsonValue.GetObject("ingressAccessLogs");
 
   }
 

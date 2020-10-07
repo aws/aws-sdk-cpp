@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/EBSResourceUtilization.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,43 @@ namespace Model
      */
     inline EC2ResourceUtilization& WithMaxStorageUtilizationPercentage(const char* value) { SetMaxStorageUtilizationPercentage(value); return *this;}
 
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline const EBSResourceUtilization& GetEBSResourceUtilization() const{ return m_eBSResourceUtilization; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline bool EBSResourceUtilizationHasBeenSet() const { return m_eBSResourceUtilizationHasBeenSet; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline void SetEBSResourceUtilization(const EBSResourceUtilization& value) { m_eBSResourceUtilizationHasBeenSet = true; m_eBSResourceUtilization = value; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline void SetEBSResourceUtilization(EBSResourceUtilization&& value) { m_eBSResourceUtilizationHasBeenSet = true; m_eBSResourceUtilization = std::move(value); }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithEBSResourceUtilization(const EBSResourceUtilization& value) { SetEBSResourceUtilization(value); return *this;}
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithEBSResourceUtilization(EBSResourceUtilization&& value) { SetEBSResourceUtilization(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_maxCpuUtilizationPercentage;
@@ -177,6 +215,9 @@ namespace Model
 
     Aws::String m_maxStorageUtilizationPercentage;
     bool m_maxStorageUtilizationPercentageHasBeenSet;
+
+    EBSResourceUtilization m_eBSResourceUtilization;
+    bool m_eBSResourceUtilizationHasBeenSet;
   };
 
 } // namespace Model

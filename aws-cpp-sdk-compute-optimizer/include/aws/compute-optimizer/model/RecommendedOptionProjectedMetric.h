@@ -26,8 +26,15 @@ namespace Model
 {
 
   /**
-   * <p>Describes a projected utilization metric of a recommendation
-   * option.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a projected utilization metric of a recommendation option.</p>
+   *  <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only
+   * projected utilization metrics returned when you run the
+   * <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the
+   * <code>Memory</code> metric is returned only for resources that have the unified
+   * CloudWatch agent installed on them. For more information, see <a
+   * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+   * Memory Utilization with the CloudWatch Agent</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendedOptionProjectedMetric">AWS
    * API Reference</a></p>
    */

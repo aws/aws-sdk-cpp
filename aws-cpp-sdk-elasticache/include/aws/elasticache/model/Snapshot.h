@@ -876,6 +876,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The date and time when the source cluster was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCacheClusterCreateTime() const{ return m_cacheClusterCreateTime; }
@@ -1541,6 +1582,9 @@ namespace Model
 
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
+    Aws::String m_preferredOutpostArn;
+    bool m_preferredOutpostArnHasBeenSet;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
     bool m_cacheClusterCreateTimeHasBeenSet;

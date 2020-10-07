@@ -22,13 +22,15 @@ namespace Model
 
 Subnet::Subnet() : 
     m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false)
+    m_subnetAvailabilityZoneHasBeenSet(false),
+    m_subnetOutpostHasBeenSet(false)
 {
 }
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false)
+    m_subnetAvailabilityZoneHasBeenSet(false),
+    m_subnetOutpostHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_subnetAvailabilityZone = subnetAvailabilityZoneNode;
       m_subnetAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode subnetOutpostNode = resultNode.FirstChild("SubnetOutpost");
+    if(!subnetOutpostNode.IsNull())
+    {
+      m_subnetOutpost = subnetOutpostNode;
+      m_subnetOutpostHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -70,6 +78,13 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMemberSs.str().c_str());
   }
 
+  if(m_subnetOutpostHasBeenSet)
+  {
+      Aws::StringStream subnetOutpostLocationAndMemberSs;
+      subnetOutpostLocationAndMemberSs << location << index << locationValue << ".SubnetOutpost";
+      m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -83,6 +98,12 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String subnetAvailabilityZoneLocationAndMember(location);
       subnetAvailabilityZoneLocationAndMember += ".SubnetAvailabilityZone";
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMember.c_str());
+  }
+  if(m_subnetOutpostHasBeenSet)
+  {
+      Aws::String subnetOutpostLocationAndMember(location);
+      subnetOutpostLocationAndMember += ".SubnetOutpost";
+      m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMember.c_str());
   }
 }
 

@@ -198,42 +198,66 @@ namespace Model
 
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline const Aws::Vector<ExportableAutoScalingGroupField>& GetFieldsToExport() const{ return m_fieldsToExport; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline bool FieldsToExportHasBeenSet() const { return m_fieldsToExportHasBeenSet; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetFieldsToExport(const Aws::Vector<ExportableAutoScalingGroupField>& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = value; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetFieldsToExport(Aws::Vector<ExportableAutoScalingGroupField>&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::move(value); }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithFieldsToExport(const Aws::Vector<ExportableAutoScalingGroupField>& value) { SetFieldsToExport(value); return *this;}
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithFieldsToExport(Aws::Vector<ExportableAutoScalingGroupField>&& value) { SetFieldsToExport(std::move(value)); return *this;}
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& AddFieldsToExport(const ExportableAutoScalingGroupField& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& AddFieldsToExport(ExportableAutoScalingGroupField&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(std::move(value)); return *this; }
 

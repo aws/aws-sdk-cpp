@@ -198,42 +198,66 @@ namespace Model
 
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline const Aws::Vector<ExportableInstanceField>& GetFieldsToExport() const{ return m_fieldsToExport; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline bool FieldsToExportHasBeenSet() const { return m_fieldsToExportHasBeenSet; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetFieldsToExport(const Aws::Vector<ExportableInstanceField>& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = value; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetFieldsToExport(Aws::Vector<ExportableInstanceField>&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::move(value); }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& WithFieldsToExport(const Aws::Vector<ExportableInstanceField>& value) { SetFieldsToExport(value); return *this;}
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& WithFieldsToExport(Aws::Vector<ExportableInstanceField>&& value) { SetFieldsToExport(std::move(value)); return *this;}
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& AddFieldsToExport(const ExportableInstanceField& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
 
     /**
-     * <p>The recommendations data to include in the export file.</p>
+     * <p>The recommendations data to include in the export file. For more information
+     * about the fields that can be exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+     * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& AddFieldsToExport(ExportableInstanceField&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(std::move(value)); return *this; }
 

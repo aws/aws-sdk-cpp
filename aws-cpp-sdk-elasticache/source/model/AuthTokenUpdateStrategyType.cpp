@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SET_HASH = HashingUtils::HashString("SET");
         static const int ROTATE_HASH = HashingUtils::HashString("ROTATE");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 
         AuthTokenUpdateStrategyType GetAuthTokenUpdateStrategyTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ROTATE_HASH)
           {
             return AuthTokenUpdateStrategyType::ROTATE;
+          }
+          else if (hashCode == DELETE__HASH)
+          {
+            return AuthTokenUpdateStrategyType::DELETE_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SET";
           case AuthTokenUpdateStrategyType::ROTATE:
             return "ROTATE";
+          case AuthTokenUpdateStrategyType::DELETE_:
+            return "DELETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

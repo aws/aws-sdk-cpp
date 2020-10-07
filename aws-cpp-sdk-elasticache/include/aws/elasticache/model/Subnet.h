@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AvailabilityZone.h>
+#include <aws/elasticache/model/SubnetOutpost.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +114,37 @@ namespace Model
      */
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline const SubnetOutpost& GetSubnetOutpost() const{ return m_subnetOutpost; }
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline bool SubnetOutpostHasBeenSet() const { return m_subnetOutpostHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline void SetSubnetOutpost(const SubnetOutpost& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = value; }
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline void SetSubnetOutpost(SubnetOutpost&& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = std::move(value); }
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline Subnet& WithSubnetOutpost(const SubnetOutpost& value) { SetSubnetOutpost(value); return *this;}
+
+    /**
+     * <p>The outpost ARN of the subnet.</p>
+     */
+    inline Subnet& WithSubnetOutpost(SubnetOutpost&& value) { SetSubnetOutpost(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_subnetIdentifier;
@@ -120,6 +152,9 @@ namespace Model
 
     AvailabilityZone m_subnetAvailabilityZone;
     bool m_subnetAvailabilityZoneHasBeenSet;
+
+    SubnetOutpost m_subnetOutpost;
+    bool m_subnetOutpostHasBeenSet;
   };
 
 } // namespace Model

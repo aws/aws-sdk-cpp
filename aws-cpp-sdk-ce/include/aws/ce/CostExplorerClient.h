@@ -553,8 +553,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          */
@@ -568,8 +568,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
@@ -585,8 +585,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
@@ -602,8 +602,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts. This API is currently available for the Amazon Elastic
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
@@ -623,8 +623,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts. This API is currently available for the Amazon Elastic
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
@@ -646,8 +646,8 @@ namespace Model
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * operation. Master accounts in an organization in AWS Organizations have access
-         * to all member accounts. This API is currently available for the Amazon Elastic
+         * operation. Master account in an organization in AWS Organizations have access to
+         * all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
@@ -861,7 +861,7 @@ namespace Model
         virtual void GetReservationPurchaseRecommendationAsync(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * <p>Retrieves the reservation utilization for your account. Master account in an
          * organization have access to member accounts. You can filter data by dimensions
          * in a time period. You can use <code>GetDimensionValues</code> to determine the
          * possible dimension values. Currently, you can group only by
@@ -872,7 +872,7 @@ namespace Model
         virtual Model::GetReservationUtilizationOutcome GetReservationUtilization(const Model::GetReservationUtilizationRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * <p>Retrieves the reservation utilization for your account. Master account in an
          * organization have access to member accounts. You can filter data by dimensions
          * in a time period. You can use <code>GetDimensionValues</code> to determine the
          * possible dimension values. Currently, you can group only by
@@ -885,7 +885,7 @@ namespace Model
         virtual Model::GetReservationUtilizationOutcomeCallable GetReservationUtilizationCallable(const Model::GetReservationUtilizationRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * <p>Retrieves the reservation utilization for your account. Master account in an
          * organization have access to member accounts. You can filter data by dimensions
          * in a time period. You can use <code>GetDimensionValues</code> to determine the
          * possible dimension values. Currently, you can group only by
@@ -1022,8 +1022,8 @@ namespace Model
 
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
-         * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * with daily or monthly granularity. Master account in an organization have access
+         * to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
          * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
@@ -1034,8 +1034,8 @@ namespace Model
 
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
-         * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * with daily or monthly granularity. Master account in an organization have access
+         * to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
          * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
@@ -1048,8 +1048,8 @@ namespace Model
 
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
-         * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * with daily or monthly granularity. Master account in an organization have access
+         * to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
          * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a

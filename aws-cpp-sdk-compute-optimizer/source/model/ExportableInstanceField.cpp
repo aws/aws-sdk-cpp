@@ -28,6 +28,10 @@ namespace Aws
         static const int CurrentInstanceType_HASH = HashingUtils::HashString("CurrentInstanceType");
         static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
         static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
+        static const int UtilizationMetricsEbsReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        static const int UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        static const int UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        static const int UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
         static const int CurrentOnDemandPrice_HASH = HashingUtils::HashString("CurrentOnDemandPrice");
         static const int CurrentStandardOneYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardOneYearNoUpfrontReservedPrice");
         static const int CurrentStandardThreeYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardThreeYearNoUpfrontReservedPrice");
@@ -85,6 +89,22 @@ namespace Aws
           else if (hashCode == UtilizationMetricsMemoryMaximum_HASH)
           {
             return ExportableInstanceField::UtilizationMetricsMemoryMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsReadOpsPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum;
           }
           else if (hashCode == CurrentOnDemandPrice_HASH)
           {
@@ -200,6 +220,14 @@ namespace Aws
             return "UtilizationMetricsCpuMaximum";
           case ExportableInstanceField::UtilizationMetricsMemoryMaximum:
             return "UtilizationMetricsMemoryMaximum";
+          case ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum:
+            return "UtilizationMetricsEbsReadOpsPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum:
+            return "UtilizationMetricsEbsWriteOpsPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum:
+            return "UtilizationMetricsEbsReadBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum:
+            return "UtilizationMetricsEbsWriteBytesPerSecondMaximum";
           case ExportableInstanceField::CurrentOnDemandPrice:
             return "CurrentOnDemandPrice";
           case ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice:

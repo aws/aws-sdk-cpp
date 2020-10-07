@@ -51,7 +51,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_userGroupIdsHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,17 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_userGroupIdsHasBeenSet)
+  {
+    unsigned userGroupIdsCount = 1;
+    for(auto& item : m_userGroupIds)
+    {
+      ss << "UserGroupIds.member." << userGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

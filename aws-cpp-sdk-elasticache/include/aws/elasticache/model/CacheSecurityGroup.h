@@ -218,42 +218,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline CacheSecurityGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline CacheSecurityGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the cache security group.</p>
+     * <p>The ARN of the cache security group,</p>
      */
     inline CacheSecurityGroup& WithARN(const char* value) { SetARN(value); return *this;}
 

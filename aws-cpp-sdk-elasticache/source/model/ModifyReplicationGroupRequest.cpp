@@ -36,7 +36,11 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_cacheNodeTypeHasBeenSet(false),
     m_authTokenHasBeenSet(false),
     m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
-    m_authTokenUpdateStrategyHasBeenSet(false)
+    m_authTokenUpdateStrategyHasBeenSet(false),
+    m_userGroupIdsToAddHasBeenSet(false),
+    m_userGroupIdsToRemoveHasBeenSet(false),
+    m_removeUserGroups(false),
+    m_removeUserGroupsHasBeenSet(false)
 {
 }
 
@@ -154,6 +158,33 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_authTokenUpdateStrategyHasBeenSet)
   {
     ss << "AuthTokenUpdateStrategy=" << AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy) << "&";
+  }
+
+  if(m_userGroupIdsToAddHasBeenSet)
+  {
+    unsigned userGroupIdsToAddCount = 1;
+    for(auto& item : m_userGroupIdsToAdd)
+    {
+      ss << "UserGroupIdsToAdd.member." << userGroupIdsToAddCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsToAddCount++;
+    }
+  }
+
+  if(m_userGroupIdsToRemoveHasBeenSet)
+  {
+    unsigned userGroupIdsToRemoveCount = 1;
+    for(auto& item : m_userGroupIdsToRemove)
+    {
+      ss << "UserGroupIdsToRemove.member." << userGroupIdsToRemoveCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsToRemoveCount++;
+    }
+  }
+
+  if(m_removeUserGroupsHasBeenSet)
+  {
+    ss << "RemoveUserGroups=" << std::boolalpha << m_removeUserGroups << "&";
   }
 
   ss << "Version=2015-02-02";

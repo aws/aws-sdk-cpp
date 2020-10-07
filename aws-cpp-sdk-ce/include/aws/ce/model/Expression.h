@@ -31,14 +31,16 @@ namespace Model
    * <p>Use <code>Expression</code> to filter by cost or by usage. There are two
    * patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension
    * name and values for the filters that you plan to use. For example, you can
-   * filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The
-   * <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions":
-   * { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The
-   * list of dimension values are OR'd together to retrieve cost or usage data. You
-   * can create <code>Expression</code> and <code>DimensionValues</code> objects
-   * using either <code>with*</code> methods or <code>set*</code> methods in multiple
-   * lines. </p> </li> <li> <p>Compound dimension values with logical operations -
-   * You can use multiple <code>Expression</code> types and the logical operators
+   * filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+   * <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+   * example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+   * example looks like:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [
+   * "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are
+   * OR'd together to retrieve cost or usage data. You can create
+   * <code>Expression</code> and <code>DimensionValues</code> objects using either
+   * <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p>
+   * </li> <li> <p>Compound dimension values with logical operations - You can use
+   * multiple <code>Expression</code> types and the logical operators
    * <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code>
    * objects. This allows you to filter on more advanced options. For example, you
    * can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type

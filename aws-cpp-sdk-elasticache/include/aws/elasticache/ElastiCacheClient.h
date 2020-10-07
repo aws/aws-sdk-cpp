@@ -25,12 +25,16 @@
 #include <aws/elasticache/model/CreateGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/CreateReplicationGroupResult.h>
 #include <aws/elasticache/model/CreateSnapshotResult.h>
+#include <aws/elasticache/model/CreateUserResult.h>
+#include <aws/elasticache/model/CreateUserGroupResult.h>
 #include <aws/elasticache/model/DecreaseNodeGroupsInGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/DecreaseReplicaCountResult.h>
 #include <aws/elasticache/model/DeleteCacheClusterResult.h>
 #include <aws/elasticache/model/DeleteGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/DeleteReplicationGroupResult.h>
 #include <aws/elasticache/model/DeleteSnapshotResult.h>
+#include <aws/elasticache/model/DeleteUserResult.h>
+#include <aws/elasticache/model/DeleteUserGroupResult.h>
 #include <aws/elasticache/model/DescribeCacheClustersResult.h>
 #include <aws/elasticache/model/DescribeCacheEngineVersionsResult.h>
 #include <aws/elasticache/model/DescribeCacheParameterGroupsResult.h>
@@ -46,6 +50,8 @@
 #include <aws/elasticache/model/DescribeServiceUpdatesResult.h>
 #include <aws/elasticache/model/DescribeSnapshotsResult.h>
 #include <aws/elasticache/model/DescribeUpdateActionsResult.h>
+#include <aws/elasticache/model/DescribeUserGroupsResult.h>
+#include <aws/elasticache/model/DescribeUsersResult.h>
 #include <aws/elasticache/model/DisassociateGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/FailoverGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/IncreaseNodeGroupsInGlobalReplicationGroupResult.h>
@@ -58,6 +64,8 @@
 #include <aws/elasticache/model/ModifyGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/ModifyReplicationGroupResult.h>
 #include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationResult.h>
+#include <aws/elasticache/model/ModifyUserResult.h>
+#include <aws/elasticache/model/ModifyUserGroupResult.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingResult.h>
 #include <aws/elasticache/model/RebalanceSlotsInGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/RebootCacheClusterResult.h>
@@ -125,6 +133,8 @@ namespace Model
         class CreateGlobalReplicationGroupRequest;
         class CreateReplicationGroupRequest;
         class CreateSnapshotRequest;
+        class CreateUserRequest;
+        class CreateUserGroupRequest;
         class DecreaseNodeGroupsInGlobalReplicationGroupRequest;
         class DecreaseReplicaCountRequest;
         class DeleteCacheClusterRequest;
@@ -134,6 +144,8 @@ namespace Model
         class DeleteGlobalReplicationGroupRequest;
         class DeleteReplicationGroupRequest;
         class DeleteSnapshotRequest;
+        class DeleteUserRequest;
+        class DeleteUserGroupRequest;
         class DescribeCacheClustersRequest;
         class DescribeCacheEngineVersionsRequest;
         class DescribeCacheParameterGroupsRequest;
@@ -149,6 +161,8 @@ namespace Model
         class DescribeServiceUpdatesRequest;
         class DescribeSnapshotsRequest;
         class DescribeUpdateActionsRequest;
+        class DescribeUserGroupsRequest;
+        class DescribeUsersRequest;
         class DisassociateGlobalReplicationGroupRequest;
         class FailoverGlobalReplicationGroupRequest;
         class IncreaseNodeGroupsInGlobalReplicationGroupRequest;
@@ -161,6 +175,8 @@ namespace Model
         class ModifyGlobalReplicationGroupRequest;
         class ModifyReplicationGroupRequest;
         class ModifyReplicationGroupShardConfigurationRequest;
+        class ModifyUserRequest;
+        class ModifyUserGroupRequest;
         class PurchaseReservedCacheNodesOfferingRequest;
         class RebalanceSlotsInGlobalReplicationGroupRequest;
         class RebootCacheClusterRequest;
@@ -183,6 +199,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateGlobalReplicationGroupResult, ElastiCacheError> CreateGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationGroupResult, ElastiCacheError> CreateReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotResult, ElastiCacheError> CreateSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateUserResult, ElastiCacheError> CreateUserOutcome;
+        typedef Aws::Utils::Outcome<CreateUserGroupResult, ElastiCacheError> CreateUserGroupOutcome;
         typedef Aws::Utils::Outcome<DecreaseNodeGroupsInGlobalReplicationGroupResult, ElastiCacheError> DecreaseNodeGroupsInGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<DecreaseReplicaCountResult, ElastiCacheError> DecreaseReplicaCountOutcome;
         typedef Aws::Utils::Outcome<DeleteCacheClusterResult, ElastiCacheError> DeleteCacheClusterOutcome;
@@ -192,6 +210,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteGlobalReplicationGroupResult, ElastiCacheError> DeleteGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationGroupResult, ElastiCacheError> DeleteReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteSnapshotResult, ElastiCacheError> DeleteSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserResult, ElastiCacheError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserGroupResult, ElastiCacheError> DeleteUserGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeCacheClustersResult, ElastiCacheError> DescribeCacheClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeCacheEngineVersionsResult, ElastiCacheError> DescribeCacheEngineVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeCacheParameterGroupsResult, ElastiCacheError> DescribeCacheParameterGroupsOutcome;
@@ -207,6 +227,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeServiceUpdatesResult, ElastiCacheError> DescribeServiceUpdatesOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotsResult, ElastiCacheError> DescribeSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeUpdateActionsResult, ElastiCacheError> DescribeUpdateActionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserGroupsResult, ElastiCacheError> DescribeUserGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeUsersResult, ElastiCacheError> DescribeUsersOutcome;
         typedef Aws::Utils::Outcome<DisassociateGlobalReplicationGroupResult, ElastiCacheError> DisassociateGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<FailoverGlobalReplicationGroupResult, ElastiCacheError> FailoverGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<IncreaseNodeGroupsInGlobalReplicationGroupResult, ElastiCacheError> IncreaseNodeGroupsInGlobalReplicationGroupOutcome;
@@ -219,6 +241,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyGlobalReplicationGroupResult, ElastiCacheError> ModifyGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationGroupResult, ElastiCacheError> ModifyReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationGroupShardConfigurationResult, ElastiCacheError> ModifyReplicationGroupShardConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ModifyUserResult, ElastiCacheError> ModifyUserOutcome;
+        typedef Aws::Utils::Outcome<ModifyUserGroupResult, ElastiCacheError> ModifyUserGroupOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedCacheNodesOfferingResult, ElastiCacheError> PurchaseReservedCacheNodesOfferingOutcome;
         typedef Aws::Utils::Outcome<RebalanceSlotsInGlobalReplicationGroupResult, ElastiCacheError> RebalanceSlotsInGlobalReplicationGroupOutcome;
         typedef Aws::Utils::Outcome<RebootCacheClusterResult, ElastiCacheError> RebootCacheClusterOutcome;
@@ -241,6 +265,8 @@ namespace Model
         typedef std::future<CreateGlobalReplicationGroupOutcome> CreateGlobalReplicationGroupOutcomeCallable;
         typedef std::future<CreateReplicationGroupOutcome> CreateReplicationGroupOutcomeCallable;
         typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
+        typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+        typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
         typedef std::future<DecreaseNodeGroupsInGlobalReplicationGroupOutcome> DecreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable;
         typedef std::future<DecreaseReplicaCountOutcome> DecreaseReplicaCountOutcomeCallable;
         typedef std::future<DeleteCacheClusterOutcome> DeleteCacheClusterOutcomeCallable;
@@ -250,6 +276,8 @@ namespace Model
         typedef std::future<DeleteGlobalReplicationGroupOutcome> DeleteGlobalReplicationGroupOutcomeCallable;
         typedef std::future<DeleteReplicationGroupOutcome> DeleteReplicationGroupOutcomeCallable;
         typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
+        typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+        typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
         typedef std::future<DescribeCacheClustersOutcome> DescribeCacheClustersOutcomeCallable;
         typedef std::future<DescribeCacheEngineVersionsOutcome> DescribeCacheEngineVersionsOutcomeCallable;
         typedef std::future<DescribeCacheParameterGroupsOutcome> DescribeCacheParameterGroupsOutcomeCallable;
@@ -265,6 +293,8 @@ namespace Model
         typedef std::future<DescribeServiceUpdatesOutcome> DescribeServiceUpdatesOutcomeCallable;
         typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
         typedef std::future<DescribeUpdateActionsOutcome> DescribeUpdateActionsOutcomeCallable;
+        typedef std::future<DescribeUserGroupsOutcome> DescribeUserGroupsOutcomeCallable;
+        typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
         typedef std::future<DisassociateGlobalReplicationGroupOutcome> DisassociateGlobalReplicationGroupOutcomeCallable;
         typedef std::future<FailoverGlobalReplicationGroupOutcome> FailoverGlobalReplicationGroupOutcomeCallable;
         typedef std::future<IncreaseNodeGroupsInGlobalReplicationGroupOutcome> IncreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable;
@@ -277,6 +307,8 @@ namespace Model
         typedef std::future<ModifyGlobalReplicationGroupOutcome> ModifyGlobalReplicationGroupOutcomeCallable;
         typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
         typedef std::future<ModifyReplicationGroupShardConfigurationOutcome> ModifyReplicationGroupShardConfigurationOutcomeCallable;
+        typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
+        typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
         typedef std::future<PurchaseReservedCacheNodesOfferingOutcome> PurchaseReservedCacheNodesOfferingOutcomeCallable;
         typedef std::future<RebalanceSlotsInGlobalReplicationGroupOutcome> RebalanceSlotsInGlobalReplicationGroupOutcomeCallable;
         typedef std::future<RebootCacheClusterOutcome> RebootCacheClusterOutcomeCallable;
@@ -302,6 +334,8 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateGlobalReplicationGroupRequest&, const Model::CreateGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateReplicationGroupRequest&, const Model::CreateReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::CreateUserGroupRequest&, const Model::CreateUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DecreaseNodeGroupsInGlobalReplicationGroupRequest&, const Model::DecreaseNodeGroupsInGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DecreaseReplicaCountRequest&, const Model::DecreaseReplicaCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecreaseReplicaCountResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteCacheClusterRequest&, const Model::DeleteCacheClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCacheClusterResponseReceivedHandler;
@@ -311,6 +345,8 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteGlobalReplicationGroupRequest&, const Model::DeleteGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteReplicationGroupRequest&, const Model::DeleteReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DeleteUserGroupRequest&, const Model::DeleteUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeCacheClustersRequest&, const Model::DescribeCacheClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheClustersResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeCacheEngineVersionsRequest&, const Model::DescribeCacheEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeCacheParameterGroupsRequest&, const Model::DescribeCacheParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheParameterGroupsResponseReceivedHandler;
@@ -326,6 +362,8 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeServiceUpdatesRequest&, const Model::DescribeServiceUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceUpdatesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUpdateActionsRequest&, const Model::DescribeUpdateActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateActionsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUserGroupsRequest&, const Model::DescribeUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserGroupsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DisassociateGlobalReplicationGroupRequest&, const Model::DisassociateGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::FailoverGlobalReplicationGroupRequest&, const Model::FailoverGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest&, const Model::IncreaseNodeGroupsInGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler;
@@ -338,6 +376,8 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyGlobalReplicationGroupRequest&, const Model::ModifyGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupRequest&, const Model::ModifyReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupShardConfigurationRequest&, const Model::ModifyReplicationGroupShardConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupShardConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserRequest&, const Model::ModifyUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyUserResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserGroupRequest&, const Model::ModifyUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyUserGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::PurchaseReservedCacheNodesOfferingRequest&, const Model::PurchaseReservedCacheNodesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedCacheNodesOfferingResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::RebalanceSlotsInGlobalReplicationGroupRequest&, const Model::RebalanceSlotsInGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebalanceSlotsInGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::RebootCacheClusterRequest&, const Model::RebootCacheClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootCacheClusterResponseReceivedHandler;
@@ -1086,6 +1126,74 @@ namespace Model
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Decreases the number of node groups in a Global Datastore</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup">AWS
@@ -1426,6 +1534,80 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * removed from all user groups and in turn removed from all replication groups.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * removed from all user groups and in turn removed from all replication groups.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * removed from all user groups and in turn removed from all replication groups.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * must first be disassociated from the replcation group before it can be deleted.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserGroupOutcome DeleteUserGroup(const Model::DeleteUserGroupRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * must first be disassociated from the replcation group before it can be deleted.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserGroupOutcomeCallable DeleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
+
+        /**
+         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * must first be disassociated from the replcation group before it can be deleted.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all provisioned clusters if no cluster identifier
@@ -1923,6 +2105,56 @@ namespace Model
         virtual void DescribeUpdateActionsAsync(const Model::DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of user groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest& request) const;
+
+        /**
+         * <p>Returns a list of user groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const Model::DescribeUserGroupsRequest& request) const;
+
+        /**
+         * <p>Returns a list of user groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUserGroupsAsync(const Model::DescribeUserGroupsRequest& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest& request) const;
+
+        /**
+         * <p>Returns a list of users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request) const;
+
+        /**
+         * <p>Returns a list of users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Remove a secondary cluster from the Global Datastore using the Global
          * Datastore name. The secondary cluster will no longer receive updates from the
          * primary cluster, but will remain as a standalone cluster in that AWS
@@ -2325,6 +2557,59 @@ namespace Model
         virtual void ModifyReplicationGroupShardConfigurationAsync(const Model::ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Changes user password(s) and/or access string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest& request) const;
+
+        /**
+         * <p>Changes user password(s) and/or access string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request) const;
+
+        /**
+         * <p>Changes user password(s) and/or access string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Changes the list of users that belong to the user group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest& request) const;
+
+        /**
+         * <p>Changes the list of users that belong to the user group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request) const;
+
+        /**
+         * <p>Changes the list of users that belong to the user group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows you to purchase a reserved cache node offering.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
@@ -2694,6 +2979,8 @@ namespace Model
         void CreateGlobalReplicationGroupAsyncHelper(const Model::CreateGlobalReplicationGroupRequest& request, const CreateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationGroupAsyncHelper(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUserGroupAsyncHelper(const Model::CreateUserGroupRequest& request, const CreateUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DecreaseNodeGroupsInGlobalReplicationGroupAsyncHelper(const Model::DecreaseNodeGroupsInGlobalReplicationGroupRequest& request, const DecreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DecreaseReplicaCountAsyncHelper(const Model::DecreaseReplicaCountRequest& request, const DecreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCacheClusterAsyncHelper(const Model::DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2703,6 +2990,8 @@ namespace Model
         void DeleteGlobalReplicationGroupAsyncHelper(const Model::DeleteGlobalReplicationGroupRequest& request, const DeleteGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationGroupAsyncHelper(const Model::DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserGroupAsyncHelper(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCacheClustersAsyncHelper(const Model::DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCacheEngineVersionsAsyncHelper(const Model::DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCacheParameterGroupsAsyncHelper(const Model::DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2718,6 +3007,8 @@ namespace Model
         void DescribeServiceUpdatesAsyncHelper(const Model::DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUpdateActionsAsyncHelper(const Model::DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUserGroupsAsyncHelper(const Model::DescribeUserGroupsRequest& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUsersAsyncHelper(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateGlobalReplicationGroupAsyncHelper(const Model::DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverGlobalReplicationGroupAsyncHelper(const Model::FailoverGlobalReplicationGroupRequest& request, const FailoverGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IncreaseNodeGroupsInGlobalReplicationGroupAsyncHelper(const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest& request, const IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2730,6 +3021,8 @@ namespace Model
         void ModifyGlobalReplicationGroupAsyncHelper(const Model::ModifyGlobalReplicationGroupRequest& request, const ModifyGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationGroupAsyncHelper(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationGroupShardConfigurationAsyncHelper(const Model::ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyUserAsyncHelper(const Model::ModifyUserRequest& request, const ModifyUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyUserGroupAsyncHelper(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedCacheNodesOfferingAsyncHelper(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebalanceSlotsInGlobalReplicationGroupAsyncHelper(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request, const RebalanceSlotsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootCacheClusterAsyncHelper(const Model::RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

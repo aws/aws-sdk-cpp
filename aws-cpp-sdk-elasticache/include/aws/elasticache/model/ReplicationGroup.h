@@ -892,6 +892,52 @@ namespace Model
 
 
     /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMemberClustersOutpostArns() const{ return m_memberClustersOutpostArns; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline bool MemberClustersOutpostArnsHasBeenSet() const { return m_memberClustersOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline void SetMemberClustersOutpostArns(const Aws::Vector<Aws::String>& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline void SetMemberClustersOutpostArns(Aws::Vector<Aws::String>&& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& WithMemberClustersOutpostArns(const Aws::Vector<Aws::String>& value) { SetMemberClustersOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& WithMemberClustersOutpostArns(Aws::Vector<Aws::String>&& value) { SetMemberClustersOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(const Aws::String& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(Aws::String&& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(const char* value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(value); return *this; }
+
+
+    /**
      * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -972,6 +1018,52 @@ namespace Model
      */
     inline ReplicationGroup& WithARN(const char* value) { SetARN(value); return *this;}
 
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline ReplicationGroup& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline ReplicationGroup& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of user group IDs that have access to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1031,11 +1123,17 @@ namespace Model
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
 
+    Aws::Vector<Aws::String> m_memberClustersOutpostArns;
+    bool m_memberClustersOutpostArnsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIds;
+    bool m_userGroupIdsHasBeenSet;
   };
 
 } // namespace Model

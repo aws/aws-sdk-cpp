@@ -21,8 +21,10 @@ namespace Model
 Channel::Channel() : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_ingressAccessLogsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -30,8 +32,10 @@ Channel::Channel() :
 Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_ingressAccessLogsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -53,6 +57,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("egressAccessLogs"))
+  {
+    m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
+
+    m_egressAccessLogsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hlsIngest"))
   {
     m_hlsIngest = jsonValue.GetObject("hlsIngest");
@@ -65,6 +76,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingressAccessLogs"))
+  {
+    m_ingressAccessLogs = jsonValue.GetObject("ingressAccessLogs");
+
+    m_ingressAccessLogsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -96,6 +114,12 @@ JsonValue Channel::Jsonize() const
 
   }
 
+  if(m_egressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("egressAccessLogs", m_egressAccessLogs.Jsonize());
+
+  }
+
   if(m_hlsIngestHasBeenSet)
   {
    payload.WithObject("hlsIngest", m_hlsIngest.Jsonize());
@@ -105,6 +129,12 @@ JsonValue Channel::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_ingressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("ingressAccessLogs", m_ingressAccessLogs.Jsonize());
 
   }
 

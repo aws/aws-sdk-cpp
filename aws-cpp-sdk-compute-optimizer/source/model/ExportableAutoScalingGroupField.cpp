@@ -26,6 +26,10 @@ namespace Aws
         static const int Finding_HASH = HashingUtils::HashString("Finding");
         static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
         static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
+        static const int UtilizationMetricsEbsReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        static const int UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        static const int UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        static const int UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
         static const int CurrentConfigurationInstanceType_HASH = HashingUtils::HashString("CurrentConfigurationInstanceType");
         static const int CurrentConfigurationDesiredCapacity_HASH = HashingUtils::HashString("CurrentConfigurationDesiredCapacity");
@@ -81,6 +85,22 @@ namespace Aws
           else if (hashCode == UtilizationMetricsMemoryMaximum_HASH)
           {
             return ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsReadOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum;
           }
           else if (hashCode == LookbackPeriodInDays_HASH)
           {
@@ -216,6 +236,14 @@ namespace Aws
             return "UtilizationMetricsCpuMaximum";
           case ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum:
             return "UtilizationMetricsMemoryMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum:
+            return "UtilizationMetricsEbsReadOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum:
+            return "UtilizationMetricsEbsWriteOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum:
+            return "UtilizationMetricsEbsReadBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum:
+            return "UtilizationMetricsEbsWriteBytesPerSecondMaximum";
           case ExportableAutoScalingGroupField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
           case ExportableAutoScalingGroupField::CurrentConfigurationInstanceType:

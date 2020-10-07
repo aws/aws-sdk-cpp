@@ -33,6 +33,7 @@ Snapshot::Snapshot() :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_topicArnHasBeenSet(false),
@@ -69,6 +70,7 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_topicArnHasBeenSet(false),
@@ -164,6 +166,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_preferredAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(preferredAvailabilityZoneNode.GetText());
       m_preferredAvailabilityZoneHasBeenSet = true;
+    }
+    XmlNode preferredOutpostArnNode = resultNode.FirstChild("PreferredOutpostArn");
+    if(!preferredOutpostArnNode.IsNull())
+    {
+      m_preferredOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(preferredOutpostArnNode.GetText());
+      m_preferredOutpostArnHasBeenSet = true;
     }
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
     if(!cacheClusterCreateTimeNode.IsNull())
@@ -323,6 +331,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
+  }
+
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -451,6 +464,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
+  }
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {

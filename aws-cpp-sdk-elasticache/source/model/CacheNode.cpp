@@ -27,7 +27,8 @@ CacheNode::CacheNode() :
     m_endpointHasBeenSet(false),
     m_parameterGroupStatusHasBeenSet(false),
     m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false)
+    m_customerAvailabilityZoneHasBeenSet(false),
+    m_customerOutpostArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CacheNode::CacheNode(const XmlNode& xmlNode) :
     m_endpointHasBeenSet(false),
     m_parameterGroupStatusHasBeenSet(false),
     m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false)
+    m_customerAvailabilityZoneHasBeenSet(false),
+    m_customerOutpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -91,6 +93,12 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
       m_customerAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(customerAvailabilityZoneNode.GetText());
       m_customerAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode customerOutpostArnNode = resultNode.FirstChild("CustomerOutpostArn");
+    if(!customerOutpostArnNode.IsNull())
+    {
+      m_customerOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(customerOutpostArnNode.GetText());
+      m_customerOutpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -135,6 +143,11 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_customerOutpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOutpostArn=" << StringUtils::URLEncode(m_customerOutpostArn.c_str()) << "&";
+  }
+
 }
 
 void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -168,6 +181,10 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_customerAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
+  }
+  if(m_customerOutpostArnHasBeenSet)
+  {
+      oStream << location << ".CustomerOutpostArn=" << StringUtils::URLEncode(m_customerOutpostArn.c_str()) << "&";
   }
 }
 

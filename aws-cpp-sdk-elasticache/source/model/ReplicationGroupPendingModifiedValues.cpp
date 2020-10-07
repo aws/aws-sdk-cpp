@@ -26,7 +26,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_automaticFailoverStatusHasBeenSet(false),
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_automaticFailoverStatusHasBeenSet(false),
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,12 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
       m_authTokenStatusHasBeenSet = true;
     }
+    XmlNode userGroupsNode = resultNode.FirstChild("UserGroups");
+    if(!userGroupsNode.IsNull())
+    {
+      m_userGroups = userGroupsNode;
+      m_userGroupsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -100,6 +108,13 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
   }
 
+  if(m_userGroupsHasBeenSet)
+  {
+      Aws::StringStream userGroupsLocationAndMemberSs;
+      userGroupsLocationAndMemberSs << location << index << locationValue << ".UserGroups";
+      m_userGroups.OutputToStream(oStream, userGroupsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -121,6 +136,12 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   if(m_authTokenStatusHasBeenSet)
   {
       oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+  }
+  if(m_userGroupsHasBeenSet)
+  {
+      Aws::String userGroupsLocationAndMember(location);
+      userGroupsLocationAndMember += ".UserGroups";
+      m_userGroups.OutputToStream(oStream, userGroupsLocationAndMember.c_str());
   }
 }
 

@@ -29,9 +29,9 @@ namespace Model
 
   /**
    * <p>A single daily or monthly Savings Plans utilization rate, and details for
-   * your account. Master accounts in an organization have access to member accounts.
-   * You can use <code>GetDimensionValues</code> to determine the possible dimension
-   * values. </p><p><h3>See Also:</h3>   <a
+   * your account. A master account in an organization have access to member
+   * accounts. You can use <code>GetDimensionValues</code> to determine the possible
+   * dimension values. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilizationDetail">AWS
    * API Reference</a></p>
    */

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/OutpostMode.h>
 #include <aws/elasticache/model/Tag.h>
 #include <utility>
 
@@ -1965,6 +1966,130 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline const OutpostMode& GetOutpostMode() const{ return m_outpostMode; }
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline bool OutpostModeHasBeenSet() const { return m_outpostModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline void SetOutpostMode(const OutpostMode& value) { m_outpostModeHasBeenSet = true; m_outpostMode = value; }
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline void SetOutpostMode(OutpostMode&& value) { m_outpostModeHasBeenSet = true; m_outpostMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline CreateCacheClusterRequest& WithOutpostMode(const OutpostMode& value) { SetOutpostMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the nodes in the cluster are created in a single outpost or
+     * across multiple outposts.</p>
+     */
+    inline CreateCacheClusterRequest& WithOutpostMode(OutpostMode&& value) { SetOutpostMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const{ return m_preferredOutpostArns; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline bool PreferredOutpostArnsHasBeenSet() const { return m_preferredOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& WithPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { SetPreferredOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& WithPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { SetPreferredOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& AddPreferredOutpostArns(const Aws::String& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& AddPreferredOutpostArns(Aws::String&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline CreateCacheClusterRequest& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -2035,6 +2160,15 @@ namespace Model
 
     Aws::String m_authToken;
     bool m_authTokenHasBeenSet;
+
+    OutpostMode m_outpostMode;
+    bool m_outpostModeHasBeenSet;
+
+    Aws::String m_preferredOutpostArn;
+    bool m_preferredOutpostArnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_preferredOutpostArns;
+    bool m_preferredOutpostArnsHasBeenSet;
   };
 
 } // namespace Model

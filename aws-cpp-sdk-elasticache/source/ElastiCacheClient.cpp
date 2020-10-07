@@ -33,6 +33,8 @@
 #include <aws/elasticache/model/CreateGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/CreateReplicationGroupRequest.h>
 #include <aws/elasticache/model/CreateSnapshotRequest.h>
+#include <aws/elasticache/model/CreateUserRequest.h>
+#include <aws/elasticache/model/CreateUserGroupRequest.h>
 #include <aws/elasticache/model/DecreaseNodeGroupsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/DecreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/DeleteCacheClusterRequest.h>
@@ -42,6 +44,8 @@
 #include <aws/elasticache/model/DeleteGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/DeleteReplicationGroupRequest.h>
 #include <aws/elasticache/model/DeleteSnapshotRequest.h>
+#include <aws/elasticache/model/DeleteUserRequest.h>
+#include <aws/elasticache/model/DeleteUserGroupRequest.h>
 #include <aws/elasticache/model/DescribeCacheClustersRequest.h>
 #include <aws/elasticache/model/DescribeCacheEngineVersionsRequest.h>
 #include <aws/elasticache/model/DescribeCacheParameterGroupsRequest.h>
@@ -57,6 +61,8 @@
 #include <aws/elasticache/model/DescribeServiceUpdatesRequest.h>
 #include <aws/elasticache/model/DescribeSnapshotsRequest.h>
 #include <aws/elasticache/model/DescribeUpdateActionsRequest.h>
+#include <aws/elasticache/model/DescribeUserGroupsRequest.h>
+#include <aws/elasticache/model/DescribeUsersRequest.h>
 #include <aws/elasticache/model/DisassociateGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/FailoverGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/IncreaseNodeGroupsInGlobalReplicationGroupRequest.h>
@@ -69,6 +75,8 @@
 #include <aws/elasticache/model/ModifyGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/ModifyReplicationGroupRequest.h>
 #include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationRequest.h>
+#include <aws/elasticache/model/ModifyUserRequest.h>
+#include <aws/elasticache/model/ModifyUserGroupRequest.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 #include <aws/elasticache/model/RebalanceSlotsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/RebootCacheClusterRequest.h>
@@ -513,6 +521,60 @@ void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& r
   handler(this, request, CreateSnapshot(request), context);
 }
 
+CreateUserOutcome ElastiCacheClient::CreateUser(const CreateUserRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateUserOutcomeCallable ElastiCacheClient::CreateUserCallable(const CreateUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUser(request), context);
+}
+
+CreateUserGroupOutcome ElastiCacheClient::CreateUserGroup(const CreateUserGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateUserGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateUserGroupOutcomeCallable ElastiCacheClient::CreateUserGroupCallable(const CreateUserGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::CreateUserGroupAsyncHelper(const CreateUserGroupRequest& request, const CreateUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUserGroup(request), context);
+}
+
 DecreaseNodeGroupsInGlobalReplicationGroupOutcome ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroup(const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -754,6 +816,60 @@ void ElastiCacheClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request
 void ElastiCacheClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSnapshot(request), context);
+}
+
+DeleteUserOutcome ElastiCacheClient::DeleteUser(const DeleteUserRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteUserOutcomeCallable ElastiCacheClient::DeleteUserCallable(const DeleteUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUser(request), context);
+}
+
+DeleteUserGroupOutcome ElastiCacheClient::DeleteUserGroup(const DeleteUserGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteUserGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteUserGroupOutcomeCallable ElastiCacheClient::DeleteUserGroupCallable(const DeleteUserGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DeleteUserGroupAsync(const DeleteUserGroupRequest& request, const DeleteUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DeleteUserGroupAsyncHelper(const DeleteUserGroupRequest& request, const DeleteUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUserGroup(request), context);
 }
 
 DescribeCacheClustersOutcome ElastiCacheClient::DescribeCacheClusters(const DescribeCacheClustersRequest& request) const
@@ -1161,6 +1277,60 @@ void ElastiCacheClient::DescribeUpdateActionsAsyncHelper(const DescribeUpdateAct
   handler(this, request, DescribeUpdateActions(request), context);
 }
 
+DescribeUserGroupsOutcome ElastiCacheClient::DescribeUserGroups(const DescribeUserGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeUserGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeUserGroupsOutcomeCallable ElastiCacheClient::DescribeUserGroupsCallable(const DescribeUserGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DescribeUserGroupsAsync(const DescribeUserGroupsRequest& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DescribeUserGroupsAsyncHelper(const DescribeUserGroupsRequest& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeUserGroups(request), context);
+}
+
+DescribeUsersOutcome ElastiCacheClient::DescribeUsers(const DescribeUsersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeUsersOutcomeCallable ElastiCacheClient::DescribeUsersCallable(const DescribeUsersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUsers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsersAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeUsers(request), context);
+}
+
 DisassociateGlobalReplicationGroupOutcome ElastiCacheClient::DisassociateGlobalReplicationGroup(const DisassociateGlobalReplicationGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1483,6 +1653,60 @@ void ElastiCacheClient::ModifyReplicationGroupShardConfigurationAsync(const Modi
 void ElastiCacheClient::ModifyReplicationGroupShardConfigurationAsyncHelper(const ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyReplicationGroupShardConfiguration(request), context);
+}
+
+ModifyUserOutcome ElastiCacheClient::ModifyUser(const ModifyUserRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyUserOutcomeCallable ElastiCacheClient::ModifyUserCallable(const ModifyUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyUserAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::ModifyUserAsyncHelper(const ModifyUserRequest& request, const ModifyUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyUser(request), context);
+}
+
+ModifyUserGroupOutcome ElastiCacheClient::ModifyUserGroup(const ModifyUserGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyUserGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyUserGroupOutcomeCallable ElastiCacheClient::ModifyUserGroupCallable(const ModifyUserGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyUserGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyUserGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyUserGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::ModifyUserGroupAsyncHelper(const ModifyUserGroupRequest& request, const ModifyUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyUserGroup(request), context);
 }
 
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(const PurchaseReservedCacheNodesOfferingRequest& request) const

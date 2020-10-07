@@ -22,6 +22,10 @@ namespace Aws
 
         static const int Cpu_HASH = HashingUtils::HashString("Cpu");
         static const int Memory_HASH = HashingUtils::HashString("Memory");
+        static const int EBS_READ_OPS_PER_SECOND_HASH = HashingUtils::HashString("EBS_READ_OPS_PER_SECOND");
+        static const int EBS_WRITE_OPS_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_OPS_PER_SECOND");
+        static const int EBS_READ_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_READ_BYTES_PER_SECOND");
+        static const int EBS_WRITE_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_BYTES_PER_SECOND");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
@@ -34,6 +38,22 @@ namespace Aws
           else if (hashCode == Memory_HASH)
           {
             return MetricName::Memory;
+          }
+          else if (hashCode == EBS_READ_OPS_PER_SECOND_HASH)
+          {
+            return MetricName::EBS_READ_OPS_PER_SECOND;
+          }
+          else if (hashCode == EBS_WRITE_OPS_PER_SECOND_HASH)
+          {
+            return MetricName::EBS_WRITE_OPS_PER_SECOND;
+          }
+          else if (hashCode == EBS_READ_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::EBS_READ_BYTES_PER_SECOND;
+          }
+          else if (hashCode == EBS_WRITE_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::EBS_WRITE_BYTES_PER_SECOND;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +73,14 @@ namespace Aws
             return "Cpu";
           case MetricName::Memory:
             return "Memory";
+          case MetricName::EBS_READ_OPS_PER_SECOND:
+            return "EBS_READ_OPS_PER_SECOND";
+          case MetricName::EBS_WRITE_OPS_PER_SECOND:
+            return "EBS_WRITE_OPS_PER_SECOND";
+          case MetricName::EBS_READ_BYTES_PER_SECOND:
+            return "EBS_READ_BYTES_PER_SECOND";
+          case MetricName::EBS_WRITE_BYTES_PER_SECOND:
+            return "EBS_WRITE_BYTES_PER_SECOND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

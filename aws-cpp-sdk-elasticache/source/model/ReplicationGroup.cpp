@@ -47,8 +47,10 @@ ReplicationGroup::ReplicationGroup() :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
+    m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_userGroupIdsHasBeenSet(false)
 {
 }
 
@@ -79,8 +81,10 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
+    m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_userGroupIdsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -217,6 +221,18 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(atRestEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_atRestEncryptionEnabledHasBeenSet = true;
     }
+    XmlNode memberClustersOutpostArnsNode = resultNode.FirstChild("MemberClustersOutpostArns");
+    if(!memberClustersOutpostArnsNode.IsNull())
+    {
+      XmlNode memberClustersOutpostArnsMember = memberClustersOutpostArnsNode.FirstChild("ReplicationGroupOutpostArn");
+      while(!memberClustersOutpostArnsMember.IsNull())
+      {
+        m_memberClustersOutpostArns.push_back(memberClustersOutpostArnsMember.GetText());
+        memberClustersOutpostArnsMember = memberClustersOutpostArnsMember.NextNode("ReplicationGroupOutpostArn");
+      }
+
+      m_memberClustersOutpostArnsHasBeenSet = true;
+    }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
@@ -228,6 +244,18 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+    }
+    XmlNode userGroupIdsNode = resultNode.FirstChild("UserGroupIds");
+    if(!userGroupIdsNode.IsNull())
+    {
+      XmlNode userGroupIdsMember = userGroupIdsNode.FirstChild("member");
+      while(!userGroupIdsMember.IsNull())
+      {
+        m_userGroupIds.push_back(userGroupIdsMember.GetText());
+        userGroupIdsMember = userGroupIdsMember.NextNode("member");
+      }
+
+      m_userGroupIdsHasBeenSet = true;
     }
   }
 
@@ -347,6 +375,15 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 
+  if(m_memberClustersOutpostArnsHasBeenSet)
+  {
+      unsigned memberClustersOutpostArnsIdx = 1;
+      for(auto& item : m_memberClustersOutpostArns)
+      {
+        oStream << location << index << locationValue << ".ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
@@ -355,6 +392,15 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_aRNHasBeenSet)
   {
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
+  if(m_userGroupIdsHasBeenSet)
+  {
+      unsigned userGroupIdsIdx = 1;
+      for(auto& item : m_userGroupIds)
+      {
+        oStream << location << index << locationValue << ".UserGroupIds.member." << userGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 
 }
@@ -453,6 +499,14 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
+  if(m_memberClustersOutpostArnsHasBeenSet)
+  {
+      unsigned memberClustersOutpostArnsIdx = 1;
+      for(auto& item : m_memberClustersOutpostArns)
+      {
+        oStream << location << ".ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
@@ -460,6 +514,14 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_aRNHasBeenSet)
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+  if(m_userGroupIdsHasBeenSet)
+  {
+      unsigned userGroupIdsIdx = 1;
+      for(auto& item : m_userGroupIds)
+      {
+        oStream << location << ".UserGroupIds.member." << userGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

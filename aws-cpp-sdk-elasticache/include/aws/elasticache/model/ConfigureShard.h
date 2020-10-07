@@ -254,6 +254,52 @@ namespace Model
      */
     inline ConfigureShard& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const{ return m_preferredOutpostArns; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline bool PreferredOutpostArnsHasBeenSet() const { return m_preferredOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& WithPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { SetPreferredOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& WithPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { SetPreferredOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(const Aws::String& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(Aws::String&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_nodeGroupId;
@@ -264,6 +310,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_preferredOutpostArns;
+    bool m_preferredOutpostArnsHasBeenSet;
   };
 
 } // namespace Model

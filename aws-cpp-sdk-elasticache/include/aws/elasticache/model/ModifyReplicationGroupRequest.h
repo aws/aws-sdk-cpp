@@ -1218,6 +1218,128 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { SetAuthTokenUpdateStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIdsToAdd() const{ return m_userGroupIdsToAdd; }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline bool UserGroupIdsToAddHasBeenSet() const { return m_userGroupIdsToAddHasBeenSet; }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline void SetUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = value; }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline void SetUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = std::move(value); }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToAdd(value); return *this;}
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToAdd(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const Aws::String& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(Aws::String&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of user group IDs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const char* value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIdsToRemove() const{ return m_userGroupIdsToRemove; }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline bool UserGroupIdsToRemoveHasBeenSet() const { return m_userGroupIdsToRemoveHasBeenSet; }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline void SetUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = value; }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline void SetUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = std::move(value); }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToRemove(value); return *this;}
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToRemove(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const Aws::String& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(Aws::String&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of users groups to remove, meaning the users in the group no longer
+     * can access thereplication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const char* value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
+
+
+    /**
+     * <p>Removes the user groups that can access this replication group.</p>
+     */
+    inline bool GetRemoveUserGroups() const{ return m_removeUserGroups; }
+
+    /**
+     * <p>Removes the user groups that can access this replication group.</p>
+     */
+    inline bool RemoveUserGroupsHasBeenSet() const { return m_removeUserGroupsHasBeenSet; }
+
+    /**
+     * <p>Removes the user groups that can access this replication group.</p>
+     */
+    inline void SetRemoveUserGroups(bool value) { m_removeUserGroupsHasBeenSet = true; m_removeUserGroups = value; }
+
+    /**
+     * <p>Removes the user groups that can access this replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithRemoveUserGroups(bool value) { SetRemoveUserGroups(value); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1279,6 +1401,15 @@ namespace Model
 
     AuthTokenUpdateStrategyType m_authTokenUpdateStrategy;
     bool m_authTokenUpdateStrategyHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIdsToAdd;
+    bool m_userGroupIdsToAddHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIdsToRemove;
+    bool m_userGroupIdsToRemoveHasBeenSet;
+
+    bool m_removeUserGroups;
+    bool m_removeUserGroupsHasBeenSet;
   };
 
 } // namespace Model

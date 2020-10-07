@@ -38,7 +38,11 @@ CreateCacheClusterRequest::CreateCacheClusterRequest() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
+    m_authTokenHasBeenSet(false),
+    m_outpostMode(OutpostMode::NOT_SET),
+    m_outpostModeHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
+    m_preferredOutpostArnsHasBeenSet(false)
 {
 }
 
@@ -188,6 +192,27 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
   if(m_authTokenHasBeenSet)
   {
     ss << "AuthToken=" << StringUtils::URLEncode(m_authToken.c_str()) << "&";
+  }
+
+  if(m_outpostModeHasBeenSet)
+  {
+    ss << "OutpostMode=" << OutpostModeMapper::GetNameForOutpostMode(m_outpostMode) << "&";
+  }
+
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+    ss << "PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
+  }
+
+  if(m_preferredOutpostArnsHasBeenSet)
+  {
+    unsigned preferredOutpostArnsCount = 1;
+    for(auto& item : m_preferredOutpostArns)
+    {
+      ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      preferredOutpostArnsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

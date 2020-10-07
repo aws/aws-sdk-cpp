@@ -391,6 +391,47 @@ namespace Model
      */
     inline CacheNode& WithCustomerAvailabilityZone(const char* value) { SetCustomerAvailabilityZone(value); return *this;}
 
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline const Aws::String& GetCustomerOutpostArn() const{ return m_customerOutpostArn; }
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline bool CustomerOutpostArnHasBeenSet() const { return m_customerOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline void SetCustomerOutpostArn(const Aws::String& value) { m_customerOutpostArnHasBeenSet = true; m_customerOutpostArn = value; }
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline void SetCustomerOutpostArn(Aws::String&& value) { m_customerOutpostArnHasBeenSet = true; m_customerOutpostArn = std::move(value); }
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline void SetCustomerOutpostArn(const char* value) { m_customerOutpostArnHasBeenSet = true; m_customerOutpostArn.assign(value); }
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline CacheNode& WithCustomerOutpostArn(const Aws::String& value) { SetCustomerOutpostArn(value); return *this;}
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline CacheNode& WithCustomerOutpostArn(Aws::String&& value) { SetCustomerOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer outpost ARN of the cache node.</p>
+     */
+    inline CacheNode& WithCustomerOutpostArn(const char* value) { SetCustomerOutpostArn(value); return *this;}
+
   private:
 
     Aws::String m_cacheNodeId;
@@ -413,6 +454,9 @@ namespace Model
 
     Aws::String m_customerAvailabilityZone;
     bool m_customerAvailabilityZoneHasBeenSet;
+
+    Aws::String m_customerOutpostArn;
+    bool m_customerOutpostArnHasBeenSet;
   };
 
 } // namespace Model

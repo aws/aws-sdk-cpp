@@ -27,7 +27,15 @@ namespace Model
 
   /**
    * <p>Describes a projected utilization metric of a recommendation option, such as
-   * an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * an Amazon EC2 instance.</p>  <p>The <code>Cpu</code> and
+   * <code>Memory</code> metrics are the only projected utilization metrics returned
+   * when you run the <code>GetEC2RecommendationProjectedMetrics</code> action.
+   * Additionally, the <code>Memory</code> metric is returned only for resources that
+   * have the unified CloudWatch agent installed on them. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+   * Memory Utilization with the CloudWatch Agent</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ProjectedMetric">AWS
    * API Reference</a></p>
    */
@@ -41,56 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline const MetricName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline void SetName(const MetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline void SetName(MetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline ProjectedMetric& WithName(const MetricName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the projected utilization metric.</p>  <p>Memory metrics
-     * are only returned for resources that have the unified CloudWatch agent installed
-     * on them. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> 
+     * <p>The name of the projected utilization metric.</p>
      */
     inline ProjectedMetric& WithName(MetricName&& value) { SetName(std::move(value)); return *this;}
 

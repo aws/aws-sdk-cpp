@@ -216,6 +216,47 @@ namespace Model
 
 
     /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline NodeGroupMember& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline NodeGroupMember& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARN of the node group member.</p>
+     */
+    inline NodeGroupMember& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or
      * <code>replica</code>. This member is only applicable for Redis (cluster mode
      * disabled) replication groups.</p>
@@ -284,6 +325,9 @@ namespace Model
 
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
+    Aws::String m_preferredOutpostArn;
+    bool m_preferredOutpostArnHasBeenSet;
 
     Aws::String m_currentRole;
     bool m_currentRoleHasBeenSet;

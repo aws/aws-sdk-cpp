@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SET,
-    ROTATE
+    ROTATE,
+    DELETE_
   };
 
 namespace AuthTokenUpdateStrategyTypeMapper

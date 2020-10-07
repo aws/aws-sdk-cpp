@@ -24,7 +24,8 @@ ConfigureShard::ConfigureShard() :
     m_nodeGroupIdHasBeenSet(false),
     m_newReplicaCount(0),
     m_newReplicaCountHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false)
+    m_preferredAvailabilityZonesHasBeenSet(false),
+    m_preferredOutpostArnsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ConfigureShard::ConfigureShard(const XmlNode& xmlNode) :
     m_nodeGroupIdHasBeenSet(false),
     m_newReplicaCount(0),
     m_newReplicaCountHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false)
+    m_preferredAvailabilityZonesHasBeenSet(false),
+    m_preferredOutpostArnsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +69,18 @@ ConfigureShard& ConfigureShard::operator =(const XmlNode& xmlNode)
 
       m_preferredAvailabilityZonesHasBeenSet = true;
     }
+    XmlNode preferredOutpostArnsNode = resultNode.FirstChild("PreferredOutpostArns");
+    if(!preferredOutpostArnsNode.IsNull())
+    {
+      XmlNode preferredOutpostArnsMember = preferredOutpostArnsNode.FirstChild("PreferredOutpostArn");
+      while(!preferredOutpostArnsMember.IsNull())
+      {
+        m_preferredOutpostArns.push_back(preferredOutpostArnsMember.GetText());
+        preferredOutpostArnsMember = preferredOutpostArnsMember.NextNode("PreferredOutpostArn");
+      }
+
+      m_preferredOutpostArnsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +107,15 @@ void ConfigureShard::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_preferredOutpostArnsHasBeenSet)
+  {
+      unsigned preferredOutpostArnsIdx = 1;
+      for(auto& item : m_preferredOutpostArns)
+      {
+        oStream << location << index << locationValue << ".PreferredOutpostArn." << preferredOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void ConfigureShard::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -111,6 +134,14 @@ void ConfigureShard::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_preferredAvailabilityZones)
       {
         oStream << location << ".PreferredAvailabilityZone." << preferredAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_preferredOutpostArnsHasBeenSet)
+  {
+      unsigned preferredOutpostArnsIdx = 1;
+      for(auto& item : m_preferredOutpostArns)
+      {
+        oStream << location << ".PreferredOutpostArn." << preferredOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

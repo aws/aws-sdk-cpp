@@ -17,7 +17,11 @@ namespace Model
   {
     NOT_SET,
     Cpu,
-    Memory
+    Memory,
+    EBS_READ_OPS_PER_SECOND,
+    EBS_WRITE_OPS_PER_SECOND,
+    EBS_READ_BYTES_PER_SECOND,
+    EBS_WRITE_BYTES_PER_SECOND
   };
 
 namespace MetricNameMapper
