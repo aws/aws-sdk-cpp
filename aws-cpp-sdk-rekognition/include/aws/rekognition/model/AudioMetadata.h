@@ -123,22 +123,22 @@ namespace Model
 
 
     /**
-     * <p>The number of audio channels in the segement.</p>
+     * <p>The number of audio channels in the segment.</p>
      */
     inline long long GetNumberOfChannels() const{ return m_numberOfChannels; }
 
     /**
-     * <p>The number of audio channels in the segement.</p>
+     * <p>The number of audio channels in the segment.</p>
      */
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
 
     /**
-     * <p>The number of audio channels in the segement.</p>
+     * <p>The number of audio channels in the segment.</p>
      */
     inline void SetNumberOfChannels(long long value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
 
     /**
-     * <p>The number of audio channels in the segement.</p>
+     * <p>The number of audio channels in the segment.</p>
      */
     inline AudioMetadata& WithNumberOfChannels(long long value) { SetNumberOfChannels(value); return *this;}
 

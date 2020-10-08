@@ -1852,8 +1852,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1877,8 +1877,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1902,8 +1902,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1927,8 +1927,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1952,8 +1952,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1977,8 +1977,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -2002,8 +2002,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -2027,8 +2027,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -3477,15 +3477,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -3495,15 +3497,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -3513,15 +3517,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -3531,15 +3537,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -3549,15 +3557,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -3567,15 +3577,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -3585,15 +3597,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -3603,15 +3617,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -3621,15 +3637,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>Possible values
-     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
-     * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
-     * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, and <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 

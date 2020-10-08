@@ -357,6 +357,8 @@
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
 #include <aws/ec2/model/RestoreManagedPrefixListVersionResponse.h>
 #include <aws/ec2/model/RevokeClientVpnIngressResponse.h>
+#include <aws/ec2/model/RevokeSecurityGroupEgressResponse.h>
+#include <aws/ec2/model/RevokeSecurityGroupIngressResponse.h>
 #include <aws/ec2/model/RunInstancesResponse.h>
 #include <aws/ec2/model/RunScheduledInstancesResponse.h>
 #include <aws/ec2/model/SearchLocalGatewayRoutesResponse.h>
@@ -1240,8 +1242,8 @@ namespace Model
         typedef Aws::Utils::Outcome<RestoreAddressToClassicResponse, EC2Error> RestoreAddressToClassicOutcome;
         typedef Aws::Utils::Outcome<RestoreManagedPrefixListVersionResponse, EC2Error> RestoreManagedPrefixListVersionOutcome;
         typedef Aws::Utils::Outcome<RevokeClientVpnIngressResponse, EC2Error> RevokeClientVpnIngressOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> RevokeSecurityGroupEgressOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> RevokeSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<RevokeSecurityGroupEgressResponse, EC2Error> RevokeSecurityGroupEgressOutcome;
+        typedef Aws::Utils::Outcome<RevokeSecurityGroupIngressResponse, EC2Error> RevokeSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<RunInstancesResponse, EC2Error> RunInstancesOutcome;
         typedef Aws::Utils::Outcome<RunScheduledInstancesResponse, EC2Error> RunScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<SearchLocalGatewayRoutesResponse, EC2Error> SearchLocalGatewayRoutesOutcome;
@@ -19017,16 +19019,19 @@ namespace Model
 
         /**
          * <p>[VPC only] Removes the specified egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
-         * remove a rule, the values that you specify (for example, ports) must match the
-         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
-         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -19034,16 +19039,19 @@ namespace Model
 
         /**
          * <p>[VPC only] Removes the specified egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
-         * remove a rule, the values that you specify (for example, ports) must match the
-         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
-         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -19053,16 +19061,19 @@ namespace Model
 
         /**
          * <p>[VPC only] Removes the specified egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
-         * remove a rule, the values that you specify (for example, ports) must match the
-         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
-         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -19073,16 +19084,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
-         * not match the existing rule's values, no error is returned. Use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  <p>Each rule consists of the protocol and the CIDR range or source
-         * security group. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
+         * specify do not match the existing rule's values, no error is returned, and the
+         * output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -19091,16 +19103,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
-         * not match the existing rule's values, no error is returned. Use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  <p>Each rule consists of the protocol and the CIDR range or source
-         * security group. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
+         * specify do not match the existing rule's values, no error is returned, and the
+         * output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -19111,16 +19124,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
-         * not match the existing rule's values, no error is returned. Use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  <p>Each rule consists of the protocol and the CIDR range or source
-         * security group. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
+         * specify do not match the existing rule's values, no error is returned, and the
+         * output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *

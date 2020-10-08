@@ -29,10 +29,14 @@ namespace Model
    * CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The
    * <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
    * which logs will be exported (or not exported) to CloudWatch Logs. The values
-   * within these arrays depend on the DB engine being used. For more information,
-   * see <a
+   * within these arrays depend on the DB engine being used.</p> <p>For more
+   * information about exporting CloudWatch Logs for Amazon RDS DB instances, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
    * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+   * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+   * Amazon Aurora DB clusters, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+   * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CloudwatchLogsExportConfiguration">AWS
    * API Reference</a></p>

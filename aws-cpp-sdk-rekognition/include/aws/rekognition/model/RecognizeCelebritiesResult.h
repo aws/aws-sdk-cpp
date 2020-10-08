@@ -37,43 +37,43 @@ namespace Model
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline const Aws::Vector<Celebrity>& GetCelebrityFaces() const{ return m_celebrityFaces; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline void SetCelebrityFaces(const Aws::Vector<Celebrity>& value) { m_celebrityFaces = value; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline void SetCelebrityFaces(Aws::Vector<Celebrity>&& value) { m_celebrityFaces = std::move(value); }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline RecognizeCelebritiesResult& WithCelebrityFaces(const Aws::Vector<Celebrity>& value) { SetCelebrityFaces(value); return *this;}
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline RecognizeCelebritiesResult& WithCelebrityFaces(Aws::Vector<Celebrity>&& value) { SetCelebrityFaces(std::move(value)); return *this;}
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline RecognizeCelebritiesResult& AddCelebrityFaces(const Celebrity& value) { m_celebrityFaces.push_back(value); return *this; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 15 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image.</p>
      */
     inline RecognizeCelebritiesResult& AddCelebrityFaces(Celebrity&& value) { m_celebrityFaces.push_back(std::move(value)); return *this; }
 

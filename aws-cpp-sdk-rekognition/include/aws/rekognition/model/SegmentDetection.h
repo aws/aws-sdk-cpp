@@ -82,50 +82,58 @@ namespace Model
 
     /**
      * <p>The start time of the detected segment in milliseconds from the start of the
-     * video.</p>
+     * video. This value is rounded down. For example, if the actual timestamp is
+     * 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.</p>
      */
     inline long long GetStartTimestampMillis() const{ return m_startTimestampMillis; }
 
     /**
      * <p>The start time of the detected segment in milliseconds from the start of the
-     * video.</p>
+     * video. This value is rounded down. For example, if the actual timestamp is
+     * 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.</p>
      */
     inline bool StartTimestampMillisHasBeenSet() const { return m_startTimestampMillisHasBeenSet; }
 
     /**
      * <p>The start time of the detected segment in milliseconds from the start of the
-     * video.</p>
+     * video. This value is rounded down. For example, if the actual timestamp is
+     * 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.</p>
      */
     inline void SetStartTimestampMillis(long long value) { m_startTimestampMillisHasBeenSet = true; m_startTimestampMillis = value; }
 
     /**
      * <p>The start time of the detected segment in milliseconds from the start of the
-     * video.</p>
+     * video. This value is rounded down. For example, if the actual timestamp is
+     * 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.</p>
      */
     inline SegmentDetection& WithStartTimestampMillis(long long value) { SetStartTimestampMillis(value); return *this;}
 
 
     /**
      * <p>The end time of the detected segment, in milliseconds, from the start of the
-     * video.</p>
+     * video. This value is rounded down.</p>
      */
     inline long long GetEndTimestampMillis() const{ return m_endTimestampMillis; }
 
     /**
      * <p>The end time of the detected segment, in milliseconds, from the start of the
-     * video.</p>
+     * video. This value is rounded down.</p>
      */
     inline bool EndTimestampMillisHasBeenSet() const { return m_endTimestampMillisHasBeenSet; }
 
     /**
      * <p>The end time of the detected segment, in milliseconds, from the start of the
-     * video.</p>
+     * video. This value is rounded down.</p>
      */
     inline void SetEndTimestampMillis(long long value) { m_endTimestampMillisHasBeenSet = true; m_endTimestampMillis = value; }
 
     /**
      * <p>The end time of the detected segment, in milliseconds, from the start of the
-     * video.</p>
+     * video. This value is rounded down.</p>
      */
     inline SegmentDetection& WithEndTimestampMillis(long long value) { SetEndTimestampMillis(value); return *this;}
 

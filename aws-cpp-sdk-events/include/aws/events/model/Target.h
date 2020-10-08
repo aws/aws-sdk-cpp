@@ -14,6 +14,8 @@
 #include <aws/events/model/SqsParameters.h>
 #include <aws/events/model/HttpParameters.h>
 #include <aws/events/model/RedshiftDataParameters.h>
+#include <aws/events/model/DeadLetterConfig.h>
+#include <aws/events/model/RetryPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -690,6 +692,80 @@ namespace Model
      */
     inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline bool DeadLetterConfigHasBeenSet() const { return m_deadLetterConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline Target& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline Target& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline const RetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline void SetRetryPolicy(const RetryPolicy& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = value; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline void SetRetryPolicy(RetryPolicy&& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = std::move(value); }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline Target& WithRetryPolicy(const RetryPolicy& value) { SetRetryPolicy(value); return *this;}
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline Target& WithRetryPolicy(RetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -730,6 +806,12 @@ namespace Model
 
     RedshiftDataParameters m_redshiftDataParameters;
     bool m_redshiftDataParametersHasBeenSet;
+
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
+
+    RetryPolicy m_retryPolicy;
+    bool m_retryPolicyHasBeenSet;
   };
 
 } // namespace Model

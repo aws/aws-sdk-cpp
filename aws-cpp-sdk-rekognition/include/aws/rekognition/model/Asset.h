@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Assets are the images that you use to train and evaluate a model version.
-   * Assets are referenced by Sagemaker GroundTruth manifest files. </p><p><h3>See
-   * Also:</h3>   <a
+   * Assets can also contain validation information that you use to debug a failed
+   * model training. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Asset">AWS
    * API Reference</a></p>
    */

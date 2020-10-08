@@ -1106,10 +1106,10 @@ namespace Model
          * private home directory within the EFS volume for notebooks, Git repositories,
          * and data files.</p> <p> <b>VPC configuration</b> </p> <p>All SageMaker Studio
          * traffic between the domain and the EFS volume is through the specified VPC and
-         * subnets. For other Studio traffic, you specify the
+         * subnets. For other Studio traffic, you can specify the
          * <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code>
-         * corresponds to the VPC mode that's chosen when you onboard to Studio. The
-         * following options are available:</p> <ul> <li> <p>
+         * corresponds to the network access type that you choose when you onboard to
+         * Studio. The following options are available:</p> <ul> <li> <p>
          * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
          * Amazon SageMaker, which allows internet access. This is the default value.</p>
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
@@ -1117,14 +1117,14 @@ namespace Model
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
          * disabled, you won't be able to train or host models unless your VPC has an
          * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> mode</b> </p>
-         * <p>When you specify <code>VpcOnly</code>, you must specify the following:</p>
-         * <ul> <li> <p>Security group inbound and outbound rules to allow NFS traffic over
-         * TCP on port 2049 between the domain and the EFS volume</p> </li> <li>
-         * <p>Security group inbound and outbound rules to allow traffic between the
-         * JupyterServer app and the KernelGateway apps</p> </li> <li> <p>Interface
-         * endpoints to access the SageMaker API and SageMaker runtime</p> </li> </ul>
-         * <p>For more information, see:</p> <ul> <li> <p> <a
+         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
+         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
+         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
+         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
+         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
+         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
+         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
+         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
@@ -1148,10 +1148,10 @@ namespace Model
          * private home directory within the EFS volume for notebooks, Git repositories,
          * and data files.</p> <p> <b>VPC configuration</b> </p> <p>All SageMaker Studio
          * traffic between the domain and the EFS volume is through the specified VPC and
-         * subnets. For other Studio traffic, you specify the
+         * subnets. For other Studio traffic, you can specify the
          * <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code>
-         * corresponds to the VPC mode that's chosen when you onboard to Studio. The
-         * following options are available:</p> <ul> <li> <p>
+         * corresponds to the network access type that you choose when you onboard to
+         * Studio. The following options are available:</p> <ul> <li> <p>
          * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
          * Amazon SageMaker, which allows internet access. This is the default value.</p>
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
@@ -1159,14 +1159,14 @@ namespace Model
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
          * disabled, you won't be able to train or host models unless your VPC has an
          * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> mode</b> </p>
-         * <p>When you specify <code>VpcOnly</code>, you must specify the following:</p>
-         * <ul> <li> <p>Security group inbound and outbound rules to allow NFS traffic over
-         * TCP on port 2049 between the domain and the EFS volume</p> </li> <li>
-         * <p>Security group inbound and outbound rules to allow traffic between the
-         * JupyterServer app and the KernelGateway apps</p> </li> <li> <p>Interface
-         * endpoints to access the SageMaker API and SageMaker runtime</p> </li> </ul>
-         * <p>For more information, see:</p> <ul> <li> <p> <a
+         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
+         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
+         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
+         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
+         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
+         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
+         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
+         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
@@ -1192,10 +1192,10 @@ namespace Model
          * private home directory within the EFS volume for notebooks, Git repositories,
          * and data files.</p> <p> <b>VPC configuration</b> </p> <p>All SageMaker Studio
          * traffic between the domain and the EFS volume is through the specified VPC and
-         * subnets. For other Studio traffic, you specify the
+         * subnets. For other Studio traffic, you can specify the
          * <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code>
-         * corresponds to the VPC mode that's chosen when you onboard to Studio. The
-         * following options are available:</p> <ul> <li> <p>
+         * corresponds to the network access type that you choose when you onboard to
+         * Studio. The following options are available:</p> <ul> <li> <p>
          * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
          * Amazon SageMaker, which allows internet access. This is the default value.</p>
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
@@ -1203,14 +1203,14 @@ namespace Model
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
          * disabled, you won't be able to train or host models unless your VPC has an
          * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> mode</b> </p>
-         * <p>When you specify <code>VpcOnly</code>, you must specify the following:</p>
-         * <ul> <li> <p>Security group inbound and outbound rules to allow NFS traffic over
-         * TCP on port 2049 between the domain and the EFS volume</p> </li> <li>
-         * <p>Security group inbound and outbound rules to allow traffic between the
-         * JupyterServer app and the KernelGateway apps</p> </li> <li> <p>Interface
-         * endpoints to access the SageMaker API and SageMaker runtime</p> </li> </ul>
-         * <p>For more information, see:</p> <ul> <li> <p> <a
+         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
+         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
+         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
+         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
+         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
+         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
+         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
+         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC

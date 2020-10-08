@@ -1700,6 +1700,31 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDbiResourceId(const char* value) { SetSourceDbiResourceId(value); return *this;}
 
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -1794,6 +1819,9 @@ namespace Model
 
     Aws::String m_sourceDbiResourceId;
     bool m_sourceDbiResourceIdHasBeenSet;
+
+    int m_maxAllocatedStorage;
+    bool m_maxAllocatedStorageHasBeenSet;
   };
 
 } // namespace Model

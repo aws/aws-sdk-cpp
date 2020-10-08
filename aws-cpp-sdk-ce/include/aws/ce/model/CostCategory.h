@@ -9,6 +9,7 @@
 #include <aws/ce/model/CostCategoryRuleVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/CostCategoryRule.h>
+#include <aws/ce/model/CostCategoryProcessingStatus.h>
 #include <utility>
 
 namespace Aws
@@ -264,6 +265,55 @@ namespace Model
      */
     inline CostCategory& AddRules(CostCategoryRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline const Aws::Vector<CostCategoryProcessingStatus>& GetProcessingStatus() const{ return m_processingStatus; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline bool ProcessingStatusHasBeenSet() const { return m_processingStatusHasBeenSet; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline void SetProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { m_processingStatusHasBeenSet = true; m_processingStatus = value; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline void SetProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { m_processingStatusHasBeenSet = true; m_processingStatus = std::move(value); }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategory& WithProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { SetProcessingStatus(value); return *this;}
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategory& WithProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { SetProcessingStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategory& AddProcessingStatus(const CostCategoryProcessingStatus& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(value); return *this; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategory& AddProcessingStatus(CostCategoryProcessingStatus&& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_costCategoryArn;
@@ -283,6 +333,9 @@ namespace Model
 
     Aws::Vector<CostCategoryRule> m_rules;
     bool m_rulesHasBeenSet;
+
+    Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
+    bool m_processingStatusHasBeenSet;
   };
 
 } // namespace Model

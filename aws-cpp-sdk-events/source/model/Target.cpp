@@ -31,7 +31,9 @@ Target::Target() :
     m_batchParametersHasBeenSet(false),
     m_sqsParametersHasBeenSet(false),
     m_httpParametersHasBeenSet(false),
-    m_redshiftDataParametersHasBeenSet(false)
+    m_redshiftDataParametersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ Target::Target(JsonView jsonValue) :
     m_batchParametersHasBeenSet(false),
     m_sqsParametersHasBeenSet(false),
     m_httpParametersHasBeenSet(false),
-    m_redshiftDataParametersHasBeenSet(false)
+    m_redshiftDataParametersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,20 @@ Target& Target::operator =(JsonView jsonValue)
     m_redshiftDataParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+    m_deadLetterConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryPolicy"))
+  {
+    m_retryPolicy = jsonValue.GetObject("RetryPolicy");
+
+    m_retryPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +246,18 @@ JsonValue Target::Jsonize() const
   if(m_redshiftDataParametersHasBeenSet)
   {
    payload.WithObject("RedshiftDataParameters", m_redshiftDataParameters.Jsonize());
+
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
+
+  }
+
+  if(m_retryPolicyHasBeenSet)
+  {
+   payload.WithObject("RetryPolicy", m_retryPolicy.Jsonize());
 
   }
 

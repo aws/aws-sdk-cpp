@@ -349,20 +349,16 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
-         * metadata, <code>CompareFaces</code> returns orientation information for the
-         * source and target images. Use these values to display the images with the
-         * correct image orientation.</p> <p>If no faces are detected in the source or
-         * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p>  <p> This is a
-         * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
-         * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>NONE</code>. </p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <p>If no faces are detected in the source or target images,
+         * <code>CompareFaces</code> returns an <code>InvalidParameterException</code>
+         * error. </p>  <p> This is a stateless API operation. That is, data returned
+         * by this operation doesn't persist.</p>  <p>For an example, see Comparing
+         * Faces in Images in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
          * API Reference</a></p>
          */
@@ -395,20 +391,16 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
-         * metadata, <code>CompareFaces</code> returns orientation information for the
-         * source and target images. Use these values to display the images with the
-         * correct image orientation.</p> <p>If no faces are detected in the source or
-         * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p>  <p> This is a
-         * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
-         * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>NONE</code>. </p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <p>If no faces are detected in the source or target images,
+         * <code>CompareFaces</code> returns an <code>InvalidParameterException</code>
+         * error. </p>  <p> This is a stateless API operation. That is, data returned
+         * by this operation doesn't persist.</p>  <p>For an example, see Comparing
+         * Faces in Images in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
          * API Reference</a></p>
          *
@@ -443,20 +435,16 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
-         * metadata, <code>CompareFaces</code> returns orientation information for the
-         * source and target images. Use these values to display the images with the
-         * correct image orientation.</p> <p>If no faces are detected in the source or
-         * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p>  <p> This is a
-         * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
-         * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>NONE</code>. </p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <p>If no faces are detected in the source or target images,
+         * <code>CompareFaces</code> returns an <code>InvalidParameterException</code>
+         * error. </p>  <p> This is a stateless API operation. That is, data returned
+         * by this operation doesn't persist.</p>  <p>For an example, see Comparing
+         * Faces in Images in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
          * API Reference</a></p>
          *
@@ -2697,11 +2685,11 @@ namespace Model
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
-         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 100 largest faces
+         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
          * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
          * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 100 faces in the image.</p> <p>For each celebrity recognized,
+         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
          * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
          * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
          * additional information, match confidence, and a <code>ComparedFace</code> object
@@ -2728,11 +2716,11 @@ namespace Model
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
-         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 100 largest faces
+         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
          * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
          * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 100 faces in the image.</p> <p>For each celebrity recognized,
+         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
          * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
          * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
          * additional information, match confidence, and a <code>ComparedFace</code> object
@@ -2761,11 +2749,11 @@ namespace Model
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
-         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 100 largest faces
+         * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
          * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
          * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 100 faces in the image.</p> <p>For each celebrity recognized,
+         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
          * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
          * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
          * additional information, match confidence, and a <code>ComparedFace</code> object

@@ -292,7 +292,7 @@ namespace Model
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -314,14 +314,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -343,14 +349,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -372,14 +384,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -401,14 +419,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -430,14 +454,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -459,14 +489,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -488,14 +524,20 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
 
     /**
      * <p>Specifies additional parameters for compiler options in JSON format. The
      * compiler options are <code>TargetPlatform</code> specific. It is required for
-     * NVIDIA accelerators and highly recommended for CPU compliations. For any other
+     * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
      * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
      * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
@@ -517,7 +559,13 @@ namespace Model
      * Specifies the Android API levels. Available levels range from 21 to 29. For
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> </ul>
+     * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
+     * <p> <code>CoreML</code>: Compilation for the CoreML
+     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
+     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
+     * file name inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
 

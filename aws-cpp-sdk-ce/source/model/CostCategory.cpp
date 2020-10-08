@@ -25,7 +25,8 @@ CostCategory::CostCategory() :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CostCategory::CostCategory(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,16 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     m_rulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingStatus"))
+  {
+    Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
+    for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+    {
+      m_processingStatus.push_back(processingStatusJsonList[processingStatusIndex].AsObject());
+    }
+    m_processingStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +144,17 @@ JsonValue CostCategory::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_processingStatusHasBeenSet)
+  {
+   Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
+   for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+   {
+     processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());
+   }
+   payload.WithArray("ProcessingStatus", std::move(processingStatusJsonList));
 
   }
 

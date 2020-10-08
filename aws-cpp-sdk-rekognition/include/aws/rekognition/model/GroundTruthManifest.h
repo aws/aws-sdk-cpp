@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The S3 bucket that contains the Ground Truth manifest file.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest
+   * file. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GroundTruthManifest">AWS
    * API Reference</a></p>
    */

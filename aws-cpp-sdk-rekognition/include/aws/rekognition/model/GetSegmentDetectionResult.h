@@ -300,37 +300,58 @@ namespace Model
 
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline const Aws::Vector<SegmentDetection>& GetSegments() const{ return m_segments; }
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline void SetSegments(const Aws::Vector<SegmentDetection>& value) { m_segments = value; }
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline void SetSegments(Aws::Vector<SegmentDetection>&& value) { m_segments = std::move(value); }
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline GetSegmentDetectionResult& WithSegments(const Aws::Vector<SegmentDetection>& value) { SetSegments(value); return *this;}
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline GetSegmentDetectionResult& WithSegments(Aws::Vector<SegmentDetection>&& value) { SetSegments(std::move(value)); return *this;}
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline GetSegmentDetectionResult& AddSegments(const SegmentDetection& value) { m_segments.push_back(value); return *this; }
 
     /**
-     * <p>An array of segments detected in a video.</p>
+     * <p>An array of segments detected in a video. The array is sorted by the segment
+     * types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input
+     * parameter of <code>StartSegmentDetection</code>. Within each segment type the
+     * array is sorted by timestamp values.</p>
      */
     inline GetSegmentDetectionResult& AddSegments(SegmentDetection&& value) { m_segments.push_back(std::move(value)); return *this; }
 

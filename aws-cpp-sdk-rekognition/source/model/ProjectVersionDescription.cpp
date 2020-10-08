@@ -32,7 +32,8 @@ ProjectVersionDescription::ProjectVersionDescription() :
     m_outputConfigHasBeenSet(false),
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false)
+    m_evaluationResultHasBeenSet(false),
+    m_manifestSummaryHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue) :
     m_outputConfigHasBeenSet(false),
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false)
+    m_evaluationResultHasBeenSet(false),
+    m_manifestSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,13 @@ ProjectVersionDescription& ProjectVersionDescription::operator =(JsonView jsonVa
     m_evaluationResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManifestSummary"))
+  {
+    m_manifestSummary = jsonValue.GetObject("ManifestSummary");
+
+    m_manifestSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +210,12 @@ JsonValue ProjectVersionDescription::Jsonize() const
   if(m_evaluationResultHasBeenSet)
   {
    payload.WithObject("EvaluationResult", m_evaluationResult.Jsonize());
+
+  }
+
+  if(m_manifestSummaryHasBeenSet)
+  {
+   payload.WithObject("ManifestSummary", m_manifestSummary.Jsonize());
 
   }
 

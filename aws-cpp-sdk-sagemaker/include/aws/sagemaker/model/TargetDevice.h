@@ -41,7 +41,8 @@ namespace Model
     sitara_am57x,
     amba_cv22,
     x86_win32,
-    x86_win64
+    x86_win64,
+    coreml
   };
 
 namespace TargetDeviceMapper

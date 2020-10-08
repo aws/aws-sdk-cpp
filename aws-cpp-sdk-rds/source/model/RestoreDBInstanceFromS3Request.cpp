@@ -68,7 +68,9 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_useDefaultProcessorFeatures(false),
     m_useDefaultProcessorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_maxAllocatedStorage(0),
+    m_maxAllocatedStorageHasBeenSet(false)
 {
 }
 
@@ -317,6 +319,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_maxAllocatedStorageHasBeenSet)
+  {
+    ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
   ss << "Version=2014-10-31";

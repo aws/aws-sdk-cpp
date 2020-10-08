@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/CostCategoryProcessingStatus.h>
 #include <utility>
 
 namespace Aws
@@ -208,6 +210,101 @@ namespace Model
      */
     inline CostCategoryReference& WithNumberOfRules(int value) { SetNumberOfRules(value); return *this;}
 
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline const Aws::Vector<CostCategoryProcessingStatus>& GetProcessingStatus() const{ return m_processingStatus; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline bool ProcessingStatusHasBeenSet() const { return m_processingStatusHasBeenSet; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline void SetProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { m_processingStatusHasBeenSet = true; m_processingStatus = value; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline void SetProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { m_processingStatusHasBeenSet = true; m_processingStatus = std::move(value); }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategoryReference& WithProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { SetProcessingStatus(value); return *this;}
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategoryReference& WithProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { SetProcessingStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategoryReference& AddProcessingStatus(const CostCategoryProcessingStatus& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(value); return *this; }
+
+    /**
+     * <p> The list of processing statuses for Cost Management products for a specific
+     * cost category. </p>
+     */
+    inline CostCategoryReference& AddProcessingStatus(CostCategoryProcessingStatus&& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline CostCategoryReference& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline CostCategoryReference& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline CostCategoryReference& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline CostCategoryReference& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> A list of unique cost category values in a specific cost category. </p>
+     */
+    inline CostCategoryReference& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
   private:
 
     Aws::String m_costCategoryArn;
@@ -224,6 +321,12 @@ namespace Model
 
     int m_numberOfRules;
     bool m_numberOfRulesHasBeenSet;
+
+    Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
+    bool m_processingStatusHasBeenSet;
+
+    Aws::Vector<Aws::String> m_values;
+    bool m_valuesHasBeenSet;
   };
 
 } // namespace Model

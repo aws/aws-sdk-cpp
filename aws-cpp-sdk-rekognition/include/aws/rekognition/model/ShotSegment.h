@@ -37,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>An Identifier for a shot detection segment detected in a video </p>
+     * <p>An Identifier for a shot detection segment detected in a video. </p>
      */
     inline long long GetIndex() const{ return m_index; }
 
     /**
-     * <p>An Identifier for a shot detection segment detected in a video </p>
+     * <p>An Identifier for a shot detection segment detected in a video. </p>
      */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
-     * <p>An Identifier for a shot detection segment detected in a video </p>
+     * <p>An Identifier for a shot detection segment detected in a video. </p>
      */
     inline void SetIndex(long long value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
-     * <p>An Identifier for a shot detection segment detected in a video </p>
+     * <p>An Identifier for a shot detection segment detected in a video. </p>
      */
     inline ShotSegment& WithIndex(long long value) { SetIndex(value); return *this;}
 

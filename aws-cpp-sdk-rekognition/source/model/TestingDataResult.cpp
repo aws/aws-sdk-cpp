@@ -20,13 +20,15 @@ namespace Model
 
 TestingDataResult::TestingDataResult() : 
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
 }
 
 TestingDataResult::TestingDataResult(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ TestingDataResult& TestingDataResult::operator =(JsonView jsonValue)
     m_outputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Validation"))
+  {
+    m_validation = jsonValue.GetObject("Validation");
+
+    m_validationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue TestingDataResult::Jsonize() const
   if(m_outputHasBeenSet)
   {
    payload.WithObject("Output", m_output.Jsonize());
+
+  }
+
+  if(m_validationHasBeenSet)
+  {
+   payload.WithObject("Validation", m_validation.Jsonize());
 
   }
 
