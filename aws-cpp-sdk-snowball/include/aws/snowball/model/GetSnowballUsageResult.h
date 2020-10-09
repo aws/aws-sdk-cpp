@@ -31,36 +31,36 @@ namespace Model
 
 
     /**
-     * <p>The service limit for number of Snowballs this account can have at once. The
-     * default service limit is 1 (one).</p>
+     * <p>The service limit for number of Snow devices this account can have at once.
+     * The default service limit is 1 (one).</p>
      */
     inline int GetSnowballLimit() const{ return m_snowballLimit; }
 
     /**
-     * <p>The service limit for number of Snowballs this account can have at once. The
-     * default service limit is 1 (one).</p>
+     * <p>The service limit for number of Snow devices this account can have at once.
+     * The default service limit is 1 (one).</p>
      */
     inline void SetSnowballLimit(int value) { m_snowballLimit = value; }
 
     /**
-     * <p>The service limit for number of Snowballs this account can have at once. The
-     * default service limit is 1 (one).</p>
+     * <p>The service limit for number of Snow devices this account can have at once.
+     * The default service limit is 1 (one).</p>
      */
     inline GetSnowballUsageResult& WithSnowballLimit(int value) { SetSnowballLimit(value); return *this;}
 
 
     /**
-     * <p>The number of Snowballs that this account is currently using.</p>
+     * <p>The number of Snow devices that this account is currently using.</p>
      */
     inline int GetSnowballsInUse() const{ return m_snowballsInUse; }
 
     /**
-     * <p>The number of Snowballs that this account is currently using.</p>
+     * <p>The number of Snow devices that this account is currently using.</p>
      */
     inline void SetSnowballsInUse(int value) { m_snowballsInUse = value; }
 
     /**
-     * <p>The number of Snowballs that this account is currently using.</p>
+     * <p>The number of Snow devices that this account is currently using.</p>
      */
     inline GetSnowballUsageResult& WithSnowballsInUse(int value) { SetSnowballsInUse(value); return *this;}
 

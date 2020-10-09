@@ -28,6 +28,8 @@ AutoBranchCreationConfig::AutoBranchCreationConfig() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
+    m_enablePerformanceMode(false),
+    m_enablePerformanceModeHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_enablePullRequestPreview(false),
     m_enablePullRequestPreviewHasBeenSet(false),
@@ -45,6 +47,8 @@ AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue) :
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
+    m_enablePerformanceMode(false),
+    m_enablePerformanceModeHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_enablePullRequestPreview(false),
     m_enablePullRequestPreviewHasBeenSet(false),
@@ -98,6 +102,13 @@ AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValu
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
 
     m_enableBasicAuthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enablePerformanceMode"))
+  {
+    m_enablePerformanceMode = jsonValue.GetBool("enablePerformanceMode");
+
+    m_enablePerformanceModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("buildSpec"))
@@ -165,6 +176,12 @@ JsonValue AutoBranchCreationConfig::Jsonize() const
   if(m_enableBasicAuthHasBeenSet)
   {
    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
+
+  }
+
+  if(m_enablePerformanceModeHasBeenSet)
+  {
+   payload.WithBool("enablePerformanceMode", m_enablePerformanceMode);
 
   }
 

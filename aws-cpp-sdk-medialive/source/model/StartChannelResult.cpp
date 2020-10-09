@@ -42,6 +42,12 @@ StartChannelResult& StartChannelResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("cdiInputSpecification"))
+  {
+    m_cdiInputSpecification = jsonValue.GetObject("cdiInputSpecification");
+
+  }
+
   if(jsonValue.ValueExists("channelClass"))
   {
     m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));

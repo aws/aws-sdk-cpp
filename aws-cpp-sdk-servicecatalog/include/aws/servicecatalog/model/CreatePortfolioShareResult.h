@@ -33,44 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline const Aws::String& GetPortfolioShareToken() const{ return m_portfolioShareToken; }
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareToken = value; }
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline void SetPortfolioShareToken(Aws::String&& value) { m_portfolioShareToken = std::move(value); }
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline void SetPortfolioShareToken(const char* value) { m_portfolioShareToken.assign(value); }
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(const Aws::String& value) { SetPortfolioShareToken(value); return *this;}
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(Aws::String&& value) { SetPortfolioShareToken(std::move(value)); return *this;}
 
     /**
-     * <p>The portfolio share unique identifier. This will only be returned if
-     * portfolio is shared to an organization node.</p>
+     * <p>The portfolio shares a unique identifier that only returns if the portfolio
+     * is shared to an organization node.</p>
      */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(const char* value) { SetPortfolioShareToken(value); return *this;}
 

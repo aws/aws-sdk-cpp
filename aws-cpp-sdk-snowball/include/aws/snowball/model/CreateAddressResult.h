@@ -34,49 +34,49 @@ namespace Model
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline void SetAddressId(const Aws::String& value) { m_addressId = value; }
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline void SetAddressId(Aws::String&& value) { m_addressId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline void SetAddressId(const char* value) { m_addressId.assign(value); }
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline CreateAddressResult& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline CreateAddressResult& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
-     * when you create a job to specify which address you want the Snowball for that
+     * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
     inline CreateAddressResult& WithAddressId(const char* value) { SetAddressId(value); return *this;}

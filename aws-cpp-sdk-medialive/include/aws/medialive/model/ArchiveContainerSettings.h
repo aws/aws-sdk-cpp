@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/M2tsSettings.h>
+#include <aws/medialive/model/RawSettings.h>
 #include <utility>
 
 namespace Aws
@@ -55,10 +56,32 @@ namespace Model
     
     inline ArchiveContainerSettings& WithM2tsSettings(M2tsSettings&& value) { SetM2tsSettings(std::move(value)); return *this;}
 
+
+    
+    inline const RawSettings& GetRawSettings() const{ return m_rawSettings; }
+
+    
+    inline bool RawSettingsHasBeenSet() const { return m_rawSettingsHasBeenSet; }
+
+    
+    inline void SetRawSettings(const RawSettings& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = value; }
+
+    
+    inline void SetRawSettings(RawSettings&& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = std::move(value); }
+
+    
+    inline ArchiveContainerSettings& WithRawSettings(const RawSettings& value) { SetRawSettings(value); return *this;}
+
+    
+    inline ArchiveContainerSettings& WithRawSettings(RawSettings&& value) { SetRawSettings(std::move(value)); return *this;}
+
   private:
 
     M2tsSettings m_m2tsSettings;
     bool m_m2tsSettingsHasBeenSet;
+
+    RawSettings m_rawSettings;
+    bool m_rawSettingsHasBeenSet;
   };
 
 } // namespace Model

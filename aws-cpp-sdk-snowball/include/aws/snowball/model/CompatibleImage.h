@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A JSON-formatted object that describes a compatible Amazon Machine Image
-   * (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible
+   * (AMI), including the ID and name for a Snow device AMI. This AMI is compatible
    * with the device's physical hardware requirements, and it should be able to be
    * run in an SBE1 instance on the device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CompatibleImage">AWS
@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline CompatibleImage& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline CompatibleImage& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline CompatibleImage& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 

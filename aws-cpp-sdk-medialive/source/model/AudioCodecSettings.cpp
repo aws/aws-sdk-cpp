@@ -23,7 +23,8 @@ AudioCodecSettings::AudioCodecSettings() :
     m_ac3SettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
-    m_passThroughSettingsHasBeenSet(false)
+    m_passThroughSettingsHasBeenSet(false),
+    m_wavSettingsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) :
     m_ac3SettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
-    m_passThroughSettingsHasBeenSet(false)
+    m_passThroughSettingsHasBeenSet(false),
+    m_wavSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
     m_passThroughSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("wavSettings"))
+  {
+    m_wavSettings = jsonValue.GetObject("wavSettings");
+
+    m_wavSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue AudioCodecSettings::Jsonize() const
   if(m_passThroughSettingsHasBeenSet)
   {
    payload.WithObject("passThroughSettings", m_passThroughSettings.Jsonize());
+
+  }
+
+  if(m_wavSettingsHasBeenSet)
+  {
+   payload.WithObject("wavSettings", m_wavSettings.Jsonize());
 
   }
 

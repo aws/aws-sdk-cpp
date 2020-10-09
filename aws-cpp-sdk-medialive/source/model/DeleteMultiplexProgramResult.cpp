@@ -46,6 +46,15 @@ DeleteMultiplexProgramResult& DeleteMultiplexProgramResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("pipelineDetails"))
+  {
+    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
+    {
+      m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");

@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image
-   * (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI
-   * has these two IDs to simplify identifying the AMI in both the AWS Cloud and on
-   * the device.</p><p><h3>See Also:</h3>   <a
+   * (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has
+   * these two IDs to simplify identifying the AMI in both the AWS Cloud and on the
+   * device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Ec2AmiResource">AWS
    * API Reference</a></p>
    */
@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline const Aws::String& GetSnowballAmiId() const{ return m_snowballAmiId; }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline bool SnowballAmiIdHasBeenSet() const { return m_snowballAmiIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline void SetSnowballAmiId(const Aws::String& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = value; }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline void SetSnowballAmiId(Aws::String&& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline void SetSnowballAmiId(const char* value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId.assign(value); }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(const Aws::String& value) { SetSnowballAmiId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(Aws::String&& value) { SetSnowballAmiId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the Snow device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(const char* value) { SetSnowballAmiId(value); return *this;}
 

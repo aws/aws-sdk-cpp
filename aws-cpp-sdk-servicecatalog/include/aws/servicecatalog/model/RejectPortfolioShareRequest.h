@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported
      * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
-     * shared by the master account of your organization.</p> </li> <li> <p>
+     * shared by the management account of your organization.</p> </li> <li> <p>
      * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
      * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
      * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws

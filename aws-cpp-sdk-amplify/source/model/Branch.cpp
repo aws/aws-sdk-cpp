@@ -39,6 +39,8 @@ Branch::Branch() :
     m_totalNumberOfJobsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
+    m_enablePerformanceMode(false),
+    m_enablePerformanceModeHasBeenSet(false),
     m_thumbnailUrlHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
@@ -74,6 +76,8 @@ Branch::Branch(JsonView jsonValue) :
     m_totalNumberOfJobsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
+    m_enablePerformanceMode(false),
+    m_enablePerformanceModeHasBeenSet(false),
     m_thumbnailUrlHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
@@ -210,6 +214,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
 
     m_enableBasicAuthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enablePerformanceMode"))
+  {
+    m_enablePerformanceMode = jsonValue.GetBool("enablePerformanceMode");
+
+    m_enablePerformanceModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("thumbnailUrl"))
@@ -397,6 +408,12 @@ JsonValue Branch::Jsonize() const
   if(m_enableBasicAuthHasBeenSet)
   {
    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
+
+  }
+
+  if(m_enablePerformanceModeHasBeenSet)
+  {
+   payload.WithBool("enablePerformanceMode", m_enablePerformanceMode);
 
   }
 

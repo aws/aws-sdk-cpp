@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
 

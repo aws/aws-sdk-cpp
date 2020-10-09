@@ -19,6 +19,7 @@ namespace Model
 {
 
 CaptionSelectorSettings::CaptionSelectorSettings() : 
+    m_ancillarySourceSettingsHasBeenSet(false),
     m_aribSourceSettingsHasBeenSet(false),
     m_dvbSubSourceSettingsHasBeenSet(false),
     m_embeddedSourceSettingsHasBeenSet(false),
@@ -29,6 +30,7 @@ CaptionSelectorSettings::CaptionSelectorSettings() :
 }
 
 CaptionSelectorSettings::CaptionSelectorSettings(JsonView jsonValue) : 
+    m_ancillarySourceSettingsHasBeenSet(false),
     m_aribSourceSettingsHasBeenSet(false),
     m_dvbSubSourceSettingsHasBeenSet(false),
     m_embeddedSourceSettingsHasBeenSet(false),
@@ -41,6 +43,13 @@ CaptionSelectorSettings::CaptionSelectorSettings(JsonView jsonValue) :
 
 CaptionSelectorSettings& CaptionSelectorSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ancillarySourceSettings"))
+  {
+    m_ancillarySourceSettings = jsonValue.GetObject("ancillarySourceSettings");
+
+    m_ancillarySourceSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("aribSourceSettings"))
   {
     m_aribSourceSettings = jsonValue.GetObject("aribSourceSettings");
@@ -89,6 +98,12 @@ CaptionSelectorSettings& CaptionSelectorSettings::operator =(JsonView jsonValue)
 JsonValue CaptionSelectorSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_ancillarySourceSettingsHasBeenSet)
+  {
+   payload.WithObject("ancillarySourceSettings", m_ancillarySourceSettings.Jsonize());
+
+  }
 
   if(m_aribSourceSettingsHasBeenSet)
   {

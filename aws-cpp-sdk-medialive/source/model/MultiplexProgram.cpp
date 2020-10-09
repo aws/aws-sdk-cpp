@@ -22,6 +22,7 @@ MultiplexProgram::MultiplexProgram() :
     m_channelIdHasBeenSet(false),
     m_multiplexProgramSettingsHasBeenSet(false),
     m_packetIdentifiersMapHasBeenSet(false),
+    m_pipelineDetailsHasBeenSet(false),
     m_programNameHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ MultiplexProgram::MultiplexProgram(JsonView jsonValue) :
     m_channelIdHasBeenSet(false),
     m_multiplexProgramSettingsHasBeenSet(false),
     m_packetIdentifiersMapHasBeenSet(false),
+    m_pipelineDetailsHasBeenSet(false),
     m_programNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,16 @@ MultiplexProgram& MultiplexProgram::operator =(JsonView jsonValue)
     m_packetIdentifiersMap = jsonValue.GetObject("packetIdentifiersMap");
 
     m_packetIdentifiersMapHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pipelineDetails"))
+  {
+    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
+    {
+      m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
+    }
+    m_pipelineDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("programName"))
@@ -87,6 +99,17 @@ JsonValue MultiplexProgram::Jsonize() const
   if(m_packetIdentifiersMapHasBeenSet)
   {
    payload.WithObject("packetIdentifiersMap", m_packetIdentifiersMap.Jsonize());
+
+  }
+
+  if(m_pipelineDetailsHasBeenSet)
+  {
+   Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
+   for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
+   {
+     pipelineDetailsJsonList[pipelineDetailsIndex].AsObject(m_pipelineDetails[pipelineDetailsIndex].Jsonize());
+   }
+   payload.WithArray("pipelineDetails", std::move(pipelineDetailsJsonList));
 
   }
 

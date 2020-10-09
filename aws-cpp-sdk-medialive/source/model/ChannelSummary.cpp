@@ -20,6 +20,7 @@ namespace Model
 
 ChannelSummary::ChannelSummary() : 
     m_arnHasBeenSet(false),
+    m_cdiInputSpecificationHasBeenSet(false),
     m_channelClass(ChannelClass::NOT_SET),
     m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
@@ -41,6 +42,7 @@ ChannelSummary::ChannelSummary() :
 
 ChannelSummary::ChannelSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_cdiInputSpecificationHasBeenSet(false),
     m_channelClass(ChannelClass::NOT_SET),
     m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
@@ -68,6 +70,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cdiInputSpecification"))
+  {
+    m_cdiInputSpecification = jsonValue.GetObject("cdiInputSpecification");
+
+    m_cdiInputSpecificationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("channelClass"))
@@ -176,6 +185,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_cdiInputSpecificationHasBeenSet)
+  {
+   payload.WithObject("cdiInputSpecification", m_cdiInputSpecification.Jsonize());
 
   }
 

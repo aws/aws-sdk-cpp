@@ -10,6 +10,7 @@
 #include <aws/medialive/model/Eac3Settings.h>
 #include <aws/medialive/model/Mp2Settings.h>
 #include <aws/medialive/model/PassThroughSettings.h>
+#include <aws/medialive/model/WavSettings.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,25 @@ namespace Model
     
     inline AudioCodecSettings& WithPassThroughSettings(PassThroughSettings&& value) { SetPassThroughSettings(std::move(value)); return *this;}
 
+
+    
+    inline const WavSettings& GetWavSettings() const{ return m_wavSettings; }
+
+    
+    inline bool WavSettingsHasBeenSet() const { return m_wavSettingsHasBeenSet; }
+
+    
+    inline void SetWavSettings(const WavSettings& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = value; }
+
+    
+    inline void SetWavSettings(WavSettings&& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = std::move(value); }
+
+    
+    inline AudioCodecSettings& WithWavSettings(const WavSettings& value) { SetWavSettings(value); return *this;}
+
+    
+    inline AudioCodecSettings& WithWavSettings(WavSettings&& value) { SetWavSettings(std::move(value)); return *this;}
+
   private:
 
     AacSettings m_aacSettings;
@@ -151,6 +171,9 @@ namespace Model
 
     PassThroughSettings m_passThroughSettings;
     bool m_passThroughSettingsHasBeenSet;
+
+    WavSettings m_wavSettings;
+    bool m_wavSettingsHasBeenSet;
   };
 
 } // namespace Model

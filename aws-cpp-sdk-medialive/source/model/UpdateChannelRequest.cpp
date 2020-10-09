@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateChannelRequest::UpdateChannelRequest() : 
+    m_cdiInputSpecificationHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
@@ -28,6 +29,12 @@ UpdateChannelRequest::UpdateChannelRequest() :
 Aws::String UpdateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_cdiInputSpecificationHasBeenSet)
+  {
+   payload.WithObject("cdiInputSpecification", m_cdiInputSpecification.Jsonize());
+
+  }
 
   if(m_destinationsHasBeenSet)
   {

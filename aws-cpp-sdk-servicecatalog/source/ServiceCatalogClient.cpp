@@ -70,6 +70,7 @@
 #include <aws/servicecatalog/model/ExecuteProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionRequest.h>
 #include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusRequest.h>
+#include <aws/servicecatalog/model/GetProvisionedProductOutputsRequest.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
 #include <aws/servicecatalog/model/ListBudgetsForResourceRequest.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioRequest.h>
@@ -1525,6 +1526,33 @@ void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsync(const GetAWSOrga
 void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsyncHelper(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAWSOrganizationsAccessStatus(request), context);
+}
+
+GetProvisionedProductOutputsOutcome ServiceCatalogClient::GetProvisionedProductOutputs(const GetProvisionedProductOutputsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetProvisionedProductOutputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetProvisionedProductOutputsOutcomeCallable ServiceCatalogClient::GetProvisionedProductOutputsCallable(const GetProvisionedProductOutputsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetProvisionedProductOutputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProvisionedProductOutputs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::GetProvisionedProductOutputsAsync(const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetProvisionedProductOutputsAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::GetProvisionedProductOutputsAsyncHelper(const GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetProvisionedProductOutputs(request), context);
 }
 
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(const ListAcceptedPortfolioSharesRequest& request) const

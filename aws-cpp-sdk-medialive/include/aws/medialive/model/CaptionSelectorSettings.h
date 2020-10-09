@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AncillarySourceSettings.h>
 #include <aws/medialive/model/AribSourceSettings.h>
 #include <aws/medialive/model/DvbSubSourceSettings.h>
 #include <aws/medialive/model/EmbeddedSourceSettings.h>
@@ -40,6 +41,25 @@ namespace Model
     CaptionSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
     CaptionSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const AncillarySourceSettings& GetAncillarySourceSettings() const{ return m_ancillarySourceSettings; }
+
+    
+    inline bool AncillarySourceSettingsHasBeenSet() const { return m_ancillarySourceSettingsHasBeenSet; }
+
+    
+    inline void SetAncillarySourceSettings(const AncillarySourceSettings& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = value; }
+
+    
+    inline void SetAncillarySourceSettings(AncillarySourceSettings&& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = std::move(value); }
+
+    
+    inline CaptionSelectorSettings& WithAncillarySourceSettings(const AncillarySourceSettings& value) { SetAncillarySourceSettings(value); return *this;}
+
+    
+    inline CaptionSelectorSettings& WithAncillarySourceSettings(AncillarySourceSettings&& value) { SetAncillarySourceSettings(std::move(value)); return *this;}
 
 
     
@@ -156,6 +176,9 @@ namespace Model
     inline CaptionSelectorSettings& WithTeletextSourceSettings(TeletextSourceSettings&& value) { SetTeletextSourceSettings(std::move(value)); return *this;}
 
   private:
+
+    AncillarySourceSettings m_ancillarySourceSettings;
+    bool m_ancillarySourceSettingsHasBeenSet;
 
     AribSourceSettings m_aribSourceSettings;
     bool m_aribSourceSettingsHasBeenSet;

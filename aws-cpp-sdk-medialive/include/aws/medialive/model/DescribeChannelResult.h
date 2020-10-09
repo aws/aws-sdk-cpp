@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
@@ -82,6 +83,32 @@ namespace Model
      * The unique arn of the channel.
      */
     inline DescribeChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline const CdiInputSpecification& GetCdiInputSpecification() const{ return m_cdiInputSpecification; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(const CdiInputSpecification& value) { m_cdiInputSpecification = value; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(CdiInputSpecification&& value) { m_cdiInputSpecification = std::move(value); }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline DescribeChannelResult& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline DescribeChannelResult& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -310,19 +337,29 @@ one destination per
     inline DescribeChannelResult& AddInputAttachments(InputAttachment&& value) { m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecification = value; }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecification = std::move(value); }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline DescribeChannelResult& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline DescribeChannelResult& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
 
@@ -555,6 +592,8 @@ one destination per
   private:
 
     Aws::String m_arn;
+
+    CdiInputSpecification m_cdiInputSpecification;
 
     ChannelClass m_channelClass;
 

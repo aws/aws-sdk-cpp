@@ -48,6 +48,7 @@ enum class SnowballErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CLUSTER_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   EC2_REQUEST_FAILED,
   INVALID_ADDRESS,
   INVALID_INPUT_COMBINATION,
@@ -55,6 +56,7 @@ enum class SnowballErrors
   INVALID_NEXT_TOKEN,
   INVALID_RESOURCE,
   K_M_S_REQUEST_FAILED,
+  RETURN_SHIPPING_LABEL_ALREADY_EXISTS,
   UNSUPPORTED_ADDRESS
 };
 

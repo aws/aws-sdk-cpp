@@ -37,6 +37,7 @@ namespace Aws
         static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
         static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
         static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
+        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
 
 
         NodegroupIssueCode GetNodegroupIssueCodeForName(const Aws::String& name)
@@ -110,6 +111,10 @@ namespace Aws
           {
             return NodegroupIssueCode::InternalFailure;
           }
+          else if (hashCode == ClusterUnreachable_HASH)
+          {
+            return NodegroupIssueCode::ClusterUnreachable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -158,6 +163,8 @@ namespace Aws
             return "AccessDenied";
           case NodegroupIssueCode::InternalFailure:
             return "InternalFailure";
+          case NodegroupIssueCode::ClusterUnreachable:
+            return "ClusterUnreachable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

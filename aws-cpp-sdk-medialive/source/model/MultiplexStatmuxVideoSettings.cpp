@@ -22,7 +22,9 @@ MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings() :
     m_maximumBitrate(0),
     m_maximumBitrateHasBeenSet(false),
     m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false)
+    m_minimumBitrateHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings(JsonView jsonValue)
     m_maximumBitrate(0),
     m_maximumBitrateHasBeenSet(false),
     m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false)
+    m_minimumBitrateHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ MultiplexStatmuxVideoSettings& MultiplexStatmuxVideoSettings::operator =(JsonVie
     m_minimumBitrateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue MultiplexStatmuxVideoSettings::Jsonize() const
   if(m_minimumBitrateHasBeenSet)
   {
    payload.WithInteger("minimumBitrate", m_minimumBitrate);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

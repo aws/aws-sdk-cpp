@@ -404,6 +404,39 @@ namespace Model
 
 
     /**
+     * <p> Performance mode optimizes for faster hosting performance by keeping content
+     * cached at the edge for a longer interval. Enabling performance mode will mean
+     * that hosting configuration or code changes can take up to 10 minutes to roll
+     * out. </p>
+     */
+    inline bool GetEnablePerformanceMode() const{ return m_enablePerformanceMode; }
+
+    /**
+     * <p> Performance mode optimizes for faster hosting performance by keeping content
+     * cached at the edge for a longer interval. Enabling performance mode will mean
+     * that hosting configuration or code changes can take up to 10 minutes to roll
+     * out. </p>
+     */
+    inline bool EnablePerformanceModeHasBeenSet() const { return m_enablePerformanceModeHasBeenSet; }
+
+    /**
+     * <p> Performance mode optimizes for faster hosting performance by keeping content
+     * cached at the edge for a longer interval. Enabling performance mode will mean
+     * that hosting configuration or code changes can take up to 10 minutes to roll
+     * out. </p>
+     */
+    inline void SetEnablePerformanceMode(bool value) { m_enablePerformanceModeHasBeenSet = true; m_enablePerformanceMode = value; }
+
+    /**
+     * <p> Performance mode optimizes for faster hosting performance by keeping content
+     * cached at the edge for a longer interval. Enabling performance mode will mean
+     * that hosting configuration or code changes can take up to 10 minutes to roll
+     * out. </p>
+     */
+    inline CreateBranchRequest& WithEnablePerformanceMode(bool value) { SetEnablePerformanceMode(value); return *this;}
+
+
+    /**
      * <p> The tag for the branch. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -741,6 +774,9 @@ namespace Model
 
     bool m_enableBasicAuth;
     bool m_enableBasicAuthHasBeenSet;
+
+    bool m_enablePerformanceMode;
+    bool m_enablePerformanceModeHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -25,10 +25,12 @@
 #include <aws/snowball/model/CreateAddressRequest.h>
 #include <aws/snowball/model/CreateClusterRequest.h>
 #include <aws/snowball/model/CreateJobRequest.h>
+#include <aws/snowball/model/CreateReturnShippingLabelRequest.h>
 #include <aws/snowball/model/DescribeAddressRequest.h>
 #include <aws/snowball/model/DescribeAddressesRequest.h>
 #include <aws/snowball/model/DescribeClusterRequest.h>
 #include <aws/snowball/model/DescribeJobRequest.h>
+#include <aws/snowball/model/DescribeReturnShippingLabelRequest.h>
 #include <aws/snowball/model/GetJobManifestRequest.h>
 #include <aws/snowball/model/GetJobUnlockCodeRequest.h>
 #include <aws/snowball/model/GetSnowballUsageRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/snowball/model/ListJobsRequest.h>
 #include <aws/snowball/model/UpdateClusterRequest.h>
 #include <aws/snowball/model/UpdateJobRequest.h>
+#include <aws/snowball/model/UpdateJobShipmentStateRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -248,6 +251,33 @@ void SnowballClient::CreateJobAsyncHelper(const CreateJobRequest& request, const
   handler(this, request, CreateJob(request), context);
 }
 
+CreateReturnShippingLabelOutcome SnowballClient::CreateReturnShippingLabel(const CreateReturnShippingLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateReturnShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateReturnShippingLabelOutcomeCallable SnowballClient::CreateReturnShippingLabelCallable(const CreateReturnShippingLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateReturnShippingLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReturnShippingLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::CreateReturnShippingLabelAsync(const CreateReturnShippingLabelRequest& request, const CreateReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReturnShippingLabelAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::CreateReturnShippingLabelAsyncHelper(const CreateReturnShippingLabelRequest& request, const CreateReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReturnShippingLabel(request), context);
+}
+
 DescribeAddressOutcome SnowballClient::DescribeAddress(const DescribeAddressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -354,6 +384,33 @@ void SnowballClient::DescribeJobAsync(const DescribeJobRequest& request, const D
 void SnowballClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJob(request), context);
+}
+
+DescribeReturnShippingLabelOutcome SnowballClient::DescribeReturnShippingLabel(const DescribeReturnShippingLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeReturnShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReturnShippingLabelOutcomeCallable SnowballClient::DescribeReturnShippingLabelCallable(const DescribeReturnShippingLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReturnShippingLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReturnShippingLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::DescribeReturnShippingLabelAsync(const DescribeReturnShippingLabelRequest& request, const DescribeReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReturnShippingLabelAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::DescribeReturnShippingLabelAsyncHelper(const DescribeReturnShippingLabelRequest& request, const DescribeReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReturnShippingLabel(request), context);
 }
 
 GetJobManifestOutcome SnowballClient::GetJobManifest(const GetJobManifestRequest& request) const
@@ -624,5 +681,32 @@ void SnowballClient::UpdateJobAsync(const UpdateJobRequest& request, const Updat
 void SnowballClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateJob(request), context);
+}
+
+UpdateJobShipmentStateOutcome SnowballClient::UpdateJobShipmentState(const UpdateJobShipmentStateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateJobShipmentStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateJobShipmentStateOutcomeCallable SnowballClient::UpdateJobShipmentStateCallable(const UpdateJobShipmentStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobShipmentStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobShipmentState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::UpdateJobShipmentStateAsync(const UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobShipmentStateAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::UpdateJobShipmentStateAsyncHelper(const UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJobShipmentState(request), context);
 }
 

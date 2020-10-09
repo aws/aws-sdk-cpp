@@ -341,44 +341,44 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline CreateClusterRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
-     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> 
+     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
+     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p> 
      */
     inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -388,21 +388,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
@@ -411,21 +411,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
@@ -434,21 +434,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
@@ -457,21 +457,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
@@ -480,21 +480,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
@@ -503,21 +503,21 @@ namespace Model
      * how soon you'll get each Snowball Edge device, rather it represents how quickly
      * each device moves to its destination while in transit. Regional shipping speeds
      * are as follows: </p> <ul> <li> <p>In Australia, you have access to express
-     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * shipping. Typically, Snow devices shipped express are delivered in about a
+     * day.</p> </li> <li> <p>In the European Union (EU), you have access to express
+     * shipping. Typically, Snow devices shipped express are delivered in about a day.
+     * In addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * States of America (US), you have access to one-day shipping and two-day
+     * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
-     * you have access to one-day shipping and two-day shipping.</p> </li> </ul> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, devices
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowball Edges
-     * shipped express are delivered in about a day. In addition, most countries in the
-     * EU have access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowball Edges are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * Typically, Snow devices shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
+     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 

@@ -26,7 +26,8 @@ namespace Model
     Unknown,
     NodeCreationFailure,
     PodEvictionFailure,
-    InsufficientFreeAddresses
+    InsufficientFreeAddresses,
+    ClusterUnreachable
   };
 
 namespace ErrorCodeMapper

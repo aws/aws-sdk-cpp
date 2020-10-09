@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.</p>
+     * <p>The address that you want the Snow device(s) associated with a specific job
+     * to be shipped to.</p>
      */
     inline const Address& GetAddress() const{ return m_address; }
 
     /**
-     * <p>The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.</p>
+     * <p>The address that you want the Snow device(s) associated with a specific job
+     * to be shipped to.</p>
      */
     inline void SetAddress(const Address& value) { m_address = value; }
 
     /**
-     * <p>The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.</p>
+     * <p>The address that you want the Snow device(s) associated with a specific job
+     * to be shipped to.</p>
      */
     inline void SetAddress(Address&& value) { m_address = std::move(value); }
 
     /**
-     * <p>The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.</p>
+     * <p>The address that you want the Snow device(s) associated with a specific job
+     * to be shipped to.</p>
      */
     inline DescribeAddressResult& WithAddress(const Address& value) { SetAddress(value); return *this;}
 
     /**
-     * <p>The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.</p>
+     * <p>The address that you want the Snow device(s) associated with a specific job
+     * to be shipped to.</p>
      */
     inline DescribeAddressResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
 

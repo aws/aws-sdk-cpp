@@ -32,7 +32,8 @@ namespace Model
     InstanceLimitExceeded,
     InsufficientFreeAddresses,
     AccessDenied,
-    InternalFailure
+    InternalFailure,
+    ClusterUnreachable
   };
 
 namespace NodegroupIssueCodeMapper

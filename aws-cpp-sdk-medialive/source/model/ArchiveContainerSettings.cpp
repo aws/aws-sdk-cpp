@@ -19,12 +19,14 @@ namespace Model
 {
 
 ArchiveContainerSettings::ArchiveContainerSettings() : 
-    m_m2tsSettingsHasBeenSet(false)
+    m_m2tsSettingsHasBeenSet(false),
+    m_rawSettingsHasBeenSet(false)
 {
 }
 
 ArchiveContainerSettings::ArchiveContainerSettings(JsonView jsonValue) : 
-    m_m2tsSettingsHasBeenSet(false)
+    m_m2tsSettingsHasBeenSet(false),
+    m_rawSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ArchiveContainerSettings& ArchiveContainerSettings::operator =(JsonView jsonValu
     m_m2tsSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rawSettings"))
+  {
+    m_rawSettings = jsonValue.GetObject("rawSettings");
+
+    m_rawSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ArchiveContainerSettings::Jsonize() const
   if(m_m2tsSettingsHasBeenSet)
   {
    payload.WithObject("m2tsSettings", m_m2tsSettings.Jsonize());
+
+  }
+
+  if(m_rawSettingsHasBeenSet)
+  {
+   payload.WithObject("rawSettings", m_rawSettings.Jsonize());
 
   }
 

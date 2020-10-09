@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
+    m_cdiInputSpecificationHasBeenSet(false),
     m_channelClass(ChannelClass::NOT_SET),
     m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
@@ -32,6 +33,12 @@ CreateChannelRequest::CreateChannelRequest() :
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_cdiInputSpecificationHasBeenSet)
+  {
+   payload.WithObject("cdiInputSpecification", m_cdiInputSpecification.Jsonize());
+
+  }
 
   if(m_channelClassHasBeenSet)
   {

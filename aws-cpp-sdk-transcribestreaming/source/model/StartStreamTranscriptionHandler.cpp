@@ -42,8 +42,6 @@ namespace Model
 
     void StartStreamTranscriptionHandler::OnEvent()
     {
-        using namespace Aws::Utils::Event;
-
         // Handler internal error during event stream decoding.
         if (!*this)
         {
@@ -61,13 +59,13 @@ namespace Model
             return;
         }
 
-        switch (Message::GetMessageTypeForName(messageTypeHeaderIter->second.GetEventHeaderValueAsString()))
+        switch (Aws::Utils::Event::Message::GetMessageTypeForName(messageTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        case Message::MessageType::EVENT:
+        case Aws::Utils::Event::Message::MessageType::EVENT:
             HandleEventInMessage();
             break;
-        case Message::MessageType::REQUEST_LEVEL_ERROR:
-        case Message::MessageType::REQUEST_LEVEL_EXCEPTION:
+        case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_ERROR:
+        case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_EXCEPTION:
         {
             HandleErrorInMessage();
             break;

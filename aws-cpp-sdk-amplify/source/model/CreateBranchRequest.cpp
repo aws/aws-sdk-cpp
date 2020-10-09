@@ -27,6 +27,8 @@ CreateBranchRequest::CreateBranchRequest() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
+    m_enablePerformanceMode(false),
+    m_enablePerformanceModeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_ttlHasBeenSet(false),
@@ -97,6 +99,12 @@ Aws::String CreateBranchRequest::SerializePayload() const
   if(m_enableBasicAuthHasBeenSet)
   {
    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
+
+  }
+
+  if(m_enablePerformanceModeHasBeenSet)
+  {
+   payload.WithBool("enablePerformanceMode", m_enablePerformanceMode);
 
   }
 
