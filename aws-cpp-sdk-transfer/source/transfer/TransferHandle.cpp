@@ -370,9 +370,11 @@ namespace Aws
             }
 
             partStream->seekg(0);
-            m_downloadStream->seekp(writeOffset);
+            std::size_t pos = m_downloadStream->tellg();
+            m_downloadStream->seekp(pos + writeOffset);
             (*m_downloadStream) << partStream->rdbuf();
             m_downloadStream->flush();
+            m_downloadStream->seekg(pos);
         }
 
         void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)
