@@ -308,7 +308,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
 
-        Aws::Http::URI newUri(uri.GetURIString());
+        Aws::Http::URI newUri = uri;
         Aws::String newEndpoint = GetErrorMarshaller()->ExtractEndpoint(outcome.GetError());
         if (!newEndpoint.empty())
         {
@@ -422,7 +422,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
 
-        Aws::Http::URI newUri(uri.GetURIString());
+        Aws::Http::URI newUri = uri;
         Aws::String newEndpoint = GetErrorMarshaller()->ExtractEndpoint(outcome.GetError());
         if (!newEndpoint.empty())
         {

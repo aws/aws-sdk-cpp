@@ -325,6 +325,25 @@ TEST_F(AWSClientTestSuite, TestRetryHeaders)
     ASSERT_STREQ("11", ExtractFromRequestInfo(requestInfo, "max").c_str());
 }
 
+TEST_F(AWSClientTestSuite, TestRetryURIs)
+{
+    HeaderValueCollection responseHeaders;
+    responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
+    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, responseHeaders);
+    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, responseHeaders);
+    URI uri("http://www.uri.com/path with space/to/res");
+    AmazonWebServiceRequestMock request;
+    auto outcome = client->MakeRequest(uri, request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(1, client->GetRequestAttemptedRetries());
+    const auto& requests = mockHttpClient->GetAllRequestsMade();
+    ASSERT_EQ(2u, requests.size());
+    // Let's make sure the URIs for each attempt of retries are identical.
+    // Especially when we have escape characters in the path: we will not encode the path here, instead, the underlying HTTP client will do that.
+    ASSERT_EQ(uri, requests[0].GetUri());
+    ASSERT_EQ(uri, requests[1].GetUri());
+}
+
 TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
 {
     ClientConfiguration config;
