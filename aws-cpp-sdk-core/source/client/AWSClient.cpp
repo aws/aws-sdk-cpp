@@ -70,14 +70,6 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
     }
 }
 
-static Aws::String ComputeUserAgent(const Aws::String& serviceName)
-{
-  Aws::StringStream ss;
-  ss << "aws-sdk-cpp/" << Version::GetVersionString() << "/" << serviceName << "/" <<  Aws::OSVersionInfo::ComputeOSVersionString()
-      << " " << Version::GetCompilerVersionString();
-  return ss.str();
-}
-
 struct RequestInfo
 {
     Aws::Utils::DateTime ttl;
@@ -112,10 +104,12 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
+    m_customizedUserAgent(!m_userAgent.empty()),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
+    SetServiceClientName("AWSBaseClient");
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -129,10 +123,24 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
+    m_customizedUserAgent(!m_userAgent.empty()),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
+    SetServiceClientName("AWSBaseClient");
+}
+
+void AWSClient::SetServiceClientName(const Aws::String& name)
+{
+    m_serviceName = name;
+    if (!m_customizedUserAgent)
+    {
+        Aws::StringStream ss;
+        ss << "aws-sdk-cpp/" << Version::GetVersionString() << "/" << m_serviceName << "/" <<  Aws::OSVersionInfo::ComputeOSVersionString()
+            << " " << Version::GetCompilerVersionString();
+        m_userAgent = ss.str();
+    }
 }
 
 void AWSClient::DisableRequestProcessing()
@@ -593,7 +601,6 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     }
 
     AddCommonHeaders(*httpRequest);
-
 }
 
 void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
@@ -700,11 +707,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 
 void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 {
-    // user doesn't override user agent string
-    if (m_userAgent.empty())
-    {
-        m_userAgent = ComputeUserAgent(GetServiceClientName());
-    }
     httpRequest.SetUserAgent(m_userAgent);
 }
 
