@@ -160,37 +160,37 @@ namespace Model
 
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline const SamplingStrategy& GetSamplingStrategy() const{ return m_samplingStrategy; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline bool SamplingStrategyHasBeenSet() const { return m_samplingStrategyHasBeenSet; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline void SetSamplingStrategy(const SamplingStrategy& value) { m_samplingStrategyHasBeenSet = true; m_samplingStrategy = value; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline void SetSamplingStrategy(SamplingStrategy&& value) { m_samplingStrategyHasBeenSet = true; m_samplingStrategy = std::move(value); }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline GetTraceSummariesRequest& WithSamplingStrategy(const SamplingStrategy& value) { SetSamplingStrategy(value); return *this;}
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline GetTraceSummariesRequest& WithSamplingStrategy(SamplingStrategy&& value) { SetSamplingStrategy(std::move(value)); return *this;}

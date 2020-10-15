@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>A type of replication task.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
 

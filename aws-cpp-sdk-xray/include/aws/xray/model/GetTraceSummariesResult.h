@@ -125,49 +125,49 @@ namespace Model
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline GetTraceSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline GetTraceSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
-     * use this token to retrieve the next page. The first page contains the most most
+     * use this token to retrieve the next page. The first page contains the most
      * recent results, closest to the end of the time frame.</p>
      */
     inline GetTraceSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

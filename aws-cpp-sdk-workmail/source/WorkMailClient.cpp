@@ -25,12 +25,14 @@
 #include <aws/workmail/model/CancelMailboxExportJobRequest.h>
 #include <aws/workmail/model/CreateAliasRequest.h>
 #include <aws/workmail/model/CreateGroupRequest.h>
+#include <aws/workmail/model/CreateOrganizationRequest.h>
 #include <aws/workmail/model/CreateResourceRequest.h>
 #include <aws/workmail/model/CreateUserRequest.h>
 #include <aws/workmail/model/DeleteAccessControlRuleRequest.h>
 #include <aws/workmail/model/DeleteAliasRequest.h>
 #include <aws/workmail/model/DeleteGroupRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
+#include <aws/workmail/model/DeleteOrganizationRequest.h>
 #include <aws/workmail/model/DeleteResourceRequest.h>
 #include <aws/workmail/model/DeleteRetentionPolicyRequest.h>
 #include <aws/workmail/model/DeleteUserRequest.h>
@@ -276,6 +278,33 @@ void WorkMailClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, c
   handler(this, request, CreateGroup(request), context);
 }
 
+CreateOrganizationOutcome WorkMailClient::CreateOrganization(const CreateOrganizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateOrganizationOutcomeCallable WorkMailClient::CreateOrganizationCallable(const CreateOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::CreateOrganizationAsync(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOrganizationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::CreateOrganizationAsyncHelper(const CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateOrganization(request), context);
+}
+
 CreateResourceOutcome WorkMailClient::CreateResource(const CreateResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -436,6 +465,33 @@ void WorkMailClient::DeleteMailboxPermissionsAsync(const DeleteMailboxPermission
 void WorkMailClient::DeleteMailboxPermissionsAsyncHelper(const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMailboxPermissions(request), context);
+}
+
+DeleteOrganizationOutcome WorkMailClient::DeleteOrganization(const DeleteOrganizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteOrganizationOutcomeCallable WorkMailClient::DeleteOrganizationCallable(const DeleteOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteOrganizationAsync(const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteOrganizationAsyncHelper(const DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOrganization(request), context);
 }
 
 DeleteResourceOutcome WorkMailClient::DeleteResource(const DeleteResourceRequest& request) const

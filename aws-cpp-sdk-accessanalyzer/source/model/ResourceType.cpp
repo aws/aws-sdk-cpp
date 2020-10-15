@@ -20,24 +20,28 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
+        static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
         static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
-        static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
+        static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
         static const int AWS_Lambda_LayerVersion_HASH = HashingUtils::HashString("AWS::Lambda::LayerVersion");
-        static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
-        static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
+        static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AWS_IAM_Role_HASH)
+          if (hashCode == AWS_S3_Bucket_HASH)
+          {
+            return ResourceType::AWS_S3_Bucket;
+          }
+          else if (hashCode == AWS_IAM_Role_HASH)
           {
             return ResourceType::AWS_IAM_Role;
           }
-          else if (hashCode == AWS_KMS_Key_HASH)
+          else if (hashCode == AWS_SQS_Queue_HASH)
           {
-            return ResourceType::AWS_KMS_Key;
+            return ResourceType::AWS_SQS_Queue;
           }
           else if (hashCode == AWS_Lambda_Function_HASH)
           {
@@ -47,13 +51,9 @@ namespace Aws
           {
             return ResourceType::AWS_Lambda_LayerVersion;
           }
-          else if (hashCode == AWS_S3_Bucket_HASH)
+          else if (hashCode == AWS_KMS_Key_HASH)
           {
-            return ResourceType::AWS_S3_Bucket;
-          }
-          else if (hashCode == AWS_SQS_Queue_HASH)
-          {
-            return ResourceType::AWS_SQS_Queue;
+            return ResourceType::AWS_KMS_Key;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,18 +69,18 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::AWS_S3_Bucket:
+            return "AWS::S3::Bucket";
           case ResourceType::AWS_IAM_Role:
             return "AWS::IAM::Role";
-          case ResourceType::AWS_KMS_Key:
-            return "AWS::KMS::Key";
+          case ResourceType::AWS_SQS_Queue:
+            return "AWS::SQS::Queue";
           case ResourceType::AWS_Lambda_Function:
             return "AWS::Lambda::Function";
           case ResourceType::AWS_Lambda_LayerVersion:
             return "AWS::Lambda::LayerVersion";
-          case ResourceType::AWS_S3_Bucket:
-            return "AWS::S3::Bucket";
-          case ResourceType::AWS_SQS_Queue:
-            return "AWS::SQS::Queue";
+          case ResourceType::AWS_KMS_Key:
+            return "AWS::KMS::Key";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

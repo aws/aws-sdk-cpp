@@ -47,7 +47,8 @@ enum class WorkMailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DIRECTORY_SERVICE_AUTHENTICATION_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DIRECTORY_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DIRECTORY_SERVICE_AUTHENTICATION_FAILED,
   DIRECTORY_UNAVAILABLE,
   EMAIL_ADDRESS_IN_USE,
   ENTITY_ALREADY_REGISTERED,

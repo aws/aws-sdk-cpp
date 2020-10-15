@@ -29,6 +29,7 @@
 #include <aws/rekognition/model/DetectFacesResult.h>
 #include <aws/rekognition/model/DetectLabelsResult.h>
 #include <aws/rekognition/model/DetectModerationLabelsResult.h>
+#include <aws/rekognition/model/DetectProtectiveEquipmentResult.h>
 #include <aws/rekognition/model/DetectTextResult.h>
 #include <aws/rekognition/model/GetCelebrityInfoResult.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionResult.h>
@@ -115,6 +116,7 @@ namespace Model
         class DetectFacesRequest;
         class DetectLabelsRequest;
         class DetectModerationLabelsRequest;
+        class DetectProtectiveEquipmentRequest;
         class DetectTextRequest;
         class GetCelebrityInfoRequest;
         class GetCelebrityRecognitionRequest;
@@ -163,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetectFacesResult, RekognitionError> DetectFacesOutcome;
         typedef Aws::Utils::Outcome<DetectLabelsResult, RekognitionError> DetectLabelsOutcome;
         typedef Aws::Utils::Outcome<DetectModerationLabelsResult, RekognitionError> DetectModerationLabelsOutcome;
+        typedef Aws::Utils::Outcome<DetectProtectiveEquipmentResult, RekognitionError> DetectProtectiveEquipmentOutcome;
         typedef Aws::Utils::Outcome<DetectTextResult, RekognitionError> DetectTextOutcome;
         typedef Aws::Utils::Outcome<GetCelebrityInfoResult, RekognitionError> GetCelebrityInfoOutcome;
         typedef Aws::Utils::Outcome<GetCelebrityRecognitionResult, RekognitionError> GetCelebrityRecognitionOutcome;
@@ -211,6 +214,7 @@ namespace Model
         typedef std::future<DetectFacesOutcome> DetectFacesOutcomeCallable;
         typedef std::future<DetectLabelsOutcome> DetectLabelsOutcomeCallable;
         typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
+        typedef std::future<DetectProtectiveEquipmentOutcome> DetectProtectiveEquipmentOutcomeCallable;
         typedef std::future<DetectTextOutcome> DetectTextOutcomeCallable;
         typedef std::future<GetCelebrityInfoOutcome> GetCelebrityInfoOutcomeCallable;
         typedef std::future<GetCelebrityRecognitionOutcome> GetCelebrityRecognitionOutcomeCallable;
@@ -262,6 +266,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::DetectFacesRequest&, const Model::DetectFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectLabelsRequest&, const Model::DetectLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DetectProtectiveEquipmentRequest&, const Model::DetectProtectiveEquipmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectProtectiveEquipmentResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectTextRequest&, const Model::DetectTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTextResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityInfoRequest&, const Model::GetCelebrityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityInfoResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityRecognitionRequest&, const Model::GetCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityRecognitionResponseReceivedHandler;
@@ -1371,6 +1376,97 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectModerationLabelsAsync(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detects Personal Protective Equipment (PPE) worn by people detected in an
+         * image. Amazon Rekognition can detect the following types of PPE.</p> <ul> <li>
+         * <p>Face cover</p> </li> <li> <p>Hand cover</p> </li> <li> <p>Head cover</p>
+         * </li> </ul> <p>You pass the input image as base64-encoded image bytes or as a
+         * reference to an image in an Amazon S3 bucket. The image must be either a PNG or
+         * JPG formatted file. </p> <p> <code>DetectProtectiveEquipment</code> detects PPE
+         * worn by up to 15 persons detected in an image.</p> <p>For each person detected
+         * in the image the API returns an array of body parts (face, head, left-hand,
+         * right-hand). For each body part, an array of detected items of PPE is returned,
+         * including an indicator of whether or not the PPE covers the body part. The API
+         * returns the confidence it has in each detection (person, PPE, body part and body
+         * part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each
+         * detected person and each detected item of PPE. </p> <p>You can optionally
+         * request a summary of detected PPE items with the
+         * <code>SummarizationAttributes</code> input parameter. The summary provides the
+         * following information. </p> <ul> <li> <p>The persons detected as wearing all of
+         * the types of PPE that you specify.</p> </li> <li> <p>The persons detected as not
+         * wearing all of the types PPE that you specify.</p> </li> <li> <p>The persons
+         * detected where PPE adornment could not be determined. </p> </li> </ul> <p>This
+         * is a stateless API operation. That is, the operation does not persist any
+         * data.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectProtectiveEquipment</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectProtectiveEquipmentOutcome DetectProtectiveEquipment(const Model::DetectProtectiveEquipmentRequest& request) const;
+
+        /**
+         * <p>Detects Personal Protective Equipment (PPE) worn by people detected in an
+         * image. Amazon Rekognition can detect the following types of PPE.</p> <ul> <li>
+         * <p>Face cover</p> </li> <li> <p>Hand cover</p> </li> <li> <p>Head cover</p>
+         * </li> </ul> <p>You pass the input image as base64-encoded image bytes or as a
+         * reference to an image in an Amazon S3 bucket. The image must be either a PNG or
+         * JPG formatted file. </p> <p> <code>DetectProtectiveEquipment</code> detects PPE
+         * worn by up to 15 persons detected in an image.</p> <p>For each person detected
+         * in the image the API returns an array of body parts (face, head, left-hand,
+         * right-hand). For each body part, an array of detected items of PPE is returned,
+         * including an indicator of whether or not the PPE covers the body part. The API
+         * returns the confidence it has in each detection (person, PPE, body part and body
+         * part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each
+         * detected person and each detected item of PPE. </p> <p>You can optionally
+         * request a summary of detected PPE items with the
+         * <code>SummarizationAttributes</code> input parameter. The summary provides the
+         * following information. </p> <ul> <li> <p>The persons detected as wearing all of
+         * the types of PPE that you specify.</p> </li> <li> <p>The persons detected as not
+         * wearing all of the types PPE that you specify.</p> </li> <li> <p>The persons
+         * detected where PPE adornment could not be determined. </p> </li> </ul> <p>This
+         * is a stateless API operation. That is, the operation does not persist any
+         * data.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectProtectiveEquipment</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectProtectiveEquipmentOutcomeCallable DetectProtectiveEquipmentCallable(const Model::DetectProtectiveEquipmentRequest& request) const;
+
+        /**
+         * <p>Detects Personal Protective Equipment (PPE) worn by people detected in an
+         * image. Amazon Rekognition can detect the following types of PPE.</p> <ul> <li>
+         * <p>Face cover</p> </li> <li> <p>Hand cover</p> </li> <li> <p>Head cover</p>
+         * </li> </ul> <p>You pass the input image as base64-encoded image bytes or as a
+         * reference to an image in an Amazon S3 bucket. The image must be either a PNG or
+         * JPG formatted file. </p> <p> <code>DetectProtectiveEquipment</code> detects PPE
+         * worn by up to 15 persons detected in an image.</p> <p>For each person detected
+         * in the image the API returns an array of body parts (face, head, left-hand,
+         * right-hand). For each body part, an array of detected items of PPE is returned,
+         * including an indicator of whether or not the PPE covers the body part. The API
+         * returns the confidence it has in each detection (person, PPE, body part and body
+         * part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each
+         * detected person and each detected item of PPE. </p> <p>You can optionally
+         * request a summary of detected PPE items with the
+         * <code>SummarizationAttributes</code> input parameter. The summary provides the
+         * following information. </p> <ul> <li> <p>The persons detected as wearing all of
+         * the types of PPE that you specify.</p> </li> <li> <p>The persons detected as not
+         * wearing all of the types PPE that you specify.</p> </li> <li> <p>The persons
+         * detected where PPE adornment could not be determined. </p> </li> </ul> <p>This
+         * is a stateless API operation. That is, the operation does not persist any
+         * data.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectProtectiveEquipment</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectProtectiveEquipmentAsync(const Model::DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects text in the input image and converts it into machine-readable
@@ -3643,6 +3739,7 @@ namespace Model
         void DetectFacesAsyncHelper(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectLabelsAsyncHelper(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectModerationLabelsAsyncHelper(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectProtectiveEquipmentAsyncHelper(const Model::DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectTextAsyncHelper(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCelebrityInfoAsyncHelper(const Model::GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCelebrityRecognitionAsyncHelper(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

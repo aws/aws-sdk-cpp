@@ -16,8 +16,8 @@ namespace Model
   enum class FindingSourceType
   {
     NOT_SET,
-    BUCKET_ACL,
     POLICY,
+    BUCKET_ACL,
     S3_ACCESS_POINT
   };
 

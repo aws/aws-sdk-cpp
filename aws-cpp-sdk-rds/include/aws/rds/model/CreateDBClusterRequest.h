@@ -1930,160 +1930,208 @@ namespace Model
 
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
+     * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
+     * version 2.09 and higher 2.x versions.</p> <p>The <code>global</code> engine mode
+     * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
+     * <code>multimaster</code> engine mode only applies for DB clusters created with
+     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
+     * <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes
+     * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
+     * engine modes. For more information, see the following sections in the <i>Amazon
+     * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
      * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Requirements for Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
      * Limitations of Multi-Master Clusters</a> </p> </li> </ul>
      */

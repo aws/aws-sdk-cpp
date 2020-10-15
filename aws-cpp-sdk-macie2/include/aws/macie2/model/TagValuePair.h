@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a tag key and value, as a pair, to use in a tag-based condition for
-   * a classification job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a tag key or tag key and value pair to use in a tag-based condition
+   * for a classification job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagValuePair">AWS
    * API Reference</a></p>
    */
@@ -80,50 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline TagValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline TagValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The tag value, associated with the specified tag key, to use in the
-     * condition.</p>
+     * <p>The tag value, associated with the specified tag key (key), to use in the
+     * condition. To specify only a tag key for a condition, specify the tag key for
+     * the key property and set this value to an empty string.</p>
      */
     inline TagValuePair& WithValue(const char* value) { SetValue(value); return *this;}
 

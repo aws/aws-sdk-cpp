@@ -24,6 +24,10 @@ RedshiftSettings::RedshiftSettings() :
     m_afterConnectScriptHasBeenSet(false),
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
+    m_caseSensitiveNames(false),
+    m_caseSensitiveNamesHasBeenSet(false),
+    m_compUpdate(false),
+    m_compUpdateHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -32,6 +36,8 @@ RedshiftSettings::RedshiftSettings() :
     m_emptyAsNullHasBeenSet(false),
     m_encryptionMode(EncryptionModeValue::NOT_SET),
     m_encryptionModeHasBeenSet(false),
+    m_explicitIds(false),
+    m_explicitIdsHasBeenSet(false),
     m_fileTransferUploadStreams(0),
     m_fileTransferUploadStreamsHasBeenSet(false),
     m_loadTimeout(0),
@@ -65,6 +71,10 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_afterConnectScriptHasBeenSet(false),
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
+    m_caseSensitiveNames(false),
+    m_caseSensitiveNamesHasBeenSet(false),
+    m_compUpdate(false),
+    m_compUpdateHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -73,6 +83,8 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_emptyAsNullHasBeenSet(false),
     m_encryptionMode(EncryptionModeValue::NOT_SET),
     m_encryptionModeHasBeenSet(false),
+    m_explicitIds(false),
+    m_explicitIdsHasBeenSet(false),
     m_fileTransferUploadStreams(0),
     m_fileTransferUploadStreamsHasBeenSet(false),
     m_loadTimeout(0),
@@ -131,6 +143,20 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_bucketNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CaseSensitiveNames"))
+  {
+    m_caseSensitiveNames = jsonValue.GetBool("CaseSensitiveNames");
+
+    m_caseSensitiveNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompUpdate"))
+  {
+    m_compUpdate = jsonValue.GetBool("CompUpdate");
+
+    m_compUpdateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ConnectionTimeout"))
   {
     m_connectionTimeout = jsonValue.GetInteger("ConnectionTimeout");
@@ -164,6 +190,13 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_encryptionMode = EncryptionModeValueMapper::GetEncryptionModeValueForName(jsonValue.GetString("EncryptionMode"));
 
     m_encryptionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExplicitIds"))
+  {
+    m_explicitIds = jsonValue.GetBool("ExplicitIds");
+
+    m_explicitIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FileTransferUploadStreams"))
@@ -309,6 +342,18 @@ JsonValue RedshiftSettings::Jsonize() const
 
   }
 
+  if(m_caseSensitiveNamesHasBeenSet)
+  {
+   payload.WithBool("CaseSensitiveNames", m_caseSensitiveNames);
+
+  }
+
+  if(m_compUpdateHasBeenSet)
+  {
+   payload.WithBool("CompUpdate", m_compUpdate);
+
+  }
+
   if(m_connectionTimeoutHasBeenSet)
   {
    payload.WithInteger("ConnectionTimeout", m_connectionTimeout);
@@ -336,6 +381,12 @@ JsonValue RedshiftSettings::Jsonize() const
   if(m_encryptionModeHasBeenSet)
   {
    payload.WithString("EncryptionMode", EncryptionModeValueMapper::GetNameForEncryptionModeValue(m_encryptionMode));
+  }
+
+  if(m_explicitIdsHasBeenSet)
+  {
+   payload.WithBool("ExplicitIds", m_explicitIds);
+
   }
 
   if(m_fileTransferUploadStreamsHasBeenSet)

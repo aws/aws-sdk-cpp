@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Aggregated request sampling data for a sampling rule across all services for
-   * a 10 second window.</p><p><h3>See Also:</h3>   <a
+   * a 10-second window.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStatisticSummary">AWS
    * API Reference</a></p>
    */

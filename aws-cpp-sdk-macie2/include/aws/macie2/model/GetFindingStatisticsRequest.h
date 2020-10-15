@@ -70,8 +70,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
@@ -82,8 +82,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
@@ -94,8 +94,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
@@ -106,8 +106,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
@@ -118,8 +118,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
@@ -130,8 +130,8 @@ namespace Model
      * <ul><li><p>classificationDetails.jobId - The unique identifier for the
      * classification job that produced the finding.</p></li>
      * <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the
-     * finding applies to.</p></li> <li><p>severity.description - The severity of the
-     * finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
+     * finding applies to.</p></li> <li><p>severity.description - The severity level of
+     * the finding, such as High or Medium.</p></li> <li><p>type - The type of finding,
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */

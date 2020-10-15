@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     AVAILABLE,
     AWS_CANCELLED,
+    AWS_FAILED,
     CANCELLED,
     CANCELLING,
     COMPLETED,

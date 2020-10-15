@@ -60,10 +60,42 @@ namespace Model
      */
     inline InsightsConfiguration& WithInsightsEnabled(bool value) { SetInsightsEnabled(value); return *this;}
 
+
+    /**
+     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
+     * Notifications can only be enabled on a group with InsightsEnabled set to
+     * true.</p>
+     */
+    inline bool GetNotificationsEnabled() const{ return m_notificationsEnabled; }
+
+    /**
+     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
+     * Notifications can only be enabled on a group with InsightsEnabled set to
+     * true.</p>
+     */
+    inline bool NotificationsEnabledHasBeenSet() const { return m_notificationsEnabledHasBeenSet; }
+
+    /**
+     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
+     * Notifications can only be enabled on a group with InsightsEnabled set to
+     * true.</p>
+     */
+    inline void SetNotificationsEnabled(bool value) { m_notificationsEnabledHasBeenSet = true; m_notificationsEnabled = value; }
+
+    /**
+     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
+     * Notifications can only be enabled on a group with InsightsEnabled set to
+     * true.</p>
+     */
+    inline InsightsConfiguration& WithNotificationsEnabled(bool value) { SetNotificationsEnabled(value); return *this;}
+
   private:
 
     bool m_insightsEnabled;
     bool m_insightsEnabledHasBeenSet;
+
+    bool m_notificationsEnabled;
+    bool m_notificationsEnabledHasBeenSet;
   };
 
 } // namespace Model

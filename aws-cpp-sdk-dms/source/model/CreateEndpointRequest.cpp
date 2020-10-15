@@ -45,7 +45,8 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_oracleSettingsHasBeenSet(false),
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
-    m_iBMDb2SettingsHasBeenSet(false)
+    m_iBMDb2SettingsHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -233,6 +234,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_iBMDb2SettingsHasBeenSet)
   {
    payload.WithObject("IBMDb2Settings", m_iBMDb2Settings.Jsonize());
+
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
 
   }
 

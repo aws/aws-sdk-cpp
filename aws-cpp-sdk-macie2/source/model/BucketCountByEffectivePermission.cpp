@@ -24,7 +24,9 @@ BucketCountByEffectivePermission::BucketCountByEffectivePermission() :
     m_publiclyReadable(0),
     m_publiclyReadableHasBeenSet(false),
     m_publiclyWritable(0),
-    m_publiclyWritableHasBeenSet(false)
+    m_publiclyWritableHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ BucketCountByEffectivePermission::BucketCountByEffectivePermission(JsonView json
     m_publiclyReadable(0),
     m_publiclyReadableHasBeenSet(false),
     m_publiclyWritable(0),
-    m_publiclyWritableHasBeenSet(false)
+    m_publiclyWritableHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ BucketCountByEffectivePermission& BucketCountByEffectivePermission::operator =(J
     m_publiclyWritableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unknown"))
+  {
+    m_unknown = jsonValue.GetInt64("unknown");
+
+    m_unknownHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,12 @@ JsonValue BucketCountByEffectivePermission::Jsonize() const
   if(m_publiclyWritableHasBeenSet)
   {
    payload.WithInt64("publiclyWritable", m_publiclyWritable);
+
+  }
+
+  if(m_unknownHasBeenSet)
+  {
+   payload.WithInt64("unknown", m_unknown);
 
   }
 

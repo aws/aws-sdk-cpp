@@ -20,6 +20,7 @@
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
 #include <aws/accessanalyzer/AccessAnalyzerEndpoint.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
+#include <aws/accessanalyzer/model/ApplyArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
@@ -110,6 +111,33 @@ void AccessAnalyzerClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiveRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/archive-rule";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ApplyArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ApplyArchiveRuleOutcomeCallable AccessAnalyzerClient::ApplyArchiveRuleCallable(const ApplyArchiveRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ApplyArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ApplyArchiveRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ApplyArchiveRuleAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ApplyArchiveRuleAsyncHelper(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ApplyArchiveRule(request), context);
 }
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const

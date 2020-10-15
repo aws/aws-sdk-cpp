@@ -108,22 +108,22 @@ namespace Model
 
 
     /**
-     * <p>The number of requests per second that X-Ray allocated this service.</p>
+     * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
     inline int GetReservoirQuota() const{ return m_reservoirQuota; }
 
     /**
-     * <p>The number of requests per second that X-Ray allocated this service.</p>
+     * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
     inline bool ReservoirQuotaHasBeenSet() const { return m_reservoirQuotaHasBeenSet; }
 
     /**
-     * <p>The number of requests per second that X-Ray allocated this service.</p>
+     * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
     inline void SetReservoirQuota(int value) { m_reservoirQuotaHasBeenSet = true; m_reservoirQuota = value; }
 
     /**
-     * <p>The number of requests per second that X-Ray allocated this service.</p>
+     * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
     inline SamplingTargetDocument& WithReservoirQuota(int value) { SetReservoirQuota(value); return *this;}
 

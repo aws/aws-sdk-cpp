@@ -111,6 +111,35 @@ namespace Model
      */
     inline BucketCountByEffectivePermission& WithPubliclyWritable(long long value) { SetPubliclyWritable(value); return *this;}
 
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
+     * permissions settings for. Macie can't determine whether these buckets are
+     * publicly accessible.</p>
+     */
+    inline long long GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
+     * permissions settings for. Macie can't determine whether these buckets are
+     * publicly accessible.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
+     * permissions settings for. Macie can't determine whether these buckets are
+     * publicly accessible.</p>
+     */
+    inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
+     * permissions settings for. Macie can't determine whether these buckets are
+     * publicly accessible.</p>
+     */
+    inline BucketCountByEffectivePermission& WithUnknown(long long value) { SetUnknown(value); return *this;}
+
   private:
 
     long long m_publiclyAccessible;
@@ -121,6 +150,9 @@ namespace Model
 
     long long m_publiclyWritable;
     bool m_publiclyWritableHasBeenSet;
+
+    long long m_unknown;
+    bool m_unknownHasBeenSet;
   };
 
 } // namespace Model

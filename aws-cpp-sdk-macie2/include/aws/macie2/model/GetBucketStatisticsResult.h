@@ -147,41 +147,44 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the buckets.
-     * These objects use a supported file or storage format and storage class.</p>
+     * These objects use a supported storage class and have a file name extension for a
+     * supported file or storage format.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the buckets.
-     * These objects use a supported file or storage format and storage class.</p>
+     * These objects use a supported storage class and have a file name extension for a
+     * supported file or storage format.</p>
      */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCount = value; }
 
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the buckets.
-     * These objects use a supported file or storage format and storage class.</p>
+     * These objects use a supported storage class and have a file name extension for a
+     * supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
 
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
-     * analyze in the buckets. These objects use a supported file or storage format and
-     * storage class.</p>
+     * analyze in the buckets. These objects use a supported storage class and have a
+     * file name extension for a supported file or storage format.</p>
      */
     inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
-     * analyze in the buckets. These objects use a supported file or storage format and
-     * storage class.</p>
+     * analyze in the buckets. These objects use a supported storage class and have a
+     * file name extension for a supported file or storage format.</p>
      */
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
-     * analyze in the buckets. These objects use a supported file or storage format and
-     * storage class.</p>
+     * analyze in the buckets. These objects use a supported storage class and have a
+     * file name extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
 
@@ -267,67 +270,72 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
-     * These objects use an unsupported file or storage format or storage class.</p>
+     * These objects don't use a supported storage class or don't have a file name
+     * extension for a supported file or storage format.</p>
      */
     inline const ObjectLevelStatistics& GetUnclassifiableObjectCount() const{ return m_unclassifiableObjectCount; }
 
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
-     * These objects use an unsupported file or storage format or storage class.</p>
+     * These objects don't use a supported storage class or don't have a file name
+     * extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectCount(const ObjectLevelStatistics& value) { m_unclassifiableObjectCount = value; }
 
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
-     * These objects use an unsupported file or storage format or storage class.</p>
+     * These objects don't use a supported storage class or don't have a file name
+     * extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectCount(ObjectLevelStatistics&& value) { m_unclassifiableObjectCount = std::move(value); }
 
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
-     * These objects use an unsupported file or storage format or storage class.</p>
+     * These objects don't use a supported storage class or don't have a file name
+     * extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectCount(const ObjectLevelStatistics& value) { SetUnclassifiableObjectCount(value); return *this;}
 
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the buckets.
-     * These objects use an unsupported file or storage format or storage class.</p>
+     * These objects don't use a supported storage class or don't have a file name
+     * extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectCount(ObjectLevelStatistics&& value) { SetUnclassifiableObjectCount(std::move(value)); return *this;}
 
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
-     * analyze in the buckets. These objects use an unsupported file or storage format
-     * or storage class.</p>
+     * analyze in the buckets. These objects don't use a supported storage class or
+     * don't have a file name extension for a supported file or storage format.</p>
      */
     inline const ObjectLevelStatistics& GetUnclassifiableObjectSizeInBytes() const{ return m_unclassifiableObjectSizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
-     * analyze in the buckets. These objects use an unsupported file or storage format
-     * or storage class.</p>
+     * analyze in the buckets. These objects don't use a supported storage class or
+     * don't have a file name extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { m_unclassifiableObjectSizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
-     * analyze in the buckets. These objects use an unsupported file or storage format
-     * or storage class.</p>
+     * analyze in the buckets. These objects don't use a supported storage class or
+     * don't have a file name extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { m_unclassifiableObjectSizeInBytes = std::move(value); }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
-     * analyze in the buckets. These objects use an unsupported file or storage format
-     * or storage class.</p>
+     * analyze in the buckets. These objects don't use a supported storage class or
+     * don't have a file name extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { SetUnclassifiableObjectSizeInBytes(value); return *this;}
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
-     * analyze in the buckets. These objects use an unsupported file or storage format
-     * or storage class.</p>
+     * analyze in the buckets. These objects don't use a supported storage class or
+     * don't have a file name extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { SetUnclassifiableObjectSizeInBytes(std::move(value)); return *this;}
 

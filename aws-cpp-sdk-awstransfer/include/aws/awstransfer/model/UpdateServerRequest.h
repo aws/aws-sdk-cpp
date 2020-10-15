@@ -234,134 +234,134 @@ namespace Model
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your file transfer protocol-enabled server. With a VPC endpoint, you can
-     * restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP
-     * addresses with your server's endpoint.</p>
+     * your server. With a VPC endpoint, you can restrict access to your server to
+     * resources only within your VPC. To control incoming internet traffic, you will
+     * need to associate one or more Elastic IP addresses with your server's
+     * endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint that you want your file transfer protocol-enabled server
-     * to connect to. You can choose to connect to the public internet or a VPC
-     * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p>  <p>It is recommended that you use
-     * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
-     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
-     * included) with your server's endpoint and use VPC security groups to restrict
-     * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
+     * <p>The type of endpoint that you want your server to connect to. You can choose
+     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
+     * can restrict access to your server and resources only within your VPC.</p>
+     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <code>EndpointType</code>. With this endpoint type, you have the option to
+     * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     * your server's endpoint and use VPC security groups to restrict traffic by the
+     * client's public IP address. This is not possible with <code>EndpointType</code>
+     * set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline UpdateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
@@ -369,9 +369,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -381,9 +381,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -393,9 +393,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -405,9 +405,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -417,9 +417,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -429,9 +429,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -441,9 +441,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -453,9 +453,9 @@ namespace Model
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
      * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
-     * existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p>  <p>For more information, see <a
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -760,50 +760,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server instance that the user account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the user
+     * account is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

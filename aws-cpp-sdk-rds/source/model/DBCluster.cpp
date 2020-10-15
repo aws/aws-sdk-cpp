@@ -88,6 +88,7 @@ DBCluster::DBCluster() :
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
     m_domainMembershipsHasBeenSet(false),
+    m_tagListHasBeenSet(false),
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
     m_globalWriteForwardingStatusHasBeenSet(false),
     m_globalWriteForwardingRequested(false),
@@ -163,6 +164,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
     m_domainMembershipsHasBeenSet(false),
+    m_tagListHasBeenSet(false),
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
     m_globalWriteForwardingStatusHasBeenSet(false),
     m_globalWriteForwardingRequested(false),
@@ -543,6 +545,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_domainMembershipsHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
     XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
     if(!globalWriteForwardingStatusNode.IsNull())
     {
@@ -870,6 +884,17 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
@@ -1138,6 +1163,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         Aws::StringStream domainMembershipsSs;
         domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
   if(m_globalWriteForwardingStatusHasBeenSet)

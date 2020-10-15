@@ -387,42 +387,42 @@ namespace Model
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline const JobScheduleFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline bool ScheduleFrequencyHasBeenSet() const { return m_scheduleFrequencyHasBeenSet; }
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline void SetScheduleFrequency(const JobScheduleFrequency& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = value; }
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline void SetScheduleFrequency(JobScheduleFrequency&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::move(value); }
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline CreateClassificationJobRequest& WithScheduleFrequency(const JobScheduleFrequency& value) { SetScheduleFrequency(value); return *this;}
 
     /**
      * <p>The recurrence pattern for running the job. To run the job only once, don't
-     * specify a value for this property and set the value of the jobType property to
+     * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
     inline CreateClassificationJobRequest& WithScheduleFrequency(JobScheduleFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}

@@ -1338,11 +1338,10 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
-         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
-         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
-         * Region for the DB snapshot copy. </p> <p>For more information about copying
-         * snapshots, see <a
+         * <code>available</code> state.</p> <p>You can copy a snapshot from one AWS Region
+         * to another. In that case, the AWS Region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1353,11 +1352,10 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
-         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
-         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
-         * Region for the DB snapshot copy. </p> <p>For more information about copying
-         * snapshots, see <a
+         * <code>available</code> state.</p> <p>You can copy a snapshot from one AWS Region
+         * to another. In that case, the AWS Region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1370,11 +1368,10 @@ namespace Aws
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * <code>available</code> or <code>storage-optimization</code> state.</p> <p>You
-         * can copy a snapshot from one AWS Region to another. In that case, the AWS Region
-         * where you call the <code>CopyDBSnapshot</code> action is the destination AWS
-         * Region for the DB snapshot copy. </p> <p>For more information about copying
-         * snapshots, see <a
+         * <code>available</code> state.</p> <p>You can copy a snapshot from one AWS Region
+         * to another. In that case, the AWS Region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1895,16 +1892,18 @@ namespace Aws
         virtual void CreateDBSecurityGroupAsync(const Model::CreateDBSecurityGroupRequest& request, const CreateDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
+         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBSnapshotOutcome CreateDBSnapshot(const Model::CreateDBSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
+         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1913,8 +1912,9 @@ namespace Aws
         virtual Model::CreateDBSnapshotOutcomeCallable CreateDBSnapshotCallable(const Model::CreateDBSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
+         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
          *

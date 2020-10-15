@@ -445,16 +445,34 @@ namespace Model
         virtual void AuthorizeIpRulesAsync(const Model::AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the specified image from the specified Region to the current
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the specified image from the specified Region to the current Region.
+         * For more information about copying images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+         * Copy a Custom WorkSpaces Image</a>.</p>  <p>Before copying a shared
+         * image, be sure to verify that it has been shared from the correct AWS account.
+         * To determine if an image has been shared and to see the AWS account ID that owns
+         * an image, use the <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+         * API operations. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">AWS
          * API Reference</a></p>
          */
         virtual Model::CopyWorkspaceImageOutcome CopyWorkspaceImage(const Model::CopyWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Copies the specified image from the specified Region to the current
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the specified image from the specified Region to the current Region.
+         * For more information about copying images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+         * Copy a Custom WorkSpaces Image</a>.</p>  <p>Before copying a shared
+         * image, be sure to verify that it has been shared from the correct AWS account.
+         * To determine if an image has been shared and to see the AWS account ID that owns
+         * an image, use the <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+         * API operations. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">AWS
          * API Reference</a></p>
          *
@@ -463,8 +481,17 @@ namespace Model
         virtual Model::CopyWorkspaceImageOutcomeCallable CopyWorkspaceImageCallable(const Model::CopyWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Copies the specified image from the specified Region to the current
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the specified image from the specified Region to the current Region.
+         * For more information about copying images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+         * Copy a Custom WorkSpaces Image</a>.</p>  <p>Before copying a shared
+         * image, be sure to verify that it has been shared from the correct AWS account.
+         * To determine if an image has been shared and to see the AWS account ID that owns
+         * an image, use the <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+         * API operations. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">AWS
          * API Reference</a></p>
          *
@@ -1350,10 +1377,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>The management network interface is connected to a
-         * secure Amazon WorkSpaces management network. It is used for interactive
-         * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
-         * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
+         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
+         * <code>AccessDeniedException</code> error.</p> <p>The management network
+         * interface is connected to a secure Amazon WorkSpaces management network. It is
+         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          */
@@ -1362,10 +1392,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>The management network interface is connected to a
-         * secure Amazon WorkSpaces management network. It is used for interactive
-         * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
-         * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
+         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
+         * <code>AccessDeniedException</code> error.</p> <p>The management network
+         * interface is connected to a secure Amazon WorkSpaces management network. It is
+         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          *
@@ -1376,10 +1409,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>The management network interface is connected to a
-         * secure Amazon WorkSpaces management network. It is used for interactive
-         * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
-         * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
+         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
+         * <code>AccessDeniedException</code> error.</p> <p>The management network
+         * interface is connected to a secure Amazon WorkSpaces management network. It is
+         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          *
@@ -1934,24 +1970,38 @@ namespace Model
         virtual void StopWorkspacesAsync(const Model::StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is destroyed. If you need
-         * to archive any user data, contact Amazon Web Services before terminating the
-         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
-         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
-         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
+         * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
+         * WorkSpace is a permanent action and cannot be undone. The user's data is
+         * destroyed. If you need to archive any user data, contact AWS Support before
+         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
+         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
+         * asynchronous and returns before the WorkSpaces have been completely terminated.
+         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
+         * only briefly before the WorkSpace directory metadata is cleaned up, so this
+         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
+         * the WorkSpace ID by using <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+         * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+         * has been successfully terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::TerminateWorkspacesOutcome TerminateWorkspaces(const Model::TerminateWorkspacesRequest& request) const;
 
         /**
-         * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is destroyed. If you need
-         * to archive any user data, contact Amazon Web Services before terminating the
-         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
-         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
-         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
+         * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
+         * WorkSpace is a permanent action and cannot be undone. The user's data is
+         * destroyed. If you need to archive any user data, contact AWS Support before
+         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
+         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
+         * asynchronous and returns before the WorkSpaces have been completely terminated.
+         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
+         * only briefly before the WorkSpace directory metadata is cleaned up, so this
+         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
+         * the WorkSpace ID by using <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+         * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+         * has been successfully terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -1960,12 +2010,19 @@ namespace Model
         virtual Model::TerminateWorkspacesOutcomeCallable TerminateWorkspacesCallable(const Model::TerminateWorkspacesRequest& request) const;
 
         /**
-         * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is destroyed. If you need
-         * to archive any user data, contact Amazon Web Services before terminating the
-         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
-         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
-         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
+         * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
+         * WorkSpace is a permanent action and cannot be undone. The user's data is
+         * destroyed. If you need to archive any user data, contact AWS Support before
+         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
+         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
+         * asynchronous and returns before the WorkSpaces have been completely terminated.
+         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
+         * only briefly before the WorkSpace directory metadata is cleaned up, so this
+         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
+         * the WorkSpace ID by using <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+         * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+         * has been successfully terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -2078,7 +2135,10 @@ namespace Model
          * <p>Shares or unshares an image with one account by specifying whether that
          * account has permission to copy the image. If the copy image permission is
          * granted, the image is shared with that account. If the copy image permission is
-         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * revoked, the image is unshared with the account. For more information about
+         * sharing images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+         * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
          * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
@@ -2093,7 +2153,10 @@ namespace Model
          * <p>Shares or unshares an image with one account by specifying whether that
          * account has permission to copy the image. If the copy image permission is
          * granted, the image is shared with that account. If the copy image permission is
-         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * revoked, the image is unshared with the account. For more information about
+         * sharing images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+         * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
          * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
@@ -2110,7 +2173,10 @@ namespace Model
          * <p>Shares or unshares an image with one account by specifying whether that
          * account has permission to copy the image. If the copy image permission is
          * granted, the image is shared with that account. If the copy image permission is
-         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * revoked, the image is unshared with the account. For more information about
+         * sharing images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+         * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
          * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.

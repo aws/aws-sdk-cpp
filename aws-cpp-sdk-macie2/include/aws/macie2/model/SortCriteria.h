@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies criteria for sorting the results of a request for information about
+   * <p>Specifies criteria for sorting the results of a request for
    * findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SortCriteria">AWS
    * API Reference</a></p>

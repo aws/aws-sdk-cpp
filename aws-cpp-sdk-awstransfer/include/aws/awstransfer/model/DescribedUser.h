@@ -385,8 +385,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
@@ -395,8 +395,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
@@ -405,8 +405,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -415,8 +415,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
@@ -425,8 +425,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
@@ -435,8 +435,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline DescribedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
@@ -445,8 +445,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline DescribedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
@@ -455,8 +455,8 @@ namespace Model
      * bucket. The policies attached to this role will determine the level of access
      * you want to provide your users when transferring files into and out of your
      * Amazon S3 bucket or buckets. The IAM role should also contain a trust
-     * relationship that allows a file transfer protocol-enabled server to access your
-     * resources when servicing your users' transfer requests.</p>
+     * relationship that allows a server to access your resources when servicing your
+     * users' transfer requests.</p>
      */
     inline DescribedUser& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -562,56 +562,56 @@ namespace Model
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline DescribedUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline DescribedUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the user that was requested to be described. User names
      * are used for authentication purposes. This is the string that will be used by
-     * your user when they log in to your file transfer protocol-enabled server.</p>
+     * your user when they log in to your server.</p>
      */
     inline DescribedUser& WithUserName(const char* value) { SetUserName(value); return *this;}
 

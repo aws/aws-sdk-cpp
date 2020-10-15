@@ -80,22 +80,22 @@ namespace Model
 
 
     /**
-     * <p>The types and messages of the exceptions.</p>
+     * <p>The type and messages of the exceptions.</p>
      */
     inline double GetCoverage() const{ return m_coverage; }
 
     /**
-     * <p>The types and messages of the exceptions.</p>
+     * <p>The type and messages of the exceptions.</p>
      */
     inline bool CoverageHasBeenSet() const { return m_coverageHasBeenSet; }
 
     /**
-     * <p>The types and messages of the exceptions.</p>
+     * <p>The type and messages of the exceptions.</p>
      */
     inline void SetCoverage(double value) { m_coverageHasBeenSet = true; m_coverage = value; }
 
     /**
-     * <p>The types and messages of the exceptions.</p>
+     * <p>The type and messages of the exceptions.</p>
      */
     inline ResponseTimeRootCauseEntity& WithCoverage(double value) { SetCoverage(value); return *this;}
 

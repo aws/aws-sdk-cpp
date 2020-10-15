@@ -46,7 +46,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
@@ -58,7 +58,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
@@ -82,7 +82,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
@@ -94,7 +94,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
@@ -106,7 +106,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
@@ -118,7 +118,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * compressed or archive file that contains files in an unsupported
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
      * the finding applies to. For example, the object is a malformed file or a file
-     * that's in an unsupported format.</p></li></ul>
+     * that uses an unsupported format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(const char* value) { SetCode(value); return *this;}
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Value of a segment annotation. Has one of three value types: Number, Boolean
+   * <p>Value of a segment annotation. Has one of three value types: Number, Boolean,
    * or String.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AnnotationValue">AWS
    * API Reference</a></p>

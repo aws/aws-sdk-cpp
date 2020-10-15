@@ -11,6 +11,7 @@
 #include <aws/iot/model/DomainConfigurationStatus.h>
 #include <aws/iot/model/ServiceType.h>
 #include <aws/iot/model/DomainType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/ServerCertificateSummary.h>
 #include <utility>
 
@@ -297,6 +298,32 @@ namespace Model
      */
     inline DescribeDomainConfigurationResult& WithDomainType(DomainType&& value) { SetDomainType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time the domain configuration's status was last changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastStatusChangeDate() const{ return m_lastStatusChangeDate; }
+
+    /**
+     * <p>The date and time the domain configuration's status was last changed.</p>
+     */
+    inline void SetLastStatusChangeDate(const Aws::Utils::DateTime& value) { m_lastStatusChangeDate = value; }
+
+    /**
+     * <p>The date and time the domain configuration's status was last changed.</p>
+     */
+    inline void SetLastStatusChangeDate(Aws::Utils::DateTime&& value) { m_lastStatusChangeDate = std::move(value); }
+
+    /**
+     * <p>The date and time the domain configuration's status was last changed.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithLastStatusChangeDate(const Aws::Utils::DateTime& value) { SetLastStatusChangeDate(value); return *this;}
+
+    /**
+     * <p>The date and time the domain configuration's status was last changed.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithLastStatusChangeDate(Aws::Utils::DateTime&& value) { SetLastStatusChangeDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainConfigurationName;
@@ -314,6 +341,8 @@ namespace Model
     ServiceType m_serviceType;
 
     DomainType m_domainType;
+
+    Aws::Utils::DateTime m_lastStatusChangeDate;
   };
 
 } // namespace Model

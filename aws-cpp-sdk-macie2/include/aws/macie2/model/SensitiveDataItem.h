@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the category, type, and number of occurrences of
-   * sensitive data that produced a finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the category, types, and occurrences of sensitive
+   * data that produced a sensitive data finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitiveDataItem">AWS
    * API Reference</a></p>
    */
@@ -43,54 +43,54 @@ namespace Model
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline const SensitiveDataItemCategory& GetCategory() const{ return m_category; }
 
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline void SetCategory(const SensitiveDataItemCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline void SetCategory(SensitiveDataItemCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline SensitiveDataItem& WithCategory(const SensitiveDataItemCategory& value) { SetCategory(value); return *this;}
 
     /**
      * <p>The category of sensitive data that was detected. For example:
      * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information such as full names
-     * and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a
-     * custom data identifier.</p>
+     * PERSONAL_INFORMATION, for personally identifiable information, such as full
+     * names and mailing addresses, or personal health information; or,
+     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
      */
     inline SensitiveDataItem& WithCategory(SensitiveDataItemCategory&& value) { SetCategory(std::move(value)); return *this;}
 
@@ -98,56 +98,56 @@ namespace Model
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline const Aws::Vector<DefaultDetection>& GetDetections() const{ return m_detections; }
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline bool DetectionsHasBeenSet() const { return m_detectionsHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline void SetDetections(const Aws::Vector<DefaultDetection>& value) { m_detectionsHasBeenSet = true; m_detections = value; }
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline void SetDetections(Aws::Vector<DefaultDetection>&& value) { m_detectionsHasBeenSet = true; m_detections = std::move(value); }
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline SensitiveDataItem& WithDetections(const Aws::Vector<DefaultDetection>& value) { SetDetections(value); return *this;}
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline SensitiveDataItem& WithDetections(Aws::Vector<DefaultDetection>&& value) { SetDetections(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline SensitiveDataItem& AddDetections(const DefaultDetection& value) { m_detectionsHasBeenSet = true; m_detections.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each type of sensitive data that was detected.
      * Each object reports the number of occurrences of a specific type of sensitive
-     * data that was detected.</p>
+     * data that was detected, and the location of up to 15 of those occurrences.</p>
      */
     inline SensitiveDataItem& AddDetections(DefaultDetection&& value) { m_detectionsHasBeenSet = true; m_detections.push_back(std::move(value)); return *this; }
 

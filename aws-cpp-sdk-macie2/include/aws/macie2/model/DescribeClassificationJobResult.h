@@ -14,6 +14,7 @@
 #include <aws/macie2/model/JobScheduleFrequency.h>
 #include <aws/macie2/model/Statistics.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/macie2/model/UserPausedDetails.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -285,117 +286,122 @@ namespace Model
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job. A job might also be cancelled if ownership of an S3
-     * bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
-     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
-     * recurring job, the previous scheduled run is complete and the next scheduled run
-     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
-     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
-     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
-     * in progress.</p></li></ul>
+     * - You cancelled the job, or you paused the job and didn't resume it within 30
+     * days of pausing it.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie
+     * finished processing all the data specified for the job. This value doesn't apply
+     * to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous
+     * scheduled run is complete and the next scheduled run is pending. This value
+     * doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started
+     * running the job but completion of the job would exceed one or more quotas for
+     * your account.</p></li> <li><p>RUNNING - For a one-time job, the job is in
+     * progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you don't resume the job within 30
+     * days of pausing it, the job will expire and be cancelled.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job. A job might also be cancelled if ownership of an S3
-     * bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
-     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
-     * recurring job, the previous scheduled run is complete and the next scheduled run
-     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
-     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
-     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
-     * in progress.</p></li></ul>
+     * - You cancelled the job, or you paused the job and didn't resume it within 30
+     * days of pausing it.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie
+     * finished processing all the data specified for the job. This value doesn't apply
+     * to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous
+     * scheduled run is complete and the next scheduled run is pending. This value
+     * doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started
+     * running the job but completion of the job would exceed one or more quotas for
+     * your account.</p></li> <li><p>RUNNING - For a one-time job, the job is in
+     * progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you don't resume the job within 30
+     * days of pausing it, the job will expire and be cancelled.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job. A job might also be cancelled if ownership of an S3
-     * bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
-     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
-     * recurring job, the previous scheduled run is complete and the next scheduled run
-     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
-     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
-     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
-     * in progress.</p></li></ul>
+     * - You cancelled the job, or you paused the job and didn't resume it within 30
+     * days of pausing it.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie
+     * finished processing all the data specified for the job. This value doesn't apply
+     * to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous
+     * scheduled run is complete and the next scheduled run is pending. This value
+     * doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started
+     * running the job but completion of the job would exceed one or more quotas for
+     * your account.</p></li> <li><p>RUNNING - For a one-time job, the job is in
+     * progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you don't resume the job within 30
+     * days of pausing it, the job will expire and be cancelled.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job. A job might also be cancelled if ownership of an S3
-     * bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
-     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
-     * recurring job, the previous scheduled run is complete and the next scheduled run
-     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
-     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
-     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
-     * in progress.</p></li></ul>
+     * - You cancelled the job, or you paused the job and didn't resume it within 30
+     * days of pausing it.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie
+     * finished processing all the data specified for the job. This value doesn't apply
+     * to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous
+     * scheduled run is complete and the next scheduled run is pending. This value
+     * doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started
+     * running the job but completion of the job would exceed one or more quotas for
+     * your account.</p></li> <li><p>RUNNING - For a one-time job, the job is in
+     * progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you don't resume the job within 30
+     * days of pausing it, the job will expire and be cancelled.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job. A job might also be cancelled if ownership of an S3
-     * bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished
-     * processing all the data specified for the job.</p></li> <li><p>IDLE - For a
-     * recurring job, the previous scheduled run is complete and the next scheduled run
-     * is pending. This value doesn't apply to jobs that occur only once.</p></li>
-     * <li><p>PAUSED - Amazon Macie started the job, but completion of the job would
-     * exceed one or more quotas for your account.</p></li> <li><p>RUNNING - The job is
-     * in progress.</p></li></ul>
+     * - You cancelled the job, or you paused the job and didn't resume it within 30
+     * days of pausing it.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie
+     * finished processing all the data specified for the job. This value doesn't apply
+     * to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous
+     * scheduled run is complete and the next scheduled run is pending. This value
+     * doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started
+     * running the job but completion of the job would exceed one or more quotas for
+     * your account.</p></li> <li><p>RUNNING - For a one-time job, the job is in
+     * progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you don't resume the job within 30
+     * days of pausing it, the job will expire and be cancelled.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>The schedule for running the job. Possible values are:</p>
-     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
-     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
-     * scheduleFrequency property indicates the recurrence pattern for the
-     * job.</p></li></ul>
+     * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
+     * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
+     * indicates the recurrence pattern for the job.</p></li></ul>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     /**
      * <p>The schedule for running the job. Possible values are:</p>
-     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
-     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
-     * scheduleFrequency property indicates the recurrence pattern for the
-     * job.</p></li></ul>
+     * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
+     * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
+     * indicates the recurrence pattern for the job.</p></li></ul>
      */
     inline void SetJobType(const JobType& value) { m_jobType = value; }
 
     /**
      * <p>The schedule for running the job. Possible values are:</p>
-     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
-     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
-     * scheduleFrequency property indicates the recurrence pattern for the
-     * job.</p></li></ul>
+     * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
+     * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
+     * indicates the recurrence pattern for the job.</p></li></ul>
      */
     inline void SetJobType(JobType&& value) { m_jobType = std::move(value); }
 
     /**
      * <p>The schedule for running the job. Possible values are:</p>
-     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
-     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
-     * scheduleFrequency property indicates the recurrence pattern for the
-     * job.</p></li></ul>
+     * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
+     * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
+     * indicates the recurrence pattern for the job.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     /**
      * <p>The schedule for running the job. Possible values are:</p>
-     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
-     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
-     * scheduleFrequency property indicates the recurrence pattern for the
-     * job.</p></li></ul>
+     * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
+     * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
+     * indicates the recurrence pattern for the job.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
@@ -550,106 +556,142 @@ namespace Model
 
     /**
      * <p>The number of times that the job has run and processing statistics for the
-     * job's most recent run.</p>
+     * job's current run.</p>
      */
     inline const Statistics& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p>The number of times that the job has run and processing statistics for the
-     * job's most recent run.</p>
+     * job's current run.</p>
      */
     inline void SetStatistics(const Statistics& value) { m_statistics = value; }
 
     /**
      * <p>The number of times that the job has run and processing statistics for the
-     * job's most recent run.</p>
+     * job's current run.</p>
      */
     inline void SetStatistics(Statistics&& value) { m_statistics = std::move(value); }
 
     /**
      * <p>The number of times that the job has run and processing statistics for the
-     * job's most recent run.</p>
+     * job's current run.</p>
      */
     inline DescribeClassificationJobResult& WithStatistics(const Statistics& value) { SetStatistics(value); return *this;}
 
     /**
      * <p>The number of times that the job has run and processing statistics for the
-     * job's most recent run.</p>
+     * job's current run.</p>
      */
     inline DescribeClassificationJobResult& WithStatistics(Statistics&& value) { SetStatistics(std::move(value)); return *this;}
 
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the classification job.</p>
      */
     inline DescribeClassificationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>If the current status of the job is USER_PAUSED, specifies when the job was
+     * paused and when the job will expire and be cancelled if it isn't resumed. This
+     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     */
+    inline const UserPausedDetails& GetUserPausedDetails() const{ return m_userPausedDetails; }
+
+    /**
+     * <p>If the current status of the job is USER_PAUSED, specifies when the job was
+     * paused and when the job will expire and be cancelled if it isn't resumed. This
+     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     */
+    inline void SetUserPausedDetails(const UserPausedDetails& value) { m_userPausedDetails = value; }
+
+    /**
+     * <p>If the current status of the job is USER_PAUSED, specifies when the job was
+     * paused and when the job will expire and be cancelled if it isn't resumed. This
+     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     */
+    inline void SetUserPausedDetails(UserPausedDetails&& value) { m_userPausedDetails = std::move(value); }
+
+    /**
+     * <p>If the current status of the job is USER_PAUSED, specifies when the job was
+     * paused and when the job will expire and be cancelled if it isn't resumed. This
+     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     */
+    inline DescribeClassificationJobResult& WithUserPausedDetails(const UserPausedDetails& value) { SetUserPausedDetails(value); return *this;}
+
+    /**
+     * <p>If the current status of the job is USER_PAUSED, specifies when the job was
+     * paused and when the job will expire and be cancelled if it isn't resumed. This
+     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     */
+    inline DescribeClassificationJobResult& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
 
   private:
 
@@ -684,6 +726,8 @@ namespace Model
     Statistics m_statistics;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    UserPausedDetails m_userPausedDetails;
   };
 
 } // namespace Model

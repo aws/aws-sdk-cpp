@@ -85,6 +85,12 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("lastStatusChangeDate"))
+  {
+    m_lastStatusChangeDate = jsonValue.GetDouble("lastStatusChangeDate");
+
+  }
+
 
 
   return *this;

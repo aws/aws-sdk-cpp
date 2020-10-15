@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/Occurrences.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about a custom data identifier that produced a sensitive
-   * data finding, and the number of occurrences of the data that it detected for the
+   * data finding, and the sensitive data that it detected for the
    * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDetection">AWS
    * API Reference</a></p>
@@ -81,26 +82,26 @@ namespace Model
 
 
     /**
-     * <p>The total number of occurrences of the data that the custom data identifier
-     * detected for the finding.</p>
+     * <p>The total number of occurrences of the sensitive data that the custom data
+     * identifier detected.</p>
      */
     inline long long GetCount() const{ return m_count; }
 
     /**
-     * <p>The total number of occurrences of the data that the custom data identifier
-     * detected for the finding.</p>
+     * <p>The total number of occurrences of the sensitive data that the custom data
+     * identifier detected.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The total number of occurrences of the data that the custom data identifier
-     * detected for the finding.</p>
+     * <p>The total number of occurrences of the sensitive data that the custom data
+     * identifier detected.</p>
      */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The total number of occurrences of the data that the custom data identifier
-     * detected for the finding.</p>
+     * <p>The total number of occurrences of the sensitive data that the custom data
+     * identifier detected.</p>
      */
     inline CustomDetection& WithCount(long long value) { SetCount(value); return *this;}
 
@@ -145,6 +146,49 @@ namespace Model
      */
     inline CustomDetection& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline const Occurrences& GetOccurrences() const{ return m_occurrences; }
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline bool OccurrencesHasBeenSet() const { return m_occurrencesHasBeenSet; }
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline void SetOccurrences(const Occurrences& value) { m_occurrencesHasBeenSet = true; m_occurrences = value; }
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline void SetOccurrences(Occurrences&& value) { m_occurrencesHasBeenSet = true; m_occurrences = std::move(value); }
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline CustomDetection& WithOccurrences(const Occurrences& value) { SetOccurrences(value); return *this;}
+
+    /**
+     * <p>The location of 1-15 occurrences of the sensitive data that the custom data
+     * identifier detected. A finding includes location data for a maximum of 15
+     * occurrences of sensitive data.</p>
+     */
+    inline CustomDetection& WithOccurrences(Occurrences&& value) { SetOccurrences(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -155,6 +199,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Occurrences m_occurrences;
+    bool m_occurrencesHasBeenSet;
   };
 
 } // namespace Model

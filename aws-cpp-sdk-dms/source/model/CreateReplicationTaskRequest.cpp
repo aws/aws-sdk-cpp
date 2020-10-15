@@ -25,7 +25,8 @@ CreateReplicationTaskRequest::CreateReplicationTaskRequest() :
     m_cdcStartPositionHasBeenSet(false),
     m_cdcStopPositionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_taskDataHasBeenSet(false)
+    m_taskDataHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,12 @@ Aws::String CreateReplicationTaskRequest::SerializePayload() const
   if(m_taskDataHasBeenSet)
   {
    payload.WithString("TaskData", m_taskData);
+
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
 
   }
 

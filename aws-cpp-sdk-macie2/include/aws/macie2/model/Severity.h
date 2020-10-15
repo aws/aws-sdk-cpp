@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the numeric score and textual representation of a severity
-   * value.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the numerical and qualitative representations of a finding's
+   * severity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Severity">AWS API
    * Reference</a></p>
    */
@@ -39,57 +39,63 @@ namespace Model
 
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline const SeverityDescription& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline void SetDescription(const SeverityDescription& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline void SetDescription(SeverityDescription&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline Severity& WithDescription(const SeverityDescription& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The textual representation of the severity value, such as Low or High.</p>
+     * <p>The qualitative representation of the finding's severity, ranging from Low
+     * (least severe) to High (most severe).</p>
      */
     inline Severity& WithDescription(SeverityDescription&& value) { SetDescription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The numeric score for the severity value, ranging from 0 (least severe) to 4
-     * (most severe).</p>
+     * <p>The numerical representation of the finding's severity, ranging from 1 (least
+     * severe) to 3 (most severe).</p>
      */
     inline long long GetScore() const{ return m_score; }
 
     /**
-     * <p>The numeric score for the severity value, ranging from 0 (least severe) to 4
-     * (most severe).</p>
+     * <p>The numerical representation of the finding's severity, ranging from 1 (least
+     * severe) to 3 (most severe).</p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p>The numeric score for the severity value, ranging from 0 (least severe) to 4
-     * (most severe).</p>
+     * <p>The numerical representation of the finding's severity, ranging from 1 (least
+     * severe) to 3 (most severe).</p>
      */
     inline void SetScore(long long value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p>The numeric score for the severity value, ranging from 0 (least severe) to 4
-     * (most severe).</p>
+     * <p>The numerical representation of the finding's severity, ranging from 1 (least
+     * severe) to 3 (most severe).</p>
      */
     inline Severity& WithScore(long long value) { SetScore(value); return *this;}
 

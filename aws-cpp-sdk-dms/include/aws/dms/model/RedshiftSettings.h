@@ -296,6 +296,76 @@ namespace Model
 
 
     /**
+     * <p>If Amazon Redshift is configured to support case sensitive schema names, set
+     * <code>CaseSensitiveNames</code> to <code>true</code>. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool GetCaseSensitiveNames() const{ return m_caseSensitiveNames; }
+
+    /**
+     * <p>If Amazon Redshift is configured to support case sensitive schema names, set
+     * <code>CaseSensitiveNames</code> to <code>true</code>. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool CaseSensitiveNamesHasBeenSet() const { return m_caseSensitiveNamesHasBeenSet; }
+
+    /**
+     * <p>If Amazon Redshift is configured to support case sensitive schema names, set
+     * <code>CaseSensitiveNames</code> to <code>true</code>. The default is
+     * <code>false</code>.</p>
+     */
+    inline void SetCaseSensitiveNames(bool value) { m_caseSensitiveNamesHasBeenSet = true; m_caseSensitiveNames = value; }
+
+    /**
+     * <p>If Amazon Redshift is configured to support case sensitive schema names, set
+     * <code>CaseSensitiveNames</code> to <code>true</code>. The default is
+     * <code>false</code>.</p>
+     */
+    inline RedshiftSettings& WithCaseSensitiveNames(bool value) { SetCaseSensitiveNames(value); return *this;}
+
+
+    /**
+     * <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift
+     * applies automatic compression if the table is empty. This applies even if the
+     * table columns already have encodings other than <code>RAW</code>. If you set
+     * <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled
+     * and existing column encodings aren't changed. The default is
+     * <code>true</code>.</p>
+     */
+    inline bool GetCompUpdate() const{ return m_compUpdate; }
+
+    /**
+     * <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift
+     * applies automatic compression if the table is empty. This applies even if the
+     * table columns already have encodings other than <code>RAW</code>. If you set
+     * <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled
+     * and existing column encodings aren't changed. The default is
+     * <code>true</code>.</p>
+     */
+    inline bool CompUpdateHasBeenSet() const { return m_compUpdateHasBeenSet; }
+
+    /**
+     * <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift
+     * applies automatic compression if the table is empty. This applies even if the
+     * table columns already have encodings other than <code>RAW</code>. If you set
+     * <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled
+     * and existing column encodings aren't changed. The default is
+     * <code>true</code>.</p>
+     */
+    inline void SetCompUpdate(bool value) { m_compUpdateHasBeenSet = true; m_compUpdate = value; }
+
+    /**
+     * <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift
+     * applies automatic compression if the table is empty. This applies even if the
+     * table columns already have encodings other than <code>RAW</code>. If you set
+     * <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled
+     * and existing column encodings aren't changed. The default is
+     * <code>true</code>.</p>
+     */
+    inline RedshiftSettings& WithCompUpdate(bool value) { SetCompUpdate(value); return *this;}
+
+
+    /**
      * <p>A value that sets the amount of time to wait (in milliseconds) before timing
      * out, beginning from when you initially establish a connection.</p>
      */
@@ -568,6 +638,43 @@ namespace Model
      * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline RedshiftSettings& WithEncryptionMode(EncryptionModeValue&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This setting is only valid for a full-load migration task. Set
+     * <code>ExplicitIds</code> to <code>true</code> to have tables with
+     * <code>IDENTITY</code> columns override their auto-generated values with explicit
+     * values loaded from the source data files used to populate the tables. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool GetExplicitIds() const{ return m_explicitIds; }
+
+    /**
+     * <p>This setting is only valid for a full-load migration task. Set
+     * <code>ExplicitIds</code> to <code>true</code> to have tables with
+     * <code>IDENTITY</code> columns override their auto-generated values with explicit
+     * values loaded from the source data files used to populate the tables. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool ExplicitIdsHasBeenSet() const { return m_explicitIdsHasBeenSet; }
+
+    /**
+     * <p>This setting is only valid for a full-load migration task. Set
+     * <code>ExplicitIds</code> to <code>true</code> to have tables with
+     * <code>IDENTITY</code> columns override their auto-generated values with explicit
+     * values loaded from the source data files used to populate the tables. The
+     * default is <code>false</code>.</p>
+     */
+    inline void SetExplicitIds(bool value) { m_explicitIdsHasBeenSet = true; m_explicitIds = value; }
+
+    /**
+     * <p>This setting is only valid for a full-load migration task. Set
+     * <code>ExplicitIds</code> to <code>true</code> to have tables with
+     * <code>IDENTITY</code> columns override their auto-generated values with explicit
+     * values loaded from the source data files used to populate the tables. The
+     * default is <code>false</code>.</p>
+     */
+    inline RedshiftSettings& WithExplicitIds(bool value) { SetExplicitIds(value); return *this;}
 
 
     /**
@@ -1251,6 +1358,12 @@ namespace Model
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
 
+    bool m_caseSensitiveNames;
+    bool m_caseSensitiveNamesHasBeenSet;
+
+    bool m_compUpdate;
+    bool m_compUpdateHasBeenSet;
+
     int m_connectionTimeout;
     bool m_connectionTimeoutHasBeenSet;
 
@@ -1265,6 +1378,9 @@ namespace Model
 
     EncryptionModeValue m_encryptionMode;
     bool m_encryptionModeHasBeenSet;
+
+    bool m_explicitIds;
+    bool m_explicitIdsHasBeenSet;
 
     int m_fileTransferUploadStreams;
     bool m_fileTransferUploadStreamsHasBeenSet;

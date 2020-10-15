@@ -480,32 +480,74 @@ namespace Model
 
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline const WorkspaceDirectoryState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline void SetState(const WorkspaceDirectoryState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline void SetState(WorkspaceDirectoryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline WorkspaceDirectory& WithState(const WorkspaceDirectoryState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the directory's registration with Amazon WorkSpaces.</p>
+     * <p>The state of the directory's registration with Amazon WorkSpaces. After a
+     * directory is deregistered, the <code>DEREGISTERED</code> state is returned very
+     * briefly before the directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a directory is deregistered, check for the directory
+     * ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the
+     * directory has been successfully deregistered.</p>
      */
     inline WorkspaceDirectory& WithState(WorkspaceDirectoryState&& value) { SetState(std::move(value)); return *this;}
 

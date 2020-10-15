@@ -21,6 +21,7 @@ namespace Model
 OrganizationSummary::OrganizationSummary() : 
     m_organizationIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
+    m_defaultMailDomainHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_stateHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ OrganizationSummary::OrganizationSummary() :
 OrganizationSummary::OrganizationSummary(JsonView jsonValue) : 
     m_organizationIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
+    m_defaultMailDomainHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_stateHasBeenSet(false)
 {
@@ -49,6 +51,13 @@ OrganizationSummary& OrganizationSummary::operator =(JsonView jsonValue)
     m_alias = jsonValue.GetString("Alias");
 
     m_aliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultMailDomain"))
+  {
+    m_defaultMailDomain = jsonValue.GetString("DefaultMailDomain");
+
+    m_defaultMailDomainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ErrorMessage"))
@@ -81,6 +90,12 @@ JsonValue OrganizationSummary::Jsonize() const
   if(m_aliasHasBeenSet)
   {
    payload.WithString("Alias", m_alias);
+
+  }
+
+  if(m_defaultMailDomainHasBeenSet)
+  {
+   payload.WithString("DefaultMailDomain", m_defaultMailDomain);
 
   }
 

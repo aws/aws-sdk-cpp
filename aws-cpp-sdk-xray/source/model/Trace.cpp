@@ -22,6 +22,8 @@ Trace::Trace() :
     m_idHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
+    m_limitExceeded(false),
+    m_limitExceededHasBeenSet(false),
     m_segmentsHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ Trace::Trace(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
+    m_limitExceeded(false),
+    m_limitExceededHasBeenSet(false),
     m_segmentsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -49,6 +53,13 @@ Trace& Trace::operator =(JsonView jsonValue)
     m_duration = jsonValue.GetDouble("Duration");
 
     m_durationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LimitExceeded"))
+  {
+    m_limitExceeded = jsonValue.GetBool("LimitExceeded");
+
+    m_limitExceededHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Segments"))
@@ -77,6 +88,12 @@ JsonValue Trace::Jsonize() const
   if(m_durationHasBeenSet)
   {
    payload.WithDouble("Duration", m_duration);
+
+  }
+
+  if(m_limitExceededHasBeenSet)
+  {
+   payload.WithBool("LimitExceeded", m_limitExceeded);
 
   }
 

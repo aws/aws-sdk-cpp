@@ -140,6 +140,12 @@ DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(con
     }
   }
 
+  if(jsonValue.ValueExists("userPausedDetails"))
+  {
+    m_userPausedDetails = jsonValue.GetObject("userPausedDetails");
+
+  }
+
 
 
   return *this;

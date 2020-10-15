@@ -22,7 +22,8 @@ EndpointDetails::EndpointDetails() :
     m_addressAllocationIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ EndpointDetails::EndpointDetails(JsonView jsonValue) :
     m_addressAllocationIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +73,16 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     m_vpcIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityGroupIds"))
+  {
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +121,17 @@ JsonValue EndpointDetails::Jsonize() const
   if(m_vpcIdHasBeenSet)
   {
    payload.WithString("VpcId", m_vpcId);
+
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
 
   }
 

@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about the server-side encryption settings for an S3
-   * bucket or object.</p><p><h3>See Also:</h3>   <a
+   * bucket or S3 object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServerSideEncryption">AWS
    * API Reference</a></p>
    */

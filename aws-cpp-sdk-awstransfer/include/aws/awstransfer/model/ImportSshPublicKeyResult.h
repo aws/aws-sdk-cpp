@@ -25,10 +25,9 @@ namespace Transfer
 namespace Model
 {
   /**
-   * <p>Identifies the user, the file transfer protocol-enabled server they belong
-   * to, and the identifier of the SSH public key associated with that user. A user
-   * can have more than one key on each server that they are associated
-   * with.</p><p><h3>See Also:</h3>   <a
+   * <p>Identifies the user, the server they belong to, and the identifier of the SSH
+   * public key associated with that user. A user can have more than one key on each
+   * server that they are associated with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKeyResponse">AWS
    * API Reference</a></p>
    */
@@ -41,44 +40,37 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline ImportSshPublicKeyResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline ImportSshPublicKeyResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
-     * server.</p>
+     * <p>A system-assigned unique identifier for a server.</p>
      */
     inline ImportSshPublicKeyResult& WithServerId(const char* value) { SetServerId(value); return *this;}
 

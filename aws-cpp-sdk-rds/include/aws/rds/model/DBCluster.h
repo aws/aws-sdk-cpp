@@ -18,6 +18,7 @@
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
 #include <aws/rds/model/DomainMembership.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -1857,104 +1858,72 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * 
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -2323,6 +2292,31 @@ namespace Model
     inline DBCluster& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBCluster& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBCluster& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBCluster& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBCluster& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
+
     /**
      * <p>Specifies whether a secondary cluster in an Aurora global database has write
      * forwarding enabled, not enabled, or is in the process of enabling it.</p>
@@ -2553,6 +2547,9 @@ namespace Model
 
     Aws::Vector<DomainMembership> m_domainMemberships;
     bool m_domainMembershipsHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
 
     WriteForwardingStatus m_globalWriteForwardingStatus;
     bool m_globalWriteForwardingStatusHasBeenSet;

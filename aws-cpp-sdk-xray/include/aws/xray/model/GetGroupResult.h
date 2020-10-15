@@ -34,31 +34,36 @@ namespace Model
 
     /**
      * <p>The group that was requested. Contains the name of the group, the ARN of the
-     * group, and the filter expression that assigned to the group.</p>
+     * group, the filter expression, and the insight configuration assigned to the
+     * group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
 
     /**
      * <p>The group that was requested. Contains the name of the group, the ARN of the
-     * group, and the filter expression that assigned to the group.</p>
+     * group, the filter expression, and the insight configuration assigned to the
+     * group.</p>
      */
     inline void SetGroup(const Group& value) { m_group = value; }
 
     /**
      * <p>The group that was requested. Contains the name of the group, the ARN of the
-     * group, and the filter expression that assigned to the group.</p>
+     * group, the filter expression, and the insight configuration assigned to the
+     * group.</p>
      */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
 
     /**
      * <p>The group that was requested. Contains the name of the group, the ARN of the
-     * group, and the filter expression that assigned to the group.</p>
+     * group, the filter expression, and the insight configuration assigned to the
+     * group.</p>
      */
     inline GetGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
     /**
      * <p>The group that was requested. Contains the name of the group, the ARN of the
-     * group, and the filter expression that assigned to the group.</p>
+     * group, the filter expression, and the insight configuration assigned to the
+     * group.</p>
      */
     inline GetGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 

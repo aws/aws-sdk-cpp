@@ -736,16 +736,16 @@ namespace Model
         virtual void DescribeBucketsAsync(const Model::DescribeBucketsRequest& request, const DescribeBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the status and settings for a classification
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the status and settings for a classification job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeClassificationJobOutcome DescribeClassificationJob(const Model::DescribeClassificationJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about the status and settings for a classification
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the status and settings for a classification job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          *
@@ -754,8 +754,8 @@ namespace Model
         virtual Model::DescribeClassificationJobOutcomeCallable DescribeClassificationJobCallable(const Model::DescribeClassificationJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about the status and settings for a classification
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the status and settings for a classification job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          *
@@ -764,16 +764,16 @@ namespace Model
         virtual void DescribeClassificationJobAsync(const Model::DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie configuration settings for an
-         * AWS organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an AWS
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie configuration settings for an
-         * AWS organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an AWS
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -782,8 +782,8 @@ namespace Model
         virtual Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie configuration settings for an
-         * AWS organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an AWS
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1016,7 +1016,7 @@ namespace Model
         virtual void GetClassificationExportConfigurationAsync(const Model::GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a custom data
+         * <p>Retrieves the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
@@ -1024,7 +1024,7 @@ namespace Model
         virtual Model::GetCustomDataIdentifierOutcome GetCustomDataIdentifier(const Model::GetCustomDataIdentifierRequest& request) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a custom data
+         * <p>Retrieves the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
@@ -1034,7 +1034,7 @@ namespace Model
         virtual Model::GetCustomDataIdentifierOutcomeCallable GetCustomDataIdentifierCallable(const Model::GetCustomDataIdentifierRequest& request) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a custom data
+         * <p>Retrieves the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
@@ -1072,16 +1072,14 @@ namespace Model
         virtual void GetFindingStatisticsAsync(const Model::GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the details of one or more findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the details of one or more findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -1090,8 +1088,7 @@ namespace Model
         virtual Model::GetFindingsOutcomeCallable GetFindingsCallable(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the details of one or more findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -1100,7 +1097,7 @@ namespace Model
         virtual void GetFindingsAsync(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a findings
+         * <p>Retrieves the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
@@ -1108,7 +1105,7 @@ namespace Model
         virtual Model::GetFindingsFilterOutcome GetFindingsFilter(const Model::GetFindingsFilterRequest& request) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a findings
+         * <p>Retrieves the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
@@ -1118,7 +1115,7 @@ namespace Model
         virtual Model::GetFindingsFilterOutcomeCallable GetFindingsFilterCallable(const Model::GetFindingsFilterRequest& request) const;
 
         /**
-         * <p>Retrieves information about the criteria and other settings for a findings
+         * <p>Retrieves the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
@@ -1156,16 +1153,16 @@ namespace Model
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the current status and configuration settings for
-         * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the current status and configuration settings for an Amazon Macie
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMacieSessionOutcome GetMacieSession(const Model::GetMacieSessionRequest& request) const;
 
         /**
-         * <p>Retrieves information about the current status and configuration settings for
-         * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the current status and configuration settings for an Amazon Macie
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          *
@@ -1174,8 +1171,8 @@ namespace Model
         virtual Model::GetMacieSessionOutcomeCallable GetMacieSessionCallable(const Model::GetMacieSessionRequest& request) const;
 
         /**
-         * <p>Retrieves information about the current status and configuration settings for
-         * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the current status and configuration settings for an Amazon Macie
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          *
@@ -1641,14 +1638,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateClassificationJobOutcome UpdateClassificationJob(const Model::UpdateClassificationJobRequest& request) const;
 
         /**
-         * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          *
@@ -1657,7 +1654,7 @@ namespace Model
         virtual Model::UpdateClassificationJobOutcomeCallable UpdateClassificationJobCallable(const Model::UpdateClassificationJobRequest& request) const;
 
         /**
-         * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          *

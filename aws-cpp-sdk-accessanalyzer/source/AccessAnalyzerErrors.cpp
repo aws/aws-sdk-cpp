@@ -7,10 +7,10 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrors.h>
 #include <aws/accessanalyzer/model/ConflictException.h>
-#include <aws/accessanalyzer/model/ServiceQuotaExceededException.h>
 #include <aws/accessanalyzer/model/ThrottlingException.h>
-#include <aws/accessanalyzer/model/InternalServerException.h>
+#include <aws/accessanalyzer/model/ServiceQuotaExceededException.h>
 #include <aws/accessanalyzer/model/ResourceNotFoundException.h>
+#include <aws/accessanalyzer/model/InternalServerException.h>
 #include <aws/accessanalyzer/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -28,28 +28,28 @@ template<> AWS_ACCESSANALYZER_API ConflictException AccessAnalyzerError::GetMode
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ACCESSANALYZER_API ServiceQuotaExceededException AccessAnalyzerError::GetModeledError()
-{
-  assert(this->GetErrorType() == AccessAnalyzerErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_ACCESSANALYZER_API ThrottlingException AccessAnalyzerError::GetModeledError()
 {
   assert(this->GetErrorType() == AccessAnalyzerErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ACCESSANALYZER_API InternalServerException AccessAnalyzerError::GetModeledError()
+template<> AWS_ACCESSANALYZER_API ServiceQuotaExceededException AccessAnalyzerError::GetModeledError()
 {
-  assert(this->GetErrorType() == AccessAnalyzerErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
+  assert(this->GetErrorType() == AccessAnalyzerErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_ACCESSANALYZER_API ResourceNotFoundException AccessAnalyzerError::GetModeledError()
 {
   assert(this->GetErrorType() == AccessAnalyzerErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API InternalServerException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_ACCESSANALYZER_API ValidationException AccessAnalyzerError::GetModeledError()

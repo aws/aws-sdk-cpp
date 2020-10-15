@@ -515,49 +515,49 @@ namespace Model
 
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline const Aws::Vector<AvailabilityZoneDetail>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& WithAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& WithAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& AddAvailabilityZones(const AvailabilityZoneDetail& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of availability zones for any zone corresponding to the trace
+     * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& AddAvailabilityZones(AvailabilityZoneDetail&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
@@ -595,49 +595,49 @@ namespace Model
 
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline const Aws::Vector<FaultRootCause>& GetFaultRootCauses() const{ return m_faultRootCauses; }
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline bool FaultRootCausesHasBeenSet() const { return m_faultRootCausesHasBeenSet; }
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline void SetFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = value; }
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline void SetFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = std::move(value); }
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& WithFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { SetFaultRootCauses(value); return *this;}
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& WithFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { SetFaultRootCauses(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& AddFaultRootCauses(const FaultRootCause& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(value); return *this; }
 
     /**
-     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
     inline TraceSummary& AddFaultRootCauses(FaultRootCause&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(std::move(value)); return *this; }

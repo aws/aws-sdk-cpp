@@ -776,7 +776,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -790,13 +790,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
@@ -816,7 +816,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -830,13 +830,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
@@ -858,7 +858,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -872,13 +872,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in

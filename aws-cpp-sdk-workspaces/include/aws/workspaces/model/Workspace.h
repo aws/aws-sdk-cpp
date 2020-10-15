@@ -206,32 +206,74 @@ namespace Model
 
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline const WorkspaceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline void SetState(const WorkspaceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline Workspace& WithState(const WorkspaceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline Workspace& WithState(WorkspaceState&& value) { SetState(std::move(value)); return *this;}
 

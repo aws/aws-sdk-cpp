@@ -38,6 +38,7 @@
 #include <aws/rekognition/model/DetectFacesRequest.h>
 #include <aws/rekognition/model/DetectLabelsRequest.h>
 #include <aws/rekognition/model/DetectModerationLabelsRequest.h>
+#include <aws/rekognition/model/DetectProtectiveEquipmentRequest.h>
 #include <aws/rekognition/model/DetectTextRequest.h>
 #include <aws/rekognition/model/GetCelebrityInfoRequest.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionRequest.h>
@@ -625,6 +626,33 @@ void RekognitionClient::DetectModerationLabelsAsync(const DetectModerationLabels
 void RekognitionClient::DetectModerationLabelsAsyncHelper(const DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetectModerationLabels(request), context);
+}
+
+DetectProtectiveEquipmentOutcome RekognitionClient::DetectProtectiveEquipment(const DetectProtectiveEquipmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DetectProtectiveEquipmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DetectProtectiveEquipmentOutcomeCallable RekognitionClient::DetectProtectiveEquipmentCallable(const DetectProtectiveEquipmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectProtectiveEquipmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectProtectiveEquipment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DetectProtectiveEquipmentAsync(const DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectProtectiveEquipmentAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DetectProtectiveEquipmentAsyncHelper(const DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectProtectiveEquipment(request), context);
 }
 
 DetectTextOutcome RekognitionClient::DetectText(const DetectTextRequest& request) const

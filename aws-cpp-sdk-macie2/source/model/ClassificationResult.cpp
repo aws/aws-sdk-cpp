@@ -19,6 +19,8 @@ namespace Model
 {
 
 ClassificationResult::ClassificationResult() : 
+    m_additionalOccurrences(false),
+    m_additionalOccurrencesHasBeenSet(false),
     m_customDataIdentifiersHasBeenSet(false),
     m_mimeTypeHasBeenSet(false),
     m_sensitiveDataHasBeenSet(false),
@@ -29,6 +31,8 @@ ClassificationResult::ClassificationResult() :
 }
 
 ClassificationResult::ClassificationResult(JsonView jsonValue) : 
+    m_additionalOccurrences(false),
+    m_additionalOccurrencesHasBeenSet(false),
     m_customDataIdentifiersHasBeenSet(false),
     m_mimeTypeHasBeenSet(false),
     m_sensitiveDataHasBeenSet(false),
@@ -41,6 +45,13 @@ ClassificationResult::ClassificationResult(JsonView jsonValue) :
 
 ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalOccurrences"))
+  {
+    m_additionalOccurrences = jsonValue.GetBool("additionalOccurrences");
+
+    m_additionalOccurrencesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customDataIdentifiers"))
   {
     m_customDataIdentifiers = jsonValue.GetObject("customDataIdentifiers");
@@ -85,6 +96,12 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
 JsonValue ClassificationResult::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalOccurrencesHasBeenSet)
+  {
+   payload.WithBool("additionalOccurrences", m_additionalOccurrences);
+
+  }
 
   if(m_customDataIdentifiersHasBeenSet)
   {

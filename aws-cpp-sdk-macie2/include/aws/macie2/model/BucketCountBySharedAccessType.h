@@ -87,28 +87,53 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that aren't shared with any other AWS
-     * accounts.</p>
+     * <p>The total number of buckets that aren't shared with other AWS accounts.</p>
      */
     inline long long GetNotShared() const{ return m_notShared; }
 
     /**
-     * <p>The total number of buckets that aren't shared with any other AWS
-     * accounts.</p>
+     * <p>The total number of buckets that aren't shared with other AWS accounts.</p>
      */
     inline bool NotSharedHasBeenSet() const { return m_notSharedHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that aren't shared with any other AWS
-     * accounts.</p>
+     * <p>The total number of buckets that aren't shared with other AWS accounts.</p>
      */
     inline void SetNotShared(long long value) { m_notSharedHasBeenSet = true; m_notShared = value; }
 
     /**
-     * <p>The total number of buckets that aren't shared with any other AWS
-     * accounts.</p>
+     * <p>The total number of buckets that aren't shared with other AWS accounts.</p>
      */
     inline BucketCountBySharedAccessType& WithNotShared(long long value) { SetNotShared(value); return *this;}
+
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
+     * access settings for. Macie can't determine whether these buckets are shared with
+     * other AWS accounts.</p>
+     */
+    inline long long GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
+     * access settings for. Macie can't determine whether these buckets are shared with
+     * other AWS accounts.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
+     * access settings for. Macie can't determine whether these buckets are shared with
+     * other AWS accounts.</p>
+     */
+    inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
+     * access settings for. Macie can't determine whether these buckets are shared with
+     * other AWS accounts.</p>
+     */
+    inline BucketCountBySharedAccessType& WithUnknown(long long value) { SetUnknown(value); return *this;}
 
   private:
 
@@ -120,6 +145,9 @@ namespace Model
 
     long long m_notShared;
     bool m_notSharedHasBeenSet;
+
+    long long m_unknown;
+    bool m_unknownHasBeenSet;
   };
 
 } // namespace Model

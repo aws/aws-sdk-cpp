@@ -16,12 +16,12 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
+    AWS_S3_Bucket,
     AWS_IAM_Role,
-    AWS_KMS_Key,
+    AWS_SQS_Queue,
     AWS_Lambda_Function,
     AWS_Lambda_LayerVersion,
-    AWS_S3_Bucket,
-    AWS_SQS_Queue
+    AWS_KMS_Key
   };
 
 namespace ResourceTypeMapper

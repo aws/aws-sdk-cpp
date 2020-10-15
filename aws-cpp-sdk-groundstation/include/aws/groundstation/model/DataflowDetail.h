@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/Destination.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/model/Source.h>
 #include <utility>
 
@@ -58,6 +59,47 @@ namespace Model
     inline DataflowDetail& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline DataflowDetail& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline DataflowDetail& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Error message for a dataflow.</p>
+     */
+    inline DataflowDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
+
     
     inline const Source& GetSource() const{ return m_source; }
 
@@ -80,6 +122,9 @@ namespace Model
 
     Destination m_destination;
     bool m_destinationHasBeenSet;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet;
 
     Source m_source;
     bool m_sourceHasBeenSet;

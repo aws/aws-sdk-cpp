@@ -16,10 +16,10 @@ namespace Model
   enum class ValidationExceptionReason
   {
     NOT_SET,
+    unknownOperation,
     cannotParse,
     fieldValidationFailed,
-    other,
-    unknownOperation
+    other
   };
 
 namespace ValidationExceptionReasonMapper

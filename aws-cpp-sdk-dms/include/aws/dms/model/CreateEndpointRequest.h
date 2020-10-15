@@ -1715,6 +1715,119 @@ namespace Model
      */
     inline CreateEndpointRequest& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1806,6 +1919,9 @@ namespace Model
 
     IBMDb2Settings m_iBMDb2Settings;
     bool m_iBMDb2SettingsHasBeenSet;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

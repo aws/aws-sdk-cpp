@@ -20,13 +20,17 @@ namespace Model
 
 InsightsConfiguration::InsightsConfiguration() : 
     m_insightsEnabled(false),
-    m_insightsEnabledHasBeenSet(false)
+    m_insightsEnabledHasBeenSet(false),
+    m_notificationsEnabled(false),
+    m_notificationsEnabledHasBeenSet(false)
 {
 }
 
 InsightsConfiguration::InsightsConfiguration(JsonView jsonValue) : 
     m_insightsEnabled(false),
-    m_insightsEnabledHasBeenSet(false)
+    m_insightsEnabledHasBeenSet(false),
+    m_notificationsEnabled(false),
+    m_notificationsEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ InsightsConfiguration& InsightsConfiguration::operator =(JsonView jsonValue)
     m_insightsEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotificationsEnabled"))
+  {
+    m_notificationsEnabled = jsonValue.GetBool("NotificationsEnabled");
+
+    m_notificationsEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue InsightsConfiguration::Jsonize() const
   if(m_insightsEnabledHasBeenSet)
   {
    payload.WithBool("InsightsEnabled", m_insightsEnabled);
+
+  }
+
+  if(m_notificationsEnabledHasBeenSet)
+  {
+   payload.WithBool("NotificationsEnabled", m_notificationsEnabled);
 
   }
 

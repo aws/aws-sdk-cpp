@@ -137,42 +137,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline void SetGroupARN(Aws::String&& value) { m_groupARNHasBeenSet = true; m_groupARN = std::move(value); }
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline void SetGroupARN(const char* value) { m_groupARNHasBeenSet = true; m_groupARN.assign(value); }
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline GetTimeSeriesServiceStatisticsRequest& WithGroupARN(const Aws::String& value) { SetGroupARN(value); return *this;}
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline GetTimeSeriesServiceStatisticsRequest& WithGroupARN(Aws::String&& value) { SetGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the group for which to pull statistics from.</p>
+     * <p>The Amazon Resource Name (ARN) of the group for which to pull statistics
+     * from.</p>
      */
     inline GetTimeSeriesServiceStatisticsRequest& WithGroupARN(const char* value) { SetGroupARN(value); return *this;}
 

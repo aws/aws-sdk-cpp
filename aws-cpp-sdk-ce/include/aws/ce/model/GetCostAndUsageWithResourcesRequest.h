@@ -429,49 +429,49 @@ namespace Model
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
     /**
      * <p>You can group Amazon Web Services costs using up to two different groups:
-     * either dimensions, tag keys, or both.</p>
+     * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 

@@ -20,7 +20,8 @@ namespace Model
     PAUSED,
     CANCELLED,
     COMPLETE,
-    IDLE
+    IDLE,
+    USER_PAUSED
   };
 
 namespace JobStatusMapper

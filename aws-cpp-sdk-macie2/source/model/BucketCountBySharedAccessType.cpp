@@ -24,7 +24,9 @@ BucketCountBySharedAccessType::BucketCountBySharedAccessType() :
     m_internal(0),
     m_internalHasBeenSet(false),
     m_notShared(0),
-    m_notSharedHasBeenSet(false)
+    m_notSharedHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ BucketCountBySharedAccessType::BucketCountBySharedAccessType(JsonView jsonValue)
     m_internal(0),
     m_internalHasBeenSet(false),
     m_notShared(0),
-    m_notSharedHasBeenSet(false)
+    m_notSharedHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ BucketCountBySharedAccessType& BucketCountBySharedAccessType::operator =(JsonVie
     m_notSharedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unknown"))
+  {
+    m_unknown = jsonValue.GetInt64("unknown");
+
+    m_unknownHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,12 @@ JsonValue BucketCountBySharedAccessType::Jsonize() const
   if(m_notSharedHasBeenSet)
   {
    payload.WithInt64("notShared", m_notShared);
+
+  }
+
+  if(m_unknownHasBeenSet)
+  {
+   payload.WithInt64("unknown", m_unknown);
 
   }
 

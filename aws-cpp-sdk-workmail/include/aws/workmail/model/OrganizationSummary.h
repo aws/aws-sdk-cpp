@@ -120,6 +120,47 @@ namespace Model
 
 
     /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline const Aws::String& GetDefaultMailDomain() const{ return m_defaultMailDomain; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline bool DefaultMailDomainHasBeenSet() const { return m_defaultMailDomainHasBeenSet; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(const Aws::String& value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain = value; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(Aws::String&& value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain = std::move(value); }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(const char* value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain.assign(value); }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(const Aws::String& value) { SetDefaultMailDomain(value); return *this;}
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(Aws::String&& value) { SetDefaultMailDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(const char* value) { SetDefaultMailDomain(value); return *this;}
+
+
+    /**
      * <p>The error message associated with the organization. It is only present if
      * unexpected behavior has occurred with regards to the organization. It provides
      * insight or solutions regarding unexpected behavior.</p>
@@ -223,6 +264,9 @@ namespace Model
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet;
+
+    Aws::String m_defaultMailDomain;
+    bool m_defaultMailDomainHasBeenSet;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;

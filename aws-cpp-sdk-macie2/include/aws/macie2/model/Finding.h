@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the details of a finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Finding">AWS API
    * Reference</a></p>
    */
@@ -189,22 +189,22 @@ namespace Model
 
 
     /**
-     * <p>The total number of occurrences of this finding.</p>
+     * <p>The total number of occurrences of the finding.</p>
      */
     inline long long GetCount() const{ return m_count; }
 
     /**
-     * <p>The total number of occurrences of this finding.</p>
+     * <p>The total number of occurrences of the finding.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The total number of occurrences of this finding.</p>
+     * <p>The total number of occurrences of the finding.</p>
      */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The total number of occurrences of this finding.</p>
+     * <p>The total number of occurrences of the finding.</p>
      */
     inline Finding& WithCount(long long value) { SetCount(value); return *this;}
 
@@ -565,32 +565,32 @@ namespace Model
 
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline const Severity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline Finding& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity level and score for the finding.</p>
      */
     inline Finding& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -670,42 +670,48 @@ namespace Model
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline Finding& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
      * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. Sensitive data findings aren't updated.</p>
+     * for the createdAt property. All sensitive data findings are considered new
+     * (unique) because they derive from individual classification jobs.</p>
      */
     inline Finding& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

@@ -43,32 +43,38 @@ namespace Model
 
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline const JobComparator& GetComparator() const{ return m_comparator; }
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline void SetComparator(const JobComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline void SetComparator(JobComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline TagScopeTerm& WithComparator(const JobComparator& value) { SetComparator(value); return *this;}
 
     /**
-     * <p>The operator to use in the condition.</p>
+     * <p>The operator to use in the condition. Valid operators are EQ (equals) or NE
+     * (not equals).</p>
      */
     inline TagScopeTerm& WithComparator(JobComparator&& value) { SetComparator(std::move(value)); return *this;}
 
@@ -115,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline const Aws::Vector<TagValuePair>& GetTagValues() const{ return m_tagValues; }
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline void SetTagValues(const Aws::Vector<TagValuePair>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline void SetTagValues(Aws::Vector<TagValuePair>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline TagScopeTerm& WithTagValues(const Aws::Vector<TagValuePair>& value) { SetTagValues(value); return *this;}
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline TagScopeTerm& WithTagValues(Aws::Vector<TagValuePair>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline TagScopeTerm& AddTagValues(const TagValuePair& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
     /**
-     * <p>The tag key and value pairs to use in the condition.</p>
+     * <p>The tag keys or tag key and value pairs to use in the condition.</p>
      */
     inline TagScopeTerm& AddTagValues(TagValuePair&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 

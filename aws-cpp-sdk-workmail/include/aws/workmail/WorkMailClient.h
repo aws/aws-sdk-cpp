@@ -16,12 +16,14 @@
 #include <aws/workmail/model/CancelMailboxExportJobResult.h>
 #include <aws/workmail/model/CreateAliasResult.h>
 #include <aws/workmail/model/CreateGroupResult.h>
+#include <aws/workmail/model/CreateOrganizationResult.h>
 #include <aws/workmail/model/CreateResourceResult.h>
 #include <aws/workmail/model/CreateUserResult.h>
 #include <aws/workmail/model/DeleteAccessControlRuleResult.h>
 #include <aws/workmail/model/DeleteAliasResult.h>
 #include <aws/workmail/model/DeleteGroupResult.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsResult.h>
+#include <aws/workmail/model/DeleteOrganizationResult.h>
 #include <aws/workmail/model/DeleteResourceResult.h>
 #include <aws/workmail/model/DeleteRetentionPolicyResult.h>
 #include <aws/workmail/model/DeleteUserResult.h>
@@ -102,12 +104,14 @@ namespace Model
         class CancelMailboxExportJobRequest;
         class CreateAliasRequest;
         class CreateGroupRequest;
+        class CreateOrganizationRequest;
         class CreateResourceRequest;
         class CreateUserRequest;
         class DeleteAccessControlRuleRequest;
         class DeleteAliasRequest;
         class DeleteGroupRequest;
         class DeleteMailboxPermissionsRequest;
+        class DeleteOrganizationRequest;
         class DeleteResourceRequest;
         class DeleteRetentionPolicyRequest;
         class DeleteUserRequest;
@@ -150,12 +154,14 @@ namespace Model
         typedef Aws::Utils::Outcome<CancelMailboxExportJobResult, WorkMailError> CancelMailboxExportJobOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, WorkMailError> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateGroupResult, WorkMailError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateOrganizationResult, WorkMailError> CreateOrganizationOutcome;
         typedef Aws::Utils::Outcome<CreateResourceResult, WorkMailError> CreateResourceOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, WorkMailError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<DeleteAccessControlRuleResult, WorkMailError> DeleteAccessControlRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteAliasResult, WorkMailError> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupResult, WorkMailError> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteMailboxPermissionsResult, WorkMailError> DeleteMailboxPermissionsOutcome;
+        typedef Aws::Utils::Outcome<DeleteOrganizationResult, WorkMailError> DeleteOrganizationOutcome;
         typedef Aws::Utils::Outcome<DeleteResourceResult, WorkMailError> DeleteResourceOutcome;
         typedef Aws::Utils::Outcome<DeleteRetentionPolicyResult, WorkMailError> DeleteRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteUserResult, WorkMailError> DeleteUserOutcome;
@@ -198,12 +204,14 @@ namespace Model
         typedef std::future<CancelMailboxExportJobOutcome> CancelMailboxExportJobOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+        typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
         typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<DeleteAccessControlRuleOutcome> DeleteAccessControlRuleOutcomeCallable;
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteMailboxPermissionsOutcome> DeleteMailboxPermissionsOutcomeCallable;
+        typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
         typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
         typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
@@ -249,12 +257,14 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::CancelMailboxExportJobRequest&, const Model::CancelMailboxExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMailboxExportJobResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::CreateOrganizationRequest&, const Model::CreateOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteAccessControlRuleRequest&, const Model::DeleteAccessControlRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessControlRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteMailboxPermissionsRequest&, const Model::DeleteMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMailboxPermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::DeleteOrganizationRequest&, const Model::DeleteOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteResourceRequest&, const Model::DeleteResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
@@ -484,6 +494,88 @@ namespace Model
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to
+         * associate an existing AWS Directory Service directory with your organization. If
+         * an AWS Directory Service directory ID is specified, the organization alias must
+         * match the directory alias. If you choose not to associate an existing directory
+         * with your organization, then we create a new Amazon WorkMail directory for you.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+         * an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>You can associate multiple email domains with an organization, then set your
+         * default email domain from the Amazon WorkMail console. You can also associate a
+         * domain that is managed in an Amazon Route 53 public hosted zone. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+         * a domain</a> and <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
+         * the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>Optionally, you can use a customer managed master key from AWS Key Management
+         * Service (AWS KMS) to encrypt email for your organization. If you don't associate
+         * an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for
+         * you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOrganizationOutcome CreateOrganization(const Model::CreateOrganizationRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to
+         * associate an existing AWS Directory Service directory with your organization. If
+         * an AWS Directory Service directory ID is specified, the organization alias must
+         * match the directory alias. If you choose not to associate an existing directory
+         * with your organization, then we create a new Amazon WorkMail directory for you.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+         * an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>You can associate multiple email domains with an organization, then set your
+         * default email domain from the Amazon WorkMail console. You can also associate a
+         * domain that is managed in an Amazon Route 53 public hosted zone. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+         * a domain</a> and <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
+         * the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>Optionally, you can use a customer managed master key from AWS Key Management
+         * Service (AWS KMS) to encrypt email for your organization. If you don't associate
+         * an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for
+         * you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateOrganizationOutcomeCallable CreateOrganizationCallable(const Model::CreateOrganizationRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to
+         * associate an existing AWS Directory Service directory with your organization. If
+         * an AWS Directory Service directory ID is specified, the organization alias must
+         * match the directory alias. If you choose not to associate an existing directory
+         * with your organization, then we create a new Amazon WorkMail directory for you.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+         * an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>You can associate multiple email domains with an organization, then set your
+         * default email domain from the Amazon WorkMail console. You can also associate a
+         * domain that is managed in an Amazon Route 53 public hosted zone. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+         * a domain</a> and <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
+         * the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+         * <p>Optionally, you can use a customer managed master key from AWS Key Management
+         * Service (AWS KMS) to encrypt email for your organization. If you don't associate
+         * an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for
+         * you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateOrganizationAsync(const Model::CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new Amazon WorkMail resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">AWS
          * API Reference</a></p>
@@ -644,6 +736,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMailboxPermissionsAsync(const Model::DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon WorkMail organization and all underlying AWS resources
+         * managed by Amazon WorkMail as part of the organization. You can choose whether
+         * to delete the associated directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+         * an organization</a> in the <i>Amazon WorkMail Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOrganizationOutcome DeleteOrganization(const Model::DeleteOrganizationRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon WorkMail organization and all underlying AWS resources
+         * managed by Amazon WorkMail as part of the organization. You can choose whether
+         * to delete the associated directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+         * an organization</a> in the <i>Amazon WorkMail Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteOrganizationOutcomeCallable DeleteOrganizationCallable(const Model::DeleteOrganizationRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon WorkMail organization and all underlying AWS resources
+         * managed by Amazon WorkMail as part of the organization. You can choose whether
+         * to delete the associated directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+         * an organization</a> in the <i>Amazon WorkMail Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteOrganizationAsync(const Model::DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified resource. </p><p><h3>See Also:</h3>   <a
@@ -1716,12 +1848,14 @@ namespace Model
         void CancelMailboxExportJobAsyncHelper(const Model::CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateOrganizationAsyncHelper(const Model::CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceAsyncHelper(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessControlRuleAsyncHelper(const Model::DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMailboxPermissionsAsyncHelper(const Model::DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteOrganizationAsyncHelper(const Model::DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceAsyncHelper(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

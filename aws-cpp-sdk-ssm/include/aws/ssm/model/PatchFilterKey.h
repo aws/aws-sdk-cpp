@@ -16,15 +16,25 @@ namespace Model
   enum class PatchFilterKey
   {
     NOT_SET,
+    ARCH,
+    ADVISORY_ID,
+    BUGZILLA_ID,
     PATCH_SET,
     PRODUCT,
     PRODUCT_FAMILY,
     CLASSIFICATION,
+    CVE_ID,
+    EPOCH,
     MSRC_SEVERITY,
+    NAME,
     PATCH_ID,
     SECTION,
     PRIORITY,
-    SEVERITY
+    REPOSITORY,
+    RELEASE,
+    SEVERITY,
+    SECURITY,
+    VERSION
   };
 
 namespace PatchFilterKeyMapper

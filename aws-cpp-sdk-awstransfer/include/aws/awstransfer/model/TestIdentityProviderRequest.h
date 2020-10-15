@@ -36,58 +36,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
-     * server. That server's user authentication method is tested with a user name and
-     * password.</p>
+     * <p>A system-assigned identifier for a specific server. That server's user
+     * authentication method is tested with a user name and password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

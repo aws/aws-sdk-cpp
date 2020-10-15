@@ -72,21 +72,21 @@ namespace Model
 
     /**
      * <p>A flag indicating whether or not a group's filter expression has been
-     * consistent, or if a returned aggregation may show statistics from an older
+     * consistent, or if a returned aggregation might show statistics from an older
      * version of the group's filter expression.</p>
      */
     inline bool GetContainsOldGroupVersions() const{ return m_containsOldGroupVersions; }
 
     /**
      * <p>A flag indicating whether or not a group's filter expression has been
-     * consistent, or if a returned aggregation may show statistics from an older
+     * consistent, or if a returned aggregation might show statistics from an older
      * version of the group's filter expression.</p>
      */
     inline void SetContainsOldGroupVersions(bool value) { m_containsOldGroupVersions = value; }
 
     /**
      * <p>A flag indicating whether or not a group's filter expression has been
-     * consistent, or if a returned aggregation may show statistics from an older
+     * consistent, or if a returned aggregation might show statistics from an older
      * version of the group's filter expression.</p>
      */
     inline GetTimeSeriesServiceStatisticsResult& WithContainsOldGroupVersions(bool value) { SetContainsOldGroupVersions(value); return *this;}

@@ -35,6 +35,7 @@ static const int ENTITY_ALREADY_REGISTERED_HASH = HashingUtils::HashString("Enti
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
+static const int DIRECTORY_IN_USE_HASH = HashingUtils::HashString("DirectoryInUseException");
 static const int MAIL_DOMAIN_STATE_HASH = HashingUtils::HashString("MailDomainStateException");
 
 
@@ -109,6 +110,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_PASSWORD), false);
+  }
+  else if (hashCode == DIRECTORY_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_IN_USE), false);
   }
   else if (hashCode == MAIL_DOMAIN_STATE_HASH)
   {

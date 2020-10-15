@@ -63,6 +63,7 @@ namespace AccessAnalyzer
 
 namespace Model
 {
+        class ApplyArchiveRuleRequest;
         class CreateAnalyzerRequest;
         class CreateArchiveRuleRequest;
         class DeleteAnalyzerRequest;
@@ -82,6 +83,7 @@ namespace Model
         class UpdateArchiveRuleRequest;
         class UpdateFindingsRequest;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> ApplyArchiveRuleOutcome;
         typedef Aws::Utils::Outcome<CreateAnalyzerResult, AccessAnalyzerError> CreateAnalyzerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> CreateArchiveRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteAnalyzerOutcome;
@@ -101,6 +103,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateArchiveRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateFindingsOutcome;
 
+        typedef std::future<ApplyArchiveRuleOutcome> ApplyArchiveRuleOutcomeCallable;
         typedef std::future<CreateAnalyzerOutcome> CreateAnalyzerOutcomeCallable;
         typedef std::future<CreateArchiveRuleOutcome> CreateArchiveRuleOutcomeCallable;
         typedef std::future<DeleteAnalyzerOutcome> DeleteAnalyzerOutcomeCallable;
@@ -123,6 +126,7 @@ namespace Model
 
   class AccessAnalyzerClient;
 
+    typedef std::function<void(const AccessAnalyzerClient*, const Model::ApplyArchiveRuleRequest&, const Model::ApplyArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyArchiveRuleResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateAnalyzerRequest&, const Model::CreateAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalyzerResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateArchiveRuleRequest&, const Model::CreateArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveRuleResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteAnalyzerRequest&, const Model::DeleteAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalyzerResponseReceivedHandler;
@@ -183,6 +187,34 @@ namespace Model
 
 
         /**
+         * <p>Retroactively applies the archive rule to existing findings that meet the
+         * archive rule criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ApplyArchiveRuleOutcome ApplyArchiveRule(const Model::ApplyArchiveRuleRequest& request) const;
+
+        /**
+         * <p>Retroactively applies the archive rule to existing findings that meet the
+         * archive rule criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ApplyArchiveRuleOutcomeCallable ApplyArchiveRuleCallable(const Model::ApplyArchiveRuleRequest& request) const;
+
+        /**
+         * <p>Retroactively applies the archive rule to existing findings that meet the
+         * archive rule criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ApplyArchiveRuleAsync(const Model::ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">AWS
          * API Reference</a></p>
@@ -209,8 +241,8 @@ namespace Model
 
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
-         * automatically archive findings that meet the criteria you define when you create
-         * the rule.</p><p><h3>See Also:</h3>   <a
+         * automatically archive new findings that meet the criteria you define when you
+         * create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          */
@@ -218,8 +250,8 @@ namespace Model
 
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
-         * automatically archive findings that meet the criteria you define when you create
-         * the rule.</p><p><h3>See Also:</h3>   <a
+         * automatically archive new findings that meet the criteria you define when you
+         * create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -229,8 +261,8 @@ namespace Model
 
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
-         * automatically archive findings that meet the criteria you define when you create
-         * the rule.</p><p><h3>See Also:</h3>   <a
+         * automatically archive new findings that meet the criteria you define when you
+         * create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -678,6 +710,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ApplyArchiveRuleAsyncHelper(const Model::ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAnalyzerAsyncHelper(const Model::CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateArchiveRuleAsyncHelper(const Model::CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAnalyzerAsyncHelper(const Model::DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

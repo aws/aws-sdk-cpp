@@ -97,7 +97,8 @@ DBInstance::DBInstance() :
     m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -178,7 +179,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -615,6 +617,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_maxAllocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAllocatedStorageNode.GetText()).c_str()).c_str());
       m_maxAllocatedStorageHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -990,6 +1004,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1301,6 +1326,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_maxAllocatedStorageHasBeenSet)
   {
       oStream << location << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
   }
 }
 

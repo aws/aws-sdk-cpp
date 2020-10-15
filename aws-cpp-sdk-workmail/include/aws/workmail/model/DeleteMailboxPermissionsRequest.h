@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline DeleteMailboxPermissionsRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline DeleteMailboxPermissionsRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the member (user or group)that owns the mailbox.</p>
+     * <p>The identifier of the member (user or group) that owns the mailbox.</p>
      */
     inline DeleteMailboxPermissionsRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
 

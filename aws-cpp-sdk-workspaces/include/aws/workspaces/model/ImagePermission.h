@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>Describes the AWS accounts that have been granted permission to use a shared
-   * image.</p><p><h3>See Also:</h3>   <a
+   * image. For more information about sharing images, see <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+   * Share or Unshare a Custom WorkSpaces Image</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImagePermission">AWS
    * API Reference</a></p>
    */

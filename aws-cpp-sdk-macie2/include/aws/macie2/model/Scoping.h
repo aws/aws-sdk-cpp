@@ -26,7 +26,8 @@ namespace Model
   /**
    * <p>Specifies one or more property- and tag-based conditions that refine the
    * scope of a classification job. These conditions define criteria that determine
-   * which objects a job analyzes.</p><p><h3>See Also:</h3>   <a
+   * which objects a job analyzes. Exclude conditions take precedence over include
+   * conditions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Scoping">AWS API
    * Reference</a></p>
    */

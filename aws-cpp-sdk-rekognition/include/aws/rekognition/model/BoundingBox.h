@@ -22,13 +22,13 @@ namespace Model
 {
 
   /**
-   * <p>Identifies the bounding box around the label, face, or text. The
-   * <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are
-   * coordinates representing the top and left sides of the bounding box. Note that
-   * the upper-left corner of the image is the origin (0,0). </p> <p>The
-   * <code>top</code> and <code>left</code> values returned are ratios of the overall
-   * image size. For example, if the input image is 700x200 pixels, and the top-left
-   * coordinate of the bounding box is 350x50 pixels, the API returns a
+   * <p>Identifies the bounding box around the label, face, text or personal
+   * protective equipment. The <code>left</code> (x-coordinate) and <code>top</code>
+   * (y-coordinate) are coordinates representing the top and left sides of the
+   * bounding box. Note that the upper-left corner of the image is the origin (0,0).
+   * </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of
+   * the overall image size. For example, if the input image is 700x200 pixels, and
+   * the top-left coordinate of the bounding box is 350x50 pixels, the API returns a
    * <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25
    * (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent
    * the dimensions of the bounding box as a ratio of the overall image dimension.

@@ -41,65 +41,65 @@ namespace Model
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline const Aws::String& GetDetailedResultsLocation() const{ return m_detailedResultsLocation; }
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline bool DetailedResultsLocationHasBeenSet() const { return m_detailedResultsLocationHasBeenSet; }
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline void SetDetailedResultsLocation(const Aws::String& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = value; }
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline void SetDetailedResultsLocation(Aws::String&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::move(value); }
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline void SetDetailedResultsLocation(const char* value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation.assign(value); }
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(const Aws::String& value) { SetDetailedResultsLocation(value); return *this;}
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(Aws::String&& value) { SetDetailedResultsLocation(std::move(value)); return *this;}
 
     /**
      * <p>The path to the folder or file (in Amazon S3) that contains the corresponding
-     * sensitive data discovery results for the finding. If a finding applies to a
-     * large archive or compressed file, this is a path to a folder. Otherwise, this is
-     * a path to a file.</p>
+     * sensitive data discovery result for the finding. If a finding applies to a large
+     * archive or compressed file, this value is the path to a folder. Otherwise, this
+     * value is the path to a file.</p>
      */
     inline ClassificationDetails& WithDetailedResultsLocation(const char* value) { SetDetailedResultsLocation(value); return *this;}
 

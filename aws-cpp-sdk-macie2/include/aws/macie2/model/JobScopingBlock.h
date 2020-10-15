@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Specifies one or more property- and tag-based conditions that define criteria
-   * for including or excluding objects from a classification job.</p><p><h3>See
-   * Also:</h3>   <a
+   * for including or excluding objects from a classification job. If you specify
+   * more than one condition, Amazon Macie uses an AND operator to join the
+   * conditions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock">AWS
    * API Reference</a></p>
    */

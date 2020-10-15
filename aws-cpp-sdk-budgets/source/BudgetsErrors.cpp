@@ -20,6 +20,7 @@ namespace BudgetsErrorMapper
 
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int RESOURCE_LOCKED_HASH = HashingUtils::HashString("ResourceLockedException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int DUPLICATE_RECORD_HASH = HashingUtils::HashString("DuplicateRecordException");
 static const int CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CreationLimitExceededException");
@@ -38,6 +39,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == RESOURCE_LOCKED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::RESOURCE_LOCKED), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {

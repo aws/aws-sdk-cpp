@@ -21,6 +21,7 @@ namespace Model
 DefaultDetection::DefaultDetection() : 
     m_count(0),
     m_countHasBeenSet(false),
+    m_occurrencesHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ DefaultDetection::DefaultDetection() :
 DefaultDetection::DefaultDetection(JsonView jsonValue) : 
     m_count(0),
     m_countHasBeenSet(false),
+    m_occurrencesHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +42,13 @@ DefaultDetection& DefaultDetection::operator =(JsonView jsonValue)
     m_count = jsonValue.GetInt64("count");
 
     m_countHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("occurrences"))
+  {
+    m_occurrences = jsonValue.GetObject("occurrences");
+
+    m_occurrencesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -59,6 +68,12 @@ JsonValue DefaultDetection::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithInt64("count", m_count);
+
+  }
+
+  if(m_occurrencesHasBeenSet)
+  {
+   payload.WithObject("occurrences", m_occurrences.Jsonize());
 
   }
 

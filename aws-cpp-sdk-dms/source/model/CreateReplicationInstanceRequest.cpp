@@ -30,7 +30,8 @@ CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false)
+    m_dnsNameServersHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,12 @@ Aws::String CreateReplicationInstanceRequest::SerializePayload() const
   if(m_dnsNameServersHasBeenSet)
   {
    payload.WithString("DnsNameServers", m_dnsNameServers);
+
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
 
   }
 

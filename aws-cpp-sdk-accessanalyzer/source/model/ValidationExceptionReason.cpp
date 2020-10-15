@@ -20,16 +20,20 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
+        static const int unknownOperation_HASH = HashingUtils::HashString("unknownOperation");
         static const int cannotParse_HASH = HashingUtils::HashString("cannotParse");
         static const int fieldValidationFailed_HASH = HashingUtils::HashString("fieldValidationFailed");
         static const int other_HASH = HashingUtils::HashString("other");
-        static const int unknownOperation_HASH = HashingUtils::HashString("unknownOperation");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == cannotParse_HASH)
+          if (hashCode == unknownOperation_HASH)
+          {
+            return ValidationExceptionReason::unknownOperation;
+          }
+          else if (hashCode == cannotParse_HASH)
           {
             return ValidationExceptionReason::cannotParse;
           }
@@ -40,10 +44,6 @@ namespace Aws
           else if (hashCode == other_HASH)
           {
             return ValidationExceptionReason::other;
-          }
-          else if (hashCode == unknownOperation_HASH)
-          {
-            return ValidationExceptionReason::unknownOperation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::unknownOperation:
+            return "unknownOperation";
           case ValidationExceptionReason::cannotParse:
             return "cannotParse";
           case ValidationExceptionReason::fieldValidationFailed:
             return "fieldValidationFailed";
           case ValidationExceptionReason::other:
             return "other";
-          case ValidationExceptionReason::unknownOperation:
-            return "unknownOperation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

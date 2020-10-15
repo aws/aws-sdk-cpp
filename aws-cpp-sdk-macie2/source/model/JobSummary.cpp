@@ -26,7 +26,8 @@ JobSummary::JobSummary() :
     m_jobStatusHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_userPausedDetailsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_jobStatusHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_userPausedDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +92,13 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userPausedDetails"))
+  {
+    m_userPausedDetails = jsonValue.GetObject("userPausedDetails");
+
+    m_userPausedDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +141,12 @@ JsonValue JobSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_userPausedDetailsHasBeenSet)
+  {
+   payload.WithObject("userPausedDetails", m_userPausedDetails.Jsonize());
 
   }
 

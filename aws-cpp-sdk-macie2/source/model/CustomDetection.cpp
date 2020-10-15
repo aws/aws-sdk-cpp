@@ -22,7 +22,8 @@ CustomDetection::CustomDetection() :
     m_arnHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_occurrencesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ CustomDetection::CustomDetection(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_occurrencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ CustomDetection& CustomDetection::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("occurrences"))
+  {
+    m_occurrences = jsonValue.GetObject("occurrences");
+
+    m_occurrencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue CustomDetection::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_occurrencesHasBeenSet)
+  {
+   payload.WithObject("occurrences", m_occurrences.Jsonize());
 
   }
 

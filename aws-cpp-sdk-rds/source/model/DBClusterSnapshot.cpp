@@ -45,7 +45,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_dBClusterSnapshotArnHasBeenSet(false),
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_dBClusterSnapshotArnHasBeenSet(false),
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -211,6 +213,18 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -322,6 +336,17 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -409,6 +434,16 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
   }
 }
 

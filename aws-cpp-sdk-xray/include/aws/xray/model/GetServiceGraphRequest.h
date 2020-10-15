@@ -96,83 +96,91 @@ namespace Model
 
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a group to generate a graph based on.</p>
+     * <p>The name of a group based on which you want to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline void SetGroupARN(Aws::String&& value) { m_groupARNHasBeenSet = true; m_groupARN = std::move(value); }
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline void SetGroupARN(const char* value) { m_groupARNHasBeenSet = true; m_groupARN.assign(value); }
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupARN(const Aws::String& value) { SetGroupARN(value); return *this;}
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupARN(Aws::String&& value) { SetGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a group to generate a graph based on.</p>
+     * <p>The Amazon Resource Name (ARN) of a group based on which you want to generate
+     * a graph.</p>
      */
     inline GetServiceGraphRequest& WithGroupARN(const char* value) { SetGroupARN(value); return *this;}
 

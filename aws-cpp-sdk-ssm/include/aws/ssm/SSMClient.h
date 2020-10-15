@@ -3259,16 +3259,16 @@ namespace Model
         virtual void GetParameterAsync(const Model::GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParameterHistoryOutcome GetParameterHistory(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          *
@@ -3277,8 +3277,8 @@ namespace Model
         virtual Model::GetParameterHistoryOutcomeCallable GetParameterHistoryCallable(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          *

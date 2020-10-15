@@ -21,17 +21,25 @@
 #include <aws/budgets/BudgetsEndpoint.h>
 #include <aws/budgets/BudgetsErrorMarshaller.h>
 #include <aws/budgets/model/CreateBudgetRequest.h>
+#include <aws/budgets/model/CreateBudgetActionRequest.h>
 #include <aws/budgets/model/CreateNotificationRequest.h>
 #include <aws/budgets/model/CreateSubscriberRequest.h>
 #include <aws/budgets/model/DeleteBudgetRequest.h>
+#include <aws/budgets/model/DeleteBudgetActionRequest.h>
 #include <aws/budgets/model/DeleteNotificationRequest.h>
 #include <aws/budgets/model/DeleteSubscriberRequest.h>
 #include <aws/budgets/model/DescribeBudgetRequest.h>
+#include <aws/budgets/model/DescribeBudgetActionRequest.h>
+#include <aws/budgets/model/DescribeBudgetActionHistoriesRequest.h>
+#include <aws/budgets/model/DescribeBudgetActionsForAccountRequest.h>
+#include <aws/budgets/model/DescribeBudgetActionsForBudgetRequest.h>
 #include <aws/budgets/model/DescribeBudgetPerformanceHistoryRequest.h>
 #include <aws/budgets/model/DescribeBudgetsRequest.h>
 #include <aws/budgets/model/DescribeNotificationsForBudgetRequest.h>
 #include <aws/budgets/model/DescribeSubscribersForNotificationRequest.h>
+#include <aws/budgets/model/ExecuteBudgetActionRequest.h>
 #include <aws/budgets/model/UpdateBudgetRequest.h>
+#include <aws/budgets/model/UpdateBudgetActionRequest.h>
 #include <aws/budgets/model/UpdateNotificationRequest.h>
 #include <aws/budgets/model/UpdateSubscriberRequest.h>
 
@@ -135,6 +143,33 @@ void BudgetsClient::CreateBudgetAsyncHelper(const CreateBudgetRequest& request, 
   handler(this, request, CreateBudget(request), context);
 }
 
+CreateBudgetActionOutcome BudgetsClient::CreateBudgetAction(const CreateBudgetActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateBudgetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBudgetActionOutcomeCallable BudgetsClient::CreateBudgetActionCallable(const CreateBudgetActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBudgetAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::CreateBudgetActionAsync(const CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBudgetActionAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::CreateBudgetActionAsyncHelper(const CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBudgetAction(request), context);
+}
+
 CreateNotificationOutcome BudgetsClient::CreateNotification(const CreateNotificationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -216,6 +251,33 @@ void BudgetsClient::DeleteBudgetAsyncHelper(const DeleteBudgetRequest& request, 
   handler(this, request, DeleteBudget(request), context);
 }
 
+DeleteBudgetActionOutcome BudgetsClient::DeleteBudgetAction(const DeleteBudgetActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteBudgetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBudgetActionOutcomeCallable BudgetsClient::DeleteBudgetActionCallable(const DeleteBudgetActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBudgetAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DeleteBudgetActionAsync(const DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBudgetActionAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DeleteBudgetActionAsyncHelper(const DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBudgetAction(request), context);
+}
+
 DeleteNotificationOutcome BudgetsClient::DeleteNotification(const DeleteNotificationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -295,6 +357,114 @@ void BudgetsClient::DescribeBudgetAsync(const DescribeBudgetRequest& request, co
 void BudgetsClient::DescribeBudgetAsyncHelper(const DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBudget(request), context);
+}
+
+DescribeBudgetActionOutcome BudgetsClient::DescribeBudgetAction(const DescribeBudgetActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBudgetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBudgetActionOutcomeCallable BudgetsClient::DescribeBudgetActionCallable(const DescribeBudgetActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetActionAsync(const DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetActionAsyncHelper(const DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetAction(request), context);
+}
+
+DescribeBudgetActionHistoriesOutcome BudgetsClient::DescribeBudgetActionHistories(const DescribeBudgetActionHistoriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBudgetActionHistoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBudgetActionHistoriesOutcomeCallable BudgetsClient::DescribeBudgetActionHistoriesCallable(const DescribeBudgetActionHistoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionHistoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionHistories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetActionHistoriesAsync(const DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionHistoriesAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetActionHistoriesAsyncHelper(const DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetActionHistories(request), context);
+}
+
+DescribeBudgetActionsForAccountOutcome BudgetsClient::DescribeBudgetActionsForAccount(const DescribeBudgetActionsForAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBudgetActionsForAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBudgetActionsForAccountOutcomeCallable BudgetsClient::DescribeBudgetActionsForAccountCallable(const DescribeBudgetActionsForAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionsForAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetActionsForAccountAsync(const DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionsForAccountAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetActionsForAccountAsyncHelper(const DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetActionsForAccount(request), context);
+}
+
+DescribeBudgetActionsForBudgetOutcome BudgetsClient::DescribeBudgetActionsForBudget(const DescribeBudgetActionsForBudgetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBudgetActionsForBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBudgetActionsForBudgetOutcomeCallable BudgetsClient::DescribeBudgetActionsForBudgetCallable(const DescribeBudgetActionsForBudgetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionsForBudget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetActionsForBudgetAsync(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionsForBudgetAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetActionsForBudgetAsyncHelper(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetActionsForBudget(request), context);
 }
 
 DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformanceHistory(const DescribeBudgetPerformanceHistoryRequest& request) const
@@ -405,6 +575,33 @@ void BudgetsClient::DescribeSubscribersForNotificationAsyncHelper(const Describe
   handler(this, request, DescribeSubscribersForNotification(request), context);
 }
 
+ExecuteBudgetActionOutcome BudgetsClient::ExecuteBudgetAction(const ExecuteBudgetActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExecuteBudgetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExecuteBudgetActionOutcomeCallable BudgetsClient::ExecuteBudgetActionCallable(const ExecuteBudgetActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteBudgetAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::ExecuteBudgetActionAsync(const ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteBudgetActionAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::ExecuteBudgetActionAsyncHelper(const ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteBudgetAction(request), context);
+}
+
 UpdateBudgetOutcome BudgetsClient::UpdateBudget(const UpdateBudgetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -430,6 +627,33 @@ void BudgetsClient::UpdateBudgetAsync(const UpdateBudgetRequest& request, const 
 void BudgetsClient::UpdateBudgetAsyncHelper(const UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBudget(request), context);
+}
+
+UpdateBudgetActionOutcome BudgetsClient::UpdateBudgetAction(const UpdateBudgetActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateBudgetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBudgetActionOutcomeCallable BudgetsClient::UpdateBudgetActionCallable(const UpdateBudgetActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBudgetAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::UpdateBudgetActionAsync(const UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBudgetActionAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::UpdateBudgetActionAsyncHelper(const UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBudgetAction(request), context);
 }
 
 UpdateNotificationOutcome BudgetsClient::UpdateNotification(const UpdateNotificationRequest& request) const

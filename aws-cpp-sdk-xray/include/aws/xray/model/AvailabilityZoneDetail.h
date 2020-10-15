@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A list of availability zones corresponding to the segments in a
+   * <p>A list of Availability Zones corresponding to the segments in a
    * trace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AvailabilityZoneDetail">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline AvailabilityZoneDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline AvailabilityZoneDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a corresponding availability zone.</p>
+     * <p>The name of a corresponding Availability Zone.</p>
      */
     inline AvailabilityZoneDetail& WithName(const char* value) { SetName(value); return *this;}
 

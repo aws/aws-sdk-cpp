@@ -31,7 +31,18 @@ Patch::Patch() :
     m_msrcSeverityHasBeenSet(false),
     m_kbNumberHasBeenSet(false),
     m_msrcNumberHasBeenSet(false),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_advisoryIdsHasBeenSet(false),
+    m_bugzillaIdsHasBeenSet(false),
+    m_cVEIdsHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_epoch(0),
+    m_epochHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_releaseHasBeenSet(false),
+    m_archHasBeenSet(false),
+    m_severityHasBeenSet(false),
+    m_repositoryHasBeenSet(false)
 {
 }
 
@@ -48,7 +59,18 @@ Patch::Patch(JsonView jsonValue) :
     m_msrcSeverityHasBeenSet(false),
     m_kbNumberHasBeenSet(false),
     m_msrcNumberHasBeenSet(false),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_advisoryIdsHasBeenSet(false),
+    m_bugzillaIdsHasBeenSet(false),
+    m_cVEIdsHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_epoch(0),
+    m_epochHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_releaseHasBeenSet(false),
+    m_archHasBeenSet(false),
+    m_severityHasBeenSet(false),
+    m_repositoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +168,85 @@ Patch& Patch::operator =(JsonView jsonValue)
     m_languageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvisoryIds"))
+  {
+    Array<JsonView> advisoryIdsJsonList = jsonValue.GetArray("AdvisoryIds");
+    for(unsigned advisoryIdsIndex = 0; advisoryIdsIndex < advisoryIdsJsonList.GetLength(); ++advisoryIdsIndex)
+    {
+      m_advisoryIds.push_back(advisoryIdsJsonList[advisoryIdsIndex].AsString());
+    }
+    m_advisoryIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BugzillaIds"))
+  {
+    Array<JsonView> bugzillaIdsJsonList = jsonValue.GetArray("BugzillaIds");
+    for(unsigned bugzillaIdsIndex = 0; bugzillaIdsIndex < bugzillaIdsJsonList.GetLength(); ++bugzillaIdsIndex)
+    {
+      m_bugzillaIds.push_back(bugzillaIdsJsonList[bugzillaIdsIndex].AsString());
+    }
+    m_bugzillaIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CVEIds"))
+  {
+    Array<JsonView> cVEIdsJsonList = jsonValue.GetArray("CVEIds");
+    for(unsigned cVEIdsIndex = 0; cVEIdsIndex < cVEIdsJsonList.GetLength(); ++cVEIdsIndex)
+    {
+      m_cVEIds.push_back(cVEIdsJsonList[cVEIdsIndex].AsString());
+    }
+    m_cVEIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Epoch"))
+  {
+    m_epoch = jsonValue.GetInteger("Epoch");
+
+    m_epochHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Release"))
+  {
+    m_release = jsonValue.GetString("Release");
+
+    m_releaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arch"))
+  {
+    m_arch = jsonValue.GetString("Arch");
+
+    m_archHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = jsonValue.GetString("Severity");
+
+    m_severityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Repository"))
+  {
+    m_repository = jsonValue.GetString("Repository");
+
+    m_repositoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +328,81 @@ JsonValue Patch::Jsonize() const
   if(m_languageHasBeenSet)
   {
    payload.WithString("Language", m_language);
+
+  }
+
+  if(m_advisoryIdsHasBeenSet)
+  {
+   Array<JsonValue> advisoryIdsJsonList(m_advisoryIds.size());
+   for(unsigned advisoryIdsIndex = 0; advisoryIdsIndex < advisoryIdsJsonList.GetLength(); ++advisoryIdsIndex)
+   {
+     advisoryIdsJsonList[advisoryIdsIndex].AsString(m_advisoryIds[advisoryIdsIndex]);
+   }
+   payload.WithArray("AdvisoryIds", std::move(advisoryIdsJsonList));
+
+  }
+
+  if(m_bugzillaIdsHasBeenSet)
+  {
+   Array<JsonValue> bugzillaIdsJsonList(m_bugzillaIds.size());
+   for(unsigned bugzillaIdsIndex = 0; bugzillaIdsIndex < bugzillaIdsJsonList.GetLength(); ++bugzillaIdsIndex)
+   {
+     bugzillaIdsJsonList[bugzillaIdsIndex].AsString(m_bugzillaIds[bugzillaIdsIndex]);
+   }
+   payload.WithArray("BugzillaIds", std::move(bugzillaIdsJsonList));
+
+  }
+
+  if(m_cVEIdsHasBeenSet)
+  {
+   Array<JsonValue> cVEIdsJsonList(m_cVEIds.size());
+   for(unsigned cVEIdsIndex = 0; cVEIdsIndex < cVEIdsJsonList.GetLength(); ++cVEIdsIndex)
+   {
+     cVEIdsJsonList[cVEIdsIndex].AsString(m_cVEIds[cVEIdsIndex]);
+   }
+   payload.WithArray("CVEIds", std::move(cVEIdsJsonList));
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_epochHasBeenSet)
+  {
+   payload.WithInteger("Epoch", m_epoch);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
+  }
+
+  if(m_releaseHasBeenSet)
+  {
+   payload.WithString("Release", m_release);
+
+  }
+
+  if(m_archHasBeenSet)
+  {
+   payload.WithString("Arch", m_arch);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", m_severity);
+
+  }
+
+  if(m_repositoryHasBeenSet)
+  {
+   payload.WithString("Repository", m_repository);
 
   }
 

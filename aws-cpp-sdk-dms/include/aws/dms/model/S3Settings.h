@@ -1563,42 +1563,42 @@ namespace Model
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline const DatePartitionDelimiterValue& GetDatePartitionDelimiter() const{ return m_datePartitionDelimiter; }
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline bool DatePartitionDelimiterHasBeenSet() const { return m_datePartitionDelimiterHasBeenSet; }
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline void SetDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = value; }
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline void SetDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = std::move(value); }
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline S3Settings& WithDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { SetDatePartitionDelimiter(value); return *this;}
 
     /**
      * <p>Specifies a date separating delimiter to use during folder partitioning. The
-     * default value is <code>SLASH</code> (/). Use this parameter when
+     * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
     inline S3Settings& WithDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { SetDatePartitionDelimiter(std::move(value)); return *this;}
