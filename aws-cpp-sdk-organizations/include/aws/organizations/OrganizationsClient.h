@@ -428,13 +428,13 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
@@ -447,13 +447,13 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
@@ -468,13 +468,13 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
          * </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
@@ -534,11 +534,12 @@ namespace Model
          * asynchronously, it can return a successful completion message even though
          * account initialization might still be in progress. You might need to wait a few
          * minutes before you can successfully access the account. To check the status of
-         * the request, do one of the following:</p> <ul> <li> <p>Use the
-         * <code>OperationId</code> response element from this operation to provide as a
-         * parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li>
-         * <p>Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event.
-         * For information on using AWS CloudTrail with AWS Organizations, see <a
+         * the request, do one of the following:</p> <ul> <li> <p>Use the <code>Id</code>
+         * member of the <code>CreateAccountStatus</code> response element from this
+         * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+         * operation.</p> </li> <li> <p>Check the AWS CloudTrail log for the
+         * <code>CreateAccountResult</code> event. For information on using AWS CloudTrail
+         * with AWS Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> </li> </ul> <p>The user who calls the API to create an account
@@ -602,11 +603,12 @@ namespace Model
          * asynchronously, it can return a successful completion message even though
          * account initialization might still be in progress. You might need to wait a few
          * minutes before you can successfully access the account. To check the status of
-         * the request, do one of the following:</p> <ul> <li> <p>Use the
-         * <code>OperationId</code> response element from this operation to provide as a
-         * parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li>
-         * <p>Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event.
-         * For information on using AWS CloudTrail with AWS Organizations, see <a
+         * the request, do one of the following:</p> <ul> <li> <p>Use the <code>Id</code>
+         * member of the <code>CreateAccountStatus</code> response element from this
+         * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+         * operation.</p> </li> <li> <p>Check the AWS CloudTrail log for the
+         * <code>CreateAccountResult</code> event. For information on using AWS CloudTrail
+         * with AWS Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> </li> </ul> <p>The user who calls the API to create an account
@@ -672,11 +674,12 @@ namespace Model
          * asynchronously, it can return a successful completion message even though
          * account initialization might still be in progress. You might need to wait a few
          * minutes before you can successfully access the account. To check the status of
-         * the request, do one of the following:</p> <ul> <li> <p>Use the
-         * <code>OperationId</code> response element from this operation to provide as a
-         * parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li>
-         * <p>Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event.
-         * For information on using AWS CloudTrail with AWS Organizations, see <a
+         * the request, do one of the following:</p> <ul> <li> <p>Use the <code>Id</code>
+         * member of the <code>CreateAccountStatus</code> response element from this
+         * operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+         * operation.</p> </li> <li> <p>Check the AWS CloudTrail log for the
+         * <code>CreateAccountResult</code> event. For information on using AWS CloudTrail
+         * with AWS Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> </li> </ul> <p>The user who calls the API to create an account
@@ -741,13 +744,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is associated with your master
-         * account in the commercial Region.</p> </li> <li> <p>You call this action from
-         * the master account of your organization in the commercial Region.</p> </li> <li>
-         * <p>You have the <code>organizations:CreateGovCloudAccount</code> permission.
-         * </p> </li> </ul> <p>AWS Organizations automatically creates the required
-         * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more
-         * information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a master account of
+         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
+         * from the master account of your organization in the commercial Region.</p> </li>
+         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
+         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
+         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud
@@ -841,13 +844,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is associated with your master
-         * account in the commercial Region.</p> </li> <li> <p>You call this action from
-         * the master account of your organization in the commercial Region.</p> </li> <li>
-         * <p>You have the <code>organizations:CreateGovCloudAccount</code> permission.
-         * </p> </li> </ul> <p>AWS Organizations automatically creates the required
-         * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more
-         * information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a master account of
+         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
+         * from the master account of your organization in the commercial Region.</p> </li>
+         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
+         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
+         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud
@@ -943,13 +946,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is associated with your master
-         * account in the commercial Region.</p> </li> <li> <p>You call this action from
-         * the master account of your organization in the commercial Region.</p> </li> <li>
-         * <p>You have the <code>organizations:CreateGovCloudAccount</code> permission.
-         * </p> </li> </ul> <p>AWS Organizations automatically creates the required
-         * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more
-         * information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a master account of
+         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
+         * from the master account of your organization in the commercial Region.</p> </li>
+         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
+         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
+         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud

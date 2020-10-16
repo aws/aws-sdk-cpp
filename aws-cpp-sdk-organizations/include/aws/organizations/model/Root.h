@@ -28,9 +28,8 @@ namespace Model
   /**
    * <p>Contains details about a root. A root is a top-level parent node in the
    * hierarchy of an organization that can contain organizational units (OUs) and
-   * accounts. Every root contains every AWS account in the organization. Each root
-   * enables the accounts to be organized in a different way and to have different
-   * policy types enabled for use in that root.</p><p><h3>See Also:</h3>   <a
+   * accounts. The root contains every AWS account in the organization.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Root">AWS
    * API Reference</a></p>
    */
@@ -46,56 +45,56 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline Root& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline Root& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline Root& WithId(const char* value) { SetId(value); return *this;}
 

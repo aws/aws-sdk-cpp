@@ -47,7 +47,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -56,7 +56,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
@@ -65,7 +65,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
@@ -74,7 +74,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
@@ -83,7 +83,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
@@ -92,7 +92,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(const Aws::String& value) { SetId(value); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
@@ -110,7 +110,7 @@ namespace Model
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      * for a create account request ID string requires "car-" followed by from 8 to 32
-     * lower-case letters or digits.</p>
+     * lowercase letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(const char* value) { SetId(value); return *this;}
 

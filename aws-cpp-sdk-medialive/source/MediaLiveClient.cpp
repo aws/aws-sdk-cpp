@@ -20,10 +20,12 @@
 #include <aws/medialive/MediaLiveClient.h>
 #include <aws/medialive/MediaLiveEndpoint.h>
 #include <aws/medialive/MediaLiveErrorMarshaller.h>
+#include <aws/medialive/model/AcceptInputDeviceTransferRequest.h>
 #include <aws/medialive/model/BatchDeleteRequest.h>
 #include <aws/medialive/model/BatchStartRequest.h>
 #include <aws/medialive/model/BatchStopRequest.h>
 #include <aws/medialive/model/BatchUpdateScheduleRequest.h>
+#include <aws/medialive/model/CancelInputDeviceTransferRequest.h>
 #include <aws/medialive/model/CreateChannelRequest.h>
 #include <aws/medialive/model/CreateInputRequest.h>
 #include <aws/medialive/model/CreateInputSecurityGroupRequest.h>
@@ -49,6 +51,7 @@
 #include <aws/medialive/model/DescribeReservationRequest.h>
 #include <aws/medialive/model/DescribeScheduleRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
+#include <aws/medialive/model/ListInputDeviceTransfersRequest.h>
 #include <aws/medialive/model/ListInputDevicesRequest.h>
 #include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
 #include <aws/medialive/model/ListInputsRequest.h>
@@ -58,10 +61,12 @@
 #include <aws/medialive/model/ListReservationsRequest.h>
 #include <aws/medialive/model/ListTagsForResourceRequest.h>
 #include <aws/medialive/model/PurchaseOfferingRequest.h>
+#include <aws/medialive/model/RejectInputDeviceTransferRequest.h>
 #include <aws/medialive/model/StartChannelRequest.h>
 #include <aws/medialive/model/StartMultiplexRequest.h>
 #include <aws/medialive/model/StopChannelRequest.h>
 #include <aws/medialive/model/StopMultiplexRequest.h>
+#include <aws/medialive/model/TransferInputDeviceRequest.h>
 #include <aws/medialive/model/UpdateChannelRequest.h>
 #include <aws/medialive/model/UpdateChannelClassRequest.h>
 #include <aws/medialive/model/UpdateInputRequest.h>
@@ -142,6 +147,40 @@ void MediaLiveClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AcceptInputDeviceTransferOutcome MediaLiveClient::AcceptInputDeviceTransfer(const AcceptInputDeviceTransferRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AcceptInputDeviceTransfer", "Required field: InputDeviceId, is not set");
+    return AcceptInputDeviceTransferOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  ss << "/accept";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AcceptInputDeviceTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AcceptInputDeviceTransferOutcomeCallable MediaLiveClient::AcceptInputDeviceTransferCallable(const AcceptInputDeviceTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInputDeviceTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::AcceptInputDeviceTransferAsync(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptInputDeviceTransferAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::AcceptInputDeviceTransferAsyncHelper(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptInputDeviceTransfer(request), context);
 }
 
 BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const
@@ -257,6 +296,40 @@ void MediaLiveClient::BatchUpdateScheduleAsync(const BatchUpdateScheduleRequest&
 void MediaLiveClient::BatchUpdateScheduleAsyncHelper(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchUpdateSchedule(request), context);
+}
+
+CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(const CancelInputDeviceTransferRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelInputDeviceTransfer", "Required field: InputDeviceId, is not set");
+    return CancelInputDeviceTransferOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  ss << "/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelInputDeviceTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelInputDeviceTransferOutcomeCallable MediaLiveClient::CancelInputDeviceTransferCallable(const CancelInputDeviceTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelInputDeviceTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::CancelInputDeviceTransferAsync(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelInputDeviceTransferAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::CancelInputDeviceTransferAsyncHelper(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelInputDeviceTransfer(request), context);
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
@@ -1082,6 +1155,38 @@ void MediaLiveClient::ListChannelsAsyncHelper(const ListChannelsRequest& request
   handler(this, request, ListChannels(request), context);
 }
 
+ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const ListInputDeviceTransfersRequest& request) const
+{
+  if (!request.TransferTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListInputDeviceTransfers", "Required field: TransferType, is not set");
+    return ListInputDeviceTransfersOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransferType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDeviceTransfers";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListInputDeviceTransfersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInputDeviceTransfersOutcomeCallable MediaLiveClient::ListInputDeviceTransfersCallable(const ListInputDeviceTransfersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInputDeviceTransfersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputDeviceTransfers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::ListInputDeviceTransfersAsync(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInputDeviceTransfersAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::ListInputDeviceTransfersAsyncHelper(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInputDeviceTransfers(request), context);
+}
+
 ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1345,6 +1450,40 @@ void MediaLiveClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest&
   handler(this, request, PurchaseOffering(request), context);
 }
 
+RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RejectInputDeviceTransfer", "Required field: InputDeviceId, is not set");
+    return RejectInputDeviceTransferOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  ss << "/reject";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RejectInputDeviceTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RejectInputDeviceTransferOutcomeCallable MediaLiveClient::RejectInputDeviceTransferCallable(const RejectInputDeviceTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInputDeviceTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::RejectInputDeviceTransferAsync(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectInputDeviceTransferAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::RejectInputDeviceTransferAsyncHelper(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectInputDeviceTransfer(request), context);
+}
+
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const
 {
   if (!request.ChannelIdHasBeenSet())
@@ -1479,6 +1618,40 @@ void MediaLiveClient::StopMultiplexAsync(const StopMultiplexRequest& request, co
 void MediaLiveClient::StopMultiplexAsyncHelper(const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopMultiplex(request), context);
+}
+
+TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferInputDeviceRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TransferInputDevice", "Required field: InputDeviceId, is not set");
+    return TransferInputDeviceOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  ss << "/transfer";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return TransferInputDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TransferInputDeviceOutcomeCallable MediaLiveClient::TransferInputDeviceCallable(const TransferInputDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TransferInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransferInputDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::TransferInputDeviceAsync(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TransferInputDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::TransferInputDeviceAsyncHelper(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TransferInputDevice(request), context);
 }
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const

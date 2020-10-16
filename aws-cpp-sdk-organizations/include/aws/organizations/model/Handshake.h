@@ -53,7 +53,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
@@ -69,7 +69,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
@@ -77,7 +77,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
@@ -93,7 +93,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline Handshake& WithId(const Aws::String& value) { SetId(value); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline Handshake& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
@@ -109,7 +109,7 @@ namespace Model
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline Handshake& WithId(const char* value) { SetId(value); return *this;}
 

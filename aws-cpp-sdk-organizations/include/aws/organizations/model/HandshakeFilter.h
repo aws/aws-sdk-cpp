@@ -87,7 +87,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetParentHandshakeId() const{ return m_parentHandshakeId; }
 
@@ -96,7 +96,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline bool ParentHandshakeIdHasBeenSet() const { return m_parentHandshakeIdHasBeenSet; }
 
@@ -105,7 +105,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetParentHandshakeId(const Aws::String& value) { m_parentHandshakeIdHasBeenSet = true; m_parentHandshakeId = value; }
 
@@ -114,7 +114,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetParentHandshakeId(Aws::String&& value) { m_parentHandshakeIdHasBeenSet = true; m_parentHandshakeId = std::move(value); }
 
@@ -123,7 +123,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetParentHandshakeId(const char* value) { m_parentHandshakeIdHasBeenSet = true; m_parentHandshakeId.assign(value); }
 
@@ -132,7 +132,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline HandshakeFilter& WithParentHandshakeId(const Aws::String& value) { SetParentHandshakeId(value); return *this;}
 
@@ -141,7 +141,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline HandshakeFilter& WithParentHandshakeId(Aws::String&& value) { SetParentHandshakeId(std::move(value)); return *this;}
 
@@ -150,7 +150,7 @@ namespace Model
      * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
      * cannot also specify <code>ActionType</code>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline HandshakeFilter& WithParentHandshakeId(const char* value) { SetParentHandshakeId(value); return *this;}
 
