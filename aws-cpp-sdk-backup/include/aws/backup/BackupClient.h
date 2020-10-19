@@ -1581,20 +1581,16 @@ namespace Model
         virtual void StartCopyJobAsync(const Model::StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN). </p>
-         * <p>If the resource ARN is included in the request, then the last complete backup
-         * of that resource is recovered. If the ARN of a recovery point is supplied, then
-         * that recovery point is restored.</p><p><h3>See Also:</h3>   <a
+         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">AWS
          * API Reference</a></p>
          */
         virtual Model::StartRestoreJobOutcome StartRestoreJob(const Model::StartRestoreJobRequest& request) const;
 
         /**
-         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN). </p>
-         * <p>If the resource ARN is included in the request, then the last complete backup
-         * of that resource is recovered. If the ARN of a recovery point is supplied, then
-         * that recovery point is restored.</p><p><h3>See Also:</h3>   <a
+         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">AWS
          * API Reference</a></p>
          *
@@ -1603,10 +1599,8 @@ namespace Model
         virtual Model::StartRestoreJobOutcomeCallable StartRestoreJobCallable(const Model::StartRestoreJobRequest& request) const;
 
         /**
-         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN). </p>
-         * <p>If the resource ARN is included in the request, then the last complete backup
-         * of that resource is recovered. If the ARN of a recovery point is supplied, then
-         * that recovery point is restored.</p><p><h3>See Also:</h3>   <a
+         * <p>Recovers the saved resource identified by an Amazon Resource Name (ARN).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">AWS
          * API Reference</a></p>
          *

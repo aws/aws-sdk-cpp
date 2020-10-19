@@ -98,12 +98,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
@@ -123,12 +128,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
@@ -148,12 +158,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
@@ -173,12 +188,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
@@ -198,12 +218,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
@@ -223,12 +248,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
@@ -248,12 +278,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
@@ -273,12 +308,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
@@ -298,12 +338,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
@@ -323,12 +368,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -348,12 +398,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
@@ -373,12 +428,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
@@ -398,12 +458,17 @@ namespace Model
      * system is encrypted. If <code>KmsKeyId</code> is specified,
      * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
      * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the
-     * restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies
-     * the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> </ul>
+     * restored file system. You can specify a key from another AWS account provided
+     * that key it is properly shared with your account via AWS KMS.</p> </li> <li> <p>
+     * <code>PerformanceMode</code>: Specifies the throughput mode of the file
+     * system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value
+     * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
+     * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+     * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
+     * or directories rather than the entire file system. This parameter is
+     * optional.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 

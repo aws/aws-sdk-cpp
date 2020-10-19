@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OWNER_HASH = HashingUtils::HashString("OWNER");
+        static const int LAUNCH_ROLE_HASH = HashingUtils::HashString("LAUNCH_ROLE");
 
 
         PropertyKey GetPropertyKeyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OWNER_HASH)
           {
             return PropertyKey::OWNER;
+          }
+          else if (hashCode == LAUNCH_ROLE_HASH)
+          {
+            return PropertyKey::LAUNCH_ROLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PropertyKey::OWNER:
             return "OWNER";
+          case PropertyKey::LAUNCH_ROLE:
+            return "LAUNCH_ROLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

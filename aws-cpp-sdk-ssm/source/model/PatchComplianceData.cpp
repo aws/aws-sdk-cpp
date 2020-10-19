@@ -25,7 +25,8 @@ PatchComplianceData::PatchComplianceData() :
     m_severityHasBeenSet(false),
     m_state(PatchComplianceDataState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_installedTimeHasBeenSet(false)
+    m_installedTimeHasBeenSet(false),
+    m_cVEIdsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ PatchComplianceData::PatchComplianceData(JsonView jsonValue) :
     m_severityHasBeenSet(false),
     m_state(PatchComplianceDataState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_installedTimeHasBeenSet(false)
+    m_installedTimeHasBeenSet(false),
+    m_cVEIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ PatchComplianceData& PatchComplianceData::operator =(JsonView jsonValue)
     m_installedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CVEIds"))
+  {
+    m_cVEIds = jsonValue.GetString("CVEIds");
+
+    m_cVEIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue PatchComplianceData::Jsonize() const
   if(m_installedTimeHasBeenSet)
   {
    payload.WithDouble("InstalledTime", m_installedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_cVEIdsHasBeenSet)
+  {
+   payload.WithString("CVEIds", m_cVEIds);
+
   }
 
   return payload;

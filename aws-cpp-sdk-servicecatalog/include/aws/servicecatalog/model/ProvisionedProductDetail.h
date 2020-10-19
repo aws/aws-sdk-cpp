@@ -751,6 +751,47 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline const Aws::String& GetLaunchRoleArn() const{ return m_launchRoleArn; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline bool LaunchRoleArnHasBeenSet() const { return m_launchRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(const Aws::String& value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn = value; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(Aws::String&& value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(const char* value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline ProvisionedProductDetail& WithLaunchRoleArn(const Aws::String& value) { SetLaunchRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline ProvisionedProductDetail& WithLaunchRoleArn(Aws::String&& value) { SetLaunchRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline ProvisionedProductDetail& WithLaunchRoleArn(const char* value) { SetLaunchRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -791,6 +832,9 @@ namespace Model
 
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
+    Aws::String m_launchRoleArn;
+    bool m_launchRoleArnHasBeenSet;
   };
 
 } // namespace Model

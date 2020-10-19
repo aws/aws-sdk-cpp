@@ -32,7 +32,8 @@ RecordDetail::RecordDetail() :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false)
+    m_recordTagsHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ RecordDetail::RecordDetail(JsonView jsonValue) :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false)
+    m_recordTagsHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +156,13 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
     m_recordTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LaunchRoleArn"))
+  {
+    m_launchRoleArn = jsonValue.GetString("LaunchRoleArn");
+
+    m_launchRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +252,12 @@ JsonValue RecordDetail::Jsonize() const
      recordTagsJsonList[recordTagsIndex].AsObject(m_recordTags[recordTagsIndex].Jsonize());
    }
    payload.WithArray("RecordTags", std::move(recordTagsJsonList));
+
+  }
+
+  if(m_launchRoleArnHasBeenSet)
+  {
+   payload.WithString("LaunchRoleArn", m_launchRoleArn);
 
   }
 

@@ -16,7 +16,8 @@ namespace Model
   enum class PropertyKey
   {
     NOT_SET,
-    OWNER
+    OWNER,
+    LAUNCH_ROLE
   };
 
 namespace PropertyKeyMapper

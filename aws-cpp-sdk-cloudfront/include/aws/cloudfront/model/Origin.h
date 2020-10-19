@@ -9,6 +9,7 @@
 #include <aws/cloudfront/model/CustomHeaders.h>
 #include <aws/cloudfront/model/S3OriginConfig.h>
 #include <aws/cloudfront/model/CustomOriginConfig.h>
+#include <aws/cloudfront/model/OriginShield.h>
 #include <utility>
 
 namespace Aws
@@ -28,16 +29,16 @@ namespace Model
   /**
    * <p>An origin.</p> <p>An origin is the location where content is stored, and from
    * which CloudFront gets content to serve to viewers. To specify an origin:</p>
-   * <ul> <li> <p>Use the <code>S3OriginConfig</code> type to specify an Amazon S3
-   * bucket that is <i> <b>not</b> </i> configured with static website hosting.</p>
-   * </li> <li> <p>Use the <code>CustomOriginConfig</code> type to specify various
-   * other kinds of content containers or HTTP servers, including:</p> <ul> <li>
-   * <p>An Amazon S3 bucket that is configured with static website hosting</p> </li>
-   * <li> <p>An Elastic Load Balancing load balancer</p> </li> <li> <p>An AWS
-   * Elemental MediaPackage origin</p> </li> <li> <p>An AWS Elemental MediaStore
-   * container</p> </li> <li> <p>Any other HTTP server, running on an Amazon EC2
-   * instance or any other kind of host</p> </li> </ul> </li> </ul> <p>For the
-   * current maximum number of origins that you can specify per distribution, see <a
+   * <ul> <li> <p>Use <code>S3OriginConfig</code> to specify an Amazon S3 bucket that
+   * is not configured with static website hosting.</p> </li> <li> <p>Use
+   * <code>CustomOriginConfig</code> to specify all other kinds of origins,
+   * including:</p> <ul> <li> <p>An Amazon S3 bucket that is configured with static
+   * website hosting</p> </li> <li> <p>An Elastic Load Balancing load balancer</p>
+   * </li> <li> <p>An AWS Elemental MediaPackage endpoint</p> </li> <li> <p>An AWS
+   * Elemental MediaStore container</p> </li> <li> <p>Any other HTTP server, running
+   * on an Amazon EC2 instance or any other kind of host</p> </li> </ul> </li> </ul>
+   * <p>For the current maximum number of origins that you can specify per
+   * distribution, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General
    * Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>
    * (quotas were formerly referred to as limits).</p><p><h3>See Also:</h3>   <a
@@ -234,8 +235,8 @@ namespace Model
 
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -243,8 +244,8 @@ namespace Model
     inline const CustomHeaders& GetCustomHeaders() const{ return m_customHeaders; }
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -252,8 +253,8 @@ namespace Model
     inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -261,8 +262,8 @@ namespace Model
     inline void SetCustomHeaders(const CustomHeaders& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -270,8 +271,8 @@ namespace Model
     inline void SetCustomHeaders(CustomHeaders&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::move(value); }
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -279,8 +280,8 @@ namespace Model
     inline Origin& WithCustomHeaders(const CustomHeaders& value) { SetCustomHeaders(value); return *this;}
 
     /**
-     * <p>A list of HTTP header names and values that CloudFront adds to requests it
-     * sends to the origin.</p> <p>For more information, see <a
+     * <p>A list of HTTP header names and values that CloudFront adds to the requests
+     * that it sends to the origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
@@ -289,105 +290,99 @@ namespace Model
 
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline const S3OriginConfig& GetS3OriginConfig() const{ return m_s3OriginConfig; }
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline bool S3OriginConfigHasBeenSet() const { return m_s3OriginConfigHasBeenSet; }
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline void SetS3OriginConfig(const S3OriginConfig& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = value; }
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline void SetS3OriginConfig(S3OriginConfig&& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = std::move(value); }
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline Origin& WithS3OriginConfig(const S3OriginConfig& value) { SetS3OriginConfig(value); return *this;}
 
     /**
-     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is <i>
-     * <b>not</b> </i> configured with static website hosting. To specify any other
-     * type of origin, including an Amazon S3 bucket that is configured with static
-     * website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+     * <p>Use this type to specify an origin that is an Amazon S3 bucket that is not
+     * configured with static website hosting. To specify any other type of origin,
+     * including an Amazon S3 bucket that is configured with static website hosting,
+     * use the <code>CustomOriginConfig</code> type instead.</p>
      */
     inline Origin& WithS3OriginConfig(S3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline const CustomOriginConfig& GetCustomOriginConfig() const{ return m_customOriginConfig; }
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline bool CustomOriginConfigHasBeenSet() const { return m_customOriginConfigHasBeenSet; }
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline void SetCustomOriginConfig(const CustomOriginConfig& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = value; }
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline void SetCustomOriginConfig(CustomOriginConfig&& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = std::move(value); }
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline Origin& WithCustomOriginConfig(const CustomOriginConfig& value) { SetCustomOriginConfig(value); return *this;}
 
     /**
-     * <p>Use this type to specify an origin that is a content container or HTTP
-     * server, including an Amazon S3 bucket that is configured with static website
-     * hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type
-     * instead.</p>
+     * <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one
+     * exception. If the Amazon S3 bucket is configured with static website hosting,
+     * use this type. If the Amazon S3 bucket is not configured with static website
+     * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
     inline Origin& WithCustomOriginConfig(CustomOriginConfig&& value) { SetCustomOriginConfig(std::move(value)); return *this;}
 
@@ -489,6 +484,55 @@ namespace Model
      */
     inline Origin& WithConnectionTimeout(int value) { SetConnectionTimeout(value); return *this;}
 
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline const OriginShield& GetOriginShield() const{ return m_originShield; }
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline bool OriginShieldHasBeenSet() const { return m_originShieldHasBeenSet; }
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline void SetOriginShield(const OriginShield& value) { m_originShieldHasBeenSet = true; m_originShield = value; }
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline void SetOriginShield(OriginShield&& value) { m_originShieldHasBeenSet = true; m_originShield = std::move(value); }
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline Origin& WithOriginShield(const OriginShield& value) { SetOriginShield(value); return *this;}
+
+    /**
+     * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
+     * your origin.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+     * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline Origin& WithOriginShield(OriginShield&& value) { SetOriginShield(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -514,6 +558,9 @@ namespace Model
 
     int m_connectionTimeout;
     bool m_connectionTimeoutHasBeenSet;
+
+    OriginShield m_originShield;
+    bool m_originShieldHasBeenSet;
   };
 
 } // namespace Model

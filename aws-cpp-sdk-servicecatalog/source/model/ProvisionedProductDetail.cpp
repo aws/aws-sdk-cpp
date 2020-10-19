@@ -32,7 +32,8 @@ ProvisionedProductDetail::ProvisionedProductDetail() :
     m_lastProvisioningRecordIdHasBeenSet(false),
     m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
+    m_provisioningArtifactIdHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ProvisionedProductDetail::ProvisionedProductDetail(JsonView jsonValue) :
     m_lastProvisioningRecordIdHasBeenSet(false),
     m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
+    m_provisioningArtifactIdHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +150,13 @@ ProvisionedProductDetail& ProvisionedProductDetail::operator =(JsonView jsonValu
     m_provisioningArtifactIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LaunchRoleArn"))
+  {
+    m_launchRoleArn = jsonValue.GetString("LaunchRoleArn");
+
+    m_launchRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +237,12 @@ JsonValue ProvisionedProductDetail::Jsonize() const
   if(m_provisioningArtifactIdHasBeenSet)
   {
    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
+
+  }
+
+  if(m_launchRoleArnHasBeenSet)
+  {
+   payload.WithString("LaunchRoleArn", m_launchRoleArn);
 
   }
 

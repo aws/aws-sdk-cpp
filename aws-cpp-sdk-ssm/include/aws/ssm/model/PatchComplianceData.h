@@ -297,6 +297,55 @@ namespace Model
      */
     inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline const Aws::String& GetCVEIds() const{ return m_cVEIds; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.assign(value); }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(const Aws::String& value) { SetCVEIds(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(Aws::String&& value) { SetCVEIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(const char* value) { SetCVEIds(value); return *this;}
+
   private:
 
     Aws::String m_title;
@@ -316,6 +365,9 @@ namespace Model
 
     Aws::Utils::DateTime m_installedTime;
     bool m_installedTimeHasBeenSet;
+
+    Aws::String m_cVEIds;
+    bool m_cVEIdsHasBeenSet;
   };
 
 } // namespace Model

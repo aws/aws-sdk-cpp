@@ -30,7 +30,8 @@ Origin::Origin() :
     m_connectionAttempts(0),
     m_connectionAttemptsHasBeenSet(false),
     m_connectionTimeout(0),
-    m_connectionTimeoutHasBeenSet(false)
+    m_connectionTimeoutHasBeenSet(false),
+    m_originShieldHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_connectionAttempts(0),
     m_connectionAttemptsHasBeenSet(false),
     m_connectionTimeout(0),
-    m_connectionTimeoutHasBeenSet(false)
+    m_connectionTimeoutHasBeenSet(false),
+    m_originShieldHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -102,6 +104,12 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     {
       m_connectionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTimeoutNode.GetText()).c_str()).c_str());
       m_connectionTimeoutHasBeenSet = true;
+    }
+    XmlNode originShieldNode = resultNode.FirstChild("OriginShield");
+    if(!originShieldNode.IsNull())
+    {
+      m_originShield = originShieldNode;
+      m_originShieldHasBeenSet = true;
     }
   }
 
@@ -161,6 +169,12 @@ void Origin::AddToNode(XmlNode& parentNode) const
    ss << m_connectionTimeout;
    connectionTimeoutNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_originShieldHasBeenSet)
+  {
+   XmlNode originShieldNode = parentNode.CreateChildElement("OriginShield");
+   m_originShield.AddToNode(originShieldNode);
   }
 
 }
