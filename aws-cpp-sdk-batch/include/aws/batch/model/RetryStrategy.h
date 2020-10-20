@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EvaluateOnExit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,10 +70,70 @@ namespace Model
      */
     inline RetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
 
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline const Aws::Vector<EvaluateOnExit>& GetEvaluateOnExit() const{ return m_evaluateOnExit; }
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline bool EvaluateOnExitHasBeenSet() const { return m_evaluateOnExitHasBeenSet; }
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline void SetEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = value; }
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline void SetEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = std::move(value); }
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline RetryStrategy& WithEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { SetEvaluateOnExit(value); return *this;}
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline RetryStrategy& WithEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { SetEvaluateOnExit(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline RetryStrategy& AddEvaluateOnExit(const EvaluateOnExit& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(value); return *this; }
+
+    /**
+     * <p>Array of up to 5 objects that specify conditions under which the job should
+     * be retried or failed. If this parameter is specified, then the
+     * <code>attempts</code> parameter must also be specified.</p>
+     */
+    inline RetryStrategy& AddEvaluateOnExit(EvaluateOnExit&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_attempts;
     bool m_attemptsHasBeenSet;
+
+    Aws::Vector<EvaluateOnExit> m_evaluateOnExit;
+    bool m_evaluateOnExitHasBeenSet;
   };
 
 } // namespace Model

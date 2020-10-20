@@ -16,8 +16,11 @@ namespace Model
   enum class EnvironmentStatus
   {
     NOT_SET,
+    Aborting,
     Launching,
     Updating,
+    LinkingFrom,
+    LinkingTo,
     Ready,
     Terminating,
     Terminated

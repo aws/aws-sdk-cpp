@@ -91,8 +91,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CRAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -113,8 +113,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -135,8 +135,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetAllocationStrategy(const CRAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -157,8 +157,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetAllocationStrategy(CRAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -179,8 +179,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithAllocationStrategy(const CRAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -201,8 +201,8 @@ namespace Model
      * resources and will select additional instance types that are large enough to
      * meet the requirements of the jobs in the queue, with a preference for instance
      * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithAllocationStrategy(CRAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 

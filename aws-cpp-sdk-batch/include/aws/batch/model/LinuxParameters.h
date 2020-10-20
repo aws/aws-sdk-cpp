@@ -265,12 +265,15 @@ namespace Model
      * will be translated to the <code>--memory-swap</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
      * value would be the sum of the container memory plus the <code>maxSwap</code>
-     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
-     * the container will not use swap. Accepted values are <code>0</code> or any
-     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     * container will use the swap configuration for the container instance it is
-     * running on. A <code>maxSwap</code> value must be set for the
-     * <code>swappiness</code> parameter to be used.</p>
+     * value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.</p> <p>If a
+     * <code>maxSwap</code> value of <code>0</code> is specified, the container will
+     * not use swap. Accepted values are <code>0</code> or any positive integer. If the
+     * <code>maxSwap</code> parameter is omitted, the container will use the swap
+     * configuration for the container instance it is running on. A
+     * <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter
+     * to be used.</p>
      */
     inline int GetMaxSwap() const{ return m_maxSwap; }
 
@@ -279,12 +282,15 @@ namespace Model
      * will be translated to the <code>--memory-swap</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
      * value would be the sum of the container memory plus the <code>maxSwap</code>
-     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
-     * the container will not use swap. Accepted values are <code>0</code> or any
-     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     * container will use the swap configuration for the container instance it is
-     * running on. A <code>maxSwap</code> value must be set for the
-     * <code>swappiness</code> parameter to be used.</p>
+     * value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.</p> <p>If a
+     * <code>maxSwap</code> value of <code>0</code> is specified, the container will
+     * not use swap. Accepted values are <code>0</code> or any positive integer. If the
+     * <code>maxSwap</code> parameter is omitted, the container will use the swap
+     * configuration for the container instance it is running on. A
+     * <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter
+     * to be used.</p>
      */
     inline bool MaxSwapHasBeenSet() const { return m_maxSwapHasBeenSet; }
 
@@ -293,12 +299,15 @@ namespace Model
      * will be translated to the <code>--memory-swap</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
      * value would be the sum of the container memory plus the <code>maxSwap</code>
-     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
-     * the container will not use swap. Accepted values are <code>0</code> or any
-     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     * container will use the swap configuration for the container instance it is
-     * running on. A <code>maxSwap</code> value must be set for the
-     * <code>swappiness</code> parameter to be used.</p>
+     * value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.</p> <p>If a
+     * <code>maxSwap</code> value of <code>0</code> is specified, the container will
+     * not use swap. Accepted values are <code>0</code> or any positive integer. If the
+     * <code>maxSwap</code> parameter is omitted, the container will use the swap
+     * configuration for the container instance it is running on. A
+     * <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter
+     * to be used.</p>
      */
     inline void SetMaxSwap(int value) { m_maxSwapHasBeenSet = true; m_maxSwap = value; }
 
@@ -307,12 +316,15 @@ namespace Model
      * will be translated to the <code>--memory-swap</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
      * value would be the sum of the container memory plus the <code>maxSwap</code>
-     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
-     * the container will not use swap. Accepted values are <code>0</code> or any
-     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     * container will use the swap configuration for the container instance it is
-     * running on. A <code>maxSwap</code> value must be set for the
-     * <code>swappiness</code> parameter to be used.</p>
+     * value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.</p> <p>If a
+     * <code>maxSwap</code> value of <code>0</code> is specified, the container will
+     * not use swap. Accepted values are <code>0</code> or any positive integer. If the
+     * <code>maxSwap</code> parameter is omitted, the container will use the swap
+     * configuration for the container instance it is running on. A
+     * <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter
+     * to be used.</p>
      */
     inline LinuxParameters& WithMaxSwap(int value) { SetMaxSwap(value); return *this;}
 

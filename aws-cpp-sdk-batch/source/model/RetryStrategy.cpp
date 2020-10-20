@@ -20,13 +20,15 @@ namespace Model
 
 RetryStrategy::RetryStrategy() : 
     m_attempts(0),
-    m_attemptsHasBeenSet(false)
+    m_attemptsHasBeenSet(false),
+    m_evaluateOnExitHasBeenSet(false)
 {
 }
 
 RetryStrategy::RetryStrategy(JsonView jsonValue) : 
     m_attempts(0),
-    m_attemptsHasBeenSet(false)
+    m_attemptsHasBeenSet(false),
+    m_evaluateOnExitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,16 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
     m_attemptsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("evaluateOnExit"))
+  {
+    Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
+    for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
+    {
+      m_evaluateOnExit.push_back(evaluateOnExitJsonList[evaluateOnExitIndex].AsObject());
+    }
+    m_evaluateOnExitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +62,17 @@ JsonValue RetryStrategy::Jsonize() const
   if(m_attemptsHasBeenSet)
   {
    payload.WithInteger("attempts", m_attempts);
+
+  }
+
+  if(m_evaluateOnExitHasBeenSet)
+  {
+   Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
+   for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
+   {
+     evaluateOnExitJsonList[evaluateOnExitIndex].AsObject(m_evaluateOnExit[evaluateOnExitIndex].Jsonize());
+   }
+   payload.WithArray("evaluateOnExit", std::move(evaluateOnExitJsonList));
 
   }
 

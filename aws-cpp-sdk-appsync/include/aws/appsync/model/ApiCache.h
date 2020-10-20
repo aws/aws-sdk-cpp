@@ -67,42 +67,42 @@ namespace Model
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline const ApiCachingBehavior& GetApiCachingBehavior() const{ return m_apiCachingBehavior; }
 
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline bool ApiCachingBehaviorHasBeenSet() const { return m_apiCachingBehaviorHasBeenSet; }
 
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline void SetApiCachingBehavior(const ApiCachingBehavior& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = value; }
 
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline void SetApiCachingBehavior(ApiCachingBehavior&& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = std::move(value); }
 
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline ApiCache& WithApiCachingBehavior(const ApiCachingBehavior& value) { SetApiCachingBehavior(value); return *this;}
 
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resovlers that you specify are cached.</p> </li> </ul>
+     * resolvers that you specify are cached.</p> </li> </ul>
      */
     inline ApiCache& WithApiCachingBehavior(ApiCachingBehavior&& value) { SetApiCachingBehavior(std::move(value)); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
@@ -185,7 +185,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
@@ -204,7 +204,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
@@ -223,7 +223,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
@@ -242,7 +242,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
@@ -261,7 +261,7 @@ namespace Model
      * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
      * identified by an EC2-style value. As of July 2020, this is deprecated, and the
      * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
+     * types are available, but their use is discouraged:</p> <ul> <li> <p>
      * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
      * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
      * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
