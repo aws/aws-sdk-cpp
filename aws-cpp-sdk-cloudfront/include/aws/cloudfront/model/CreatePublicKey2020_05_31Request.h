@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::move(value); }
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
 
     /**
-     * <p>The request to add a public key to CloudFront.</p>
+     * <p>A CloudFront public key configuration.</p>
      */
     inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
 

@@ -21,7 +21,8 @@ namespace Model
     DATABASE,
     SALESFORCE,
     ONEDRIVE,
-    SERVICENOW
+    SERVICENOW,
+    CUSTOM
   };
 
 namespace DataSourceTypeMapper

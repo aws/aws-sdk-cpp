@@ -372,7 +372,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
@@ -394,7 +394,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
@@ -416,7 +416,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
@@ -438,7 +438,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
@@ -460,7 +460,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
@@ -482,7 +482,7 @@ namespace Model
      * later. If the problem persists, contact Customer Support.</p> </li> <li>
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the master account with a valid payment method, such as a
+     * You must configure the management account with a valid payment method, such as a
      * credit card.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}

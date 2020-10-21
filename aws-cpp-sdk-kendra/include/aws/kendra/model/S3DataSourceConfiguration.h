@@ -138,9 +138,92 @@ namespace Model
 
 
     /**
-     * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
      * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of glob patterns for documents that should not be indexed. If a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -148,8 +231,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -157,8 +241,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -166,8 +251,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -175,8 +261,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -184,8 +271,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -193,8 +281,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -202,8 +291,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -211,8 +301,9 @@ namespace Model
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
      * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
@@ -281,6 +372,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_inclusionPrefixes;
     bool m_inclusionPrefixesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inclusionPatterns;
+    bool m_inclusionPatternsHasBeenSet;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
     bool m_exclusionPatternsHasBeenSet;

@@ -24,11 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-   * associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see
-   * <a
-   * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A list of CloudFront key pair identifiers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyPairIds">AWS
    * API Reference</a></p>
    */
@@ -43,103 +39,68 @@ namespace Model
 
 
     /**
-     * <p>The number of active CloudFront key pairs for
-     * <code>AwsAccountNumber</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>The number of key pair identifiers in the list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of active CloudFront key pairs for
-     * <code>AwsAccountNumber</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>The number of key pair identifiers in the list.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of active CloudFront key pairs for
-     * <code>AwsAccountNumber</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>The number of key pair identifiers in the list.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of active CloudFront key pairs for
-     * <code>AwsAccountNumber</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>The number of key pair identifiers in the list.</p>
      */
     inline KeyPairIds& WithQuantity(int value) { SetQuantity(value); return *this;}
 
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline KeyPairIds& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline KeyPairIds& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline KeyPairIds& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline KeyPairIds& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with <code>AwsAccountNumber</code>.</p> <p>For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p>
+     * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline KeyPairIds& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

@@ -25,6 +25,7 @@ Crawler::Crawler() :
     m_databaseNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_classifiersHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -49,6 +50,7 @@ Crawler::Crawler(JsonView jsonValue) :
     m_databaseNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_classifiersHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -112,6 +114,13 @@ Crawler& Crawler::operator =(JsonView jsonValue)
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsString());
     }
     m_classifiersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecrawlPolicy"))
+  {
+    m_recrawlPolicy = jsonValue.GetObject("RecrawlPolicy");
+
+    m_recrawlPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SchemaChangePolicy"))
@@ -236,6 +245,12 @@ JsonValue Crawler::Jsonize() const
      classifiersJsonList[classifiersIndex].AsString(m_classifiers[classifiersIndex]);
    }
    payload.WithArray("Classifiers", std::move(classifiersJsonList));
+
+  }
+
+  if(m_recrawlPolicyHasBeenSet)
+  {
+   payload.WithObject("RecrawlPolicy", m_recrawlPolicy.Jsonize());
 
   }
 

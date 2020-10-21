@@ -32,10 +32,10 @@ namespace Model
   /**
    * <p>Contains information that must be exchanged to securely establish a
    * relationship between two accounts (an <i>originator</i> and a <i>recipient</i>).
-   * For example, when a master account (the originator) invites another account (the
-   * recipient) to join its organization, the two accounts exchange information as a
-   * series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that
-   * are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after
+   * For example, when a management account (the originator) invites another account
+   * (the recipient) to join its organization, the two accounts exchange information
+   * as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes
+   * that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after
    * entering that state After that they are deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake">AWS
    * API Reference</a></p>
@@ -435,15 +435,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
@@ -453,15 +453,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
@@ -471,15 +471,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
@@ -489,15 +489,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
@@ -507,15 +507,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
@@ -525,15 +525,15 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake. The following handshake types are supported:</p> <ul>
      * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
-     * organization. It is always sent from the master account to only non-member
+     * organization. It is always sent from the management account to only non-member
      * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
      * represents a request to enable all features in an organization. It is always
-     * sent from the master account to only <i>invited</i> member accounts. Created
+     * sent from the management account to only <i>invited</i> member accounts. Created
      * accounts do not receive this because those accounts were created by the
-     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * organization's management account and approval is inferred.</p> </li> <li> <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
      * Organizations service when all member accounts have approved the
-     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/globalaccelerator/model/HealthCheckProtocol.h>
 #include <aws/globalaccelerator/model/EndpointConfiguration.h>
+#include <aws/globalaccelerator/model/PortOverride.h>
 #include <utility>
 
 namespace Aws
@@ -79,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline const Aws::Vector<EndpointConfiguration>& GetEndpointConfigurations() const{ return m_endpointConfigurations; }
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline bool EndpointConfigurationsHasBeenSet() const { return m_endpointConfigurationsHasBeenSet; }
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline void SetEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = value; }
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline void SetEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::move(value); }
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline UpdateEndpointGroupRequest& WithEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { SetEndpointConfigurations(value); return *this;}
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline UpdateEndpointGroupRequest& WithEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { SetEndpointConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline UpdateEndpointGroupRequest& AddEndpointConfigurations(const EndpointConfiguration& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The list of endpoint objects.</p>
+     * <p>The list of endpoint objects. A resource must be valid and active when you
+     * add it as an endpoint.</p>
      */
     inline UpdateEndpointGroupRequest& AddEndpointConfigurations(EndpointConfiguration&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(std::move(value)); return *this; }
 
@@ -328,6 +337,95 @@ namespace Model
      */
     inline UpdateEndpointGroupRequest& WithThresholdCount(int value) { SetThresholdCount(value); return *this;}
 
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<PortOverride>& GetPortOverrides() const{ return m_portOverrides; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline bool PortOverridesHasBeenSet() const { return m_portOverridesHasBeenSet; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetPortOverrides(const Aws::Vector<PortOverride>& value) { m_portOverridesHasBeenSet = true; m_portOverrides = value; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetPortOverrides(Aws::Vector<PortOverride>&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::move(value); }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline UpdateEndpointGroupRequest& WithPortOverrides(const Aws::Vector<PortOverride>& value) { SetPortOverrides(value); return *this;}
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline UpdateEndpointGroupRequest& WithPortOverrides(Aws::Vector<PortOverride>&& value) { SetPortOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline UpdateEndpointGroupRequest& AddPortOverrides(const PortOverride& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline UpdateEndpointGroupRequest& AddPortOverrides(PortOverride&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointGroupArn;
@@ -353,6 +451,9 @@ namespace Model
 
     int m_thresholdCount;
     bool m_thresholdCountHasBeenSet;
+
+    Aws::Vector<PortOverride> m_portOverrides;
+    bool m_portOverridesHasBeenSet;
   };
 
 } // namespace Model

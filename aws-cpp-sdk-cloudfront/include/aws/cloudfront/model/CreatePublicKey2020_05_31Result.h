@@ -34,106 +34,99 @@ namespace Model
 
 
     /**
-     * <p>Returned when you add a public key.</p>
+     * <p>The public key.</p>
      */
     inline const PublicKey& GetPublicKey() const{ return m_publicKey; }
 
     /**
-     * <p>Returned when you add a public key.</p>
+     * <p>The public key.</p>
      */
     inline void SetPublicKey(const PublicKey& value) { m_publicKey = value; }
 
     /**
-     * <p>Returned when you add a public key.</p>
+     * <p>The public key.</p>
      */
     inline void SetPublicKey(PublicKey&& value) { m_publicKey = std::move(value); }
 
     /**
-     * <p>Returned when you add a public key.</p>
+     * <p>The public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithPublicKey(const PublicKey& value) { SetPublicKey(value); return *this;}
 
     /**
-     * <p>Returned when you add a public key.</p>
+     * <p>The public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithPublicKey(PublicKey&& value) { SetPublicKey(std::move(value)); return *this;}
 
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified URI of the new public key resource just created.</p>
+     * <p>The URL of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>The current version of the public key. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key.</p>
      */
     inline CreatePublicKey2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
 

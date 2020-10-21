@@ -32,11 +32,11 @@ namespace Model
    * a reason that contains additional information about the violated limit:</p>
    *  <p>Some of the reasons in the following list might not be applicable to
    * this specific API or operation.</p>  <ul> <li>
-   * <p>ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account
-   * from the organization. You can't remove the master account. Instead, after you
-   * remove all member accounts, delete the organization itself.</p> </li> <li>
-   * <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from
-   * the organization that doesn't yet have enough information to exist as a
+   * <p>ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management
+   * account from the organization. You can't remove the management account. Instead,
+   * after you remove all member accounts, delete the organization itself.</p> </li>
+   * <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account
+   * from the organization that doesn't yet have enough information to exist as a
    * standalone account. This account requires you to first agree to the AWS Customer
    * Agreement. Follow the steps at <a
    * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
@@ -62,9 +62,9 @@ namespace Model
    * with this error, contact <a
    * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
    *  </li> <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR:
-   * You attempted to register the master account of the organization as a delegated
-   * administrator for an AWS service integrated with Organizations. You can
-   * designate only a member account as a delegated administrator.</p> </li> <li>
+   * You attempted to register the management account of the organization as a
+   * delegated administrator for an AWS service integrated with Organizations. You
+   * can designate only a member account as a delegated administrator.</p> </li> <li>
    * <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an
    * account that is registered as a delegated administrator for a service integrated
    * with your organization. To complete this operation, you must first deregister
@@ -81,24 +81,24 @@ namespace Model
    * <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of
    * handshakes that you can send in one day.</p> </li> <li>
    * <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in
-   * this organization, you first must migrate the organization's master account to
-   * the marketplace that corresponds to the master account's address. For example,
-   * accounts with India addresses must be associated with the AISPL marketplace. All
-   * accounts in an organization must be associated with the same marketplace.</p>
-   * </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS
-   * Regions in China. To create an organization, the master must have an valid
-   * business license. For more information, contact customer support.</p> </li> <li>
-   * <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must
-   * first provide a valid contact address and phone number for the master account.
-   * Then try the operation again.</p> </li> <li>
-   * <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master
-   * account must have an associated account in the AWS GovCloud (US-West) Region.
-   * For more information, see <a
+   * this organization, you first must migrate the organization's management account
+   * to the marketplace that corresponds to the management account's address. For
+   * example, accounts with India addresses must be associated with the AISPL
+   * marketplace. All accounts in an organization must be associated with the same
+   * marketplace.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies
+   * only to the AWS Regions in China. To create an organization, the master must
+   * have an valid business license. For more information, contact customer
+   * support.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this
+   * operation, you must first provide a valid contact address and phone number for
+   * the management account. Then try the operation again.</p> </li> <li>
+   * <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the
+   * management account must have an associated account in the AWS GovCloud (US-West)
+   * Region. For more information, see <a
    * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
    * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> </li> <li>
    * <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with
-   * this master account, you first must associate a valid payment instrument, such
-   * as a credit card, with the account. Follow the steps at <a
+   * this management account, you first must associate a valid payment instrument,
+   * such as a credit card, with the account. Follow the steps at <a
    * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
    * leave an organization when all required account information has not yet been
    * provided</a> in the <i>AWS Organizations User Guide.</i> </p> </li> <li>

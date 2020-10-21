@@ -28,7 +28,8 @@ CreateEndpointGroupRequest::CreateEndpointGroupRequest() :
     m_thresholdCount(0),
     m_thresholdCountHasBeenSet(false),
     m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
+    m_idempotencyTokenHasBeenSet(true),
+    m_portOverridesHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,17 @@ Aws::String CreateEndpointGroupRequest::SerializePayload() const
   if(m_idempotencyTokenHasBeenSet)
   {
    payload.WithString("IdempotencyToken", m_idempotencyToken);
+
+  }
+
+  if(m_portOverridesHasBeenSet)
+  {
+   Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
+   for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
+   {
+     portOverridesJsonList[portOverridesIndex].AsObject(m_portOverrides[portOverridesIndex].Jsonize());
+   }
+   payload.WithArray("PortOverrides", std::move(portOverridesJsonList));
 
   }
 

@@ -154,8 +154,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -176,8 +176,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -198,8 +198,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -220,8 +220,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -242,8 +242,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -264,8 +264,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -286,8 +286,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
@@ -308,8 +308,8 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member account. This role trusts the
-     * master account, allowing users in the master account to assume the role, as
-     * permitted by the master account administrator. The role has administrator
+     * management account, allowing users in the management account to assume the role,
+     * as permitted by the management account administrator. The role has administrator
      * permissions in the new member account.</p> <p>If you don't specify this
      * parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about

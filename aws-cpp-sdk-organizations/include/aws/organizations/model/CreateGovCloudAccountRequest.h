@@ -178,12 +178,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -199,12 +200,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -220,12 +222,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -241,12 +244,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -262,12 +266,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -283,12 +288,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -304,12 +310,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a
@@ -325,12 +332,13 @@ namespace Model
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
      * automatically preconfigures in the new member accounts in both the AWS GovCloud
-     * (US) Region and in the commercial Region. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you don't specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * (US) Region and in the commercial Region. This role trusts the management
+     * account, allowing users in the management account to assume the role, as
+     * permitted by the management account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i> and steps 2 and 3 in <a

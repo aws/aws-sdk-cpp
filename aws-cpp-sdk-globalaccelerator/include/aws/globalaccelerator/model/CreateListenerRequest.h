@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
@@ -223,7 +223,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
-     * of the client request. Clienty affinity gives you control over whether to always
+     * of the client request. Client affinity gives you control over whether to always
      * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
      * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the

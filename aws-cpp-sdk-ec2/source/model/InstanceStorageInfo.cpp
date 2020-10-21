@@ -23,14 +23,18 @@ namespace Model
 InstanceStorageInfo::InstanceStorageInfo() : 
     m_totalSizeInGB(0),
     m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false)
+    m_disksHasBeenSet(false),
+    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false)
 {
 }
 
 InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode) : 
     m_totalSizeInGB(0),
     m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false)
+    m_disksHasBeenSet(false),
+    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +63,12 @@ InstanceStorageInfo& InstanceStorageInfo::operator =(const XmlNode& xmlNode)
 
       m_disksHasBeenSet = true;
     }
+    XmlNode nvmeSupportNode = resultNode.FirstChild("nvmeSupport");
+    if(!nvmeSupportNode.IsNull())
+    {
+      m_nvmeSupport = EphemeralNvmeSupportMapper::GetEphemeralNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
+      m_nvmeSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -82,6 +92,11 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+  }
+
 }
 
 void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -99,6 +114,10 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
         disksSs << location <<  ".Disks." << disksIdx++;
         item.OutputToStream(oStream, disksSs.str().c_str());
       }
+  }
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
   }
 }
 

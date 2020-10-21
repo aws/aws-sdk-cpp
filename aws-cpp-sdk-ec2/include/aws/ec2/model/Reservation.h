@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a reservation.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a launch request for one or more instances, and includes owner,
+   * requester, and security group information that applies to all instances in the
+   * launch request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Reservation">AWS API
    * Reference</a></p>
    */

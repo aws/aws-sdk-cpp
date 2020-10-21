@@ -18,6 +18,7 @@ namespace CloudFront
 namespace CloudFrontErrorMapper
 {
 
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int INVALID_ERROR_CODE_HASH = HashingUtils::HashString("InvalidErrorCode");
 static const int TOO_MANY_STREAMING_DISTRIBUTION_C_N_A_M_ES_HASH = HashingUtils::HashString("TooManyStreamingDistributionCNAMEs");
 static const int ORIGIN_REQUEST_POLICY_ALREADY_EXISTS_HASH = HashingUtils::HashString("OriginRequestPolicyAlreadyExists");
@@ -48,6 +49,8 @@ static const int TOO_MANY_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITIES_HASH = HashingUti
 static const int INVALID_HEADERS_FOR_S3_ORIGIN_HASH = HashingUtils::HashString("InvalidHeadersForS3Origin");
 static const int FIELD_LEVEL_ENCRYPTION_PROFILE_ALREADY_EXISTS_HASH = HashingUtils::HashString("FieldLevelEncryptionProfileAlreadyExists");
 static const int TOO_MANY_HEADERS_IN_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("TooManyHeadersInOriginRequestPolicy");
+static const int TOO_MANY_KEY_GROUPS_ASSOCIATED_TO_DISTRIBUTION_HASH = HashingUtils::HashString("TooManyKeyGroupsAssociatedToDistribution");
+static const int KEY_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("KeyGroupAlreadyExists");
 static const int TOO_MANY_ORIGIN_CUSTOM_HEADERS_HASH = HashingUtils::HashString("TooManyOriginCustomHeaders");
 static const int INVALID_GEO_RESTRICTION_PARAMETER_HASH = HashingUtils::HashString("InvalidGeoRestrictionParameter");
 static const int TOO_MANY_REALTIME_LOG_CONFIGS_HASH = HashingUtils::HashString("TooManyRealtimeLogConfigs");
@@ -84,6 +87,7 @@ static const int FIELD_LEVEL_ENCRYPTION_PROFILE_IN_USE_HASH = HashingUtils::Hash
 static const int TOO_MANY_INVALIDATIONS_IN_PROGRESS_HASH = HashingUtils::HashString("TooManyInvalidationsInProgress");
 static const int NO_SUCH_DISTRIBUTION_HASH = HashingUtils::HashString("NoSuchDistribution");
 static const int INVALID_RESPONSE_CODE_HASH = HashingUtils::HashString("InvalidResponseCode");
+static const int TOO_MANY_PUBLIC_KEYS_IN_KEY_GROUP_HASH = HashingUtils::HashString("TooManyPublicKeysInKeyGroup");
 static const int INVALID_DEFAULT_ROOT_OBJECT_HASH = HashingUtils::HashString("InvalidDefaultRootObject");
 static const int NO_SUCH_FIELD_LEVEL_ENCRYPTION_CONFIG_HASH = HashingUtils::HashString("NoSuchFieldLevelEncryptionConfig");
 static const int INVALID_WEB_A_C_L_ID_HASH = HashingUtils::HashString("InvalidWebACLId");
@@ -92,6 +96,7 @@ static const int TOO_MANY_TRUSTED_SIGNERS_HASH = HashingUtils::HashString("TooMa
 static const int NO_SUCH_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("NoSuchCloudFrontOriginAccessIdentity");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityAlreadyExists");
 static const int INVALID_FORWARD_COOKIES_HASH = HashingUtils::HashString("InvalidForwardCookies");
+static const int TRUSTED_KEY_GROUP_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrustedKeyGroupDoesNotExist");
 static const int QUERY_ARG_PROFILE_EMPTY_HASH = HashingUtils::HashString("QueryArgProfileEmpty");
 static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToCachePolicy");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailed");
@@ -104,6 +109,7 @@ static const int INVALID_PROTOCOL_SETTINGS_HASH = HashingUtils::HashString("Inva
 static const int BATCH_TOO_LARGE_HASH = HashingUtils::HashString("BatchTooLarge");
 static const int INVALID_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("InvalidOriginAccessIdentity");
 static const int INVALID_MINIMUM_PROTOCOL_VERSION_HASH = HashingUtils::HashString("InvalidMinimumProtocolVersion");
+static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_KEY_GROUP_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToKeyGroup");
 static const int STREAMING_DISTRIBUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("StreamingDistributionAlreadyExists");
 static const int ILLEGAL_UPDATE_HASH = HashingUtils::HashString("IllegalUpdate");
 static const int TOO_MANY_DISTRIBUTIONS_WITH_SINGLE_FUNCTION_A_R_N_HASH = HashingUtils::HashString("TooManyDistributionsWithSingleFunctionARN");
@@ -116,6 +122,7 @@ static const int CANNOT_CHANGE_IMMUTABLE_PUBLIC_KEY_FIELDS_HASH = HashingUtils::
 static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_FIELD_LEVEL_ENCRYPTION_CONFIG_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToFieldLevelEncryptionConfig");
 static const int DISTRIBUTION_NOT_DISABLED_HASH = HashingUtils::HashString("DistributionNotDisabled");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgument");
+static const int TOO_MANY_KEY_GROUPS_HASH = HashingUtils::HashString("TooManyKeyGroups");
 static const int PUBLIC_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString("PublicKeyAlreadyExists");
 static const int REALTIME_LOG_CONFIG_IN_USE_HASH = HashingUtils::HashString("RealtimeLogConfigInUse");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityInUse");
@@ -126,7 +133,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_ERROR_CODE_HASH)
+  if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == INVALID_ERROR_CODE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_ERROR_CODE), false);
   }
@@ -245,6 +256,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_HEADERS_IN_ORIGIN_REQUEST_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_HEADERS_IN_ORIGIN_REQUEST_POLICY), false);
+  }
+  else if (hashCode == TOO_MANY_KEY_GROUPS_ASSOCIATED_TO_DISTRIBUTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_KEY_GROUPS_ASSOCIATED_TO_DISTRIBUTION), false);
+  }
+  else if (hashCode == KEY_GROUP_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::KEY_GROUP_ALREADY_EXISTS), false);
   }
   else if (hashCode == TOO_MANY_ORIGIN_CUSTOM_HEADERS_HASH)
   {
@@ -390,6 +409,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_RESPONSE_CODE), false);
   }
+  else if (hashCode == TOO_MANY_PUBLIC_KEYS_IN_KEY_GROUP_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_PUBLIC_KEYS_IN_KEY_GROUP), false);
+  }
   else if (hashCode == INVALID_DEFAULT_ROOT_OBJECT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_DEFAULT_ROOT_OBJECT), false);
@@ -421,6 +444,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FORWARD_COOKIES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_FORWARD_COOKIES), false);
+  }
+  else if (hashCode == TRUSTED_KEY_GROUP_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TRUSTED_KEY_GROUP_DOES_NOT_EXIST), false);
   }
   else if (hashCode == QUERY_ARG_PROFILE_EMPTY_HASH)
   {
@@ -470,6 +497,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_MINIMUM_PROTOCOL_VERSION), false);
   }
+  else if (hashCode == TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_KEY_GROUP_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_KEY_GROUP), false);
+  }
   else if (hashCode == STREAMING_DISTRIBUTION_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::STREAMING_DISTRIBUTION_ALREADY_EXISTS), false);
@@ -517,6 +548,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_ARGUMENT), false);
+  }
+  else if (hashCode == TOO_MANY_KEY_GROUPS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_KEY_GROUPS), false);
   }
   else if (hashCode == PUBLIC_KEY_ALREADY_EXISTS_HASH)
   {

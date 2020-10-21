@@ -242,8 +242,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -252,8 +252,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -262,8 +262,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -272,8 +272,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -282,8 +282,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -292,8 +292,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -302,8 +302,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -312,8 +312,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
-     * master account for the organization.</p> <p>For more information about ARNs in
-     * Organizations, see <a
+     * management account for the organization.</p> <p>For more information about ARNs
+     * in Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
@@ -322,56 +322,56 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline const Aws::String& GetMasterAccountId() const{ return m_masterAccountId; }
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline bool MasterAccountIdHasBeenSet() const { return m_masterAccountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline void SetMasterAccountId(const Aws::String& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = value; }
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline void SetMasterAccountId(Aws::String&& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline void SetMasterAccountId(const char* value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline Organization& WithMasterAccountId(const Aws::String& value) { SetMasterAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
     inline Organization& WithMasterAccountId(Aws::String&& value) { SetMasterAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The unique identifier (ID) of the management account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
@@ -380,49 +380,49 @@ namespace Model
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline const Aws::String& GetMasterAccountEmail() const{ return m_masterAccountEmail; }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline bool MasterAccountEmailHasBeenSet() const { return m_masterAccountEmailHasBeenSet; }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(const Aws::String& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = value; }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(Aws::String&& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = std::move(value); }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(const char* value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail.assign(value); }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(const Aws::String& value) { SetMasterAccountEmail(value); return *this;}
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(Aws::String&& value) { SetMasterAccountEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
-     * as the master account for the organization.</p>
+     * as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(const char* value) { SetMasterAccountEmail(value); return *this;}
 

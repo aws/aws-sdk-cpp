@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/CrawlerTargets.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/glue/model/SchemaChangePolicy.h>
 #include <aws/glue/model/CrawlerState.h>
 #include <aws/glue/model/Schedule.h>
@@ -303,6 +304,43 @@ namespace Model
      * associated with the crawler.</p>
      */
     inline Crawler& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline const RecrawlPolicy& GetRecrawlPolicy() const{ return m_recrawlPolicy; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline bool RecrawlPolicyHasBeenSet() const { return m_recrawlPolicyHasBeenSet; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline void SetRecrawlPolicy(const RecrawlPolicy& value) { m_recrawlPolicyHasBeenSet = true; m_recrawlPolicy = value; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline void SetRecrawlPolicy(RecrawlPolicy&& value) { m_recrawlPolicyHasBeenSet = true; m_recrawlPolicy = std::move(value); }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline Crawler& WithRecrawlPolicy(const RecrawlPolicy& value) { SetRecrawlPolicy(value); return *this;}
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline Crawler& WithRecrawlPolicy(RecrawlPolicy&& value) { SetRecrawlPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -716,6 +754,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_classifiers;
     bool m_classifiersHasBeenSet;
+
+    RecrawlPolicy m_recrawlPolicy;
+    bool m_recrawlPolicyHasBeenSet;
 
     SchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet;

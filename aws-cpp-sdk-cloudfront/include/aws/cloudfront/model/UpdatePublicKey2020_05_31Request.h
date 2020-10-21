@@ -36,73 +36,73 @@ namespace Model
 
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::move(value); }
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline UpdatePublicKey2020_05_31Request& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
 
     /**
-     * <p>Request to update public key information.</p>
+     * <p>A public key configuration.</p>
      */
     inline UpdatePublicKey2020_05_31Request& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline UpdatePublicKey2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline UpdatePublicKey2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the public key to be updated.</p>
+     * <p>The identifier of the public key that you are updating.</p>
      */
     inline UpdatePublicKey2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 

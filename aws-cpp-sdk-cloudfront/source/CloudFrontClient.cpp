@@ -27,6 +27,7 @@
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreatePublicKey2020_05_31Request.h>
@@ -38,6 +39,7 @@
 #include <aws/cloudfront/model/DeleteDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
@@ -54,6 +56,8 @@
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfileConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetInvalidation2020_05_31Request.h>
+#include <aws/cloudfront/model/GetKeyGroup2020_05_31Request.h>
+#include <aws/cloudfront/model/GetKeyGroupConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/GetOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetOriginRequestPolicyConfig2020_05_31Request.h>
@@ -66,12 +70,14 @@
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Request.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Request.h>
+#include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
 #include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
@@ -84,6 +90,7 @@
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Request.h>
@@ -359,6 +366,33 @@ void CloudFrontClient::CreateInvalidation2020_05_31Async(const CreateInvalidatio
 void CloudFrontClient::CreateInvalidation2020_05_31AsyncHelper(const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateInvalidation2020_05_31(request), context);
+}
+
+CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::CreateKeyGroup2020_05_31Callable(const CreateKeyGroup2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateKeyGroup2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateKeyGroup2020_05_31Async(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateKeyGroup2020_05_31AsyncHelper(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateKeyGroup2020_05_31(request), context);
 }
 
 CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoringSubscription2020_05_31(const CreateMonitoringSubscription2020_05_31Request& request) const
@@ -695,6 +729,39 @@ void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31Async(const De
 void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
+}
+
+DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKeyGroup2020_05_31", "Required field: Id, is not set");
+    return DeleteKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteKeyGroup2020_05_31OutcomeCallable CloudFrontClient::DeleteKeyGroup2020_05_31Callable(const DeleteKeyGroup2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKeyGroup2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteKeyGroup2020_05_31Async(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteKeyGroup2020_05_31AsyncHelper(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteKeyGroup2020_05_31(request), context);
 }
 
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(const DeleteMonitoringSubscription2020_05_31Request& request) const
@@ -1232,6 +1299,73 @@ void CloudFrontClient::GetInvalidation2020_05_31AsyncHelper(const GetInvalidatio
   handler(this, request, GetInvalidation2020_05_31(request), context);
 }
 
+GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKeyGroup2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetKeyGroup2020_05_31", "Required field: Id, is not set");
+    return GetKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetKeyGroup2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroup2020_05_31Callable(const GetKeyGroup2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKeyGroup2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetKeyGroup2020_05_31Async(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetKeyGroup2020_05_31AsyncHelper(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetKeyGroup2020_05_31(request), context);
+}
+
+GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31(const GetKeyGroupConfig2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetKeyGroupConfig2020_05_31", "Required field: Id, is not set");
+    return GetKeyGroupConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group/";
+  ss << request.GetId();
+  ss << "/config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetKeyGroupConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetKeyGroupConfig2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroupConfig2020_05_31Callable(const GetKeyGroupConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetKeyGroupConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKeyGroupConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetKeyGroupConfig2020_05_31Async(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetKeyGroupConfig2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetKeyGroupConfig2020_05_31AsyncHelper(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetKeyGroupConfig2020_05_31(request), context);
+}
+
 GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscription2020_05_31(const GetMonitoringSubscription2020_05_31Request& request) const
 {
   if (!request.DistributionIdHasBeenSet())
@@ -1608,6 +1742,39 @@ void CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31AsyncHelper(con
   handler(this, request, ListDistributionsByCachePolicyId2020_05_31(request), context);
 }
 
+ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributionsByKeyGroup2020_05_31(const ListDistributionsByKeyGroup2020_05_31Request& request) const
+{
+  if (!request.KeyGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDistributionsByKeyGroup2020_05_31", "Required field: KeyGroupId, is not set");
+    return ListDistributionsByKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/distributionsByKeyGroupId/";
+  ss << request.GetKeyGroupId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListDistributionsByKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListDistributionsByKeyGroup2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Callable(const ListDistributionsByKeyGroup2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByKeyGroup2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Async(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31AsyncHelper(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDistributionsByKeyGroup2020_05_31(request), context);
+}
+
 ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const
 {
   if (!request.OriginRequestPolicyIdHasBeenSet())
@@ -1787,6 +1954,33 @@ void CloudFrontClient::ListInvalidations2020_05_31Async(const ListInvalidations2
 void CloudFrontClient::ListInvalidations2020_05_31AsyncHelper(const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInvalidations2020_05_31(request), context);
+}
+
+ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListKeyGroups2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListKeyGroups2020_05_31OutcomeCallable CloudFrontClient::ListKeyGroups2020_05_31Callable(const ListKeyGroups2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListKeyGroups2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKeyGroups2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListKeyGroups2020_05_31Async(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListKeyGroups2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListKeyGroups2020_05_31AsyncHelper(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListKeyGroups2020_05_31(request), context);
 }
 
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
@@ -2164,6 +2358,39 @@ void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Async(const Up
 void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
+}
+
+UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateKeyGroup2020_05_31", "Required field: Id, is not set");
+    return UpdateKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/key-group/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::UpdateKeyGroup2020_05_31Callable(const UpdateKeyGroup2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateKeyGroup2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateKeyGroup2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateKeyGroup2020_05_31AsyncHelper(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateKeyGroup2020_05_31(request), context);
 }
 
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(const UpdateOriginRequestPolicy2020_05_31Request& request) const

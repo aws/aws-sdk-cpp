@@ -29,6 +29,7 @@ Distribution::Distribution() :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
+    m_activeTrustedKeyGroupsHasBeenSet(false),
     m_distributionConfigHasBeenSet(false),
     m_aliasICPRecordalsHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ Distribution::Distribution(const XmlNode& xmlNode) :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
+    m_activeTrustedKeyGroupsHasBeenSet(false),
     m_distributionConfigHasBeenSet(false),
     m_aliasICPRecordalsHasBeenSet(false)
 {
@@ -96,6 +98,12 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     {
       m_activeTrustedSigners = activeTrustedSignersNode;
       m_activeTrustedSignersHasBeenSet = true;
+    }
+    XmlNode activeTrustedKeyGroupsNode = resultNode.FirstChild("ActiveTrustedKeyGroups");
+    if(!activeTrustedKeyGroupsNode.IsNull())
+    {
+      m_activeTrustedKeyGroups = activeTrustedKeyGroupsNode;
+      m_activeTrustedKeyGroupsHasBeenSet = true;
     }
     XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
     if(!distributionConfigNode.IsNull())
@@ -165,6 +173,12 @@ void Distribution::AddToNode(XmlNode& parentNode) const
   {
    XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
    m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
+  }
+
+  if(m_activeTrustedKeyGroupsHasBeenSet)
+  {
+   XmlNode activeTrustedKeyGroupsNode = parentNode.CreateChildElement("ActiveTrustedKeyGroups");
+   m_activeTrustedKeyGroups.AddToNode(activeTrustedKeyGroupsNode);
   }
 
   if(m_distributionConfigHasBeenSet)

@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/EphemeralNvmeSupport.h>
 #include <aws/ec2/model/DiskInfo.h>
 #include <utility>
 
@@ -102,6 +103,43 @@ namespace Model
      */
     inline InstanceStorageInfo& AddDisks(DiskInfo&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline const EphemeralNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline void SetNvmeSupport(const EphemeralNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline void SetNvmeSupport(EphemeralNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline InstanceStorageInfo& WithNvmeSupport(const EphemeralNvmeSupport& value) { SetNvmeSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline InstanceStorageInfo& WithNvmeSupport(EphemeralNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
+
   private:
 
     long long m_totalSizeInGB;
@@ -109,6 +147,9 @@ namespace Model
 
     Aws::Vector<DiskInfo> m_disks;
     bool m_disksHasBeenSet;
+
+    EphemeralNvmeSupport m_nvmeSupport;
+    bool m_nvmeSupportHasBeenSet;
   };
 
 } // namespace Model

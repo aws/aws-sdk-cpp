@@ -341,8 +341,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
-         * handshake: only a principal from the master account.</p> <p>For more information
-         * about invitations, see <a
+         * handshake: only a principal from the management account.</p> <p>For more
+         * information about invitations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> For more information about requests to enable all features in the
@@ -372,8 +372,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
-         * handshake: only a principal from the master account.</p> <p>For more information
-         * about invitations, see <a
+         * handshake: only a principal from the management account.</p> <p>For more
+         * information about invitations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> For more information about requests to enable all features in the
@@ -405,8 +405,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
-         * handshake: only a principal from the master account.</p> <p>For more information
-         * about invitations, see <a
+         * handshake: only a principal from the management account.</p> <p>For more
+         * information about invitations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> For more information about requests to enable all features in the
@@ -436,7 +436,7 @@ namespace Model
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          */
@@ -455,7 +455,7 @@ namespace Model
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -476,7 +476,7 @@ namespace Model
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -553,11 +553,12 @@ namespace Model
          * <code>organizations:TagResource</code> permission.</p> <p>AWS Organizations
          * preconfigures the new member account with a role (named
          * <code>OrganizationAccountAccessRole</code> by default) that grants users in the
-         * master account administrator permissions in the new member account. Principals
-         * in the master account can assume the role. AWS Organizations clones the company
-         * name and address information for the new account from the organization's master
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account.</p> <p>For more information about creating accounts, see <a
+         * management account administrator permissions in the new member account.
+         * Principals in the management account can assume the role. AWS Organizations
+         * clones the company name and address information for the new account from the
+         * organization's management account.</p> <p>This operation can be called only from
+         * the organization's management account.</p> <p>For more information about
+         * creating accounts, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p>  <ul> <li> <p>When you create an account in an
@@ -622,11 +623,12 @@ namespace Model
          * <code>organizations:TagResource</code> permission.</p> <p>AWS Organizations
          * preconfigures the new member account with a role (named
          * <code>OrganizationAccountAccessRole</code> by default) that grants users in the
-         * master account administrator permissions in the new member account. Principals
-         * in the master account can assume the role. AWS Organizations clones the company
-         * name and address information for the new account from the organization's master
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account.</p> <p>For more information about creating accounts, see <a
+         * management account administrator permissions in the new member account.
+         * Principals in the management account can assume the role. AWS Organizations
+         * clones the company name and address information for the new account from the
+         * organization's management account.</p> <p>This operation can be called only from
+         * the organization's management account.</p> <p>For more information about
+         * creating accounts, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p>  <ul> <li> <p>When you create an account in an
@@ -693,11 +695,12 @@ namespace Model
          * <code>organizations:TagResource</code> permission.</p> <p>AWS Organizations
          * preconfigures the new member account with a role (named
          * <code>OrganizationAccountAccessRole</code> by default) that grants users in the
-         * master account administrator permissions in the new member account. Principals
-         * in the master account can assume the role. AWS Organizations clones the company
-         * name and address information for the new account from the organization's master
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account.</p> <p>For more information about creating accounts, see <a
+         * management account administrator permissions in the new member account.
+         * Principals in the management account can assume the role. AWS Organizations
+         * clones the company name and address information for the new account from the
+         * organization's management account.</p> <p>This operation can be called only from
+         * the organization's management account.</p> <p>For more information about
+         * creating accounts, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p>  <ul> <li> <p>When you create an account in an
@@ -744,13 +747,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is paired with a master account of
-         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
-         * from the master account of your organization in the commercial Region.</p> </li>
-         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
-         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
-         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-         * For more information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a management account
+         * of an organization in the commercial Region.</p> </li> <li> <p>You call this
+         * action from the management account of your organization in the commercial
+         * Region.</p> </li> <li> <p>You have the
+         * <code>organizations:CreateGovCloudAccount</code> permission. </p> </li> </ul>
+         * <p>AWS Organizations automatically creates the required service-linked role
+         * named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud
@@ -764,12 +767,12 @@ namespace Model
          * commercial account associated with the GovCloud account, rather than the
          * GovCloud account itself. To add tags to the GovCloud account, call the
          * <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
-         * account exists.</p> <p>You call this action from the master account of your
+         * account exists.</p> <p>You call this action from the management account of your
          * organization in the commercial Region to create a standalone AWS account in the
-         * AWS GovCloud (US) Region. After the account is created, the master account of an
-         * organization in the AWS GovCloud (US) Region can invite it to that organization.
-         * For more information on inviting standalone accounts in the AWS GovCloud (US) to
-         * join an organization, see <a
+         * AWS GovCloud (US) Region. After the account is created, the management account
+         * of an organization in the AWS GovCloud (US) Region can invite it to that
+         * organization. For more information on inviting standalone accounts in the AWS
+         * GovCloud (US) to join an organization, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>Calling
          * <code>CreateGovCloudAccount</code> is an asynchronous request that AWS performs
@@ -791,12 +794,13 @@ namespace Model
          * commercial Region is automatically a member of the organization whose
          * credentials made the request. Both accounts are associated with the same email
          * address.</p> <p>A role is created in the new account in the commercial Region
-         * that allows the master account in the organization in the commercial Region to
-         * assume it. An AWS GovCloud (US) account is then created and associated with the
-         * commercial account that you just created. A role is also created in the new AWS
-         * GovCloud (US) account that can be assumed by the AWS GovCloud (US) account that
-         * is associated with the master account of the commercial organization. For more
-         * information and to view a diagram that explains how account access works, see <a
+         * that allows the management account in the organization in the commercial Region
+         * to assume it. An AWS GovCloud (US) account is then created and associated with
+         * the commercial account that you just created. A role is also created in the new
+         * AWS GovCloud (US) account that can be assumed by the AWS GovCloud (US) account
+         * that is associated with the management account of the commercial organization.
+         * For more information and to view a diagram that explains how account access
+         * works, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>For more
          * information about creating accounts, see <a
@@ -844,13 +848,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is paired with a master account of
-         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
-         * from the master account of your organization in the commercial Region.</p> </li>
-         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
-         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
-         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-         * For more information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a management account
+         * of an organization in the commercial Region.</p> </li> <li> <p>You call this
+         * action from the management account of your organization in the commercial
+         * Region.</p> </li> <li> <p>You have the
+         * <code>organizations:CreateGovCloudAccount</code> permission. </p> </li> </ul>
+         * <p>AWS Organizations automatically creates the required service-linked role
+         * named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud
@@ -864,12 +868,12 @@ namespace Model
          * commercial account associated with the GovCloud account, rather than the
          * GovCloud account itself. To add tags to the GovCloud account, call the
          * <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
-         * account exists.</p> <p>You call this action from the master account of your
+         * account exists.</p> <p>You call this action from the management account of your
          * organization in the commercial Region to create a standalone AWS account in the
-         * AWS GovCloud (US) Region. After the account is created, the master account of an
-         * organization in the AWS GovCloud (US) Region can invite it to that organization.
-         * For more information on inviting standalone accounts in the AWS GovCloud (US) to
-         * join an organization, see <a
+         * AWS GovCloud (US) Region. After the account is created, the management account
+         * of an organization in the AWS GovCloud (US) Region can invite it to that
+         * organization. For more information on inviting standalone accounts in the AWS
+         * GovCloud (US) to join an organization, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>Calling
          * <code>CreateGovCloudAccount</code> is an asynchronous request that AWS performs
@@ -891,12 +895,13 @@ namespace Model
          * commercial Region is automatically a member of the organization whose
          * credentials made the request. Both accounts are associated with the same email
          * address.</p> <p>A role is created in the new account in the commercial Region
-         * that allows the master account in the organization in the commercial Region to
-         * assume it. An AWS GovCloud (US) account is then created and associated with the
-         * commercial account that you just created. A role is also created in the new AWS
-         * GovCloud (US) account that can be assumed by the AWS GovCloud (US) account that
-         * is associated with the master account of the commercial organization. For more
-         * information and to view a diagram that explains how account access works, see <a
+         * that allows the management account in the organization in the commercial Region
+         * to assume it. An AWS GovCloud (US) account is then created and associated with
+         * the commercial account that you just created. A role is also created in the new
+         * AWS GovCloud (US) account that can be assumed by the AWS GovCloud (US) account
+         * that is associated with the management account of the commercial organization.
+         * For more information and to view a diagram that explains how account access
+         * works, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>For more
          * information about creating accounts, see <a
@@ -946,13 +951,13 @@ namespace Model
          * more information on the AWS GovCloud (US) Region, see the <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
          * <i>AWS GovCloud User Guide</i>.</a> </p> </li> <li> <p>You already have an
-         * account in the AWS GovCloud (US) Region that is paired with a master account of
-         * an organization in the commercial Region.</p> </li> <li> <p>You call this action
-         * from the master account of your organization in the commercial Region.</p> </li>
-         * <li> <p>You have the <code>organizations:CreateGovCloudAccount</code>
-         * permission. </p> </li> </ul> <p>AWS Organizations automatically creates the
-         * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-         * For more information, see <a
+         * account in the AWS GovCloud (US) Region that is paired with a management account
+         * of an organization in the commercial Region.</p> </li> <li> <p>You call this
+         * action from the management account of your organization in the commercial
+         * Region.</p> </li> <li> <p>You have the
+         * <code>organizations:CreateGovCloudAccount</code> permission. </p> </li> </ul>
+         * <p>AWS Organizations automatically creates the required service-linked role
+         * named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
          * Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>AWS automatically enables AWS CloudTrail for AWS GovCloud
@@ -966,12 +971,12 @@ namespace Model
          * commercial account associated with the GovCloud account, rather than the
          * GovCloud account itself. To add tags to the GovCloud account, call the
          * <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
-         * account exists.</p> <p>You call this action from the master account of your
+         * account exists.</p> <p>You call this action from the management account of your
          * organization in the commercial Region to create a standalone AWS account in the
-         * AWS GovCloud (US) Region. After the account is created, the master account of an
-         * organization in the AWS GovCloud (US) Region can invite it to that organization.
-         * For more information on inviting standalone accounts in the AWS GovCloud (US) to
-         * join an organization, see <a
+         * AWS GovCloud (US) Region. After the account is created, the management account
+         * of an organization in the AWS GovCloud (US) Region can invite it to that
+         * organization. For more information on inviting standalone accounts in the AWS
+         * GovCloud (US) to join an organization, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>Calling
          * <code>CreateGovCloudAccount</code> is an asynchronous request that AWS performs
@@ -993,12 +998,13 @@ namespace Model
          * commercial Region is automatically a member of the organization whose
          * credentials made the request. Both accounts are associated with the same email
          * address.</p> <p>A role is created in the new account in the commercial Region
-         * that allows the master account in the organization in the commercial Region to
-         * assume it. An AWS GovCloud (US) account is then created and associated with the
-         * commercial account that you just created. A role is also created in the new AWS
-         * GovCloud (US) account that can be assumed by the AWS GovCloud (US) account that
-         * is associated with the master account of the commercial organization. For more
-         * information and to view a diagram that explains how account access works, see <a
+         * that allows the management account in the organization in the commercial Region
+         * to assume it. An AWS GovCloud (US) account is then created and associated with
+         * the commercial account that you just created. A role is also created in the new
+         * AWS GovCloud (US) account that can be assumed by the AWS GovCloud (US) account
+         * that is associated with the management account of the commercial organization.
+         * For more information and to view a diagram that explains how account access
+         * works, see <a
          * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
          * Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> <p>For more
          * information about creating accounts, see <a
@@ -1045,9 +1051,9 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * <code>CreateOrganization</code> operation automatically becomes the <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
          * account</a> of the new organization.</p> <p>This operation must be called using
-         * credentials from the account that is to become the new organization's master
+         * credentials from the account that is to become the new organization's management
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
          * default (or if you set the <code>FeatureSet</code> parameter to
          * <code>ALL</code>), the new organization is created with all features enabled and
@@ -1064,9 +1070,9 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * <code>CreateOrganization</code> operation automatically becomes the <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
          * account</a> of the new organization.</p> <p>This operation must be called using
-         * credentials from the account that is to become the new organization's master
+         * credentials from the account that is to become the new organization's management
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
          * default (or if you set the <code>FeatureSet</code> parameter to
          * <code>ALL</code>), the new organization is created with all features enabled and
@@ -1085,9 +1091,9 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * <code>CreateOrganization</code> operation automatically becomes the <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
          * account</a> of the new organization.</p> <p>This operation must be called using
-         * credentials from the account that is to become the new organization's master
+         * credentials from the account that is to become the new organization's management
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
          * default (or if you set the <code>FeatureSet</code> parameter to
          * <code>ALL</code>), the new organization is created with all features enabled and
@@ -1114,7 +1120,7 @@ namespace Model
          * Organizational Units</a> in the <i>AWS Organizations User Guide.</i> </p> <p>If
          * the request includes tags, then the requester must have the
          * <code>organizations:TagResource</code> permission.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * called only from the organization's management account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1132,7 +1138,7 @@ namespace Model
          * Organizational Units</a> in the <i>AWS Organizations User Guide.</i> </p> <p>If
          * the request includes tags, then the requester must have the
          * <code>organizations:TagResource</code> permission.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * called only from the organization's management account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1152,7 +1158,7 @@ namespace Model
          * Organizational Units</a> in the <i>AWS Organizations User Guide.</i> </p> <p>If
          * the request includes tags, then the requester must have the
          * <code>organizations:TagResource</code> permission.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * called only from the organization's management account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1168,7 +1174,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>If the request includes tags, then the
          * requester must have the <code>organizations:TagResource</code> permission.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
          * API Reference</a></p>
@@ -1182,7 +1188,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>If the request includes tags, then the
          * requester must have the <code>organizations:TagResource</code> permission.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
          * API Reference</a></p>
@@ -1198,7 +1204,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>If the request includes tags, then the
          * requester must have the <code>organizations:TagResource</code> permission.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
          * API Reference</a></p>
@@ -1255,8 +1261,8 @@ namespace Model
 
         /**
          * <p>Deletes the organization. You can delete an organization only by using
-         * credentials from the master account. The organization must be empty of member
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * credentials from the management account. The organization must be empty of
+         * member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          */
@@ -1264,8 +1270,8 @@ namespace Model
 
         /**
          * <p>Deletes the organization. You can delete an organization only by using
-         * credentials from the master account. The organization must be empty of member
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * credentials from the management account. The organization must be empty of
+         * member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -1275,8 +1281,8 @@ namespace Model
 
         /**
          * <p>Deletes the organization. You can delete an organization only by using
-         * credentials from the master account. The organization must be empty of member
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * credentials from the management account. The organization must be empty of
+         * member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -1286,7 +1292,7 @@ namespace Model
         /**
          * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1296,7 +1302,7 @@ namespace Model
         /**
          * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1308,7 +1314,7 @@ namespace Model
         /**
          * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">AWS
          * API Reference</a></p>
@@ -1321,7 +1327,7 @@ namespace Model
          * <p>Deletes the specified policy from your organization. Before you perform this
          * operation, you must first detach the policy from all organizational units (OUs),
          * roots, and accounts.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          */
@@ -1331,7 +1337,7 @@ namespace Model
          * <p>Deletes the specified policy from your organization. Before you perform this
          * operation, you must first detach the policy from all organizational units (OUs),
          * roots, and accounts.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -1343,7 +1349,7 @@ namespace Model
          * <p>Deletes the specified policy from your organization. Before you perform this
          * operation, you must first detach the policy from all organizational units (OUs),
          * roots, and accounts.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -1363,7 +1369,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          */
@@ -1381,7 +1387,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          *
@@ -1401,7 +1407,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          *
@@ -1411,9 +1417,9 @@ namespace Model
 
         /**
          * <p>Retrieves AWS Organizations-related information about the specified
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">AWS
          * API Reference</a></p>
          */
@@ -1421,9 +1427,9 @@ namespace Model
 
         /**
          * <p>Retrieves AWS Organizations-related information about the specified
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">AWS
          * API Reference</a></p>
          *
@@ -1433,9 +1439,9 @@ namespace Model
 
         /**
          * <p>Retrieves AWS Organizations-related information about the specified
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">AWS
          * API Reference</a></p>
          *
@@ -1445,9 +1451,9 @@ namespace Model
 
         /**
          * <p>Retrieves the current status of an asynchronous request to create an
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">AWS
          * API Reference</a></p>
          */
@@ -1455,9 +1461,9 @@ namespace Model
 
         /**
          * <p>Retrieves the current status of an asynchronous request to create an
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">AWS
          * API Reference</a></p>
          *
@@ -1467,9 +1473,9 @@ namespace Model
 
         /**
          * <p>Retrieves the current status of an asynchronous request to create an
-         * account.</p> <p>This operation can be called only from the organization's master
-         * account or by a member account that is a delegated administrator for an AWS
-         * service.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This operation can be called only from the organization's
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">AWS
          * API Reference</a></p>
          *
@@ -1486,8 +1492,8 @@ namespace Model
          * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
-         * <p>This operation can be called only from the organization's master account or
-         * by a member account that is a delegated administrator for an AWS
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy">AWS
          * API Reference</a></p>
@@ -1503,8 +1509,8 @@ namespace Model
          * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
-         * <p>This operation can be called only from the organization's master account or
-         * by a member account that is a delegated administrator for an AWS
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy">AWS
          * API Reference</a></p>
@@ -1522,8 +1528,8 @@ namespace Model
          * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
-         * <p>This operation can be called only from the organization's master account or
-         * by a member account that is a delegated administrator for an AWS
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy">AWS
          * API Reference</a></p>
@@ -1616,7 +1622,7 @@ namespace Model
         virtual void DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
          * <p>Retrieves information about an organizational unit (OU).</p> <p>This
-         * operation can be called only from the organization's master account or by a
+         * operation can be called only from the organization's management account or by a
          * member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">AWS
@@ -1626,7 +1632,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about an organizational unit (OU).</p> <p>This
-         * operation can be called only from the organization's master account or by a
+         * operation can be called only from the organization's management account or by a
          * member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">AWS
@@ -1638,7 +1644,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about an organizational unit (OU).</p> <p>This
-         * operation can be called only from the organization's master account or by a
+         * operation can be called only from the organization's management account or by a
          * member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">AWS
@@ -1650,7 +1656,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about a policy.</p> <p>This operation can be called
-         * only from the organization's master account or by a member account that is a
+         * only from the organization's management account or by a member account that is a
          * delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">AWS
          * API Reference</a></p>
@@ -1659,7 +1665,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about a policy.</p> <p>This operation can be called
-         * only from the organization's master account or by a member account that is a
+         * only from the organization's management account or by a member account that is a
          * delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">AWS
          * API Reference</a></p>
@@ -1670,7 +1676,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about a policy.</p> <p>This operation can be called
-         * only from the organization's master account or by a member account that is a
+         * only from the organization's management account or by a member account that is a
          * delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">AWS
          * API Reference</a></p>
@@ -1697,7 +1703,7 @@ namespace Model
          * using the authorization strategy of a "<a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
          * API Reference</a></p>
          */
@@ -1721,7 +1727,7 @@ namespace Model
          * using the authorization strategy of a "<a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
          * API Reference</a></p>
          *
@@ -1747,7 +1753,7 @@ namespace Model
          * using the authorization strategy of a "<a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
          * API Reference</a></p>
          *
@@ -1780,7 +1786,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">AWS
          * API Reference</a></p>
          */
@@ -1811,7 +1817,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">AWS
          * API Reference</a></p>
          *
@@ -1844,7 +1850,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">AWS
          * API Reference</a></p>
          *
@@ -1865,8 +1871,8 @@ namespace Model
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
          * then use this operation.</p> <p>This operation can be called only from the
-         * organization's master account.</p> <p> To view the status of available policy
-         * types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
+         * organization's management account.</p> <p> To view the status of available
+         * policy types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1886,8 +1892,8 @@ namespace Model
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
          * then use this operation.</p> <p>This operation can be called only from the
-         * organization's master account.</p> <p> To view the status of available policy
-         * types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
+         * organization's management account.</p> <p> To view the status of available
+         * policy types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1909,8 +1915,8 @@ namespace Model
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
          * then use this operation.</p> <p>This operation can be called only from the
-         * organization's master account.</p> <p> To view the status of available policy
-         * types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
+         * organization's management account.</p> <p> To view the status of available
+         * policy types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1937,7 +1943,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account and only if the organization has <a
+         * management account and only if the organization has <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
          * all features</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">AWS
@@ -1963,7 +1969,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account and only if the organization has <a
+         * management account and only if the organization has <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
          * all features</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">AWS
@@ -1991,7 +1997,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account and only if the organization has <a
+         * management account and only if the organization has <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
          * all features</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">AWS
@@ -2021,12 +2027,12 @@ namespace Model
          * accounts accept the handshake, you finalize the feature set change by accepting
          * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
          * completes the change.</p> <p>After you enable all features in your organization,
-         * the master account in the organization can apply policies on all member
+         * the management account in the organization can apply policies on all member
          * accounts. These policies can restrict what users and even administrators in
-         * those accounts can do. The master account can apply policies that prevent
+         * those accounts can do. The management account can apply policies that prevent
          * accounts from leaving the organization. Ensure that your account administrators
          * are aware of this.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          */
@@ -2052,12 +2058,12 @@ namespace Model
          * accounts accept the handshake, you finalize the feature set change by accepting
          * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
          * completes the change.</p> <p>After you enable all features in your organization,
-         * the master account in the organization can apply policies on all member
+         * the management account in the organization can apply policies on all member
          * accounts. These policies can restrict what users and even administrators in
-         * those accounts can do. The master account can apply policies that prevent
+         * those accounts can do. The management account can apply policies that prevent
          * accounts from leaving the organization. Ensure that your account administrators
          * are aware of this.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -2085,12 +2091,12 @@ namespace Model
          * accounts accept the handshake, you finalize the feature set change by accepting
          * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
          * completes the change.</p> <p>After you enable all features in your organization,
-         * the master account in the organization can apply policies on all member
+         * the management account in the organization can apply policies on all member
          * accounts. These policies can restrict what users and even administrators in
-         * those accounts can do. The master account can apply policies that prevent
+         * those accounts can do. The management account can apply policies that prevent
          * accounts from leaving the organization. Ensure that your account administrators
          * are aware of this.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -2105,10 +2111,10 @@ namespace Model
          * operation.</p> <p>This is an asynchronous request that AWS performs in the
          * background. AWS recommends that you first use <a>ListRoots</a> to see the status
          * of policy types for a specified root, and then use this operation.</p> <p>This
-         * operation can be called only from the organization's master account.</p> <p>You
-         * can enable a policy type in a root only if that policy type is available in the
-         * organization. To view the status of available policy types in the organization,
-         * use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
+         * operation can be called only from the organization's management account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. To view the status of available policy types in the
+         * organization, use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          */
@@ -2121,10 +2127,10 @@ namespace Model
          * operation.</p> <p>This is an asynchronous request that AWS performs in the
          * background. AWS recommends that you first use <a>ListRoots</a> to see the status
          * of policy types for a specified root, and then use this operation.</p> <p>This
-         * operation can be called only from the organization's master account.</p> <p>You
-         * can enable a policy type in a root only if that policy type is available in the
-         * organization. To view the status of available policy types in the organization,
-         * use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
+         * operation can be called only from the organization's management account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. To view the status of available policy types in the
+         * organization, use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -2139,10 +2145,10 @@ namespace Model
          * operation.</p> <p>This is an asynchronous request that AWS performs in the
          * background. AWS recommends that you first use <a>ListRoots</a> to see the status
          * of policy types for a specified root, and then use this operation.</p> <p>This
-         * operation can be called only from the organization's master account.</p> <p>You
-         * can enable a policy type in a root only if that policy type is available in the
-         * organization. To view the status of available policy types in the organization,
-         * use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
+         * operation can be called only from the organization's management account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. To view the status of available policy types in the
+         * organization, use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -2155,11 +2161,12 @@ namespace Model
          * account. AWS Organizations sends email on your behalf to the email address that
          * is associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p>  <ul> <li>
-         * <p>You can invite AWS accounts only from the same seller as the master account.
-         * For example, if your organization's master account was created by Amazon
-         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS or from any other AWS seller. For more information, see <a
+         * <p>You can invite AWS accounts only from the same seller as the management
+         * account. For example, if your organization's management account was created by
+         * Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can
+         * invite only other AISPL accounts to your organization. You can't combine
+         * accounts from AISPL and AWS or from any other AWS seller. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
          * indicates that you exceeded your account limits for the organization or that the
@@ -2168,8 +2175,8 @@ namespace Model
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
          * </ul>  <p>If the request includes tags, then the requester must have
          * the <code>organizations:TagResource</code> permission.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          */
@@ -2180,11 +2187,12 @@ namespace Model
          * account. AWS Organizations sends email on your behalf to the email address that
          * is associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p>  <ul> <li>
-         * <p>You can invite AWS accounts only from the same seller as the master account.
-         * For example, if your organization's master account was created by Amazon
-         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS or from any other AWS seller. For more information, see <a
+         * <p>You can invite AWS accounts only from the same seller as the management
+         * account. For example, if your organization's management account was created by
+         * Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can
+         * invite only other AISPL accounts to your organization. You can't combine
+         * accounts from AISPL and AWS or from any other AWS seller. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
          * indicates that you exceeded your account limits for the organization or that the
@@ -2193,8 +2201,8 @@ namespace Model
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
          * </ul>  <p>If the request includes tags, then the requester must have
          * the <code>organizations:TagResource</code> permission.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -2207,11 +2215,12 @@ namespace Model
          * account. AWS Organizations sends email on your behalf to the email address that
          * is associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p>  <ul> <li>
-         * <p>You can invite AWS accounts only from the same seller as the master account.
-         * For example, if your organization's master account was created by Amazon
-         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS or from any other AWS seller. For more information, see <a
+         * <p>You can invite AWS accounts only from the same seller as the management
+         * account. For example, if your organization's management account was created by
+         * Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can
+         * invite only other AISPL accounts to your organization. You can't combine
+         * accounts from AISPL and AWS or from any other AWS seller. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
          * indicates that you exceeded your account limits for the organization or that the
@@ -2220,8 +2229,8 @@ namespace Model
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
          * </ul>  <p>If the request includes tags, then the requester must have
          * the <code>organizations:TagResource</code> permission.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -2232,10 +2241,10 @@ namespace Model
         /**
          * <p>Removes a member account from its parent organization. This version of the
          * operation is performed by the account that wants to leave. To remove a member
-         * account as a user in the master account, use
+         * account as a user in the management account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
          * called only from a member account in the organization.</p>  <ul> <li>
-         * <p>The master account in an organization with all features enabled can set
+         * <p>The management account in an organization with all features enabled can set
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do. This includes preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization.</p> </li> <li>
@@ -2270,10 +2279,10 @@ namespace Model
         /**
          * <p>Removes a member account from its parent organization. This version of the
          * operation is performed by the account that wants to leave. To remove a member
-         * account as a user in the master account, use
+         * account as a user in the management account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
          * called only from a member account in the organization.</p>  <ul> <li>
-         * <p>The master account in an organization with all features enabled can set
+         * <p>The management account in an organization with all features enabled can set
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do. This includes preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization.</p> </li> <li>
@@ -2310,10 +2319,10 @@ namespace Model
         /**
          * <p>Removes a member account from its parent organization. This version of the
          * operation is performed by the account that wants to leave. To remove a member
-         * account as a user in the master account, use
+         * account as a user in the management account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
          * called only from a member account in the organization.</p>  <ul> <li>
-         * <p>The master account in an organization with all features enabled can set
+         * <p>The management account in an organization with all features enabled can set
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do. This includes preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization.</p> </li> <li>
@@ -2356,8 +2365,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
@@ -2373,8 +2382,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2392,8 +2401,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2410,8 +2419,9 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          */
@@ -2426,8 +2436,9 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -2444,8 +2455,9 @@ namespace Model
          * set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -2464,7 +2476,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
@@ -2483,7 +2495,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
@@ -2504,7 +2516,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
@@ -2523,7 +2535,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
@@ -2540,7 +2552,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
@@ -2559,7 +2571,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
@@ -2577,8 +2589,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
          * API Reference</a></p>
          */
@@ -2592,8 +2605,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
          * API Reference</a></p>
          *
@@ -2609,8 +2623,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
          * API Reference</a></p>
          *
@@ -2621,7 +2636,7 @@ namespace Model
         /**
          * <p>Lists the AWS accounts that are designated as delegated administrators in
          * this organization.</p> <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators">AWS
          * API Reference</a></p>
@@ -2631,7 +2646,7 @@ namespace Model
         /**
          * <p>Lists the AWS accounts that are designated as delegated administrators in
          * this organization.</p> <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators">AWS
          * API Reference</a></p>
@@ -2643,7 +2658,7 @@ namespace Model
         /**
          * <p>Lists the AWS accounts that are designated as delegated administrators in
          * this organization.</p> <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators">AWS
          * API Reference</a></p>
@@ -2655,8 +2670,8 @@ namespace Model
         /**
          * <p>List the AWS services for which the specified account is a delegated
          * administrator.</p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount">AWS
          * API Reference</a></p>
          */
@@ -2665,8 +2680,8 @@ namespace Model
         /**
          * <p>List the AWS services for which the specified account is a delegated
          * administrator.</p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2677,8 +2692,8 @@ namespace Model
         /**
          * <p>List the AWS services for which the specified account is a delegated
          * administrator.</p> <p>This operation can be called only from the organization's
-         * master account or by a member account that is a delegated administrator for an
-         * AWS service.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an AWS service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2754,8 +2769,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          */
@@ -2774,8 +2790,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2796,8 +2813,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2812,7 +2830,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
@@ -2827,7 +2845,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
@@ -2844,7 +2862,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
@@ -2864,7 +2882,7 @@ namespace Model
          * when there are more results available. The <code>NextToken</code> response
          * parameter value is <code>null</code> <i>only</i> when there are no more results
          * to display.</p>  <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p>  <p>In the current release, a child
          * can have only a single parent.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
@@ -2882,7 +2900,7 @@ namespace Model
          * when there are more results available. The <code>NextToken</code> response
          * parameter value is <code>null</code> <i>only</i> when there are no more results
          * to display.</p>  <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p>  <p>In the current release, a child
          * can have only a single parent.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
@@ -2902,7 +2920,7 @@ namespace Model
          * when there are more results available. The <code>NextToken</code> response
          * parameter value is <code>null</code> <i>only</i> when there are no more results
          * to display.</p>  <p>This operation can be called only from the
-         * organization's master account or by a member account that is a delegated
+         * organization's management account or by a member account that is a delegated
          * administrator for an AWS service.</p>  <p>In the current release, a child
          * can have only a single parent.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
@@ -2919,7 +2937,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
@@ -2934,7 +2952,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
@@ -2951,7 +2969,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
@@ -2970,8 +2988,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          */
@@ -2986,8 +3005,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -3004,8 +3024,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -3020,7 +3041,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p>  <p>Policy types can be enabled and disabled in roots. This
          * is distinct from whether they're available in the organization. When you enable
@@ -3040,7 +3061,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p>  <p>Policy types can be enabled and disabled in roots. This
          * is distinct from whether they're available in the organization. When you enable
@@ -3062,7 +3083,7 @@ namespace Model
          * operations can occasionally return an empty set of results even when there are
          * more results available. The <code>NextToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display.</p>
-         *  <p>This operation can be called only from the organization's master
+         *  <p>This operation can be called only from the organization's management
          * account or by a member account that is a delegated administrator for an AWS
          * service.</p>  <p>Policy types can be enabled and disabled in roots. This
          * is distinct from whether they're available in the organization. When you enable
@@ -3082,9 +3103,9 @@ namespace Model
          * tags to the following resources in AWS Organizations.</p> <ul> <li> <p>AWS
          * account</p> </li> <li> <p>Organization root</p> </li> <li> <p>Organizational
          * unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul> <p>This operation
-         * can be called only from the organization's master account or by a member account
-         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
-         * <a
+         * can be called only from the organization's management account or by a member
+         * account that is a delegated administrator for an AWS service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -3095,9 +3116,9 @@ namespace Model
          * tags to the following resources in AWS Organizations.</p> <ul> <li> <p>AWS
          * account</p> </li> <li> <p>Organization root</p> </li> <li> <p>Organizational
          * unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul> <p>This operation
-         * can be called only from the organization's master account or by a member account
-         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
-         * <a
+         * can be called only from the organization's management account or by a member
+         * account that is a delegated administrator for an AWS service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -3110,9 +3131,9 @@ namespace Model
          * tags to the following resources in AWS Organizations.</p> <ul> <li> <p>AWS
          * account</p> </li> <li> <p>Organization root</p> </li> <li> <p>Organizational
          * unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul> <p>This operation
-         * can be called only from the organization's master account or by a member account
-         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
-         * <a
+         * can be called only from the organization's management account or by a member
+         * account that is a delegated administrator for an AWS service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -3128,8 +3149,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          */
@@ -3143,8 +3165,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -3160,8 +3183,9 @@ namespace Model
          * an empty set of results even when there are more results available. The
          * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
          * when there are no more results to display.</p>  <p>This operation can be
-         * called only from the organization's master account or by a member account that
-         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -3172,8 +3196,8 @@ namespace Model
         /**
          * <p>Moves an account from its current source parent root or organizational unit
          * (OU) to the specified destination parent root or OU.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          */
@@ -3182,8 +3206,8 @@ namespace Model
         /**
          * <p>Moves an account from its current source parent root or organizational unit
          * (OU) to the specified destination parent root or OU.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          *
@@ -3194,8 +3218,8 @@ namespace Model
         /**
          * <p>Moves an account from its current source parent root or organizational unit
          * (OU) to the specified destination parent root or OU.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * be called only from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          *
@@ -3213,7 +3237,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          */
@@ -3229,7 +3253,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          *
@@ -3247,7 +3271,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
          * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
          * User Guide.</i> </p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>
          *
@@ -3259,10 +3283,10 @@ namespace Model
          * <p>Removes the specified account from the organization.</p> <p>The removed
          * account becomes a standalone account that isn't a member of any organization.
          * It's no longer subject to any policies and is responsible for its own bill
-         * payments. The organization's master account is no longer charged for any
+         * payments. The organization's management account is no longer charged for any
          * expenses accrued by the member account after it's removed from the
          * organization.</p> <p>This operation can be called only from the organization's
-         * master account. Member accounts can remove themselves with
+         * management account. Member accounts can remove themselves with
          * <a>LeaveOrganization</a> instead.</p>  <ul> <li> <p>You can remove an
          * account from your organization only if the account is configured with the
          * information required to operate as a standalone account. When you create an
@@ -3290,10 +3314,10 @@ namespace Model
          * <p>Removes the specified account from the organization.</p> <p>The removed
          * account becomes a standalone account that isn't a member of any organization.
          * It's no longer subject to any policies and is responsible for its own bill
-         * payments. The organization's master account is no longer charged for any
+         * payments. The organization's management account is no longer charged for any
          * expenses accrued by the member account after it's removed from the
          * organization.</p> <p>This operation can be called only from the organization's
-         * master account. Member accounts can remove themselves with
+         * management account. Member accounts can remove themselves with
          * <a>LeaveOrganization</a> instead.</p>  <ul> <li> <p>You can remove an
          * account from your organization only if the account is configured with the
          * information required to operate as a standalone account. When you create an
@@ -3323,10 +3347,10 @@ namespace Model
          * <p>Removes the specified account from the organization.</p> <p>The removed
          * account becomes a standalone account that isn't a member of any organization.
          * It's no longer subject to any policies and is responsible for its own bill
-         * payments. The organization's master account is no longer charged for any
+         * payments. The organization's management account is no longer charged for any
          * expenses accrued by the member account after it's removed from the
          * organization.</p> <p>This operation can be called only from the organization's
-         * master account. Member accounts can remove themselves with
+         * management account. Member accounts can remove themselves with
          * <a>LeaveOrganization</a> instead.</p>  <ul> <li> <p>You can remove an
          * account from your organization only if the account is configured with the
          * information required to operate as a standalone account. When you create an
@@ -3357,7 +3381,7 @@ namespace Model
          * attach tags to the following resources in AWS Organizations.</p> <ul> <li>
          * <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource">AWS
          * API Reference</a></p>
@@ -3369,7 +3393,7 @@ namespace Model
          * attach tags to the following resources in AWS Organizations.</p> <ul> <li>
          * <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource">AWS
          * API Reference</a></p>
@@ -3383,7 +3407,7 @@ namespace Model
          * attach tags to the following resources in AWS Organizations.</p> <ul> <li>
          * <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource">AWS
          * API Reference</a></p>
@@ -3397,7 +3421,7 @@ namespace Model
          * <p>You can attach tags to the following resources in AWS Organizations.</p> <ul>
          * <li> <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -3409,7 +3433,7 @@ namespace Model
          * <p>You can attach tags to the following resources in AWS Organizations.</p> <ul>
          * <li> <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -3423,7 +3447,7 @@ namespace Model
          * <p>You can attach tags to the following resources in AWS Organizations.</p> <ul>
          * <li> <p>AWS account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's master
+         * <p>This operation can be called only from the organization's management
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -3436,7 +3460,7 @@ namespace Model
          * <p>Renames the specified organizational unit (OU). The ID and ARN don't change.
          * The child OUs and accounts remain in place, and any attached policies of the OU
          * remain attached.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">AWS
          * API Reference</a></p>
          */
@@ -3446,7 +3470,7 @@ namespace Model
          * <p>Renames the specified organizational unit (OU). The ID and ARN don't change.
          * The child OUs and accounts remain in place, and any attached policies of the OU
          * remain attached.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">AWS
          * API Reference</a></p>
          *
@@ -3458,7 +3482,7 @@ namespace Model
          * <p>Renames the specified organizational unit (OU). The ID and ARN don't change.
          * The child OUs and accounts remain in place, and any attached policies of the OU
          * remain attached.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">AWS
          * API Reference</a></p>
          *
@@ -3470,7 +3494,7 @@ namespace Model
          * <p>Updates an existing policy with a new name, description, or content. If you
          * don't supply any parameter, that value remains unchanged. You can't change a
          * policy's type.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">AWS
          * API Reference</a></p>
          */
@@ -3480,7 +3504,7 @@ namespace Model
          * <p>Updates an existing policy with a new name, description, or content. If you
          * don't supply any parameter, that value remains unchanged. You can't change a
          * policy's type.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">AWS
          * API Reference</a></p>
          *
@@ -3492,7 +3516,7 @@ namespace Model
          * <p>Updates an existing policy with a new name, description, or content. If you
          * don't supply any parameter, that value remains unchanged. You can't change a
          * policy's type.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">AWS
          * API Reference</a></p>
          *

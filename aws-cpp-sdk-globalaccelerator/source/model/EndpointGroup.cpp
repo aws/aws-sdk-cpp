@@ -32,7 +32,8 @@ EndpointGroup::EndpointGroup() :
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_thresholdCount(0),
-    m_thresholdCountHasBeenSet(false)
+    m_thresholdCountHasBeenSet(false),
+    m_portOverridesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ EndpointGroup::EndpointGroup(JsonView jsonValue) :
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_thresholdCount(0),
-    m_thresholdCountHasBeenSet(false)
+    m_thresholdCountHasBeenSet(false),
+    m_portOverridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,16 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
     m_thresholdCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PortOverrides"))
+  {
+    Array<JsonView> portOverridesJsonList = jsonValue.GetArray("PortOverrides");
+    for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
+    {
+      m_portOverrides.push_back(portOverridesJsonList[portOverridesIndex].AsObject());
+    }
+    m_portOverridesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +197,17 @@ JsonValue EndpointGroup::Jsonize() const
   if(m_thresholdCountHasBeenSet)
   {
    payload.WithInteger("ThresholdCount", m_thresholdCount);
+
+  }
+
+  if(m_portOverridesHasBeenSet)
+  {
+   Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
+   for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
+   {
+     portOverridesJsonList[portOverridesIndex].AsObject(m_portOverrides[portOverridesIndex].Jsonize());
+   }
+   payload.WithArray("PortOverrides", std::move(portOverridesJsonList));
 
   }
 

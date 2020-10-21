@@ -34,70 +34,63 @@ namespace Model
 
 
     /**
-     * <p>Return the result for the public key configuration.</p>
+     * <p>A public key configuration.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
 
     /**
-     * <p>Return the result for the public key configuration.</p>
+     * <p>A public key configuration.</p>
      */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfig = value; }
 
     /**
-     * <p>Return the result for the public key configuration.</p>
+     * <p>A public key configuration.</p>
      */
     inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfig = std::move(value); }
 
     /**
-     * <p>Return the result for the public key configuration.</p>
+     * <p>A public key configuration.</p>
      */
     inline GetPublicKeyConfig2020_05_31Result& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
 
     /**
-     * <p>Return the result for the public key configuration.</p>
+     * <p>A public key configuration.</p>
      */
     inline GetPublicKeyConfig2020_05_31Result& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline GetPublicKeyConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline GetPublicKeyConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>The current version of the public key configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
+     * <p>The identifier for this version of the public key configuration.</p>
      */
     inline GetPublicKeyConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
 

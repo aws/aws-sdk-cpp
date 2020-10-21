@@ -10,6 +10,7 @@
 #include <aws/glue/model/CrawlerTargets.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/SchemaChangePolicy.h>
+#include <aws/glue/model/RecrawlPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -450,6 +451,43 @@ namespace Model
 
 
     /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline const RecrawlPolicy& GetRecrawlPolicy() const{ return m_recrawlPolicy; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline bool RecrawlPolicyHasBeenSet() const { return m_recrawlPolicyHasBeenSet; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline void SetRecrawlPolicy(const RecrawlPolicy& value) { m_recrawlPolicyHasBeenSet = true; m_recrawlPolicy = value; }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline void SetRecrawlPolicy(RecrawlPolicy&& value) { m_recrawlPolicyHasBeenSet = true; m_recrawlPolicy = std::move(value); }
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline UpdateCrawlerRequest& WithRecrawlPolicy(const RecrawlPolicy& value) { SetRecrawlPolicy(value); return *this;}
+
+    /**
+     * <p>A policy that specifies whether to crawl the entire dataset again, or to
+     * crawl only folders that were added since the last crawler run.</p>
+     */
+    inline UpdateCrawlerRequest& WithRecrawlPolicy(RecrawlPolicy&& value) { SetRecrawlPolicy(std::move(value)); return *this;}
+
+
+    /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
@@ -590,6 +628,9 @@ namespace Model
 
     SchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet;
+
+    RecrawlPolicy m_recrawlPolicy;
+    bool m_recrawlPolicyHasBeenSet;
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;

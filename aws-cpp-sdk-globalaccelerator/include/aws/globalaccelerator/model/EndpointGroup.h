@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/globalaccelerator/model/HealthCheckProtocol.h>
 #include <aws/globalaccelerator/model/EndpointDescription.h>
+#include <aws/globalaccelerator/model/PortOverride.h>
 #include <utility>
 
 namespace Aws
@@ -83,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline EndpointGroup& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline EndpointGroup& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that this endpoint group belongs.</p>
+     * <p>The AWS Region where the endpoint group is located.</p>
      */
     inline EndpointGroup& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
 
@@ -385,6 +386,71 @@ namespace Model
      */
     inline EndpointGroup& WithThresholdCount(int value) { SetThresholdCount(value); return *this;}
 
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline const Aws::Vector<PortOverride>& GetPortOverrides() const{ return m_portOverrides; }
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline bool PortOverridesHasBeenSet() const { return m_portOverridesHasBeenSet; }
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline void SetPortOverrides(const Aws::Vector<PortOverride>& value) { m_portOverridesHasBeenSet = true; m_portOverrides = value; }
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline void SetPortOverrides(Aws::Vector<PortOverride>&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::move(value); }
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline EndpointGroup& WithPortOverrides(const Aws::Vector<PortOverride>& value) { SetPortOverrides(value); return *this;}
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline EndpointGroup& WithPortOverrides(Aws::Vector<PortOverride>&& value) { SetPortOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline EndpointGroup& AddPortOverrides(const PortOverride& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>Allows you to override the destination ports used to route traffic to an
+     * endpoint. Using a port override lets you to map a list of external destination
+     * ports (that your users send traffic to) to a list of internal destination ports
+     * that you want an application endpoint to receive traffic on. </p>
+     */
+    inline EndpointGroup& AddPortOverrides(PortOverride&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointGroupArn;
@@ -413,6 +479,9 @@ namespace Model
 
     int m_thresholdCount;
     bool m_thresholdCountHasBeenSet;
+
+    Aws::Vector<PortOverride> m_portOverrides;
+    bool m_portOverridesHasBeenSet;
   };
 
 } // namespace Model

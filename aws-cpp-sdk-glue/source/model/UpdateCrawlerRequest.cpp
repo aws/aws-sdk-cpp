@@ -22,6 +22,7 @@ UpdateCrawlerRequest::UpdateCrawlerRequest() :
     m_classifiersHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_crawlerSecurityConfigurationHasBeenSet(false)
 {
@@ -87,6 +88,12 @@ Aws::String UpdateCrawlerRequest::SerializePayload() const
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_recrawlPolicyHasBeenSet)
+  {
+   payload.WithObject("RecrawlPolicy", m_recrawlPolicy.Jsonize());
 
   }
 

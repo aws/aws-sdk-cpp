@@ -142,66 +142,66 @@ namespace Model
 
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline CreateIndexRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline CreateIndexRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role used when you use the
-     * <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.</p>
+     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
+     * role used when you use the <code>BatchPutDocument</code> operation to index
+     * documents from an Amazon S3 bucket.</p>
      */
     inline CreateIndexRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -293,56 +293,56 @@ namespace Model
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline CreateIndexRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline CreateIndexRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create an index. Multiple
      * calls to the <code>CreateIndex</code> operation with the same client token will
-     * create only one index.”</p>
+     * create only one index.</p>
      */
     inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

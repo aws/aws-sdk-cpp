@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline GetPublicKey2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline GetPublicKey2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Request the ID for the public key.</p>
+     * <p>The identifier of the public key you are getting.</p>
      */
     inline GetPublicKey2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 

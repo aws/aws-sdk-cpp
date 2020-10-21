@@ -24,6 +24,7 @@ CacheBehavior::CacheBehavior() :
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_trustedKeyGroupsHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
@@ -43,6 +44,7 @@ CacheBehavior::CacheBehavior(const XmlNode& xmlNode) :
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_trustedKeyGroupsHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
@@ -82,6 +84,12 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
+    }
+    XmlNode trustedKeyGroupsNode = resultNode.FirstChild("TrustedKeyGroups");
+    if(!trustedKeyGroupsNode.IsNull())
+    {
+      m_trustedKeyGroups = trustedKeyGroupsNode;
+      m_trustedKeyGroupsHasBeenSet = true;
     }
     XmlNode viewerProtocolPolicyNode = resultNode.FirstChild("ViewerProtocolPolicy");
     if(!viewerProtocolPolicyNode.IsNull())
@@ -161,6 +169,12 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
    m_trustedSigners.AddToNode(trustedSignersNode);
+  }
+
+  if(m_trustedKeyGroupsHasBeenSet)
+  {
+   XmlNode trustedKeyGroupsNode = parentNode.CreateChildElement("TrustedKeyGroups");
+   m_trustedKeyGroups.AddToNode(trustedKeyGroupsNode);
   }
 
   if(m_viewerProtocolPolicyHasBeenSet)

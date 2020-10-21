@@ -215,7 +215,9 @@ namespace Model
      * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * duration.</p> <p>New accounts or accounts with no previous billing history with
+     * AWS are not eligible for Spot Instances with a defined duration (also known as
+     * Spot blocks).</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
@@ -227,7 +229,9 @@ namespace Model
      * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * duration.</p> <p>New accounts or accounts with no previous billing history with
+     * AWS are not eligible for Spot Instances with a defined duration (also known as
+     * Spot blocks).</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
@@ -239,7 +243,9 @@ namespace Model
      * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * duration.</p> <p>New accounts or accounts with no previous billing history with
+     * AWS are not eligible for Spot Instances with a defined duration (also known as
+     * Spot blocks).</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
@@ -251,7 +257,9 @@ namespace Model
      * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * duration.</p> <p>New accounts or accounts with no previous billing history with
+     * AWS are not eligible for Spot Instances with a defined duration (also known as
+     * Spot blocks).</p>
      */
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
@@ -619,56 +627,74 @@ namespace Model
 
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 

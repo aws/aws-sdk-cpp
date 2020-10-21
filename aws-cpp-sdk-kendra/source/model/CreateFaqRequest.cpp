@@ -20,7 +20,9 @@ CreateFaqRequest::CreateFaqRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileFormat(FaqFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false)
+    m_fileFormatHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -72,6 +74,12 @@ Aws::String CreateFaqRequest::SerializePayload() const
   if(m_fileFormatHasBeenSet)
   {
    payload.WithString("FileFormat", FaqFileFormatMapper::GetNameForFaqFileFormat(m_fileFormat));
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

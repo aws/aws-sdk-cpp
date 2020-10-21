@@ -186,31 +186,37 @@ namespace Model
    * information about AWS Global Accelerator API actions, data types, and errors.
    * For more information about Global Accelerator features, see the <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS
-   * Global Accelerator Developer Guide</a>. </p> <p>AWS Global Accelerator is a
-   * service in which you create accelerators to improve availability and performance
-   * of your applications for local and global users. </p>  <p>You must
-   * specify the US West (Oregon) Region to create or update accelerators.</p>
-   *  <p>By default, Global Accelerator provides you with static IP
-   * addresses that you associate with your accelerator. (Instead of using the IP
-   * addresses that Global Accelerator provides, you can configure these entry points
-   * to be IPv4 addresses from your own IP address ranges that you bring to Global
-   * Accelerator.) The static IP addresses are anycast from the AWS edge network and
-   * distribute incoming application traffic across multiple endpoint resources in
-   * multiple AWS Regions, which increases the availability of your applications.
-   * Endpoints can be Network Load Balancers, Application Load Balancers, EC2
-   * instances, or Elastic IP addresses that are located in one AWS Region or
-   * multiple Regions.</p> <p>Global Accelerator uses the AWS global network to route
-   * traffic to the optimal regional endpoint based on health, client location, and
-   * policies that you configure. The service reacts instantly to changes in health
-   * or configuration to ensure that internet traffic from clients is directed to
-   * only healthy endpoints.</p> <p>Global Accelerator includes components that work
-   * together to help you improve performance and availability for your
-   * applications:</p> <dl> <dt>Static IP address</dt> <dd> <p>By default, AWS Global
-   * Accelerator provides you with a set of static IP addresses that are anycast from
-   * the AWS edge network and serve as the single fixed entry points for your
-   * clients. Or you can configure these entry points to be IPv4 addresses from your
-   * own IP address ranges that you bring to Global Accelerator (BYOIP). For more
-   * information, see <a
+   * Global Accelerator Developer Guide</a>.</p> <p>AWS Global Accelerator is a
+   * service in which you create <i>accelerators</i> to improve availability and
+   * performance of your applications for local and global users. Global Accelerator
+   * directs traffic to optimal endpoints over the AWS global network. This improves
+   * the availability and performance of your internet applications that are used by
+   * a global audience. Global Accelerator is a global service that supports
+   * endpoints in multiple AWS Regions, which are listed in the <a
+   * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">AWS
+   * Region Table</a>.</p>  <p>Global Accelerator is a global service that
+   * supports endpoints in multiple AWS Regions but you must specify the US West
+   * (Oregon) Region to create or update accelerators.</p>  <p>By
+   * default, Global Accelerator provides you with static IP addresses that you
+   * associate with your accelerator. (Instead of using the IP addresses that Global
+   * Accelerator provides, you can configure these entry points to be IPv4 addresses
+   * from your own IP address ranges that you bring to Global Accelerator.) The
+   * static IP addresses are anycast from the AWS edge network and distribute
+   * incoming application traffic across multiple endpoint resources in multiple AWS
+   * Regions, which increases the availability of your applications. Endpoints can be
+   * Network Load Balancers, Application Load Balancers, EC2 instances, or Elastic IP
+   * addresses that are located in one AWS Region or multiple Regions.</p> <p>Global
+   * Accelerator uses the AWS global network to route traffic to the optimal regional
+   * endpoint based on health, client location, and policies that you configure. The
+   * service reacts instantly to changes in health or configuration to ensure that
+   * internet traffic from clients is directed to only healthy endpoints.</p>
+   * <p>Global Accelerator includes components that work together to help you improve
+   * performance and availability for your applications:</p> <dl> <dt>Static IP
+   * address</dt> <dd> <p>By default, AWS Global Accelerator provides you with a set
+   * of static IP addresses that are anycast from the AWS edge network and serve as
+   * the single fixed entry points for your clients. Or you can configure these entry
+   * points to be IPv4 addresses from your own IP address ranges that you bring to
+   * Global Accelerator (BYOIP). For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
    * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
    * Guide</i>. If you already have load balancers, EC2 instances, or Elastic IP
@@ -349,13 +355,10 @@ namespace Model
          * <p>Create an accelerator. An accelerator includes one or more listeners that
          * process inbound connections and direct traffic to one or more endpoint groups,
          * each of which includes endpoints, such as Network Load Balancers. To see an AWS
-         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p> <p>If
-         * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
-         * assign IP addresses from your own pool to your accelerator as the static IP
-         * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p>  <p>You must specify the US
-         * West (Oregon) Region to create or update accelerators.</p>
-         * <p><h3>See Also:</h3>   <a
+         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p>
+         *  <p>Global Accelerator is a global service that supports endpoints in
+         * multiple AWS Regions but you must specify the US West (Oregon) Region to create
+         * or update accelerators.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          */
@@ -365,13 +368,10 @@ namespace Model
          * <p>Create an accelerator. An accelerator includes one or more listeners that
          * process inbound connections and direct traffic to one or more endpoint groups,
          * each of which includes endpoints, such as Network Load Balancers. To see an AWS
-         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p> <p>If
-         * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
-         * assign IP addresses from your own pool to your accelerator as the static IP
-         * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p>  <p>You must specify the US
-         * West (Oregon) Region to create or update accelerators.</p>
-         * <p><h3>See Also:</h3>   <a
+         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p>
+         *  <p>Global Accelerator is a global service that supports endpoints in
+         * multiple AWS Regions but you must specify the US West (Oregon) Region to create
+         * or update accelerators.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -383,13 +383,10 @@ namespace Model
          * <p>Create an accelerator. An accelerator includes one or more listeners that
          * process inbound connections and direct traffic to one or more endpoint groups,
          * each of which includes endpoints, such as Network Load Balancers. To see an AWS
-         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p> <p>If
-         * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
-         * assign IP addresses from your own pool to your accelerator as the static IP
-         * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p>  <p>You must specify the US
-         * West (Oregon) Region to create or update accelerators.</p>
-         * <p><h3>See Also:</h3>   <a
+         * CLI example of creating an accelerator, scroll down to <b>Example</b>.</p>
+         *  <p>Global Accelerator is a global service that supports endpoints in
+         * multiple AWS Regions but you must specify the US West (Oregon) Region to create
+         * or update accelerators.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -399,8 +396,9 @@ namespace Model
 
         /**
          * <p>Create an endpoint group for the specified listener. An endpoint group is a
-         * collection of endpoints in one AWS Region. To see an AWS CLI example of creating
-         * an endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * collection of endpoints in one AWS Region. A resource must be valid and active
+         * when you add it as an endpoint.</p> <p>To see an AWS CLI example of creating an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">AWS
          * API Reference</a></p>
          */
@@ -408,8 +406,9 @@ namespace Model
 
         /**
          * <p>Create an endpoint group for the specified listener. An endpoint group is a
-         * collection of endpoints in one AWS Region. To see an AWS CLI example of creating
-         * an endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * collection of endpoints in one AWS Region. A resource must be valid and active
+         * when you add it as an endpoint.</p> <p>To see an AWS CLI example of creating an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">AWS
          * API Reference</a></p>
          *
@@ -419,8 +418,9 @@ namespace Model
 
         /**
          * <p>Create an endpoint group for the specified listener. An endpoint group is a
-         * collection of endpoints in one AWS Region. To see an AWS CLI example of creating
-         * an endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * collection of endpoints in one AWS Region. A resource must be valid and active
+         * when you add it as an endpoint.</p> <p>To see an AWS CLI example of creating an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">AWS
          * API Reference</a></p>
          *
@@ -1071,9 +1071,10 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
-         * Also:</h3>   <a
+         * scroll down to <b>Example</b>.</p>  <p>Global Accelerator is a global
+         * service that supports endpoints in multiple AWS Regions but you must specify the
+         * US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>
          */
@@ -1081,9 +1082,10 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
-         * Also:</h3>   <a
+         * scroll down to <b>Example</b>.</p>  <p>Global Accelerator is a global
+         * service that supports endpoints in multiple AWS Regions but you must specify the
+         * US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -1093,9 +1095,10 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
-         * Also:</h3>   <a
+         * scroll down to <b>Example</b>.</p>  <p>Global Accelerator is a global
+         * service that supports endpoints in multiple AWS Regions but you must specify the
+         * US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -1135,16 +1138,18 @@ namespace Model
         virtual void UpdateAcceleratorAttributesAsync(const Model::UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update an endpoint group. To see an AWS CLI example of updating an endpoint
-         * group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Update an endpoint group. A resource must be valid and active when you add it
+         * as an endpoint.</p> <p>To see an AWS CLI example of updating an endpoint group,
+         * scroll down to <b>Example</b>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEndpointGroupOutcome UpdateEndpointGroup(const Model::UpdateEndpointGroupRequest& request) const;
 
         /**
-         * <p>Update an endpoint group. To see an AWS CLI example of updating an endpoint
-         * group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Update an endpoint group. A resource must be valid and active when you add it
+         * as an endpoint.</p> <p>To see an AWS CLI example of updating an endpoint group,
+         * scroll down to <b>Example</b>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">AWS
          * API Reference</a></p>
          *
@@ -1153,8 +1158,9 @@ namespace Model
         virtual Model::UpdateEndpointGroupOutcomeCallable UpdateEndpointGroupCallable(const Model::UpdateEndpointGroupRequest& request) const;
 
         /**
-         * <p>Update an endpoint group. To see an AWS CLI example of updating an endpoint
-         * group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Update an endpoint group. A resource must be valid and active when you add it
+         * as an endpoint.</p> <p>To see an AWS CLI example of updating an endpoint group,
+         * scroll down to <b>Example</b>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">AWS
          * API Reference</a></p>
          *

@@ -25,7 +25,8 @@ UpdateEndpointGroupRequest::UpdateEndpointGroupRequest() :
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_thresholdCount(0),
-    m_thresholdCountHasBeenSet(false)
+    m_thresholdCountHasBeenSet(false),
+    m_portOverridesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,17 @@ Aws::String UpdateEndpointGroupRequest::SerializePayload() const
   if(m_thresholdCountHasBeenSet)
   {
    payload.WithInteger("ThresholdCount", m_thresholdCount);
+
+  }
+
+  if(m_portOverridesHasBeenSet)
+  {
+   Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
+   for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
+   {
+     portOverridesJsonList[portOverridesIndex].AsObject(m_portOverrides[portOverridesIndex].Jsonize());
+   }
+   payload.WithArray("PortOverrides", std::move(portOverridesJsonList));
 
   }
 
