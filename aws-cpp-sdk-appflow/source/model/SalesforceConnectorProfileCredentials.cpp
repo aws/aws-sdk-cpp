@@ -21,14 +21,16 @@ namespace Model
 SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials() : 
     m_accessTokenHasBeenSet(false),
     m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+    m_oAuthRequestHasBeenSet(false),
+    m_clientCredentialsArnHasBeenSet(false)
 {
 }
 
 SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials(JsonView jsonValue) : 
     m_accessTokenHasBeenSet(false),
     m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+    m_oAuthRequestHasBeenSet(false),
+    m_clientCredentialsArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ SalesforceConnectorProfileCredentials& SalesforceConnectorProfileCredentials::op
     m_oAuthRequestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("clientCredentialsArn"))
+  {
+    m_clientCredentialsArn = jsonValue.GetString("clientCredentialsArn");
+
+    m_clientCredentialsArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue SalesforceConnectorProfileCredentials::Jsonize() const
   if(m_oAuthRequestHasBeenSet)
   {
    payload.WithObject("oAuthRequest", m_oAuthRequest.Jsonize());
+
+  }
+
+  if(m_clientCredentialsArnHasBeenSet)
+  {
+   payload.WithString("clientCredentialsArn", m_clientCredentialsArn);
 
   }
 

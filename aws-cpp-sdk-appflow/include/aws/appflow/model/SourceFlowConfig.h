@@ -8,6 +8,7 @@
 #include <aws/appflow/model/ConnectorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/SourceConnectorProperties.h>
+#include <aws/appflow/model/IncrementalPullConfig.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,49 @@ namespace Model
      */
     inline SourceFlowConfig& WithSourceConnectorProperties(SourceConnectorProperties&& value) { SetSourceConnectorProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline const IncrementalPullConfig& GetIncrementalPullConfig() const{ return m_incrementalPullConfig; }
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline bool IncrementalPullConfigHasBeenSet() const { return m_incrementalPullConfigHasBeenSet; }
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline void SetIncrementalPullConfig(const IncrementalPullConfig& value) { m_incrementalPullConfigHasBeenSet = true; m_incrementalPullConfig = value; }
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline void SetIncrementalPullConfig(IncrementalPullConfig&& value) { m_incrementalPullConfigHasBeenSet = true; m_incrementalPullConfig = std::move(value); }
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline SourceFlowConfig& WithIncrementalPullConfig(const IncrementalPullConfig& value) { SetIncrementalPullConfig(value); return *this;}
+
+    /**
+     * <p> Defines the configuration for a scheduled incremental data pull. If a valid
+     * configuration is provided, the fields specified in the configuration are used
+     * when querying for the incremental data pull. </p>
+     */
+    inline SourceFlowConfig& WithIncrementalPullConfig(IncrementalPullConfig&& value) { SetIncrementalPullConfig(std::move(value)); return *this;}
+
   private:
 
     ConnectorType m_connectorType;
@@ -166,6 +210,9 @@ namespace Model
 
     SourceConnectorProperties m_sourceConnectorProperties;
     bool m_sourceConnectorPropertiesHasBeenSet;
+
+    IncrementalPullConfig m_incrementalPullConfig;
+    bool m_incrementalPullConfigHasBeenSet;
   };
 
 } // namespace Model

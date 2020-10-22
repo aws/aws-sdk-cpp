@@ -60,7 +60,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -114,7 +114,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -168,7 +168,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -222,7 +222,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -276,7 +276,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -330,7 +330,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -384,7 +384,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -438,7 +438,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -492,7 +492,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -546,7 +546,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -600,7 +600,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -654,7 +654,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your
@@ -708,7 +708,7 @@ namespace Model
      * that you send, Amazon SNS writes a log that includes the message price, the
      * success or failure status, the reason for failure (if the message failed), the
      * message dwell time, and other information.</p> <p>
-     * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
+     * <code>DeliveryStatusSuccessSamplingRate</code> �� The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
      * deliveries, set this value to <code>0</code>. To write logs for 10% of your

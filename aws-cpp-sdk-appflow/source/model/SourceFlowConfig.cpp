@@ -22,7 +22,8 @@ SourceFlowConfig::SourceFlowConfig() :
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
     m_connectorProfileNameHasBeenSet(false),
-    m_sourceConnectorPropertiesHasBeenSet(false)
+    m_sourceConnectorPropertiesHasBeenSet(false),
+    m_incrementalPullConfigHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ SourceFlowConfig::SourceFlowConfig(JsonView jsonValue) :
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
     m_connectorProfileNameHasBeenSet(false),
-    m_sourceConnectorPropertiesHasBeenSet(false)
+    m_sourceConnectorPropertiesHasBeenSet(false),
+    m_incrementalPullConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ SourceFlowConfig& SourceFlowConfig::operator =(JsonView jsonValue)
     m_sourceConnectorPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("incrementalPullConfig"))
+  {
+    m_incrementalPullConfig = jsonValue.GetObject("incrementalPullConfig");
+
+    m_incrementalPullConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue SourceFlowConfig::Jsonize() const
   if(m_sourceConnectorPropertiesHasBeenSet)
   {
    payload.WithObject("sourceConnectorProperties", m_sourceConnectorProperties.Jsonize());
+
+  }
+
+  if(m_incrementalPullConfigHasBeenSet)
+  {
+   payload.WithObject("incrementalPullConfig", m_incrementalPullConfig.Jsonize());
 
   }
 

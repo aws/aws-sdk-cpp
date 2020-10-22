@@ -43,6 +43,11 @@ PublishResult& PublishResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
     }
+    XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
+    if(!sequenceNumberNode.IsNull())
+    {
+      m_sequenceNumber = Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

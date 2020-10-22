@@ -94,11 +94,56 @@ namespace Model
      */
     inline StartFlowResult& WithFlowStatus(FlowStatus&& value) { SetFlowStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline void SetExecutionId(const Aws::String& value) { m_executionId = value; }
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline void SetExecutionId(Aws::String&& value) { m_executionId = std::move(value); }
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline void SetExecutionId(const char* value) { m_executionId.assign(value); }
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline StartFlowResult& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline StartFlowResult& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p> Returns the internal execution ID of an on-demand flow when the flow is
+     * started. For scheduled or event-triggered flows, this value is null. </p>
+     */
+    inline StartFlowResult& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+
   private:
 
     Aws::String m_flowArn;
 
     FlowStatus m_flowStatus;
+
+    Aws::String m_executionId;
   };
 
 } // namespace Model

@@ -17,7 +17,9 @@ PublishRequest::PublishRequest() :
     m_messageHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_messageStructureHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_messageDeduplicationIdHasBeenSet(false),
+    m_messageGroupIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,16 @@ Aws::String PublishRequest::SerializePayload() const
       item.second.OutputToStream(ss, "MessageAttributes.entry.", messageAttributesCount, ".Value");
       messageAttributesCount++;
     }
+  }
+
+  if(m_messageDeduplicationIdHasBeenSet)
+  {
+    ss << "MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
+  }
+
+  if(m_messageGroupIdHasBeenSet)
+  {
+    ss << "MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
   }
 
   ss << "Version=2010-03-31";

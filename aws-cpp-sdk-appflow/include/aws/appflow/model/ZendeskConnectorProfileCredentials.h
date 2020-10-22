@@ -81,49 +81,49 @@ namespace Model
 
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline ZendeskConnectorProfileCredentials& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline ZendeskConnectorProfileCredentials& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
 
     /**
-     * <p> The client secret used by the oauth client to authenticate to the
+     * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
     inline ZendeskConnectorProfileCredentials& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
@@ -171,37 +171,37 @@ namespace Model
 
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline const ConnectorOAuthRequest& GetOAuthRequest() const{ return m_oAuthRequest; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline bool OAuthRequestHasBeenSet() const { return m_oAuthRequestHasBeenSet; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline void SetOAuthRequest(const ConnectorOAuthRequest& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = value; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline void SetOAuthRequest(ConnectorOAuthRequest&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::move(value); }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline ZendeskConnectorProfileCredentials& WithOAuthRequest(const ConnectorOAuthRequest& value) { SetOAuthRequest(value); return *this;}
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline ZendeskConnectorProfileCredentials& WithOAuthRequest(ConnectorOAuthRequest&& value) { SetOAuthRequest(std::move(value)); return *this;}

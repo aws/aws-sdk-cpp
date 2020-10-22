@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appflow/model/WriteOperationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -102,6 +105,88 @@ namespace Model
      */
     inline DestinationFieldProperties& WithIsUpsertable(bool value) { SetIsUpsertable(value); return *this;}
 
+
+    /**
+     * <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
+     * <code>UPSERT</code> write operation. </p>
+     */
+    inline bool GetIsUpdatable() const{ return m_isUpdatable; }
+
+    /**
+     * <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
+     * <code>UPSERT</code> write operation. </p>
+     */
+    inline bool IsUpdatableHasBeenSet() const { return m_isUpdatableHasBeenSet; }
+
+    /**
+     * <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
+     * <code>UPSERT</code> write operation. </p>
+     */
+    inline void SetIsUpdatable(bool value) { m_isUpdatableHasBeenSet = true; m_isUpdatable = value; }
+
+    /**
+     * <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
+     * <code>UPSERT</code> write operation. </p>
+     */
+    inline DestinationFieldProperties& WithIsUpdatable(bool value) { SetIsUpdatable(value); return *this;}
+
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline const Aws::Vector<WriteOperationType>& GetSupportedWriteOperations() const{ return m_supportedWriteOperations; }
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline bool SupportedWriteOperationsHasBeenSet() const { return m_supportedWriteOperationsHasBeenSet; }
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline void SetSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = value; }
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline void SetSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = std::move(value); }
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline DestinationFieldProperties& WithSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { SetSupportedWriteOperations(value); return *this;}
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline DestinationFieldProperties& WithSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { SetSupportedWriteOperations(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline DestinationFieldProperties& AddSupportedWriteOperations(const WriteOperationType& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(value); return *this; }
+
+    /**
+     * <p> A list of supported write operations. For each write operation listed, this
+     * field can be used in <code>idFieldNames</code> when that write operation is
+     * present as a destination option. </p>
+     */
+    inline DestinationFieldProperties& AddSupportedWriteOperations(WriteOperationType&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_isCreatable;
@@ -112,6 +197,12 @@ namespace Model
 
     bool m_isUpsertable;
     bool m_isUpsertableHasBeenSet;
+
+    bool m_isUpdatable;
+    bool m_isUpdatableHasBeenSet;
+
+    Aws::Vector<WriteOperationType> m_supportedWriteOperations;
+    bool m_supportedWriteOperationsHasBeenSet;
   };
 
 } // namespace Model

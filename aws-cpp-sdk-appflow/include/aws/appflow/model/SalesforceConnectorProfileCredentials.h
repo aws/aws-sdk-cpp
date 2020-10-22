@@ -122,40 +122,89 @@ namespace Model
 
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline const ConnectorOAuthRequest& GetOAuthRequest() const{ return m_oAuthRequest; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline bool OAuthRequestHasBeenSet() const { return m_oAuthRequestHasBeenSet; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline void SetOAuthRequest(const ConnectorOAuthRequest& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = value; }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline void SetOAuthRequest(ConnectorOAuthRequest&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::move(value); }
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline SalesforceConnectorProfileCredentials& WithOAuthRequest(const ConnectorOAuthRequest& value) { SetOAuthRequest(value); return *this;}
 
     /**
-     * <p> The oauth requirement needed to request security tokens from the connector
+     * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
     inline SalesforceConnectorProfileCredentials& WithOAuthRequest(ConnectorOAuthRequest&& value) { SetOAuthRequest(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline const Aws::String& GetClientCredentialsArn() const{ return m_clientCredentialsArn; }
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline bool ClientCredentialsArnHasBeenSet() const { return m_clientCredentialsArnHasBeenSet; }
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline void SetClientCredentialsArn(const Aws::String& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = value; }
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline void SetClientCredentialsArn(Aws::String&& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = std::move(value); }
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline void SetClientCredentialsArn(const char* value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn.assign(value); }
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(const Aws::String& value) { SetClientCredentialsArn(value); return *this;}
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(Aws::String&& value) { SetClientCredentialsArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The secret manager ARN, which contains the client ID and client secret of
+     * the connected app. </p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(const char* value) { SetClientCredentialsArn(value); return *this;}
 
   private:
 
@@ -167,6 +216,9 @@ namespace Model
 
     ConnectorOAuthRequest m_oAuthRequest;
     bool m_oAuthRequestHasBeenSet;
+
+    Aws::String m_clientCredentialsArn;
+    bool m_clientCredentialsArnHasBeenSet;
   };
 
 } // namespace Model

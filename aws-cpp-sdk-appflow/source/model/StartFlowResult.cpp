@@ -42,6 +42,12 @@ StartFlowResult& StartFlowResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("executionId"))
+  {
+    m_executionId = jsonValue.GetString("executionId");
+
+  }
+
 
 
   return *this;

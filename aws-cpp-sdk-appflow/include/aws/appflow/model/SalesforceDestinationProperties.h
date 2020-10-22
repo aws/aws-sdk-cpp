@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appflow/model/ErrorHandlingConfig.h>
+#include <aws/appflow/model/WriteOperationType.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +83,61 @@ namespace Model
 
 
     /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const{ return m_idFieldNames; }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline bool IdFieldNamesHasBeenSet() const { return m_idFieldNamesHasBeenSet; }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline void SetIdFieldNames(const Aws::Vector<Aws::String>& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = value; }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline void SetIdFieldNames(Aws::Vector<Aws::String>&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::move(value); }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline SalesforceDestinationProperties& WithIdFieldNames(const Aws::Vector<Aws::String>& value) { SetIdFieldNames(value); return *this;}
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline SalesforceDestinationProperties& WithIdFieldNames(Aws::Vector<Aws::String>&& value) { SetIdFieldNames(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline SalesforceDestinationProperties& AddIdFieldNames(const Aws::String& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline SalesforceDestinationProperties& AddIdFieldNames(Aws::String&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
+     * write operation such as update or delete. </p>
+     */
+    inline SalesforceDestinationProperties& AddIdFieldNames(const char* value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
+
+
+    /**
      * <p> The settings that determine how Amazon AppFlow handles an error when placing
      * data in the Salesforce destination. For example, this setting would determine if
      * the flow should fail after one insertion error, or continue and attempt to
@@ -140,13 +197,62 @@ namespace Model
      */
     inline SalesforceDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfig&& value) { SetErrorHandlingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline const WriteOperationType& GetWriteOperationType() const{ return m_writeOperationType; }
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline bool WriteOperationTypeHasBeenSet() const { return m_writeOperationTypeHasBeenSet; }
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline void SetWriteOperationType(const WriteOperationType& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline void SetWriteOperationType(WriteOperationType&& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = std::move(value); }
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline SalesforceDestinationProperties& WithWriteOperationType(const WriteOperationType& value) { SetWriteOperationType(value); return *this;}
+
+    /**
+     * <p> This specifies the type of write operation to be performed in Salesforce.
+     * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
+     * required. </p>
+     */
+    inline SalesforceDestinationProperties& WithWriteOperationType(WriteOperationType&& value) { SetWriteOperationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_object;
     bool m_objectHasBeenSet;
 
+    Aws::Vector<Aws::String> m_idFieldNames;
+    bool m_idFieldNamesHasBeenSet;
+
     ErrorHandlingConfig m_errorHandlingConfig;
     bool m_errorHandlingConfigHasBeenSet;
+
+    WriteOperationType m_writeOperationType;
+    bool m_writeOperationTypeHasBeenSet;
   };
 
 } // namespace Model

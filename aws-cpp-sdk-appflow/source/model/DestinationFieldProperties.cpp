@@ -24,7 +24,10 @@ DestinationFieldProperties::DestinationFieldProperties() :
     m_isNullable(false),
     m_isNullableHasBeenSet(false),
     m_isUpsertable(false),
-    m_isUpsertableHasBeenSet(false)
+    m_isUpsertableHasBeenSet(false),
+    m_isUpdatable(false),
+    m_isUpdatableHasBeenSet(false),
+    m_supportedWriteOperationsHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ DestinationFieldProperties::DestinationFieldProperties(JsonView jsonValue) :
     m_isNullable(false),
     m_isNullableHasBeenSet(false),
     m_isUpsertable(false),
-    m_isUpsertableHasBeenSet(false)
+    m_isUpsertableHasBeenSet(false),
+    m_isUpdatable(false),
+    m_isUpdatableHasBeenSet(false),
+    m_supportedWriteOperationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +68,23 @@ DestinationFieldProperties& DestinationFieldProperties::operator =(JsonView json
     m_isUpsertableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isUpdatable"))
+  {
+    m_isUpdatable = jsonValue.GetBool("isUpdatable");
+
+    m_isUpdatableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedWriteOperations"))
+  {
+    Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
+    for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
+    {
+      m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
+    }
+    m_supportedWriteOperationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +107,23 @@ JsonValue DestinationFieldProperties::Jsonize() const
   if(m_isUpsertableHasBeenSet)
   {
    payload.WithBool("isUpsertable", m_isUpsertable);
+
+  }
+
+  if(m_isUpdatableHasBeenSet)
+  {
+   payload.WithBool("isUpdatable", m_isUpdatable);
+
+  }
+
+  if(m_supportedWriteOperationsHasBeenSet)
+  {
+   Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
+   for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
+   {
+     supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));
+   }
+   payload.WithArray("supportedWriteOperations", std::move(supportedWriteOperationsJsonList));
 
   }
 
