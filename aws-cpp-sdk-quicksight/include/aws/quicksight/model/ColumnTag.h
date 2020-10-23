@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/GeoSpatialDataRole.h>
+#include <aws/quicksight/model/ColumnDescription.h>
 #include <utility>
 
 namespace Aws
@@ -69,10 +70,44 @@ namespace Model
      */
     inline ColumnTag& WithColumnGeographicRole(GeoSpatialDataRole&& value) { SetColumnGeographicRole(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline const ColumnDescription& GetColumnDescription() const{ return m_columnDescription; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline bool ColumnDescriptionHasBeenSet() const { return m_columnDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetColumnDescription(const ColumnDescription& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = value; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetColumnDescription(ColumnDescription&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::move(value); }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline ColumnTag& WithColumnDescription(const ColumnDescription& value) { SetColumnDescription(value); return *this;}
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline ColumnTag& WithColumnDescription(ColumnDescription&& value) { SetColumnDescription(std::move(value)); return *this;}
+
   private:
 
     GeoSpatialDataRole m_columnGeographicRole;
     bool m_columnGeographicRoleHasBeenSet;
+
+    ColumnDescription m_columnDescription;
+    bool m_columnDescriptionHasBeenSet;
   };
 
 } // namespace Model

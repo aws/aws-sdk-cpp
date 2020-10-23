@@ -72,6 +72,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("ManifestProcessingRules"))
+  {
+    m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
+
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");

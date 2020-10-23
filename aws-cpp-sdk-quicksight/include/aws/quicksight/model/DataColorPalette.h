@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The theme colors that are used for data colors in charts. The colors
-   * description is a hexidecimal color code that consists of six alphanumerical
+   * description is a hexadecimal color code that consists of six alphanumerical
    * characters, prefixed with <code>#</code>, for example #37BFF5. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataColorPalette">AWS

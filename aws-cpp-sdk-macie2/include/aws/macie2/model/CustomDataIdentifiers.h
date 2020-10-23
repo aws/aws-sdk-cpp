@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the number of occurrences of the data that
-   * produced a sensitive data finding, and the custom data identifiers that detected
-   * the data for the finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about custom data identifiers that produced a sensitive
+   * data finding, and the number of occurrences of the data that they detected for
+   * the finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDataIdentifiers">AWS
    * API Reference</a></p>
    */

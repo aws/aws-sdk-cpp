@@ -19,6 +19,7 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_personalizationThresholdSeconds(0),
     m_personalizationThresholdSecondsHasBeenSet(false),
@@ -66,6 +67,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_livePreRollConfigurationHasBeenSet)
   {
    payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
+
+  }
+
+  if(m_manifestProcessingRulesHasBeenSet)
+  {
+   payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
 
   }
 

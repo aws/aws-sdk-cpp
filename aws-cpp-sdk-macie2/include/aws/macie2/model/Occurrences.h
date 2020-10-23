@@ -207,73 +207,73 @@ namespace Model
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline const Aws::Vector<Range>& GetOffsetRanges() const{ return m_offsetRanges; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline bool OffsetRangesHasBeenSet() const { return m_offsetRangesHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline void SetOffsetRanges(const Aws::Vector<Range>& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = value; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline void SetOffsetRanges(Aws::Vector<Range>&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = std::move(value); }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline Occurrences& WithOffsetRanges(const Aws::Vector<Range>& value) { SetOffsetRanges(value); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline Occurrences& WithOffsetRanges(Aws::Vector<Range>&& value) { SetOffsetRanges(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline Occurrences& AddOffsetRanges(const Range& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the start
-     * of the file.</p> <p>This value is typically null. For binary text files, Macie
-     * adds location data to a lineRanges.Range or Page object, depending on the file
-     * type.</p>
+     * text file. Each object specifies the position of the data relative to the
+     * beginning of the file.</p> <p>This value is typically null. For binary text
+     * files, Macie adds location data to a lineRanges.Range or Page object, depending
+     * on the file type.</p>
      */
     inline Occurrences& AddOffsetRanges(Range&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(std::move(value)); return *this; }
 

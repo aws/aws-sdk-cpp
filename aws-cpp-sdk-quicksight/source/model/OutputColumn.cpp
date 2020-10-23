@@ -20,6 +20,7 @@ namespace Model
 
 OutputColumn::OutputColumn() : 
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_type(ColumnDataType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ OutputColumn::OutputColumn() :
 
 OutputColumn::OutputColumn(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_type(ColumnDataType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -40,6 +42,13 @@ OutputColumn& OutputColumn::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -59,6 +68,12 @@ JsonValue OutputColumn::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

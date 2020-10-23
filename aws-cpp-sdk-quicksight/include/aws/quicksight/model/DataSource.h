@@ -355,7 +355,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -369,7 +369,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -383,7 +383,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -397,7 +397,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -411,7 +411,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -425,7 +425,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -439,7 +439,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this
@@ -453,7 +453,7 @@ namespace Model
      * with the data source parameters when you copy a data source by using a create or
      * update request. The API operation compares the <code>DataSourceParameters</code>
      * structure that's in the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the credentials from this existing
      * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>Credentials</code> originally used with this

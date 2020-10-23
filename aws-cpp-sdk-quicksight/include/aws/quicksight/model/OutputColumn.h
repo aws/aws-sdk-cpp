@@ -80,6 +80,47 @@ namespace Model
 
 
     /**
+     * <p>A description for a column.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline OutputColumn& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline OutputColumn& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline OutputColumn& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>Type.</p>
      */
     inline const ColumnDataType& GetType() const{ return m_type; }
@@ -113,6 +154,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
 
     ColumnDataType m_type;
     bool m_typeHasBeenSet;

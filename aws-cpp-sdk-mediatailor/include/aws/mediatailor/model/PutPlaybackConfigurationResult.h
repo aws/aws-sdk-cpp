@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
+#include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -272,6 +273,37 @@ namespace Model
      * <p>The configuration for pre-roll ad insertion.</p>
      */
     inline PutPlaybackConfigurationResult& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRules = value; }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRules = std::move(value); }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline PutPlaybackConfigurationResult& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline PutPlaybackConfigurationResult& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
 
 
     /**
@@ -697,6 +729,8 @@ namespace Model
     HlsConfiguration m_hlsConfiguration;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
+
+    ManifestProcessingRules m_manifestProcessingRules;
 
     Aws::String m_name;
 

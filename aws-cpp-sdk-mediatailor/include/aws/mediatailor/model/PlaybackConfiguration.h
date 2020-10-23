@@ -11,6 +11,7 @@
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
+#include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -287,6 +288,43 @@ namespace Model
      * <p>The configuration for HLS content. </p>
      */
     inline PlaybackConfiguration& WithHlsConfiguration(HlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline bool ManifestProcessingRulesHasBeenSet() const { return m_manifestProcessingRulesHasBeenSet; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = value; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = std::move(value); }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline PlaybackConfiguration& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline PlaybackConfiguration& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
 
 
     /**
@@ -773,6 +811,9 @@ namespace Model
 
     HlsConfiguration m_hlsConfiguration;
     bool m_hlsConfigurationHasBeenSet;
+
+    ManifestProcessingRules m_manifestProcessingRules;
+    bool m_manifestProcessingRulesHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

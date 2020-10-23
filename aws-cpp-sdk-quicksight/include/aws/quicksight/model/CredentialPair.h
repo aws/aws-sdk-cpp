@@ -128,7 +128,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -142,7 +142,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -156,7 +156,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -170,7 +170,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -184,7 +184,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -198,7 +198,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -212,7 +212,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these
@@ -226,7 +226,7 @@ namespace Model
      * parameters when you copy a data source by using a create or update request. The
      * API operation compares the <code>DataSourceParameters</code> structure that's in
      * the request with the structures in the
-     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
      * exact match, the request is allowed to use the new data source with the existing
      * credentials. If the <code>AlternateDataSourceParameters</code> list is null, the
      * <code>DataSourceParameters</code> originally used with these

@@ -25,9 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an account that's designated as a delegated
-   * administrator of Amazon Macie for an AWS organization.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Provides information about the delegated Amazon Macie administrator account
+   * for an AWS organization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AdminAccount">AWS
    * API Reference</a></p>
    */

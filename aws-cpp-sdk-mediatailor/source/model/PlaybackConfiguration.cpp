@@ -25,6 +25,7 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
@@ -45,6 +46,7 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
@@ -101,6 +103,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
 
     m_hlsConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManifestProcessingRules"))
+  {
+    m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
+
+    m_manifestProcessingRulesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -209,6 +218,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_hlsConfigurationHasBeenSet)
   {
    payload.WithObject("HlsConfiguration", m_hlsConfiguration.Jsonize());
+
+  }
+
+  if(m_manifestProcessingRulesHasBeenSet)
+  {
+   payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
 
   }
 

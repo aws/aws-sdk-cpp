@@ -50,20 +50,20 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the maximum number of Amazon Macie member accounts are
-     * already associated with the AWS organization.</p>
+     * <p>Specifies whether the maximum number of Amazon Macie member accounts are part
+     * of the AWS organization.</p>
      */
     inline bool GetMaxAccountLimitReached() const{ return m_maxAccountLimitReached; }
 
     /**
-     * <p>Specifies whether the maximum number of Amazon Macie member accounts are
-     * already associated with the AWS organization.</p>
+     * <p>Specifies whether the maximum number of Amazon Macie member accounts are part
+     * of the AWS organization.</p>
      */
     inline void SetMaxAccountLimitReached(bool value) { m_maxAccountLimitReached = value; }
 
     /**
-     * <p>Specifies whether the maximum number of Amazon Macie member accounts are
-     * already associated with the AWS organization.</p>
+     * <p>Specifies whether the maximum number of Amazon Macie member accounts are part
+     * of the AWS organization.</p>
      */
     inline DescribeOrganizationConfigurationResult& WithMaxAccountLimitReached(bool value) { SetMaxAccountLimitReached(value); return *this;}
 

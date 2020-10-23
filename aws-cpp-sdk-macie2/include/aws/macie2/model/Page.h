@@ -76,37 +76,37 @@ namespace Model
 
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline const Range& GetOffsetRange() const{ return m_offsetRange; }
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline bool OffsetRangeHasBeenSet() const { return m_offsetRangeHasBeenSet; }
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline void SetOffsetRange(const Range& value) { m_offsetRangeHasBeenSet = true; m_offsetRange = value; }
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline void SetOffsetRange(Range&& value) { m_offsetRangeHasBeenSet = true; m_offsetRange = std::move(value); }
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline Page& WithOffsetRange(const Range& value) { SetOffsetRange(value); return *this;}
 
     /**
-     * <p>The position of the data on the page, relative to the start and end of the
+     * <p>The position of the data on the page, relative to the beginning of the
      * page.</p>
      */
     inline Page& WithOffsetRange(Range&& value) { SetOffsetRange(std::move(value)); return *this;}

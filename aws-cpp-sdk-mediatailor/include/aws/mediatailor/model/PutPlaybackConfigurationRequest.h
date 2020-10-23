@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfigurationForPut.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
+#include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -282,6 +283,43 @@ namespace Model
      * <p>The configuration for pre-roll ad insertion.</p>
      */
     inline PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline bool ManifestProcessingRulesHasBeenSet() const { return m_manifestProcessingRulesHasBeenSet; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = value; }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = std::move(value); }
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
+
+    /**
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
 
 
     /**
@@ -629,6 +667,9 @@ namespace Model
 
     LivePreRollConfiguration m_livePreRollConfiguration;
     bool m_livePreRollConfigurationHasBeenSet;
+
+    ManifestProcessingRules m_manifestProcessingRules;
+    bool m_manifestProcessingRulesHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

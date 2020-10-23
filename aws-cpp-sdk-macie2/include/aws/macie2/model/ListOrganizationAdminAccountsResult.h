@@ -35,51 +35,51 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const{ return m_adminAccounts; }
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline void SetAdminAccounts(const Aws::Vector<AdminAccount>& value) { m_adminAccounts = value; }
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline void SetAdminAccounts(Aws::Vector<AdminAccount>&& value) { m_adminAccounts = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdminAccounts(const Aws::Vector<AdminAccount>& value) { SetAdminAccounts(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdminAccounts(Aws::Vector<AdminAccount>&& value) { SetAdminAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdminAccounts(const AdminAccount& value) { m_adminAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each account that's designated as a delegated
-     * administrator of Amazon Macie for the AWS organization. Of those accounts, only
-     * one can have a status of ENABLED.</p>
+     * <p>An array of objects, one for each delegated Amazon Macie administrator
+     * account for the organization. Only one of these accounts can have a status of
+     * ENABLED.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdminAccounts(AdminAccount&& value) { m_adminAccounts.push_back(std::move(value)); return *this; }
 

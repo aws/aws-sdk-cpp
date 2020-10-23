@@ -39,74 +39,90 @@ namespace Model
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the end of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the end of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the end of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the end of the
+     * sensitive data.</p></li></ul>
      */
     inline long long GetEnd() const{ return m_end; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the end of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the end of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the end of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the end of the
+     * sensitive data.</p></li></ul>
      */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the end of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the end of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the end of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the end of the
+     * sensitive data.</p></li></ul>
      */
     inline void SetEnd(long long value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the end of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the end of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the end of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the end of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the end of the
+     * sensitive data.</p></li></ul>
      */
     inline Range& WithEnd(long long value) { SetEnd(value); return *this;}
 
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the start of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the start of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the start of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the beginning of the
+     * sensitive data.</p></li></ul>
      */
     inline long long GetStart() const{ return m_start; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the start of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the start of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the start of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the beginning of the
+     * sensitive data.</p></li></ul>
      */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the start of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the start of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the start of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the beginning of the
+     * sensitive data.</p></li></ul>
      */
     inline void SetStart(long long value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
      * <p>Possible values are:</p> <ul><li><p>In an Occurrences.lineRanges array, the
-     * number of lines from the start of the file.</p></li> <li><p>In an
-     * Occurrences.offsetRanges array, the number of characters from the start of the
-     * file.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
-     * characters (offsetRange) from the start of the page.</p></li></ul>
+     * number of lines from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In an Occurrences.offsetRanges array, the number of
+     * characters from the beginning of the file to the beginning of the sensitive
+     * data.</p></li> <li><p>In a Page object, the number of lines (lineRange) or
+     * characters (offsetRange) from the beginning of the page to the beginning of the
+     * sensitive data.</p></li></ul>
      */
     inline Range& WithStart(long long value) { SetStart(value); return *this;}
 
