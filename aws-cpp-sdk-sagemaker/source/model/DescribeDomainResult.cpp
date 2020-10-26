@@ -100,6 +100,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("AppNetworkAccessType"))
+  {
+    m_appNetworkAccessType = AppNetworkAccessTypeMapper::GetAppNetworkAccessTypeForName(jsonValue.GetString("AppNetworkAccessType"));
+
+  }
+
   if(jsonValue.ValueExists("HomeEfsFileSystemKmsKeyId"))
   {
     m_homeEfsFileSystemKmsKeyId = jsonValue.GetString("HomeEfsFileSystemKmsKeyId");
@@ -124,12 +130,6 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
-  }
-
-  if(jsonValue.ValueExists("AppNetworkAccessType"))
-  {
-    m_appNetworkAccessType = AppNetworkAccessTypeMapper::GetAppNetworkAccessTypeForName(jsonValue.GetString("AppNetworkAccessType"));
 
   }
 

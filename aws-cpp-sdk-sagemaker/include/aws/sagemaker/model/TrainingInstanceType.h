@@ -44,6 +44,7 @@ namespace Model
     ml_p3_8xlarge,
     ml_p3_16xlarge,
     ml_p3dn_24xlarge,
+    ml_p4d_24xlarge,
     ml_c5_xlarge,
     ml_c5_2xlarge,
     ml_c5_4xlarge,

@@ -22,7 +22,8 @@ namespace Model
     ONNX,
     PYTORCH,
     XGBOOST,
-    TFLITE
+    TFLITE,
+    DARKNET
   };
 
 namespace FrameworkMapper

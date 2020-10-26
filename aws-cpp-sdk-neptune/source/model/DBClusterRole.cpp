@@ -22,13 +22,15 @@ namespace Model
 
 DBClusterRole::DBClusterRole() : 
     m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_featureNameHasBeenSet(false)
 {
 }
 
 DBClusterRole::DBClusterRole(const XmlNode& xmlNode) : 
     m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_featureNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ DBClusterRole& DBClusterRole::operator =(const XmlNode& xmlNode)
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
+    XmlNode featureNameNode = resultNode.FirstChild("FeatureName");
+    if(!featureNameNode.IsNull())
+    {
+      m_featureName = Aws::Utils::Xml::DecodeEscapedXmlText(featureNameNode.GetText());
+      m_featureNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -68,6 +76,11 @@ void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_featureNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
+  }
+
 }
 
 void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -79,6 +92,10 @@ void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_featureNameHasBeenSet)
+  {
+      oStream << location << ".FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
   }
 }
 

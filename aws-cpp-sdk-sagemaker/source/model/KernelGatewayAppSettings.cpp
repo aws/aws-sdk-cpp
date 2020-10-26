@@ -19,12 +19,14 @@ namespace Model
 {
 
 KernelGatewayAppSettings::KernelGatewayAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
 }
 
 KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomImages"))
+  {
+    Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+    {
+      m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
+    }
+    m_customImagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue KernelGatewayAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_customImagesHasBeenSet)
+  {
+   Array<JsonValue> customImagesJsonList(m_customImages.size());
+   for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+   {
+     customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
+   }
+   payload.WithArray("CustomImages", std::move(customImagesJsonList));
 
   }
 

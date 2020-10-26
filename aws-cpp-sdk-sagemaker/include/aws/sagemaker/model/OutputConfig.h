@@ -315,12 +315,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
 
@@ -350,12 +355,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
 
@@ -385,12 +395,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
 
@@ -420,12 +435,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
 
@@ -455,12 +475,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
 
@@ -490,12 +515,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
 
@@ -525,12 +555,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
 
@@ -560,12 +595,17 @@ namespace Model
      * example, <code>{'ANDROID_PLATFORM': 28}</code>.</p> </li> <li> <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
      * compiling for ARM 32-bit platform with NEON support.</p> </li> </ul> </li> <li>
-     * <p> <code>CoreML</code>: Compilation for the CoreML
-     * <a>OutputConfig$TargetDevice</a> supports the following compiler options:</p>
-     * <ul> <li> <p> <code>class_labels</code>: Specifies the classification labels
-     * file name inside input tar.gz file. For example, <code>{"class_labels":
-     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> </ul>
+     * <p> <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler
+     * options passed in as a JSON string. For example, <code>"CompilerOptions":
+     * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
+     * supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
+     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
+     * classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
+     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
 

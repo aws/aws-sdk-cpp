@@ -48,6 +48,7 @@ namespace Aws
         static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
         static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
         static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
+        static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
         static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
         static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
@@ -175,6 +176,10 @@ namespace Aws
           {
             return TrainingInstanceType::ml_p3dn_24xlarge;
           }
+          else if (hashCode == ml_p4d_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p4d_24xlarge;
+          }
           else if (hashCode == ml_c5_xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_xlarge;
@@ -285,6 +290,8 @@ namespace Aws
             return "ml.p3.16xlarge";
           case TrainingInstanceType::ml_p3dn_24xlarge:
             return "ml.p3dn.24xlarge";
+          case TrainingInstanceType::ml_p4d_24xlarge:
+            return "ml.p4d.24xlarge";
           case TrainingInstanceType::ml_c5_xlarge:
             return "ml.c5.xlarge";
           case TrainingInstanceType::ml_c5_2xlarge:

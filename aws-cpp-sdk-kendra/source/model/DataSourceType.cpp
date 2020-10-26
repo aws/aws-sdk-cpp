@@ -27,6 +27,7 @@ namespace Aws
         static const int ONEDRIVE_HASH = HashingUtils::HashString("ONEDRIVE");
         static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return DataSourceType::CUSTOM;
           }
+          else if (hashCode == CONFLUENCE_HASH)
+          {
+            return DataSourceType::CONFLUENCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "SERVICENOW";
           case DataSourceType::CUSTOM:
             return "CUSTOM";
+          case DataSourceType::CONFLUENCE:
+            return "CONFLUENCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

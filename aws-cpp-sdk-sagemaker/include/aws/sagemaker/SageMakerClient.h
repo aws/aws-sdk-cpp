@@ -15,6 +15,7 @@
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
 #include <aws/sagemaker/model/CreateAppResult.h>
+#include <aws/sagemaker/model/CreateAppImageConfigResult.h>
 #include <aws/sagemaker/model/CreateAutoMLJobResult.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/CreateCompilationJobResult.h>
@@ -25,6 +26,8 @@
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiResult.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
+#include <aws/sagemaker/model/CreateImageResult.h>
+#include <aws/sagemaker/model/CreateImageVersionResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateModelPackageResult.h>
@@ -44,6 +47,8 @@
 #include <aws/sagemaker/model/DeleteExperimentResult.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiResult.h>
+#include <aws/sagemaker/model/DeleteImageResult.h>
+#include <aws/sagemaker/model/DeleteImageVersionResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
@@ -51,6 +56,7 @@
 #include <aws/sagemaker/model/DeleteWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeAlgorithmResult.h>
 #include <aws/sagemaker/model/DescribeAppResult.h>
+#include <aws/sagemaker/model/DescribeAppImageConfigResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryResult.h>
 #include <aws/sagemaker/model/DescribeCompilationJobResult.h>
@@ -61,6 +67,8 @@
 #include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobResult.h>
+#include <aws/sagemaker/model/DescribeImageResult.h>
+#include <aws/sagemaker/model/DescribeImageVersionResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageResult.h>
@@ -79,6 +87,7 @@
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
 #include <aws/sagemaker/model/ListAlgorithmsResult.h>
+#include <aws/sagemaker/model/ListAppImageConfigsResult.h>
 #include <aws/sagemaker/model/ListAppsResult.h>
 #include <aws/sagemaker/model/ListAutoMLJobsResult.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobResult.h>
@@ -91,6 +100,8 @@
 #include <aws/sagemaker/model/ListFlowDefinitionsResult.h>
 #include <aws/sagemaker/model/ListHumanTaskUisResult.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
+#include <aws/sagemaker/model/ListImageVersionsResult.h>
+#include <aws/sagemaker/model/ListImagesResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
 #include <aws/sagemaker/model/ListModelPackagesResult.h>
@@ -112,11 +123,13 @@
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
+#include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
 #include <aws/sagemaker/model/UpdateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/UpdateDomainResult.h>
 #include <aws/sagemaker/model/UpdateEndpointResult.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
 #include <aws/sagemaker/model/UpdateExperimentResult.h>
+#include <aws/sagemaker/model/UpdateImageResult.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
@@ -169,6 +182,7 @@ namespace Model
         class AssociateTrialComponentRequest;
         class CreateAlgorithmRequest;
         class CreateAppRequest;
+        class CreateAppImageConfigRequest;
         class CreateAutoMLJobRequest;
         class CreateCodeRepositoryRequest;
         class CreateCompilationJobRequest;
@@ -179,6 +193,8 @@ namespace Model
         class CreateFlowDefinitionRequest;
         class CreateHumanTaskUiRequest;
         class CreateHyperParameterTuningJobRequest;
+        class CreateImageRequest;
+        class CreateImageVersionRequest;
         class CreateLabelingJobRequest;
         class CreateModelRequest;
         class CreateModelPackageRequest;
@@ -197,6 +213,7 @@ namespace Model
         class CreateWorkteamRequest;
         class DeleteAlgorithmRequest;
         class DeleteAppRequest;
+        class DeleteAppImageConfigRequest;
         class DeleteCodeRepositoryRequest;
         class DeleteDomainRequest;
         class DeleteEndpointRequest;
@@ -204,6 +221,8 @@ namespace Model
         class DeleteExperimentRequest;
         class DeleteFlowDefinitionRequest;
         class DeleteHumanTaskUiRequest;
+        class DeleteImageRequest;
+        class DeleteImageVersionRequest;
         class DeleteModelRequest;
         class DeleteModelPackageRequest;
         class DeleteMonitoringScheduleRequest;
@@ -217,6 +236,7 @@ namespace Model
         class DeleteWorkteamRequest;
         class DescribeAlgorithmRequest;
         class DescribeAppRequest;
+        class DescribeAppImageConfigRequest;
         class DescribeAutoMLJobRequest;
         class DescribeCodeRepositoryRequest;
         class DescribeCompilationJobRequest;
@@ -227,6 +247,8 @@ namespace Model
         class DescribeFlowDefinitionRequest;
         class DescribeHumanTaskUiRequest;
         class DescribeHyperParameterTuningJobRequest;
+        class DescribeImageRequest;
+        class DescribeImageVersionRequest;
         class DescribeLabelingJobRequest;
         class DescribeModelRequest;
         class DescribeModelPackageRequest;
@@ -245,6 +267,7 @@ namespace Model
         class DisassociateTrialComponentRequest;
         class GetSearchSuggestionsRequest;
         class ListAlgorithmsRequest;
+        class ListAppImageConfigsRequest;
         class ListAppsRequest;
         class ListAutoMLJobsRequest;
         class ListCandidatesForAutoMLJobRequest;
@@ -257,6 +280,8 @@ namespace Model
         class ListFlowDefinitionsRequest;
         class ListHumanTaskUisRequest;
         class ListHyperParameterTuningJobsRequest;
+        class ListImageVersionsRequest;
+        class ListImagesRequest;
         class ListLabelingJobsRequest;
         class ListLabelingJobsForWorkteamRequest;
         class ListModelPackagesRequest;
@@ -289,11 +314,13 @@ namespace Model
         class StopProcessingJobRequest;
         class StopTrainingJobRequest;
         class StopTransformJobRequest;
+        class UpdateAppImageConfigRequest;
         class UpdateCodeRepositoryRequest;
         class UpdateDomainRequest;
         class UpdateEndpointRequest;
         class UpdateEndpointWeightsAndCapacitiesRequest;
         class UpdateExperimentRequest;
+        class UpdateImageRequest;
         class UpdateMonitoringScheduleRequest;
         class UpdateNotebookInstanceRequest;
         class UpdateNotebookInstanceLifecycleConfigRequest;
@@ -307,6 +334,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<CreateAlgorithmResult, SageMakerError> CreateAlgorithmOutcome;
         typedef Aws::Utils::Outcome<CreateAppResult, SageMakerError> CreateAppOutcome;
+        typedef Aws::Utils::Outcome<CreateAppImageConfigResult, SageMakerError> CreateAppImageConfigOutcome;
         typedef Aws::Utils::Outcome<CreateAutoMLJobResult, SageMakerError> CreateAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<CreateCodeRepositoryResult, SageMakerError> CreateCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<CreateCompilationJobResult, SageMakerError> CreateCompilationJobOutcome;
@@ -317,6 +345,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, SageMakerError> CreateFlowDefinitionOutcome;
         typedef Aws::Utils::Outcome<CreateHumanTaskUiResult, SageMakerError> CreateHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, SageMakerError> CreateHyperParameterTuningJobOutcome;
+        typedef Aws::Utils::Outcome<CreateImageResult, SageMakerError> CreateImageOutcome;
+        typedef Aws::Utils::Outcome<CreateImageVersionResult, SageMakerError> CreateImageVersionOutcome;
         typedef Aws::Utils::Outcome<CreateLabelingJobResult, SageMakerError> CreateLabelingJobOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, SageMakerError> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateModelPackageResult, SageMakerError> CreateModelPackageOutcome;
@@ -335,6 +365,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateWorkteamResult, SageMakerError> CreateWorkteamOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAlgorithmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAppOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAppImageConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDomainOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointOutcome;
@@ -342,6 +373,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteExperimentResult, SageMakerError> DeleteExperimentOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, SageMakerError> DeleteFlowDefinitionOutcome;
         typedef Aws::Utils::Outcome<DeleteHumanTaskUiResult, SageMakerError> DeleteHumanTaskUiOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageResult, SageMakerError> DeleteImageOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageVersionResult, SageMakerError> DeleteImageVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteMonitoringScheduleOutcome;
@@ -355,6 +388,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteWorkteamResult, SageMakerError> DeleteWorkteamOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, SageMakerError> DescribeAlgorithmOutcome;
         typedef Aws::Utils::Outcome<DescribeAppResult, SageMakerError> DescribeAppOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppImageConfigResult, SageMakerError> DescribeAppImageConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoMLJobResult, SageMakerError> DescribeAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<DescribeCodeRepositoryResult, SageMakerError> DescribeCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<DescribeCompilationJobResult, SageMakerError> DescribeCompilationJobOutcome;
@@ -365,6 +399,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeFlowDefinitionResult, SageMakerError> DescribeFlowDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeHumanTaskUiResult, SageMakerError> DescribeHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<DescribeHyperParameterTuningJobResult, SageMakerError> DescribeHyperParameterTuningJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageResult, SageMakerError> DescribeImageOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageVersionResult, SageMakerError> DescribeImageVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeLabelingJobResult, SageMakerError> DescribeLabelingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, SageMakerError> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<DescribeModelPackageResult, SageMakerError> DescribeModelPackageOutcome;
@@ -383,6 +419,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
         typedef Aws::Utils::Outcome<ListAlgorithmsResult, SageMakerError> ListAlgorithmsOutcome;
+        typedef Aws::Utils::Outcome<ListAppImageConfigsResult, SageMakerError> ListAppImageConfigsOutcome;
         typedef Aws::Utils::Outcome<ListAppsResult, SageMakerError> ListAppsOutcome;
         typedef Aws::Utils::Outcome<ListAutoMLJobsResult, SageMakerError> ListAutoMLJobsOutcome;
         typedef Aws::Utils::Outcome<ListCandidatesForAutoMLJobResult, SageMakerError> ListCandidatesForAutoMLJobOutcome;
@@ -395,6 +432,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFlowDefinitionsResult, SageMakerError> ListFlowDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListHumanTaskUisResult, SageMakerError> ListHumanTaskUisOutcome;
         typedef Aws::Utils::Outcome<ListHyperParameterTuningJobsResult, SageMakerError> ListHyperParameterTuningJobsOutcome;
+        typedef Aws::Utils::Outcome<ListImageVersionsResult, SageMakerError> ListImageVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
         typedef Aws::Utils::Outcome<ListModelPackagesResult, SageMakerError> ListModelPackagesOutcome;
@@ -427,11 +466,13 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopProcessingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopTrainingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopTransformJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateAppImageConfigResult, SageMakerError> UpdateAppImageConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateCodeRepositoryResult, SageMakerError> UpdateCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainResult, SageMakerError> UpdateDomainOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointResult, SageMakerError> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, SageMakerError> UpdateEndpointWeightsAndCapacitiesOutcome;
         typedef Aws::Utils::Outcome<UpdateExperimentResult, SageMakerError> UpdateExperimentOutcome;
+        typedef Aws::Utils::Outcome<UpdateImageResult, SageMakerError> UpdateImageOutcome;
         typedef Aws::Utils::Outcome<UpdateMonitoringScheduleResult, SageMakerError> UpdateMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceResult, SageMakerError> UpdateNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, SageMakerError> UpdateNotebookInstanceLifecycleConfigOutcome;
@@ -445,6 +486,7 @@ namespace Model
         typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
         typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+        typedef std::future<CreateAppImageConfigOutcome> CreateAppImageConfigOutcomeCallable;
         typedef std::future<CreateAutoMLJobOutcome> CreateAutoMLJobOutcomeCallable;
         typedef std::future<CreateCodeRepositoryOutcome> CreateCodeRepositoryOutcomeCallable;
         typedef std::future<CreateCompilationJobOutcome> CreateCompilationJobOutcomeCallable;
@@ -455,6 +497,8 @@ namespace Model
         typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
         typedef std::future<CreateHumanTaskUiOutcome> CreateHumanTaskUiOutcomeCallable;
         typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
+        typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
+        typedef std::future<CreateImageVersionOutcome> CreateImageVersionOutcomeCallable;
         typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateModelPackageOutcome> CreateModelPackageOutcomeCallable;
@@ -473,6 +517,7 @@ namespace Model
         typedef std::future<CreateWorkteamOutcome> CreateWorkteamOutcomeCallable;
         typedef std::future<DeleteAlgorithmOutcome> DeleteAlgorithmOutcomeCallable;
         typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
+        typedef std::future<DeleteAppImageConfigOutcome> DeleteAppImageConfigOutcomeCallable;
         typedef std::future<DeleteCodeRepositoryOutcome> DeleteCodeRepositoryOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
@@ -480,6 +525,8 @@ namespace Model
         typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
         typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
         typedef std::future<DeleteHumanTaskUiOutcome> DeleteHumanTaskUiOutcomeCallable;
+        typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
+        typedef std::future<DeleteImageVersionOutcome> DeleteImageVersionOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
         typedef std::future<DeleteModelPackageOutcome> DeleteModelPackageOutcomeCallable;
         typedef std::future<DeleteMonitoringScheduleOutcome> DeleteMonitoringScheduleOutcomeCallable;
@@ -493,6 +540,7 @@ namespace Model
         typedef std::future<DeleteWorkteamOutcome> DeleteWorkteamOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
         typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
+        typedef std::future<DescribeAppImageConfigOutcome> DescribeAppImageConfigOutcomeCallable;
         typedef std::future<DescribeAutoMLJobOutcome> DescribeAutoMLJobOutcomeCallable;
         typedef std::future<DescribeCodeRepositoryOutcome> DescribeCodeRepositoryOutcomeCallable;
         typedef std::future<DescribeCompilationJobOutcome> DescribeCompilationJobOutcomeCallable;
@@ -503,6 +551,8 @@ namespace Model
         typedef std::future<DescribeFlowDefinitionOutcome> DescribeFlowDefinitionOutcomeCallable;
         typedef std::future<DescribeHumanTaskUiOutcome> DescribeHumanTaskUiOutcomeCallable;
         typedef std::future<DescribeHyperParameterTuningJobOutcome> DescribeHyperParameterTuningJobOutcomeCallable;
+        typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
+        typedef std::future<DescribeImageVersionOutcome> DescribeImageVersionOutcomeCallable;
         typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<DescribeModelPackageOutcome> DescribeModelPackageOutcomeCallable;
@@ -521,6 +571,7 @@ namespace Model
         typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
         typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
         typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
+        typedef std::future<ListAppImageConfigsOutcome> ListAppImageConfigsOutcomeCallable;
         typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
         typedef std::future<ListAutoMLJobsOutcome> ListAutoMLJobsOutcomeCallable;
         typedef std::future<ListCandidatesForAutoMLJobOutcome> ListCandidatesForAutoMLJobOutcomeCallable;
@@ -533,6 +584,8 @@ namespace Model
         typedef std::future<ListFlowDefinitionsOutcome> ListFlowDefinitionsOutcomeCallable;
         typedef std::future<ListHumanTaskUisOutcome> ListHumanTaskUisOutcomeCallable;
         typedef std::future<ListHyperParameterTuningJobsOutcome> ListHyperParameterTuningJobsOutcomeCallable;
+        typedef std::future<ListImageVersionsOutcome> ListImageVersionsOutcomeCallable;
+        typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
         typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
         typedef std::future<ListModelPackagesOutcome> ListModelPackagesOutcomeCallable;
@@ -565,11 +618,13 @@ namespace Model
         typedef std::future<StopProcessingJobOutcome> StopProcessingJobOutcomeCallable;
         typedef std::future<StopTrainingJobOutcome> StopTrainingJobOutcomeCallable;
         typedef std::future<StopTransformJobOutcome> StopTransformJobOutcomeCallable;
+        typedef std::future<UpdateAppImageConfigOutcome> UpdateAppImageConfigOutcomeCallable;
         typedef std::future<UpdateCodeRepositoryOutcome> UpdateCodeRepositoryOutcomeCallable;
         typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWeightsAndCapacitiesOutcomeCallable;
         typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
+        typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
         typedef std::future<UpdateMonitoringScheduleOutcome> UpdateMonitoringScheduleOutcomeCallable;
         typedef std::future<UpdateNotebookInstanceOutcome> UpdateNotebookInstanceOutcomeCallable;
         typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
@@ -586,6 +641,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAlgorithmRequest&, const Model::CreateAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateAppImageConfigRequest&, const Model::CreateAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAutoMLJobRequest&, const Model::CreateAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCodeRepositoryRequest&, const Model::CreateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCompilationJobRequest&, const Model::CreateCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCompilationJobResponseReceivedHandler;
@@ -596,6 +652,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHumanTaskUiRequest&, const Model::CreateHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateImageVersionRequest&, const Model::CreateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageRequest&, const Model::CreateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageResponseReceivedHandler;
@@ -614,6 +672,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateWorkteamRequest&, const Model::CreateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAlgorithmRequest&, const Model::DeleteAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteAppImageConfigRequest&, const Model::DeleteAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteCodeRepositoryRequest&, const Model::DeleteCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
@@ -621,6 +680,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHumanTaskUiRequest&, const Model::DeleteHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHumanTaskUiResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteImageVersionRequest&, const Model::DeleteImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageRequest&, const Model::DeleteModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteMonitoringScheduleRequest&, const Model::DeleteMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitoringScheduleResponseReceivedHandler;
@@ -634,6 +695,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkteamRequest&, const Model::DeleteWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeAppImageConfigRequest&, const Model::DescribeAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobRequest&, const Model::DescribeAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCodeRepositoryRequest&, const Model::DescribeCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCompilationJobRequest&, const Model::DescribeCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCompilationJobResponseReceivedHandler;
@@ -644,6 +706,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFlowDefinitionRequest&, const Model::DescribeFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHumanTaskUiRequest&, const Model::DescribeHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHyperParameterTuningJobRequest&, const Model::DescribeHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHyperParameterTuningJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeImageRequest&, const Model::DescribeImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeImageVersionRequest&, const Model::DescribeImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageRequest&, const Model::DescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageResponseReceivedHandler;
@@ -662,6 +726,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAlgorithmsRequest&, const Model::ListAlgorithmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlgorithmsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListAppImageConfigsRequest&, const Model::ListAppImageConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppImageConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAutoMLJobsRequest&, const Model::ListAutoMLJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoMLJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListCandidatesForAutoMLJobRequest&, const Model::ListCandidatesForAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCandidatesForAutoMLJobResponseReceivedHandler;
@@ -674,6 +739,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListFlowDefinitionsRequest&, const Model::ListFlowDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListHumanTaskUisRequest&, const Model::ListHumanTaskUisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHumanTaskUisResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListHyperParameterTuningJobsRequest&, const Model::ListHyperParameterTuningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHyperParameterTuningJobsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListImageVersionsRequest&, const Model::ListImageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageVersionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackagesRequest&, const Model::ListModelPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagesResponseReceivedHandler;
@@ -706,11 +773,13 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::StopProcessingJobRequest&, const Model::StopProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopTrainingJobRequest&, const Model::StopTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopTransformJobRequest&, const Model::StopTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTransformJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateAppImageConfigRequest&, const Model::UpdateAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateCodeRepositoryRequest&, const Model::UpdateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointWeightsAndCapacitiesRequest&, const Model::UpdateEndpointWeightsAndCapacitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateExperimentRequest&, const Model::UpdateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateImageRequest&, const Model::UpdateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringScheduleRequest&, const Model::UpdateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceRequest&, const Model::UpdateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
@@ -922,6 +991,34 @@ namespace Model
         virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a configuration for running an Amazon SageMaker image as a
+         * KernelGateway app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppImageConfigOutcome CreateAppImageConfig(const Model::CreateAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Creates a configuration for running an Amazon SageMaker image as a
+         * KernelGateway app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppImageConfigOutcomeCallable CreateAppImageConfigCallable(const Model::CreateAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Creates a configuration for running an Amazon SageMaker image as a
+         * KernelGateway app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppImageConfigAsync(const Model::CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Autopilot job.</p> <p>Find the best performing model after you run
          * an Autopilot job by calling . Deploy that model by following the steps described
          * in <a
@@ -1115,23 +1212,13 @@ namespace Model
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
          * specified VPC and subnets. Internet access is disabled by default. To allow
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
-         * disabled, you won't be able to train or host models unless your VPC has an
-         * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
-         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
-         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
-         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
-         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
-         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
-         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
-         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
-         * groups for your VPC</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
-         * with public and private subnets (NAT)</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect
-         * to SageMaker through a VPC interface endpoint</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * disabled, you won't be able to run a Studio notebook or to train or host models
+         * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
+         * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+         * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -1157,23 +1244,13 @@ namespace Model
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
          * specified VPC and subnets. Internet access is disabled by default. To allow
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
-         * disabled, you won't be able to train or host models unless your VPC has an
-         * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
-         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
-         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
-         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
-         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
-         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
-         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
-         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
-         * groups for your VPC</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
-         * with public and private subnets (NAT)</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect
-         * to SageMaker through a VPC interface endpoint</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * disabled, you won't be able to run a Studio notebook or to train or host models
+         * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
+         * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+         * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1201,23 +1278,13 @@ namespace Model
          * </li> <li> <p> <code>VpcOnly</code> - All Studio traffic is through the
          * specified VPC and subnets. Internet access is disabled by default. To allow
          * internet access, you must specify a NAT gateway.</p> <p>When internet access is
-         * disabled, you won't be able to train or host models unless your VPC has an
-         * interface endpoint (PrivateLink) or a NAT gateway and your security groups allow
-         * outbound connections.</p> </li> </ul> <p> <b> <code>VpcOnly</code> network
-         * access type</b> </p> <p>When you choose <code>VpcOnly</code>, you must specify
-         * the following:</p> <ul> <li> <p>Security group inbound and outbound rules to
-         * allow NFS traffic over TCP on port 2049 between the domain and the EFS
-         * volume</p> </li> <li> <p>Security group inbound and outbound rules to allow
-         * traffic between the JupyterServer app and the KernelGateway apps</p> </li> <li>
-         * <p>Interface endpoints to access the SageMaker API and SageMaker runtime</p>
-         * </li> </ul> <p>For more information, see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
-         * groups for your VPC</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
-         * with public and private subnets (NAT)</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect
-         * to SageMaker through a VPC interface endpoint</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * disabled, you won't be able to run a Studio notebook or to train or host models
+         * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
+         * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+         * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1650,6 +1717,68 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHyperParameterTuningJobAsync(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of
+         * container images. Each of these container images is represented by a SageMaker
+         * <code>ImageVersion</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateImageOutcome CreateImage(const Model::CreateImageRequest& request) const;
+
+        /**
+         * <p>Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of
+         * container images. Each of these container images is represented by a SageMaker
+         * <code>ImageVersion</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request) const;
+
+        /**
+         * <p>Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of
+         * container images. Each of these container images is represented by a SageMaker
+         * <code>ImageVersion</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
+         * The version represents the Amazon Container Registry (ECR) container image
+         * specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateImageVersionOutcome CreateImageVersion(const Model::CreateImageVersionRequest& request) const;
+
+        /**
+         * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
+         * The version represents the Amazon Container Registry (ECR) container image
+         * specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImageVersionOutcomeCallable CreateImageVersionCallable(const Model::CreateImageVersionRequest& request) const;
+
+        /**
+         * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
+         * The version represents the Amazon Container Registry (ECR) container image
+         * specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImageVersionAsync(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a job that uses workers to label the data objects in your input
@@ -2768,6 +2897,31 @@ namespace Model
         virtual void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppImageConfigOutcome DeleteAppImageConfig(const Model::DeleteAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Deletes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppImageConfigOutcomeCallable DeleteAppImageConfigCallable(const Model::DeleteAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Deletes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppImageConfigAsync(const Model::DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
@@ -3010,6 +3164,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHumanTaskUiAsync(const Model::DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a SageMaker image and all versions of the image. The container images
+         * aren't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
+
+        /**
+         * <p>Deletes a SageMaker image and all versions of the image. The container images
+         * aren't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
+
+        /**
+         * <p>Deletes a SageMaker image and all versions of the image. The container images
+         * aren't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a version of a SageMaker image. The container image the version
+         * represents isn't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImageVersionOutcome DeleteImageVersion(const Model::DeleteImageVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a SageMaker image. The container image the version
+         * represents isn't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImageVersionOutcomeCallable DeleteImageVersionCallable(const Model::DeleteImageVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a SageMaker image. The container image the version
+         * represents isn't deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImageVersionAsync(const Model::DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
@@ -3442,6 +3652,31 @@ namespace Model
         virtual void DescribeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppImageConfigOutcome DescribeAppImageConfig(const Model::DescribeAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Describes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppImageConfigOutcomeCallable DescribeAppImageConfigCallable(const Model::DescribeAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Describes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppImageConfigAsync(const Model::DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about an Amazon SageMaker job.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">AWS
@@ -3717,6 +3952,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeHyperParameterTuningJobAsync(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageOutcome DescribeImage(const Model::DescribeImageRequest& request) const;
+
+        /**
+         * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImageOutcomeCallable DescribeImageCallable(const Model::DescribeImageRequest& request) const;
+
+        /**
+         * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageVersionOutcome DescribeImageVersion(const Model::DescribeImageVersionRequest& request) const;
+
+        /**
+         * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImageVersionOutcomeCallable DescribeImageVersionCallable(const Model::DescribeImageVersionRequest& request) const;
+
+        /**
+         * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImageVersionAsync(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a labeling job.</p><p><h3>See Also:</h3>   <a
@@ -4262,6 +4547,37 @@ namespace Model
         virtual void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the AppImageConfigs in your account and their properties. The list can
+         * be filtered by creation time or modified time, and whether the AppImageConfig
+         * name contains a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppImageConfigsOutcome ListAppImageConfigs(const Model::ListAppImageConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the AppImageConfigs in your account and their properties. The list can
+         * be filtered by creation time or modified time, and whether the AppImageConfig
+         * name contains a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppImageConfigsOutcomeCallable ListAppImageConfigsCallable(const Model::ListAppImageConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the AppImageConfigs in your account and their properties. The list can
+         * be filtered by creation time or modified time, and whether the AppImageConfig
+         * name contains a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppImageConfigsAsync(const Model::ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists apps.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">AWS
          * API Reference</a></p>
@@ -4590,6 +4906,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHyperParameterTuningJobsAsync(const Model::ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the versions of a specified image and their properties. The list can be
+         * filtered by creation time or modified time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImageVersionsOutcome ListImageVersions(const Model::ListImageVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the versions of a specified image and their properties. The list can be
+         * filtered by creation time or modified time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImageVersionsOutcomeCallable ListImageVersionsCallable(const Model::ListImageVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the versions of a specified image and their properties. The list can be
+         * filtered by creation time or modified time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImageVersionsAsync(const Model::ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the images in your account and their properties. The list can be
+         * filtered by creation time or modified time, and whether the image name contains
+         * a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
+
+        /**
+         * <p>Lists the images in your account and their properties. The list can be
+         * filtered by creation time or modified time, and whether the image name contains
+         * a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
+
+        /**
+         * <p>Lists the images in your account and their properties. The list can be
+         * filtered by creation time or modified time, and whether the image name contains
+         * a specified string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of labeling jobs.</p><p><h3>See Also:</h3>   <a
@@ -5599,6 +5974,31 @@ namespace Model
         virtual void StopTransformJobAsync(const Model::StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the properties of an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppImageConfigOutcome UpdateAppImageConfig(const Model::UpdateAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Updates the properties of an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAppImageConfigOutcomeCallable UpdateAppImageConfigCallable(const Model::UpdateAppImageConfigRequest& request) const;
+
+        /**
+         * <p>Updates the properties of an AppImageConfig.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAppImageConfigAsync(const Model::UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified Git repository with the specified values.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">AWS
@@ -5788,6 +6188,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateExperimentAsync(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the properties of a SageMaker image. To change the image's tags, use
+         * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateImageOutcome UpdateImage(const Model::UpdateImageRequest& request) const;
+
+        /**
+         * <p>Updates the properties of a SageMaker image. To change the image's tags, use
+         * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateImageOutcomeCallable UpdateImageCallable(const Model::UpdateImageRequest& request) const;
+
+        /**
+         * <p>Updates the properties of a SageMaker image. To change the image's tags, use
+         * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
@@ -6066,6 +6494,7 @@ namespace Model
         void AssociateTrialComponentAsyncHelper(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAlgorithmAsyncHelper(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppImageConfigAsyncHelper(const Model::CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAutoMLJobAsyncHelper(const Model::CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCodeRepositoryAsyncHelper(const Model::CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCompilationJobAsyncHelper(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6076,6 +6505,8 @@ namespace Model
         void CreateFlowDefinitionAsyncHelper(const Model::CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHumanTaskUiAsyncHelper(const Model::CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHyperParameterTuningJobAsyncHelper(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateImageVersionAsyncHelper(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLabelingJobAsyncHelper(const Model::CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelPackageAsyncHelper(const Model::CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6094,6 +6525,7 @@ namespace Model
         void CreateWorkteamAsyncHelper(const Model::CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAlgorithmAsyncHelper(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppImageConfigAsyncHelper(const Model::DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCodeRepositoryAsyncHelper(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6101,6 +6533,8 @@ namespace Model
         void DeleteExperimentAsyncHelper(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowDefinitionAsyncHelper(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHumanTaskUiAsyncHelper(const Model::DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteImageVersionAsyncHelper(const Model::DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageAsyncHelper(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMonitoringScheduleAsyncHelper(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6114,6 +6548,7 @@ namespace Model
         void DeleteWorkteamAsyncHelper(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAppAsyncHelper(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppImageConfigAsyncHelper(const Model::DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoMLJobAsyncHelper(const Model::DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCodeRepositoryAsyncHelper(const Model::DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCompilationJobAsyncHelper(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6124,6 +6559,8 @@ namespace Model
         void DescribeFlowDefinitionAsyncHelper(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHumanTaskUiAsyncHelper(const Model::DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHyperParameterTuningJobAsyncHelper(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImageAsyncHelper(const Model::DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImageVersionAsyncHelper(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLabelingJobAsyncHelper(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelPackageAsyncHelper(const Model::DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6142,6 +6579,7 @@ namespace Model
         void DisassociateTrialComponentAsyncHelper(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSearchSuggestionsAsyncHelper(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAlgorithmsAsyncHelper(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppImageConfigsAsyncHelper(const Model::ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAppsAsyncHelper(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAutoMLJobsAsyncHelper(const Model::ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCandidatesForAutoMLJobAsyncHelper(const Model::ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6154,6 +6592,8 @@ namespace Model
         void ListFlowDefinitionsAsyncHelper(const Model::ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHumanTaskUisAsyncHelper(const Model::ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHyperParameterTuningJobsAsyncHelper(const Model::ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImageVersionsAsyncHelper(const Model::ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsAsyncHelper(const Model::ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsForWorkteamAsyncHelper(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackagesAsyncHelper(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6186,11 +6626,13 @@ namespace Model
         void StopProcessingJobAsyncHelper(const Model::StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingJobAsyncHelper(const Model::StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTransformJobAsyncHelper(const Model::StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAppImageConfigAsyncHelper(const Model::UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCodeRepositoryAsyncHelper(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainAsyncHelper(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointWeightsAndCapacitiesAsyncHelper(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateExperimentAsyncHelper(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateImageAsyncHelper(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMonitoringScheduleAsyncHelper(const Model::UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNotebookInstanceAsyncHelper(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNotebookInstanceLifecycleConfigAsyncHelper(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

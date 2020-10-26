@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/CustomImage.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The kernel gateway app settings.</p><p><h3>See Also:</h3>   <a
+   * <p>The KernelGateway app settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayAppSettings">AWS
    * API Reference</a></p>
    */
@@ -38,45 +40,97 @@ namespace Model
 
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline KernelGatewayAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline KernelGatewayAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline KernelGatewayAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
+
+    /**
+     * <p>A list of custom images that are configured to run as a KernelGateway
+     * app.</p>
+     */
+    inline KernelGatewayAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
 
   private:
 
     ResourceSpec m_defaultResourceSpec;
     bool m_defaultResourceSpecHasBeenSet;
+
+    Aws::Vector<CustomImage> m_customImages;
+    bool m_customImagesHasBeenSet;
   };
 
 } // namespace Model

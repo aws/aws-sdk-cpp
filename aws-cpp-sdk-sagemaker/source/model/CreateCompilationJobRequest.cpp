@@ -17,7 +17,8 @@ CreateCompilationJobRequest::CreateCompilationJobRequest() :
     m_roleArnHasBeenSet(false),
     m_inputConfigHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String CreateCompilationJobRequest::SerializePayload() const
   if(m_stoppingConditionHasBeenSet)
   {
    payload.WithObject("StoppingCondition", m_stoppingCondition.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

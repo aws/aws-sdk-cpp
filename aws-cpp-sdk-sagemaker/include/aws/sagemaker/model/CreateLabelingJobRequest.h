@@ -317,7 +317,7 @@ namespace Model
 
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -339,7 +339,7 @@ namespace Model
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -361,7 +361,7 @@ namespace Model
     inline bool LabelCategoryConfigS3UriHasBeenSet() const { return m_labelCategoryConfigS3UriHasBeenSet; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -383,7 +383,7 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = value; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -405,7 +405,7 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::move(value); }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -427,7 +427,7 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri.assign(value); }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -449,7 +449,7 @@ namespace Model
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
@@ -471,7 +471,7 @@ namespace Model
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
+     * <p>The S3 URI of the file that defines the categories used to label the data
      * objects.</p> <p>For 3D point cloud task types, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.

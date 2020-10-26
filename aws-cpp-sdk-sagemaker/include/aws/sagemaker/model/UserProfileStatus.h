@@ -19,7 +19,10 @@ namespace Model
     Deleting,
     Failed,
     InService,
-    Pending
+    Pending,
+    Updating,
+    Update_Failed,
+    Delete_Failed
   };
 
 namespace UserProfileStatusMapper

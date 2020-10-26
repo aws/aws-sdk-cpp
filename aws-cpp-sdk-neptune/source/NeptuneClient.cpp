@@ -28,6 +28,7 @@
 #include <aws/neptune/model/CopyDBClusterSnapshotRequest.h>
 #include <aws/neptune/model/CopyDBParameterGroupRequest.h>
 #include <aws/neptune/model/CreateDBClusterRequest.h>
+#include <aws/neptune/model/CreateDBClusterEndpointRequest.h>
 #include <aws/neptune/model/CreateDBClusterParameterGroupRequest.h>
 #include <aws/neptune/model/CreateDBClusterSnapshotRequest.h>
 #include <aws/neptune/model/CreateDBInstanceRequest.h>
@@ -35,12 +36,14 @@
 #include <aws/neptune/model/CreateDBSubnetGroupRequest.h>
 #include <aws/neptune/model/CreateEventSubscriptionRequest.h>
 #include <aws/neptune/model/DeleteDBClusterRequest.h>
+#include <aws/neptune/model/DeleteDBClusterEndpointRequest.h>
 #include <aws/neptune/model/DeleteDBClusterParameterGroupRequest.h>
 #include <aws/neptune/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/neptune/model/DeleteDBInstanceRequest.h>
 #include <aws/neptune/model/DeleteDBParameterGroupRequest.h>
 #include <aws/neptune/model/DeleteDBSubnetGroupRequest.h>
 #include <aws/neptune/model/DeleteEventSubscriptionRequest.h>
+#include <aws/neptune/model/DescribeDBClusterEndpointsRequest.h>
 #include <aws/neptune/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/neptune/model/DescribeDBClusterParametersRequest.h>
 #include <aws/neptune/model/DescribeDBClusterSnapshotAttributesRequest.h>
@@ -62,6 +65,7 @@
 #include <aws/neptune/model/FailoverDBClusterRequest.h>
 #include <aws/neptune/model/ListTagsForResourceRequest.h>
 #include <aws/neptune/model/ModifyDBClusterRequest.h>
+#include <aws/neptune/model/ModifyDBClusterEndpointRequest.h>
 #include <aws/neptune/model/ModifyDBClusterParameterGroupRequest.h>
 #include <aws/neptune/model/ModifyDBClusterSnapshotAttributeRequest.h>
 #include <aws/neptune/model/ModifyDBInstanceRequest.h>
@@ -380,6 +384,33 @@ void NeptuneClient::CreateDBClusterAsyncHelper(const CreateDBClusterRequest& req
   handler(this, request, CreateDBCluster(request), context);
 }
 
+CreateDBClusterEndpointOutcome NeptuneClient::CreateDBClusterEndpoint(const CreateDBClusterEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateDBClusterEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateDBClusterEndpointOutcomeCallable NeptuneClient::CreateDBClusterEndpointCallable(const CreateDBClusterEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDBClusterEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDBClusterEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::CreateDBClusterEndpointAsync(const CreateDBClusterEndpointRequest& request, const CreateDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::CreateDBClusterEndpointAsyncHelper(const CreateDBClusterEndpointRequest& request, const CreateDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDBClusterEndpoint(request), context);
+}
+
 CreateDBClusterParameterGroupOutcome NeptuneClient::CreateDBClusterParameterGroup(const CreateDBClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -569,6 +600,33 @@ void NeptuneClient::DeleteDBClusterAsyncHelper(const DeleteDBClusterRequest& req
   handler(this, request, DeleteDBCluster(request), context);
 }
 
+DeleteDBClusterEndpointOutcome NeptuneClient::DeleteDBClusterEndpoint(const DeleteDBClusterEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteDBClusterEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteDBClusterEndpointOutcomeCallable NeptuneClient::DeleteDBClusterEndpointCallable(const DeleteDBClusterEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDBClusterEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDBClusterEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::DeleteDBClusterEndpointAsync(const DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::DeleteDBClusterEndpointAsyncHelper(const DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDBClusterEndpoint(request), context);
+}
+
 DeleteDBClusterParameterGroupOutcome NeptuneClient::DeleteDBClusterParameterGroup(const DeleteDBClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -729,6 +787,33 @@ void NeptuneClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRe
 void NeptuneClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventSubscription(request), context);
+}
+
+DescribeDBClusterEndpointsOutcome NeptuneClient::DescribeDBClusterEndpoints(const DescribeDBClusterEndpointsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeDBClusterEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeDBClusterEndpointsOutcomeCallable NeptuneClient::DescribeDBClusterEndpointsCallable(const DescribeDBClusterEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDBClusterEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDBClusterEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::DescribeDBClusterEndpointsAsync(const DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterEndpointsAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::DescribeDBClusterEndpointsAsyncHelper(const DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusterEndpoints(request), context);
 }
 
 DescribeDBClusterParameterGroupsOutcome NeptuneClient::DescribeDBClusterParameterGroups(const DescribeDBClusterParameterGroupsRequest& request) const
@@ -1296,6 +1381,33 @@ void NeptuneClient::ModifyDBClusterAsync(const ModifyDBClusterRequest& request, 
 void NeptuneClient::ModifyDBClusterAsyncHelper(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyDBCluster(request), context);
+}
+
+ModifyDBClusterEndpointOutcome NeptuneClient::ModifyDBClusterEndpoint(const ModifyDBClusterEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyDBClusterEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyDBClusterEndpointOutcomeCallable NeptuneClient::ModifyDBClusterEndpointCallable(const ModifyDBClusterEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyDBClusterEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyDBClusterEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::ModifyDBClusterEndpointAsync(const ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::ModifyDBClusterEndpointAsyncHelper(const ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyDBClusterEndpoint(request), context);
 }
 
 ModifyDBClusterParameterGroupOutcome NeptuneClient::ModifyDBClusterParameterGroup(const ModifyDBClusterParameterGroupRequest& request) const

@@ -84,47 +84,92 @@ namespace Model
 
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline UserSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline UserSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline UserSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline UserSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security groups.</p>
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
+     * uses for communication.</p> <p>Optional when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.</p> <p>Required when the
+     * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>VpcOnly</code>.</p>
      */
     inline UserSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

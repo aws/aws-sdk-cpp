@@ -24,6 +24,7 @@
 #include <aws/sagemaker/model/AssociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/CreateAlgorithmRequest.h>
 #include <aws/sagemaker/model/CreateAppRequest.h>
+#include <aws/sagemaker/model/CreateAppImageConfigRequest.h>
 #include <aws/sagemaker/model/CreateAutoMLJobRequest.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/CreateCompilationJobRequest.h>
@@ -34,6 +35,8 @@
 #include <aws/sagemaker/model/CreateFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobRequest.h>
+#include <aws/sagemaker/model/CreateImageRequest.h>
+#include <aws/sagemaker/model/CreateImageVersionRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateModelRequest.h>
 #include <aws/sagemaker/model/CreateModelPackageRequest.h>
@@ -52,6 +55,7 @@
 #include <aws/sagemaker/model/CreateWorkteamRequest.h>
 #include <aws/sagemaker/model/DeleteAlgorithmRequest.h>
 #include <aws/sagemaker/model/DeleteAppRequest.h>
+#include <aws/sagemaker/model/DeleteAppImageConfigRequest.h>
 #include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
@@ -59,6 +63,8 @@
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiRequest.h>
+#include <aws/sagemaker/model/DeleteImageRequest.h>
+#include <aws/sagemaker/model/DeleteImageVersionRequest.h>
 #include <aws/sagemaker/model/DeleteModelRequest.h>
 #include <aws/sagemaker/model/DeleteModelPackageRequest.h>
 #include <aws/sagemaker/model/DeleteMonitoringScheduleRequest.h>
@@ -72,6 +78,7 @@
 #include <aws/sagemaker/model/DeleteWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeAlgorithmRequest.h>
 #include <aws/sagemaker/model/DescribeAppRequest.h>
+#include <aws/sagemaker/model/DescribeAppImageConfigRequest.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobRequest.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/DescribeCompilationJobRequest.h>
@@ -82,6 +89,8 @@
 #include <aws/sagemaker/model/DescribeFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobRequest.h>
+#include <aws/sagemaker/model/DescribeImageRequest.h>
+#include <aws/sagemaker/model/DescribeImageVersionRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeModelPackageRequest.h>
@@ -100,6 +109,7 @@
 #include <aws/sagemaker/model/DisassociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsRequest.h>
 #include <aws/sagemaker/model/ListAlgorithmsRequest.h>
+#include <aws/sagemaker/model/ListAppImageConfigsRequest.h>
 #include <aws/sagemaker/model/ListAppsRequest.h>
 #include <aws/sagemaker/model/ListAutoMLJobsRequest.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobRequest.h>
@@ -112,6 +122,8 @@
 #include <aws/sagemaker/model/ListFlowDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListHumanTaskUisRequest.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsRequest.h>
+#include <aws/sagemaker/model/ListImageVersionsRequest.h>
+#include <aws/sagemaker/model/ListImagesRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
 #include <aws/sagemaker/model/ListModelPackagesRequest.h>
@@ -144,11 +156,13 @@
 #include <aws/sagemaker/model/StopProcessingJobRequest.h>
 #include <aws/sagemaker/model/StopTrainingJobRequest.h>
 #include <aws/sagemaker/model/StopTransformJobRequest.h>
+#include <aws/sagemaker/model/UpdateAppImageConfigRequest.h>
 #include <aws/sagemaker/model/UpdateCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/UpdateDomainRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesRequest.h>
 #include <aws/sagemaker/model/UpdateExperimentRequest.h>
+#include <aws/sagemaker/model/UpdateImageRequest.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigRequest.h>
@@ -337,6 +351,33 @@ void SageMakerClient::CreateAppAsync(const CreateAppRequest& request, const Crea
 void SageMakerClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateApp(request), context);
+}
+
+CreateAppImageConfigOutcome SageMakerClient::CreateAppImageConfig(const CreateAppImageConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAppImageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppImageConfigOutcomeCallable SageMakerClient::CreateAppImageConfigCallable(const CreateAppImageConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppImageConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateAppImageConfigAsync(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppImageConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateAppImageConfigAsyncHelper(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAppImageConfig(request), context);
 }
 
 CreateAutoMLJobOutcome SageMakerClient::CreateAutoMLJob(const CreateAutoMLJobRequest& request) const
@@ -607,6 +648,60 @@ void SageMakerClient::CreateHyperParameterTuningJobAsync(const CreateHyperParame
 void SageMakerClient::CreateHyperParameterTuningJobAsyncHelper(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateHyperParameterTuningJob(request), context);
+}
+
+CreateImageOutcome SageMakerClient::CreateImage(const CreateImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateImageOutcomeCallable SageMakerClient::CreateImageCallable(const CreateImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateImageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateImageAsyncHelper(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateImage(request), context);
+}
+
+CreateImageVersionOutcome SageMakerClient::CreateImageVersion(const CreateImageVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateImageVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateImageVersionOutcomeCallable SageMakerClient::CreateImageVersionCallable(const CreateImageVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImageVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateImageVersionAsync(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateImageVersionAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateImageVersionAsyncHelper(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateImageVersion(request), context);
 }
 
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const
@@ -1095,6 +1190,33 @@ void SageMakerClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, cons
   handler(this, request, DeleteApp(request), context);
 }
 
+DeleteAppImageConfigOutcome SageMakerClient::DeleteAppImageConfig(const DeleteAppImageConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppImageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppImageConfigOutcomeCallable SageMakerClient::DeleteAppImageConfigCallable(const DeleteAppImageConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppImageConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteAppImageConfigAsync(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppImageConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteAppImageConfigAsyncHelper(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppImageConfig(request), context);
+}
+
 DeleteCodeRepositoryOutcome SageMakerClient::DeleteCodeRepository(const DeleteCodeRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1282,6 +1404,60 @@ void SageMakerClient::DeleteHumanTaskUiAsync(const DeleteHumanTaskUiRequest& req
 void SageMakerClient::DeleteHumanTaskUiAsyncHelper(const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteHumanTaskUi(request), context);
+}
+
+DeleteImageOutcome SageMakerClient::DeleteImage(const DeleteImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteImageOutcomeCallable SageMakerClient::DeleteImageCallable(const DeleteImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImage(request), context);
+}
+
+DeleteImageVersionOutcome SageMakerClient::DeleteImageVersion(const DeleteImageVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteImageVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteImageVersionOutcomeCallable SageMakerClient::DeleteImageVersionCallable(const DeleteImageVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImageVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteImageVersionAsync(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageVersionAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteImageVersionAsyncHelper(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImageVersion(request), context);
 }
 
 DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& request) const
@@ -1635,6 +1811,33 @@ void SageMakerClient::DescribeAppAsyncHelper(const DescribeAppRequest& request, 
   handler(this, request, DescribeApp(request), context);
 }
 
+DescribeAppImageConfigOutcome SageMakerClient::DescribeAppImageConfig(const DescribeAppImageConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAppImageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppImageConfigOutcomeCallable SageMakerClient::DescribeAppImageConfigCallable(const DescribeAppImageConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppImageConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeAppImageConfigAsync(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppImageConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeAppImageConfigAsyncHelper(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppImageConfig(request), context);
+}
+
 DescribeAutoMLJobOutcome SageMakerClient::DescribeAutoMLJob(const DescribeAutoMLJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1903,6 +2106,60 @@ void SageMakerClient::DescribeHyperParameterTuningJobAsync(const DescribeHyperPa
 void SageMakerClient::DescribeHyperParameterTuningJobAsyncHelper(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeHyperParameterTuningJob(request), context);
+}
+
+DescribeImageOutcome SageMakerClient::DescribeImage(const DescribeImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeImageOutcomeCallable SageMakerClient::DescribeImageCallable(const DescribeImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeImageAsync(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeImageAsyncHelper(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImage(request), context);
+}
+
+DescribeImageVersionOutcome SageMakerClient::DescribeImageVersion(const DescribeImageVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeImageVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeImageVersionOutcomeCallable SageMakerClient::DescribeImageVersionCallable(const DescribeImageVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeImageVersionAsync(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageVersionAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeImageVersionAsyncHelper(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImageVersion(request), context);
 }
 
 DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLabelingJobRequest& request) const
@@ -2391,6 +2648,33 @@ void SageMakerClient::ListAlgorithmsAsyncHelper(const ListAlgorithmsRequest& req
   handler(this, request, ListAlgorithms(request), context);
 }
 
+ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppImageConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAppImageConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppImageConfigsOutcomeCallable SageMakerClient::ListAppImageConfigsCallable(const ListAppImageConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAppImageConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppImageConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListAppImageConfigsAsync(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAppImageConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListAppImageConfigsAsyncHelper(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAppImageConfigs(request), context);
+}
+
 ListAppsOutcome SageMakerClient::ListApps(const ListAppsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2713,6 +2997,60 @@ void SageMakerClient::ListHyperParameterTuningJobsAsync(const ListHyperParameter
 void SageMakerClient::ListHyperParameterTuningJobsAsyncHelper(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListHyperParameterTuningJobs(request), context);
+}
+
+ListImageVersionsOutcome SageMakerClient::ListImageVersions(const ListImageVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListImageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImageVersionsOutcomeCallable SageMakerClient::ListImageVersionsCallable(const ListImageVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImageVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListImageVersionsAsync(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImageVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListImageVersionsAsyncHelper(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImageVersions(request), context);
+}
+
+ListImagesOutcome SageMakerClient::ListImages(const ListImagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImagesOutcomeCallable SageMakerClient::ListImagesCallable(const ListImagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImagesAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListImagesAsyncHelper(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImages(request), context);
 }
 
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const
@@ -3579,6 +3917,33 @@ void SageMakerClient::StopTransformJobAsyncHelper(const StopTransformJobRequest&
   handler(this, request, StopTransformJob(request), context);
 }
 
+UpdateAppImageConfigOutcome SageMakerClient::UpdateAppImageConfig(const UpdateAppImageConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAppImageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppImageConfigOutcomeCallable SageMakerClient::UpdateAppImageConfigCallable(const UpdateAppImageConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppImageConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateAppImageConfigAsync(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppImageConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateAppImageConfigAsyncHelper(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAppImageConfig(request), context);
+}
+
 UpdateCodeRepositoryOutcome SageMakerClient::UpdateCodeRepository(const UpdateCodeRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3712,6 +4077,33 @@ void SageMakerClient::UpdateExperimentAsync(const UpdateExperimentRequest& reque
 void SageMakerClient::UpdateExperimentAsyncHelper(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateExperiment(request), context);
+}
+
+UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateImageOutcomeCallable SageMakerClient::UpdateImageCallable(const UpdateImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateImageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateImageAsyncHelper(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateImage(request), context);
 }
 
 UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const UpdateMonitoringScheduleRequest& request) const

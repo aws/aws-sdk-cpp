@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(const char* value) { m_appArn.assign(value); }
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline CreateAppResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline CreateAppResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The App's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline CreateAppResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 

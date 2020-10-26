@@ -10,8 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -390,6 +390,57 @@ namespace Model
 
 
     /**
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
+     */
+    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
+     */
+    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessType = value; }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
+     */
+    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessType = std::move(value); }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
+     */
+    inline DescribeDomainResult& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
+     */
+    inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The AWS Key Management Service encryption key ID.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
@@ -544,57 +595,6 @@ namespace Model
      */
     inline DescribeDomainResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-
-    /**
-     * <p>Specifies the VPC used for non-EFS traffic. The default value is
-     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
-     */
-    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
-
-    /**
-     * <p>Specifies the VPC used for non-EFS traffic. The default value is
-     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
-     */
-    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessType = value; }
-
-    /**
-     * <p>Specifies the VPC used for non-EFS traffic. The default value is
-     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
-     */
-    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessType = std::move(value); }
-
-    /**
-     * <p>Specifies the VPC used for non-EFS traffic. The default value is
-     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
-     */
-    inline DescribeDomainResult& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
-
-    /**
-     * <p>Specifies the VPC used for non-EFS traffic. The default value is
-     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
-     */
-    inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_domainArn;
@@ -619,6 +619,8 @@ namespace Model
 
     UserSettings m_defaultUserSettings;
 
+    AppNetworkAccessType m_appNetworkAccessType;
+
     Aws::String m_homeEfsFileSystemKmsKeyId;
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -626,8 +628,6 @@ namespace Model
     Aws::String m_url;
 
     Aws::String m_vpcId;
-
-    AppNetworkAccessType m_appNetworkAccessType;
   };
 
 } // namespace Model

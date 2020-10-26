@@ -24,7 +24,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_databaseConfigurationHasBeenSet(false),
     m_salesforceConfigurationHasBeenSet(false),
     m_oneDriveConfigurationHasBeenSet(false),
-    m_serviceNowConfigurationHasBeenSet(false)
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_databaseConfigurationHasBeenSet(false),
     m_salesforceConfigurationHasBeenSet(false),
     m_oneDriveConfigurationHasBeenSet(false),
-    m_serviceNowConfigurationHasBeenSet(false)
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_serviceNowConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConfluenceConfiguration"))
+  {
+    m_confluenceConfiguration = jsonValue.GetObject("ConfluenceConfiguration");
+
+    m_confluenceConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_serviceNowConfigurationHasBeenSet)
   {
    payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
+
+  }
+
+  if(m_confluenceConfigurationHasBeenSet)
+  {
+   payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
 
   }
 

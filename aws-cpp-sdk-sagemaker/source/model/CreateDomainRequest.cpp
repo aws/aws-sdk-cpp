@@ -20,9 +20,9 @@ CreateDomainRequest::CreateDomainRequest() :
     m_subnetIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_homeEfsFileSystemKmsKeyIdHasBeenSet(false),
     m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appNetworkAccessTypeHasBeenSet(false)
+    m_appNetworkAccessTypeHasBeenSet(false),
+    m_homeEfsFileSystemKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -75,15 +75,15 @@ Aws::String CreateDomainRequest::SerializePayload() const
 
   }
 
+  if(m_appNetworkAccessTypeHasBeenSet)
+  {
+   payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
+  }
+
   if(m_homeEfsFileSystemKmsKeyIdHasBeenSet)
   {
    payload.WithString("HomeEfsFileSystemKmsKeyId", m_homeEfsFileSystemKmsKeyId);
 
-  }
-
-  if(m_appNetworkAccessTypeHasBeenSet)
-  {
-   payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
   }
 
   return payload.View().WriteReadable();

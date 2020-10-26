@@ -11,6 +11,7 @@
 #include <aws/kendra/model/SalesforceConfiguration.h>
 #include <aws/kendra/model/OneDriveConfiguration.h>
 #include <aws/kendra/model/ServiceNowConfiguration.h>
+#include <aws/kendra/model/ConfluenceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -264,6 +265,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithServiceNowConfiguration(ServiceNowConfiguration&& value) { SetServiceNowConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline const ConfluenceConfiguration& GetConfluenceConfiguration() const{ return m_confluenceConfiguration; }
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline bool ConfluenceConfigurationHasBeenSet() const { return m_confluenceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline void SetConfluenceConfiguration(const ConfluenceConfiguration& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = value; }
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline void SetConfluenceConfiguration(ConfluenceConfiguration&& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithConfluenceConfiguration(const ConfluenceConfiguration& value) { SetConfluenceConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration information for connecting to a Confluence data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithConfluenceConfiguration(ConfluenceConfiguration&& value) { SetConfluenceConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -283,6 +321,9 @@ namespace Model
 
     ServiceNowConfiguration m_serviceNowConfiguration;
     bool m_serviceNowConfigurationHasBeenSet;
+
+    ConfluenceConfiguration m_confluenceConfiguration;
+    bool m_confluenceConfigurationHasBeenSet;
   };
 
 } // namespace Model
