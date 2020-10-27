@@ -43,7 +43,8 @@ MLTransform::MLTransform() :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
+    m_maxRetriesHasBeenSet(false),
+    m_transformEncryptionHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ MLTransform::MLTransform(JsonView jsonValue) :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
+    m_maxRetriesHasBeenSet(false),
+    m_transformEncryptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -211,6 +213,13 @@ MLTransform& MLTransform::operator =(JsonView jsonValue)
     m_maxRetriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransformEncryption"))
+  {
+    m_transformEncryption = jsonValue.GetObject("TransformEncryption");
+
+    m_transformEncryptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -329,6 +338,12 @@ JsonValue MLTransform::Jsonize() const
   if(m_maxRetriesHasBeenSet)
   {
    payload.WithInteger("MaxRetries", m_maxRetries);
+
+  }
+
+  if(m_transformEncryptionHasBeenSet)
+  {
+   payload.WithObject("TransformEncryption", m_transformEncryption.Jsonize());
 
   }
 

@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a column statistics.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the generated column-level statistics for a table or
+   * partition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatistics">AWS
    * API Reference</a></p>
    */
@@ -40,145 +41,151 @@ namespace Model
 
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline ColumnStatistics& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline ColumnStatistics& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the column.</p>
+     * <p>Name of column which statistics belong to.</p>
      */
     inline ColumnStatistics& WithColumnName(const char* value) { SetColumnName(value); return *this;}
 
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline const Aws::String& GetColumnType() const{ return m_columnType; }
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline bool ColumnTypeHasBeenSet() const { return m_columnTypeHasBeenSet; }
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline void SetColumnType(const Aws::String& value) { m_columnTypeHasBeenSet = true; m_columnType = value; }
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline void SetColumnType(Aws::String&& value) { m_columnTypeHasBeenSet = true; m_columnType = std::move(value); }
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline void SetColumnType(const char* value) { m_columnTypeHasBeenSet = true; m_columnType.assign(value); }
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline ColumnStatistics& WithColumnType(const Aws::String& value) { SetColumnType(value); return *this;}
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline ColumnStatistics& WithColumnType(Aws::String&& value) { SetColumnType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the column.</p>
+     * <p>The data type of the column.</p>
      */
     inline ColumnStatistics& WithColumnType(const char* value) { SetColumnType(value); return *this;}
 
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline const Aws::Utils::DateTime& GetAnalyzedTime() const{ return m_analyzedTime; }
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline bool AnalyzedTimeHasBeenSet() const { return m_analyzedTimeHasBeenSet; }
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline void SetAnalyzedTime(const Aws::Utils::DateTime& value) { m_analyzedTimeHasBeenSet = true; m_analyzedTime = value; }
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline void SetAnalyzedTime(Aws::Utils::DateTime&& value) { m_analyzedTimeHasBeenSet = true; m_analyzedTime = std::move(value); }
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline ColumnStatistics& WithAnalyzedTime(const Aws::Utils::DateTime& value) { SetAnalyzedTime(value); return *this;}
 
     /**
-     * <p>The analyzed time of the column statistics.</p>
+     * <p>The timestamp of when column statistics were generated.</p>
      */
     inline ColumnStatistics& WithAnalyzedTime(Aws::Utils::DateTime&& value) { SetAnalyzedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline const ColumnStatisticsData& GetStatisticsData() const{ return m_statisticsData; }
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline bool StatisticsDataHasBeenSet() const { return m_statisticsDataHasBeenSet; }
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline void SetStatisticsData(const ColumnStatisticsData& value) { m_statisticsDataHasBeenSet = true; m_statisticsData = value; }
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline void SetStatisticsData(ColumnStatisticsData&& value) { m_statisticsDataHasBeenSet = true; m_statisticsData = std::move(value); }
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline ColumnStatistics& WithStatisticsData(const ColumnStatisticsData& value) { SetStatisticsData(value); return *this;}
 
     /**
-     * <p>The statistics of the column.</p>
+     * <p>A <code>ColumnStatisticData</code> object that contains the statistics data
+     * values.</p>
      */
     inline ColumnStatistics& WithStatisticsData(ColumnStatisticsData&& value) { SetStatisticsData(std::move(value)); return *this;}
 

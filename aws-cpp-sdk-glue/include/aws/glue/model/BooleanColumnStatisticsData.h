@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a boolean column statistics.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines column statistics supported for Boolean data columns.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BooleanColumnStatisticsData">AWS
    * API Reference</a></p>
    */
@@ -36,64 +37,64 @@ namespace Model
 
 
     /**
-     * <p>Number of true value.</p>
+     * <p>The number of true values in the column.</p>
      */
     inline long long GetNumberOfTrues() const{ return m_numberOfTrues; }
 
     /**
-     * <p>Number of true value.</p>
+     * <p>The number of true values in the column.</p>
      */
     inline bool NumberOfTruesHasBeenSet() const { return m_numberOfTruesHasBeenSet; }
 
     /**
-     * <p>Number of true value.</p>
+     * <p>The number of true values in the column.</p>
      */
     inline void SetNumberOfTrues(long long value) { m_numberOfTruesHasBeenSet = true; m_numberOfTrues = value; }
 
     /**
-     * <p>Number of true value.</p>
+     * <p>The number of true values in the column.</p>
      */
     inline BooleanColumnStatisticsData& WithNumberOfTrues(long long value) { SetNumberOfTrues(value); return *this;}
 
 
     /**
-     * <p>Number of false value.</p>
+     * <p>The number of false values in the column.</p>
      */
     inline long long GetNumberOfFalses() const{ return m_numberOfFalses; }
 
     /**
-     * <p>Number of false value.</p>
+     * <p>The number of false values in the column.</p>
      */
     inline bool NumberOfFalsesHasBeenSet() const { return m_numberOfFalsesHasBeenSet; }
 
     /**
-     * <p>Number of false value.</p>
+     * <p>The number of false values in the column.</p>
      */
     inline void SetNumberOfFalses(long long value) { m_numberOfFalsesHasBeenSet = true; m_numberOfFalses = value; }
 
     /**
-     * <p>Number of false value.</p>
+     * <p>The number of false values in the column.</p>
      */
     inline BooleanColumnStatisticsData& WithNumberOfFalses(long long value) { SetNumberOfFalses(value); return *this;}
 
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline long long GetNumberOfNulls() const{ return m_numberOfNulls; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline bool NumberOfNullsHasBeenSet() const { return m_numberOfNullsHasBeenSet; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline void SetNumberOfNulls(long long value) { m_numberOfNullsHasBeenSet = true; m_numberOfNulls = value; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline BooleanColumnStatisticsData& WithNumberOfNulls(long long value) { SetNumberOfNulls(value); return *this;}
 

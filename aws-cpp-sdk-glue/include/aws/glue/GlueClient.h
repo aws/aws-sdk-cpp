@@ -1687,16 +1687,18 @@ namespace Model
         virtual void DeleteClassifierAsync(const Model::DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Delete the partition column statistics of a column.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>DeletePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteColumnStatisticsForPartitionOutcome DeleteColumnStatisticsForPartition(const Model::DeleteColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Delete the partition column statistics of a column.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>DeletePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -1705,8 +1707,9 @@ namespace Model
         virtual Model::DeleteColumnStatisticsForPartitionOutcomeCallable DeleteColumnStatisticsForPartitionCallable(const Model::DeleteColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Delete the partition column statistics of a column.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>DeletePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -1715,14 +1718,18 @@ namespace Model
         virtual void DeleteColumnStatisticsForPartitionAsync(const Model::DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>DeleteTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteColumnStatisticsForTableOutcome DeleteColumnStatisticsForTable(const Model::DeleteColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>DeleteTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *
@@ -1731,7 +1738,9 @@ namespace Model
         virtual Model::DeleteColumnStatisticsForTableOutcomeCallable DeleteColumnStatisticsForTableCallable(const Model::DeleteColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>DeleteTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *
@@ -2252,14 +2261,18 @@ namespace Model
         virtual void GetClassifiersAsync(const Model::GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves partition statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetPartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          */
         virtual Model::GetColumnStatisticsForPartitionOutcome GetColumnStatisticsForPartition(const Model::GetColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves partition statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetPartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -2268,7 +2281,9 @@ namespace Model
         virtual Model::GetColumnStatisticsForPartitionOutcomeCallable GetColumnStatisticsForPartitionCallable(const Model::GetColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves partition statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetPartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -2277,14 +2292,18 @@ namespace Model
         virtual void GetColumnStatisticsForPartitionAsync(const Model::GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
          * API Reference</a></p>
          */
         virtual Model::GetColumnStatisticsForTableOutcome GetColumnStatisticsForTable(const Model::GetColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *
@@ -2293,7 +2312,9 @@ namespace Model
         virtual Model::GetColumnStatisticsForTableOutcomeCallable GetColumnStatisticsForTableCallable(const Model::GetColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves table statistics of columns.</p> <p>The Identity and Access
+         * Management (IAM) permission required for this operation is
+         * <code>GetTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *
@@ -4578,16 +4599,18 @@ namespace Model
         virtual void UpdateClassifierAsync(const Model::UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates or updates partition statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdatePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateColumnStatisticsForPartitionOutcome UpdateColumnStatisticsForPartition(const Model::UpdateColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates or updates partition statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdatePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -4596,8 +4619,9 @@ namespace Model
         virtual Model::UpdateColumnStatisticsForPartitionOutcomeCallable UpdateColumnStatisticsForPartitionCallable(const Model::UpdateColumnStatisticsForPartitionRequest& request) const;
 
         /**
-         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates or updates partition statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdatePartition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
          * API Reference</a></p>
          *
@@ -4606,14 +4630,18 @@ namespace Model
         virtual void UpdateColumnStatisticsForPartitionAsync(const Model::UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates table statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdateTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateColumnStatisticsForTableOutcome UpdateColumnStatisticsForTable(const Model::UpdateColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates table statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdateTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *
@@ -4622,7 +4650,9 @@ namespace Model
         virtual Model::UpdateColumnStatisticsForTableOutcomeCallable UpdateColumnStatisticsForTableCallable(const Model::UpdateColumnStatisticsForTableRequest& request) const;
 
         /**
-         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates table statistics of columns.</p> <p>The Identity and
+         * Access Management (IAM) permission required for this operation is
+         * <code>UpdateTable</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
          * API Reference</a></p>
          *

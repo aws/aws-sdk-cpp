@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a decimal column statistics data.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines column statistics supported for fixed-point number data
+   * columns.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DecimalColumnStatisticsData">AWS
    * API Reference</a></p>
    */
@@ -38,105 +39,105 @@ namespace Model
 
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline const DecimalNumber& GetMinimumValue() const{ return m_minimumValue; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline bool MinimumValueHasBeenSet() const { return m_minimumValueHasBeenSet; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline void SetMinimumValue(const DecimalNumber& value) { m_minimumValueHasBeenSet = true; m_minimumValue = value; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline void SetMinimumValue(DecimalNumber&& value) { m_minimumValueHasBeenSet = true; m_minimumValue = std::move(value); }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline DecimalColumnStatisticsData& WithMinimumValue(const DecimalNumber& value) { SetMinimumValue(value); return *this;}
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline DecimalColumnStatisticsData& WithMinimumValue(DecimalNumber&& value) { SetMinimumValue(std::move(value)); return *this;}
 
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline const DecimalNumber& GetMaximumValue() const{ return m_maximumValue; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline bool MaximumValueHasBeenSet() const { return m_maximumValueHasBeenSet; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline void SetMaximumValue(const DecimalNumber& value) { m_maximumValueHasBeenSet = true; m_maximumValue = value; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline void SetMaximumValue(DecimalNumber&& value) { m_maximumValueHasBeenSet = true; m_maximumValue = std::move(value); }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline DecimalColumnStatisticsData& WithMaximumValue(const DecimalNumber& value) { SetMaximumValue(value); return *this;}
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline DecimalColumnStatisticsData& WithMaximumValue(DecimalNumber&& value) { SetMaximumValue(std::move(value)); return *this;}
 
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline long long GetNumberOfNulls() const{ return m_numberOfNulls; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline bool NumberOfNullsHasBeenSet() const { return m_numberOfNullsHasBeenSet; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline void SetNumberOfNulls(long long value) { m_numberOfNullsHasBeenSet = true; m_numberOfNulls = value; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline DecimalColumnStatisticsData& WithNumberOfNulls(long long value) { SetNumberOfNulls(value); return *this;}
 
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline long long GetNumberOfDistinctValues() const{ return m_numberOfDistinctValues; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline bool NumberOfDistinctValuesHasBeenSet() const { return m_numberOfDistinctValuesHasBeenSet; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline void SetNumberOfDistinctValues(long long value) { m_numberOfDistinctValuesHasBeenSet = true; m_numberOfDistinctValues = value; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline DecimalColumnStatisticsData& WithNumberOfDistinctValues(long long value) { SetNumberOfDistinctValues(value); return *this;}
 

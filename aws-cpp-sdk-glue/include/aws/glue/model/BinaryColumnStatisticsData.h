@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a binary column statistics data.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines column statistics supported for bit sequence data
+   * values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BinaryColumnStatisticsData">AWS
    * API Reference</a></p>
    */
@@ -36,64 +37,64 @@ namespace Model
 
 
     /**
-     * <p>Maximum length of the column.</p>
+     * <p>The size of the longest bit sequence in the column.</p>
      */
     inline long long GetMaximumLength() const{ return m_maximumLength; }
 
     /**
-     * <p>Maximum length of the column.</p>
+     * <p>The size of the longest bit sequence in the column.</p>
      */
     inline bool MaximumLengthHasBeenSet() const { return m_maximumLengthHasBeenSet; }
 
     /**
-     * <p>Maximum length of the column.</p>
+     * <p>The size of the longest bit sequence in the column.</p>
      */
     inline void SetMaximumLength(long long value) { m_maximumLengthHasBeenSet = true; m_maximumLength = value; }
 
     /**
-     * <p>Maximum length of the column.</p>
+     * <p>The size of the longest bit sequence in the column.</p>
      */
     inline BinaryColumnStatisticsData& WithMaximumLength(long long value) { SetMaximumLength(value); return *this;}
 
 
     /**
-     * <p>Average length of the column.</p>
+     * <p>The average bit sequence length in the column.</p>
      */
     inline double GetAverageLength() const{ return m_averageLength; }
 
     /**
-     * <p>Average length of the column.</p>
+     * <p>The average bit sequence length in the column.</p>
      */
     inline bool AverageLengthHasBeenSet() const { return m_averageLengthHasBeenSet; }
 
     /**
-     * <p>Average length of the column.</p>
+     * <p>The average bit sequence length in the column.</p>
      */
     inline void SetAverageLength(double value) { m_averageLengthHasBeenSet = true; m_averageLength = value; }
 
     /**
-     * <p>Average length of the column.</p>
+     * <p>The average bit sequence length in the column.</p>
      */
     inline BinaryColumnStatisticsData& WithAverageLength(double value) { SetAverageLength(value); return *this;}
 
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline long long GetNumberOfNulls() const{ return m_numberOfNulls; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline bool NumberOfNullsHasBeenSet() const { return m_numberOfNullsHasBeenSet; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline void SetNumberOfNulls(long long value) { m_numberOfNullsHasBeenSet = true; m_numberOfNulls = value; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline BinaryColumnStatisticsData& WithNumberOfNulls(long long value) { SetNumberOfNulls(value); return *this;}
 

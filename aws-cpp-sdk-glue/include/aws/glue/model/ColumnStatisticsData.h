@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines a column statistics data.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the individual types of column statistics data. Only one data object
+   * should be set and indicated by the <code>Type</code> attribute.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatisticsData">AWS
    * API Reference</a></p>
    */
@@ -45,249 +47,249 @@ namespace Model
 
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline const ColumnStatisticsType& GetType() const{ return m_type; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline void SetType(const ColumnStatisticsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline void SetType(ColumnStatisticsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline ColumnStatisticsData& WithType(const ColumnStatisticsType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The name of the column.</p>
+     * <p>The type of column statistics data.</p>
      */
     inline ColumnStatisticsData& WithType(ColumnStatisticsType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline const BooleanColumnStatisticsData& GetBooleanColumnStatisticsData() const{ return m_booleanColumnStatisticsData; }
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline bool BooleanColumnStatisticsDataHasBeenSet() const { return m_booleanColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline void SetBooleanColumnStatisticsData(const BooleanColumnStatisticsData& value) { m_booleanColumnStatisticsDataHasBeenSet = true; m_booleanColumnStatisticsData = value; }
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline void SetBooleanColumnStatisticsData(BooleanColumnStatisticsData&& value) { m_booleanColumnStatisticsDataHasBeenSet = true; m_booleanColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline ColumnStatisticsData& WithBooleanColumnStatisticsData(const BooleanColumnStatisticsData& value) { SetBooleanColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Boolean Column Statistics Data.</p>
+     * <p>Boolean column statistics data.</p>
      */
     inline ColumnStatisticsData& WithBooleanColumnStatisticsData(BooleanColumnStatisticsData&& value) { SetBooleanColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline const DateColumnStatisticsData& GetDateColumnStatisticsData() const{ return m_dateColumnStatisticsData; }
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline bool DateColumnStatisticsDataHasBeenSet() const { return m_dateColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline void SetDateColumnStatisticsData(const DateColumnStatisticsData& value) { m_dateColumnStatisticsDataHasBeenSet = true; m_dateColumnStatisticsData = value; }
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline void SetDateColumnStatisticsData(DateColumnStatisticsData&& value) { m_dateColumnStatisticsDataHasBeenSet = true; m_dateColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDateColumnStatisticsData(const DateColumnStatisticsData& value) { SetDateColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Date Column Statistics Data.</p>
+     * <p>Date column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDateColumnStatisticsData(DateColumnStatisticsData&& value) { SetDateColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline const DecimalColumnStatisticsData& GetDecimalColumnStatisticsData() const{ return m_decimalColumnStatisticsData; }
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline bool DecimalColumnStatisticsDataHasBeenSet() const { return m_decimalColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline void SetDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = value; }
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline void SetDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { SetDecimalColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Decimal Column Statistics Data.</p>
+     * <p>Decimal column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { SetDecimalColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline const DoubleColumnStatisticsData& GetDoubleColumnStatisticsData() const{ return m_doubleColumnStatisticsData; }
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline bool DoubleColumnStatisticsDataHasBeenSet() const { return m_doubleColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline void SetDoubleColumnStatisticsData(const DoubleColumnStatisticsData& value) { m_doubleColumnStatisticsDataHasBeenSet = true; m_doubleColumnStatisticsData = value; }
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline void SetDoubleColumnStatisticsData(DoubleColumnStatisticsData&& value) { m_doubleColumnStatisticsDataHasBeenSet = true; m_doubleColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDoubleColumnStatisticsData(const DoubleColumnStatisticsData& value) { SetDoubleColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Double Column Statistics Data.</p>
+     * <p>Double column statistics data.</p>
      */
     inline ColumnStatisticsData& WithDoubleColumnStatisticsData(DoubleColumnStatisticsData&& value) { SetDoubleColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline const LongColumnStatisticsData& GetLongColumnStatisticsData() const{ return m_longColumnStatisticsData; }
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline bool LongColumnStatisticsDataHasBeenSet() const { return m_longColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline void SetLongColumnStatisticsData(const LongColumnStatisticsData& value) { m_longColumnStatisticsDataHasBeenSet = true; m_longColumnStatisticsData = value; }
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline void SetLongColumnStatisticsData(LongColumnStatisticsData&& value) { m_longColumnStatisticsDataHasBeenSet = true; m_longColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline ColumnStatisticsData& WithLongColumnStatisticsData(const LongColumnStatisticsData& value) { SetLongColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Long Column Statistics Data.</p>
+     * <p>Long column statistics data.</p>
      */
     inline ColumnStatisticsData& WithLongColumnStatisticsData(LongColumnStatisticsData&& value) { SetLongColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline const StringColumnStatisticsData& GetStringColumnStatisticsData() const{ return m_stringColumnStatisticsData; }
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline bool StringColumnStatisticsDataHasBeenSet() const { return m_stringColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline void SetStringColumnStatisticsData(const StringColumnStatisticsData& value) { m_stringColumnStatisticsDataHasBeenSet = true; m_stringColumnStatisticsData = value; }
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline void SetStringColumnStatisticsData(StringColumnStatisticsData&& value) { m_stringColumnStatisticsDataHasBeenSet = true; m_stringColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline ColumnStatisticsData& WithStringColumnStatisticsData(const StringColumnStatisticsData& value) { SetStringColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>String Column Statistics Data.</p>
+     * <p>String column statistics data.</p>
      */
     inline ColumnStatisticsData& WithStringColumnStatisticsData(StringColumnStatisticsData&& value) { SetStringColumnStatisticsData(std::move(value)); return *this;}
 
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline const BinaryColumnStatisticsData& GetBinaryColumnStatisticsData() const{ return m_binaryColumnStatisticsData; }
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline bool BinaryColumnStatisticsDataHasBeenSet() const { return m_binaryColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline void SetBinaryColumnStatisticsData(const BinaryColumnStatisticsData& value) { m_binaryColumnStatisticsDataHasBeenSet = true; m_binaryColumnStatisticsData = value; }
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline void SetBinaryColumnStatisticsData(BinaryColumnStatisticsData&& value) { m_binaryColumnStatisticsDataHasBeenSet = true; m_binaryColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline ColumnStatisticsData& WithBinaryColumnStatisticsData(const BinaryColumnStatisticsData& value) { SetBinaryColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Binary Column Statistics Data.</p>
+     * <p>Binary column statistics data.</p>
      */
     inline ColumnStatisticsData& WithBinaryColumnStatisticsData(BinaryColumnStatisticsData&& value) { SetBinaryColumnStatisticsData(std::move(value)); return *this;}
 

@@ -156,6 +156,12 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("TransformEncryption"))
+  {
+    m_transformEncryption = jsonValue.GetObject("TransformEncryption");
+
+  }
+
 
 
   return *this;

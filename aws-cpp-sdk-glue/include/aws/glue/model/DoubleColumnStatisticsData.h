@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines a double column statistics data.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines column statistics supported for floating-point number data
+   * columns.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DoubleColumnStatisticsData">AWS
    * API Reference</a></p>
    */
@@ -36,85 +37,85 @@ namespace Model
 
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline double GetMinimumValue() const{ return m_minimumValue; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline bool MinimumValueHasBeenSet() const { return m_minimumValueHasBeenSet; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline void SetMinimumValue(double value) { m_minimumValueHasBeenSet = true; m_minimumValue = value; }
 
     /**
-     * <p>Minimum value of the column.</p>
+     * <p>The lowest value in the column.</p>
      */
     inline DoubleColumnStatisticsData& WithMinimumValue(double value) { SetMinimumValue(value); return *this;}
 
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline double GetMaximumValue() const{ return m_maximumValue; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline bool MaximumValueHasBeenSet() const { return m_maximumValueHasBeenSet; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline void SetMaximumValue(double value) { m_maximumValueHasBeenSet = true; m_maximumValue = value; }
 
     /**
-     * <p>Maximum value of the column.</p>
+     * <p>The highest value in the column.</p>
      */
     inline DoubleColumnStatisticsData& WithMaximumValue(double value) { SetMaximumValue(value); return *this;}
 
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline long long GetNumberOfNulls() const{ return m_numberOfNulls; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline bool NumberOfNullsHasBeenSet() const { return m_numberOfNullsHasBeenSet; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline void SetNumberOfNulls(long long value) { m_numberOfNullsHasBeenSet = true; m_numberOfNulls = value; }
 
     /**
-     * <p>Number of nulls.</p>
+     * <p>The number of null values in the column.</p>
      */
     inline DoubleColumnStatisticsData& WithNumberOfNulls(long long value) { SetNumberOfNulls(value); return *this;}
 
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline long long GetNumberOfDistinctValues() const{ return m_numberOfDistinctValues; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline bool NumberOfDistinctValuesHasBeenSet() const { return m_numberOfDistinctValuesHasBeenSet; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline void SetNumberOfDistinctValues(long long value) { m_numberOfDistinctValuesHasBeenSet = true; m_numberOfDistinctValues = value; }
 
     /**
-     * <p>Number of distinct values.</p>
+     * <p>The number of distinct values in a column.</p>
      */
     inline DoubleColumnStatisticsData& WithNumberOfDistinctValues(long long value) { SetNumberOfDistinctValues(value); return *this;}
 

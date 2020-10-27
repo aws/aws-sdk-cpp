@@ -29,7 +29,8 @@ CreateMLTransformRequest::CreateMLTransformRequest() :
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_transformEncryptionHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,12 @@ Aws::String CreateMLTransformRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_transformEncryptionHasBeenSet)
+  {
+   payload.WithObject("TransformEncryption", m_transformEncryption.Jsonize());
 
   }
 

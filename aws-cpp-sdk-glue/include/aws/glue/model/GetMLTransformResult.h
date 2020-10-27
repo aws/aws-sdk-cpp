@@ -12,6 +12,7 @@
 #include <aws/glue/model/TransformParameters.h>
 #include <aws/glue/model/EvaluationMetrics.h>
 #include <aws/glue/model/WorkerType.h>
+#include <aws/glue/model/TransformEncryption.h>
 #include <aws/glue/model/GlueTable.h>
 #include <aws/glue/model/SchemaColumn.h>
 #include <utility>
@@ -659,6 +660,42 @@ namespace Model
      */
     inline GetMLTransformResult& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
 
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline const TransformEncryption& GetTransformEncryption() const{ return m_transformEncryption; }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline void SetTransformEncryption(const TransformEncryption& value) { m_transformEncryption = value; }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline void SetTransformEncryption(TransformEncryption&& value) { m_transformEncryption = std::move(value); }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline GetMLTransformResult& WithTransformEncryption(const TransformEncryption& value) { SetTransformEncryption(value); return *this;}
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline GetMLTransformResult& WithTransformEncryption(TransformEncryption&& value) { SetTransformEncryption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transformId;
@@ -696,6 +733,8 @@ namespace Model
     int m_timeout;
 
     int m_maxRetries;
+
+    TransformEncryption m_transformEncryption;
   };
 
 } // namespace Model
