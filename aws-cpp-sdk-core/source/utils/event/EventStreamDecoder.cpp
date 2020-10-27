@@ -129,9 +129,7 @@ namespace Aws
                 assert(handler);
                 if (!handler)
                 {
-                    AWS_LOGSTREAM_ERROR(EVENT_STREAM_DECODER_CLASS_TAG, "Payload received, but decoder encountered internal errors before."
-                        "ErrorCode: " << EventStreamErrorsMapper::GetNameForError(handler->GetInternalError()) << ", "
-                        "ErrorMessage: " << handler->GetEventPayloadAsString());
+                    AWS_LOGSTREAM_ERROR(EVENT_STREAM_DECODER_CLASS_TAG, "Payload received, but handler is null.");
                     return;
                 }
 
