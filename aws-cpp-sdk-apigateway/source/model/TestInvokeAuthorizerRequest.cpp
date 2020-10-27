@@ -74,18 +74,18 @@ Aws::String TestInvokeAuthorizerRequest::SerializePayload() const
 
   if(m_requestBodyHasBeenSet)
   {
-   payload.WithString("requestBody", m_requestBody);
+   payload.WithString("body", m_requestBody);
 
   }
 
   if(m_requestHeadersHasBeenSet)
   {
-   JsonValue requestHeadersJsonMap;
-   for(auto& requestHeadersItem : m_requestHeaders)
+   JsonValue headersJsonMap;
+   for(auto& headersItem : m_requestHeaders)
    {
-     requestHeadersJsonMap.WithString(requestHeadersItem.first, requestHeadersItem.second);
+     headersJsonMap.WithString(headersItem.first, headersItem.second);
    }
-   payload.WithObject("requestHeaders", std::move(requestHeadersJsonMap));
+   payload.WithObject("headers", std::move(headersJsonMap));
 
   }
 

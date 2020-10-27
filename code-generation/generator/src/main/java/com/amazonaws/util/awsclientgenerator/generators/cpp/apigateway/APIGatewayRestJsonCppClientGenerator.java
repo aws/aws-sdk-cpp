@@ -30,11 +30,13 @@ public class APIGatewayRestJsonCppClientGenerator extends JsonCppClientGenerator
 
         //rename body
         ShapeMember bodyMember = members.get("body");
+        bodyMember.setLocationName("body");
         members.put("requestBody", bodyMember);
         members.remove("body");
 
         //rename headers
         ShapeMember headersMember = members.get("headers");
+        headersMember.setLocationName("headers");
         members.put("requestHeaders", headersMember);
         members.remove("headers");
 
@@ -43,11 +45,13 @@ public class APIGatewayRestJsonCppClientGenerator extends JsonCppClientGenerator
 
         //rename body
         bodyMember = members.get("body");
+        bodyMember.setLocationName("body");
         members.put("requestBody", bodyMember);
         members.remove("body");
 
         //rename headers
         headersMember = members.get("headers");
+        headersMember.setLocationName("headers");
         members.put("requestHeaders", headersMember);
         members.remove("headers");
 
