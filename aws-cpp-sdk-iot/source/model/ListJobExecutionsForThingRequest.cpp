@@ -19,6 +19,7 @@ ListJobExecutionsForThingRequest::ListJobExecutionsForThingRequest() :
     m_thingNameHasBeenSet(false),
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -37,6 +38,13 @@ void ListJobExecutionsForThingRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << JobExecutionStatusMapper::GetNameForJobExecutionStatus(m_status);
       uri.AddQueryStringParameter("status", ss.str());
+      ss.str("");
+    }
+
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
       ss.str("");
     }
 

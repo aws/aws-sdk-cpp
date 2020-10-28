@@ -70,6 +70,11 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     {
       m_enaSupport = enaSupportNode;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("enclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+    }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
     if(!ebsOptimizedNode.IsNull())
     {

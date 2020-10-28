@@ -50,7 +50,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData(const XmlNode& xmlNode) :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -299,6 +301,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("EnclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+      m_enclaveOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -498,6 +506,13 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::StringStream enclaveOptionsLocationAndMemberSs;
+      enclaveOptionsLocationAndMemberSs << location << index << locationValue << ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -667,6 +682,12 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       Aws::String metadataOptionsLocationAndMember(location);
       metadataOptionsLocationAndMember += ".MetadataOptions";
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
+  }
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::String enclaveOptionsLocationAndMember(location);
+      enclaveOptionsLocationAndMember += ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
   }
 }
 

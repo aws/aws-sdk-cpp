@@ -19,6 +19,7 @@
 #include <aws/ec2/model/LaunchTemplateCapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/LaunchTemplateHibernationOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
+#include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -1040,6 +1041,37 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline const LaunchTemplateEnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline ResponseLaunchTemplateData& WithEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline ResponseLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1119,6 +1151,9 @@ namespace Model
 
     LaunchTemplateInstanceMetadataOptions m_metadataOptions;
     bool m_metadataOptionsHasBeenSet;
+
+    LaunchTemplateEnclaveOptions m_enclaveOptions;
+    bool m_enclaveOptionsHasBeenSet;
   };
 
 } // namespace Model

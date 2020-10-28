@@ -21,7 +21,8 @@ DeleteJobExecutionRequest::DeleteJobExecutionRequest() :
     m_executionNumber(0),
     m_executionNumberHasBeenSet(false),
     m_force(false),
-    m_forceHasBeenSet(false)
+    m_forceHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -37,6 +38,13 @@ void DeleteJobExecutionRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_force;
       uri.AddQueryStringParameter("force", ss.str());
+      ss.str("");
+    }
+
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
       ss.str("");
     }
 

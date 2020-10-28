@@ -24,7 +24,8 @@ ListJobsRequest::ListJobsRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_thingGroupNameHasBeenSet(false),
-    m_thingGroupIdHasBeenSet(false)
+    m_thingGroupIdHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,13 @@ void ListJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_thingGroupId;
       uri.AddQueryStringParameter("thingGroupId", ss.str());
+      ss.str("");
+    }
+
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
       ss.str("");
     }
 

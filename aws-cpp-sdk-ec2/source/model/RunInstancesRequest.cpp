@@ -55,7 +55,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_metadataOptionsHasBeenSet)
   {
     m_metadataOptions.OutputToStream(ss, "MetadataOptions");
+  }
+
+  if(m_enclaveOptionsHasBeenSet)
+  {
+    m_enclaveOptions.OutputToStream(ss, "EnclaveOptions");
   }
 
   ss << "Version=2016-11-15";

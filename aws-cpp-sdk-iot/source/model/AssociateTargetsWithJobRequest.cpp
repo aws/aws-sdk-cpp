@@ -5,17 +5,21 @@
 
 #include <aws/iot/model/AssociateTargetsWithJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 AssociateTargetsWithJobRequest::AssociateTargetsWithJobRequest() : 
     m_targetsHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +47,17 @@ Aws::String AssociateTargetsWithJobRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+void AssociateTargetsWithJobRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

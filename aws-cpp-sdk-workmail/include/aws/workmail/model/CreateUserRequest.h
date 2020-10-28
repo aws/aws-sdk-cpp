@@ -76,50 +76,50 @@ namespace Model
 
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline CreateUserRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline CreateUserRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the new user. Simple AD or AD Connector user names have a
-     * maximum length of 20. All others have a maximum length of 64.</p>
+     * <p>The name for the new user. WorkMail directory user names have a maximum
+     * length of 64. All others have a maximum length of 20.</p>
      */
     inline CreateUserRequest& WithName(const char* value) { SetName(value); return *this;}
 

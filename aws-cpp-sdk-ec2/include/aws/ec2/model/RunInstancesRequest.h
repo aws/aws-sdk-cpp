@@ -20,6 +20,7 @@
 #include <aws/ec2/model/CapacityReservationSpecification.h>
 #include <aws/ec2/model/HibernationOptionsRequest.h>
 #include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
+#include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -1971,6 +1972,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -1979,6 +1981,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -1987,6 +1990,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -1995,6 +1999,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -2003,6 +2008,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
@@ -2011,6 +2017,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(HibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
 
@@ -2097,6 +2104,91 @@ namespace Model
      * metadata and user data</a>.</p>
      */
     inline RunInstancesRequest& WithMetadataOptions(InstanceMetadataOptionsRequest&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline const EnclaveOptionsRequest& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptionsRequest& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptionsRequest&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline RunInstancesRequest& WithEnclaveOptions(const EnclaveOptionsRequest& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>You can't enable AWS Nitro Enclaves and hibernation on the
+     * same instance. For more information about AWS Nitro Enclaves requirements, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
+     * AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline RunInstancesRequest& WithEnclaveOptions(EnclaveOptionsRequest&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
   private:
 
@@ -2207,6 +2299,9 @@ namespace Model
 
     InstanceMetadataOptionsRequest m_metadataOptions;
     bool m_metadataOptionsHasBeenSet;
+
+    EnclaveOptionsRequest m_enclaveOptions;
+    bool m_enclaveOptionsHasBeenSet;
   };
 
 } // namespace Model

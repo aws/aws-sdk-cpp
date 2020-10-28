@@ -18,7 +18,8 @@ using namespace Aws::Http;
 DeleteJobRequest::DeleteJobRequest() : 
     m_jobIdHasBeenSet(false),
     m_force(false),
-    m_forceHasBeenSet(false)
+    m_forceHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,13 @@ void DeleteJobRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_force;
       uri.AddQueryStringParameter("force", ss.str());
+      ss.str("");
+    }
+
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
       ss.str("");
     }
 

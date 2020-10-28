@@ -118,6 +118,95 @@ namespace Model
 
 
     /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobExecutionsForThingRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobExecutionsForThingRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobExecutionsForThingRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+
+
+    /**
      * <p>The maximum number of results to be returned per request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -185,6 +274,9 @@ namespace Model
 
     JobExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

@@ -5,12 +5,15 @@
 
 #include <aws/iot/model/UpdateJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 UpdateJobRequest::UpdateJobRequest() : 
     m_jobIdHasBeenSet(false),
@@ -18,7 +21,8 @@ UpdateJobRequest::UpdateJobRequest() :
     m_presignedUrlConfigHasBeenSet(false),
     m_jobExecutionsRolloutConfigHasBeenSet(false),
     m_abortConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
+    m_timeoutConfigHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +63,17 @@ Aws::String UpdateJobRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+void UpdateJobRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

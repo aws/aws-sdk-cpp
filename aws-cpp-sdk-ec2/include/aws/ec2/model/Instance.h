@@ -25,6 +25,7 @@
 #include <aws/ec2/model/CapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
+#include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -1917,6 +1918,37 @@ namespace Model
      */
     inline Instance& WithMetadataOptions(InstanceMetadataOptionsResponse&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline Instance& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline Instance& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2059,6 +2091,9 @@ namespace Model
 
     InstanceMetadataOptionsResponse m_metadataOptions;
     bool m_metadataOptionsHasBeenSet;
+
+    EnclaveOptions m_enclaveOptions;
+    bool m_enclaveOptionsHasBeenSet;
   };
 
 } // namespace Model

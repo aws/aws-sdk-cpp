@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -171,6 +172,37 @@ namespace Model
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptions = value; }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
 
     /**
@@ -533,6 +565,8 @@ namespace Model
     AttributeBooleanValue m_disableApiTermination;
 
     AttributeBooleanValue m_enaSupport;
+
+    EnclaveOptions m_enclaveOptions;
 
     AttributeBooleanValue m_ebsOptimized;
 

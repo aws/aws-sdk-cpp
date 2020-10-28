@@ -34,6 +34,7 @@
 #include <aws/ec2/model/AssociateAddressRequest.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/AssociateDhcpOptionsRequest.h>
+#include <aws/ec2/model/AssociateEnclaveCertificateIamRoleRequest.h>
 #include <aws/ec2/model/AssociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/AssociateRouteTableRequest.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockRequest.h>
@@ -300,6 +301,7 @@
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DisassociateAddressRequest.h>
 #include <aws/ec2/model/DisassociateClientVpnTargetNetworkRequest.h>
+#include <aws/ec2/model/DisassociateEnclaveCertificateIamRoleRequest.h>
 #include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
@@ -317,6 +319,7 @@
 #include <aws/ec2/model/ExportClientVpnClientConfigurationRequest.h>
 #include <aws/ec2/model/ExportImageRequest.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesRequest.h>
+#include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesRequest.h>
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
@@ -891,6 +894,33 @@ void EC2Client::AssociateDhcpOptionsAsync(const AssociateDhcpOptionsRequest& req
 void EC2Client::AssociateDhcpOptionsAsyncHelper(const AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateDhcpOptions(request), context);
+}
+
+AssociateEnclaveCertificateIamRoleOutcome EC2Client::AssociateEnclaveCertificateIamRole(const AssociateEnclaveCertificateIamRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateEnclaveCertificateIamRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AssociateEnclaveCertificateIamRoleOutcomeCallable EC2Client::AssociateEnclaveCertificateIamRoleCallable(const AssociateEnclaveCertificateIamRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateEnclaveCertificateIamRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEnclaveCertificateIamRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::AssociateEnclaveCertificateIamRoleAsync(const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateEnclaveCertificateIamRoleAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::AssociateEnclaveCertificateIamRoleAsyncHelper(const AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateEnclaveCertificateIamRole(request), context);
 }
 
 AssociateIamInstanceProfileOutcome EC2Client::AssociateIamInstanceProfile(const AssociateIamInstanceProfileRequest& request) const
@@ -8075,6 +8105,33 @@ void EC2Client::DisassociateClientVpnTargetNetworkAsyncHelper(const Disassociate
   handler(this, request, DisassociateClientVpnTargetNetwork(request), context);
 }
 
+DisassociateEnclaveCertificateIamRoleOutcome EC2Client::DisassociateEnclaveCertificateIamRole(const DisassociateEnclaveCertificateIamRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateEnclaveCertificateIamRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisassociateEnclaveCertificateIamRoleOutcomeCallable EC2Client::DisassociateEnclaveCertificateIamRoleCallable(const DisassociateEnclaveCertificateIamRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateEnclaveCertificateIamRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateEnclaveCertificateIamRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisassociateEnclaveCertificateIamRoleAsync(const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateEnclaveCertificateIamRoleAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DisassociateEnclaveCertificateIamRoleAsyncHelper(const DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateEnclaveCertificateIamRole(request), context);
+}
+
 DisassociateIamInstanceProfileOutcome EC2Client::DisassociateIamInstanceProfile(const DisassociateIamInstanceProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8532,6 +8589,33 @@ void EC2Client::ExportTransitGatewayRoutesAsync(const ExportTransitGatewayRoutes
 void EC2Client::ExportTransitGatewayRoutesAsyncHelper(const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExportTransitGatewayRoutes(request), context);
+}
+
+GetAssociatedEnclaveCertificateIamRolesOutcome EC2Client::GetAssociatedEnclaveCertificateIamRoles(const GetAssociatedEnclaveCertificateIamRolesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAssociatedEnclaveCertificateIamRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetAssociatedEnclaveCertificateIamRolesOutcomeCallable EC2Client::GetAssociatedEnclaveCertificateIamRolesCallable(const GetAssociatedEnclaveCertificateIamRolesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAssociatedEnclaveCertificateIamRolesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssociatedEnclaveCertificateIamRoles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetAssociatedEnclaveCertificateIamRolesAsync(const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedEnclaveCertificateIamRolesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetAssociatedEnclaveCertificateIamRolesAsyncHelper(const GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAssociatedEnclaveCertificateIamRoles(request), context);
 }
 
 GetAssociatedIpv6PoolCidrsOutcome EC2Client::GetAssociatedIpv6PoolCidrs(const GetAssociatedIpv6PoolCidrsRequest& request) const

@@ -29,7 +29,8 @@ namespace Model
     groupSet,
     ebsOptimized,
     sriovNetSupport,
-    enaSupport
+    enaSupport,
+    enclaveOptions
   };
 
 namespace InstanceAttributeNameMapper

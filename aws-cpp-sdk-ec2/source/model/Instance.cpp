@@ -78,7 +78,8 @@ Instance::Instance() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
 }
 
@@ -140,7 +141,8 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -481,6 +483,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("enclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+      m_enclaveOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -789,6 +797,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::StringStream enclaveOptionsLocationAndMemberSs;
+      enclaveOptionsLocationAndMemberSs << location << index << locationValue << ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1046,6 +1061,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String metadataOptionsLocationAndMember(location);
       metadataOptionsLocationAndMember += ".MetadataOptions";
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
+  }
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::String enclaveOptionsLocationAndMember(location);
+      enclaveOptionsLocationAndMember += ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
   }
 }
 

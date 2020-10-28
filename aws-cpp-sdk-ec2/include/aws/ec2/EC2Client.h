@@ -25,6 +25,7 @@
 #include <aws/ec2/model/AssignPrivateIpAddressesResponse.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkResponse.h>
+#include <aws/ec2/model/AssociateEnclaveCertificateIamRoleResponse.h>
 #include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
@@ -257,6 +258,7 @@
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/DisassociateClientVpnTargetNetworkResponse.h>
+#include <aws/ec2/model/DisassociateEnclaveCertificateIamRoleResponse.h>
 #include <aws/ec2/model/DisassociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
@@ -271,6 +273,7 @@
 #include <aws/ec2/model/ExportClientVpnClientConfigurationResponse.h>
 #include <aws/ec2/model/ExportImageResponse.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
+#include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesResponse.h>
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
@@ -434,6 +437,7 @@ namespace Model
         class AssociateAddressRequest;
         class AssociateClientVpnTargetNetworkRequest;
         class AssociateDhcpOptionsRequest;
+        class AssociateEnclaveCertificateIamRoleRequest;
         class AssociateIamInstanceProfileRequest;
         class AssociateRouteTableRequest;
         class AssociateSubnetCidrBlockRequest;
@@ -700,6 +704,7 @@ namespace Model
         class DisableVpcClassicLinkDnsSupportRequest;
         class DisassociateAddressRequest;
         class DisassociateClientVpnTargetNetworkRequest;
+        class DisassociateEnclaveCertificateIamRoleRequest;
         class DisassociateIamInstanceProfileRequest;
         class DisassociateRouteTableRequest;
         class DisassociateSubnetCidrBlockRequest;
@@ -717,6 +722,7 @@ namespace Model
         class ExportClientVpnClientConfigurationRequest;
         class ExportImageRequest;
         class ExportTransitGatewayRoutesRequest;
+        class GetAssociatedEnclaveCertificateIamRolesRequest;
         class GetAssociatedIpv6PoolCidrsRequest;
         class GetCapacityReservationUsageRequest;
         class GetCoipPoolUsageRequest;
@@ -855,6 +861,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateAddressResponse, EC2Error> AssociateAddressOutcome;
         typedef Aws::Utils::Outcome<AssociateClientVpnTargetNetworkResponse, EC2Error> AssociateClientVpnTargetNetworkOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AssociateDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<AssociateEnclaveCertificateIamRoleResponse, EC2Error> AssociateEnclaveCertificateIamRoleOutcome;
         typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, EC2Error> AssociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, EC2Error> AssociateSubnetCidrBlockOutcome;
@@ -1121,6 +1128,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkDnsSupportResponse, EC2Error> DisableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateAddressOutcome;
         typedef Aws::Utils::Outcome<DisassociateClientVpnTargetNetworkResponse, EC2Error> DisassociateClientVpnTargetNetworkOutcome;
+        typedef Aws::Utils::Outcome<DisassociateEnclaveCertificateIamRoleResponse, EC2Error> DisassociateEnclaveCertificateIamRoleOutcome;
         typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, EC2Error> DisassociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, EC2Error> DisassociateSubnetCidrBlockOutcome;
@@ -1138,6 +1146,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExportClientVpnClientConfigurationResponse, EC2Error> ExportClientVpnClientConfigurationOutcome;
         typedef Aws::Utils::Outcome<ExportImageResponse, EC2Error> ExportImageOutcome;
         typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, EC2Error> ExportTransitGatewayRoutesOutcome;
+        typedef Aws::Utils::Outcome<GetAssociatedEnclaveCertificateIamRolesResponse, EC2Error> GetAssociatedEnclaveCertificateIamRolesOutcome;
         typedef Aws::Utils::Outcome<GetAssociatedIpv6PoolCidrsResponse, EC2Error> GetAssociatedIpv6PoolCidrsOutcome;
         typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, EC2Error> GetCapacityReservationUsageOutcome;
         typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, EC2Error> GetCoipPoolUsageOutcome;
@@ -1276,6 +1285,7 @@ namespace Model
         typedef std::future<AssociateAddressOutcome> AssociateAddressOutcomeCallable;
         typedef std::future<AssociateClientVpnTargetNetworkOutcome> AssociateClientVpnTargetNetworkOutcomeCallable;
         typedef std::future<AssociateDhcpOptionsOutcome> AssociateDhcpOptionsOutcomeCallable;
+        typedef std::future<AssociateEnclaveCertificateIamRoleOutcome> AssociateEnclaveCertificateIamRoleOutcomeCallable;
         typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProfileOutcomeCallable;
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
         typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
@@ -1542,6 +1552,7 @@ namespace Model
         typedef std::future<DisableVpcClassicLinkDnsSupportOutcome> DisableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
         typedef std::future<DisassociateClientVpnTargetNetworkOutcome> DisassociateClientVpnTargetNetworkOutcomeCallable;
+        typedef std::future<DisassociateEnclaveCertificateIamRoleOutcome> DisassociateEnclaveCertificateIamRoleOutcomeCallable;
         typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstanceProfileOutcomeCallable;
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
@@ -1559,6 +1570,7 @@ namespace Model
         typedef std::future<ExportClientVpnClientConfigurationOutcome> ExportClientVpnClientConfigurationOutcomeCallable;
         typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
         typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
+        typedef std::future<GetAssociatedEnclaveCertificateIamRolesOutcome> GetAssociatedEnclaveCertificateIamRolesOutcomeCallable;
         typedef std::future<GetAssociatedIpv6PoolCidrsOutcome> GetAssociatedIpv6PoolCidrsOutcomeCallable;
         typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
         typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
@@ -1700,6 +1712,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AssociateAddressRequest&, const Model::AssociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateClientVpnTargetNetworkRequest&, const Model::AssociateClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateClientVpnTargetNetworkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateDhcpOptionsRequest&, const Model::AssociateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDhcpOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateEnclaveCertificateIamRoleRequest&, const Model::AssociateEnclaveCertificateIamRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnclaveCertificateIamRoleResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateIamInstanceProfileRequest&, const Model::AssociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
@@ -1966,6 +1979,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkDnsSupportRequest&, const Model::DisableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateAddressRequest&, const Model::DisassociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateClientVpnTargetNetworkRequest&, const Model::DisassociateClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateClientVpnTargetNetworkResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateEnclaveCertificateIamRoleRequest&, const Model::DisassociateEnclaveCertificateIamRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEnclaveCertificateIamRoleResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateIamInstanceProfileRequest&, const Model::DisassociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
@@ -1983,6 +1997,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ExportClientVpnClientConfigurationRequest&, const Model::ExportClientVpnClientConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportClientVpnClientConfigurationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportImageRequest&, const Model::ExportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetAssociatedEnclaveCertificateIamRolesRequest&, const Model::GetAssociatedEnclaveCertificateIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetAssociatedIpv6PoolCidrsRequest&, const Model::GetAssociatedIpv6PoolCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedIpv6PoolCidrsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&, const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCoipPoolUsageRequest&, const Model::GetCoipPoolUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoipPoolUsageResponseReceivedHandler;
@@ -2864,6 +2879,88 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDhcpOptionsAsync(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates an AWS Identity and Access Management (IAM) role with an AWS
+         * Certificate Manager (ACM) certificate. This enables the certificate to be used
+         * by the ACM for Nitro Enclaves application inside an enclave. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
+         * certificate, places the certificate, certificate chain, and encrypted private
+         * key in an Amazon S3 bucket that only the associated IAM role can access. The
+         * private key of the certificate is encrypted with an AWS-managed KMS key that has
+         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
+         * access the Amazon S3 object, you must grant it permission to call
+         * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
+         * enable the IAM role to access the AWS KMS key, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+         * Grant the role permission to access the certificate and encryption key</a> in
+         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEnclaveCertificateIamRoleOutcome AssociateEnclaveCertificateIamRole(const Model::AssociateEnclaveCertificateIamRoleRequest& request) const;
+
+        /**
+         * <p>Associates an AWS Identity and Access Management (IAM) role with an AWS
+         * Certificate Manager (ACM) certificate. This enables the certificate to be used
+         * by the ACM for Nitro Enclaves application inside an enclave. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
+         * certificate, places the certificate, certificate chain, and encrypted private
+         * key in an Amazon S3 bucket that only the associated IAM role can access. The
+         * private key of the certificate is encrypted with an AWS-managed KMS key that has
+         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
+         * access the Amazon S3 object, you must grant it permission to call
+         * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
+         * enable the IAM role to access the AWS KMS key, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+         * Grant the role permission to access the certificate and encryption key</a> in
+         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEnclaveCertificateIamRoleOutcomeCallable AssociateEnclaveCertificateIamRoleCallable(const Model::AssociateEnclaveCertificateIamRoleRequest& request) const;
+
+        /**
+         * <p>Associates an AWS Identity and Access Management (IAM) role with an AWS
+         * Certificate Manager (ACM) certificate. This enables the certificate to be used
+         * by the ACM for Nitro Enclaves application inside an enclave. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
+         * certificate, places the certificate, certificate chain, and encrypted private
+         * key in an Amazon S3 bucket that only the associated IAM role can access. The
+         * private key of the certificate is encrypted with an AWS-managed KMS key that has
+         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
+         * access the Amazon S3 object, you must grant it permission to call
+         * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
+         * enable the IAM role to access the AWS KMS key, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+         * Grant the role permission to access the certificate and encryption key</a> in
+         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEnclaveCertificateIamRoleAsync(const Model::AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an IAM instance profile with a running or stopped instance. You
@@ -13683,6 +13780,49 @@ namespace Model
         virtual void DisassociateClientVpnTargetNetworkAsync(const Model::DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate.
+         * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
+         * that contains the certificate, certificate chain, and encrypted private key from
+         * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
+         * Key Management Service (KMS) key used to encrypt the private key. This
+         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEnclaveCertificateIamRoleOutcome DisassociateEnclaveCertificateIamRole(const Model::DisassociateEnclaveCertificateIamRoleRequest& request) const;
+
+        /**
+         * <p>Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate.
+         * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
+         * that contains the certificate, certificate chain, and encrypted private key from
+         * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
+         * Key Management Service (KMS) key used to encrypt the private key. This
+         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateEnclaveCertificateIamRoleOutcomeCallable DisassociateEnclaveCertificateIamRoleCallable(const Model::DisassociateEnclaveCertificateIamRoleRequest& request) const;
+
+        /**
+         * <p>Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate.
+         * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
+         * that contains the certificate, certificate chain, and encrypted private key from
+         * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
+         * Key Management Service (KMS) key used to encrypt the private key. This
+         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateEnclaveCertificateIamRoleAsync(const Model::DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
          * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
          * ID.</p><p><h3>See Also:</h3>   <a
@@ -14328,6 +14468,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportTransitGatewayRoutesAsync(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the IAM roles that are associated with the specified AWS Certificate
+         * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
+         * the Amazon S3 object key where the certificate, certificate chain, and encrypted
+         * private key bundle are stored, and the ARN of the AWS Key Management Service
+         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssociatedEnclaveCertificateIamRolesOutcome GetAssociatedEnclaveCertificateIamRoles(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request) const;
+
+        /**
+         * <p>Returns the IAM roles that are associated with the specified AWS Certificate
+         * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
+         * the Amazon S3 object key where the certificate, certificate chain, and encrypted
+         * private key bundle are stored, and the ARN of the AWS Key Management Service
+         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAssociatedEnclaveCertificateIamRolesOutcomeCallable GetAssociatedEnclaveCertificateIamRolesCallable(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request) const;
+
+        /**
+         * <p>Returns the IAM roles that are associated with the specified AWS Certificate
+         * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
+         * the Amazon S3 object key where the certificate, certificate chain, and encrypted
+         * private key bundle are stored, and the ARN of the AWS Key Management Service
+         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAssociatedEnclaveCertificateIamRolesAsync(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the IPv6 CIDR block associations for a specified IPv6
@@ -20125,6 +20302,7 @@ namespace Model
         void AssociateAddressAsyncHelper(const Model::AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateClientVpnTargetNetworkAsyncHelper(const Model::AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDhcpOptionsAsyncHelper(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateEnclaveCertificateIamRoleAsyncHelper(const Model::AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateIamInstanceProfileAsyncHelper(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -20391,6 +20569,7 @@ namespace Model
         void DisableVpcClassicLinkDnsSupportAsyncHelper(const Model::DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAddressAsyncHelper(const Model::DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateClientVpnTargetNetworkAsyncHelper(const Model::DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateEnclaveCertificateIamRoleAsyncHelper(const Model::DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateIamInstanceProfileAsyncHelper(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -20408,6 +20587,7 @@ namespace Model
         void ExportClientVpnClientConfigurationAsyncHelper(const Model::ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportImageAsyncHelper(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportTransitGatewayRoutesAsyncHelper(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAssociatedEnclaveCertificateIamRolesAsyncHelper(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssociatedIpv6PoolCidrsAsyncHelper(const Model::GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCapacityReservationUsageAsyncHelper(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoipPoolUsageAsyncHelper(const Model::GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -24,7 +24,8 @@ CreateJobRequest::CreateJobRequest() :
     m_jobExecutionsRolloutConfigHasBeenSet(false),
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,12 @@ Aws::String CreateJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_namespaceIdHasBeenSet)
+  {
+   payload.WithString("namespaceId", m_namespaceId);
 
   }
 
