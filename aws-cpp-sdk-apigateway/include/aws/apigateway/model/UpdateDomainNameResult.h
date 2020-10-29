@@ -594,31 +594,31 @@ namespace Model
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline UpdateDomainNameResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline UpdateDomainNameResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 

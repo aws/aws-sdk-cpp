@@ -163,7 +163,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
 
@@ -172,7 +172,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNs = value; }
 
@@ -181,7 +181,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNs = std::move(value); }
 
@@ -190,7 +190,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline GetAuthorizerResult& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
 
@@ -199,7 +199,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline GetAuthorizerResult& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(std::move(value)); return *this;}
 
@@ -208,7 +208,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline GetAuthorizerResult& AddProviderARNs(const Aws::String& value) { m_providerARNs.push_back(value); return *this; }
 
@@ -217,7 +217,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline GetAuthorizerResult& AddProviderARNs(Aws::String&& value) { m_providerARNs.push_back(std::move(value)); return *this; }
 
@@ -226,7 +226,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline GetAuthorizerResult& AddProviderARNs(const char* value) { m_providerARNs.push_back(value); return *this; }
 

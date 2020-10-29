@@ -42,7 +42,8 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_connectionLogOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_selfServicePortalUrlHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_connectionLogOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_selfServicePortalUrlHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -211,6 +213,12 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode selfServicePortalUrlNode = resultNode.FirstChild("selfServicePortalUrl");
+    if(!selfServicePortalUrlNode.IsNull())
+    {
+      m_selfServicePortalUrl = Aws::Utils::Xml::DecodeEscapedXmlText(selfServicePortalUrlNode.GetText());
+      m_selfServicePortalUrlHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -332,6 +340,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_selfServicePortalUrlHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SelfServicePortalUrl=" << StringUtils::URLEncode(m_selfServicePortalUrl.c_str()) << "&";
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -431,6 +444,10 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_selfServicePortalUrlHasBeenSet)
+  {
+      oStream << location << ".SelfServicePortalUrl=" << StringUtils::URLEncode(m_selfServicePortalUrl.c_str()) << "&";
   }
 }
 

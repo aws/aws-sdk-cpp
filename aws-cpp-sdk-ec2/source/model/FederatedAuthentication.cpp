@@ -21,12 +21,14 @@ namespace Model
 {
 
 FederatedAuthentication::FederatedAuthentication() : 
-    m_samlProviderArnHasBeenSet(false)
+    m_samlProviderArnHasBeenSet(false),
+    m_selfServiceSamlProviderArnHasBeenSet(false)
 {
 }
 
 FederatedAuthentication::FederatedAuthentication(const XmlNode& xmlNode) : 
-    m_samlProviderArnHasBeenSet(false)
+    m_samlProviderArnHasBeenSet(false),
+    m_selfServiceSamlProviderArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ FederatedAuthentication& FederatedAuthentication::operator =(const XmlNode& xmlN
       m_samlProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(samlProviderArnNode.GetText());
       m_samlProviderArnHasBeenSet = true;
     }
+    XmlNode selfServiceSamlProviderArnNode = resultNode.FirstChild("selfServiceSamlProviderArn");
+    if(!selfServiceSamlProviderArnNode.IsNull())
+    {
+      m_selfServiceSamlProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(selfServiceSamlProviderArnNode.GetText());
+      m_selfServiceSamlProviderArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void FederatedAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".SamlProviderArn=" << StringUtils::URLEncode(m_samlProviderArn.c_str()) << "&";
   }
 
+  if(m_selfServiceSamlProviderArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SelfServiceSamlProviderArn=" << StringUtils::URLEncode(m_selfServiceSamlProviderArn.c_str()) << "&";
+  }
+
 }
 
 void FederatedAuthentication::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void FederatedAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_samlProviderArnHasBeenSet)
   {
       oStream << location << ".SamlProviderArn=" << StringUtils::URLEncode(m_samlProviderArn.c_str()) << "&";
+  }
+  if(m_selfServiceSamlProviderArnHasBeenSet)
+  {
+      oStream << location << ".SelfServiceSamlProviderArn=" << StringUtils::URLEncode(m_selfServiceSamlProviderArn.c_str()) << "&";
   }
 }
 

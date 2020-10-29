@@ -29,7 +29,8 @@ DomainDescription::DomainDescription() :
     m_repositoryCount(0),
     m_repositoryCountHasBeenSet(false),
     m_assetSizeBytes(0),
-    m_assetSizeBytesHasBeenSet(false)
+    m_assetSizeBytesHasBeenSet(false),
+    m_s3BucketArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ DomainDescription::DomainDescription(JsonView jsonValue) :
     m_repositoryCount(0),
     m_repositoryCountHasBeenSet(false),
     m_assetSizeBytes(0),
-    m_assetSizeBytesHasBeenSet(false)
+    m_assetSizeBytesHasBeenSet(false),
+    m_s3BucketArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ DomainDescription& DomainDescription::operator =(JsonView jsonValue)
     m_assetSizeBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3BucketArn"))
+  {
+    m_s3BucketArn = jsonValue.GetString("s3BucketArn");
+
+    m_s3BucketArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +166,12 @@ JsonValue DomainDescription::Jsonize() const
   if(m_assetSizeBytesHasBeenSet)
   {
    payload.WithInt64("assetSizeBytes", m_assetSizeBytes);
+
+  }
+
+  if(m_s3BucketArnHasBeenSet)
+  {
+   payload.WithString("s3BucketArn", m_s3BucketArn);
 
   }
 

@@ -89,6 +89,7 @@
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeResult.h>
 #include <aws/storagegateway/model/UpdateNFSFileShareResult.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareResult.h>
+#include <aws/storagegateway/model/UpdateSMBFileShareVisibilityResult.h>
 #include <aws/storagegateway/model/UpdateSMBSecurityStrategyResult.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeResult.h>
@@ -209,6 +210,7 @@ namespace Model
         class UpdateMaintenanceStartTimeRequest;
         class UpdateNFSFileShareRequest;
         class UpdateSMBFileShareRequest;
+        class UpdateSMBFileShareVisibilityRequest;
         class UpdateSMBSecurityStrategyRequest;
         class UpdateSnapshotScheduleRequest;
         class UpdateVTLDeviceTypeRequest;
@@ -291,6 +293,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMaintenanceStartTimeResult, StorageGatewayError> UpdateMaintenanceStartTimeOutcome;
         typedef Aws::Utils::Outcome<UpdateNFSFileShareResult, StorageGatewayError> UpdateNFSFileShareOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBFileShareResult, StorageGatewayError> UpdateSMBFileShareOutcome;
+        typedef Aws::Utils::Outcome<UpdateSMBFileShareVisibilityResult, StorageGatewayError> UpdateSMBFileShareVisibilityOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBSecurityStrategyResult, StorageGatewayError> UpdateSMBSecurityStrategyOutcome;
         typedef Aws::Utils::Outcome<UpdateSnapshotScheduleResult, StorageGatewayError> UpdateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateVTLDeviceTypeResult, StorageGatewayError> UpdateVTLDeviceTypeOutcome;
@@ -373,6 +376,7 @@ namespace Model
         typedef std::future<UpdateMaintenanceStartTimeOutcome> UpdateMaintenanceStartTimeOutcomeCallable;
         typedef std::future<UpdateNFSFileShareOutcome> UpdateNFSFileShareOutcomeCallable;
         typedef std::future<UpdateSMBFileShareOutcome> UpdateSMBFileShareOutcomeCallable;
+        typedef std::future<UpdateSMBFileShareVisibilityOutcome> UpdateSMBFileShareVisibilityOutcomeCallable;
         typedef std::future<UpdateSMBSecurityStrategyOutcome> UpdateSMBSecurityStrategyOutcomeCallable;
         typedef std::future<UpdateSnapshotScheduleOutcome> UpdateSnapshotScheduleOutcomeCallable;
         typedef std::future<UpdateVTLDeviceTypeOutcome> UpdateVTLDeviceTypeOutcomeCallable;
@@ -458,6 +462,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateMaintenanceStartTimeRequest&, const Model::UpdateMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceStartTimeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateNFSFileShareRequest&, const Model::UpdateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNFSFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBFileShareRequest&, const Model::UpdateSMBFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBFileShareResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBFileShareVisibilityRequest&, const Model::UpdateSMBFileShareVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBFileShareVisibilityResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBSecurityStrategyRequest&, const Model::UpdateSMBSecurityStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBSecurityStrategyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSnapshotScheduleRequest&, const Model::UpdateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateVTLDeviceTypeRequest&, const Model::UpdateVTLDeviceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVTLDeviceTypeResponseReceivedHandler;
@@ -3849,13 +3854,11 @@ namespace Model
          * <p>Updates a Network File System (NFS) file share. This operation is only
          * supported in the file gateway type.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  <p>Updates the
-         * following file share setting:</p> <ul> <li> <p>Default storage class for your S3
-         * bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
+         * following file share settings:</p> <ul> <li> <p>Default storage class for your
+         * S3 bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
          * <p>Allowed NFS clients for your file share</p> </li> <li> <p>Squash settings</p>
-         * </li> <li> <p>Write status of your file share</p> </li> </ul>  <p>To leave
-         * a file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported in file gateways.</p> <p><h3>See Also:</h3>  
-         * <a
+         * </li> <li> <p>Write status of your file share</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
          * API Reference</a></p>
          */
@@ -3865,13 +3868,11 @@ namespace Model
          * <p>Updates a Network File System (NFS) file share. This operation is only
          * supported in the file gateway type.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  <p>Updates the
-         * following file share setting:</p> <ul> <li> <p>Default storage class for your S3
-         * bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
+         * following file share settings:</p> <ul> <li> <p>Default storage class for your
+         * S3 bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
          * <p>Allowed NFS clients for your file share</p> </li> <li> <p>Squash settings</p>
-         * </li> <li> <p>Write status of your file share</p> </li> </ul>  <p>To leave
-         * a file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported in file gateways.</p> <p><h3>See Also:</h3>  
-         * <a
+         * </li> <li> <p>Write status of your file share</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -3883,13 +3884,11 @@ namespace Model
          * <p>Updates a Network File System (NFS) file share. This operation is only
          * supported in the file gateway type.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  <p>Updates the
-         * following file share setting:</p> <ul> <li> <p>Default storage class for your S3
-         * bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
+         * following file share settings:</p> <ul> <li> <p>Default storage class for your
+         * S3 bucket</p> </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li>
          * <p>Allowed NFS clients for your file share</p> </li> <li> <p>Squash settings</p>
-         * </li> <li> <p>Write status of your file share</p> </li> </ul>  <p>To leave
-         * a file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported in file gateways.</p> <p><h3>See Also:</h3>  
-         * <a
+         * </li> <li> <p>Write status of your file share</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -3898,12 +3897,12 @@ namespace Model
         virtual void UpdateNFSFileShareAsync(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a Server Message Block (SMB) file share.</p>  <p>To leave a
-         * file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported for file gateways.</p>   <p>File
-         * gateways require AWS Security Token Service (AWS STS) to be activated to enable
-         * you to create a file share. Make sure that AWS STS is activated in the AWS
-         * Region you are creating your file gateway in. If AWS STS is not activated in
+         * <p>Updates a Server Message Block (SMB) file share. This operation is only
+         * supported for file gateways.</p>  <p>To leave a file share field
+         * unchanged, set the corresponding input field to null.</p>  
+         * <p>File gateways require AWS Security Token Service (AWS STS) to be activated to
+         * enable you to create a file share. Make sure that AWS STS is activated in the
+         * AWS Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
@@ -3916,12 +3915,12 @@ namespace Model
         virtual Model::UpdateSMBFileShareOutcome UpdateSMBFileShare(const Model::UpdateSMBFileShareRequest& request) const;
 
         /**
-         * <p>Updates a Server Message Block (SMB) file share.</p>  <p>To leave a
-         * file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported for file gateways.</p>   <p>File
-         * gateways require AWS Security Token Service (AWS STS) to be activated to enable
-         * you to create a file share. Make sure that AWS STS is activated in the AWS
-         * Region you are creating your file gateway in. If AWS STS is not activated in
+         * <p>Updates a Server Message Block (SMB) file share. This operation is only
+         * supported for file gateways.</p>  <p>To leave a file share field
+         * unchanged, set the corresponding input field to null.</p>  
+         * <p>File gateways require AWS Security Token Service (AWS STS) to be activated to
+         * enable you to create a file share. Make sure that AWS STS is activated in the
+         * AWS Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
@@ -3936,12 +3935,12 @@ namespace Model
         virtual Model::UpdateSMBFileShareOutcomeCallable UpdateSMBFileShareCallable(const Model::UpdateSMBFileShareRequest& request) const;
 
         /**
-         * <p>Updates a Server Message Block (SMB) file share.</p>  <p>To leave a
-         * file share field unchanged, set the corresponding input field to null. This
-         * operation is only supported for file gateways.</p>   <p>File
-         * gateways require AWS Security Token Service (AWS STS) to be activated to enable
-         * you to create a file share. Make sure that AWS STS is activated in the AWS
-         * Region you are creating your file gateway in. If AWS STS is not activated in
+         * <p>Updates a Server Message Block (SMB) file share. This operation is only
+         * supported for file gateways.</p>  <p>To leave a file share field
+         * unchanged, set the corresponding input field to null.</p>  
+         * <p>File gateways require AWS Security Token Service (AWS STS) to be activated to
+         * enable you to create a file share. Make sure that AWS STS is activated in the
+         * AWS Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
@@ -3954,6 +3953,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSMBFileShareAsync(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Controls whether the shares on a gateway are visible in a net view or browse
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSMBFileShareVisibilityOutcome UpdateSMBFileShareVisibility(const Model::UpdateSMBFileShareVisibilityRequest& request) const;
+
+        /**
+         * <p>Controls whether the shares on a gateway are visible in a net view or browse
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSMBFileShareVisibilityOutcomeCallable UpdateSMBFileShareVisibilityCallable(const Model::UpdateSMBFileShareVisibilityRequest& request) const;
+
+        /**
+         * <p>Controls whether the shares on a gateway are visible in a net view or browse
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSMBFileShareVisibilityAsync(const Model::UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the SMB security strategy on a file gateway. This action is only
@@ -4154,6 +4181,7 @@ namespace Model
         void UpdateMaintenanceStartTimeAsyncHelper(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNFSFileShareAsyncHelper(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBFileShareAsyncHelper(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSMBFileShareVisibilityAsyncHelper(const Model::UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBSecurityStrategyAsyncHelper(const Model::UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSnapshotScheduleAsyncHelper(const Model::UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVTLDeviceTypeAsyncHelper(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SuppressionListDestination.h>
+#include <aws/sesv2/model/ContactListDestination.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,50 @@ namespace Model
      */
     inline ImportDestination& WithSuppressionListDestination(SuppressionListDestination&& value) { SetSuppressionListDestination(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline const ContactListDestination& GetContactListDestination() const{ return m_contactListDestination; }
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline bool ContactListDestinationHasBeenSet() const { return m_contactListDestinationHasBeenSet; }
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline void SetContactListDestination(const ContactListDestination& value) { m_contactListDestinationHasBeenSet = true; m_contactListDestination = value; }
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline void SetContactListDestination(ContactListDestination&& value) { m_contactListDestinationHasBeenSet = true; m_contactListDestination = std::move(value); }
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline ImportDestination& WithContactListDestination(const ContactListDestination& value) { SetContactListDestination(value); return *this;}
+
+    /**
+     * <p>An object that contains the action of the import job towards a contact
+     * list.</p>
+     */
+    inline ImportDestination& WithContactListDestination(ContactListDestination&& value) { SetContactListDestination(std::move(value)); return *this;}
+
   private:
 
     SuppressionListDestination m_suppressionListDestination;
     bool m_suppressionListDestinationHasBeenSet;
+
+    ContactListDestination m_contactListDestination;
+    bool m_contactListDestinationHasBeenSet;
   };
 
 } // namespace Model

@@ -605,6 +605,31 @@ namespace Model
 
 
     /**
+     * <p>The files and folders on this share will only be visible to users with read
+     * access.</p>
+     */
+    inline bool GetAccessBasedEnumeration() const{ return m_accessBasedEnumeration; }
+
+    /**
+     * <p>The files and folders on this share will only be visible to users with read
+     * access.</p>
+     */
+    inline bool AccessBasedEnumerationHasBeenSet() const { return m_accessBasedEnumerationHasBeenSet; }
+
+    /**
+     * <p>The files and folders on this share will only be visible to users with read
+     * access.</p>
+     */
+    inline void SetAccessBasedEnumeration(bool value) { m_accessBasedEnumerationHasBeenSet = true; m_accessBasedEnumeration = value; }
+
+    /**
+     * <p>The files and folders on this share will only be visible to users with read
+     * access.</p>
+     */
+    inline CreateSMBFileShareRequest& WithAccessBasedEnumeration(bool value) { SetAccessBasedEnumeration(value); return *this;}
+
+
+    /**
      * <p>A list of users or groups in the Active Directory that will be granted
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
@@ -1175,6 +1200,47 @@ namespace Model
      */
     inline CreateSMBFileShareRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline CreateSMBFileShareRequest& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline CreateSMBFileShareRequest& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline CreateSMBFileShareRequest& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -1213,6 +1279,9 @@ namespace Model
     bool m_sMBACLEnabled;
     bool m_sMBACLEnabledHasBeenSet;
 
+    bool m_accessBasedEnumeration;
+    bool m_accessBasedEnumerationHasBeenSet;
+
     Aws::Vector<Aws::String> m_adminUserList;
     bool m_adminUserListHasBeenSet;
 
@@ -1239,6 +1308,9 @@ namespace Model
 
     CacheAttributes m_cacheAttributes;
     bool m_cacheAttributesHasBeenSet;
+
+    Aws::String m_notificationPolicy;
+    bool m_notificationPolicyHasBeenSet;
   };
 
 } // namespace Model

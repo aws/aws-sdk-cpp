@@ -248,10 +248,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -281,10 +280,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -314,10 +312,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -347,10 +344,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -380,10 +376,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -413,10 +408,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -446,10 +440,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -479,10 +472,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the

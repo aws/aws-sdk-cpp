@@ -17,7 +17,8 @@ using namespace Aws::Http;
 
 CreateDomainRequest::CreateDomainRequest() : 
     m_domainHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+    m_encryptionKeyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -28,6 +29,17 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_encryptionKeyHasBeenSet)
   {
    payload.WithString("encryptionKey", m_encryptionKey);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

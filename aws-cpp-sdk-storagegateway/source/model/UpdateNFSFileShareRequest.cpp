@@ -30,7 +30,8 @@ UpdateNFSFileShareRequest::UpdateNFSFileShareRequest() :
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,12 @@ Aws::String UpdateNFSFileShareRequest::SerializePayload() const
   if(m_cacheAttributesHasBeenSet)
   {
    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_notificationPolicyHasBeenSet)
+  {
+   payload.WithString("NotificationPolicy", m_notificationPolicy);
 
   }
 

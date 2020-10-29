@@ -352,7 +352,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline const ApiKeySourceType& GetApiKeySource() const{ return m_apiKeySource; }
 
@@ -361,7 +361,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline void SetApiKeySource(const ApiKeySourceType& value) { m_apiKeySource = value; }
 
@@ -370,7 +370,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline void SetApiKeySource(ApiKeySourceType&& value) { m_apiKeySource = std::move(value); }
 
@@ -379,7 +379,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline ImportRestApiResult& WithApiKeySource(const ApiKeySourceType& value) { SetApiKeySource(value); return *this;}
 
@@ -388,81 +388,81 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline ImportRestApiResult& WithApiKeySource(ApiKeySourceType&& value) { SetApiKeySource(std::move(value)); return *this;}
 
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline ImportRestApiResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline ImportRestApiResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline ImportRestApiResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline ImportRestApiResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline ImportRestApiResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -539,6 +539,34 @@ namespace Model
      */
     inline ImportRestApiResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline bool GetDisableExecuteApiEndpoint() const{ return m_disableExecuteApiEndpoint; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpoint = value; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline ImportRestApiResult& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -564,6 +592,8 @@ namespace Model
     Aws::String m_policy;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    bool m_disableExecuteApiEndpoint;
   };
 
 } // namespace Model

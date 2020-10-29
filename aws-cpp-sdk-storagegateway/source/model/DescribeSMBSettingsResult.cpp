@@ -19,14 +19,16 @@ using namespace Aws;
 DescribeSMBSettingsResult::DescribeSMBSettingsResult() : 
     m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
     m_sMBGuestPasswordSet(false),
-    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
+    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET),
+    m_fileSharesVisible(false)
 {
 }
 
 DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
     m_sMBGuestPasswordSet(false),
-    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
+    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET),
+    m_fileSharesVisible(false)
 {
   *this = result;
 }
@@ -61,6 +63,12 @@ DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("SMBSecurityStrategy"))
   {
     m_sMBSecurityStrategy = SMBSecurityStrategyMapper::GetSMBSecurityStrategyForName(jsonValue.GetString("SMBSecurityStrategy"));
+
+  }
+
+  if(jsonValue.ValueExists("FileSharesVisible"))
+  {
+    m_fileSharesVisible = jsonValue.GetBool("FileSharesVisible");
 
   }
 

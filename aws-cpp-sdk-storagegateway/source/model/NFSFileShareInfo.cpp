@@ -43,7 +43,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_requesterPaysHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) :
     m_requesterPaysHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -225,6 +227,13 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_cacheAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotificationPolicy"))
+  {
+    m_notificationPolicy = jsonValue.GetString("NotificationPolicy");
+
+    m_notificationPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -358,6 +367,12 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_cacheAttributesHasBeenSet)
   {
    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_notificationPolicyHasBeenSet)
+  {
+   payload.WithString("NotificationPolicy", m_notificationPolicy);
 
   }
 

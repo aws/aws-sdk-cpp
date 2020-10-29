@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codeartifact/model/UpstreamRepository.h>
+#include <aws/codeartifact/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -292,6 +293,47 @@ namespace Model
      */
     inline CreateRepositoryRequest& AddUpstreams(UpstreamRepository&& value) { m_upstreamsHasBeenSet = true; m_upstreams.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline CreateRepositoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline CreateRepositoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline CreateRepositoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>One or more tag key-value pairs for the repository.</p>
+     */
+    inline CreateRepositoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domain;
@@ -308,6 +350,9 @@ namespace Model
 
     Aws::Vector<UpstreamRepository> m_upstreams;
     bool m_upstreamsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

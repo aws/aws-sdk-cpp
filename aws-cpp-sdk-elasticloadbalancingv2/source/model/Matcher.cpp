@@ -21,12 +21,14 @@ namespace Model
 {
 
 Matcher::Matcher() : 
-    m_httpCodeHasBeenSet(false)
+    m_httpCodeHasBeenSet(false),
+    m_grpcCodeHasBeenSet(false)
 {
 }
 
 Matcher::Matcher(const XmlNode& xmlNode) : 
-    m_httpCodeHasBeenSet(false)
+    m_httpCodeHasBeenSet(false),
+    m_grpcCodeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ Matcher& Matcher::operator =(const XmlNode& xmlNode)
       m_httpCode = Aws::Utils::Xml::DecodeEscapedXmlText(httpCodeNode.GetText());
       m_httpCodeHasBeenSet = true;
     }
+    XmlNode grpcCodeNode = resultNode.FirstChild("GrpcCode");
+    if(!grpcCodeNode.IsNull())
+    {
+      m_grpcCode = Aws::Utils::Xml::DecodeEscapedXmlText(grpcCodeNode.GetText());
+      m_grpcCodeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void Matcher::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".HttpCode=" << StringUtils::URLEncode(m_httpCode.c_str()) << "&";
   }
 
+  if(m_grpcCodeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GrpcCode=" << StringUtils::URLEncode(m_grpcCode.c_str()) << "&";
+  }
+
 }
 
 void Matcher::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void Matcher::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_httpCodeHasBeenSet)
   {
       oStream << location << ".HttpCode=" << StringUtils::URLEncode(m_httpCode.c_str()) << "&";
+  }
+  if(m_grpcCodeHasBeenSet)
+  {
+      oStream << location << ".GrpcCode=" << StringUtils::URLEncode(m_grpcCode.c_str()) << "&";
   }
 }
 

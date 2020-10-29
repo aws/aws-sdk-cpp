@@ -176,50 +176,66 @@ namespace Model
 
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
-     * health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
@@ -247,33 +263,33 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
+     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
+     * <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
+     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
+     * <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
+     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
+     * <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
+     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
+     * <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
@@ -334,84 +350,72 @@ namespace Model
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For Network Load Balancers, this value must be the same as
-     * the healthy threshold count.</p>
+     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
+     * value must be the same as the healthy threshold count.</p>
      */
     inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For Network Load Balancers, this value must be the same as
-     * the healthy threshold count.</p>
+     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
+     * value must be the same as the healthy threshold count.</p>
      */
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For Network Load Balancers, this value must be the same as
-     * the healthy threshold count.</p>
+     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
+     * value must be the same as the healthy threshold count.</p>
      */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For Network Load Balancers, this value must be the same as
-     * the healthy threshold count.</p>
+     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
+     * value must be the same as the healthy threshold count.</p>
      */
     inline ModifyTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
 
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target. The possible values are from 200 to 499. You
-     * can specify multiple values (for example, "200,202") or a range of values (for
-     * example, "200-299"). The default is 200.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
+     * successful response from a target.</p> <p>With Network Load Balancers, you can't
+     * modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

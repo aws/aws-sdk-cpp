@@ -103,22 +103,34 @@ namespace Model
     inline ImportJobSummary& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline ImportJobSummary& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
-    
+    /**
+     * <p>The date and time when the import job was created.</p>
+     */
     inline ImportJobSummary& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
   private:

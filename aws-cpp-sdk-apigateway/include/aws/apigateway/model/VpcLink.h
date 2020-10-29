@@ -35,7 +35,7 @@ namespace Model
    * private integration that uses the <a>VpcLink</a>. The private integration has an
    * integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a
    * connection type of <code>VPC_LINK</code>. The integration uses the
-   * <code>connectionId</code> property to identify the <a>VpcLink</a> used.</p> </p>
+   * <code>connectionId</code> property to identify the <a>VpcLink</a> used.</p></p>
    * </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/VpcLink">AWS
    * API Reference</a></p>
@@ -248,7 +248,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline const VpcLinkStatus& GetStatus() const{ return m_status; }
 
@@ -256,7 +256,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline void SetStatus(const VpcLinkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -272,7 +272,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline void SetStatus(VpcLinkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -280,7 +280,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline VpcLink& WithStatus(const VpcLinkStatus& value) { SetStatus(value); return *this;}
 
@@ -288,7 +288,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>. </p>
+     * status is <code>DELETING</code>.</p>
      */
     inline VpcLink& WithStatus(VpcLinkStatus&& value) { SetStatus(std::move(value)); return *this;}
 

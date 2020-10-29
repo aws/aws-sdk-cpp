@@ -759,6 +759,47 @@ namespace Model
      */
     inline ClientVpnEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline const Aws::String& GetSelfServicePortalUrl() const{ return m_selfServicePortalUrl; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline bool SelfServicePortalUrlHasBeenSet() const { return m_selfServicePortalUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(const Aws::String& value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl = value; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(Aws::String&& value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl = std::move(value); }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(const char* value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl.assign(value); }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(const Aws::String& value) { SetSelfServicePortalUrl(value); return *this;}
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(Aws::String&& value) { SetSelfServicePortalUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(const char* value) { SetSelfServicePortalUrl(value); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -814,6 +855,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_selfServicePortalUrl;
+    bool m_selfServicePortalUrlHasBeenSet;
   };
 
 } // namespace Model

@@ -38,8 +38,11 @@
 #include <aws/codeartifact/model/ListPackagesResult.h>
 #include <aws/codeartifact/model/ListRepositoriesResult.h>
 #include <aws/codeartifact/model/ListRepositoriesInDomainResult.h>
+#include <aws/codeartifact/model/ListTagsForResourceResult.h>
 #include <aws/codeartifact/model/PutDomainPermissionsPolicyResult.h>
 #include <aws/codeartifact/model/PutRepositoryPermissionsPolicyResult.h>
+#include <aws/codeartifact/model/TagResourceResult.h>
+#include <aws/codeartifact/model/UntagResourceResult.h>
 #include <aws/codeartifact/model/UpdatePackageVersionsStatusResult.h>
 #include <aws/codeartifact/model/UpdateRepositoryResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -108,8 +111,11 @@ namespace Model
         class ListPackagesRequest;
         class ListRepositoriesRequest;
         class ListRepositoriesInDomainRequest;
+        class ListTagsForResourceRequest;
         class PutDomainPermissionsPolicyRequest;
         class PutRepositoryPermissionsPolicyRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdatePackageVersionsStatusRequest;
         class UpdateRepositoryRequest;
 
@@ -140,8 +146,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPackagesResult, CodeArtifactError> ListPackagesOutcome;
         typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeArtifactError> ListRepositoriesOutcome;
         typedef Aws::Utils::Outcome<ListRepositoriesInDomainResult, CodeArtifactError> ListRepositoriesInDomainOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeArtifactError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutDomainPermissionsPolicyResult, CodeArtifactError> PutDomainPermissionsPolicyOutcome;
         typedef Aws::Utils::Outcome<PutRepositoryPermissionsPolicyResult, CodeArtifactError> PutRepositoryPermissionsPolicyOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeArtifactError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeArtifactError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdatePackageVersionsStatusResult, CodeArtifactError> UpdatePackageVersionsStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateRepositoryResult, CodeArtifactError> UpdateRepositoryOutcome;
 
@@ -172,8 +181,11 @@ namespace Model
         typedef std::future<ListPackagesOutcome> ListPackagesOutcomeCallable;
         typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
         typedef std::future<ListRepositoriesInDomainOutcome> ListRepositoriesInDomainOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutDomainPermissionsPolicyOutcome> PutDomainPermissionsPolicyOutcomeCallable;
         typedef std::future<PutRepositoryPermissionsPolicyOutcome> PutRepositoryPermissionsPolicyOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdatePackageVersionsStatusOutcome> UpdatePackageVersionsStatusOutcomeCallable;
         typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
 } // namespace Model
@@ -207,8 +219,11 @@ namespace Model
     typedef std::function<void(const CodeArtifactClient*, const Model::ListPackagesRequest&, const Model::ListPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackagesResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesInDomainRequest&, const Model::ListRepositoriesInDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesInDomainResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutDomainPermissionsPolicyRequest&, const Model::PutDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDomainPermissionsPolicyResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutRepositoryPermissionsPolicyRequest&, const Model::PutRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryPermissionsPolicyResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::UpdatePackageVersionsStatusRequest&, const Model::UpdatePackageVersionsStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageVersionsStatusResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::UpdateRepositoryRequest&, const Model::UpdateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryResponseReceivedHandler;
 
@@ -228,23 +243,22 @@ namespace Model
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
    * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
-   * <code>mvn</code> </b>), and <b> <code>pip</code> </b>. You can create up to 100
-   * repositories per AWS account.</p> </li> <li> <p> <b>Domain</b>: Repositories are
-   * aggregated into a higher-level entity known as a <i>domain</i>. All package
-   * assets and metadata are stored in the domain, but are consumed through
-   * repositories. A given package asset, such as a Maven JAR file, is stored once
-   * per domain, no matter how many repositories it's present in. All of the assets
-   * and metadata in a domain are encrypted with the same customer master key (CMK)
-   * stored in AWS Key Management Service (AWS KMS).</p> <p>Each repository is a
-   * member of a single domain and can't be moved to a different domain.</p> <p>The
-   * domain allows organizational policy to be applied across multiple repositories,
-   * such as which accounts can access repositories in the domain, and which public
-   * repositories can be used as sources of packages.</p> <p>Although an organization
-   * can have multiple domains, we recommend a single production domain that contains
-   * all published artifacts so that teams can find and share packages across their
-   * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
-   * software and the metadata required to resolve dependencies and install the
-   * software. CodeArtifact supports <a
+   * <code>mvn</code> </b>), and <b> <code>pip</code> </b>.</p> </li> <li> <p>
+   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
+   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
+   * consumed through repositories. A given package asset, such as a Maven JAR file,
+   * is stored once per domain, no matter how many repositories it's present in. All
+   * of the assets and metadata in a domain are encrypted with the same customer
+   * master key (CMK) stored in AWS Key Management Service (AWS KMS).</p> <p>Each
+   * repository is a member of a single domain and can't be moved to a different
+   * domain.</p> <p>The domain allows organizational policy to be applied across
+   * multiple repositories, such as which accounts can access repositories in the
+   * domain, and which public repositories can be used as sources of packages.</p>
+   * <p>Although an organization can have multiple domains, we recommend a single
+   * production domain that contains all published artifacts so that teams can find
+   * and share packages across their organization.</p> </li> <li> <p> <b>Package</b>:
+   * A <i>package</i> is a bundle of software and the metadata required to resolve
+   * dependencies and install the software. CodeArtifact supports <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
@@ -801,16 +815,14 @@ namespace Model
          * <p> Deletes the assets in package versions and sets the package versions' status
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
-         * versions in a repository, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-         * </code> parameter to <code>Disposed</code>. </p> <p> To view information about a
-         * disposed package version, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-         * </code> parameter to <code>Disposed</code>. </p><p><h3>See Also:</h3>   <a
+         * versions in a repository, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+         * <code>ListPackageVersions</code> </a> and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
+         * information about a disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          */
@@ -820,16 +832,14 @@ namespace Model
          * <p> Deletes the assets in package versions and sets the package versions' status
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
-         * versions in a repository, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-         * </code> parameter to <code>Disposed</code>. </p> <p> To view information about a
-         * disposed package version, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-         * </code> parameter to <code>Disposed</code>. </p><p><h3>See Also:</h3>   <a
+         * versions in a repository, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+         * <code>ListPackageVersions</code> </a> and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
+         * information about a disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          *
@@ -841,16 +851,14 @@ namespace Model
          * <p> Deletes the assets in package versions and sets the package versions' status
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
-         * versions in a repository, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-         * </code> parameter to <code>Disposed</code>. </p> <p> To view information about a
-         * disposed package version, use <code> <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-         * </code> and set the <code> <a
-         * href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-         * </code> parameter to <code>Disposed</code>. </p><p><h3>See Also:</h3>   <a
+         * versions in a repository, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+         * <code>ListPackageVersions</code> </a> and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
+         * information about a disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          *
@@ -859,13 +867,16 @@ namespace Model
         virtual void DisposePackageVersionsAsync(const Model::DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Generates a temporary authentication token for accessing repositories in the
+         * <p> Generates a temporary authorization token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
-         * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
-         * created with the <code>login</code> command. You can call <code>login</code>
-         * periodically to refresh the token. When you create an authorization token with
-         * the <code>GetAuthorizationToken</code> API, you can set a custom authorization
+         * and <code>sts:GetServiceBearerToken</code> permissions. For more information
+         * about authorization tokens, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+         * CodeArtifact authentication and tokens</a>. </p>  <p>CodeArtifact
+         * authorization tokens are valid for a period of 12 hours when created with the
+         * <code>login</code> command. You can call <code>login</code> periodically to
+         * refresh the token. When you create an authorization token with the
+         * <code>GetAuthorizationToken</code> API, you can set a custom authorization
          * period, up to a maximum of 12 hours, with the <code>durationSeconds</code>
          * parameter.</p> <p>The authorization period begins after <code>login</code> or
          * <code>GetAuthorizationToken</code> is called. If <code>login</code> or
@@ -884,13 +895,16 @@ namespace Model
         virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
 
         /**
-         * <p> Generates a temporary authentication token for accessing repositories in the
+         * <p> Generates a temporary authorization token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
-         * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
-         * created with the <code>login</code> command. You can call <code>login</code>
-         * periodically to refresh the token. When you create an authorization token with
-         * the <code>GetAuthorizationToken</code> API, you can set a custom authorization
+         * and <code>sts:GetServiceBearerToken</code> permissions. For more information
+         * about authorization tokens, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+         * CodeArtifact authentication and tokens</a>. </p>  <p>CodeArtifact
+         * authorization tokens are valid for a period of 12 hours when created with the
+         * <code>login</code> command. You can call <code>login</code> periodically to
+         * refresh the token. When you create an authorization token with the
+         * <code>GetAuthorizationToken</code> API, you can set a custom authorization
          * period, up to a maximum of 12 hours, with the <code>durationSeconds</code>
          * parameter.</p> <p>The authorization period begins after <code>login</code> or
          * <code>GetAuthorizationToken</code> is called. If <code>login</code> or
@@ -911,13 +925,16 @@ namespace Model
         virtual Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
 
         /**
-         * <p> Generates a temporary authentication token for accessing repositories in the
+         * <p> Generates a temporary authorization token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
-         * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
-         * created with the <code>login</code> command. You can call <code>login</code>
-         * periodically to refresh the token. When you create an authorization token with
-         * the <code>GetAuthorizationToken</code> API, you can set a custom authorization
+         * and <code>sts:GetServiceBearerToken</code> permissions. For more information
+         * about authorization tokens, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+         * CodeArtifact authentication and tokens</a>. </p>  <p>CodeArtifact
+         * authorization tokens are valid for a period of 12 hours when created with the
+         * <code>login</code> command. You can call <code>login</code> periodically to
+         * refresh the token. When you create an authorization token with the
+         * <code>GetAuthorizationToken</code> API, you can set a custom authorization
          * period, up to a maximum of 12 hours, with the <code>durationSeconds</code>
          * parameter.</p> <p>The authorization period begins after <code>login</code> or
          * <code>GetAuthorizationToken</code> is called. If <code>login</code> or
@@ -1376,8 +1393,40 @@ namespace Model
         virtual void ListRepositoriesInDomainAsync(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Sets a resource policy on a domain that specifies permissions to access it.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> When you call <code>PutDomainPermissionsPolicy</code>, the resource
+         * policy on the domain is ignored when evaluting permissions. This ensures that
+         * the owner of a domain cannot lock themselves out of the domain, which would
+         * prevent them from being able to update the resource policy. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -1385,7 +1434,11 @@ namespace Model
 
         /**
          * <p> Sets a resource policy on a domain that specifies permissions to access it.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> When you call <code>PutDomainPermissionsPolicy</code>, the resource
+         * policy on the domain is ignored when evaluting permissions. This ensures that
+         * the owner of a domain cannot lock themselves out of the domain, which would
+         * prevent them from being able to update the resource policy. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -1395,7 +1448,11 @@ namespace Model
 
         /**
          * <p> Sets a resource policy on a domain that specifies permissions to access it.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> When you call <code>PutDomainPermissionsPolicy</code>, the resource
+         * policy on the domain is ignored when evaluting permissions. This ensures that
+         * the owner of a domain cannot lock themselves out of the domain, which would
+         * prevent them from being able to update the resource policy. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -1405,7 +1462,11 @@ namespace Model
 
         /**
          * <p> Sets the resource policy on a repository that specifies permissions to
-         * access it. </p><p><h3>See Also:</h3>   <a
+         * access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>,
+         * the resource policy on the repository is ignored when evaluting permissions.
+         * This ensures that the owner of a repository cannot lock themselves out of the
+         * repository, which would prevent them from being able to update the resource
+         * policy. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -1413,7 +1474,11 @@ namespace Model
 
         /**
          * <p> Sets the resource policy on a repository that specifies permissions to
-         * access it. </p><p><h3>See Also:</h3>   <a
+         * access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>,
+         * the resource policy on the repository is ignored when evaluting permissions.
+         * This ensures that the owner of a repository cannot lock themselves out of the
+         * repository, which would prevent them from being able to update the resource
+         * policy. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -1423,13 +1488,73 @@ namespace Model
 
         /**
          * <p> Sets the resource policy on a repository that specifies permissions to
-         * access it. </p><p><h3>See Also:</h3>   <a
+         * access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>,
+         * the resource policy on the repository is ignored when evaluting permissions.
+         * This ensures that the owner of a repository cannot lock themselves out of the
+         * repository, which would prevent them from being able to update the resource
+         * policy. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRepositoryPermissionsPolicyAsync(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or updates tags for a resource in AWS CodeArtifact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or updates tags for a resource in AWS CodeArtifact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or updates tags for a resource in AWS CodeArtifact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a resource in AWS CodeArtifact.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a resource in AWS CodeArtifact.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a resource in AWS CodeArtifact.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the status of one or more versions of a package. </p><p><h3>See
@@ -1515,8 +1640,11 @@ namespace Model
         void ListPackagesAsyncHelper(const Model::ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoriesAsyncHelper(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoriesInDomainAsyncHelper(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDomainPermissionsPolicyAsyncHelper(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryPermissionsPolicyAsyncHelper(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePackageVersionsStatusAsyncHelper(const Model::UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRepositoryAsyncHelper(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

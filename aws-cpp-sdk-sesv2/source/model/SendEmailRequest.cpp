@@ -21,7 +21,8 @@ SendEmailRequest::SendEmailRequest() :
     m_feedbackForwardingEmailAddressIdentityArnHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_emailTagsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
+    m_configurationSetNameHasBeenSet(false),
+    m_listManagementOptionsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,12 @@ Aws::String SendEmailRequest::SerializePayload() const
   if(m_configurationSetNameHasBeenSet)
   {
    payload.WithString("ConfigurationSetName", m_configurationSetName);
+
+  }
+
+  if(m_listManagementOptionsHasBeenSet)
+  {
+   payload.WithObject("ListManagementOptions", m_listManagementOptions.Jsonize());
 
   }
 

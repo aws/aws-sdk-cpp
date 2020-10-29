@@ -43,7 +43,7 @@ namespace Model
    * SignedHeaders=content-type;host;x-amz-date,
    * Signature=59b42fe54a76a5de8adf2c67baa6d39206f8e9ad49a1d77ccc6a5da3103a398a
    * Cache-Control: no-cache Postman-Token: 5637af27-dc29-fc5c-9dfe-0645d52cb515
-   * </code></pre> <p></p> <h5>Response</h5> <p>The successful operation returns the
+   * </code></pre> <p/> <h5>Response</h5> <p>The successful operation returns the
    * <code>200 OK</code> status code and a payload similar to the following:</p>
    * <pre><code>{ "_links": { "curies": { "href":
    * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-gatewayresponse-{rel}.html",
@@ -231,7 +231,7 @@ namespace Model
    * "defaultResponse": true, "responseParameters": {}, "responseTemplates": {
    * "application/json": "{\"message\":$context.error.messageString}" },
    * "responseType": "AUTHORIZER_FAILURE", "statusCode": "500" } ] } }</code></pre>
-   * <p></p> </div> </div> <div class="seeAlso"> <a
+   * <p/> </div> </div> <div class="seeAlso"> <a
    * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
    * Gateway Responses</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponses">AWS

@@ -317,7 +317,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */
@@ -328,7 +328,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */
@@ -339,7 +339,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */
@@ -350,7 +350,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */
@@ -361,7 +361,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */
@@ -372,7 +372,7 @@ namespace Model
      * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
+     * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> �� Indicates that DKIM was
      * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
      * </ul>
      */

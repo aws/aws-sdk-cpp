@@ -13,6 +13,8 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sesv2/model/CreateConfigurationSetResult.h>
 #include <aws/sesv2/model/CreateConfigurationSetEventDestinationResult.h>
+#include <aws/sesv2/model/CreateContactResult.h>
+#include <aws/sesv2/model/CreateContactListResult.h>
 #include <aws/sesv2/model/CreateCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/CreateDedicatedIpPoolResult.h>
 #include <aws/sesv2/model/CreateDeliverabilityTestReportResult.h>
@@ -22,6 +24,8 @@
 #include <aws/sesv2/model/CreateImportJobResult.h>
 #include <aws/sesv2/model/DeleteConfigurationSetResult.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationResult.h>
+#include <aws/sesv2/model/DeleteContactResult.h>
+#include <aws/sesv2/model/DeleteContactListResult.h>
 #include <aws/sesv2/model/DeleteCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/DeleteDedicatedIpPoolResult.h>
 #include <aws/sesv2/model/DeleteEmailIdentityResult.h>
@@ -32,6 +36,8 @@
 #include <aws/sesv2/model/GetBlacklistReportsResult.h>
 #include <aws/sesv2/model/GetConfigurationSetResult.h>
 #include <aws/sesv2/model/GetConfigurationSetEventDestinationsResult.h>
+#include <aws/sesv2/model/GetContactResult.h>
+#include <aws/sesv2/model/GetContactListResult.h>
 #include <aws/sesv2/model/GetCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/GetDedicatedIpResult.h>
 #include <aws/sesv2/model/GetDedicatedIpsResult.h>
@@ -45,6 +51,8 @@
 #include <aws/sesv2/model/GetImportJobResult.h>
 #include <aws/sesv2/model/GetSuppressedDestinationResult.h>
 #include <aws/sesv2/model/ListConfigurationSetsResult.h>
+#include <aws/sesv2/model/ListContactListsResult.h>
+#include <aws/sesv2/model/ListContactsResult.h>
 #include <aws/sesv2/model/ListCustomVerificationEmailTemplatesResult.h>
 #include <aws/sesv2/model/ListDedicatedIpPoolsResult.h>
 #include <aws/sesv2/model/ListDeliverabilityTestReportsResult.h>
@@ -78,6 +86,8 @@
 #include <aws/sesv2/model/TestRenderEmailTemplateResult.h>
 #include <aws/sesv2/model/UntagResourceResult.h>
 #include <aws/sesv2/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/sesv2/model/UpdateContactResult.h>
+#include <aws/sesv2/model/UpdateContactListResult.h>
 #include <aws/sesv2/model/UpdateCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/UpdateEmailIdentityPolicyResult.h>
 #include <aws/sesv2/model/UpdateEmailTemplateResult.h>
@@ -122,6 +132,8 @@ namespace Model
 {
         class CreateConfigurationSetRequest;
         class CreateConfigurationSetEventDestinationRequest;
+        class CreateContactRequest;
+        class CreateContactListRequest;
         class CreateCustomVerificationEmailTemplateRequest;
         class CreateDedicatedIpPoolRequest;
         class CreateDeliverabilityTestReportRequest;
@@ -131,6 +143,8 @@ namespace Model
         class CreateImportJobRequest;
         class DeleteConfigurationSetRequest;
         class DeleteConfigurationSetEventDestinationRequest;
+        class DeleteContactRequest;
+        class DeleteContactListRequest;
         class DeleteCustomVerificationEmailTemplateRequest;
         class DeleteDedicatedIpPoolRequest;
         class DeleteEmailIdentityRequest;
@@ -141,6 +155,8 @@ namespace Model
         class GetBlacklistReportsRequest;
         class GetConfigurationSetRequest;
         class GetConfigurationSetEventDestinationsRequest;
+        class GetContactRequest;
+        class GetContactListRequest;
         class GetCustomVerificationEmailTemplateRequest;
         class GetDedicatedIpRequest;
         class GetDedicatedIpsRequest;
@@ -154,6 +170,8 @@ namespace Model
         class GetImportJobRequest;
         class GetSuppressedDestinationRequest;
         class ListConfigurationSetsRequest;
+        class ListContactListsRequest;
+        class ListContactsRequest;
         class ListCustomVerificationEmailTemplatesRequest;
         class ListDedicatedIpPoolsRequest;
         class ListDeliverabilityTestReportsRequest;
@@ -187,12 +205,16 @@ namespace Model
         class TestRenderEmailTemplateRequest;
         class UntagResourceRequest;
         class UpdateConfigurationSetEventDestinationRequest;
+        class UpdateContactRequest;
+        class UpdateContactListRequest;
         class UpdateCustomVerificationEmailTemplateRequest;
         class UpdateEmailIdentityPolicyRequest;
         class UpdateEmailTemplateRequest;
 
         typedef Aws::Utils::Outcome<CreateConfigurationSetResult, SESV2Error> CreateConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, SESV2Error> CreateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateContactResult, SESV2Error> CreateContactOutcome;
+        typedef Aws::Utils::Outcome<CreateContactListResult, SESV2Error> CreateContactListOutcome;
         typedef Aws::Utils::Outcome<CreateCustomVerificationEmailTemplateResult, SESV2Error> CreateCustomVerificationEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateDedicatedIpPoolResult, SESV2Error> CreateDedicatedIpPoolOutcome;
         typedef Aws::Utils::Outcome<CreateDeliverabilityTestReportResult, SESV2Error> CreateDeliverabilityTestReportOutcome;
@@ -202,6 +224,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateImportJobResult, SESV2Error> CreateImportJobOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, SESV2Error> DeleteConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, SESV2Error> DeleteConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactResult, SESV2Error> DeleteContactOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactListResult, SESV2Error> DeleteContactListOutcome;
         typedef Aws::Utils::Outcome<DeleteCustomVerificationEmailTemplateResult, SESV2Error> DeleteCustomVerificationEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteDedicatedIpPoolResult, SESV2Error> DeleteDedicatedIpPoolOutcome;
         typedef Aws::Utils::Outcome<DeleteEmailIdentityResult, SESV2Error> DeleteEmailIdentityOutcome;
@@ -212,6 +236,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetBlacklistReportsResult, SESV2Error> GetBlacklistReportsOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetResult, SESV2Error> GetConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, SESV2Error> GetConfigurationSetEventDestinationsOutcome;
+        typedef Aws::Utils::Outcome<GetContactResult, SESV2Error> GetContactOutcome;
+        typedef Aws::Utils::Outcome<GetContactListResult, SESV2Error> GetContactListOutcome;
         typedef Aws::Utils::Outcome<GetCustomVerificationEmailTemplateResult, SESV2Error> GetCustomVerificationEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<GetDedicatedIpResult, SESV2Error> GetDedicatedIpOutcome;
         typedef Aws::Utils::Outcome<GetDedicatedIpsResult, SESV2Error> GetDedicatedIpsOutcome;
@@ -225,6 +251,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetImportJobResult, SESV2Error> GetImportJobOutcome;
         typedef Aws::Utils::Outcome<GetSuppressedDestinationResult, SESV2Error> GetSuppressedDestinationOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationSetsResult, SESV2Error> ListConfigurationSetsOutcome;
+        typedef Aws::Utils::Outcome<ListContactListsResult, SESV2Error> ListContactListsOutcome;
+        typedef Aws::Utils::Outcome<ListContactsResult, SESV2Error> ListContactsOutcome;
         typedef Aws::Utils::Outcome<ListCustomVerificationEmailTemplatesResult, SESV2Error> ListCustomVerificationEmailTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListDedicatedIpPoolsResult, SESV2Error> ListDedicatedIpPoolsOutcome;
         typedef Aws::Utils::Outcome<ListDeliverabilityTestReportsResult, SESV2Error> ListDeliverabilityTestReportsOutcome;
@@ -258,12 +286,16 @@ namespace Model
         typedef Aws::Utils::Outcome<TestRenderEmailTemplateResult, SESV2Error> TestRenderEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, SESV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, SESV2Error> UpdateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactResult, SESV2Error> UpdateContactOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactListResult, SESV2Error> UpdateContactListOutcome;
         typedef Aws::Utils::Outcome<UpdateCustomVerificationEmailTemplateResult, SESV2Error> UpdateCustomVerificationEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateEmailIdentityPolicyResult, SESV2Error> UpdateEmailIdentityPolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateEmailTemplateResult, SESV2Error> UpdateEmailTemplateOutcome;
 
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
+        typedef std::future<CreateContactListOutcome> CreateContactListOutcomeCallable;
         typedef std::future<CreateCustomVerificationEmailTemplateOutcome> CreateCustomVerificationEmailTemplateOutcomeCallable;
         typedef std::future<CreateDedicatedIpPoolOutcome> CreateDedicatedIpPoolOutcomeCallable;
         typedef std::future<CreateDeliverabilityTestReportOutcome> CreateDeliverabilityTestReportOutcomeCallable;
@@ -273,6 +305,8 @@ namespace Model
         typedef std::future<CreateImportJobOutcome> CreateImportJobOutcomeCallable;
         typedef std::future<DeleteConfigurationSetOutcome> DeleteConfigurationSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<DeleteContactOutcome> DeleteContactOutcomeCallable;
+        typedef std::future<DeleteContactListOutcome> DeleteContactListOutcomeCallable;
         typedef std::future<DeleteCustomVerificationEmailTemplateOutcome> DeleteCustomVerificationEmailTemplateOutcomeCallable;
         typedef std::future<DeleteDedicatedIpPoolOutcome> DeleteDedicatedIpPoolOutcomeCallable;
         typedef std::future<DeleteEmailIdentityOutcome> DeleteEmailIdentityOutcomeCallable;
@@ -283,6 +317,8 @@ namespace Model
         typedef std::future<GetBlacklistReportsOutcome> GetBlacklistReportsOutcomeCallable;
         typedef std::future<GetConfigurationSetOutcome> GetConfigurationSetOutcomeCallable;
         typedef std::future<GetConfigurationSetEventDestinationsOutcome> GetConfigurationSetEventDestinationsOutcomeCallable;
+        typedef std::future<GetContactOutcome> GetContactOutcomeCallable;
+        typedef std::future<GetContactListOutcome> GetContactListOutcomeCallable;
         typedef std::future<GetCustomVerificationEmailTemplateOutcome> GetCustomVerificationEmailTemplateOutcomeCallable;
         typedef std::future<GetDedicatedIpOutcome> GetDedicatedIpOutcomeCallable;
         typedef std::future<GetDedicatedIpsOutcome> GetDedicatedIpsOutcomeCallable;
@@ -296,6 +332,8 @@ namespace Model
         typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
         typedef std::future<GetSuppressedDestinationOutcome> GetSuppressedDestinationOutcomeCallable;
         typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
+        typedef std::future<ListContactListsOutcome> ListContactListsOutcomeCallable;
+        typedef std::future<ListContactsOutcome> ListContactsOutcomeCallable;
         typedef std::future<ListCustomVerificationEmailTemplatesOutcome> ListCustomVerificationEmailTemplatesOutcomeCallable;
         typedef std::future<ListDedicatedIpPoolsOutcome> ListDedicatedIpPoolsOutcomeCallable;
         typedef std::future<ListDeliverabilityTestReportsOutcome> ListDeliverabilityTestReportsOutcomeCallable;
@@ -329,6 +367,8 @@ namespace Model
         typedef std::future<TestRenderEmailTemplateOutcome> TestRenderEmailTemplateOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateConfigurationSetEventDestinationOutcome> UpdateConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
+        typedef std::future<UpdateContactListOutcome> UpdateContactListOutcomeCallable;
         typedef std::future<UpdateCustomVerificationEmailTemplateOutcome> UpdateCustomVerificationEmailTemplateOutcomeCallable;
         typedef std::future<UpdateEmailIdentityPolicyOutcome> UpdateEmailIdentityPolicyOutcomeCallable;
         typedef std::future<UpdateEmailTemplateOutcome> UpdateEmailTemplateOutcomeCallable;
@@ -338,6 +378,8 @@ namespace Model
 
     typedef std::function<void(const SESV2Client*, const Model::CreateConfigurationSetRequest&, const Model::CreateConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateConfigurationSetEventDestinationRequest&, const Model::CreateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::CreateContactListRequest&, const Model::CreateContactListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactListResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateCustomVerificationEmailTemplateRequest&, const Model::CreateCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomVerificationEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateDedicatedIpPoolRequest&, const Model::CreateDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDedicatedIpPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateDeliverabilityTestReportRequest&, const Model::CreateDeliverabilityTestReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeliverabilityTestReportResponseReceivedHandler;
@@ -347,6 +389,8 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::CreateImportJobRequest&, const Model::CreateImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImportJobResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteConfigurationSetRequest&, const Model::DeleteConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::DeleteContactRequest&, const Model::DeleteContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::DeleteContactListRequest&, const Model::DeleteContactListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactListResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteCustomVerificationEmailTemplateRequest&, const Model::DeleteCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomVerificationEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteDedicatedIpPoolRequest&, const Model::DeleteDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDedicatedIpPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteEmailIdentityRequest&, const Model::DeleteEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailIdentityResponseReceivedHandler;
@@ -357,6 +401,8 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::GetBlacklistReportsRequest&, const Model::GetBlacklistReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlacklistReportsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetConfigurationSetRequest&, const Model::GetConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetConfigurationSetEventDestinationsRequest&, const Model::GetConfigurationSetEventDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetEventDestinationsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::GetContactRequest&, const Model::GetContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::GetContactListRequest&, const Model::GetContactListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactListResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetCustomVerificationEmailTemplateRequest&, const Model::GetCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomVerificationEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDedicatedIpRequest&, const Model::GetDedicatedIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDedicatedIpsRequest&, const Model::GetDedicatedIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpsResponseReceivedHandler;
@@ -370,6 +416,8 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetSuppressedDestinationRequest&, const Model::GetSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuppressedDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::ListContactListsRequest&, const Model::ListContactListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactListsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::ListContactsRequest&, const Model::ListContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListCustomVerificationEmailTemplatesRequest&, const Model::ListCustomVerificationEmailTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomVerificationEmailTemplatesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListDedicatedIpPoolsRequest&, const Model::ListDedicatedIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDedicatedIpPoolsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListDeliverabilityTestReportsRequest&, const Model::ListDeliverabilityTestReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliverabilityTestReportsResponseReceivedHandler;
@@ -403,6 +451,8 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::TestRenderEmailTemplateRequest&, const Model::TestRenderEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestRenderEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::UpdateContactListRequest&, const Model::UpdateContactListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactListResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UpdateCustomVerificationEmailTemplateRequest&, const Model::UpdateCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomVerificationEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UpdateEmailIdentityPolicyRequest&, const Model::UpdateEmailIdentityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmailIdentityPolicyResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UpdateEmailTemplateRequest&, const Model::UpdateEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmailTemplateResponseReceivedHandler;
@@ -544,6 +594,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConfigurationSetEventDestinationAsync(const Model::CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a contact, which is an end-user who is receiving the email, and adds
+         * them to a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactOutcome CreateContact(const Model::CreateContactRequest& request) const;
+
+        /**
+         * <p>Creates a contact, which is an end-user who is receiving the email, and adds
+         * them to a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContactOutcomeCallable CreateContactCallable(const Model::CreateContactRequest& request) const;
+
+        /**
+         * <p>Creates a contact, which is an end-user who is receiving the email, and adds
+         * them to a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContactAsync(const Model::CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactListOutcome CreateContactList(const Model::CreateContactListRequest& request) const;
+
+        /**
+         * <p>Creates a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContactListOutcomeCallable CreateContactListCallable(const Model::CreateContactListRequest& request) const;
+
+        /**
+         * <p>Creates a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContactListAsync(const Model::CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new custom verification email template.</p> <p>For more information
@@ -951,6 +1054,59 @@ namespace Model
         virtual void DeleteConfigurationSetEventDestinationAsync(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactOutcome DeleteContact(const Model::DeleteContactRequest& request) const;
+
+        /**
+         * <p>Removes a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContactOutcomeCallable DeleteContactCallable(const Model::DeleteContactRequest& request) const;
+
+        /**
+         * <p>Removes a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContactAsync(const Model::DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a contact list and all of the contacts on that list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactListOutcome DeleteContactList(const Model::DeleteContactListRequest& request) const;
+
+        /**
+         * <p>Deletes a contact list and all of the contacts on that list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContactListOutcomeCallable DeleteContactListCallable(const Model::DeleteContactListRequest& request) const;
+
+        /**
+         * <p>Deletes a contact list and all of the contacts on that list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContactListAsync(const Model::DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
@@ -1292,6 +1448,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConfigurationSetEventDestinationsAsync(const Model::GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContactOutcome GetContact(const Model::GetContactRequest& request) const;
+
+        /**
+         * <p>Returns a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContactOutcomeCallable GetContactCallable(const Model::GetContactRequest& request) const;
+
+        /**
+         * <p>Returns a contact from a contact list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContactAsync(const Model::GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns contact list metadata. It does not return any information about the
+         * contacts present in the list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContactListOutcome GetContactList(const Model::GetContactListRequest& request) const;
+
+        /**
+         * <p>Returns contact list metadata. It does not return any information about the
+         * contacts present in the list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContactListOutcomeCallable GetContactListCallable(const Model::GetContactListRequest& request) const;
+
+        /**
+         * <p>Returns contact list metadata. It does not return any information about the
+         * contacts present in the list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContactListAsync(const Model::GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the custom email verification template for the template name you
@@ -1743,6 +1952,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConfigurationSetsAsync(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all of the contact lists available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContactListsOutcome ListContactLists(const Model::ListContactListsRequest& request) const;
+
+        /**
+         * <p>Lists all of the contact lists available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListContactListsOutcomeCallable ListContactListsCallable(const Model::ListContactListsRequest& request) const;
+
+        /**
+         * <p>Lists all of the contact lists available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListContactListsAsync(const Model::ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the contacts present in a specific contact list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContactsOutcome ListContacts(const Model::ListContactsRequest& request) const;
+
+        /**
+         * <p>Lists the contacts present in a specific contact list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListContactsOutcomeCallable ListContactsCallable(const Model::ListContactsRequest& request) const;
+
+        /**
+         * <p>Lists the contacts present in a specific contact list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListContactsAsync(const Model::ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the existing custom verification email templates for your account in
@@ -2879,6 +3141,65 @@ namespace Model
         virtual void UpdateConfigurationSetEventDestinationAsync(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a contact's preferences for a list. It is not necessary to specify
+         * all existing topic preferences in the TopicPreferences object, just the ones
+         * that need updating.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactOutcome UpdateContact(const Model::UpdateContactRequest& request) const;
+
+        /**
+         * <p>Updates a contact's preferences for a list. It is not necessary to specify
+         * all existing topic preferences in the TopicPreferences object, just the ones
+         * that need updating.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactOutcomeCallable UpdateContactCallable(const Model::UpdateContactRequest& request) const;
+
+        /**
+         * <p>Updates a contact's preferences for a list. It is not necessary to specify
+         * all existing topic preferences in the TopicPreferences object, just the ones
+         * that need updating.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactAsync(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates contact list metadata. This operation does a complete
+         * replacement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactListOutcome UpdateContactList(const Model::UpdateContactListRequest& request) const;
+
+        /**
+         * <p>Updates contact list metadata. This operation does a complete
+         * replacement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactListOutcomeCallable UpdateContactListCallable(const Model::UpdateContactListRequest& request) const;
+
+        /**
+         * <p>Updates contact list metadata. This operation does a complete
+         * replacement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactListAsync(const Model::UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
@@ -3016,6 +3337,8 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateConfigurationSetAsyncHelper(const Model::CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationSetEventDestinationAsyncHelper(const Model::CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContactAsyncHelper(const Model::CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContactListAsyncHelper(const Model::CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomVerificationEmailTemplateAsyncHelper(const Model::CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDedicatedIpPoolAsyncHelper(const Model::CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeliverabilityTestReportAsyncHelper(const Model::CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3025,6 +3348,8 @@ namespace Model
         void CreateImportJobAsyncHelper(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetAsyncHelper(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContactAsyncHelper(const Model::DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContactListAsyncHelper(const Model::DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCustomVerificationEmailTemplateAsyncHelper(const Model::DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDedicatedIpPoolAsyncHelper(const Model::DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEmailIdentityAsyncHelper(const Model::DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3035,6 +3360,8 @@ namespace Model
         void GetBlacklistReportsAsyncHelper(const Model::GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetAsyncHelper(const Model::GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetEventDestinationsAsyncHelper(const Model::GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContactAsyncHelper(const Model::GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContactListAsyncHelper(const Model::GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCustomVerificationEmailTemplateAsyncHelper(const Model::GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDedicatedIpAsyncHelper(const Model::GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDedicatedIpsAsyncHelper(const Model::GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3048,6 +3375,8 @@ namespace Model
         void GetImportJobAsyncHelper(const Model::GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuppressedDestinationAsyncHelper(const Model::GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListContactListsAsyncHelper(const Model::ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListContactsAsyncHelper(const Model::ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCustomVerificationEmailTemplatesAsyncHelper(const Model::ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDedicatedIpPoolsAsyncHelper(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeliverabilityTestReportsAsyncHelper(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3081,6 +3410,8 @@ namespace Model
         void TestRenderEmailTemplateAsyncHelper(const Model::TestRenderEmailTemplateRequest& request, const TestRenderEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetEventDestinationAsyncHelper(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactAsyncHelper(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactListAsyncHelper(const Model::UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCustomVerificationEmailTemplateAsyncHelper(const Model::UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEmailIdentityPolicyAsyncHelper(const Model::UpdateEmailIdentityPolicyRequest& request, const UpdateEmailIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEmailTemplateAsyncHelper(const Model::UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the IAM SAML identity provider used for federated
+   * <p>Describes the IAM SAML identity providers used for federated
    * authentication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FederatedAuthentication">AWS
    * API Reference</a></p>
@@ -80,10 +80,62 @@ namespace Model
      */
     inline FederatedAuthentication& WithSamlProviderArn(const char* value) { SetSamlProviderArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline const Aws::String& GetSelfServiceSamlProviderArn() const{ return m_selfServiceSamlProviderArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline bool SelfServiceSamlProviderArnHasBeenSet() const { return m_selfServiceSamlProviderArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline void SetSelfServiceSamlProviderArn(const Aws::String& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline void SetSelfServiceSamlProviderArn(Aws::String&& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline void SetSelfServiceSamlProviderArn(const char* value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline FederatedAuthentication& WithSelfServiceSamlProviderArn(const Aws::String& value) { SetSelfServiceSamlProviderArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline FederatedAuthentication& WithSelfServiceSamlProviderArn(Aws::String&& value) { SetSelfServiceSamlProviderArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
+     * self-service portal.</p>
+     */
+    inline FederatedAuthentication& WithSelfServiceSamlProviderArn(const char* value) { SetSelfServiceSamlProviderArn(value); return *this;}
+
   private:
 
     Aws::String m_samlProviderArn;
     bool m_samlProviderArnHasBeenSet;
+
+    Aws::String m_selfServiceSamlProviderArn;
+    bool m_selfServiceSamlProviderArnHasBeenSet;
   };
 
 } // namespace Model

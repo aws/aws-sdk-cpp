@@ -137,22 +137,38 @@ namespace Model
 
 
     /**
-     * <p>The time, in seconds, that the generated authorization token is valid.</p>
+     * <p>The time, in seconds, that the generated authorization token is valid. Valid
+     * values are <code>0</code> and any number between <code>900</code> (15 minutes)
+     * and <code>43200</code> (12 hours). A value of <code>0</code> will set the
+     * expiration of the authorization token to the same expiration of the user's
+     * role's temporary credentials.</p>
      */
     inline long long GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
-     * <p>The time, in seconds, that the generated authorization token is valid.</p>
+     * <p>The time, in seconds, that the generated authorization token is valid. Valid
+     * values are <code>0</code> and any number between <code>900</code> (15 minutes)
+     * and <code>43200</code> (12 hours). A value of <code>0</code> will set the
+     * expiration of the authorization token to the same expiration of the user's
+     * role's temporary credentials.</p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
     /**
-     * <p>The time, in seconds, that the generated authorization token is valid.</p>
+     * <p>The time, in seconds, that the generated authorization token is valid. Valid
+     * values are <code>0</code> and any number between <code>900</code> (15 minutes)
+     * and <code>43200</code> (12 hours). A value of <code>0</code> will set the
+     * expiration of the authorization token to the same expiration of the user's
+     * role's temporary credentials.</p>
      */
     inline void SetDurationSeconds(long long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
-     * <p>The time, in seconds, that the generated authorization token is valid.</p>
+     * <p>The time, in seconds, that the generated authorization token is valid. Valid
+     * values are <code>0</code> and any number between <code>900</code> (15 minutes)
+     * and <code>43200</code> (12 hours). A value of <code>0</code> will set the
+     * expiration of the authorization token to the same expiration of the user's
+     * role's temporary credentials.</p>
      */
     inline GetAuthorizationTokenRequest& WithDurationSeconds(long long value) { SetDurationSeconds(value); return *this;}
 

@@ -379,146 +379,42 @@ namespace Model
 
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline bool DefaultActionsHasBeenSet() const { return m_defaultActionsHasBeenSet; }
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline void SetDefaultActions(const Aws::Vector<Action>& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = std::move(value); }
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline CreateListenerRequest& WithDefaultActions(const Aws::Vector<Action>& value) { SetDefaultActions(value); return *this;}
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline CreateListenerRequest& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline CreateListenerRequest& AddDefaultActions(const Action& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
 
     /**
-     * <p>The actions for the default rule. The rule must include one forward action or
-     * one or more fixed-response actions.</p> <p>If the action type is
-     * <code>forward</code>, you specify one or more target groups. The protocol of the
-     * target group must be HTTP or HTTPS for an Application Load Balancer. The
-     * protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network
-     * Load Balancer.</p> <p>[HTTPS listeners] If the action type is
-     * <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If
-     * the action type is <code>authenticate-cognito</code>, you authenticate users
-     * through the user pools supported by Amazon Cognito.</p> <p>[Application Load
-     * Balancer] If the action type is <code>redirect</code>, you redirect specified
-     * client requests from one URL to another.</p> <p>[Application Load Balancer] If
-     * the action type is <code>fixed-response</code>, you drop specified client
-     * requests and return a custom HTTP response.</p>
+     * <p>The actions for the default rule.</p>
      */
     inline CreateListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 

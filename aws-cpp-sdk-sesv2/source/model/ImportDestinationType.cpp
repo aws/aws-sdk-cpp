@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SUPPRESSION_LIST_HASH = HashingUtils::HashString("SUPPRESSION_LIST");
+        static const int CONTACT_LIST_HASH = HashingUtils::HashString("CONTACT_LIST");
 
 
         ImportDestinationType GetImportDestinationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SUPPRESSION_LIST_HASH)
           {
             return ImportDestinationType::SUPPRESSION_LIST;
+          }
+          else if (hashCode == CONTACT_LIST_HASH)
+          {
+            return ImportDestinationType::CONTACT_LIST;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ImportDestinationType::SUPPRESSION_LIST:
             return "SUPPRESSION_LIST";
+          case ImportDestinationType::CONTACT_LIST:
+            return "CONTACT_LIST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

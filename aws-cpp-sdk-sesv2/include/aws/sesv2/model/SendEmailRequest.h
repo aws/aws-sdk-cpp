@@ -10,6 +10,7 @@
 #include <aws/sesv2/model/Destination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/EmailContent.h>
+#include <aws/sesv2/model/ListManagementOptions.h>
 #include <aws/sesv2/model/MessageTag.h>
 #include <utility>
 
@@ -658,6 +659,43 @@ namespace Model
      */
     inline SendEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline const ListManagementOptions& GetListManagementOptions() const{ return m_listManagementOptions; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline bool ListManagementOptionsHasBeenSet() const { return m_listManagementOptionsHasBeenSet; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline void SetListManagementOptions(const ListManagementOptions& value) { m_listManagementOptionsHasBeenSet = true; m_listManagementOptions = value; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline void SetListManagementOptions(ListManagementOptions&& value) { m_listManagementOptionsHasBeenSet = true; m_listManagementOptions = std::move(value); }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline SendEmailRequest& WithListManagementOptions(const ListManagementOptions& value) { SetListManagementOptions(value); return *this;}
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline SendEmailRequest& WithListManagementOptions(ListManagementOptions&& value) { SetListManagementOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fromEmailAddress;
@@ -686,6 +724,9 @@ namespace Model
 
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
+    ListManagementOptions m_listManagementOptions;
+    bool m_listManagementOptionsHasBeenSet;
   };
 
 } // namespace Model

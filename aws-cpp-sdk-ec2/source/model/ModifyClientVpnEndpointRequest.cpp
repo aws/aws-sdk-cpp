@@ -23,7 +23,9 @@ ModifyClientVpnEndpointRequest::ModifyClientVpnEndpointRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_selfServicePortal(SelfServicePortal::NOT_SET),
+    m_selfServicePortalHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,11 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_selfServicePortalHasBeenSet)
+  {
+    ss << "SelfServicePortal=" << SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal) << "&";
   }
 
   ss << "Version=2016-11-15";

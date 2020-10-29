@@ -22,6 +22,8 @@
 #include <aws/sesv2/SESV2ErrorMarshaller.h>
 #include <aws/sesv2/model/CreateConfigurationSetRequest.h>
 #include <aws/sesv2/model/CreateConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/CreateContactRequest.h>
+#include <aws/sesv2/model/CreateContactListRequest.h>
 #include <aws/sesv2/model/CreateCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/CreateDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/CreateDeliverabilityTestReportRequest.h>
@@ -31,6 +33,8 @@
 #include <aws/sesv2/model/CreateImportJobRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/DeleteContactRequest.h>
+#include <aws/sesv2/model/DeleteContactListRequest.h>
 #include <aws/sesv2/model/DeleteCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/DeleteDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/DeleteEmailIdentityRequest.h>
@@ -41,6 +45,8 @@
 #include <aws/sesv2/model/GetBlacklistReportsRequest.h>
 #include <aws/sesv2/model/GetConfigurationSetRequest.h>
 #include <aws/sesv2/model/GetConfigurationSetEventDestinationsRequest.h>
+#include <aws/sesv2/model/GetContactRequest.h>
+#include <aws/sesv2/model/GetContactListRequest.h>
 #include <aws/sesv2/model/GetCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpsRequest.h>
@@ -54,6 +60,8 @@
 #include <aws/sesv2/model/GetImportJobRequest.h>
 #include <aws/sesv2/model/GetSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/ListConfigurationSetsRequest.h>
+#include <aws/sesv2/model/ListContactListsRequest.h>
+#include <aws/sesv2/model/ListContactsRequest.h>
 #include <aws/sesv2/model/ListCustomVerificationEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListDedicatedIpPoolsRequest.h>
 #include <aws/sesv2/model/ListDeliverabilityTestReportsRequest.h>
@@ -87,6 +95,8 @@
 #include <aws/sesv2/model/TestRenderEmailTemplateRequest.h>
 #include <aws/sesv2/model/UntagResourceRequest.h>
 #include <aws/sesv2/model/UpdateConfigurationSetEventDestinationRequest.h>
+#include <aws/sesv2/model/UpdateContactRequest.h>
+#include <aws/sesv2/model/UpdateContactListRequest.h>
 #include <aws/sesv2/model/UpdateCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/UpdateEmailIdentityPolicyRequest.h>
 #include <aws/sesv2/model/UpdateEmailTemplateRequest.h>
@@ -223,6 +233,67 @@ void SESV2Client::CreateConfigurationSetEventDestinationAsync(const CreateConfig
 void SESV2Client::CreateConfigurationSetEventDestinationAsyncHelper(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateConfigurationSetEventDestination(request), context);
+}
+
+CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateContact", "Required field: ContactListName, is not set");
+    return CreateContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  ss << "/contacts";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateContactOutcomeCallable SESV2Client::CreateContactCallable(const CreateContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContactAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateContactAsyncHelper(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContact(request), context);
+}
+
+CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateContactListOutcomeCallable SESV2Client::CreateContactListCallable(const CreateContactListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContactListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContactList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::CreateContactListAsync(const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContactListAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::CreateContactListAsyncHelper(const CreateContactListRequest& request, const CreateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContactList(request), context);
 }
 
 CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
@@ -498,6 +569,79 @@ void SESV2Client::DeleteConfigurationSetEventDestinationAsync(const DeleteConfig
 void SESV2Client::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+}
+
+DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContact", "Required field: ContactListName, is not set");
+    return DeleteContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  if (!request.EmailAddressHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContact", "Required field: EmailAddress, is not set");
+    return DeleteContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  ss << "/contacts/";
+  ss << request.GetEmailAddress();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteContactOutcomeCallable SESV2Client::DeleteContactCallable(const DeleteContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteContactAsyncHelper(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContact(request), context);
+}
+
+DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContactList", "Required field: ContactListName, is not set");
+    return DeleteContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteContactListOutcomeCallable SESV2Client::DeleteContactListCallable(const DeleteContactListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContactList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteContactListAsync(const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactListAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteContactListAsyncHelper(const DeleteContactListRequest& request, const DeleteContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContactList(request), context);
 }
 
 DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
@@ -829,6 +973,79 @@ void SESV2Client::GetConfigurationSetEventDestinationsAsync(const GetConfigurati
 void SESV2Client::GetConfigurationSetEventDestinationsAsyncHelper(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetConfigurationSetEventDestinations(request), context);
+}
+
+GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContact", "Required field: ContactListName, is not set");
+    return GetContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  if (!request.EmailAddressHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContact", "Required field: EmailAddress, is not set");
+    return GetContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  ss << "/contacts/";
+  ss << request.GetEmailAddress();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetContactOutcomeCallable SESV2Client::GetContactCallable(const GetContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContactAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetContactAsyncHelper(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContact(request), context);
+}
+
+GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContactList", "Required field: ContactListName, is not set");
+    return GetContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetContactListOutcomeCallable SESV2Client::GetContactListCallable(const GetContactListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContactListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetContactListAsync(const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContactListAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetContactListAsyncHelper(const GetContactListRequest& request, const GetContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContactList(request), context);
 }
 
 GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
@@ -1251,6 +1468,67 @@ void SESV2Client::ListConfigurationSetsAsync(const ListConfigurationSetsRequest&
 void SESV2Client::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConfigurationSets(request), context);
+}
+
+ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListContactListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListContactListsOutcomeCallable SESV2Client::ListContactListsCallable(const ListContactListsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListContactListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContactLists(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListContactListsAsync(const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListContactListsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListContactListsAsyncHelper(const ListContactListsRequest& request, const ListContactListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListContactLists(request), context);
+}
+
+ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListContacts", "Required field: ContactListName, is not set");
+    return ListContactsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  ss << "/contacts";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListContactsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListContactsOutcomeCallable SESV2Client::ListContactsCallable(const ListContactsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListContactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContacts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListContactsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListContactsAsyncHelper(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListContacts(request), context);
 }
 
 ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
@@ -2271,6 +2549,79 @@ void SESV2Client::UpdateConfigurationSetEventDestinationAsync(const UpdateConfig
 void SESV2Client::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+}
+
+UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContact", "Required field: ContactListName, is not set");
+    return UpdateContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  if (!request.EmailAddressHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContact", "Required field: EmailAddress, is not set");
+    return UpdateContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  ss << "/contacts/";
+  ss << request.GetEmailAddress();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateContactOutcomeCallable SESV2Client::UpdateContactCallable(const UpdateContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContact(request), context);
+}
+
+UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListRequest& request) const
+{
+  if (!request.ContactListNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactList", "Required field: ContactListName, is not set");
+    return UpdateContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/contact-lists/";
+  ss << request.GetContactListName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateContactListOutcomeCallable SESV2Client::UpdateContactListCallable(const UpdateContactListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContactList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::UpdateContactListAsync(const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactListAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::UpdateContactListAsyncHelper(const UpdateContactListRequest& request, const UpdateContactListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContactList(request), context);
 }
 
 UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const

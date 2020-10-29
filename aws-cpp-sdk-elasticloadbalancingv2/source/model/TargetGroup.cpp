@@ -45,7 +45,8 @@ TargetGroup::TargetGroup() :
     m_matcherHasBeenSet(false),
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ TargetGroup::TargetGroup(const XmlNode& xmlNode) :
     m_matcherHasBeenSet(false),
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -187,6 +189,12 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
       m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()).c_str());
       m_targetTypeHasBeenSet = true;
     }
+    XmlNode protocolVersionNode = resultNode.FirstChild("ProtocolVersion");
+    if(!protocolVersionNode.IsNull())
+    {
+      m_protocolVersion = Aws::Utils::Xml::DecodeEscapedXmlText(protocolVersionNode.GetText());
+      m_protocolVersionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -280,6 +288,11 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
   }
 
+  if(m_protocolVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
+  }
+
 }
 
 void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -353,6 +366,10 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_targetTypeHasBeenSet)
   {
       oStream << location << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+  }
+  if(m_protocolVersionHasBeenSet)
+  {
+      oStream << location << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
   }
 }
 

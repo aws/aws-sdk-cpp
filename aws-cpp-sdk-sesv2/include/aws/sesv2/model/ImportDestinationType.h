@@ -16,7 +16,8 @@ namespace Model
   enum class ImportDestinationType
   {
     NOT_SET,
-    SUPPRESSION_LIST
+    SUPPRESSION_LIST,
+    CONTACT_LIST
   };
 
 namespace ImportDestinationTypeMapper

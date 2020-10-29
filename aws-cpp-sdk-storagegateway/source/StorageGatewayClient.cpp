@@ -98,6 +98,7 @@
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeRequest.h>
 #include <aws/storagegateway/model/UpdateNFSFileShareRequest.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareRequest.h>
+#include <aws/storagegateway/model/UpdateSMBFileShareVisibilityRequest.h>
 #include <aws/storagegateway/model/UpdateSMBSecurityStrategyRequest.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeRequest.h>
@@ -2279,6 +2280,33 @@ void StorageGatewayClient::UpdateSMBFileShareAsync(const UpdateSMBFileShareReque
 void StorageGatewayClient::UpdateSMBFileShareAsyncHelper(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSMBFileShare(request), context);
+}
+
+UpdateSMBFileShareVisibilityOutcome StorageGatewayClient::UpdateSMBFileShareVisibility(const UpdateSMBFileShareVisibilityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateSMBFileShareVisibilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSMBFileShareVisibilityOutcomeCallable StorageGatewayClient::UpdateSMBFileShareVisibilityCallable(const UpdateSMBFileShareVisibilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSMBFileShareVisibilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSMBFileShareVisibility(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateSMBFileShareVisibilityAsync(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBFileShareVisibilityAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateSMBFileShareVisibilityAsyncHelper(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSMBFileShareVisibility(request), context);
 }
 
 UpdateSMBSecurityStrategyOutcome StorageGatewayClient::UpdateSMBSecurityStrategy(const UpdateSMBSecurityStrategyRequest& request) const

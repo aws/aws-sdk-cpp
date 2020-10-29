@@ -7,6 +7,8 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/CodeArtifactRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codeartifact/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +249,47 @@ namespace Model
      */
     inline CreateDomainRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>One or more tag key-value pairs for the domain.</p>
+     */
+    inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domain;
@@ -254,6 +297,9 @@ namespace Model
 
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

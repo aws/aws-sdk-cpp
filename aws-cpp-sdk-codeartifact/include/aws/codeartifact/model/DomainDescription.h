@@ -322,6 +322,55 @@ namespace Model
      */
     inline DomainDescription& WithAssetSizeBytes(long long value) { SetAssetSizeBytes(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline DomainDescription& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline DomainDescription& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store
+     * package assets in the domain.</p>
+     */
+    inline DomainDescription& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -347,6 +396,9 @@ namespace Model
 
     long long m_assetSizeBytes;
     bool m_assetSizeBytesHasBeenSet;
+
+    Aws::String m_s3BucketArn;
+    bool m_s3BucketArnHasBeenSet;
   };
 
 } // namespace Model

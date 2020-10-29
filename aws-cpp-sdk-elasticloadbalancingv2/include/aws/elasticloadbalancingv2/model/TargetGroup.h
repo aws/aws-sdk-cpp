@@ -416,78 +416,78 @@ namespace Model
 
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline TargetGroup& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline TargetGroup& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
@@ -596,6 +596,55 @@ namespace Model
      */
     inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline const Aws::String& GetProtocolVersion() const{ return m_protocolVersion; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(const Aws::String& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(Aws::String&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(const char* value) { m_protocolVersionHasBeenSet = true; m_protocolVersion.assign(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(const Aws::String& value) { SetProtocolVersion(value); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(Aws::String&& value) { SetProtocolVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+
   private:
 
     Aws::String m_targetGroupArn;
@@ -645,6 +694,9 @@ namespace Model
 
     TargetTypeEnum m_targetType;
     bool m_targetTypeHasBeenSet;
+
+    Aws::String m_protocolVersion;
+    bool m_protocolVersionHasBeenSet;
   };
 
 } // namespace Model

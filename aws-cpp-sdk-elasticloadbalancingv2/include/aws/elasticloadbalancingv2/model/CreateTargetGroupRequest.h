@@ -154,6 +154,71 @@ namespace Model
 
 
     /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline const Aws::String& GetProtocolVersion() const{ return m_protocolVersion; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline void SetProtocolVersion(const Aws::String& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline void SetProtocolVersion(Aws::String&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline void SetProtocolVersion(const char* value) { m_protocolVersionHasBeenSet = true; m_protocolVersion.assign(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline CreateTargetGroupRequest& WithProtocolVersion(const Aws::String& value) { SetProtocolVersion(value); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline CreateTargetGroupRequest& WithProtocolVersion(Aws::String&& value) { SetProtocolVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send
+     * requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to
+     * targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to
+     * targets using HTTP/1.1.</p>
+     */
+    inline CreateTargetGroupRequest& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+
+
+    /**
      * <p>The port on which the targets receive traffic. This port is used unless you
      * specify a port override when registering the target. If the target is a Lambda
      * function, this parameter does not apply.</p>
@@ -385,50 +450,66 @@ namespace Model
 
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
-     * targets for health checks. The default is /.</p>
+     * <p>[HTTP/HTTPS health checks] The destination for health checks on the
+     * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
+     * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
+     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
@@ -582,37 +663,37 @@ namespace Model
 
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline CreateTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
      * successful response from a target.</p>
      */
     inline CreateTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
@@ -750,6 +831,9 @@ namespace Model
 
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
+    Aws::String m_protocolVersion;
+    bool m_protocolVersionHasBeenSet;
 
     int m_port;
     bool m_portHasBeenSet;

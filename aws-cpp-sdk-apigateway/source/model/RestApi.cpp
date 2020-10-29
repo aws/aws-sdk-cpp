@@ -32,7 +32,9 @@ RestApi::RestApi() :
     m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ RestApi::RestApi(JsonView jsonValue) :
     m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +154,13 @@ RestApi& RestApi::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
+  {
+    m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
+
+    m_disableExecuteApiEndpointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -239,6 +250,12 @@ JsonValue RestApi::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_disableExecuteApiEndpointHasBeenSet)
+  {
+   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
 
   }
 

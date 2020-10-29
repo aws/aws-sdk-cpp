@@ -19,12 +19,14 @@ namespace Model
 {
 
 ImportDestination::ImportDestination() : 
-    m_suppressionListDestinationHasBeenSet(false)
+    m_suppressionListDestinationHasBeenSet(false),
+    m_contactListDestinationHasBeenSet(false)
 {
 }
 
 ImportDestination::ImportDestination(JsonView jsonValue) : 
-    m_suppressionListDestinationHasBeenSet(false)
+    m_suppressionListDestinationHasBeenSet(false),
+    m_contactListDestinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ImportDestination& ImportDestination::operator =(JsonView jsonValue)
     m_suppressionListDestinationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContactListDestination"))
+  {
+    m_contactListDestination = jsonValue.GetObject("ContactListDestination");
+
+    m_contactListDestinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ImportDestination::Jsonize() const
   if(m_suppressionListDestinationHasBeenSet)
   {
    payload.WithObject("SuppressionListDestination", m_suppressionListDestination.Jsonize());
+
+  }
+
+  if(m_contactListDestinationHasBeenSet)
+  {
+   payload.WithObject("ContactListDestination", m_contactListDestination.Jsonize());
 
   }
 

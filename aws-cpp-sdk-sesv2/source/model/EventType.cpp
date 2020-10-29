@@ -29,6 +29,7 @@ namespace Aws
         static const int CLICK_HASH = HashingUtils::HashString("CLICK");
         static const int RENDERING_FAILURE_HASH = HashingUtils::HashString("RENDERING_FAILURE");
         static const int DELIVERY_DELAY_HASH = HashingUtils::HashString("DELIVERY_DELAY");
+        static const int SUBSCRIPTION_HASH = HashingUtils::HashString("SUBSCRIPTION");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return EventType::DELIVERY_DELAY;
           }
+          else if (hashCode == SUBSCRIPTION_HASH)
+          {
+            return EventType::SUBSCRIPTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "RENDERING_FAILURE";
           case EventType::DELIVERY_DELAY:
             return "DELIVERY_DELAY";
+          case EventType::SUBSCRIPTION:
+            return "SUBSCRIPTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

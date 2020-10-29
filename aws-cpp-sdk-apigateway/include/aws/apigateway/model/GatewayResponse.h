@@ -64,8 +64,7 @@ namespace Model
    * \"stage\": \"$context.stage\",\n \"resourcePath\": \"$context.resourcePath\",\n
    * \"stageVariables.a\": \"$stageVariables.a\",\n \"statusCode\":
    * \"&apos;404&apos;\"\n}" }, "responseType": "MISSING_AUTHENTICATION_TOKEN",
-   * "statusCode": "404" }</code></pre> <p></p> </div> </div> <div class="seeAlso">
-   * <a
+   * "statusCode": "404" }</code></pre> <p/> </div> </div> <div class="seeAlso"> <a
    * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
    * Gateway Responses</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponse">AWS

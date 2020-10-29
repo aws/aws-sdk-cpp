@@ -285,6 +285,22 @@ namespace Model
      */
     inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The shares on this gateway appear when listing shares.</p>
+     */
+    inline bool GetFileSharesVisible() const{ return m_fileSharesVisible; }
+
+    /**
+     * <p>The shares on this gateway appear when listing shares.</p>
+     */
+    inline void SetFileSharesVisible(bool value) { m_fileSharesVisible = value; }
+
+    /**
+     * <p>The shares on this gateway appear when listing shares.</p>
+     */
+    inline DescribeSMBSettingsResult& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -296,6 +312,8 @@ namespace Model
     bool m_sMBGuestPasswordSet;
 
     SMBSecurityStrategy m_sMBSecurityStrategy;
+
+    bool m_fileSharesVisible;
   };
 
 } // namespace Model

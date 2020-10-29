@@ -708,6 +708,47 @@ namespace Model
      */
     inline NFSFileShareInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The notification policy of the file share.</p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
+
   private:
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
@@ -769,6 +810,9 @@ namespace Model
 
     CacheAttributes m_cacheAttributes;
     bool m_cacheAttributesHasBeenSet;
+
+    Aws::String m_notificationPolicy;
+    bool m_notificationPolicyHasBeenSet;
   };
 
 } // namespace Model

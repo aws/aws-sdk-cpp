@@ -20,7 +20,8 @@ CreateRepositoryRequest::CreateRepositoryRequest() :
     m_domainOwnerHasBeenSet(false),
     m_repositoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_upstreamsHasBeenSet(false)
+    m_upstreamsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,17 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
      upstreamsJsonList[upstreamsIndex].AsObject(m_upstreams[upstreamsIndex].Jsonize());
    }
    payload.WithArray("upstreams", std::move(upstreamsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

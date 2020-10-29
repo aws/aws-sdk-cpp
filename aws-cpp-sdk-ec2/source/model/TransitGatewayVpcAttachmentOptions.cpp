@@ -24,7 +24,9 @@ TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions() :
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false)
+    m_ipv6SupportHasBeenSet(false),
+    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
+    m_applianceModeSupportHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions(const Xml
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false)
+    m_ipv6SupportHasBeenSet(false),
+    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
+    m_applianceModeSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +59,12 @@ TransitGatewayVpcAttachmentOptions& TransitGatewayVpcAttachmentOptions::operator
       m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportNode.GetText()).c_str()).c_str());
       m_ipv6SupportHasBeenSet = true;
     }
+    XmlNode applianceModeSupportNode = resultNode.FirstChild("applianceModeSupport");
+    if(!applianceModeSupportNode.IsNull())
+    {
+      m_applianceModeSupport = ApplianceModeSupportValueMapper::GetApplianceModeSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applianceModeSupportNode.GetText()).c_str()).c_str());
+      m_applianceModeSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -72,6 +82,11 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
   }
 
+  if(m_applianceModeSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
+  }
+
 }
 
 void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -83,6 +98,10 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
   if(m_ipv6SupportHasBeenSet)
   {
       oStream << location << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
+  }
+  if(m_applianceModeSupportHasBeenSet)
+  {
+      oStream << location << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
   }
 }
 

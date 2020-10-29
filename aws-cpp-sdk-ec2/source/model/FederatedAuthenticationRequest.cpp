@@ -21,12 +21,14 @@ namespace Model
 {
 
 FederatedAuthenticationRequest::FederatedAuthenticationRequest() : 
-    m_sAMLProviderArnHasBeenSet(false)
+    m_sAMLProviderArnHasBeenSet(false),
+    m_selfServiceSAMLProviderArnHasBeenSet(false)
 {
 }
 
 FederatedAuthenticationRequest::FederatedAuthenticationRequest(const XmlNode& xmlNode) : 
-    m_sAMLProviderArnHasBeenSet(false)
+    m_sAMLProviderArnHasBeenSet(false),
+    m_selfServiceSAMLProviderArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ FederatedAuthenticationRequest& FederatedAuthenticationRequest::operator =(const
       m_sAMLProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(sAMLProviderArnNode.GetText());
       m_sAMLProviderArnHasBeenSet = true;
     }
+    XmlNode selfServiceSAMLProviderArnNode = resultNode.FirstChild("SelfServiceSAMLProviderArn");
+    if(!selfServiceSAMLProviderArnNode.IsNull())
+    {
+      m_selfServiceSAMLProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(selfServiceSAMLProviderArnNode.GetText());
+      m_selfServiceSAMLProviderArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void FederatedAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
 
+  if(m_selfServiceSAMLProviderArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SelfServiceSAMLProviderArn=" << StringUtils::URLEncode(m_selfServiceSAMLProviderArn.c_str()) << "&";
+  }
+
 }
 
 void FederatedAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void FederatedAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const
   if(m_sAMLProviderArnHasBeenSet)
   {
       oStream << location << ".SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  }
+  if(m_selfServiceSAMLProviderArnHasBeenSet)
+  {
+      oStream << location << ".SelfServiceSAMLProviderArn=" << StringUtils::URLEncode(m_selfServiceSAMLProviderArn.c_str()) << "&";
   }
 }
 

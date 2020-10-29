@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/DnsSupportValue.h>
 #include <aws/ec2/model/Ipv6SupportValue.h>
+#include <aws/ec2/model/ApplianceModeSupportValue.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,37 @@ namespace Model
      */
     inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(Ipv6SupportValue&& value) { SetIpv6Support(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline const ApplianceModeSupportValue& GetApplianceModeSupport() const{ return m_applianceModeSupport; }
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline bool ApplianceModeSupportHasBeenSet() const { return m_applianceModeSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline void SetApplianceModeSupport(const ApplianceModeSupportValue& value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline void SetApplianceModeSupport(ApplianceModeSupportValue&& value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline TransitGatewayVpcAttachmentOptions& WithApplianceModeSupport(const ApplianceModeSupportValue& value) { SetApplianceModeSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether appliance mode support is enabled.</p>
+     */
+    inline TransitGatewayVpcAttachmentOptions& WithApplianceModeSupport(ApplianceModeSupportValue&& value) { SetApplianceModeSupport(std::move(value)); return *this;}
+
   private:
 
     DnsSupportValue m_dnsSupport;
@@ -108,6 +140,9 @@ namespace Model
 
     Ipv6SupportValue m_ipv6Support;
     bool m_ipv6SupportHasBeenSet;
+
+    ApplianceModeSupportValue m_applianceModeSupport;
+    bool m_applianceModeSupportHasBeenSet;
   };
 
 } // namespace Model

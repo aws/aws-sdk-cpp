@@ -40,6 +40,8 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_requesterPaysHasBeenSet(false),
     m_sMBACLEnabled(false),
     m_sMBACLEnabledHasBeenSet(false),
+    m_accessBasedEnumeration(false),
+    m_accessBasedEnumerationHasBeenSet(false),
     m_adminUserListHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
@@ -49,7 +51,8 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_caseSensitivityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
 }
 
@@ -75,6 +78,8 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_requesterPaysHasBeenSet(false),
     m_sMBACLEnabled(false),
     m_sMBACLEnabledHasBeenSet(false),
+    m_accessBasedEnumeration(false),
+    m_accessBasedEnumerationHasBeenSet(false),
     m_adminUserListHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
@@ -84,7 +89,8 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_caseSensitivityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +202,13 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_sMBACLEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccessBasedEnumeration"))
+  {
+    m_accessBasedEnumeration = jsonValue.GetBool("AccessBasedEnumeration");
+
+    m_accessBasedEnumerationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AdminUserList"))
   {
     Array<JsonView> adminUserListJsonList = jsonValue.GetArray("AdminUserList");
@@ -269,6 +282,13 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
 
     m_cacheAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationPolicy"))
+  {
+    m_notificationPolicy = jsonValue.GetString("NotificationPolicy");
+
+    m_notificationPolicyHasBeenSet = true;
   }
 
   return *this;
@@ -367,6 +387,12 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   }
 
+  if(m_accessBasedEnumerationHasBeenSet)
+  {
+   payload.WithBool("AccessBasedEnumeration", m_accessBasedEnumeration);
+
+  }
+
   if(m_adminUserListHasBeenSet)
   {
    Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
@@ -437,6 +463,12 @@ JsonValue SMBFileShareInfo::Jsonize() const
   if(m_cacheAttributesHasBeenSet)
   {
    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_notificationPolicyHasBeenSet)
+  {
+   payload.WithString("NotificationPolicy", m_notificationPolicy);
 
   }
 

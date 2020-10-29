@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
 #include <aws/ec2/model/TransportProtocol.h>
+#include <aws/ec2/model/SelfServicePortal.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -744,6 +745,43 @@ namespace Model
      */
     inline CreateClientVpnEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline const SelfServicePortal& GetSelfServicePortal() const{ return m_selfServicePortal; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline bool SelfServicePortalHasBeenSet() const { return m_selfServicePortalHasBeenSet; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline void SetSelfServicePortal(const SelfServicePortal& value) { m_selfServicePortalHasBeenSet = true; m_selfServicePortal = value; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline void SetSelfServicePortal(SelfServicePortal&& value) { m_selfServicePortalHasBeenSet = true; m_selfServicePortal = std::move(value); }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithSelfServicePortal(const SelfServicePortal& value) { SetSelfServicePortal(value); return *this;}
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithSelfServicePortal(SelfServicePortal&& value) { SetSelfServicePortal(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientCidrBlock;
@@ -787,6 +825,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    SelfServicePortal m_selfServicePortal;
+    bool m_selfServicePortalHasBeenSet;
   };
 
 } // namespace Model

@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetRestApiResult::GetRestApiResult() : 
     m_minimumCompressionSize(0),
-    m_apiKeySource(ApiKeySourceType::NOT_SET)
+    m_apiKeySource(ApiKeySourceType::NOT_SET),
+    m_disableExecuteApiEndpoint(false)
 {
 }
 
 GetRestApiResult::GetRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_minimumCompressionSize(0),
-    m_apiKeySource(ApiKeySourceType::NOT_SET)
+    m_apiKeySource(ApiKeySourceType::NOT_SET),
+    m_disableExecuteApiEndpoint(false)
 {
   *this = result;
 }
@@ -111,6 +113,12 @@ GetRestApiResult& GetRestApiResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
+  {
+    m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
+
   }
 
 

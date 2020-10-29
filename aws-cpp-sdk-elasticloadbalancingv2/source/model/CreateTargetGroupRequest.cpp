@@ -14,6 +14,7 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_nameHasBeenSet(false),
     m_protocol(ProtocolEnum::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
@@ -50,6 +51,11 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_protocolHasBeenSet)
   {
     ss << "Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+  }
+
+  if(m_protocolVersionHasBeenSet)
+  {
+    ss << "ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
   }
 
   if(m_portHasBeenSet)
