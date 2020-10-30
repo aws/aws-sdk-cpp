@@ -12,10 +12,12 @@
 #include <aws/medialive/model/HlsCodecSpecification.h>
 #include <aws/medialive/model/OutputLocationRef.h>
 #include <aws/medialive/model/HlsDirectoryStructure.h>
+#include <aws/medialive/model/HlsDiscontinuityTags.h>
 #include <aws/medialive/model/HlsEncryptionType.h>
 #include <aws/medialive/model/HlsCdnSettings.h>
 #include <aws/medialive/model/HlsId3SegmentTaggingState.h>
 #include <aws/medialive/model/IFrameOnlyPlaylistType.h>
+#include <aws/medialive/model/HlsIncompleteSegmentBehavior.h>
 #include <aws/medialive/model/InputLossActionForHlsOut.h>
 #include <aws/medialive/model/HlsIvInManifest.h>
 #include <aws/medialive/model/HlsIvSource.h>
@@ -734,6 +736,79 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline const HlsDiscontinuityTags& GetDiscontinuityTags() const{ return m_discontinuityTags; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline bool DiscontinuityTagsHasBeenSet() const { return m_discontinuityTagsHasBeenSet; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline void SetDiscontinuityTags(const HlsDiscontinuityTags& value) { m_discontinuityTagsHasBeenSet = true; m_discontinuityTags = value; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline void SetDiscontinuityTags(HlsDiscontinuityTags&& value) { m_discontinuityTagsHasBeenSet = true; m_discontinuityTags = std::move(value); }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline HlsGroupSettings& WithDiscontinuityTags(const HlsDiscontinuityTags& value) { SetDiscontinuityTags(value); return *this;}
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline HlsGroupSettings& WithDiscontinuityTags(HlsDiscontinuityTags&& value) { SetDiscontinuityTags(std::move(value)); return *this;}
+
+
+    /**
      * Encrypts the segments with the given encryption scheme.  Exclude this parameter
      * if no encryption is desired.
      */
@@ -909,6 +984,79 @@ STANDARD: Create an
      * #EXT-X-BYTERANGE:160364@1461888"
      */
     inline HlsGroupSettings& WithIFrameOnlyPlaylists(IFrameOnlyPlaylistType&& value) { SetIFrameOnlyPlaylists(std::move(value)); return *this;}
+
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline const HlsIncompleteSegmentBehavior& GetIncompleteSegmentBehavior() const{ return m_incompleteSegmentBehavior; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline bool IncompleteSegmentBehaviorHasBeenSet() const { return m_incompleteSegmentBehaviorHasBeenSet; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline void SetIncompleteSegmentBehavior(const HlsIncompleteSegmentBehavior& value) { m_incompleteSegmentBehaviorHasBeenSet = true; m_incompleteSegmentBehavior = value; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline void SetIncompleteSegmentBehavior(HlsIncompleteSegmentBehavior&& value) { m_incompleteSegmentBehaviorHasBeenSet = true; m_incompleteSegmentBehavior = std::move(value); }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline HlsGroupSettings& WithIncompleteSegmentBehavior(const HlsIncompleteSegmentBehavior& value) { SetIncompleteSegmentBehavior(value); return *this;}
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline HlsGroupSettings& WithIncompleteSegmentBehavior(HlsIncompleteSegmentBehavior&& value) { SetIncompleteSegmentBehavior(std::move(value)); return *this;}
 
 
     /**
@@ -2024,6 +2172,9 @@ SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
     HlsDirectoryStructure m_directoryStructure;
     bool m_directoryStructureHasBeenSet;
 
+    HlsDiscontinuityTags m_discontinuityTags;
+    bool m_discontinuityTagsHasBeenSet;
+
     HlsEncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
 
@@ -2035,6 +2186,9 @@ SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
 
     IFrameOnlyPlaylistType m_iFrameOnlyPlaylists;
     bool m_iFrameOnlyPlaylistsHasBeenSet;
+
+    HlsIncompleteSegmentBehavior m_incompleteSegmentBehavior;
+    bool m_incompleteSegmentBehaviorHasBeenSet;
 
     int m_indexNSegments;
     bool m_indexNSegmentsHasBeenSet;

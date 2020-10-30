@@ -28,7 +28,8 @@ QuantumTaskSummary::QuantumTaskSummary() :
     m_shots(0),
     m_shotsHasBeenSet(false),
     m_status(QuantumTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ QuantumTaskSummary::QuantumTaskSummary(JsonView jsonValue) :
     m_shots(0),
     m_shotsHasBeenSet(false),
     m_status(QuantumTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,16 @@ QuantumTaskSummary& QuantumTaskSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +167,17 @@ JsonValue QuantumTaskSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", QuantumTaskStatusMapper::GetNameForQuantumTaskStatus(m_status));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload;

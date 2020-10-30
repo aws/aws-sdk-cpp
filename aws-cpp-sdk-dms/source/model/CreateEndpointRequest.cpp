@@ -46,7 +46,8 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+    m_resourceIdentifierHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_resourceIdentifierHasBeenSet)
   {
    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
+
+  }
+
+  if(m_docDbSettingsHasBeenSet)
+  {
+   payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
 
   }
 

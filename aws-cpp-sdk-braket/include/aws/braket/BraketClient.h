@@ -15,8 +15,11 @@
 #include <aws/braket/model/CreateQuantumTaskResult.h>
 #include <aws/braket/model/GetDeviceResult.h>
 #include <aws/braket/model/GetQuantumTaskResult.h>
+#include <aws/braket/model/ListTagsForResourceResult.h>
 #include <aws/braket/model/SearchDevicesResult.h>
 #include <aws/braket/model/SearchQuantumTasksResult.h>
+#include <aws/braket/model/TagResourceResult.h>
+#include <aws/braket/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -60,22 +63,31 @@ namespace Model
         class CreateQuantumTaskRequest;
         class GetDeviceRequest;
         class GetQuantumTaskRequest;
+        class ListTagsForResourceRequest;
         class SearchDevicesRequest;
         class SearchQuantumTasksRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CancelQuantumTaskResult, BraketError> CancelQuantumTaskOutcome;
         typedef Aws::Utils::Outcome<CreateQuantumTaskResult, BraketError> CreateQuantumTaskOutcome;
         typedef Aws::Utils::Outcome<GetDeviceResult, BraketError> GetDeviceOutcome;
         typedef Aws::Utils::Outcome<GetQuantumTaskResult, BraketError> GetQuantumTaskOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BraketError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<SearchDevicesResult, BraketError> SearchDevicesOutcome;
         typedef Aws::Utils::Outcome<SearchQuantumTasksResult, BraketError> SearchQuantumTasksOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, BraketError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, BraketError> UntagResourceOutcome;
 
         typedef std::future<CancelQuantumTaskOutcome> CancelQuantumTaskOutcomeCallable;
         typedef std::future<CreateQuantumTaskOutcome> CreateQuantumTaskOutcomeCallable;
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
         typedef std::future<GetQuantumTaskOutcome> GetQuantumTaskOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<SearchDevicesOutcome> SearchDevicesOutcomeCallable;
         typedef std::future<SearchQuantumTasksOutcome> SearchQuantumTasksOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class BraketClient;
@@ -84,8 +96,11 @@ namespace Model
     typedef std::function<void(const BraketClient*, const Model::CreateQuantumTaskRequest&, const Model::CreateQuantumTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuantumTaskResponseReceivedHandler;
     typedef std::function<void(const BraketClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const BraketClient*, const Model::GetQuantumTaskRequest&, const Model::GetQuantumTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuantumTaskResponseReceivedHandler;
+    typedef std::function<void(const BraketClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BraketClient*, const Model::SearchDevicesRequest&, const Model::SearchDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDevicesResponseReceivedHandler;
     typedef std::function<void(const BraketClient*, const Model::SearchQuantumTasksRequest&, const Model::SearchQuantumTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuantumTasksResponseReceivedHandler;
+    typedef std::function<void(const BraketClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const BraketClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>The Amazon Braket API Reference provides information about the operations and
@@ -219,6 +234,31 @@ namespace Model
         virtual void GetQuantumTaskAsync(const Model::GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Shows the tags associated with this resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Shows the tags associated with this resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Shows the tags associated with this resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches for devices using the specified filters.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchDevices">AWS
@@ -274,6 +314,56 @@ namespace Model
          */
         virtual void SearchQuantumTasksAsync(const Model::SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -282,8 +372,11 @@ namespace Model
         void CreateQuantumTaskAsyncHelper(const Model::CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQuantumTaskAsyncHelper(const Model::GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchDevicesAsyncHelper(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchQuantumTasksAsyncHelper(const Model::SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

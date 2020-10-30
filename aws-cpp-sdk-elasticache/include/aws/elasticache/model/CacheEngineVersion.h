@@ -126,7 +126,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
@@ -134,7 +135,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }
 
@@ -142,7 +144,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
@@ -150,7 +153,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = std::move(value); }
 
@@ -158,7 +162,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
@@ -166,7 +171,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline CacheEngineVersion& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
@@ -174,7 +180,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline CacheEngineVersion& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(std::move(value)); return *this;}
 
@@ -182,7 +189,8 @@ namespace Model
      * <p>The name of the cache parameter group family associated with this cache
      * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
      * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * <code>redis6.0</code> | </p>
      */
     inline CacheEngineVersion& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 

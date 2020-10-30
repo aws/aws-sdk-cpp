@@ -24,6 +24,7 @@
 #include <aws/dms/model/SybaseSettings.h>
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/IBMDb2Settings.h>
+#include <aws/dms/model/DocDbSettings.h>
 #include <utility>
 
 namespace Aws
@@ -1594,6 +1595,67 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source DocumentDB endpoint. For more
+     * information about the available settings, see the configuration properties
+     * section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+     * Using DocumentDB as a Target for AWS Database Migration Service</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointArn;
@@ -1682,6 +1744,9 @@ namespace Model
 
     IBMDb2Settings m_iBMDb2Settings;
     bool m_iBMDb2SettingsHasBeenSet;
+
+    DocDbSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet;
   };
 
 } // namespace Model

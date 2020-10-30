@@ -16,8 +16,8 @@ namespace Model
   enum class DeviceStatus
   {
     NOT_SET,
-    OFFLINE,
-    ONLINE
+    ONLINE,
+    OFFLINE
   };
 
 namespace DeviceStatusMapper

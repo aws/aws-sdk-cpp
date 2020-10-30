@@ -20,20 +20,24 @@ namespace Aws
       namespace SearchQuantumTasksFilterOperatorMapper
       {
 
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static const int LT_HASH = HashingUtils::HashString("LT");
+        static const int LTE_HASH = HashingUtils::HashString("LTE");
         static const int EQUAL_HASH = HashingUtils::HashString("EQUAL");
         static const int GT_HASH = HashingUtils::HashString("GT");
         static const int GTE_HASH = HashingUtils::HashString("GTE");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int LTE_HASH = HashingUtils::HashString("LTE");
+        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
 
 
         SearchQuantumTasksFilterOperator GetSearchQuantumTasksFilterOperatorForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == BETWEEN_HASH)
+          if (hashCode == LT_HASH)
           {
-            return SearchQuantumTasksFilterOperator::BETWEEN;
+            return SearchQuantumTasksFilterOperator::LT;
+          }
+          else if (hashCode == LTE_HASH)
+          {
+            return SearchQuantumTasksFilterOperator::LTE;
           }
           else if (hashCode == EQUAL_HASH)
           {
@@ -47,13 +51,9 @@ namespace Aws
           {
             return SearchQuantumTasksFilterOperator::GTE;
           }
-          else if (hashCode == LT_HASH)
+          else if (hashCode == BETWEEN_HASH)
           {
-            return SearchQuantumTasksFilterOperator::LT;
-          }
-          else if (hashCode == LTE_HASH)
-          {
-            return SearchQuantumTasksFilterOperator::LTE;
+            return SearchQuantumTasksFilterOperator::BETWEEN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,18 +69,18 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case SearchQuantumTasksFilterOperator::BETWEEN:
-            return "BETWEEN";
+          case SearchQuantumTasksFilterOperator::LT:
+            return "LT";
+          case SearchQuantumTasksFilterOperator::LTE:
+            return "LTE";
           case SearchQuantumTasksFilterOperator::EQUAL:
             return "EQUAL";
           case SearchQuantumTasksFilterOperator::GT:
             return "GT";
           case SearchQuantumTasksFilterOperator::GTE:
             return "GTE";
-          case SearchQuantumTasksFilterOperator::LT:
-            return "LT";
-          case SearchQuantumTasksFilterOperator::LTE:
-            return "LTE";
+          case SearchQuantumTasksFilterOperator::BETWEEN:
+            return "BETWEEN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

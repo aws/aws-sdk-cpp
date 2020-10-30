@@ -16,12 +16,12 @@ namespace Model
   enum class SearchQuantumTasksFilterOperator
   {
     NOT_SET,
-    BETWEEN,
+    LT,
+    LTE,
     EQUAL,
     GT,
     GTE,
-    LT,
-    LTE
+    BETWEEN
   };
 
 namespace SearchQuantumTasksFilterOperatorMapper

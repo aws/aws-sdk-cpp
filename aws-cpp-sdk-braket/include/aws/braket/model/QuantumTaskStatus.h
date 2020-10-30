@@ -16,13 +16,13 @@ namespace Model
   enum class QuantumTaskStatus
   {
     NOT_SET,
-    CANCELLED,
-    CANCELLING,
-    COMPLETED,
     CREATED,
-    FAILED,
     QUEUED,
-    RUNNING
+    RUNNING,
+    COMPLETED,
+    FAILED,
+    CANCELLING,
+    CANCELLED
   };
 
 namespace QuantumTaskStatusMapper

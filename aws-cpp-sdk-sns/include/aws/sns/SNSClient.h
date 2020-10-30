@@ -1390,8 +1390,8 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>
@@ -1404,8 +1404,8 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>
@@ -1420,8 +1420,8 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>

@@ -20,20 +20,20 @@ namespace Aws
       namespace CancellationStatusMapper
       {
 
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
 
 
         CancellationStatus GetCancellationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CANCELLED_HASH)
-          {
-            return CancellationStatus::CANCELLED;
-          }
-          else if (hashCode == CANCELLING_HASH)
+          if (hashCode == CANCELLING_HASH)
           {
             return CancellationStatus::CANCELLING;
+          }
+          else if (hashCode == CANCELLED_HASH)
+          {
+            return CancellationStatus::CANCELLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case CancellationStatus::CANCELLED:
-            return "CANCELLED";
           case CancellationStatus::CANCELLING:
             return "CANCELLING";
+          case CancellationStatus::CANCELLED:
+            return "CANCELLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

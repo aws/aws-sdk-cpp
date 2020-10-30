@@ -20,6 +20,7 @@ namespace Model
 
 CriterionAdditionalProperties::CriterionAdditionalProperties() : 
     m_eqHasBeenSet(false),
+    m_eqExactMatchHasBeenSet(false),
     m_gt(0),
     m_gtHasBeenSet(false),
     m_gte(0),
@@ -34,6 +35,7 @@ CriterionAdditionalProperties::CriterionAdditionalProperties() :
 
 CriterionAdditionalProperties::CriterionAdditionalProperties(JsonView jsonValue) : 
     m_eqHasBeenSet(false),
+    m_eqExactMatchHasBeenSet(false),
     m_gt(0),
     m_gtHasBeenSet(false),
     m_gte(0),
@@ -57,6 +59,16 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
       m_eq.push_back(eqJsonList[eqIndex].AsString());
     }
     m_eqHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eqExactMatch"))
+  {
+    Array<JsonView> eqExactMatchJsonList = jsonValue.GetArray("eqExactMatch");
+    for(unsigned eqExactMatchIndex = 0; eqExactMatchIndex < eqExactMatchJsonList.GetLength(); ++eqExactMatchIndex)
+    {
+      m_eqExactMatch.push_back(eqExactMatchJsonList[eqExactMatchIndex].AsString());
+    }
+    m_eqExactMatchHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("gt"))
@@ -112,6 +124,17 @@ JsonValue CriterionAdditionalProperties::Jsonize() const
      eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
    }
    payload.WithArray("eq", std::move(eqJsonList));
+
+  }
+
+  if(m_eqExactMatchHasBeenSet)
+  {
+   Array<JsonValue> eqExactMatchJsonList(m_eqExactMatch.size());
+   for(unsigned eqExactMatchIndex = 0; eqExactMatchIndex < eqExactMatchJsonList.GetLength(); ++eqExactMatchIndex)
+   {
+     eqExactMatchJsonList[eqExactMatchIndex].AsString(m_eqExactMatch[eqExactMatchIndex]);
+   }
+   payload.WithArray("eqExactMatch", std::move(eqExactMatchJsonList));
 
   }
 

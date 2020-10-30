@@ -16,8 +16,8 @@ namespace Model
   enum class CancellationStatus
   {
     NOT_SET,
-    CANCELLED,
-    CANCELLING
+    CANCELLING,
+    CANCELLED
   };
 
 namespace CancellationStatusMapper

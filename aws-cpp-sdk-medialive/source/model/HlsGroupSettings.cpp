@@ -35,6 +35,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_destinationHasBeenSet(false),
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
+    m_discontinuityTags(HlsDiscontinuityTags::NOT_SET),
+    m_discontinuityTagsHasBeenSet(false),
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
@@ -42,6 +44,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_hlsId3SegmentTaggingHasBeenSet(false),
     m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
     m_iFrameOnlyPlaylistsHasBeenSet(false),
+    m_incompleteSegmentBehavior(HlsIncompleteSegmentBehavior::NOT_SET),
+    m_incompleteSegmentBehaviorHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -107,6 +111,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_destinationHasBeenSet(false),
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
+    m_discontinuityTags(HlsDiscontinuityTags::NOT_SET),
+    m_discontinuityTagsHasBeenSet(false),
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
@@ -114,6 +120,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_hlsId3SegmentTaggingHasBeenSet(false),
     m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
     m_iFrameOnlyPlaylistsHasBeenSet(false),
+    m_incompleteSegmentBehavior(HlsIncompleteSegmentBehavior::NOT_SET),
+    m_incompleteSegmentBehaviorHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -255,6 +263,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_directoryStructureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("discontinuityTags"))
+  {
+    m_discontinuityTags = HlsDiscontinuityTagsMapper::GetHlsDiscontinuityTagsForName(jsonValue.GetString("discontinuityTags"));
+
+    m_discontinuityTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = HlsEncryptionTypeMapper::GetHlsEncryptionTypeForName(jsonValue.GetString("encryptionType"));
@@ -281,6 +296,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_iFrameOnlyPlaylists = IFrameOnlyPlaylistTypeMapper::GetIFrameOnlyPlaylistTypeForName(jsonValue.GetString("iFrameOnlyPlaylists"));
 
     m_iFrameOnlyPlaylistsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("incompleteSegmentBehavior"))
+  {
+    m_incompleteSegmentBehavior = HlsIncompleteSegmentBehaviorMapper::GetHlsIncompleteSegmentBehaviorForName(jsonValue.GetString("incompleteSegmentBehavior"));
+
+    m_incompleteSegmentBehaviorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("indexNSegments"))
@@ -536,6 +558,11 @@ JsonValue HlsGroupSettings::Jsonize() const
    payload.WithString("directoryStructure", HlsDirectoryStructureMapper::GetNameForHlsDirectoryStructure(m_directoryStructure));
   }
 
+  if(m_discontinuityTagsHasBeenSet)
+  {
+   payload.WithString("discontinuityTags", HlsDiscontinuityTagsMapper::GetNameForHlsDiscontinuityTags(m_discontinuityTags));
+  }
+
   if(m_encryptionTypeHasBeenSet)
   {
    payload.WithString("encryptionType", HlsEncryptionTypeMapper::GetNameForHlsEncryptionType(m_encryptionType));
@@ -555,6 +582,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_iFrameOnlyPlaylistsHasBeenSet)
   {
    payload.WithString("iFrameOnlyPlaylists", IFrameOnlyPlaylistTypeMapper::GetNameForIFrameOnlyPlaylistType(m_iFrameOnlyPlaylists));
+  }
+
+  if(m_incompleteSegmentBehaviorHasBeenSet)
+  {
+   payload.WithString("incompleteSegmentBehavior", HlsIncompleteSegmentBehaviorMapper::GetNameForHlsIncompleteSegmentBehavior(m_incompleteSegmentBehavior));
   }
 
   if(m_indexNSegmentsHasBeenSet)

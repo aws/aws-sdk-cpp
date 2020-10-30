@@ -23,6 +23,7 @@
 #include <aws/dms/model/SybaseSettings.h>
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/IBMDb2Settings.h>
+#include <aws/dms/model/DocDbSettings.h>
 #include <utility>
 
 namespace Aws
@@ -1485,6 +1486,25 @@ namespace Model
      */
     inline Endpoint& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
 
+
+    
+    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    
+    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    
+    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    
+    inline Endpoint& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
+
+    
+    inline Endpoint& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1582,6 +1602,9 @@ namespace Model
 
     IBMDb2Settings m_iBMDb2Settings;
     bool m_iBMDb2SettingsHasBeenSet;
+
+    DocDbSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet;
   };
 
 } // namespace Model

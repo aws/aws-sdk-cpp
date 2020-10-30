@@ -25,6 +25,7 @@
 #include <aws/dms/model/SybaseSettings.h>
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/IBMDb2Settings.h>
+#include <aws/dms/model/DocDbSettings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
 
@@ -1828,6 +1829,25 @@ namespace Model
      */
     inline CreateEndpointRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
+
+    
+    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    
+    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    
+    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    
+    inline CreateEndpointRequest& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
+
+    
+    inline CreateEndpointRequest& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1922,6 +1942,9 @@ namespace Model
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet;
+
+    DocDbSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet;
   };
 
 } // namespace Model

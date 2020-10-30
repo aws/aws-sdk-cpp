@@ -21,7 +21,8 @@ CreateQuantumTaskRequest::CreateQuantumTaskRequest() :
     m_outputS3BucketHasBeenSet(false),
     m_outputS3KeyPrefixHasBeenSet(false),
     m_shots(0),
-    m_shotsHasBeenSet(false)
+    m_shotsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
   if(m_shotsHasBeenSet)
   {
    payload.WithInt64("shots", m_shots);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

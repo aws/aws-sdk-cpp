@@ -253,50 +253,42 @@ namespace Model
 
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

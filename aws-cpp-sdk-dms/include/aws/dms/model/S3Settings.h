@@ -1485,8 +1485,8 @@ namespace Model
      * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
      * based on transaction commit dates. The default value is <code>false</code>. For
      * more information about date-based folder partitoning, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
-     * date-based folder partitioning</a> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
      */
     inline bool GetDatePartitionEnabled() const{ return m_datePartitionEnabled; }
 
@@ -1494,8 +1494,8 @@ namespace Model
      * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
      * based on transaction commit dates. The default value is <code>false</code>. For
      * more information about date-based folder partitoning, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
-     * date-based folder partitioning</a> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
      */
     inline bool DatePartitionEnabledHasBeenSet() const { return m_datePartitionEnabledHasBeenSet; }
 
@@ -1503,8 +1503,8 @@ namespace Model
      * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
      * based on transaction commit dates. The default value is <code>false</code>. For
      * more information about date-based folder partitoning, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
-     * date-based folder partitioning</a> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
      */
     inline void SetDatePartitionEnabled(bool value) { m_datePartitionEnabledHasBeenSet = true; m_datePartitionEnabled = value; }
 
@@ -1512,8 +1512,8 @@ namespace Model
      * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
      * based on transaction commit dates. The default value is <code>false</code>. For
      * more information about date-based folder partitoning, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
-     * date-based folder partitioning</a> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
      */
     inline S3Settings& WithDatePartitionEnabled(bool value) { SetDatePartitionEnabled(value); return *this;}
 

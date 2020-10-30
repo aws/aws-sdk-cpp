@@ -615,53 +615,53 @@ namespace Model
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you set this parameter to <code>true</code>, the response includes
-     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
-     * to the ARN for confirmed subscriptions, the response also includes the
-     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     * confirmed. A subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p/> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you set this parameter to <code>true</code>, the response includes
-     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
-     * to the ARN for confirmed subscriptions, the response also includes the
-     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     * confirmed. A subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p/> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool ReturnSubscriptionArnHasBeenSet() const { return m_returnSubscriptionArnHasBeenSet; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you set this parameter to <code>true</code>, the response includes
-     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
-     * to the ARN for confirmed subscriptions, the response also includes the
-     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     * confirmed. A subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p/> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline void SetReturnSubscriptionArn(bool value) { m_returnSubscriptionArnHasBeenSet = true; m_returnSubscriptionArn = value; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you set this parameter to <code>true</code>, the response includes
-     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
-     * to the ARN for confirmed subscriptions, the response also includes the
-     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     * confirmed. A subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p/> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline SubscribeRequest& WithReturnSubscriptionArn(bool value) { SetReturnSubscriptionArn(value); return *this;}
 

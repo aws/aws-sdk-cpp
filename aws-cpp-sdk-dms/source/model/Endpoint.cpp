@@ -53,7 +53,8 @@ Endpoint::Endpoint() :
     m_oracleSettingsHasBeenSet(false),
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
-    m_iBMDb2SettingsHasBeenSet(false)
+    m_iBMDb2SettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_oracleSettingsHasBeenSet(false),
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
-    m_iBMDb2SettingsHasBeenSet(false)
+    m_iBMDb2SettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -323,6 +325,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_iBMDb2SettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocDbSettings"))
+  {
+    m_docDbSettings = jsonValue.GetObject("DocDbSettings");
+
+    m_docDbSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -517,6 +526,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_iBMDb2SettingsHasBeenSet)
   {
    payload.WithObject("IBMDb2Settings", m_iBMDb2Settings.Jsonize());
+
+  }
+
+  if(m_docDbSettingsHasBeenSet)
+  {
+   payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
 
   }
 

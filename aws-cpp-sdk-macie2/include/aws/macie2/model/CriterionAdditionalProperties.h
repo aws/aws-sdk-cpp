@@ -95,6 +95,70 @@ namespace Model
 
 
     /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetEqExactMatch() const{ return m_eqExactMatch; }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline bool EqExactMatchHasBeenSet() const { return m_eqExactMatchHasBeenSet; }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline void SetEqExactMatch(const Aws::Vector<Aws::String>& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = value; }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline void SetEqExactMatch(Aws::Vector<Aws::String>&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = std::move(value); }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline CriterionAdditionalProperties& WithEqExactMatch(const Aws::Vector<Aws::String>& value) { SetEqExactMatch(value); return *this;}
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline CriterionAdditionalProperties& WithEqExactMatch(Aws::Vector<Aws::String>&& value) { SetEqExactMatch(std::move(value)); return *this;}
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline CriterionAdditionalProperties& AddEqExactMatch(const Aws::String& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(value); return *this; }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline CriterionAdditionalProperties& AddEqExactMatch(Aws::String&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A condition that requires an array field on a finding to exactly match the
+     * specified property values. You can use this operator with the following
+     * properties:</p><ul><li><p>customDataIdentifiers.detections.arn</p></li><li><p>customDataIdentifiers.detections.name</p></li><li><p>resourcesAffected.s3Bucket.tags.key</p></li><li><p>resourcesAffected.s3Bucket.tags.value</p></li><li><p>resourcesAffected.s3Object.tags.key</p></li><li><p>resourcesAffected.s3Object.tags.value</p></li><li><p>sensitiveData.category</p></li><li><p>sensitiveData.detections.type</p></li></ul>
+     */
+    inline CriterionAdditionalProperties& AddEqExactMatch(const char* value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(value); return *this; }
+
+
+    /**
      * <p>A greater than condition to apply to a specified property value for
      * findings.</p>
      */
@@ -252,6 +316,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_eq;
     bool m_eqHasBeenSet;
+
+    Aws::Vector<Aws::String> m_eqExactMatch;
+    bool m_eqExactMatchHasBeenSet;
 
     long long m_gt;
     bool m_gtHasBeenSet;

@@ -1126,7 +1126,7 @@ namespace Model
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1136,7 +1136,7 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1148,7 +1148,7 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1160,7 +1160,7 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -1170,7 +1170,7 @@ namespace Model
         virtual Model::CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -1182,7 +1182,7 @@ namespace Model
         virtual Model::CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -2864,9 +2864,9 @@ namespace Model
          * automatic failover related events, listed here in order of occurrance:</p> <ol>
          * <li> <p>Replication group message: <code>Test Failover API called for node group
          * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
@@ -2901,9 +2901,9 @@ namespace Model
          * automatic failover related events, listed here in order of occurrance:</p> <ol>
          * <li> <p>Replication group message: <code>Test Failover API called for node group
          * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
@@ -2940,9 +2940,9 @@ namespace Model
          * automatic failover related events, listed here in order of occurrance:</p> <ol>
          * <li> <p>Replication group message: <code>Test Failover API called for node group
          * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from master node &lt;primary-node-id&gt; to replica node
+         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
          * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>

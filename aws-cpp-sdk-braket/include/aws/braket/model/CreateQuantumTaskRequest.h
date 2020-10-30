@@ -7,6 +7,7 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/BraketRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -307,6 +308,72 @@ namespace Model
      */
     inline CreateQuantumTaskRequest& WithShots(long long value) { SetShots(value); return *this;}
 
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to be added to the quantum task you're creating.</p>
+     */
+    inline CreateQuantumTaskRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_action;
@@ -329,6 +396,9 @@ namespace Model
 
     long long m_shots;
     bool m_shotsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

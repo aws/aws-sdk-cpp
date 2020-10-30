@@ -19,6 +19,9 @@ namespace Model
 {
 
 AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() : 
+    m_errorClearTimeMsec(0),
+    m_errorClearTimeMsecHasBeenSet(false),
+    m_failoverConditionsHasBeenSet(false),
     m_inputPreference(InputPreference::NOT_SET),
     m_inputPreferenceHasBeenSet(false),
     m_secondaryInputIdHasBeenSet(false)
@@ -26,6 +29,9 @@ AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() :
 }
 
 AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValue) : 
+    m_errorClearTimeMsec(0),
+    m_errorClearTimeMsecHasBeenSet(false),
+    m_failoverConditionsHasBeenSet(false),
     m_inputPreference(InputPreference::NOT_SET),
     m_inputPreferenceHasBeenSet(false),
     m_secondaryInputIdHasBeenSet(false)
@@ -35,6 +41,23 @@ AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValu
 
 AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("errorClearTimeMsec"))
+  {
+    m_errorClearTimeMsec = jsonValue.GetInteger("errorClearTimeMsec");
+
+    m_errorClearTimeMsecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failoverConditions"))
+  {
+    Array<JsonView> failoverConditionsJsonList = jsonValue.GetArray("failoverConditions");
+    for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
+    {
+      m_failoverConditions.push_back(failoverConditionsJsonList[failoverConditionsIndex].AsObject());
+    }
+    m_failoverConditionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputPreference"))
   {
     m_inputPreference = InputPreferenceMapper::GetInputPreferenceForName(jsonValue.GetString("inputPreference"));
@@ -55,6 +78,23 @@ AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonV
 JsonValue AutomaticInputFailoverSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_errorClearTimeMsecHasBeenSet)
+  {
+   payload.WithInteger("errorClearTimeMsec", m_errorClearTimeMsec);
+
+  }
+
+  if(m_failoverConditionsHasBeenSet)
+  {
+   Array<JsonValue> failoverConditionsJsonList(m_failoverConditions.size());
+   for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
+   {
+     failoverConditionsJsonList[failoverConditionsIndex].AsObject(m_failoverConditions[failoverConditionsIndex].Jsonize());
+   }
+   payload.WithArray("failoverConditions", std::move(failoverConditionsJsonList));
+
+  }
 
   if(m_inputPreferenceHasBeenSet)
   {

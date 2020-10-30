@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -343,6 +344,67 @@ namespace Model
      */
     inline GetQuantumTaskResult& WithStatus(QuantumTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that belong to this task.</p>
+     */
+    inline GetQuantumTaskResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::Utils::DateTime m_createdAt;
@@ -364,6 +426,8 @@ namespace Model
     long long m_shots;
 
     QuantumTaskStatus m_status;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model
