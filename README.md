@@ -157,6 +157,7 @@ Please make sure to check out our resources too before opening an issue:
 * [Service Client](./Docs/Service_Client.md)
 * [Memory Management](./Docs/Memory_Management.md)
 * [Advanced Topics](./Docs/Advanced_topics.md)
+* [Add as CMake external project](./Docs/CMake_External_Project.md)
 * [Coding Standards](./Docs/CODING_STANDARDS.md)
 * [License](./LICENSE)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
