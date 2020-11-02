@@ -175,6 +175,35 @@ namespace Model
      */
     inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
   private:
 
     int m_deviceIndex;
@@ -188,6 +217,9 @@ namespace Model
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model

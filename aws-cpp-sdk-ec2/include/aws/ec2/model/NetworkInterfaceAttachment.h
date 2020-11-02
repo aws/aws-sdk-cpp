@@ -160,6 +160,27 @@ namespace Model
 
 
     /**
+     * <p>The index of the network card.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline NetworkInterfaceAttachment& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
+
+    /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -284,6 +305,9 @@ namespace Model
 
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;

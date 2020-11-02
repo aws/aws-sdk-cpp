@@ -528,6 +528,27 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -571,6 +592,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model

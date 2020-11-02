@@ -16,7 +16,9 @@ AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,11 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+  }
+
+  if(m_networkCardIndexHasBeenSet)
+  {
+    ss << "NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 
   ss << "Version=2016-11-15";

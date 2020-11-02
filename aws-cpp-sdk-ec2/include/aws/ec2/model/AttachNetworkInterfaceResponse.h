@@ -74,6 +74,22 @@ namespace Model
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
 
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline AttachNetworkInterfaceResponse& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -92,6 +108,8 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
+
+    int m_networkCardIndex;
 
     ResponseMetadata m_responseMetadata;
   };

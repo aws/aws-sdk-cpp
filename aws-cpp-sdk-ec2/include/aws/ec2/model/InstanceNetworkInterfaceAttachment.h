@@ -193,6 +193,27 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_attachTime;
@@ -209,6 +230,9 @@ namespace Model
 
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model

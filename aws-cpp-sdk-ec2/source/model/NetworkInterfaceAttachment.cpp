@@ -27,6 +27,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
     m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
@@ -41,6 +43,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode) :
     m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
@@ -78,6 +82,12 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     {
       m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
+    }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
@@ -124,6 +134,11 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".DeviceIndex=" << m_deviceIndex << "&";
   }
 
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -158,6 +173,10 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   if(m_deviceIndexHasBeenSet)
   {
       oStream << location << ".DeviceIndex=" << m_deviceIndex << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
   if(m_instanceIdHasBeenSet)
   {

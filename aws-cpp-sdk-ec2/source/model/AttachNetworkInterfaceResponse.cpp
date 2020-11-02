@@ -17,11 +17,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse()
+AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse() : 
+    m_networkCardIndex(0)
 {
 }
 
-AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+    m_networkCardIndex(0)
 {
   *this = result;
 }
@@ -42,6 +44,11 @@ AttachNetworkInterfaceResponse& AttachNetworkInterfaceResponse::operator =(const
     if(!attachmentIdNode.IsNull())
     {
       m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
+    }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
     }
   }
 

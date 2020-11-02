@@ -40,7 +40,9 @@ LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetwo
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetwo
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -177,6 +181,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -270,6 +280,11 @@ void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OS
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
 }
 
 void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -345,6 +360,10 @@ void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OS
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 }
 

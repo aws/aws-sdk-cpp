@@ -206,50 +206,42 @@ namespace Model
 
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The address of the Elastic IP address or Carrier IP address bound to the
-     * network interface.</p>
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 

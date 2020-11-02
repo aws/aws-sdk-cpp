@@ -28,7 +28,9 @@ InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment() :
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const Xml
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,6 +85,12 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
       m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -113,6 +123,11 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
   }
 
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
 }
 
 void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -136,6 +151,10 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 }
 

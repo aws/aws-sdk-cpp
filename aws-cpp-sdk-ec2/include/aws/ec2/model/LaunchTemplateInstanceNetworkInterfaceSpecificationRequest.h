@@ -592,6 +592,35 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -635,6 +664,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model
