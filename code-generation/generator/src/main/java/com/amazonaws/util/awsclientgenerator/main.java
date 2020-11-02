@@ -67,8 +67,9 @@ public class main {
                 StringBuilder stringBuilder = new StringBuilder();
 
                 byte[] buffer = new byte[1024];
-                while (stream.read(buffer) > 0) {
-                    stringBuilder.append(new String(buffer, StandardCharsets.UTF_8));
+                int bytes;
+                while ((bytes = stream.read(buffer)) > 0) {
+                    stringBuilder.append(new String(buffer, 0, bytes, StandardCharsets.UTF_8));
                 }
 
                 arbitraryJson = stringBuilder.toString();
