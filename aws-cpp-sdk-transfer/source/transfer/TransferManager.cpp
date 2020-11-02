@@ -1159,9 +1159,10 @@ namespace Aws
 
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Seeking input stream to determine content-length to upload file to bucket: "
                     << bucketName << " with key: " << keyName);
+            auto preLen = static_cast<uint64_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::end);
-            auto length = static_cast<uint64_t>(fileStream->tellg());
-            fileStream->seekg(0, std::ios_base::beg);
+            auto length = static_cast<uint64_t>(fileStream->tellg()) - preLen;
+            fileStream->seekg(static_cast<size_t>(preLen), std::ios_base::beg);
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting content-length to " << length << " bytes. To upload file to bucket: "
                     << bucketName << " with key: " << keyName);
 

@@ -203,8 +203,8 @@ protected:
         if (!inFile1.good() || !inFile2.good())
         {
             retVal = false;
-        } 
-        else 
+        }
+        else
         {
             retVal = HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
         }
@@ -221,7 +221,7 @@ protected:
         Aws::FStream sourceFile(sourceFileName.c_str(), std::ios::binary | std::ios::in);
 #endif
 
-        if (!sourceFile.good()) 
+        if (!sourceFile.good())
         {
             sourceFile.close();
             return false;
@@ -233,7 +233,7 @@ protected:
         Aws::FStream concatenatedFile(MakeDownloadFileName(sourceFileName).c_str(), std::ios::binary | std::ios::out);
 #endif
 
-        for (size_t i = 0; i < numParts; i++) 
+        for (size_t i = 0; i < numParts; i++)
         {
             auto inFileName = MakeDownloadFileName(sourceFileName) + StringUtils::to_string(i);
 #ifdef _MSC_VER
@@ -241,17 +241,17 @@ protected:
 #else
             Aws::FStream inFile(inFileName.c_str(), std::ios::binary | std::ios::in);
 #endif
-            if (!inFile.good()) 
+            if (!inFile.good())
             {
                 inFile.close();
                 return false;
             }
-            
+
             concatenatedFile << inFile.rdbuf();
         }
 
         concatenatedFile.close();
-      
+
 #ifdef _MSC_VER
         Aws::FStream concatenatedFileRead(Aws::Utils::StringUtils::ToWString(MakeDownloadFileName(sourceFileName).c_str()).c_str(), std::ios::binary | std::ios::in);
 #else
@@ -381,15 +381,14 @@ protected:
 
             // download each part to its own file
             size_t offset = 0;
-            
-            for (size_t i = 0; i < partCount; i++) 
-            {
 
+            for (size_t i = 0; i < partCount; i++)
+            {
                 size_t partSize;
-                if (i == partCount - 1) 
+                if (i == partCount - 1)
                 {
                     partSize = sourceLength - (bufferSize *i);
-                } 
+                }
                 else
                 {
                     partSize = bufferSize;
@@ -429,12 +428,12 @@ protected:
                 // ETag will be added to Metadata when finished uploading/downloading
                 copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
                 ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
-   
+
                 offset += partSize;
             }
 
             ASSERT_TRUE(SourceFileSameAsConcatenatedPartFiles(sourceFileName, partCount));
-       
+
             for (size_t i = 0; i < partCount; i++) {
                 auto filename = MakeDownloadFileName(sourceFileName) + StringUtils::to_string(i).c_str();
                 Aws::FileSystem::RemoveFileIfExists(filename.c_str());
@@ -442,6 +441,105 @@ protected:
         }
 
         Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(sourceFileName).c_str());
+    }
+
+
+    static void VerifyUploadedFileDownloadInPartsWithStreamOffset(
+        TransferManager& transferManager,
+        const Aws::String& sourceFileName,
+        const size_t inputOffset,
+        const Aws::String& bucket,
+        const Aws::String& key,
+        const Aws::String& contentType,
+        const Aws::Map<Aws::String, Aws::String>& metadata)
+    {
+        Aws::String downloadFileName = MakeDownloadFileName(sourceFileName);
+
+        {
+            // read source file for length
+#ifdef _MSC_VER
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, sourceFileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
+            ASSERT_TRUE(fileStream->good());
+
+            fileStream->seekg(0, std::ios_base::end);
+            size_t sourceLength = static_cast<size_t>(fileStream->tellg()) - inputOffset;
+            fileStream->close();
+            fileStream = nullptr;
+
+            // calculate number of chunks
+            std::size_t bufferSize = 16 * 1024 * 1024;
+            std::size_t partCount = (std::max)(
+                static_cast<size_t>((sourceLength + bufferSize - 1) / bufferSize),
+                static_cast<std::size_t>(1));
+
+            // download each part to its own file
+            size_t offset = 0;
+
+            for (size_t i = 0; i < partCount; i++)
+            {
+                size_t partSize;
+                if (i == partCount - 1)
+                {
+                    partSize = sourceLength - (bufferSize *i);
+                }
+                else
+                {
+                    partSize = bufferSize;
+                }
+                auto createStreamFn = [=](){
+                    Aws::FStream::openmode formatFlags = std::ios_base::out;
+                    if(!offset)
+                    {
+                        formatFlags = std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc;
+                    }
+                    else
+                    {
+                        formatFlags = std::ios_base::out | std::ios_base::in | std::ios_base::binary;
+                    }
+    #ifdef _MSC_VER
+                    auto fs = Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadFileName.c_str()).c_str(), formatFlags);
+    #else
+                    auto fs = Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadFileName.c_str(), formatFlags);
+    #endif
+                    fs->seekp(offset);
+                    return fs;
+                };
+                std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, offset, partSize, createStreamFn);
+
+                ASSERT_EQ(true, downloadPtr->ShouldContinue());
+                ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
+                downloadPtr->WaitUntilFinished();
+
+                size_t retries = 0;
+                //just make sure we don't fail because of failing to download a part for occasional reasons like network problem or s3 eventual consistency.
+                while (downloadPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+                {
+                    transferManager.RetryDownload(downloadPtr);
+                    downloadPtr->WaitUntilFinished();
+                }
+
+                ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+                ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
+                ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+
+                ASSERT_EQ(downloadPtr->GetBytesTotalSize(), partSize);
+                ASSERT_EQ(downloadPtr->GetBytesTransferred(), partSize);
+
+                ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
+
+                auto copyMetadata = metadata;
+                // ETag will be added to Metadata when finished uploading/downloading
+                copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
+                ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
+
+                offset += partSize;
+            }
+        }
+
+        Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
     }
 
     static void SetUpTestCase()
@@ -1015,6 +1113,64 @@ TEST_F(TransferTests, TransferManager_BigTest)
                                       BIG_FILE_KEY,
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
+}
+
+TEST_F(TransferTests, TransferManager_MultipartTestWithStreamOffset)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String bigTestFileName = MakeFilePath(RandomFileName.c_str());
+
+    ScopedTestFile testFile(bigTestFileName, BIG_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+
+#ifdef _MSC_VER
+    auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(bigTestFileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+    auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, bigTestFileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
+
+    const size_t inputOffset = 8u;
+    fileStream->seekg(inputOffset, std::ios_base::beg);
+
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(fileStream, GetTestBucketName(), BIG_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    ASSERT_EQ(true, requestPtr->ShouldContinue());
+    ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
+    requestPtr->WaitUntilFinished();
+
+    size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
+    while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+    {
+        transferManager->RetryUpload(fileStream, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+
+    ASSERT_TRUE(requestPtr->IsMultipart());
+    ASSERT_FALSE(requestPtr->GetMultiPartId().empty());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(PARTS_IN_BIG_TEST, requestPtr->GetCompletedParts().size()); // Should be 15
+    ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+
+    uint64_t fileSize = requestPtr->GetBytesTotalSize();
+    ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen - inputOffset);
+    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
+
+    VerifyUploadedFileDownloadInPartsWithStreamOffset(*transferManager,
+                                                      bigTestFileName,
+                                                      inputOffset,
+                                                      GetTestBucketName(),
+                                                      BIG_FILE_KEY,
+                                                      "text/plain",
+                                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 #ifdef _MSC_VER
@@ -1657,8 +1813,8 @@ TEST_F(TransferTests, TransferManager_TemplatesTest)
     const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
     Aws::String mediumTestFilePath = MakeFilePath(RandomFileName.c_str());
     ScopedTestFile testFile(mediumTestFilePath, MEDIUM_TEST_SIZE, testString);
-    
-    
+
+
     GetObjectRequest getObjReqTemplate;
     getObjReqTemplate.WithRequestPayer(Aws::S3::Model::RequestPayer::requester);
     PutObjectRequest putObjReqTemplate;
@@ -1668,7 +1824,7 @@ TEST_F(TransferTests, TransferManager_TemplatesTest)
     transferManagerConfig.s3Client = m_s3Client;
     transferManagerConfig.putObjectTemplate = putObjReqTemplate;
     transferManagerConfig.getObjectTemplate = getObjReqTemplate;
-    
+
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFilePath, GetTestBucketName(), RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());

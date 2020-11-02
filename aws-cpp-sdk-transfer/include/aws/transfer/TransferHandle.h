@@ -393,6 +393,8 @@ namespace Aws
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;
+            /* in case cutomer stream is not based off 0 */
+            uint64_t m_downloadStreamBaseOffset;
 
             mutable std::mutex m_downloadStreamLock;
             mutable std::mutex m_partsLock;

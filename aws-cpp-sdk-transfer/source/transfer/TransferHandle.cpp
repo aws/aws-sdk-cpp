@@ -367,10 +367,11 @@ namespace Aws
             {
                 m_downloadStream = m_createDownloadStreamFn();
                 assert(m_downloadStream->good());
+                m_downloadStreamBaseOffset = m_downloadStream->tellp();
             }
 
             partStream->seekg(0);
-            m_downloadStream->seekp(writeOffset);
+            m_downloadStream->seekp(m_downloadStreamBaseOffset + writeOffset);
             (*m_downloadStream) << partStream->rdbuf();
             m_downloadStream->flush();
         }
