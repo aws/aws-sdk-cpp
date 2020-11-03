@@ -10,4 +10,4 @@ Here you can find some helpful information on usage of the SDK.
 * [Memory Management](./Memory_Management.md)
 * [Advanced Topics](./Advanced_topics.md)
 * [Coding Standards](./CODING_STANDARDS.md)
-* [Add as external project](./Cmake_External_Project.md)
+* [Add as CMake external project](./CMake_External_Project.md)
