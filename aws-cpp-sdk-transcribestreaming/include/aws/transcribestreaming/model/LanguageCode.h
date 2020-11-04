@@ -21,7 +21,9 @@ namespace Model
     es_US,
     fr_CA,
     fr_FR,
-    en_AU
+    en_AU,
+    it_IT,
+    de_DE
   };
 
 namespace LanguageCodeMapper

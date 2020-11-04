@@ -167,10 +167,10 @@ namespace Model
     typedef std::function<void(const MQClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it
-   * easy to set up and operate message brokers in the cloud. A message broker allows
-   * software applications and components to communicate using various programming
-   * languages, operating systems, and formal messaging protocols.
+   * Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ
+   * that makes it easy to set up and operate message brokers in the cloud. A message
+   * broker allows software applications and components to communicate using various
+   * programming languages, operating systems, and formal messaging protocols.
    */
   class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient
   {

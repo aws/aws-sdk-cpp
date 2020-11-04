@@ -79,9 +79,54 @@ namespace Model
      */
     inline ListThingPrincipalsResult& AddPrincipals(const char* value) { m_principals.push_back(value); return *this; }
 
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline ListThingPrincipalsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline ListThingPrincipalsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to use to get the next set of results, or <b>null</b> if there are
+     * no additional results.</p>
+     */
+    inline ListThingPrincipalsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_principals;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

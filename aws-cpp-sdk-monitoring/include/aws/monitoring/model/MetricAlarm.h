@@ -1061,7 +1061,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
@@ -1070,7 +1070,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
@@ -1079,7 +1079,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
@@ -1088,7 +1088,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
@@ -1097,7 +1097,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline MetricAlarm& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
@@ -1106,7 +1106,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline MetricAlarm& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
@@ -1115,7 +1115,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline MetricAlarm& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
@@ -1124,7 +1124,7 @@ namespace Model
      * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
      * math expression. Each structure either retrieves a metric or performs a math
      * expression. One item in the Metrics array is the math expression that the alarm
-     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
     inline MetricAlarm& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }

@@ -35,6 +35,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false),
     m_lifecycleHookSpecificationListHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
@@ -159,6 +161,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
     ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
+  }
+
+  if(m_capacityRebalanceHasBeenSet)
+  {
+    ss << "CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
   }
 
   if(m_lifecycleHookSpecificationListHasBeenSet)

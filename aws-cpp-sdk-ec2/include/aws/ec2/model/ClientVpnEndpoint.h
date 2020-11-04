@@ -12,6 +12,7 @@
 #include <aws/ec2/model/VpnProtocol.h>
 #include <aws/ec2/model/TransportProtocol.h>
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
+#include <aws/ec2/model/ClientConnectResponseOptions.h>
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -800,6 +801,43 @@ namespace Model
      */
     inline ClientVpnEndpoint& WithSelfServicePortalUrl(const char* value) { SetSelfServicePortalUrl(value); return *this;}
 
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline const ClientConnectResponseOptions& GetClientConnectOptions() const{ return m_clientConnectOptions; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline bool ClientConnectOptionsHasBeenSet() const { return m_clientConnectOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(const ClientConnectResponseOptions& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = value; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(ClientConnectResponseOptions&& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = std::move(value); }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ClientVpnEndpoint& WithClientConnectOptions(const ClientConnectResponseOptions& value) { SetClientConnectOptions(value); return *this;}
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ClientVpnEndpoint& WithClientConnectOptions(ClientConnectResponseOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -858,6 +896,9 @@ namespace Model
 
     Aws::String m_selfServicePortalUrl;
     bool m_selfServicePortalUrlHasBeenSet;
+
+    ClientConnectResponseOptions m_clientConnectOptions;
+    bool m_clientConnectOptionsHasBeenSet;
   };
 
 } // namespace Model

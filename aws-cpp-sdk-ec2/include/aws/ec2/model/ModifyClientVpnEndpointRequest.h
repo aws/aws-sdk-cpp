@@ -11,6 +11,7 @@
 #include <aws/ec2/model/DnsServersOptionsModifyStructure.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SelfServicePortal.h>
+#include <aws/ec2/model/ClientConnectOptions.h>
 #include <utility>
 
 namespace Aws
@@ -491,6 +492,43 @@ namespace Model
      */
     inline ModifyClientVpnEndpointRequest& WithSelfServicePortal(SelfServicePortal&& value) { SetSelfServicePortal(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline const ClientConnectOptions& GetClientConnectOptions() const{ return m_clientConnectOptions; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline bool ClientConnectOptionsHasBeenSet() const { return m_clientConnectOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(const ClientConnectOptions& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = value; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(ClientConnectOptions&& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = std::move(value); }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithClientConnectOptions(const ClientConnectOptions& value) { SetClientConnectOptions(value); return *this;}
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithClientConnectOptions(ClientConnectOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -525,6 +563,9 @@ namespace Model
 
     SelfServicePortal m_selfServicePortal;
     bool m_selfServicePortalHasBeenSet;
+
+    ClientConnectOptions m_clientConnectOptions;
+    bool m_clientConnectOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -31,7 +31,8 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_selfServicePortal(SelfServicePortal::NOT_SET),
-    m_selfServicePortalHasBeenSet(false)
+    m_selfServicePortalHasBeenSet(false),
+    m_clientConnectOptionsHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,11 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
   if(m_selfServicePortalHasBeenSet)
   {
     ss << "SelfServicePortal=" << SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal) << "&";
+  }
+
+  if(m_clientConnectOptionsHasBeenSet)
+  {
+    m_clientConnectOptions.OutputToStream(ss, "ClientConnectOptions");
   }
 
   ss << "Version=2016-11-15";

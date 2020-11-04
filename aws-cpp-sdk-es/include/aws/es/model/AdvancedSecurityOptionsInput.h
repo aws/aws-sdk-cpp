@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/MasterUserOptions.h>
+#include <aws/es/model/SAMLOptionsInput.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +113,37 @@ namespace Model
      */
     inline AdvancedSecurityOptionsInput& WithMasterUserOptions(MasterUserOptions&& value) { SetMasterUserOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline const SAMLOptionsInput& GetSAMLOptions() const{ return m_sAMLOptions; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline bool SAMLOptionsHasBeenSet() const { return m_sAMLOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline void SetSAMLOptions(const SAMLOptionsInput& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = value; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline void SetSAMLOptions(SAMLOptionsInput&& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithSAMLOptions(const SAMLOptionsInput& value) { SetSAMLOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithSAMLOptions(SAMLOptionsInput&& value) { SetSAMLOptions(std::move(value)); return *this;}
+
   private:
 
     bool m_enabled;
@@ -122,6 +154,9 @@ namespace Model
 
     MasterUserOptions m_masterUserOptions;
     bool m_masterUserOptionsHasBeenSet;
+
+    SAMLOptionsInput m_sAMLOptions;
+    bool m_sAMLOptionsHasBeenSet;
   };
 
 } // namespace Model

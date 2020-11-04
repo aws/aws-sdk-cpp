@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/es/model/SAMLOptionsOutput.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,6 +80,37 @@ namespace Model
      */
     inline AdvancedSecurityOptions& WithInternalUserDatabaseEnabled(bool value) { SetInternalUserDatabaseEnabled(value); return *this;}
 
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline const SAMLOptionsOutput& GetSAMLOptions() const{ return m_sAMLOptions; }
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline bool SAMLOptionsHasBeenSet() const { return m_sAMLOptionsHasBeenSet; }
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline void SetSAMLOptions(const SAMLOptionsOutput& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = value; }
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline void SetSAMLOptions(SAMLOptionsOutput&& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = std::move(value); }
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline AdvancedSecurityOptions& WithSAMLOptions(const SAMLOptionsOutput& value) { SetSAMLOptions(value); return *this;}
+
+    /**
+     * <p>Describes the SAML application configured for a domain.</p>
+     */
+    inline AdvancedSecurityOptions& WithSAMLOptions(SAMLOptionsOutput&& value) { SetSAMLOptions(std::move(value)); return *this;}
+
   private:
 
     bool m_enabled;
@@ -85,6 +118,9 @@ namespace Model
 
     bool m_internalUserDatabaseEnabled;
     bool m_internalUserDatabaseEnabledHasBeenSet;
+
+    SAMLOptionsOutput m_sAMLOptions;
+    bool m_sAMLOptionsHasBeenSet;
   };
 
 } // namespace Model

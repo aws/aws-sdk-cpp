@@ -19,7 +19,8 @@ MeterUsageRequest::MeterUsageRequest() :
     m_usageQuantity(0),
     m_usageQuantityHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String MeterUsageRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
+
+  }
+
+  if(m_usageAllocationsHasBeenSet)
+  {
+   Array<JsonValue> usageAllocationsJsonList(m_usageAllocations.size());
+   for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+   {
+     usageAllocationsJsonList[usageAllocationsIndex].AsObject(m_usageAllocations[usageAllocationsIndex].Jsonize());
+   }
+   payload.WithArray("UsageAllocations", std::move(usageAllocationsJsonList));
 
   }
 

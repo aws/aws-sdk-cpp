@@ -38,25 +38,25 @@ namespace Model
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline bool GetAudit() const{ return m_audit; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline Logs& WithAudit(bool value) { SetAudit(value); return *this;}
 

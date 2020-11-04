@@ -25,6 +25,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_allocationStrategyHasBeenSet(false),
     m_onDemandAllocationStrategy(OnDemandAllocationStrategy::NOT_SET),
     m_onDemandAllocationStrategyHasBeenSet(false),
+    m_spotMaintenanceStrategiesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
@@ -64,6 +65,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_allocationStrategyHasBeenSet(false),
     m_onDemandAllocationStrategy(OnDemandAllocationStrategy::NOT_SET),
     m_onDemandAllocationStrategyHasBeenSet(false),
+    m_spotMaintenanceStrategiesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
@@ -116,6 +118,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     {
       m_onDemandAllocationStrategy = OnDemandAllocationStrategyMapper::GetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandAllocationStrategyNode.GetText()).c_str()).c_str());
       m_onDemandAllocationStrategyHasBeenSet = true;
+    }
+    XmlNode spotMaintenanceStrategiesNode = resultNode.FirstChild("spotMaintenanceStrategies");
+    if(!spotMaintenanceStrategiesNode.IsNull())
+    {
+      m_spotMaintenanceStrategies = spotMaintenanceStrategiesNode;
+      m_spotMaintenanceStrategiesHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
@@ -278,6 +286,13 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".OnDemandAllocationStrategy=" << OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy) << "&";
   }
 
+  if(m_spotMaintenanceStrategiesHasBeenSet)
+  {
+      Aws::StringStream spotMaintenanceStrategiesLocationAndMemberSs;
+      spotMaintenanceStrategiesLocationAndMemberSs << location << index << locationValue << ".SpotMaintenanceStrategies";
+      m_spotMaintenanceStrategies.OutputToStream(oStream, spotMaintenanceStrategiesLocationAndMemberSs.str().c_str());
+  }
+
   if(m_clientTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
@@ -414,6 +429,12 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_onDemandAllocationStrategyHasBeenSet)
   {
       oStream << location << ".OnDemandAllocationStrategy=" << OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy) << "&";
+  }
+  if(m_spotMaintenanceStrategiesHasBeenSet)
+  {
+      Aws::String spotMaintenanceStrategiesLocationAndMember(location);
+      spotMaintenanceStrategiesLocationAndMember += ".SpotMaintenanceStrategies";
+      m_spotMaintenanceStrategies.OutputToStream(oStream, spotMaintenanceStrategiesLocationAndMember.c_str());
   }
   if(m_clientTokenHasBeenSet)
   {

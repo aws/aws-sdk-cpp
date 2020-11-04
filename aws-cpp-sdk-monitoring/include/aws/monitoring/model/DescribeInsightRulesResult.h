@@ -36,37 +36,44 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

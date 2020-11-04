@@ -336,50 +336,50 @@ namespace Model
 
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline GetMetricDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline GetMetricDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of data points.</p>
+     * <p>Include this value, if it was returned by the previous
+     * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
     inline GetMetricDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

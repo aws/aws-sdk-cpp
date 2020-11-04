@@ -117,17 +117,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -138,17 +138,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -159,17 +159,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -180,17 +180,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -201,17 +201,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -222,17 +222,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -243,17 +243,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -264,17 +264,17 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group.</p> <p>Elastic
-     * Load Balancing sends data about your load balancers to Amazon CloudWatch.
-     * CloudWatch collects the data and specifies the format to use to access the data.
-     * The format is
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
-     * </code>, where </p> <ul> <li> <p>
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final
-     * portion of the load balancer ARN, and</p> </li> <li> <p>
-     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     * final portion of the target group ARN.</p> </li> </ul> <p>To find the ARN for an
-     * Application Load Balancer, use the <a
+     * and there is a target group attached to the Auto Scaling group.</p> <p>You
+     * create the resource label by appending the final portion of the load balancer
+     * ARN and the final portion of the target group ARN into a single value, separated
+     * by a forward slash (/). The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * API operation. To find the ARN for the target group, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>

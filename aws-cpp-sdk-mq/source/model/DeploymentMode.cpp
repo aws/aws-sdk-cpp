@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SINGLE_INSTANCE_HASH = HashingUtils::HashString("SINGLE_INSTANCE");
         static const int ACTIVE_STANDBY_MULTI_AZ_HASH = HashingUtils::HashString("ACTIVE_STANDBY_MULTI_AZ");
+        static const int CLUSTER_MULTI_AZ_HASH = HashingUtils::HashString("CLUSTER_MULTI_AZ");
 
 
         DeploymentMode GetDeploymentModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ACTIVE_STANDBY_MULTI_AZ_HASH)
           {
             return DeploymentMode::ACTIVE_STANDBY_MULTI_AZ;
+          }
+          else if (hashCode == CLUSTER_MULTI_AZ_HASH)
+          {
+            return DeploymentMode::CLUSTER_MULTI_AZ;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SINGLE_INSTANCE";
           case DeploymentMode::ACTIVE_STANDBY_MULTI_AZ:
             return "ACTIVE_STANDBY_MULTI_AZ";
+          case DeploymentMode::CLUSTER_MULTI_AZ:
+            return "CLUSTER_MULTI_AZ";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

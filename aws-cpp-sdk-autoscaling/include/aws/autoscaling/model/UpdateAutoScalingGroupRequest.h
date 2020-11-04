@@ -964,6 +964,59 @@ namespace Model
      */
     inline UpdateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
 
+
+    /**
+     * <p>Enables or disables capacity rebalance.</p> <p>You can enable capacity
+     * rebalancing for your Auto Scaling groups when using Spot Instances. When you
+     * turn on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
+     * Instance whenever Amazon EC2 predicts that a Spot Instance is at an elevated
+     * risk of interruption. After launching a new instance, it then terminates an old
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Enables or disables capacity rebalance.</p> <p>You can enable capacity
+     * rebalancing for your Auto Scaling groups when using Spot Instances. When you
+     * turn on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
+     * Instance whenever Amazon EC2 predicts that a Spot Instance is at an elevated
+     * risk of interruption. After launching a new instance, it then terminates an old
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Enables or disables capacity rebalance.</p> <p>You can enable capacity
+     * rebalancing for your Auto Scaling groups when using Spot Instances. When you
+     * turn on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
+     * Instance whenever Amazon EC2 predicts that a Spot Instance is at an elevated
+     * risk of interruption. After launching a new instance, it then terminates an old
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Enables or disables capacity rebalance.</p> <p>You can enable capacity
+     * rebalancing for your Auto Scaling groups when using Spot Instances. When you
+     * turn on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
+     * Instance whenever Amazon EC2 predicts that a Spot Instance is at an elevated
+     * risk of interruption. After launching a new instance, it then terminates an old
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1016,6 +1069,9 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
   };
 
 } // namespace Model

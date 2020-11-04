@@ -1563,7 +1563,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1583,7 +1583,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1603,7 +1603,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1623,7 +1623,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1643,7 +1643,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1663,7 +1663,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1683,7 +1683,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1703,7 +1703,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the

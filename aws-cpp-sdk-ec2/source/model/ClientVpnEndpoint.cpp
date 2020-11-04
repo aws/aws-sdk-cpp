@@ -43,7 +43,8 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_tagsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false)
+    m_selfServicePortalUrlHasBeenSet(false),
+    m_clientConnectOptionsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false)
+    m_selfServicePortalUrlHasBeenSet(false),
+    m_clientConnectOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -219,6 +221,12 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_selfServicePortalUrl = Aws::Utils::Xml::DecodeEscapedXmlText(selfServicePortalUrlNode.GetText());
       m_selfServicePortalUrlHasBeenSet = true;
     }
+    XmlNode clientConnectOptionsNode = resultNode.FirstChild("clientConnectOptions");
+    if(!clientConnectOptionsNode.IsNull())
+    {
+      m_clientConnectOptions = clientConnectOptionsNode;
+      m_clientConnectOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -345,6 +353,13 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".SelfServicePortalUrl=" << StringUtils::URLEncode(m_selfServicePortalUrl.c_str()) << "&";
   }
 
+  if(m_clientConnectOptionsHasBeenSet)
+  {
+      Aws::StringStream clientConnectOptionsLocationAndMemberSs;
+      clientConnectOptionsLocationAndMemberSs << location << index << locationValue << ".ClientConnectOptions";
+      m_clientConnectOptions.OutputToStream(oStream, clientConnectOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -448,6 +463,12 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_selfServicePortalUrlHasBeenSet)
   {
       oStream << location << ".SelfServicePortalUrl=" << StringUtils::URLEncode(m_selfServicePortalUrl.c_str()) << "&";
+  }
+  if(m_clientConnectOptionsHasBeenSet)
+  {
+      Aws::String clientConnectOptionsLocationAndMember(location);
+      clientConnectOptionsLocationAndMember += ".ClientConnectOptions";
+      m_clientConnectOptions.OutputToStream(oStream, clientConnectOptionsLocationAndMember.c_str());
   }
 }
 

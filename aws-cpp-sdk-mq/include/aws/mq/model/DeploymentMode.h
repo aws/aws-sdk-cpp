@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SINGLE_INSTANCE,
-    ACTIVE_STANDBY_MULTI_AZ
+    ACTIVE_STANDBY_MULTI_AZ,
+    CLUSTER_MULTI_AZ
   };
 
 namespace DeploymentModeMapper

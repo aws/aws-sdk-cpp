@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/xray/model/EdgeStatistics.h>
 #include <aws/xray/model/ServiceStatistics.h>
+#include <aws/xray/model/ForecastStatistics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/HistogramEntry.h>
 #include <utility>
@@ -111,6 +112,37 @@ namespace Model
 
 
     /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline const ForecastStatistics& GetServiceForecastStatistics() const{ return m_serviceForecastStatistics; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline bool ServiceForecastStatisticsHasBeenSet() const { return m_serviceForecastStatisticsHasBeenSet; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline void SetServiceForecastStatistics(const ForecastStatistics& value) { m_serviceForecastStatisticsHasBeenSet = true; m_serviceForecastStatistics = value; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline void SetServiceForecastStatistics(ForecastStatistics&& value) { m_serviceForecastStatisticsHasBeenSet = true; m_serviceForecastStatistics = std::move(value); }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline TimeSeriesServiceStatistics& WithServiceForecastStatistics(const ForecastStatistics& value) { SetServiceForecastStatistics(value); return *this;}
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline TimeSeriesServiceStatistics& WithServiceForecastStatistics(ForecastStatistics&& value) { SetServiceForecastStatistics(std::move(value)); return *this;}
+
+
+    /**
      * <p>The response time histogram for the selected entities.</p>
      */
     inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
@@ -160,6 +192,9 @@ namespace Model
 
     ServiceStatistics m_serviceSummaryStatistics;
     bool m_serviceSummaryStatisticsHasBeenSet;
+
+    ForecastStatistics m_serviceForecastStatistics;
+    bool m_serviceForecastStatisticsHasBeenSet;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
     bool m_responseTimeHistogramHasBeenSet;

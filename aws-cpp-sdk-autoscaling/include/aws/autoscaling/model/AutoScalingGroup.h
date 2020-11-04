@@ -1031,6 +1031,27 @@ namespace Model
      */
     inline AutoScalingGroup& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether capacity rebalance is enabled.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Indicates whether capacity rebalance is enabled.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether capacity rebalance is enabled.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Indicates whether capacity rebalance is enabled.</p>
+     */
+    inline AutoScalingGroup& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1110,6 +1131,9 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
   };
 
 } // namespace Model

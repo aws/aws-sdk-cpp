@@ -27,6 +27,8 @@ BrokerSummary::BrokerSummary() :
     m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
 {
 }
@@ -40,6 +42,8 @@ BrokerSummary::BrokerSummary(JsonView jsonValue) :
     m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -89,6 +93,13 @@ BrokerSummary& BrokerSummary::operator =(JsonView jsonValue)
     m_deploymentModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("engineType"))
+  {
+    m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
+
+    m_engineTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
@@ -134,6 +145,11 @@ JsonValue BrokerSummary::Jsonize() const
   if(m_deploymentModeHasBeenSet)
   {
    payload.WithString("deploymentMode", DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode));
+  }
+
+  if(m_engineTypeHasBeenSet)
+  {
+   payload.WithString("engineType", EngineTypeMapper::GetNameForEngineType(m_engineType));
   }
 
   if(m_hostInstanceTypeHasBeenSet)

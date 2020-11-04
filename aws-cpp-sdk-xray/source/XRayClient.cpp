@@ -28,6 +28,10 @@
 #include <aws/xray/model/GetEncryptionConfigRequest.h>
 #include <aws/xray/model/GetGroupRequest.h>
 #include <aws/xray/model/GetGroupsRequest.h>
+#include <aws/xray/model/GetInsightRequest.h>
+#include <aws/xray/model/GetInsightEventsRequest.h>
+#include <aws/xray/model/GetInsightImpactGraphRequest.h>
+#include <aws/xray/model/GetInsightSummariesRequest.h>
 #include <aws/xray/model/GetSamplingRulesRequest.h>
 #include <aws/xray/model/GetSamplingStatisticSummariesRequest.h>
 #include <aws/xray/model/GetSamplingTargetsRequest.h>
@@ -331,6 +335,114 @@ void XRayClient::GetGroupsAsync(const GetGroupsRequest& request, const GetGroups
 void XRayClient::GetGroupsAsyncHelper(const GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetGroups(request), context);
+}
+
+GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/Insight";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightOutcomeCallable XRayClient::GetInsightCallable(const GetInsightRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsight(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetInsightAsync(const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetInsightAsyncHelper(const GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsight(request), context);
+}
+
+GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/InsightEvents";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetInsightEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightEventsOutcomeCallable XRayClient::GetInsightEventsCallable(const GetInsightEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetInsightEventsAsync(const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightEventsAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetInsightEventsAsyncHelper(const GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsightEvents(request), context);
+}
+
+GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightImpactGraphRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/InsightImpactGraph";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetInsightImpactGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightImpactGraphOutcomeCallable XRayClient::GetInsightImpactGraphCallable(const GetInsightImpactGraphRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightImpactGraphOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightImpactGraph(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetInsightImpactGraphAsync(const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightImpactGraphAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetInsightImpactGraphAsyncHelper(const GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsightImpactGraph(request), context);
+}
+
+GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSummariesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/InsightSummaries";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetInsightSummariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightSummariesOutcomeCallable XRayClient::GetInsightSummariesCallable(const GetInsightSummariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightSummaries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetInsightSummariesAsync(const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightSummariesAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetInsightSummariesAsyncHelper(const GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsightSummaries(request), context);
 }
 
 GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesRequest& request) const

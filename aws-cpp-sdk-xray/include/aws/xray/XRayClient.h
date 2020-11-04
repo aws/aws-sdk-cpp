@@ -19,6 +19,10 @@
 #include <aws/xray/model/GetEncryptionConfigResult.h>
 #include <aws/xray/model/GetGroupResult.h>
 #include <aws/xray/model/GetGroupsResult.h>
+#include <aws/xray/model/GetInsightResult.h>
+#include <aws/xray/model/GetInsightEventsResult.h>
+#include <aws/xray/model/GetInsightImpactGraphResult.h>
+#include <aws/xray/model/GetInsightSummariesResult.h>
 #include <aws/xray/model/GetSamplingRulesResult.h>
 #include <aws/xray/model/GetSamplingStatisticSummariesResult.h>
 #include <aws/xray/model/GetSamplingTargetsResult.h>
@@ -81,6 +85,10 @@ namespace Model
         class GetEncryptionConfigRequest;
         class GetGroupRequest;
         class GetGroupsRequest;
+        class GetInsightRequest;
+        class GetInsightEventsRequest;
+        class GetInsightImpactGraphRequest;
+        class GetInsightSummariesRequest;
         class GetSamplingRulesRequest;
         class GetSamplingStatisticSummariesRequest;
         class GetSamplingTargetsRequest;
@@ -105,6 +113,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEncryptionConfigResult, XRayError> GetEncryptionConfigOutcome;
         typedef Aws::Utils::Outcome<GetGroupResult, XRayError> GetGroupOutcome;
         typedef Aws::Utils::Outcome<GetGroupsResult, XRayError> GetGroupsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightResult, XRayError> GetInsightOutcome;
+        typedef Aws::Utils::Outcome<GetInsightEventsResult, XRayError> GetInsightEventsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightImpactGraphResult, XRayError> GetInsightImpactGraphOutcome;
+        typedef Aws::Utils::Outcome<GetInsightSummariesResult, XRayError> GetInsightSummariesOutcome;
         typedef Aws::Utils::Outcome<GetSamplingRulesResult, XRayError> GetSamplingRulesOutcome;
         typedef Aws::Utils::Outcome<GetSamplingStatisticSummariesResult, XRayError> GetSamplingStatisticSummariesOutcome;
         typedef Aws::Utils::Outcome<GetSamplingTargetsResult, XRayError> GetSamplingTargetsOutcome;
@@ -129,6 +141,10 @@ namespace Model
         typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
         typedef std::future<GetGroupsOutcome> GetGroupsOutcomeCallable;
+        typedef std::future<GetInsightOutcome> GetInsightOutcomeCallable;
+        typedef std::future<GetInsightEventsOutcome> GetInsightEventsOutcomeCallable;
+        typedef std::future<GetInsightImpactGraphOutcome> GetInsightImpactGraphOutcomeCallable;
+        typedef std::future<GetInsightSummariesOutcome> GetInsightSummariesOutcomeCallable;
         typedef std::future<GetSamplingRulesOutcome> GetSamplingRulesOutcomeCallable;
         typedef std::future<GetSamplingStatisticSummariesOutcome> GetSamplingStatisticSummariesOutcomeCallable;
         typedef std::future<GetSamplingTargetsOutcome> GetSamplingTargetsOutcomeCallable;
@@ -156,6 +172,10 @@ namespace Model
     typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetGroupsRequest&, const Model::GetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightRequest&, const Model::GetInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightEventsRequest&, const Model::GetInsightEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightEventsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightImpactGraphRequest&, const Model::GetInsightImpactGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightImpactGraphResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightSummariesRequest&, const Model::GetInsightSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightSummariesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingRulesRequest&, const Model::GetSamplingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingRulesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingStatisticSummariesRequest&, const Model::GetSamplingStatisticSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingStatisticSummariesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingTargetsRequest&, const Model::GetSamplingTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingTargetsResponseReceivedHandler;
@@ -438,6 +458,133 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGroupsAsync(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetInsightOutcome GetInsight(const Model::GetInsightRequest& request) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightOutcomeCallable GetInsightCallable(const Model::GetInsightRequest& request) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightAsync(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightEventsOutcome GetInsightEvents(const Model::GetInsightEventsRequest& request) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightEventsOutcomeCallable GetInsightEventsCallable(const Model::GetInsightEventsRequest& request) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightEventsAsync(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightImpactGraphOutcome GetInsightImpactGraph(const Model::GetInsightImpactGraphRequest& request) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightImpactGraphOutcomeCallable GetInsightImpactGraphCallable(const Model::GetInsightImpactGraphRequest& request) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightImpactGraphAsync(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightSummariesOutcome GetInsightSummaries(const Model::GetInsightSummariesRequest& request) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightSummariesOutcomeCallable GetInsightSummariesCallable(const Model::GetInsightSummariesRequest& request) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightSummariesAsync(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all sampling rules.</p><p><h3>See Also:</h3>   <a
@@ -1012,6 +1159,10 @@ namespace Model
         void GetEncryptionConfigAsyncHelper(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupsAsyncHelper(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightAsyncHelper(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightEventsAsyncHelper(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightImpactGraphAsyncHelper(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightSummariesAsyncHelper(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingRulesAsyncHelper(const Model::GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingStatisticSummariesAsyncHelper(const Model::GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingTargetsAsyncHelper(const Model::GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

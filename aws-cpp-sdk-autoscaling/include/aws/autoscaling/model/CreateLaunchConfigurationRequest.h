@@ -973,7 +973,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -986,7 +986,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -999,7 +999,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -1012,7 +1012,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -1025,7 +1025,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -1038,7 +1038,7 @@ namespace Model
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
@@ -1480,49 +1480,49 @@ namespace Model
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
 
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 

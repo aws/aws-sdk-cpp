@@ -20,6 +20,8 @@ GetTimeSeriesServiceStatisticsRequest::GetTimeSeriesServiceStatisticsRequest() :
     m_entitySelectorExpressionHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
+    m_forecastStatistics(false),
+    m_forecastStatisticsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -59,6 +61,12 @@ Aws::String GetTimeSeriesServiceStatisticsRequest::SerializePayload() const
   if(m_periodHasBeenSet)
   {
    payload.WithInteger("Period", m_period);
+
+  }
+
+  if(m_forecastStatisticsHasBeenSet)
+  {
+   payload.WithBool("ForecastStatistics", m_forecastStatistics);
 
   }
 

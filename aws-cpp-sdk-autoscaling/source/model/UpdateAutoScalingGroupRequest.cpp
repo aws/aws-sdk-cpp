@@ -34,7 +34,9 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_maxInstanceLifetimeHasBeenSet)
   {
     ss << "MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+
+  if(m_capacityRebalanceHasBeenSet)
+  {
+    ss << "CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
   }
 
   ss << "Version=2011-01-01";

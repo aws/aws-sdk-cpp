@@ -71,43 +71,43 @@ namespace Model
 
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline ListThingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline ListThingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token used to get the next set of results. Will not be returned if
+     * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
     inline ListThingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

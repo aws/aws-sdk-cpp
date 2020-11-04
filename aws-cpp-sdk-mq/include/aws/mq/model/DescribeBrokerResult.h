@@ -391,32 +391,32 @@ namespace Model
 
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(const EngineType& value) { m_engineType = value; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(EngineType&& value) { m_engineType = std::move(value); }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeBrokerResult& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeBrokerResult& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
@@ -881,66 +881,82 @@ namespace Model
 
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
 
@@ -1007,37 +1023,37 @@ namespace Model
 
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline const Aws::Vector<UserSummary>& GetUsers() const{ return m_users; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline void SetUsers(const Aws::Vector<UserSummary>& value) { m_users = value; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline void SetUsers(Aws::Vector<UserSummary>&& value) { m_users = std::move(value); }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& WithUsers(const Aws::Vector<UserSummary>& value) { SetUsers(value); return *this;}
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& WithUsers(Aws::Vector<UserSummary>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& AddUsers(const UserSummary& value) { m_users.push_back(value); return *this; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 

@@ -23,7 +23,8 @@ AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput() :
     m_enabledHasBeenSet(false),
     m_internalUserDatabaseEnabled(false),
     m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false)
+    m_masterUserOptionsHasBeenSet(false),
+    m_sAMLOptionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput(JsonView jsonValue) :
     m_enabledHasBeenSet(false),
     m_internalUserDatabaseEnabled(false),
     m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false)
+    m_masterUserOptionsHasBeenSet(false),
+    m_sAMLOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ AdvancedSecurityOptionsInput& AdvancedSecurityOptionsInput::operator =(JsonView 
     m_masterUserOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SAMLOptions"))
+  {
+    m_sAMLOptions = jsonValue.GetObject("SAMLOptions");
+
+    m_sAMLOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +91,12 @@ JsonValue AdvancedSecurityOptionsInput::Jsonize() const
   if(m_masterUserOptionsHasBeenSet)
   {
    payload.WithObject("MasterUserOptions", m_masterUserOptions.Jsonize());
+
+  }
+
+  if(m_sAMLOptionsHasBeenSet)
+  {
+   payload.WithObject("SAMLOptions", m_sAMLOptions.Jsonize());
 
   }
 

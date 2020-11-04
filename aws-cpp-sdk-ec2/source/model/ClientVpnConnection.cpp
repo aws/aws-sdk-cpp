@@ -33,7 +33,8 @@ ClientVpnConnection::ClientVpnConnection() :
     m_clientIpHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_connectionEndTimeHasBeenSet(false)
+    m_connectionEndTimeHasBeenSet(false),
+    m_postureComplianceStatusesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ClientVpnConnection::ClientVpnConnection(const XmlNode& xmlNode) :
     m_clientIpHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_connectionEndTimeHasBeenSet(false)
+    m_connectionEndTimeHasBeenSet(false),
+    m_postureComplianceStatusesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -139,6 +141,18 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
       m_connectionEndTime = Aws::Utils::Xml::DecodeEscapedXmlText(connectionEndTimeNode.GetText());
       m_connectionEndTimeHasBeenSet = true;
     }
+    XmlNode postureComplianceStatusesNode = resultNode.FirstChild("postureComplianceStatusSet");
+    if(!postureComplianceStatusesNode.IsNull())
+    {
+      XmlNode postureComplianceStatusesMember = postureComplianceStatusesNode.FirstChild("item");
+      while(!postureComplianceStatusesMember.IsNull())
+      {
+        m_postureComplianceStatuses.push_back(postureComplianceStatusesMember.GetText());
+        postureComplianceStatusesMember = postureComplianceStatusesMember.NextNode("item");
+      }
+
+      m_postureComplianceStatusesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -213,6 +227,15 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".ConnectionEndTime=" << StringUtils::URLEncode(m_connectionEndTime.c_str()) << "&";
   }
 
+  if(m_postureComplianceStatusesHasBeenSet)
+  {
+      unsigned postureComplianceStatusesIdx = 1;
+      for(auto& item : m_postureComplianceStatuses)
+      {
+        oStream << location << index << locationValue << ".PostureComplianceStatusSet." << postureComplianceStatusesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -270,6 +293,14 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_connectionEndTimeHasBeenSet)
   {
       oStream << location << ".ConnectionEndTime=" << StringUtils::URLEncode(m_connectionEndTime.c_str()) << "&";
+  }
+  if(m_postureComplianceStatusesHasBeenSet)
+  {
+      unsigned postureComplianceStatusesIdx = 1;
+      for(auto& item : m_postureComplianceStatuses)
+      {
+        oStream << location << ".PostureComplianceStatusSet." << postureComplianceStatusesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

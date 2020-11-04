@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ACTIVEMQ_HASH = HashingUtils::HashString("ACTIVEMQ");
+        static const int RABBITMQ_HASH = HashingUtils::HashString("RABBITMQ");
 
 
         EngineType GetEngineTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ACTIVEMQ_HASH)
           {
             return EngineType::ACTIVEMQ;
+          }
+          else if (hashCode == RABBITMQ_HASH)
+          {
+            return EngineType::RABBITMQ;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case EngineType::ACTIVEMQ:
             return "ACTIVEMQ";
+          case EngineType::RABBITMQ:
+            return "RABBITMQ";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

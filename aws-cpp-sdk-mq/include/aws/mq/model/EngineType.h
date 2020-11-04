@@ -16,7 +16,8 @@ namespace Model
   enum class EngineType
   {
     NOT_SET,
-    ACTIVEMQ
+    ACTIVEMQ,
+    RABBITMQ
   };
 
 namespace EngineTypeMapper

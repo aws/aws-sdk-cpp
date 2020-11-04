@@ -23,7 +23,8 @@ UsageRecord::UsageRecord() :
     m_customerIdentifierHasBeenSet(false),
     m_dimensionHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ UsageRecord::UsageRecord(JsonView jsonValue) :
     m_customerIdentifierHasBeenSet(false),
     m_dimensionHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,16 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     m_quantityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UsageAllocations"))
+  {
+    Array<JsonView> usageAllocationsJsonList = jsonValue.GetArray("UsageAllocations");
+    for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+    {
+      m_usageAllocations.push_back(usageAllocationsJsonList[usageAllocationsIndex].AsObject());
+    }
+    m_usageAllocationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +106,17 @@ JsonValue UsageRecord::Jsonize() const
   if(m_quantityHasBeenSet)
   {
    payload.WithInteger("Quantity", m_quantity);
+
+  }
+
+  if(m_usageAllocationsHasBeenSet)
+  {
+   Array<JsonValue> usageAllocationsJsonList(m_usageAllocations.size());
+   for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+   {
+     usageAllocationsJsonList[usageAllocationsIndex].AsObject(m_usageAllocations[usageAllocationsIndex].Jsonize());
+   }
+   payload.WithArray("UsageAllocations", std::move(usageAllocationsJsonList));
 
   }
 

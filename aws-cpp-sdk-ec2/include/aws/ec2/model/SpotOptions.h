@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/SpotAllocationStrategy.h>
+#include <aws/ec2/model/FleetSpotMaintenanceStrategies.h>
 #include <aws/ec2/model/SpotInstanceInterruptionBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -119,6 +120,43 @@ namespace Model
      * instances that are launching.</p>
      */
     inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline const FleetSpotMaintenanceStrategies& GetMaintenanceStrategies() const{ return m_maintenanceStrategies; }
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline bool MaintenanceStrategiesHasBeenSet() const { return m_maintenanceStrategiesHasBeenSet; }
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline void SetMaintenanceStrategies(const FleetSpotMaintenanceStrategies& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = value; }
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline void SetMaintenanceStrategies(FleetSpotMaintenanceStrategies&& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = std::move(value); }
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline SpotOptions& WithMaintenanceStrategies(const FleetSpotMaintenanceStrategies& value) { SetMaintenanceStrategies(value); return *this;}
+
+    /**
+     * <p>The strategies for managing your workloads on your Spot Instances that will
+     * be interrupted. Currently only the capacity rebalance strategy is available.</p>
+     */
+    inline SpotOptions& WithMaintenanceStrategies(FleetSpotMaintenanceStrategies&& value) { SetMaintenanceStrategies(std::move(value)); return *this;}
 
 
     /**
@@ -322,6 +360,9 @@ namespace Model
 
     SpotAllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
+    FleetSpotMaintenanceStrategies m_maintenanceStrategies;
+    bool m_maintenanceStrategiesHasBeenSet;
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;

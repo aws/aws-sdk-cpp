@@ -93,42 +93,50 @@ namespace Model
 
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>The value of the dimension. Dimension values cannot contain blank spaces or
+     * non-ASCII characters.</p>
      */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 

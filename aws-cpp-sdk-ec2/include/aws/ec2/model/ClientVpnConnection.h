@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ClientVpnConnectionStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -586,6 +587,61 @@ namespace Model
      */
     inline ClientVpnConnection& WithConnectionEndTime(const char* value) { SetConnectionEndTime(value); return *this;}
 
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPostureComplianceStatuses() const{ return m_postureComplianceStatuses; }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline bool PostureComplianceStatusesHasBeenSet() const { return m_postureComplianceStatusesHasBeenSet; }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline void SetPostureComplianceStatuses(const Aws::Vector<Aws::String>& value) { m_postureComplianceStatusesHasBeenSet = true; m_postureComplianceStatuses = value; }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline void SetPostureComplianceStatuses(Aws::Vector<Aws::String>&& value) { m_postureComplianceStatusesHasBeenSet = true; m_postureComplianceStatuses = std::move(value); }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline ClientVpnConnection& WithPostureComplianceStatuses(const Aws::Vector<Aws::String>& value) { SetPostureComplianceStatuses(value); return *this;}
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline ClientVpnConnection& WithPostureComplianceStatuses(Aws::Vector<Aws::String>&& value) { SetPostureComplianceStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline ClientVpnConnection& AddPostureComplianceStatuses(const Aws::String& value) { m_postureComplianceStatusesHasBeenSet = true; m_postureComplianceStatuses.push_back(value); return *this; }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline ClientVpnConnection& AddPostureComplianceStatuses(Aws::String&& value) { m_postureComplianceStatusesHasBeenSet = true; m_postureComplianceStatuses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The statuses returned by the client connect handler for posture compliance,
+     * if applicable.</p>
+     */
+    inline ClientVpnConnection& AddPostureComplianceStatuses(const char* value) { m_postureComplianceStatusesHasBeenSet = true; m_postureComplianceStatuses.push_back(value); return *this; }
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -626,6 +682,9 @@ namespace Model
 
     Aws::String m_connectionEndTime;
     bool m_connectionEndTimeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_postureComplianceStatuses;
+    bool m_postureComplianceStatusesHasBeenSet;
   };
 
 } // namespace Model

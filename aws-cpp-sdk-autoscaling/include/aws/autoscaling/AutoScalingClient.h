@@ -2201,7 +2201,9 @@ namespace Model
          * overwrites any existing configuration.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
-         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you exceed your maximum
+         * limit of SNS topics, which is 10 per Auto Scaling group, the call
+         * fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2214,7 +2216,9 @@ namespace Model
          * overwrites any existing configuration.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
-         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you exceed your maximum
+         * limit of SNS topics, which is 10 per Auto Scaling group, the call
+         * fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2229,7 +2233,9 @@ namespace Model
          * overwrites any existing configuration.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
-         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you exceed your maximum
+         * limit of SNS topics, which is 10 per Auto Scaling group, the call
+         * fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2527,8 +2533,9 @@ namespace Model
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+         * the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          */
@@ -2539,8 +2546,9 @@ namespace Model
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+         * the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          *
@@ -2553,8 +2561,9 @@ namespace Model
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+         * the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          *

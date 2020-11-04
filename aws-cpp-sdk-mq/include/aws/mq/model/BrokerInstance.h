@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline const Aws::String& GetConsoleURL() const{ return m_consoleURL; }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline bool ConsoleURLHasBeenSet() const { return m_consoleURLHasBeenSet; }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline void SetConsoleURL(const Aws::String& value) { m_consoleURLHasBeenSet = true; m_consoleURL = value; }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline void SetConsoleURL(Aws::String&& value) { m_consoleURLHasBeenSet = true; m_consoleURL = std::move(value); }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline void SetConsoleURL(const char* value) { m_consoleURLHasBeenSet = true; m_consoleURL.assign(value); }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline BrokerInstance& WithConsoleURL(const Aws::String& value) { SetConsoleURL(value); return *this;}
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline BrokerInstance& WithConsoleURL(Aws::String&& value) { SetConsoleURL(std::move(value)); return *this;}
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      */
     inline BrokerInstance& WithConsoleURL(const char* value) { SetConsoleURL(value); return *this;}
 
@@ -127,41 +127,49 @@ namespace Model
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline BrokerInstance& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline BrokerInstance& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * Does not apply to RabbitMQ brokers
      */
     inline BrokerInstance& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 

@@ -22,7 +22,8 @@ AdvancedSecurityOptions::AdvancedSecurityOptions() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false)
+    m_internalUserDatabaseEnabledHasBeenSet(false),
+    m_sAMLOptionsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AdvancedSecurityOptions::AdvancedSecurityOptions(JsonView jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false)
+    m_internalUserDatabaseEnabledHasBeenSet(false),
+    m_sAMLOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ AdvancedSecurityOptions& AdvancedSecurityOptions::operator =(JsonView jsonValue)
     m_internalUserDatabaseEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SAMLOptions"))
+  {
+    m_sAMLOptions = jsonValue.GetObject("SAMLOptions");
+
+    m_sAMLOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +76,12 @@ JsonValue AdvancedSecurityOptions::Jsonize() const
   if(m_internalUserDatabaseEnabledHasBeenSet)
   {
    payload.WithBool("InternalUserDatabaseEnabled", m_internalUserDatabaseEnabled);
+
+  }
+
+  if(m_sAMLOptionsHasBeenSet)
+  {
+   payload.WithObject("SAMLOptions", m_sAMLOptions.Jsonize());
 
   }
 

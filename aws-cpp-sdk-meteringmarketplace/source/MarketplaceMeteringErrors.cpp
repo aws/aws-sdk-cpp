@@ -21,7 +21,9 @@ namespace MarketplaceMeteringErrorMapper
 static const int INVALID_CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("InvalidCustomerIdentifierException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("InvalidUsageDimensionException");
+static const int INVALID_USAGE_ALLOCATIONS_HASH = HashingUtils::HashString("InvalidUsageAllocationsException");
 static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
+static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int DISABLED_API_HASH = HashingUtils::HashString("DisabledApiException");
 static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
 static const int PLATFORM_NOT_SUPPORTED_HASH = HashingUtils::HashString("PlatformNotSupportedException");
@@ -50,9 +52,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_USAGE_DIMENSION), false);
   }
+  else if (hashCode == INVALID_USAGE_ALLOCATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_USAGE_ALLOCATIONS), false);
+  }
   else if (hashCode == EXPIRED_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::EXPIRED_TOKEN), false);
+  }
+  else if (hashCode == INVALID_TAG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_TAG), false);
   }
   else if (hashCode == DISABLED_API_HASH)
   {

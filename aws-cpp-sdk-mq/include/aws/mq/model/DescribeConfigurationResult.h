@@ -162,32 +162,32 @@ namespace Model
 
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(const EngineType& value) { m_engineType = value; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(EngineType&& value) { m_engineType = std::move(value); }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeConfigurationResult& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeConfigurationResult& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 

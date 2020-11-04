@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/AllocationStrategy.h>
 #include <aws/ec2/model/OnDemandAllocationStrategy.h>
+#include <aws/ec2/model/SpotMaintenanceStrategies.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -189,6 +190,43 @@ namespace Model
      * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(OnDemandAllocationStrategy&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline const SpotMaintenanceStrategies& GetSpotMaintenanceStrategies() const{ return m_spotMaintenanceStrategies; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline bool SpotMaintenanceStrategiesHasBeenSet() const { return m_spotMaintenanceStrategiesHasBeenSet; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline void SetSpotMaintenanceStrategies(const SpotMaintenanceStrategies& value) { m_spotMaintenanceStrategiesHasBeenSet = true; m_spotMaintenanceStrategies = value; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline void SetSpotMaintenanceStrategies(SpotMaintenanceStrategies&& value) { m_spotMaintenanceStrategiesHasBeenSet = true; m_spotMaintenanceStrategies = std::move(value); }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline SpotFleetRequestConfigData& WithSpotMaintenanceStrategies(const SpotMaintenanceStrategies& value) { SetSpotMaintenanceStrategies(value); return *this;}
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline SpotFleetRequestConfigData& WithSpotMaintenanceStrategies(SpotMaintenanceStrategies&& value) { SetSpotMaintenanceStrategies(std::move(value)); return *this;}
 
 
     /**
@@ -1424,6 +1462,9 @@ namespace Model
 
     OnDemandAllocationStrategy m_onDemandAllocationStrategy;
     bool m_onDemandAllocationStrategyHasBeenSet;
+
+    SpotMaintenanceStrategies m_spotMaintenanceStrategies;
+    bool m_spotMaintenanceStrategiesHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

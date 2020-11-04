@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>The metadata options for the instances. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-   * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-   * Instances</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+   * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceMetadataOptions">AWS
    * API Reference</a></p>
    */

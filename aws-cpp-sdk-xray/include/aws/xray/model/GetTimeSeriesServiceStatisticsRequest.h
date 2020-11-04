@@ -264,6 +264,31 @@ namespace Model
 
 
     /**
+     * <p>The forecasted high and low fault count values. Forecast enabled requests
+     * require the EntitySelectorExpression ID be provided.</p>
+     */
+    inline bool GetForecastStatistics() const{ return m_forecastStatistics; }
+
+    /**
+     * <p>The forecasted high and low fault count values. Forecast enabled requests
+     * require the EntitySelectorExpression ID be provided.</p>
+     */
+    inline bool ForecastStatisticsHasBeenSet() const { return m_forecastStatisticsHasBeenSet; }
+
+    /**
+     * <p>The forecasted high and low fault count values. Forecast enabled requests
+     * require the EntitySelectorExpression ID be provided.</p>
+     */
+    inline void SetForecastStatistics(bool value) { m_forecastStatisticsHasBeenSet = true; m_forecastStatistics = value; }
+
+    /**
+     * <p>The forecasted high and low fault count values. Forecast enabled requests
+     * require the EntitySelectorExpression ID be provided.</p>
+     */
+    inline GetTimeSeriesServiceStatisticsRequest& WithForecastStatistics(bool value) { SetForecastStatistics(value); return *this;}
+
+
+    /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -322,6 +347,9 @@ namespace Model
 
     int m_period;
     bool m_periodHasBeenSet;
+
+    bool m_forecastStatistics;
+    bool m_forecastStatisticsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

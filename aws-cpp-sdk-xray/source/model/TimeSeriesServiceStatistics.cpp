@@ -22,6 +22,7 @@ TimeSeriesServiceStatistics::TimeSeriesServiceStatistics() :
     m_timestampHasBeenSet(false),
     m_edgeSummaryStatisticsHasBeenSet(false),
     m_serviceSummaryStatisticsHasBeenSet(false),
+    m_serviceForecastStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ TimeSeriesServiceStatistics::TimeSeriesServiceStatistics(JsonView jsonValue) :
     m_timestampHasBeenSet(false),
     m_edgeSummaryStatisticsHasBeenSet(false),
     m_serviceSummaryStatisticsHasBeenSet(false),
+    m_serviceForecastStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ TimeSeriesServiceStatistics& TimeSeriesServiceStatistics::operator =(JsonView js
     m_serviceSummaryStatistics = jsonValue.GetObject("ServiceSummaryStatistics");
 
     m_serviceSummaryStatisticsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceForecastStatistics"))
+  {
+    m_serviceForecastStatistics = jsonValue.GetObject("ServiceForecastStatistics");
+
+    m_serviceForecastStatisticsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
@@ -89,6 +98,12 @@ JsonValue TimeSeriesServiceStatistics::Jsonize() const
   if(m_serviceSummaryStatisticsHasBeenSet)
   {
    payload.WithObject("ServiceSummaryStatistics", m_serviceSummaryStatistics.Jsonize());
+
+  }
+
+  if(m_serviceForecastStatisticsHasBeenSet)
+  {
+   payload.WithObject("ServiceForecastStatistics", m_serviceForecastStatistics.Jsonize());
 
   }
 

@@ -9,6 +9,7 @@
 #include <aws/mq/model/BrokerState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/DeploymentMode.h>
+#include <aws/mq/model/EngineType.h>
 #include <utility>
 
 namespace Aws
@@ -281,6 +282,37 @@ namespace Model
 
 
     /**
+     * Required. The type of broker engine.
+     */
+    inline const EngineType& GetEngineType() const{ return m_engineType; }
+
+    /**
+     * Required. The type of broker engine.
+     */
+    inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
+
+    /**
+     * Required. The type of broker engine.
+     */
+    inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+
+    /**
+     * Required. The type of broker engine.
+     */
+    inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
+
+    /**
+     * Required. The type of broker engine.
+     */
+    inline BrokerSummary& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
+
+    /**
+     * Required. The type of broker engine.
+     */
+    inline BrokerSummary& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
+
+
+    /**
      * The broker's instance type.
      */
     inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
@@ -339,6 +371,9 @@ namespace Model
 
     DeploymentMode m_deploymentMode;
     bool m_deploymentModeHasBeenSet;
+
+    EngineType m_engineType;
+    bool m_engineTypeHasBeenSet;
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;

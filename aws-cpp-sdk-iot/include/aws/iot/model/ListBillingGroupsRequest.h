@@ -39,42 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline ListBillingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline ListBillingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results.</p>
+     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
+     * previous response; otherwise <b>null</b> to receive the first set of
+     * results.</p>
      */
     inline ListBillingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -37,6 +37,12 @@ ListThingPrincipalsResult& ListThingPrincipalsResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
 
 
   return *this;

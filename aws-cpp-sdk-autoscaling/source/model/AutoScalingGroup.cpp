@@ -53,7 +53,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -305,6 +309,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_maxInstanceLifetime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxInstanceLifetimeNode.GetText()).c_str()).c_str());
       m_maxInstanceLifetimeHasBeenSet = true;
     }
+    XmlNode capacityRebalanceNode = resultNode.FirstChild("CapacityRebalance");
+    if(!capacityRebalanceNode.IsNull())
+    {
+      m_capacityRebalance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityRebalanceNode.GetText()).c_str()).c_str());
+      m_capacityRebalanceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -486,6 +496,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
   }
 
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -637,6 +652,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_maxInstanceLifetimeHasBeenSet)
   {
       oStream << location << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
   }
 }
 

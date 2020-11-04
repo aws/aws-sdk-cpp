@@ -23,6 +23,7 @@ namespace Model
 SpotOptionsRequest::SpotOptionsRequest() : 
     m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
+    m_maintenanceStrategiesHasBeenSet(false),
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_instancePoolsToUseCount(0),
@@ -40,6 +41,7 @@ SpotOptionsRequest::SpotOptionsRequest() :
 SpotOptionsRequest::SpotOptionsRequest(const XmlNode& xmlNode) : 
     m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
+    m_maintenanceStrategiesHasBeenSet(false),
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_instancePoolsToUseCount(0),
@@ -66,6 +68,12 @@ SpotOptionsRequest& SpotOptionsRequest::operator =(const XmlNode& xmlNode)
     {
       m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
+    }
+    XmlNode maintenanceStrategiesNode = resultNode.FirstChild("MaintenanceStrategies");
+    if(!maintenanceStrategiesNode.IsNull())
+    {
+      m_maintenanceStrategies = maintenanceStrategiesNode;
+      m_maintenanceStrategiesHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("InstanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
@@ -115,6 +123,13 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".AllocationStrategy=" << SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy) << "&";
   }
 
+  if(m_maintenanceStrategiesHasBeenSet)
+  {
+      Aws::StringStream maintenanceStrategiesLocationAndMemberSs;
+      maintenanceStrategiesLocationAndMemberSs << location << index << locationValue << ".MaintenanceStrategies";
+      m_maintenanceStrategies.OutputToStream(oStream, maintenanceStrategiesLocationAndMemberSs.str().c_str());
+  }
+
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
@@ -152,6 +167,12 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_allocationStrategyHasBeenSet)
   {
       oStream << location << ".AllocationStrategy=" << SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy) << "&";
+  }
+  if(m_maintenanceStrategiesHasBeenSet)
+  {
+      Aws::String maintenanceStrategiesLocationAndMember(location);
+      maintenanceStrategiesLocationAndMember += ".MaintenanceStrategies";
+      m_maintenanceStrategies.OutputToStream(oStream, maintenanceStrategiesLocationAndMember.c_str());
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
