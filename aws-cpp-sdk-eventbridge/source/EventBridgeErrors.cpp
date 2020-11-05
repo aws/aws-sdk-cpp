@@ -26,6 +26,7 @@ static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Resour
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int ILLEGAL_STATUS_HASH = HashingUtils::HashString("IllegalStatusException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
 
@@ -64,6 +65,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == ILLEGAL_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::ILLEGAL_STATUS), false);
   }
   else if (hashCode == INVALID_STATE_HASH)
   {

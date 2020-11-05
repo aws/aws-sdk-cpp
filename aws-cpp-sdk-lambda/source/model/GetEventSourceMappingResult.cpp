@@ -115,6 +115,24 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("Queues"))
+  {
+    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+    {
+      m_queues.push_back(queuesJsonList[queuesIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("SourceAccessConfigurations"))
+  {
+    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+    {
+      m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");

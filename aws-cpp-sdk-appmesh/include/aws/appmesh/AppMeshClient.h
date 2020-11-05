@@ -249,33 +249,20 @@ namespace Model
 
   /**
    * <p>AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to
-   * monitor and
-         control microservices. App Mesh standardizes how your
-   * microservices communicate, giving you
-         end-to-end visibility and helping
-   * to ensure high availability for your applications.</p>
-         <p>App Mesh
-   * gives you consistent visibility and network traffic controls for every
-        
-   * microservice in an application. You can use App Mesh with AWS Fargate, Amazon
-   * ECS, Amazon EKS,
-         Kubernetes on AWS, and Amazon EC2.</p>
-        
-   * 
-            <p>App Mesh supports microservice applications that use
-   * service discovery naming for their
-            components. For more information
-   * about service discovery on Amazon ECS, see <a
+   * monitor and control microservices. App Mesh standardizes how your microservices
+   * communicate, giving you end-to-end visibility and helping to ensure high
+   * availability for your applications.</p> <p>App Mesh gives you consistent
+   * visibility and network traffic controls for every microservice in an
+   * application. You can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS,
+   * Kubernetes on AWS, and Amazon EC2.</p>  <p>App Mesh supports microservice
+   * applications that use service discovery naming for their components. For more
+   * information about service discovery on Amazon ECS, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
    * Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-   * Kubernetes
-               <code>kube-dns</code> and <code>coredns</code> are
-   * supported. For more information,
-            see <a
+   * Kubernetes <code>kube-dns</code> and <code>coredns</code> are supported. For
+   * more information, see <a
    * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
-
-   *  for Services and Pods</a> in the Kubernetes documentation.</p>
-         
+   * for Services and Pods</a> in the Kubernetes documentation.</p> 
    */
   class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient
   {
@@ -305,13 +292,10 @@ namespace Model
 
 
         /**
-         * <p>Creates a gateway route.</p>
-         <p>A gateway route is attached to a
-         * virtual gateway and routes traffic to an existing
-         virtual service. If a
-         * route matches a request, it can distribute traffic to a target virtual
-         * service.</p>
-         <p>For more information about gateway routes, see <a
+         * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual
+         * gateway and routes traffic to an existing virtual service. If a route matches a
+         * request, it can distribute traffic to a target virtual service.</p> <p>For more
+         * information about gateway routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway
          * routes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">AWS
@@ -320,13 +304,10 @@ namespace Model
         virtual Model::CreateGatewayRouteOutcome CreateGatewayRoute(const Model::CreateGatewayRouteRequest& request) const;
 
         /**
-         * <p>Creates a gateway route.</p>
-         <p>A gateway route is attached to a
-         * virtual gateway and routes traffic to an existing
-         virtual service. If a
-         * route matches a request, it can distribute traffic to a target virtual
-         * service.</p>
-         <p>For more information about gateway routes, see <a
+         * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual
+         * gateway and routes traffic to an existing virtual service. If a route matches a
+         * request, it can distribute traffic to a target virtual service.</p> <p>For more
+         * information about gateway routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway
          * routes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">AWS
@@ -337,13 +318,10 @@ namespace Model
         virtual Model::CreateGatewayRouteOutcomeCallable CreateGatewayRouteCallable(const Model::CreateGatewayRouteRequest& request) const;
 
         /**
-         * <p>Creates a gateway route.</p>
-         <p>A gateway route is attached to a
-         * virtual gateway and routes traffic to an existing
-         virtual service. If a
-         * route matches a request, it can distribute traffic to a target virtual
-         * service.</p>
-         <p>For more information about gateway routes, see <a
+         * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual
+         * gateway and routes traffic to an existing virtual service. If a route matches a
+         * request, it can distribute traffic to a target virtual service.</p> <p>For more
+         * information about gateway routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway
          * routes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">AWS
@@ -354,17 +332,12 @@ namespace Model
         virtual void CreateGatewayRouteAsync(const Model::CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a service mesh.</p>
-         <p> A service mesh is a logical boundary
-         * for network traffic between services that are
-         represented by resources
-         * within the mesh. After you create your service mesh, you can
-         create
-         * virtual services, virtual nodes, virtual routers, and routes to distribute
-         * traffic
-         between the applications in your mesh.</p>
-         <p>For more
-         * information about service meshes, see <a
+         * <p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for
+         * network traffic between services that are represented by resources within the
+         * mesh. After you create your service mesh, you can create virtual services,
+         * virtual nodes, virtual routers, and routes to distribute traffic between the
+         * applications in your mesh.</p> <p>For more information about service meshes, see
+         * <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service
          * meshes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">AWS
@@ -373,17 +346,12 @@ namespace Model
         virtual Model::CreateMeshOutcome CreateMesh(const Model::CreateMeshRequest& request) const;
 
         /**
-         * <p>Creates a service mesh.</p>
-         <p> A service mesh is a logical boundary
-         * for network traffic between services that are
-         represented by resources
-         * within the mesh. After you create your service mesh, you can
-         create
-         * virtual services, virtual nodes, virtual routers, and routes to distribute
-         * traffic
-         between the applications in your mesh.</p>
-         <p>For more
-         * information about service meshes, see <a
+         * <p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for
+         * network traffic between services that are represented by resources within the
+         * mesh. After you create your service mesh, you can create virtual services,
+         * virtual nodes, virtual routers, and routes to distribute traffic between the
+         * applications in your mesh.</p> <p>For more information about service meshes, see
+         * <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service
          * meshes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">AWS
@@ -394,17 +362,12 @@ namespace Model
         virtual Model::CreateMeshOutcomeCallable CreateMeshCallable(const Model::CreateMeshRequest& request) const;
 
         /**
-         * <p>Creates a service mesh.</p>
-         <p> A service mesh is a logical boundary
-         * for network traffic between services that are
-         represented by resources
-         * within the mesh. After you create your service mesh, you can
-         create
-         * virtual services, virtual nodes, virtual routers, and routes to distribute
-         * traffic
-         between the applications in your mesh.</p>
-         <p>For more
-         * information about service meshes, see <a
+         * <p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for
+         * network traffic between services that are represented by resources within the
+         * mesh. After you create your service mesh, you can create virtual services,
+         * virtual nodes, virtual routers, and routes to distribute traffic between the
+         * applications in your mesh.</p> <p>For more information about service meshes, see
+         * <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service
          * meshes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">AWS
@@ -415,13 +378,10 @@ namespace Model
         virtual void CreateMeshAsync(const Model::CreateMeshRequest& request, const CreateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a route that is associated with a virtual router.</p>
-         <p>
-         * You can route several different protocols and define a retry policy for a
-         * route.
-         Traffic can be routed to one or more virtual nodes.</p>
-        
-         * <p>For more information about routes, see <a
+         * <p>Creates a route that is associated with a virtual router.</p> <p> You can
+         * route several different protocols and define a retry policy for a route. Traffic
+         * can be routed to one or more virtual nodes.</p> <p>For more information about
+         * routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
@@ -430,13 +390,10 @@ namespace Model
         virtual Model::CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest& request) const;
 
         /**
-         * <p>Creates a route that is associated with a virtual router.</p>
-         <p>
-         * You can route several different protocols and define a retry policy for a
-         * route.
-         Traffic can be routed to one or more virtual nodes.</p>
-        
-         * <p>For more information about routes, see <a
+         * <p>Creates a route that is associated with a virtual router.</p> <p> You can
+         * route several different protocols and define a retry policy for a route. Traffic
+         * can be routed to one or more virtual nodes.</p> <p>For more information about
+         * routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
@@ -447,13 +404,10 @@ namespace Model
         virtual Model::CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request) const;
 
         /**
-         * <p>Creates a route that is associated with a virtual router.</p>
-         <p>
-         * You can route several different protocols and define a retry policy for a
-         * route.
-         Traffic can be routed to one or more virtual nodes.</p>
-        
-         * <p>For more information about routes, see <a
+         * <p>Creates a route that is associated with a virtual router.</p> <p> You can
+         * route several different protocols and define a retry policy for a route. Traffic
+         * can be routed to one or more virtual nodes.</p> <p>For more information about
+         * routes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
@@ -464,40 +418,28 @@ namespace Model
         virtual void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a virtual gateway.</p>
-         <p>A virtual gateway allows resources
-         * outside your mesh to communicate to resources that
-         are inside your
-         * mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS
-   
-         * task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual
-         * node, which
-         represents an Envoy running with an application, a virtual
-         * gateway represents Envoy deployed by itself.</p>
-         <p>For more
-         * information about virtual gateways, see <a
+         * <p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside
+         * your mesh to communicate to resources that are inside your mesh. The virtual
+         * gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes
+         * service, or on an Amazon EC2 instance. Unlike a virtual node, which represents
+         * an Envoy running with an application, a virtual gateway represents Envoy
+         * deployed by itself.</p> <p>For more information about virtual gateways, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual
-         * gateways</a>.</p><p><h3>See Also:</h3>   <a
+         * gateways</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateVirtualGatewayOutcome CreateVirtualGateway(const Model::CreateVirtualGatewayRequest& request) const;
 
         /**
-         * <p>Creates a virtual gateway.</p>
-         <p>A virtual gateway allows resources
-         * outside your mesh to communicate to resources that
-         are inside your
-         * mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS
-   
-         * task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual
-         * node, which
-         represents an Envoy running with an application, a virtual
-         * gateway represents Envoy deployed by itself.</p>
-         <p>For more
-         * information about virtual gateways, see <a
+         * <p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside
+         * your mesh to communicate to resources that are inside your mesh. The virtual
+         * gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes
+         * service, or on an Amazon EC2 instance. Unlike a virtual node, which represents
+         * an Envoy running with an application, a virtual gateway represents Envoy
+         * deployed by itself.</p> <p>For more information about virtual gateways, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual
-         * gateways</a>.</p><p><h3>See Also:</h3>   <a
+         * gateways</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">AWS
          * API Reference</a></p>
          *
@@ -506,20 +448,14 @@ namespace Model
         virtual Model::CreateVirtualGatewayOutcomeCallable CreateVirtualGatewayCallable(const Model::CreateVirtualGatewayRequest& request) const;
 
         /**
-         * <p>Creates a virtual gateway.</p>
-         <p>A virtual gateway allows resources
-         * outside your mesh to communicate to resources that
-         are inside your
-         * mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS
-   
-         * task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual
-         * node, which
-         represents an Envoy running with an application, a virtual
-         * gateway represents Envoy deployed by itself.</p>
-         <p>For more
-         * information about virtual gateways, see <a
+         * <p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside
+         * your mesh to communicate to resources that are inside your mesh. The virtual
+         * gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes
+         * service, or on an Amazon EC2 instance. Unlike a virtual node, which represents
+         * an Envoy running with an application, a virtual gateway represents Envoy
+         * deployed by itself.</p> <p>For more information about virtual gateways, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual
-         * gateways</a>.</p><p><h3>See Also:</h3>   <a
+         * gateways</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">AWS
          * API Reference</a></p>
          *
@@ -528,100 +464,66 @@ namespace Model
         virtual void CreateVirtualGatewayAsync(const Model::CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a virtual node within a service mesh.</p>
-         <p> A virtual node
-         * acts as a logical pointer to a particular task group, such as an Amazon ECS
-    
-         * service or a Kubernetes deployment. When you create a virtual node, you can
-         * specify the
-         service discovery information for your task group, and
-         * whether the proxy running in a task
-         group will communicate with other
-         * proxies using Transport Layer Security (TLS).</p>
-         <p>You define a
-         * <code>listener</code> for any inbound traffic that your virtual node
-        
-         * expects. Any virtual service that your virtual node expects to communicate to is
-         * specified
-         as a <code>backend</code>.</p>
-         <p>The response
-         * metadata for your new virtual node contains the <code>arn</code> that is
-       
-         * associated with the virtual node. Set this value (either the full ARN or the
-         * truncated
-         resource name: for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>) as the
-           
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
-         * group's Envoy
-         proxy container in your task definition or pod spec. This
-         * is then mapped to the
-            <code>node.id</code> and
-         * <code>node.cluster</code> Envoy parameters.</p>
-         
-           
-         * <p>If you require your Envoy stats or tracing to use a different name, you can
-         * override
-            the <code>node.cluster</code> value that is set by
-        
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> with the
-              
-         * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
-        
-         * 
-         <p>For more information about virtual nodes, see <a
+         * <p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as
+         * a logical pointer to a particular task group, such as an Amazon ECS service or a
+         * Kubernetes deployment. When you create a virtual node, you can specify the
+         * service discovery information for your task group, and whether the proxy running
+         * in a task group will communicate with other proxies using Transport Layer
+         * Security (TLS).</p> <p>You define a <code>listener</code> for any inbound
+         * traffic that your virtual node expects. Any virtual service that your virtual
+         * node expects to communicate to is specified as a <code>backend</code>.</p>
+         * <p>The response metadata for your new virtual node contains the <code>arn</code>
+         * that is associated with the virtual node. Set this value to the full ARN; for
+         * example,
+         * <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
+         * as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task
+         * group's Envoy proxy container in your task definition or pod spec. This is then
+         * mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy
+         * parameters.</p>  <p>By default, App Mesh uses the name of the resource you
+         * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
+         * in metrics and traces. You can override this behavior by setting the
+         * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
+         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
+         *  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-         * nodes</a>.</p><p><h3>See Also:</h3>   <a
+         * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
+         * when setting these variables. For more information about App Mesh Envoy
+         * variables, see <a
+         * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+         * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateVirtualNodeOutcome CreateVirtualNode(const Model::CreateVirtualNodeRequest& request) const;
 
         /**
-         * <p>Creates a virtual node within a service mesh.</p>
-         <p> A virtual node
-         * acts as a logical pointer to a particular task group, such as an Amazon ECS
-    
-         * service or a Kubernetes deployment. When you create a virtual node, you can
-         * specify the
-         service discovery information for your task group, and
-         * whether the proxy running in a task
-         group will communicate with other
-         * proxies using Transport Layer Security (TLS).</p>
-         <p>You define a
-         * <code>listener</code> for any inbound traffic that your virtual node
-        
-         * expects. Any virtual service that your virtual node expects to communicate to is
-         * specified
-         as a <code>backend</code>.</p>
-         <p>The response
-         * metadata for your new virtual node contains the <code>arn</code> that is
-       
-         * associated with the virtual node. Set this value (either the full ARN or the
-         * truncated
-         resource name: for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>) as the
-           
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
-         * group's Envoy
-         proxy container in your task definition or pod spec. This
-         * is then mapped to the
-            <code>node.id</code> and
-         * <code>node.cluster</code> Envoy parameters.</p>
-         
-           
-         * <p>If you require your Envoy stats or tracing to use a different name, you can
-         * override
-            the <code>node.cluster</code> value that is set by
-        
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> with the
-              
-         * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
-        
-         * 
-         <p>For more information about virtual nodes, see <a
+         * <p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as
+         * a logical pointer to a particular task group, such as an Amazon ECS service or a
+         * Kubernetes deployment. When you create a virtual node, you can specify the
+         * service discovery information for your task group, and whether the proxy running
+         * in a task group will communicate with other proxies using Transport Layer
+         * Security (TLS).</p> <p>You define a <code>listener</code> for any inbound
+         * traffic that your virtual node expects. Any virtual service that your virtual
+         * node expects to communicate to is specified as a <code>backend</code>.</p>
+         * <p>The response metadata for your new virtual node contains the <code>arn</code>
+         * that is associated with the virtual node. Set this value to the full ARN; for
+         * example,
+         * <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
+         * as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task
+         * group's Envoy proxy container in your task definition or pod spec. This is then
+         * mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy
+         * parameters.</p>  <p>By default, App Mesh uses the name of the resource you
+         * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
+         * in metrics and traces. You can override this behavior by setting the
+         * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
+         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
+         *  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-         * nodes</a>.</p><p><h3>See Also:</h3>   <a
+         * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
+         * when setting these variables. For more information about App Mesh Envoy
+         * variables, see <a
+         * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+         * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -630,50 +532,33 @@ namespace Model
         virtual Model::CreateVirtualNodeOutcomeCallable CreateVirtualNodeCallable(const Model::CreateVirtualNodeRequest& request) const;
 
         /**
-         * <p>Creates a virtual node within a service mesh.</p>
-         <p> A virtual node
-         * acts as a logical pointer to a particular task group, such as an Amazon ECS
-    
-         * service or a Kubernetes deployment. When you create a virtual node, you can
-         * specify the
-         service discovery information for your task group, and
-         * whether the proxy running in a task
-         group will communicate with other
-         * proxies using Transport Layer Security (TLS).</p>
-         <p>You define a
-         * <code>listener</code> for any inbound traffic that your virtual node
-        
-         * expects. Any virtual service that your virtual node expects to communicate to is
-         * specified
-         as a <code>backend</code>.</p>
-         <p>The response
-         * metadata for your new virtual node contains the <code>arn</code> that is
-       
-         * associated with the virtual node. Set this value (either the full ARN or the
-         * truncated
-         resource name: for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>) as the
-           
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
-         * group's Envoy
-         proxy container in your task definition or pod spec. This
-         * is then mapped to the
-            <code>node.id</code> and
-         * <code>node.cluster</code> Envoy parameters.</p>
-         
-           
-         * <p>If you require your Envoy stats or tracing to use a different name, you can
-         * override
-            the <code>node.cluster</code> value that is set by
-        
-         * <code>APPMESH_VIRTUAL_NODE_NAME</code> with the
-              
-         * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
-        
-         * 
-         <p>For more information about virtual nodes, see <a
+         * <p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as
+         * a logical pointer to a particular task group, such as an Amazon ECS service or a
+         * Kubernetes deployment. When you create a virtual node, you can specify the
+         * service discovery information for your task group, and whether the proxy running
+         * in a task group will communicate with other proxies using Transport Layer
+         * Security (TLS).</p> <p>You define a <code>listener</code> for any inbound
+         * traffic that your virtual node expects. Any virtual service that your virtual
+         * node expects to communicate to is specified as a <code>backend</code>.</p>
+         * <p>The response metadata for your new virtual node contains the <code>arn</code>
+         * that is associated with the virtual node. Set this value to the full ARN; for
+         * example,
+         * <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
+         * as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task
+         * group's Envoy proxy container in your task definition or pod spec. This is then
+         * mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy
+         * parameters.</p>  <p>By default, App Mesh uses the name of the resource you
+         * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
+         * in metrics and traces. You can override this behavior by setting the
+         * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
+         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
+         *  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-         * nodes</a>.</p><p><h3>See Also:</h3>   <a
+         * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
+         * when setting these variables. For more information about App Mesh Envoy
+         * variables, see <a
+         * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+         * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -682,20 +567,13 @@ namespace Model
         virtual void CreateVirtualNodeAsync(const Model::CreateVirtualNodeRequest& request, const CreateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a virtual router within a service mesh.</p>
-         <p>Specify a
-         * <code>listener</code> for any inbound traffic that your virtual router
-        
-         * receives. Create a virtual router for each protocol and port that you need to
-         * route.
-         Virtual routers handle traffic for one or more virtual services
-         * within your mesh. After you
-         create your virtual router, create and
-         * associate routes for your virtual router that direct
-         incoming requests
-         * to different virtual nodes.</p>
-         <p>For more information about virtual
-         * routers, see <a
+         * <p>Creates a virtual router within a service mesh.</p> <p>Specify a
+         * <code>listener</code> for any inbound traffic that your virtual router receives.
+         * Create a virtual router for each protocol and port that you need to route.
+         * Virtual routers handle traffic for one or more virtual services within your
+         * mesh. After you create your virtual router, create and associate routes for your
+         * virtual router that direct incoming requests to different virtual nodes.</p>
+         * <p>For more information about virtual routers, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
          * routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
@@ -704,20 +582,13 @@ namespace Model
         virtual Model::CreateVirtualRouterOutcome CreateVirtualRouter(const Model::CreateVirtualRouterRequest& request) const;
 
         /**
-         * <p>Creates a virtual router within a service mesh.</p>
-         <p>Specify a
-         * <code>listener</code> for any inbound traffic that your virtual router
-        
-         * receives. Create a virtual router for each protocol and port that you need to
-         * route.
-         Virtual routers handle traffic for one or more virtual services
-         * within your mesh. After you
-         create your virtual router, create and
-         * associate routes for your virtual router that direct
-         incoming requests
-         * to different virtual nodes.</p>
-         <p>For more information about virtual
-         * routers, see <a
+         * <p>Creates a virtual router within a service mesh.</p> <p>Specify a
+         * <code>listener</code> for any inbound traffic that your virtual router receives.
+         * Create a virtual router for each protocol and port that you need to route.
+         * Virtual routers handle traffic for one or more virtual services within your
+         * mesh. After you create your virtual router, create and associate routes for your
+         * virtual router that direct incoming requests to different virtual nodes.</p>
+         * <p>For more information about virtual routers, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
          * routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
@@ -728,20 +599,13 @@ namespace Model
         virtual Model::CreateVirtualRouterOutcomeCallable CreateVirtualRouterCallable(const Model::CreateVirtualRouterRequest& request) const;
 
         /**
-         * <p>Creates a virtual router within a service mesh.</p>
-         <p>Specify a
-         * <code>listener</code> for any inbound traffic that your virtual router
-        
-         * receives. Create a virtual router for each protocol and port that you need to
-         * route.
-         Virtual routers handle traffic for one or more virtual services
-         * within your mesh. After you
-         create your virtual router, create and
-         * associate routes for your virtual router that direct
-         incoming requests
-         * to different virtual nodes.</p>
-         <p>For more information about virtual
-         * routers, see <a
+         * <p>Creates a virtual router within a service mesh.</p> <p>Specify a
+         * <code>listener</code> for any inbound traffic that your virtual router receives.
+         * Create a virtual router for each protocol and port that you need to route.
+         * Virtual routers handle traffic for one or more virtual services within your
+         * mesh. After you create your virtual router, create and associate routes for your
+         * virtual router that direct incoming requests to different virtual nodes.</p>
+         * <p>For more information about virtual routers, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
          * routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
@@ -752,19 +616,12 @@ namespace Model
         virtual void CreateVirtualRouterAsync(const Model::CreateVirtualRouterRequest& request, const CreateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a virtual service within a service mesh.</p>
-         <p>A virtual
-         * service is an abstraction of a real service that is provided by a virtual node
- 
-         * directly or indirectly by means of a virtual router. Dependent services call
-         * your virtual
-         service by its <code>virtualServiceName</code>, and those
-         * requests are routed to the
-         virtual node or virtual router that is
-         * specified as the provider for the virtual
-         service.</p>
-         <p>For
-         * more information about virtual services, see <a
+         * <p>Creates a virtual service within a service mesh.</p> <p>A virtual service is
+         * an abstraction of a real service that is provided by a virtual node directly or
+         * indirectly by means of a virtual router. Dependent services call your virtual
+         * service by its <code>virtualServiceName</code>, and those requests are routed to
+         * the virtual node or virtual router that is specified as the provider for the
+         * virtual service.</p> <p>For more information about virtual services, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
          * services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
@@ -773,19 +630,12 @@ namespace Model
         virtual Model::CreateVirtualServiceOutcome CreateVirtualService(const Model::CreateVirtualServiceRequest& request) const;
 
         /**
-         * <p>Creates a virtual service within a service mesh.</p>
-         <p>A virtual
-         * service is an abstraction of a real service that is provided by a virtual node
- 
-         * directly or indirectly by means of a virtual router. Dependent services call
-         * your virtual
-         service by its <code>virtualServiceName</code>, and those
-         * requests are routed to the
-         virtual node or virtual router that is
-         * specified as the provider for the virtual
-         service.</p>
-         <p>For
-         * more information about virtual services, see <a
+         * <p>Creates a virtual service within a service mesh.</p> <p>A virtual service is
+         * an abstraction of a real service that is provided by a virtual node directly or
+         * indirectly by means of a virtual router. Dependent services call your virtual
+         * service by its <code>virtualServiceName</code>, and those requests are routed to
+         * the virtual node or virtual router that is specified as the provider for the
+         * virtual service.</p> <p>For more information about virtual services, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
          * services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
@@ -796,19 +646,12 @@ namespace Model
         virtual Model::CreateVirtualServiceOutcomeCallable CreateVirtualServiceCallable(const Model::CreateVirtualServiceRequest& request) const;
 
         /**
-         * <p>Creates a virtual service within a service mesh.</p>
-         <p>A virtual
-         * service is an abstraction of a real service that is provided by a virtual node
- 
-         * directly or indirectly by means of a virtual router. Dependent services call
-         * your virtual
-         service by its <code>virtualServiceName</code>, and those
-         * requests are routed to the
-         virtual node or virtual router that is
-         * specified as the provider for the virtual
-         service.</p>
-         <p>For
-         * more information about virtual services, see <a
+         * <p>Creates a virtual service within a service mesh.</p> <p>A virtual service is
+         * an abstraction of a real service that is provided by a virtual node directly or
+         * indirectly by means of a virtual router. Dependent services call your virtual
+         * service by its <code>virtualServiceName</code>, and those requests are routed to
+         * the virtual node or virtual router that is specified as the provider for the
+         * virtual service.</p> <p>For more information about virtual services, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
          * services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
@@ -844,24 +687,18 @@ namespace Model
         virtual void DeleteGatewayRouteAsync(const Model::DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing service mesh.</p>
-         <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual
-        
-         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an existing service mesh.</p> <p>You must delete all resources
+         * (virtual services, routes, virtual routers, and virtual nodes) in the service
+         * mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMeshOutcome DeleteMesh(const Model::DeleteMeshRequest& request) const;
 
         /**
-         * <p>Deletes an existing service mesh.</p>
-         <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual
-        
-         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an existing service mesh.</p> <p>You must delete all resources
+         * (virtual services, routes, virtual routers, and virtual nodes) in the service
+         * mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          *
@@ -870,12 +707,9 @@ namespace Model
         virtual Model::DeleteMeshOutcomeCallable DeleteMeshCallable(const Model::DeleteMeshRequest& request) const;
 
         /**
-         * <p>Deletes an existing service mesh.</p>
-         <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual
-        
-         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an existing service mesh.</p> <p>You must delete all resources
+         * (virtual services, routes, virtual routers, and virtual nodes) in the service
+         * mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          *
@@ -910,8 +744,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if
-         * any gateway
-         routes are associated to it.</p><p><h3>See Also:</h3>   <a
+         * any gateway routes are associated to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">AWS
          * API Reference</a></p>
          */
@@ -919,8 +752,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if
-         * any gateway
-         routes are associated to it.</p><p><h3>See Also:</h3>   <a
+         * any gateway routes are associated to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">AWS
          * API Reference</a></p>
          *
@@ -930,8 +762,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if
-         * any gateway
-         routes are associated to it.</p><p><h3>See Also:</h3>   <a
+         * any gateway routes are associated to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">AWS
          * API Reference</a></p>
          *
@@ -940,22 +771,18 @@ namespace Model
         virtual void DeleteVirtualGatewayAsync(const Model::DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing virtual node.</p>
-         <p>You must delete any virtual
-         * services that list a virtual node as a service provider
-         before you can
-         * delete the virtual node itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual node.</p> <p>You must delete any virtual services
+         * that list a virtual node as a service provider before you can delete the virtual
+         * node itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVirtualNodeOutcome DeleteVirtualNode(const Model::DeleteVirtualNodeRequest& request) const;
 
         /**
-         * <p>Deletes an existing virtual node.</p>
-         <p>You must delete any virtual
-         * services that list a virtual node as a service provider
-         before you can
-         * delete the virtual node itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual node.</p> <p>You must delete any virtual services
+         * that list a virtual node as a service provider before you can delete the virtual
+         * node itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -964,11 +791,9 @@ namespace Model
         virtual Model::DeleteVirtualNodeOutcomeCallable DeleteVirtualNodeCallable(const Model::DeleteVirtualNodeRequest& request) const;
 
         /**
-         * <p>Deletes an existing virtual node.</p>
-         <p>You must delete any virtual
-         * services that list a virtual node as a service provider
-         before you can
-         * delete the virtual node itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual node.</p> <p>You must delete any virtual services
+         * that list a virtual node as a service provider before you can delete the virtual
+         * node itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -977,22 +802,18 @@ namespace Model
         virtual void DeleteVirtualNodeAsync(const Model::DeleteVirtualNodeRequest& request, const DeleteVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing virtual router.</p>
-         <p>You must delete any
-         * routes associated with the virtual router before you can delete the
-        
-         * router itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual router.</p> <p>You must delete any routes
+         * associated with the virtual router before you can delete the router
+         * itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVirtualRouterOutcome DeleteVirtualRouter(const Model::DeleteVirtualRouterRequest& request) const;
 
         /**
-         * <p>Deletes an existing virtual router.</p>
-         <p>You must delete any
-         * routes associated with the virtual router before you can delete the
-        
-         * router itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual router.</p> <p>You must delete any routes
+         * associated with the virtual router before you can delete the router
+         * itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -1001,11 +822,9 @@ namespace Model
         virtual Model::DeleteVirtualRouterOutcomeCallable DeleteVirtualRouterCallable(const Model::DeleteVirtualRouterRequest& request) const;
 
         /**
-         * <p>Deletes an existing virtual router.</p>
-         <p>You must delete any
-         * routes associated with the virtual router before you can delete the
-        
-         * router itself.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing virtual router.</p> <p>You must delete any routes
+         * associated with the virtual router before you can delete the router
+         * itself.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -1215,7 +1034,6 @@ namespace Model
 
         /**
          * <p>Returns a list of existing gateway routes that are associated to a virtual
-  
          * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">AWS
          * API Reference</a></p>
@@ -1224,7 +1042,6 @@ namespace Model
 
         /**
          * <p>Returns a list of existing gateway routes that are associated to a virtual
-  
          * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">AWS
          * API Reference</a></p>
@@ -1235,7 +1052,6 @@ namespace Model
 
         /**
          * <p>Returns a list of existing gateway routes that are associated to a virtual
-  
          * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">AWS
          * API Reference</a></p>
@@ -1433,13 +1249,9 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
-         * <code>resourceArn</code>.
-         If existing tags on a resource aren't
-         * specified in the request parameters, they aren't
-         changed. When a
-         * resource is deleted, the tags associated with that resource are also
-        
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
+         * request parameters, they aren't changed. When a resource is deleted, the tags
+         * associated with that resource are also deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1447,13 +1259,9 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
-         * <code>resourceArn</code>.
-         If existing tags on a resource aren't
-         * specified in the request parameters, they aren't
-         changed. When a
-         * resource is deleted, the tags associated with that resource are also
-        
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
+         * request parameters, they aren't changed. When a resource is deleted, the tags
+         * associated with that resource are also deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1463,13 +1271,9 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
-         * <code>resourceArn</code>.
-         If existing tags on a resource aren't
-         * specified in the request parameters, they aren't
-         changed. When a
-         * resource is deleted, the tags associated with that resource are also
-        
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
+         * request parameters, they aren't changed. When a resource is deleted, the tags
+         * associated with that resource are also deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1504,8 +1308,7 @@ namespace Model
 
         /**
          * <p>Updates an existing gateway route that is associated to a specified virtual
-         * gateway in a
-         service mesh.</p><p><h3>See Also:</h3>   <a
+         * gateway in a service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">AWS
          * API Reference</a></p>
          */
@@ -1513,8 +1316,7 @@ namespace Model
 
         /**
          * <p>Updates an existing gateway route that is associated to a specified virtual
-         * gateway in a
-         service mesh.</p><p><h3>See Also:</h3>   <a
+         * gateway in a service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">AWS
          * API Reference</a></p>
          *
@@ -1524,8 +1326,7 @@ namespace Model
 
         /**
          * <p>Updates an existing gateway route that is associated to a specified virtual
-         * gateway in a
-         service mesh.</p><p><h3>See Also:</h3>   <a
+         * gateway in a service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">AWS
          * API Reference</a></p>
          *

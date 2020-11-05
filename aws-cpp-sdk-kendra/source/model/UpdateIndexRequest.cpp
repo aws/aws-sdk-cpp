@@ -18,7 +18,10 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_documentMetadataConfigurationUpdatesHasBeenSet(false),
-    m_capacityUnitsHasBeenSet(false)
+    m_capacityUnitsHasBeenSet(false),
+    m_userTokenConfigurationsHasBeenSet(false),
+    m_userContextPolicy(UserContextPolicy::NOT_SET),
+    m_userContextPolicyHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,22 @@ Aws::String UpdateIndexRequest::SerializePayload() const
   {
    payload.WithObject("CapacityUnits", m_capacityUnits.Jsonize());
 
+  }
+
+  if(m_userTokenConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+   {
+     userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("UserTokenConfigurations", std::move(userTokenConfigurationsJsonList));
+
+  }
+
+  if(m_userContextPolicyHasBeenSet)
+  {
+   payload.WithString("UserContextPolicy", UserContextPolicyMapper::GetNameForUserContextPolicy(m_userContextPolicy));
   }
 
   return payload.View().WriteReadable();

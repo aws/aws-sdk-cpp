@@ -33,7 +33,9 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
-    m_topicsHasBeenSet(false)
+    m_topicsHasBeenSet(false),
+    m_queuesHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,28 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
      topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
    }
    payload.WithArray("Topics", std::move(topicsJsonList));
+
+  }
+
+  if(m_queuesHasBeenSet)
+  {
+   Array<JsonValue> queuesJsonList(m_queues.size());
+   for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+   {
+     queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
+   }
+   payload.WithArray("Queues", std::move(queuesJsonList));
+
+  }
+
+  if(m_sourceAccessConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+   {
+     sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
 
   }
 

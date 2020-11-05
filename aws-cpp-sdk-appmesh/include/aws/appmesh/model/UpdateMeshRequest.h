@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMeshInput">AWS
    * API Reference</a></p>
    */
@@ -39,64 +39,56 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateMeshRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateMeshRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateMeshRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}

@@ -34,6 +34,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
     m_topicsHasBeenSet(false),
+    m_queuesHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
@@ -59,6 +61,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
     m_topicsHasBeenSet(false),
+    m_queuesHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
@@ -156,6 +160,26 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
       m_topics.push_back(topicsJsonList[topicsIndex].AsString());
     }
     m_topicsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Queues"))
+  {
+    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+    {
+      m_queues.push_back(queuesJsonList[queuesIndex].AsString());
+    }
+    m_queuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceAccessConfigurations"))
+  {
+    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+    {
+      m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
+    }
+    m_sourceAccessConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
@@ -259,6 +283,28 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
      topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
    }
    payload.WithArray("Topics", std::move(topicsJsonList));
+
+  }
+
+  if(m_queuesHasBeenSet)
+  {
+   Array<JsonValue> queuesJsonList(m_queues.size());
+   for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+   {
+     queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
+   }
+   payload.WithArray("Queues", std::move(queuesJsonList));
+
+  }
+
+  if(m_sourceAccessConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+   {
+     sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
 
   }
 

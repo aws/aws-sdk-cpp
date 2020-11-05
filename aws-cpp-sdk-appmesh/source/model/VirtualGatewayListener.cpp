@@ -19,6 +19,7 @@ namespace Model
 {
 
 VirtualGatewayListener::VirtualGatewayListener() : 
+    m_connectionPoolHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_portMappingHasBeenSet(false),
     m_tlsHasBeenSet(false)
@@ -26,6 +27,7 @@ VirtualGatewayListener::VirtualGatewayListener() :
 }
 
 VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue) : 
+    m_connectionPoolHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_portMappingHasBeenSet(false),
     m_tlsHasBeenSet(false)
@@ -35,6 +37,13 @@ VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue) :
 
 VirtualGatewayListener& VirtualGatewayListener::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("connectionPool"))
+  {
+    m_connectionPool = jsonValue.GetObject("connectionPool");
+
+    m_connectionPoolHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("healthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("healthCheck");
@@ -62,6 +71,12 @@ VirtualGatewayListener& VirtualGatewayListener::operator =(JsonView jsonValue)
 JsonValue VirtualGatewayListener::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_connectionPoolHasBeenSet)
+  {
+   payload.WithObject("connectionPool", m_connectionPool.Jsonize());
+
+  }
 
   if(m_healthCheckHasBeenSet)
   {

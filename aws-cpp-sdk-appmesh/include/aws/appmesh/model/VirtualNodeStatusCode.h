@@ -17,8 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    DELETED,
-    INACTIVE
+    INACTIVE,
+    DELETED
   };
 
 namespace VirtualNodeStatusCodeMapper

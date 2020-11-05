@@ -16,9 +16,9 @@ namespace Model
   enum class VirtualGatewayPortProtocol
   {
     NOT_SET,
-    grpc,
     http,
-    http2
+    http2,
+    grpc
   };
 
 namespace VirtualGatewayPortProtocolMapper

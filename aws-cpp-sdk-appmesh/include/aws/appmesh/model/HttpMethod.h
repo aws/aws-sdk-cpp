@@ -16,15 +16,15 @@ namespace Model
   enum class HttpMethod
   {
     NOT_SET,
-    CONNECT,
-    DELETE_,
     GET_,
     HEAD,
-    OPTIONS,
-    PATCH,
     POST,
     PUT,
-    TRACE
+    DELETE_,
+    CONNECT,
+    OPTIONS,
+    TRACE,
+    PATCH
   };
 
 namespace HttpMethodMapper

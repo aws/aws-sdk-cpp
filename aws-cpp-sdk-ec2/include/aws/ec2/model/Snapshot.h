@@ -589,74 +589,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS owner alias, as maintained by Amazon. The possible values are:
-     * <code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is
-     * not to be confused with the user-configured AWS account alias, which is set from
-     * the IAM console.</p>
+     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
+     * This is not the user-configured AWS account alias set using the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 

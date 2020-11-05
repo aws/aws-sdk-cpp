@@ -25,12 +25,9 @@ namespace Model
 
   /**
    * <p>Optional metadata that you apply to a resource to assist with categorization
-   * and
-         organization. Each tag consists of a key and an optional value,
-   * both of which you define.
-         Tag keys can have a maximum character length
-   * of 128 characters, and tag values can have
-            a maximum length of 256
+   * and organization. Each tag consists of a key and an optional value, both of
+   * which you define. Tag keys can have a maximum character length of 128
+   * characters, and tag values can have a maximum length of 256
    * characters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagRef">AWS API
    * Reference</a></p>
@@ -46,130 +43,98 @@ namespace Model
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline TagRef& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline TagRef& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>One part of a key-value pair that make up a tag. A <code>key</code> is a
-     * general label
-         that acts like a category for more specific tag
-     * values.</p>
+     * general label that acts like a category for more specific tag values.</p>
      */
     inline TagRef& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline TagRef& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline TagRef& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a
-         descriptor within a tag category
-     * (key).</p>
+     * <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline TagRef& WithValue(const char* value) { SetValue(value); return *this;}
 

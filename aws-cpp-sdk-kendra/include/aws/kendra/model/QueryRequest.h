@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/QueryResultType.h>
 #include <aws/kendra/model/SortingConfiguration.h>
+#include <aws/kendra/model/UserContext.h>
 #include <aws/kendra/model/Facet.h>
 #include <utility>
 
@@ -466,6 +467,37 @@ namespace Model
      */
     inline QueryRequest& WithSortingConfiguration(SortingConfiguration&& value) { SetSortingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline const UserContext& GetUserContext() const{ return m_userContext; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline QueryRequest& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline QueryRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -494,6 +526,9 @@ namespace Model
 
     SortingConfiguration m_sortingConfiguration;
     bool m_sortingConfigurationHasBeenSet;
+
+    UserContext m_userContext;
+    bool m_userContextHasBeenSet;
   };
 
 } // namespace Model

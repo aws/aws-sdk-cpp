@@ -11,16 +11,23 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/CancelReplayResult.h>
+#include <aws/events/model/CreateArchiveResult.h>
 #include <aws/events/model/CreateEventBusResult.h>
 #include <aws/events/model/CreatePartnerEventSourceResult.h>
+#include <aws/events/model/DeleteArchiveResult.h>
+#include <aws/events/model/DescribeArchiveResult.h>
 #include <aws/events/model/DescribeEventBusResult.h>
 #include <aws/events/model/DescribeEventSourceResult.h>
 #include <aws/events/model/DescribePartnerEventSourceResult.h>
+#include <aws/events/model/DescribeReplayResult.h>
 #include <aws/events/model/DescribeRuleResult.h>
+#include <aws/events/model/ListArchivesResult.h>
 #include <aws/events/model/ListEventBusesResult.h>
 #include <aws/events/model/ListEventSourcesResult.h>
 #include <aws/events/model/ListPartnerEventSourceAccountsResult.h>
 #include <aws/events/model/ListPartnerEventSourcesResult.h>
+#include <aws/events/model/ListReplaysResult.h>
 #include <aws/events/model/ListRuleNamesByTargetResult.h>
 #include <aws/events/model/ListRulesResult.h>
 #include <aws/events/model/ListTagsForResourceResult.h>
@@ -30,9 +37,11 @@
 #include <aws/events/model/PutRuleResult.h>
 #include <aws/events/model/PutTargetsResult.h>
 #include <aws/events/model/RemoveTargetsResult.h>
+#include <aws/events/model/StartReplayResult.h>
 #include <aws/events/model/TagResourceResult.h>
 #include <aws/events/model/TestEventPatternResult.h>
 #include <aws/events/model/UntagResourceResult.h>
+#include <aws/events/model/UpdateArchiveResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -74,22 +83,29 @@ namespace CloudWatchEvents
 namespace Model
 {
         class ActivateEventSourceRequest;
+        class CancelReplayRequest;
+        class CreateArchiveRequest;
         class CreateEventBusRequest;
         class CreatePartnerEventSourceRequest;
         class DeactivateEventSourceRequest;
+        class DeleteArchiveRequest;
         class DeleteEventBusRequest;
         class DeletePartnerEventSourceRequest;
         class DeleteRuleRequest;
+        class DescribeArchiveRequest;
         class DescribeEventBusRequest;
         class DescribeEventSourceRequest;
         class DescribePartnerEventSourceRequest;
+        class DescribeReplayRequest;
         class DescribeRuleRequest;
         class DisableRuleRequest;
         class EnableRuleRequest;
+        class ListArchivesRequest;
         class ListEventBusesRequest;
         class ListEventSourcesRequest;
         class ListPartnerEventSourceAccountsRequest;
         class ListPartnerEventSourcesRequest;
+        class ListReplaysRequest;
         class ListRuleNamesByTargetRequest;
         class ListRulesRequest;
         class ListTagsForResourceRequest;
@@ -101,27 +117,36 @@ namespace Model
         class PutTargetsRequest;
         class RemovePermissionRequest;
         class RemoveTargetsRequest;
+        class StartReplayRequest;
         class TagResourceRequest;
         class TestEventPatternRequest;
         class UntagResourceRequest;
+        class UpdateArchiveRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> ActivateEventSourceOutcome;
+        typedef Aws::Utils::Outcome<CancelReplayResult, CloudWatchEventsError> CancelReplayOutcome;
+        typedef Aws::Utils::Outcome<CreateArchiveResult, CloudWatchEventsError> CreateArchiveOutcome;
         typedef Aws::Utils::Outcome<CreateEventBusResult, CloudWatchEventsError> CreateEventBusOutcome;
         typedef Aws::Utils::Outcome<CreatePartnerEventSourceResult, CloudWatchEventsError> CreatePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> DeactivateEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteArchiveResult, CloudWatchEventsError> DeleteArchiveOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> DeleteEventBusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> DeletePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DescribeArchiveResult, CloudWatchEventsError> DescribeArchiveOutcome;
         typedef Aws::Utils::Outcome<DescribeEventBusResult, CloudWatchEventsError> DescribeEventBusOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSourceResult, CloudWatchEventsError> DescribeEventSourceOutcome;
         typedef Aws::Utils::Outcome<DescribePartnerEventSourceResult, CloudWatchEventsError> DescribePartnerEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeReplayResult, CloudWatchEventsError> DescribeReplayOutcome;
         typedef Aws::Utils::Outcome<DescribeRuleResult, CloudWatchEventsError> DescribeRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> DisableRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> EnableRuleOutcome;
+        typedef Aws::Utils::Outcome<ListArchivesResult, CloudWatchEventsError> ListArchivesOutcome;
         typedef Aws::Utils::Outcome<ListEventBusesResult, CloudWatchEventsError> ListEventBusesOutcome;
         typedef Aws::Utils::Outcome<ListEventSourcesResult, CloudWatchEventsError> ListEventSourcesOutcome;
         typedef Aws::Utils::Outcome<ListPartnerEventSourceAccountsResult, CloudWatchEventsError> ListPartnerEventSourceAccountsOutcome;
         typedef Aws::Utils::Outcome<ListPartnerEventSourcesResult, CloudWatchEventsError> ListPartnerEventSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListReplaysResult, CloudWatchEventsError> ListReplaysOutcome;
         typedef Aws::Utils::Outcome<ListRuleNamesByTargetResult, CloudWatchEventsError> ListRuleNamesByTargetOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, CloudWatchEventsError> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchEventsError> ListTagsForResourceOutcome;
@@ -133,27 +158,36 @@ namespace Model
         typedef Aws::Utils::Outcome<PutTargetsResult, CloudWatchEventsError> PutTargetsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchEventsError> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<RemoveTargetsResult, CloudWatchEventsError> RemoveTargetsOutcome;
+        typedef Aws::Utils::Outcome<StartReplayResult, CloudWatchEventsError> StartReplayOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchEventsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestEventPatternResult, CloudWatchEventsError> TestEventPatternOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchEventsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateArchiveResult, CloudWatchEventsError> UpdateArchiveOutcome;
 
         typedef std::future<ActivateEventSourceOutcome> ActivateEventSourceOutcomeCallable;
+        typedef std::future<CancelReplayOutcome> CancelReplayOutcomeCallable;
+        typedef std::future<CreateArchiveOutcome> CreateArchiveOutcomeCallable;
         typedef std::future<CreateEventBusOutcome> CreateEventBusOutcomeCallable;
         typedef std::future<CreatePartnerEventSourceOutcome> CreatePartnerEventSourceOutcomeCallable;
         typedef std::future<DeactivateEventSourceOutcome> DeactivateEventSourceOutcomeCallable;
+        typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
         typedef std::future<DeleteEventBusOutcome> DeleteEventBusOutcomeCallable;
         typedef std::future<DeletePartnerEventSourceOutcome> DeletePartnerEventSourceOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+        typedef std::future<DescribeArchiveOutcome> DescribeArchiveOutcomeCallable;
         typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
         typedef std::future<DescribeEventSourceOutcome> DescribeEventSourceOutcomeCallable;
         typedef std::future<DescribePartnerEventSourceOutcome> DescribePartnerEventSourceOutcomeCallable;
+        typedef std::future<DescribeReplayOutcome> DescribeReplayOutcomeCallable;
         typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
         typedef std::future<DisableRuleOutcome> DisableRuleOutcomeCallable;
         typedef std::future<EnableRuleOutcome> EnableRuleOutcomeCallable;
+        typedef std::future<ListArchivesOutcome> ListArchivesOutcomeCallable;
         typedef std::future<ListEventBusesOutcome> ListEventBusesOutcomeCallable;
         typedef std::future<ListEventSourcesOutcome> ListEventSourcesOutcomeCallable;
         typedef std::future<ListPartnerEventSourceAccountsOutcome> ListPartnerEventSourceAccountsOutcomeCallable;
         typedef std::future<ListPartnerEventSourcesOutcome> ListPartnerEventSourcesOutcomeCallable;
+        typedef std::future<ListReplaysOutcome> ListReplaysOutcomeCallable;
         typedef std::future<ListRuleNamesByTargetOutcome> ListRuleNamesByTargetOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -165,30 +199,39 @@ namespace Model
         typedef std::future<PutTargetsOutcome> PutTargetsOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<RemoveTargetsOutcome> RemoveTargetsOutcomeCallable;
+        typedef std::future<StartReplayOutcome> StartReplayOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestEventPatternOutcome> TestEventPatternOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateArchiveOutcome> UpdateArchiveOutcomeCallable;
 } // namespace Model
 
   class CloudWatchEventsClient;
 
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ActivateEventSourceRequest&, const Model::ActivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateEventSourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::CancelReplayRequest&, const Model::CancelReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReplayResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::CreateArchiveRequest&, const Model::CreateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::CreateEventBusRequest&, const Model::CreateEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventBusResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::CreatePartnerEventSourceRequest&, const Model::CreatePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DeactivateEventSourceRequest&, const Model::DeactivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEventSourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DeleteEventBusRequest&, const Model::DeleteEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventBusResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DeletePartnerEventSourceRequest&, const Model::DeletePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeArchiveRequest&, const Model::DescribeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeArchiveResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeEventBusRequest&, const Model::DescribeEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventBusResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeEventSourceRequest&, const Model::DescribeEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribePartnerEventSourceRequest&, const Model::DescribePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePartnerEventSourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeReplayRequest&, const Model::DescribeReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplayResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeRuleRequest&, const Model::DescribeRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DisableRuleRequest&, const Model::DisableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::EnableRuleRequest&, const Model::EnableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRuleResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::ListArchivesRequest&, const Model::ListArchivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArchivesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListEventBusesRequest&, const Model::ListEventBusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBusesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListEventSourcesRequest&, const Model::ListEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourcesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListPartnerEventSourceAccountsRequest&, const Model::ListPartnerEventSourceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourceAccountsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListPartnerEventSourcesRequest&, const Model::ListPartnerEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourcesResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::ListReplaysRequest&, const Model::ListReplaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReplaysResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListRuleNamesByTargetRequest&, const Model::ListRuleNamesByTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleNamesByTargetResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -200,9 +243,11 @@ namespace Model
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutTargetsRequest&, const Model::PutTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTargetsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::RemoveTargetsRequest&, const Model::RemoveTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTargetsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::StartReplayRequest&, const Model::StartReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplayResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::TestEventPatternRequest&, const Model::TestEventPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestEventPatternResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::UpdateArchiveRequest&, const Model::UpdateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveResponseReceivedHandler;
 
   /**
    * <p>Amazon EventBridge helps you to respond to state changes in your AWS
@@ -277,6 +322,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ActivateEventSourceAsync(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelReplayOutcome CancelReplay(const Model::CancelReplayRequest& request) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelReplayOutcomeCallable CancelReplayCallable(const Model::CancelReplayRequest& request) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelReplayAsync(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateArchiveOutcome CreateArchive(const Model::CreateArchiveRequest& request) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateArchiveOutcomeCallable CreateArchiveCallable(const Model::CreateArchiveRequest& request) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateArchiveAsync(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event bus within your account. This can be a custom event bus
@@ -429,6 +533,31 @@ namespace Model
         virtual void DeactivateEventSourceAsync(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteArchiveOutcome DeleteArchive(const Model::DeleteArchiveRequest& request) const;
+
+        /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteArchiveOutcomeCallable DeleteArchiveCallable(const Model::DeleteArchiveRequest& request) const;
+
+        /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteArchiveAsync(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified custom event bus or partner event bus. All rules
          * associated with this event bus need to be deleted. You can't delete your
          * account's default event bus.</p><p><h3>See Also:</h3>   <a
@@ -543,6 +672,31 @@ namespace Model
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeArchiveOutcome DescribeArchive(const Model::DescribeArchiveRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeArchiveOutcomeCallable DescribeArchiveCallable(const Model::DescribeArchiveRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeArchiveAsync(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays details about an event bus in your account. This can include the
          * external AWS accounts that are permitted to write events to your default event
          * bus, and the associated policy. For custom event buses and partner event buses,
@@ -648,6 +802,58 @@ namespace Model
         virtual void DescribePartnerEventSourceAsync(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplayOutcome DescribeReplay(const Model::DescribeReplayRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReplayOutcomeCallable DescribeReplayCallable(const Model::DescribeReplayRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReplayAsync(const Model::DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified rule.</p> <p>DescribeRule does not list the targets
          * of a rule. To see the targets associated with a rule, use
          * <a>ListTargetsByRule</a>.</p><p><h3>See Also:</h3>   <a
@@ -745,6 +951,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableRuleAsync(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListArchivesOutcomeCallable ListArchivesCallable(const Model::ListArchivesRequest& request) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListArchivesAsync(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the event buses in your account, including the default event bus,
@@ -866,6 +1103,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPartnerEventSourcesAsync(const Model::ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReplaysOutcome ListReplays(const Model::ListReplaysRequest& request) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReplaysOutcomeCallable ListReplaysCallable(const Model::ListReplaysRequest& request) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReplaysAsync(const Model::ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the rules for the specified target. You can see which of the rules in
@@ -1602,6 +1870,58 @@ namespace Model
         virtual void RemoveTargetsAsync(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplayOutcome StartReplay(const Model::StartReplayRequest& request) const;
+
+        /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartReplayOutcomeCallable StartReplayCallable(const Model::StartReplayRequest& request) const;
+
+        /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartReplayAsync(const Model::StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified EventBridge
          * resource. Tags can help you organize and categorize your resources. You can also
          * use them to scope user permissions by granting a user permission to access or
@@ -1730,27 +2050,59 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateArchiveOutcome UpdateArchive(const Model::UpdateArchiveRequest& request) const;
+
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateArchiveOutcomeCallable UpdateArchiveCallable(const Model::UpdateArchiveRequest& request) const;
+
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateArchiveAsync(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ActivateEventSourceAsyncHelper(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelReplayAsyncHelper(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateArchiveAsyncHelper(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventBusAsyncHelper(const Model::CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartnerEventSourceAsyncHelper(const Model::CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateEventSourceAsyncHelper(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventBusAsyncHelper(const Model::DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartnerEventSourceAsyncHelper(const Model::DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeArchiveAsyncHelper(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventBusAsyncHelper(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSourceAsyncHelper(const Model::DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePartnerEventSourceAsyncHelper(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReplayAsyncHelper(const Model::DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuleAsyncHelper(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableRuleAsyncHelper(const Model::DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableRuleAsyncHelper(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListArchivesAsyncHelper(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventBusesAsyncHelper(const Model::ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourcesAsyncHelper(const Model::ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourceAccountsAsyncHelper(const Model::ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourcesAsyncHelper(const Model::ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReplaysAsyncHelper(const Model::ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRuleNamesByTargetAsyncHelper(const Model::ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1762,9 +2114,11 @@ namespace Model
         void PutTargetsAsyncHelper(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTargetsAsyncHelper(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartReplayAsyncHelper(const Model::StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestEventPatternAsyncHelper(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateArchiveAsyncHelper(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

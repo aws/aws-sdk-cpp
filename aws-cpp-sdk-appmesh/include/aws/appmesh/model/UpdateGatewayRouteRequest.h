@@ -42,64 +42,56 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateGatewayRouteRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateGatewayRouteRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateGatewayRouteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -189,9 +181,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -199,9 +190,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -209,9 +199,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -219,9 +208,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -229,9 +217,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -239,9 +226,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -249,9 +235,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -259,9 +244,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */

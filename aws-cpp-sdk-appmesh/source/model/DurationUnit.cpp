@@ -20,20 +20,20 @@ namespace Aws
       namespace DurationUnitMapper
       {
 
-        static const int ms_HASH = HashingUtils::HashString("ms");
         static const int s_HASH = HashingUtils::HashString("s");
+        static const int ms_HASH = HashingUtils::HashString("ms");
 
 
         DurationUnit GetDurationUnitForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ms_HASH)
-          {
-            return DurationUnit::ms;
-          }
-          else if (hashCode == s_HASH)
+          if (hashCode == s_HASH)
           {
             return DurationUnit::s;
+          }
+          else if (hashCode == ms_HASH)
+          {
+            return DurationUnit::ms;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case DurationUnit::ms:
-            return "ms";
           case DurationUnit::s:
             return "s";
+          case DurationUnit::ms:
+            return "ms";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

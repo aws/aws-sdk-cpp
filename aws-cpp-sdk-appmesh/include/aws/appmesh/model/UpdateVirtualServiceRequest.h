@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualServiceInput">AWS
    * API Reference</a></p>
    */
@@ -45,64 +45,56 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateVirtualServiceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateVirtualServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the
-request. Up to 36 letters, numbers, hyphens, and underscores are
+     * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
     inline UpdateVirtualServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -151,9 +143,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -161,9 +152,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -171,9 +161,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -181,9 +170,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -191,9 +179,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -201,9 +188,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -211,9 +197,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -221,9 +206,8 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -232,43 +216,37 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline const VirtualServiceSpec& GetSpec() const{ return m_spec; }
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline void SetSpec(const VirtualServiceSpec& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline void SetSpec(VirtualServiceSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline UpdateVirtualServiceRequest& WithSpec(const VirtualServiceSpec& value) { SetSpec(value); return *this;}
 
     /**
      * <p>The new virtual service specification to apply. This overwrites the existing
-
-     *         data.</p>
+     * data.</p>
      */
     inline UpdateVirtualServiceRequest& WithSpec(VirtualServiceSpec&& value) { SetSpec(std::move(value)); return *this;}
 

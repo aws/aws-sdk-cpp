@@ -3254,15 +3254,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3273,15 +3266,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3292,15 +3278,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3311,15 +3290,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS

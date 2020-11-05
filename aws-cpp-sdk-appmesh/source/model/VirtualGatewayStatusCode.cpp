@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         VirtualGatewayStatusCode GetVirtualGatewayStatusCodeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return VirtualGatewayStatusCode::ACTIVE;
           }
-          else if (hashCode == DELETED_HASH)
-          {
-            return VirtualGatewayStatusCode::DELETED;
-          }
           else if (hashCode == INACTIVE_HASH)
           {
             return VirtualGatewayStatusCode::INACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return VirtualGatewayStatusCode::DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,10 +56,10 @@ namespace Aws
           {
           case VirtualGatewayStatusCode::ACTIVE:
             return "ACTIVE";
-          case VirtualGatewayStatusCode::DELETED:
-            return "DELETED";
           case VirtualGatewayStatusCode::INACTIVE:
             return "INACTIVE";
+          case VirtualGatewayStatusCode::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -95,35 +96,38 @@ namespace Model
 
     /**
      * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * function, in seconds. The default value is zero.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
      * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * function, in seconds. The default value is zero.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
 
     /**
      * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * function, in seconds. The default value is zero.</p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline DeleteEventSourceMappingResult& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -399,99 +403,231 @@ namespace Model
 
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topics = value; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topics = std::move(value); }
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline DeleteEventSourceMappingResult& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline DeleteEventSourceMappingResult& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline DeleteEventSourceMappingResult& AddTopics(const Aws::String& value) { m_topics.push_back(value); return *this; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline DeleteEventSourceMappingResult& AddTopics(Aws::String&& value) { m_topics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic. </p>
+     * <p> (MSK) The name of the Kafka topic to consume. </p>
      */
     inline DeleteEventSourceMappingResult& AddTopics(const char* value) { m_topics.push_back(value); return *this; }
 
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queues = value; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queues = std::move(value); }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline DeleteEventSourceMappingResult& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline DeleteEventSourceMappingResult& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline DeleteEventSourceMappingResult& AddQueues(const Aws::String& value) { m_queues.push_back(value); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline DeleteEventSourceMappingResult& AddQueues(Aws::String&& value) { m_queues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline DeleteEventSourceMappingResult& AddQueues(const char* value) { m_queues.push_back(value); return *this; }
+
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurations = value; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurations = std::move(value); }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline DeleteEventSourceMappingResult& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline DeleteEventSourceMappingResult& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline DeleteEventSourceMappingResult& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
@@ -520,6 +656,10 @@ namespace Model
     DestinationConfig m_destinationConfig;
 
     Aws::Vector<Aws::String> m_topics;
+
+    Aws::Vector<Aws::String> m_queues;
+
+    Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
 
     int m_maximumRecordAgeInSeconds;
 

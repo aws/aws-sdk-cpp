@@ -389,6 +389,31 @@ namespace Model
      */
     inline OneDriveConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline OneDriveConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
+
   private:
 
     Aws::String m_tenantDomain;
@@ -408,6 +433,9 @@ namespace Model
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
     bool m_fieldMappingsHasBeenSet;
+
+    bool m_disableLocalGroups;
+    bool m_disableLocalGroupsHasBeenSet;
   };
 
 } // namespace Model

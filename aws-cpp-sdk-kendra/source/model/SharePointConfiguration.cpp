@@ -31,7 +31,9 @@ SharePointConfiguration::SharePointConfiguration() :
     m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false)
+    m_documentTitleFieldNameHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false)
+    m_documentTitleFieldNameHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +141,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_documentTitleFieldNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableLocalGroups"))
+  {
+    m_disableLocalGroups = jsonValue.GetBool("DisableLocalGroups");
+
+    m_disableLocalGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +231,12 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_documentTitleFieldNameHasBeenSet)
   {
    payload.WithString("DocumentTitleFieldName", m_documentTitleFieldName);
+
+  }
+
+  if(m_disableLocalGroupsHasBeenSet)
+  {
+   payload.WithBool("DisableLocalGroups", m_disableLocalGroups);
 
   }
 

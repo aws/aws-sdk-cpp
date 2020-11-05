@@ -20,43 +20,27 @@ namespace Aws
       namespace HttpMethodMapper
       {
 
-        static const int CONNECT_HASH = HashingUtils::HashString("CONNECT");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
         static const int GET__HASH = HashingUtils::HashString("GET");
         static const int HEAD_HASH = HashingUtils::HashString("HEAD");
-        static const int OPTIONS_HASH = HashingUtils::HashString("OPTIONS");
-        static const int PATCH_HASH = HashingUtils::HashString("PATCH");
         static const int POST_HASH = HashingUtils::HashString("POST");
         static const int PUT_HASH = HashingUtils::HashString("PUT");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static const int CONNECT_HASH = HashingUtils::HashString("CONNECT");
+        static const int OPTIONS_HASH = HashingUtils::HashString("OPTIONS");
         static const int TRACE_HASH = HashingUtils::HashString("TRACE");
+        static const int PATCH_HASH = HashingUtils::HashString("PATCH");
 
 
         HttpMethod GetHttpMethodForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CONNECT_HASH)
-          {
-            return HttpMethod::CONNECT;
-          }
-          else if (hashCode == DELETE__HASH)
-          {
-            return HttpMethod::DELETE_;
-          }
-          else if (hashCode == GET__HASH)
+          if (hashCode == GET__HASH)
           {
             return HttpMethod::GET_;
           }
           else if (hashCode == HEAD_HASH)
           {
             return HttpMethod::HEAD;
-          }
-          else if (hashCode == OPTIONS_HASH)
-          {
-            return HttpMethod::OPTIONS;
-          }
-          else if (hashCode == PATCH_HASH)
-          {
-            return HttpMethod::PATCH;
           }
           else if (hashCode == POST_HASH)
           {
@@ -66,9 +50,25 @@ namespace Aws
           {
             return HttpMethod::PUT;
           }
+          else if (hashCode == DELETE__HASH)
+          {
+            return HttpMethod::DELETE_;
+          }
+          else if (hashCode == CONNECT_HASH)
+          {
+            return HttpMethod::CONNECT;
+          }
+          else if (hashCode == OPTIONS_HASH)
+          {
+            return HttpMethod::OPTIONS;
+          }
           else if (hashCode == TRACE_HASH)
           {
             return HttpMethod::TRACE;
+          }
+          else if (hashCode == PATCH_HASH)
+          {
+            return HttpMethod::PATCH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -84,24 +84,24 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case HttpMethod::CONNECT:
-            return "CONNECT";
-          case HttpMethod::DELETE_:
-            return "DELETE";
           case HttpMethod::GET_:
             return "GET";
           case HttpMethod::HEAD:
             return "HEAD";
-          case HttpMethod::OPTIONS:
-            return "OPTIONS";
-          case HttpMethod::PATCH:
-            return "PATCH";
           case HttpMethod::POST:
             return "POST";
           case HttpMethod::PUT:
             return "PUT";
+          case HttpMethod::DELETE_:
+            return "DELETE";
+          case HttpMethod::CONNECT:
+            return "CONNECT";
+          case HttpMethod::OPTIONS:
+            return "OPTIONS";
           case HttpMethod::TRACE:
             return "TRACE";
+          case HttpMethod::PATCH:
+            return "PATCH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

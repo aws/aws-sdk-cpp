@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeIndexResult::DescribeIndexResult() : 
     m_edition(IndexEdition::NOT_SET),
-    m_status(IndexStatus::NOT_SET)
+    m_status(IndexStatus::NOT_SET),
+    m_userContextPolicy(UserContextPolicy::NOT_SET)
 {
 }
 
 DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_edition(IndexEdition::NOT_SET),
-    m_status(IndexStatus::NOT_SET)
+    m_status(IndexStatus::NOT_SET),
+    m_userContextPolicy(UserContextPolicy::NOT_SET)
 {
   *this = result;
 }
@@ -110,6 +112,21 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("CapacityUnits"))
   {
     m_capacityUnits = jsonValue.GetObject("CapacityUnits");
+
+  }
+
+  if(jsonValue.ValueExists("UserTokenConfigurations"))
+  {
+    Array<JsonView> userTokenConfigurationsJsonList = jsonValue.GetArray("UserTokenConfigurations");
+    for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+    {
+      m_userTokenConfigurations.push_back(userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("UserContextPolicy"))
+  {
+    m_userContextPolicy = UserContextPolicyMapper::GetUserContextPolicyForName(jsonValue.GetString("UserContextPolicy"));
 
   }
 

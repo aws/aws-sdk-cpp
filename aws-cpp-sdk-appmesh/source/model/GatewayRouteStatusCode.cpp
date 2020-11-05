@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         GatewayRouteStatusCode GetGatewayRouteStatusCodeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return GatewayRouteStatusCode::ACTIVE;
           }
-          else if (hashCode == DELETED_HASH)
-          {
-            return GatewayRouteStatusCode::DELETED;
-          }
           else if (hashCode == INACTIVE_HASH)
           {
             return GatewayRouteStatusCode::INACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return GatewayRouteStatusCode::DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,10 +56,10 @@ namespace Aws
           {
           case GatewayRouteStatusCode::ACTIVE:
             return "ACTIVE";
-          case GatewayRouteStatusCode::DELETED:
-            return "DELETED";
           case GatewayRouteStatusCode::INACTIVE:
             return "INACTIVE";
+          case GatewayRouteStatusCode::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

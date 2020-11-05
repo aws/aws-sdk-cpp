@@ -20,13 +20,18 @@ namespace Aws
       namespace ConfluenceVersionMapper
       {
 
+        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
         static const int SERVER_HASH = HashingUtils::HashString("SERVER");
 
 
         ConfluenceVersion GetConfluenceVersionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SERVER_HASH)
+          if (hashCode == CLOUD_HASH)
+          {
+            return ConfluenceVersion::CLOUD;
+          }
+          else if (hashCode == SERVER_HASH)
           {
             return ConfluenceVersion::SERVER;
           }
@@ -44,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceVersion::CLOUD:
+            return "CLOUD";
           case ConfluenceVersion::SERVER:
             return "SERVER";
           default:

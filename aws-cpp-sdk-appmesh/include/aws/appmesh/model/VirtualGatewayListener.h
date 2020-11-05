@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/VirtualGatewayConnectionPool.h>
 #include <aws/appmesh/model/VirtualGatewayHealthCheckPolicy.h>
 #include <aws/appmesh/model/VirtualGatewayPortMapping.h>
 #include <aws/appmesh/model/VirtualGatewayListenerTls.h>
@@ -38,6 +39,37 @@ namespace Model
     VirtualGatewayListener(Aws::Utils::Json::JsonView jsonValue);
     VirtualGatewayListener& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline const VirtualGatewayConnectionPool& GetConnectionPool() const{ return m_connectionPool; }
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline bool ConnectionPoolHasBeenSet() const { return m_connectionPoolHasBeenSet; }
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline void SetConnectionPool(const VirtualGatewayConnectionPool& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = value; }
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline void SetConnectionPool(VirtualGatewayConnectionPool&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::move(value); }
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline VirtualGatewayListener& WithConnectionPool(const VirtualGatewayConnectionPool& value) { SetConnectionPool(value); return *this;}
+
+    /**
+     * <p>The connection pool information for the virtual gateway listener.</p>
+     */
+    inline VirtualGatewayListener& WithConnectionPool(VirtualGatewayConnectionPool&& value) { SetConnectionPool(std::move(value)); return *this;}
 
 
     /**
@@ -139,6 +171,9 @@ namespace Model
     inline VirtualGatewayListener& WithTls(VirtualGatewayListenerTls&& value) { SetTls(std::move(value)); return *this;}
 
   private:
+
+    VirtualGatewayConnectionPool m_connectionPool;
+    bool m_connectionPoolHasBeenSet;
 
     VirtualGatewayHealthCheckPolicy m_healthCheck;
     bool m_healthCheckHasBeenSet;

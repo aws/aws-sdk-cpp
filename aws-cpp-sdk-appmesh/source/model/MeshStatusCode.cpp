@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         MeshStatusCode GetMeshStatusCodeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return MeshStatusCode::ACTIVE;
           }
-          else if (hashCode == DELETED_HASH)
-          {
-            return MeshStatusCode::DELETED;
-          }
           else if (hashCode == INACTIVE_HASH)
           {
             return MeshStatusCode::INACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return MeshStatusCode::DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,10 +56,10 @@ namespace Aws
           {
           case MeshStatusCode::ACTIVE:
             return "ACTIVE";
-          case MeshStatusCode::DELETED:
-            return "DELETED";
           case MeshStatusCode::INACTIVE:
             return "INACTIVE";
+          case MeshStatusCode::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

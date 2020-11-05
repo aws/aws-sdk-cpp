@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>An object that represents the backends that a virtual node is expected to
-   * send outbound
-         traffic to. </p><p><h3>See Also:</h3>   <a
+   * send outbound traffic to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Backend">AWS API
    * Reference</a></p>
    */
@@ -40,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline const VirtualServiceBackend& GetVirtualService() const{ return m_virtualService; }
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline bool VirtualServiceHasBeenSet() const { return m_virtualServiceHasBeenSet; }
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline void SetVirtualService(const VirtualServiceBackend& value) { m_virtualServiceHasBeenSet = true; m_virtualService = value; }
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline void SetVirtualService(VirtualServiceBackend&& value) { m_virtualServiceHasBeenSet = true; m_virtualService = std::move(value); }
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline Backend& WithVirtualService(const VirtualServiceBackend& value) { SetVirtualService(value); return *this;}
 
     /**
-     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline Backend& WithVirtualService(VirtualServiceBackend&& value) { SetVirtualService(std::move(value)); return *this;}
 

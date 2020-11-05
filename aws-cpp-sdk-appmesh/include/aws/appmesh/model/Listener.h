@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/VirtualNodeConnectionPool.h>
 #include <aws/appmesh/model/HealthCheckPolicy.h>
+#include <aws/appmesh/model/OutlierDetection.h>
 #include <aws/appmesh/model/PortMapping.h>
 #include <aws/appmesh/model/ListenerTimeout.h>
 #include <aws/appmesh/model/ListenerTls.h>
@@ -42,6 +44,37 @@ namespace Model
 
 
     /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline const VirtualNodeConnectionPool& GetConnectionPool() const{ return m_connectionPool; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline bool ConnectionPoolHasBeenSet() const { return m_connectionPoolHasBeenSet; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline void SetConnectionPool(const VirtualNodeConnectionPool& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = value; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline void SetConnectionPool(VirtualNodeConnectionPool&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::move(value); }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline Listener& WithConnectionPool(const VirtualNodeConnectionPool& value) { SetConnectionPool(value); return *this;}
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline Listener& WithConnectionPool(VirtualNodeConnectionPool&& value) { SetConnectionPool(std::move(value)); return *this;}
+
+
+    /**
      * <p>The health check information for the listener.</p>
      */
     inline const HealthCheckPolicy& GetHealthCheck() const{ return m_healthCheck; }
@@ -70,6 +103,37 @@ namespace Model
      * <p>The health check information for the listener.</p>
      */
     inline Listener& WithHealthCheck(HealthCheckPolicy&& value) { SetHealthCheck(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline const OutlierDetection& GetOutlierDetection() const{ return m_outlierDetection; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline bool OutlierDetectionHasBeenSet() const { return m_outlierDetectionHasBeenSet; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline void SetOutlierDetection(const OutlierDetection& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = value; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline void SetOutlierDetection(OutlierDetection&& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = std::move(value); }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline Listener& WithOutlierDetection(const OutlierDetection& value) { SetOutlierDetection(value); return *this;}
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline Listener& WithOutlierDetection(OutlierDetection&& value) { SetOutlierDetection(std::move(value)); return *this;}
 
 
     /**
@@ -172,8 +236,14 @@ namespace Model
 
   private:
 
+    VirtualNodeConnectionPool m_connectionPool;
+    bool m_connectionPoolHasBeenSet;
+
     HealthCheckPolicy m_healthCheck;
     bool m_healthCheckHasBeenSet;
+
+    OutlierDetection m_outlierDetection;
+    bool m_outlierDetectionHasBeenSet;
 
     PortMapping m_portMapping;
     bool m_portMappingHasBeenSet;

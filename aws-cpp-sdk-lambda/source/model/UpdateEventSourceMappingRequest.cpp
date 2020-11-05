@@ -29,7 +29,8 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
     m_parallelizationFactor(0),
-    m_parallelizationFactorHasBeenSet(false)
+    m_parallelizationFactorHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,17 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_parallelizationFactorHasBeenSet)
   {
    payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
+
+  }
+
+  if(m_sourceAccessConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+   {
+     sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
 
   }
 

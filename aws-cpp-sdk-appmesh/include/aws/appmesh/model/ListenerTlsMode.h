@@ -16,9 +16,9 @@ namespace Model
   enum class ListenerTlsMode
   {
     NOT_SET,
-    DISABLED,
+    STRICT,
     PERMISSIVE,
-    STRICT
+    DISABLED
   };
 
 namespace ListenerTlsModeMapper

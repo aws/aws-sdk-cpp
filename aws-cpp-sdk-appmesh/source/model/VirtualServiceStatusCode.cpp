@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         VirtualServiceStatusCode GetVirtualServiceStatusCodeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return VirtualServiceStatusCode::ACTIVE;
           }
-          else if (hashCode == DELETED_HASH)
-          {
-            return VirtualServiceStatusCode::DELETED;
-          }
           else if (hashCode == INACTIVE_HASH)
           {
             return VirtualServiceStatusCode::INACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return VirtualServiceStatusCode::DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,10 +56,10 @@ namespace Aws
           {
           case VirtualServiceStatusCode::ACTIVE:
             return "ACTIVE";
-          case VirtualServiceStatusCode::DELETED:
-            return "DELETED";
           case VirtualServiceStatusCode::INACTIVE:
             return "INACTIVE";
+          case VirtualServiceStatusCode::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

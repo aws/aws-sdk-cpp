@@ -20,8 +20,16 @@
 #include <aws/frauddetector/model/CreateVariableResult.h>
 #include <aws/frauddetector/model/DeleteDetectorResult.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionResult.h>
+#include <aws/frauddetector/model/DeleteEntityTypeResult.h>
 #include <aws/frauddetector/model/DeleteEventResult.h>
+#include <aws/frauddetector/model/DeleteEventTypeResult.h>
+#include <aws/frauddetector/model/DeleteExternalModelResult.h>
+#include <aws/frauddetector/model/DeleteLabelResult.h>
+#include <aws/frauddetector/model/DeleteModelResult.h>
+#include <aws/frauddetector/model/DeleteModelVersionResult.h>
+#include <aws/frauddetector/model/DeleteOutcomeResult.h>
 #include <aws/frauddetector/model/DeleteRuleResult.h>
+#include <aws/frauddetector/model/DeleteVariableResult.h>
 #include <aws/frauddetector/model/DescribeDetectorResult.h>
 #include <aws/frauddetector/model/DescribeModelVersionsResult.h>
 #include <aws/frauddetector/model/GetDetectorVersionResult.h>
@@ -104,8 +112,16 @@ namespace Model
         class CreateVariableRequest;
         class DeleteDetectorRequest;
         class DeleteDetectorVersionRequest;
+        class DeleteEntityTypeRequest;
         class DeleteEventRequest;
+        class DeleteEventTypeRequest;
+        class DeleteExternalModelRequest;
+        class DeleteLabelRequest;
+        class DeleteModelRequest;
+        class DeleteModelVersionRequest;
+        class DeleteOutcomeRequest;
         class DeleteRuleRequest;
+        class DeleteVariableRequest;
         class DescribeDetectorRequest;
         class DescribeModelVersionsRequest;
         class GetDetectorVersionRequest;
@@ -149,8 +165,16 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateVariableResult, FraudDetectorError> CreateVariableOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorResult, FraudDetectorError> DeleteDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorVersionResult, FraudDetectorError> DeleteDetectorVersionOutcome;
+        typedef Aws::Utils::Outcome<DeleteEntityTypeResult, FraudDetectorError> DeleteEntityTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteEventResult, FraudDetectorError> DeleteEventOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventTypeResult, FraudDetectorError> DeleteEventTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteExternalModelResult, FraudDetectorError> DeleteExternalModelOutcome;
+        typedef Aws::Utils::Outcome<DeleteLabelResult, FraudDetectorError> DeleteLabelOutcome;
+        typedef Aws::Utils::Outcome<DeleteModelResult, FraudDetectorError> DeleteModelOutcome;
+        typedef Aws::Utils::Outcome<DeleteModelVersionResult, FraudDetectorError> DeleteModelVersionOutcome;
+        typedef Aws::Utils::Outcome<DeleteOutcomeResult, FraudDetectorError> DeleteOutcomeOutcome;
         typedef Aws::Utils::Outcome<DeleteRuleResult, FraudDetectorError> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteVariableResult, FraudDetectorError> DeleteVariableOutcome;
         typedef Aws::Utils::Outcome<DescribeDetectorResult, FraudDetectorError> DescribeDetectorOutcome;
         typedef Aws::Utils::Outcome<DescribeModelVersionsResult, FraudDetectorError> DescribeModelVersionsOutcome;
         typedef Aws::Utils::Outcome<GetDetectorVersionResult, FraudDetectorError> GetDetectorVersionOutcome;
@@ -195,8 +219,16 @@ namespace Model
         typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
         typedef std::future<DeleteDetectorOutcome> DeleteDetectorOutcomeCallable;
         typedef std::future<DeleteDetectorVersionOutcome> DeleteDetectorVersionOutcomeCallable;
+        typedef std::future<DeleteEntityTypeOutcome> DeleteEntityTypeOutcomeCallable;
         typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
+        typedef std::future<DeleteEventTypeOutcome> DeleteEventTypeOutcomeCallable;
+        typedef std::future<DeleteExternalModelOutcome> DeleteExternalModelOutcomeCallable;
+        typedef std::future<DeleteLabelOutcome> DeleteLabelOutcomeCallable;
+        typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
+        typedef std::future<DeleteModelVersionOutcome> DeleteModelVersionOutcomeCallable;
+        typedef std::future<DeleteOutcomeOutcome> DeleteOutcomeOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+        typedef std::future<DeleteVariableOutcome> DeleteVariableOutcomeCallable;
         typedef std::future<DescribeDetectorOutcome> DescribeDetectorOutcomeCallable;
         typedef std::future<DescribeModelVersionsOutcome> DescribeModelVersionsOutcomeCallable;
         typedef std::future<GetDetectorVersionOutcome> GetDetectorVersionOutcomeCallable;
@@ -244,8 +276,16 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateVariableRequest&, const Model::CreateVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVariableResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorRequest&, const Model::DeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorVersionRequest&, const Model::DeleteDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorVersionResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEntityTypeRequest&, const Model::DeleteEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntityTypeResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventTypeRequest&, const Model::DeleteEventTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTypeResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteExternalModelRequest&, const Model::DeleteExternalModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExternalModelResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteLabelRequest&, const Model::DeleteLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteModelVersionRequest&, const Model::DeleteModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelVersionResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteOutcomeRequest&, const Model::DeleteOutcomeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutcomeResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteVariableRequest&, const Model::DeleteVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVariableResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeDetectorRequest&, const Model::DescribeDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeModelVersionsRequest&, const Model::DescribeModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelVersionsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetDetectorVersionRequest&, const Model::GetDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorVersionResponseReceivedHandler;
@@ -501,7 +541,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector. Before deleting a detector, you must first delete all
-         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * detector versions and rule versions associated with the detector.</p> <p>When
+         * you delete a detector, Amazon Fraud Detector permanently deletes the detector
+         * and the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
          * API Reference</a></p>
@@ -510,7 +552,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector. Before deleting a detector, you must first delete all
-         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * detector versions and rule versions associated with the detector.</p> <p>When
+         * you delete a detector, Amazon Fraud Detector permanently deletes the detector
+         * and the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
          * API Reference</a></p>
@@ -521,7 +565,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector. Before deleting a detector, you must first delete all
-         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * detector versions and rule versions associated with the detector.</p> <p>When
+         * you delete a detector, Amazon Fraud Detector permanently deletes the detector
+         * and the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
          * API Reference</a></p>
@@ -532,7 +578,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector version. You cannot delete detector versions that are in
-         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> status.</p> <p>When you delete a detector version, Amazon
+         * Fraud Detector permanently deletes the detector and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          */
@@ -540,7 +588,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector version. You cannot delete detector versions that are in
-         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> status.</p> <p>When you delete a detector version, Amazon
+         * Fraud Detector permanently deletes the detector and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          *
@@ -550,7 +600,9 @@ namespace Model
 
         /**
          * <p>Deletes the detector version. You cannot delete detector versions that are in
-         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> status.</p> <p>When you delete a detector version, Amazon
+         * Fraud Detector permanently deletes the detector and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          *
@@ -559,14 +611,57 @@ namespace Model
         virtual void DeleteDetectorVersionAsync(const Model::DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified event.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
+         * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEntityTypeOutcome DeleteEntityType(const Model::DeleteEntityTypeRequest& request) const;
+
+        /**
+         * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
+         * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEntityTypeOutcomeCallable DeleteEntityTypeCallable(const Model::DeleteEntityTypeRequest& request) const;
+
+        /**
+         * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
+         * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEntityTypeAsync(const Model::DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
+         * Detector permanently deletes that event from the evaluation history, and the
+         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEventOutcome DeleteEvent(const Model::DeleteEventRequest& request) const;
 
         /**
-         * <p>Deletes the specified event.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
+         * Detector permanently deletes that event from the evaluation history, and the
+         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          *
@@ -575,7 +670,10 @@ namespace Model
         virtual Model::DeleteEventOutcomeCallable DeleteEventCallable(const Model::DeleteEventRequest& request) const;
 
         /**
-         * <p>Deletes the specified event.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
+         * Detector permanently deletes that event from the evaluation history, and the
+         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          *
@@ -584,9 +682,230 @@ namespace Model
         virtual void DeleteEventAsync(const Model::DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
+         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventTypeOutcome DeleteEventType(const Model::DeleteEventTypeRequest& request) const;
+
+        /**
+         * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
+         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventTypeOutcomeCallable DeleteEventTypeCallable(const Model::DeleteEventTypeRequest& request) const;
+
+        /**
+         * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
+         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
+         * Detector permanently deletes that entity type from the evaluation history, and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventTypeAsync(const Model::DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a SageMaker model from Amazon Fraud Detector.</p> <p>You can remove
+         * an Amazon SageMaker model if it is not associated with a detector version.
+         * Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the
+         * model remains available in SageMaker.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExternalModelOutcome DeleteExternalModel(const Model::DeleteExternalModelRequest& request) const;
+
+        /**
+         * <p>Removes a SageMaker model from Amazon Fraud Detector.</p> <p>You can remove
+         * an Amazon SageMaker model if it is not associated with a detector version.
+         * Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the
+         * model remains available in SageMaker.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExternalModelOutcomeCallable DeleteExternalModelCallable(const Model::DeleteExternalModelRequest& request) const;
+
+        /**
+         * <p>Removes a SageMaker model from Amazon Fraud Detector.</p> <p>You can remove
+         * an Amazon SageMaker model if it is not associated with a detector version.
+         * Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the
+         * model remains available in SageMaker.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExternalModelAsync(const Model::DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
+         * to an event ID. You must first delete the relevant event ID.</p> <p>When you
+         * delete a label, Amazon Fraud Detector permanently deletes that label from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLabelOutcome DeleteLabel(const Model::DeleteLabelRequest& request) const;
+
+        /**
+         * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
+         * to an event ID. You must first delete the relevant event ID.</p> <p>When you
+         * delete a label, Amazon Fraud Detector permanently deletes that label from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLabelOutcomeCallable DeleteLabelCallable(const Model::DeleteLabelRequest& request) const;
+
+        /**
+         * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
+         * to an event ID. You must first delete the relevant event ID.</p> <p>When you
+         * delete a label, Amazon Fraud Detector permanently deletes that label from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLabelAsync(const Model::DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
+         * Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
+         * deletes that model from the evaluation history, and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelOutcome DeleteModel(const Model::DeleteModelRequest& request) const;
+
+        /**
+         * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
+         * Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
+         * deletes that model from the evaluation history, and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelOutcomeCallable DeleteModelCallable(const Model::DeleteModelRequest& request) const;
+
+        /**
+         * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
+         * Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
+         * deletes that model from the evaluation history, and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a model version.</p> <p>You can delete models and model versions in
+         * Amazon Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model version, Amazon Fraud Detector
+         * permanently deletes that model version from the evaluation history, and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelVersionOutcome DeleteModelVersion(const Model::DeleteModelVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a model version.</p> <p>You can delete models and model versions in
+         * Amazon Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model version, Amazon Fraud Detector
+         * permanently deletes that model version from the evaluation history, and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelVersionOutcomeCallable DeleteModelVersionCallable(const Model::DeleteModelVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a model version.</p> <p>You can delete models and model versions in
+         * Amazon Fraud Detector, provided that they are not associated with a detector
+         * version.</p> <p> When you delete a model version, Amazon Fraud Detector
+         * permanently deletes that model version from the evaluation history, and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelVersionAsync(const Model::DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
+         * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
+         * permanently deletes that outcome from the evaluation history, and the data is no
+         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOutcomeOutcome DeleteOutcome(const Model::DeleteOutcomeRequest& request) const;
+
+        /**
+         * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
+         * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
+         * permanently deletes that outcome from the evaluation history, and the data is no
+         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteOutcomeOutcomeCallable DeleteOutcomeCallable(const Model::DeleteOutcomeRequest& request) const;
+
+        /**
+         * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
+         * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
+         * permanently deletes that outcome from the evaluation history, and the data is no
+         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteOutcomeAsync(const Model::DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
-         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          */
@@ -594,8 +913,10 @@ namespace Model
 
         /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
-         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -605,14 +926,59 @@ namespace Model
 
         /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
-         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+         * evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a variable.</p> <p>You can't delete variables that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
+         * deletes model output variables and SageMaker model output variables when you
+         * delete the model. You can't delete these variables manually.</p> <p>When you
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
+         * the evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVariableOutcome DeleteVariable(const Model::DeleteVariableRequest& request) const;
+
+        /**
+         * <p>Deletes a variable.</p> <p>You can't delete variables that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
+         * deletes model output variables and SageMaker model output variables when you
+         * delete the model. You can't delete these variables manually.</p> <p>When you
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
+         * the evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVariableOutcomeCallable DeleteVariableCallable(const Model::DeleteVariableRequest& request) const;
+
+        /**
+         * <p>Deletes a variable.</p> <p>You can't delete variables that are included in an
+         * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
+         * deletes model output variables and SageMaker model output variables when you
+         * delete the model. You can't delete these variables manually.</p> <p>When you
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
+         * the evaluation history, and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVariableAsync(const Model::DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets all versions for a specified detector.</p><p><h3>See Also:</h3>   <a
@@ -1782,8 +2148,16 @@ namespace Model
         void CreateVariableAsyncHelper(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorAsyncHelper(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorVersionAsyncHelper(const Model::DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEntityTypeAsyncHelper(const Model::DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventAsyncHelper(const Model::DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventTypeAsyncHelper(const Model::DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExternalModelAsyncHelper(const Model::DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLabelAsyncHelper(const Model::DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteModelVersionAsyncHelper(const Model::DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteOutcomeAsyncHelper(const Model::DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVariableAsyncHelper(const Model::DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDetectorAsyncHelper(const Model::DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelVersionsAsyncHelper(const Model::DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorVersionAsyncHelper(const Model::GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

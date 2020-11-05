@@ -20,30 +20,30 @@ namespace Aws
       namespace PortProtocolMapper
       {
 
-        static const int grpc_HASH = HashingUtils::HashString("grpc");
         static const int http_HASH = HashingUtils::HashString("http");
-        static const int http2_HASH = HashingUtils::HashString("http2");
         static const int tcp_HASH = HashingUtils::HashString("tcp");
+        static const int http2_HASH = HashingUtils::HashString("http2");
+        static const int grpc_HASH = HashingUtils::HashString("grpc");
 
 
         PortProtocol GetPortProtocolForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == grpc_HASH)
-          {
-            return PortProtocol::grpc;
-          }
-          else if (hashCode == http_HASH)
+          if (hashCode == http_HASH)
           {
             return PortProtocol::http;
+          }
+          else if (hashCode == tcp_HASH)
+          {
+            return PortProtocol::tcp;
           }
           else if (hashCode == http2_HASH)
           {
             return PortProtocol::http2;
           }
-          else if (hashCode == tcp_HASH)
+          else if (hashCode == grpc_HASH)
           {
-            return PortProtocol::tcp;
+            return PortProtocol::grpc;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case PortProtocol::grpc:
-            return "grpc";
           case PortProtocol::http:
             return "http";
-          case PortProtocol::http2:
-            return "http2";
           case PortProtocol::tcp:
             return "tcp";
+          case PortProtocol::http2:
+            return "http2";
+          case PortProtocol::grpc:
+            return "grpc";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

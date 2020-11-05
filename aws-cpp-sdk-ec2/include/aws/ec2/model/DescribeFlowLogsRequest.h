@@ -76,7 +76,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -98,7 +98,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -120,7 +120,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -142,7 +142,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -164,7 +164,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -186,7 +186,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -208,7 +208,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
@@ -230,7 +230,7 @@ namespace Model
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
      * which the flow log publishes data. Possible destination types include
-     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>cloud-watch-logs</code> and <code>s3</code>.</p> </li> <li> <p>
      * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
      * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>

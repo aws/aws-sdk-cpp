@@ -26,6 +26,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int REGION_DISABLED_HASH = HashingUtils::HashString("REGION_DISABLED");
+        static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
 
 
         ReplicaStatus GetReplicaStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ReplicaStatus::REGION_DISABLED;
           }
+          else if (hashCode == INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH)
+          {
+            return ReplicaStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "ACTIVE";
           case ReplicaStatus::REGION_DISABLED:
             return "REGION_DISABLED";
+          case ReplicaStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS:
+            return "INACCESSIBLE_ENCRYPTION_CREDENTIALS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

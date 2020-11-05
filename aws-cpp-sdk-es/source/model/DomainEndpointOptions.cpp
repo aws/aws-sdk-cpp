@@ -22,7 +22,11 @@ DomainEndpointOptions::DomainEndpointOptions() :
     m_enforceHTTPS(false),
     m_enforceHTTPSHasBeenSet(false),
     m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false)
+    m_tLSSecurityPolicyHasBeenSet(false),
+    m_customEndpointEnabled(false),
+    m_customEndpointEnabledHasBeenSet(false),
+    m_customEndpointHasBeenSet(false),
+    m_customEndpointCertificateArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +34,11 @@ DomainEndpointOptions::DomainEndpointOptions(JsonView jsonValue) :
     m_enforceHTTPS(false),
     m_enforceHTTPSHasBeenSet(false),
     m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false)
+    m_tLSSecurityPolicyHasBeenSet(false),
+    m_customEndpointEnabled(false),
+    m_customEndpointEnabledHasBeenSet(false),
+    m_customEndpointHasBeenSet(false),
+    m_customEndpointCertificateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +59,27 @@ DomainEndpointOptions& DomainEndpointOptions::operator =(JsonView jsonValue)
     m_tLSSecurityPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomEndpointEnabled"))
+  {
+    m_customEndpointEnabled = jsonValue.GetBool("CustomEndpointEnabled");
+
+    m_customEndpointEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomEndpoint"))
+  {
+    m_customEndpoint = jsonValue.GetString("CustomEndpoint");
+
+    m_customEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomEndpointCertificateArn"))
+  {
+    m_customEndpointCertificateArn = jsonValue.GetString("CustomEndpointCertificateArn");
+
+    m_customEndpointCertificateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +96,24 @@ JsonValue DomainEndpointOptions::Jsonize() const
   if(m_tLSSecurityPolicyHasBeenSet)
   {
    payload.WithString("TLSSecurityPolicy", TLSSecurityPolicyMapper::GetNameForTLSSecurityPolicy(m_tLSSecurityPolicy));
+  }
+
+  if(m_customEndpointEnabledHasBeenSet)
+  {
+   payload.WithBool("CustomEndpointEnabled", m_customEndpointEnabled);
+
+  }
+
+  if(m_customEndpointHasBeenSet)
+  {
+   payload.WithString("CustomEndpoint", m_customEndpoint);
+
+  }
+
+  if(m_customEndpointCertificateArnHasBeenSet)
+  {
+   payload.WithString("CustomEndpointCertificateArn", m_customEndpointCertificateArn);
+
   }
 
   return payload;

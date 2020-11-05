@@ -54,7 +54,9 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_domainHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
     m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
+    m_replicaModeHasBeenSet(false),
+    m_maxAllocatedStorage(0),
+    m_maxAllocatedStorageHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_replicaModeHasBeenSet)
   {
     ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
+  if(m_maxAllocatedStorageHasBeenSet)
+  {
+    ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
   ss << "Version=2014-10-31";

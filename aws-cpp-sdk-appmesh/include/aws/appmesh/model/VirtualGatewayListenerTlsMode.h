@@ -16,9 +16,9 @@ namespace Model
   enum class VirtualGatewayListenerTlsMode
   {
     NOT_SET,
-    DISABLED,
+    STRICT,
     PERMISSIVE,
-    STRICT
+    DISABLED
   };
 
 namespace VirtualGatewayListenerTlsModeMapper

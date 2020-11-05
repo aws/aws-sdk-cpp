@@ -40,57 +40,49 @@ namespace Model
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline VirtualGatewayTlsValidationContextFileTrust& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline VirtualGatewayTlsValidationContextFileTrust& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
      * <p>The certificate trust chain for a certificate stored on the file system of
-     * the virtual
-         node that the proxy is running on.</p>
+     * the virtual node that the proxy is running on.</p>
      */
     inline VirtualGatewayTlsValidationContextFileTrust& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

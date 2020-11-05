@@ -81,9 +81,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -91,9 +90,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -101,9 +99,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -111,9 +108,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -121,9 +117,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -131,9 +126,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -141,9 +135,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
@@ -151,9 +144,8 @@ namespace Model
 
     /**
      * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
+     * your own, then it's the ID of the account that shared the mesh with your
+     * account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */

@@ -48,6 +48,7 @@ enum class CloudWatchEventsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ILLEGAL_STATUS,
   INTERNAL,
   INVALID_EVENT_PATTERN,
   INVALID_STATE,

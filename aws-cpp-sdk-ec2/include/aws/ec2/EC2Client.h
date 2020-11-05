@@ -2886,21 +2886,20 @@ namespace Model
          * by the ACM for Nitro Enclaves application inside an enclave. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
-         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
-         * certificate, places the certificate, certificate chain, and encrypted private
-         * key in an Amazon S3 bucket that only the associated IAM role can access. The
-         * private key of the certificate is encrypted with an AWS-managed KMS key that has
-         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
-         * access the Amazon S3 object, you must grant it permission to call
+         * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
+         * places the certificate, certificate chain, and encrypted private key in an
+         * Amazon S3 bucket that only the associated IAM role can access. The private key
+         * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
+         * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
+         * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
-         * enable the IAM role to access the AWS KMS key, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
-         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          */
@@ -2912,21 +2911,20 @@ namespace Model
          * by the ACM for Nitro Enclaves application inside an enclave. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
-         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
-         * certificate, places the certificate, certificate chain, and encrypted private
-         * key in an Amazon S3 bucket that only the associated IAM role can access. The
-         * private key of the certificate is encrypted with an AWS-managed KMS key that has
-         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
-         * access the Amazon S3 object, you must grant it permission to call
+         * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
+         * places the certificate, certificate chain, and encrypted private key in an
+         * Amazon S3 bucket that only the associated IAM role can access. The private key
+         * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
+         * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
+         * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
-         * enable the IAM role to access the AWS KMS key, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
-         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          *
@@ -2940,21 +2938,20 @@ namespace Model
          * by the ACM for Nitro Enclaves application inside an enclave. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
-         * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p> <p>When the IAM role is associated with the ACM
-         * certificate, places the certificate, certificate chain, and encrypted private
-         * key in an Amazon S3 bucket that only the associated IAM role can access. The
-         * private key of the certificate is encrypted with an AWS-managed KMS key that has
-         * an attached attestation-based key policy.</p> <p>To enable the IAM role to
-         * access the Amazon S3 object, you must grant it permission to call
+         * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
+         * places the certificate, certificate chain, and encrypted private key in an
+         * Amazon S3 bucket that only the associated IAM role can access. The private key
+         * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
+         * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
+         * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
-         * enable the IAM role to access the AWS KMS key, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more
+         * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
+         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
-         * the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          *
@@ -13122,16 +13119,30 @@ namespace Model
         virtual void DescribeVpcEndpointServicePermissionsAsync(const Model::DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes available services to which you can create a VPC
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes available services to which you can create a VPC endpoint.</p>
+         * <p>When the service provider and the consumer have different accounts multiple
+         * Availability Zones, and the consumer views the VPC endpoint service information,
+         * the response only includes the common Availability Zones. For example, when the
+         * service provider account uses <code>us-east-1a</code> and
+         * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
+         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
+         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeVpcEndpointServicesOutcome DescribeVpcEndpointServices(const Model::DescribeVpcEndpointServicesRequest& request) const;
 
         /**
-         * <p>Describes available services to which you can create a VPC
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes available services to which you can create a VPC endpoint.</p>
+         * <p>When the service provider and the consumer have different accounts multiple
+         * Availability Zones, and the consumer views the VPC endpoint service information,
+         * the response only includes the common Availability Zones. For example, when the
+         * service provider account uses <code>us-east-1a</code> and
+         * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
+         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
+         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -13140,8 +13151,15 @@ namespace Model
         virtual Model::DescribeVpcEndpointServicesOutcomeCallable DescribeVpcEndpointServicesCallable(const Model::DescribeVpcEndpointServicesRequest& request) const;
 
         /**
-         * <p>Describes available services to which you can create a VPC
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes available services to which you can create a VPC endpoint.</p>
+         * <p>When the service provider and the consumer have different accounts multiple
+         * Availability Zones, and the consumer views the VPC endpoint service information,
+         * the response only includes the common Availability Zones. For example, when the
+         * service provider account uses <code>us-east-1a</code> and
+         * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
+         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
+         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -13784,9 +13802,9 @@ namespace Model
          * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
          * that contains the certificate, certificate chain, and encrypted private key from
          * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
-         * Key Management Service (KMS) key used to encrypt the private key. This
-         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
-         * Also:</h3>   <a
+         * Key Management Service (KMS) customer master key (CMK) used to encrypt the
+         * private key. This effectively revokes the role's permission to use the
+         * certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          */
@@ -13797,9 +13815,9 @@ namespace Model
          * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
          * that contains the certificate, certificate chain, and encrypted private key from
          * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
-         * Key Management Service (KMS) key used to encrypt the private key. This
-         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
-         * Also:</h3>   <a
+         * Key Management Service (KMS) customer master key (CMK) used to encrypt the
+         * private key. This effectively revokes the role's permission to use the
+         * certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          *
@@ -13812,9 +13830,9 @@ namespace Model
          * Disassociating an IAM role from an ACM certificate removes the Amazon S3 object
          * that contains the certificate, certificate chain, and encrypted private key from
          * the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS
-         * Key Management Service (KMS) key used to encrypt the private key. This
-         * effectively revokes the role's permission to use the certificate. </p><p><h3>See
-         * Also:</h3>   <a
+         * Key Management Service (KMS) customer master key (CMK) used to encrypt the
+         * private key. This effectively revokes the role's permission to use the
+         * certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">AWS
          * API Reference</a></p>
          *
@@ -14474,7 +14492,8 @@ namespace Model
          * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
          * the Amazon S3 object key where the certificate, certificate chain, and encrypted
          * private key bundle are stored, and the ARN of the AWS Key Management Service
-         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * (KMS) customer master key (CMK) that's used to encrypt the private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
          * API Reference</a></p>
          */
@@ -14485,7 +14504,8 @@ namespace Model
          * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
          * the Amazon S3 object key where the certificate, certificate chain, and encrypted
          * private key bundle are stored, and the ARN of the AWS Key Management Service
-         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * (KMS) customer master key (CMK) that's used to encrypt the private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
          * API Reference</a></p>
          *
@@ -14498,7 +14518,8 @@ namespace Model
          * Manager (ACM) certificate. It also returns the name of the Amazon S3 bucket and
          * the Amazon S3 object key where the certificate, certificate chain, and encrypted
          * private key bundle are stored, and the ARN of the AWS Key Management Service
-         * (KMS) key that's used to encrypt the private key.</p><p><h3>See Also:</h3>   <a
+         * (KMS) customer master key (CMK) that's used to encrypt the private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">AWS
          * API Reference</a></p>
          *
@@ -19770,7 +19791,7 @@ namespace Model
          * provider must successfully perform the verification before the consumer can use
          * the name to access the service.</p> <p>Before the service provider runs this
          * command, they must add a record to the DNS server. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
          * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS
@@ -19784,7 +19805,7 @@ namespace Model
          * provider must successfully perform the verification before the consumer can use
          * the name to access the service.</p> <p>Before the service provider runs this
          * command, they must add a record to the DNS server. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
          * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS
@@ -19800,7 +19821,7 @@ namespace Model
          * provider must successfully perform the verification before the consumer can use
          * the name to access the service.</p> <p>Before the service provider runs this
          * command, they must add a record to the DNS server. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
          * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS

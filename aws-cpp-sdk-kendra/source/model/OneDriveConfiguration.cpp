@@ -24,7 +24,9 @@ OneDriveConfiguration::OneDriveConfiguration() :
     m_oneDriveUsersHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
     m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ OneDriveConfiguration::OneDriveConfiguration(JsonView jsonValue) :
     m_oneDriveUsersHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
     m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ OneDriveConfiguration& OneDriveConfiguration::operator =(JsonView jsonValue)
     m_fieldMappingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableLocalGroups"))
+  {
+    m_disableLocalGroups = jsonValue.GetBool("DisableLocalGroups");
+
+    m_disableLocalGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,12 @@ JsonValue OneDriveConfiguration::Jsonize() const
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
    }
    payload.WithArray("FieldMappings", std::move(fieldMappingsJsonList));
+
+  }
+
+  if(m_disableLocalGroupsHasBeenSet)
+  {
+   payload.WithBool("DisableLocalGroups", m_disableLocalGroups);
 
   }
 

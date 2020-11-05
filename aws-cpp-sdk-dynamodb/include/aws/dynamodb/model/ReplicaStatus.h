@@ -21,7 +21,8 @@ namespace Model
     UPDATING,
     DELETING,
     ACTIVE,
-    REGION_DISABLED
+    REGION_DISABLED,
+    INACCESSIBLE_ENCRYPTION_CREDENTIALS
   };
 
 namespace ReplicaStatusMapper

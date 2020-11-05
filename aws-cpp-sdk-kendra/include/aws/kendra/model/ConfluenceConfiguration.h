@@ -106,9 +106,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -116,9 +116,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -126,9 +126,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -136,9 +136,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -146,9 +146,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -156,9 +156,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -166,9 +166,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -176,9 +176,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
      * the key/value pairs required to connect to your Confluence server. The secret
      * must contain a JSON structure with the following keys:</p> <ul> <li> <p>username
-     * - The user name of a user with administrative privileges for the Confluence
-     * server.</p> </li> <li> <p>password - The password associated with the user
-     * logging in to the Confluence server.</p> </li> </ul>
+     * - The user name or email address of a user with administrative privileges for
+     * the Confluence server.</p> </li> <li> <p>password - The password associated with
+     * the user logging in to the Confluence server.</p> </li> </ul>
      */
     inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

@@ -16,10 +16,10 @@ namespace Model
   enum class PortProtocol
   {
     NOT_SET,
-    grpc,
     http,
+    tcp,
     http2,
-    tcp
+    grpc
   };
 
 namespace PortProtocolMapper

@@ -136,32 +136,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
-     * <p>Specifies when the snapshot was taken in Coodinated Universal Time (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
+     * (UTC).</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
 

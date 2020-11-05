@@ -179,42 +179,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline const Aws::String& GetEncryptionKmsKeyId() const{ return m_encryptionKmsKeyId; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline bool EncryptionKmsKeyIdHasBeenSet() const { return m_encryptionKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline void SetEncryptionKmsKeyId(const Aws::String& value) { m_encryptionKmsKeyIdHasBeenSet = true; m_encryptionKmsKeyId = value; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline void SetEncryptionKmsKeyId(Aws::String&& value) { m_encryptionKmsKeyIdHasBeenSet = true; m_encryptionKmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline void SetEncryptionKmsKeyId(const char* value) { m_encryptionKmsKeyIdHasBeenSet = true; m_encryptionKmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline AssociatedRole& WithEncryptionKmsKeyId(const Aws::String& value) { SetEncryptionKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline AssociatedRole& WithEncryptionKmsKeyId(Aws::String&& value) { SetEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the private key.</p>
+     * <p>The ID of the KMS customer master key (CMK) used to encrypt the private
+     * key.</p>
      */
     inline AssociatedRole& WithEncryptionKmsKeyId(const char* value) { SetEncryptionKmsKeyId(value); return *this;}
 

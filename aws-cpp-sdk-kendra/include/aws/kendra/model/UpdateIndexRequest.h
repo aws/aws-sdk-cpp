@@ -9,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
+#include <aws/kendra/model/UserContextPolicy.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
+#include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -298,6 +300,78 @@ namespace Model
      */
     inline UpdateIndexRequest& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = value; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::move(value); }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline UpdateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline UpdateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -317,6 +391,12 @@ namespace Model
 
     CapacityUnitsConfiguration m_capacityUnits;
     bool m_capacityUnitsHasBeenSet;
+
+    Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
+    bool m_userTokenConfigurationsHasBeenSet;
+
+    UserContextPolicy m_userContextPolicy;
+    bool m_userContextPolicyHasBeenSet;
   };
 
 } // namespace Model

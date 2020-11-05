@@ -40,129 +40,81 @@ namespace Model
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline HttpGatewayRouteMatch& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline HttpGatewayRouteMatch& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the path to match requests with. This parameter must always start
-     * with
-            <code>/</code>, which by itself matches all requests to the
-     * virtual service name. You
-         can also match for path-based routing of
-     * requests. For example, if your virtual service
-         name is
-     * <code>my-service.local</code> and you want the route to match requests to
-      
-     * <code>my-service.local/metrics</code>, your prefix should be
-        
-     * <code>/metrics</code>.</p>
+     * with <code>/</code>, which by itself matches all requests to the virtual service
+     * name. You can also match for path-based routing of requests. For example, if
+     * your virtual service name is <code>my-service.local</code> and you want the
+     * route to match requests to <code>my-service.local/metrics</code>, your prefix
+     * should be <code>/metrics</code>.</p>
      */
     inline HttpGatewayRouteMatch& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

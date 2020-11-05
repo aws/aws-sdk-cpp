@@ -21,7 +21,10 @@ CreateIndexRequest::CreateIndexRequest() :
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_userTokenConfigurationsHasBeenSet(false),
+    m_userContextPolicy(UserContextPolicy::NOT_SET),
+    m_userContextPolicyHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,22 @@ Aws::String CreateIndexRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_userTokenConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+   {
+     userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("UserTokenConfigurations", std::move(userTokenConfigurationsJsonList));
+
+  }
+
+  if(m_userContextPolicyHasBeenSet)
+  {
+   payload.WithString("UserContextPolicy", UserContextPolicyMapper::GetNameForUserContextPolicy(m_userContextPolicy));
   }
 
   return payload.View().WriteReadable();

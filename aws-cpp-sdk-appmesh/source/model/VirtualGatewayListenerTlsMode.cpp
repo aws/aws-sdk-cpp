@@ -20,25 +20,25 @@ namespace Aws
       namespace VirtualGatewayListenerTlsModeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int PERMISSIVE_HASH = HashingUtils::HashString("PERMISSIVE");
         static const int STRICT_HASH = HashingUtils::HashString("STRICT");
+        static const int PERMISSIVE_HASH = HashingUtils::HashString("PERMISSIVE");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         VirtualGatewayListenerTlsMode GetVirtualGatewayListenerTlsModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DISABLED_HASH)
+          if (hashCode == STRICT_HASH)
           {
-            return VirtualGatewayListenerTlsMode::DISABLED;
+            return VirtualGatewayListenerTlsMode::STRICT;
           }
           else if (hashCode == PERMISSIVE_HASH)
           {
             return VirtualGatewayListenerTlsMode::PERMISSIVE;
           }
-          else if (hashCode == STRICT_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return VirtualGatewayListenerTlsMode::STRICT;
+            return VirtualGatewayListenerTlsMode::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -54,12 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case VirtualGatewayListenerTlsMode::DISABLED:
-            return "DISABLED";
-          case VirtualGatewayListenerTlsMode::PERMISSIVE:
-            return "PERMISSIVE";
           case VirtualGatewayListenerTlsMode::STRICT:
             return "STRICT";
+          case VirtualGatewayListenerTlsMode::PERMISSIVE:
+            return "PERMISSIVE";
+          case VirtualGatewayListenerTlsMode::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -41,29 +41,25 @@ namespace Model
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline bool GetEnforce() const{ return m_enforce; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline bool EnforceHasBeenSet() const { return m_enforceHasBeenSet; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline void SetEnforce(bool value) { m_enforceHasBeenSet = true; m_enforce = value; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline VirtualGatewayClientPolicyTls& WithEnforce(bool value) { SetEnforce(value); return *this;}
 

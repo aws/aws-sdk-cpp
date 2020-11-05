@@ -19,7 +19,9 @@ namespace Model
 {
 
 Listener::Listener() : 
+    m_connectionPoolHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
+    m_outlierDetectionHasBeenSet(false),
     m_portMappingHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_tlsHasBeenSet(false)
@@ -27,7 +29,9 @@ Listener::Listener() :
 }
 
 Listener::Listener(JsonView jsonValue) : 
+    m_connectionPoolHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
+    m_outlierDetectionHasBeenSet(false),
     m_portMappingHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_tlsHasBeenSet(false)
@@ -37,11 +41,25 @@ Listener::Listener(JsonView jsonValue) :
 
 Listener& Listener::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("connectionPool"))
+  {
+    m_connectionPool = jsonValue.GetObject("connectionPool");
+
+    m_connectionPoolHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("healthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("healthCheck");
 
     m_healthCheckHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outlierDetection"))
+  {
+    m_outlierDetection = jsonValue.GetObject("outlierDetection");
+
+    m_outlierDetectionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("portMapping"))
@@ -72,9 +90,21 @@ JsonValue Listener::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_connectionPoolHasBeenSet)
+  {
+   payload.WithObject("connectionPool", m_connectionPool.Jsonize());
+
+  }
+
   if(m_healthCheckHasBeenSet)
   {
    payload.WithObject("healthCheck", m_healthCheck.Jsonize());
+
+  }
+
+  if(m_outlierDetectionHasBeenSet)
+  {
+   payload.WithObject("outlierDetection", m_outlierDetection.Jsonize());
 
   }
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a Transport Layer Security (TLS) client
-   * policy.</p><p><h3>See Also:</h3>   <a
+   * <p>A reference to an object that represents a Transport Layer Security (TLS)
+   * client policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ClientPolicyTls">AWS
    * API Reference</a></p>
    */
@@ -41,29 +41,25 @@ namespace Model
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline bool GetEnforce() const{ return m_enforce; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline bool EnforceHasBeenSet() const { return m_enforceHasBeenSet; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline void SetEnforce(bool value) { m_enforceHasBeenSet = true; m_enforce = value; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't
-         specified.</p>
+     * isn't specified.</p>
      */
     inline ClientPolicyTls& WithEnforce(bool value) { SetEnforce(value); return *this;}
 

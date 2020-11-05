@@ -10,7 +10,9 @@
 #include <aws/kendra/model/IndexEdition.h>
 #include <aws/kendra/model/ServerSideEncryptionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/UserContextPolicy.h>
 #include <aws/kendra/model/Tag.h>
+#include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -395,6 +397,108 @@ namespace Model
      */
     inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = value; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::move(value); }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline CreateIndexRequest& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline CreateIndexRequest& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline CreateIndexRequest& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline CreateIndexRequest& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline CreateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
+
+    /**
+     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
+     * indexed content is searchable and displayable for all users. If there is an
+     * access control list, it is ignored. You can filter on user and group attributes.
+     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
+     * control. All documents with no access control and all documents accessible to
+     * the user will be searchable and displayable. </p> </dd> </dl>
+     */
+    inline CreateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -417,6 +521,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
+    bool m_userTokenConfigurationsHasBeenSet;
+
+    UserContextPolicy m_userContextPolicy;
+    bool m_userContextPolicyHasBeenSet;
   };
 
 } // namespace Model

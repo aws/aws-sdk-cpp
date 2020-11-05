@@ -20,25 +20,25 @@ namespace Aws
       namespace VirtualGatewayPortProtocolMapper
       {
 
-        static const int grpc_HASH = HashingUtils::HashString("grpc");
         static const int http_HASH = HashingUtils::HashString("http");
         static const int http2_HASH = HashingUtils::HashString("http2");
+        static const int grpc_HASH = HashingUtils::HashString("grpc");
 
 
         VirtualGatewayPortProtocol GetVirtualGatewayPortProtocolForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == grpc_HASH)
-          {
-            return VirtualGatewayPortProtocol::grpc;
-          }
-          else if (hashCode == http_HASH)
+          if (hashCode == http_HASH)
           {
             return VirtualGatewayPortProtocol::http;
           }
           else if (hashCode == http2_HASH)
           {
             return VirtualGatewayPortProtocol::http2;
+          }
+          else if (hashCode == grpc_HASH)
+          {
+            return VirtualGatewayPortProtocol::grpc;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -54,12 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case VirtualGatewayPortProtocol::grpc:
-            return "grpc";
           case VirtualGatewayPortProtocol::http:
             return "http";
           case VirtualGatewayPortProtocol::http2:
             return "http2";
+          case VirtualGatewayPortProtocol::grpc:
+            return "grpc";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

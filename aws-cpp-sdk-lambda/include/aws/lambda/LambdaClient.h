@@ -497,13 +497,13 @@ namespace Model
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -526,13 +526,13 @@ namespace Model
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -557,13 +557,13 @@ namespace Model
          * error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -2185,13 +2185,13 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -2205,13 +2205,13 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -2227,13 +2227,13 @@ namespace Model
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
-         * Discard records older than the specified age. Default -1 (infinite). Minimum 60.
-         * Maximum 604800.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard
-         * records after the specified number of retries. Default -1 (infinite). Minimum 0.
-         * Maximum 10000. When infinite, failed records will be retried until the record
-         * expires.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
-         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * Discard records older than the specified age. The default value is infinite
+         * (-1). When set to infinite (-1), failed records are retried until the record
+         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records
+         * after the specified number of retries. The default value is infinite (-1). When
+         * set to infinite (-1), failed records are retried until the record expires.</p>
+         * </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches
+         * from each shard concurrently.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *

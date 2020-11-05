@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -583,6 +584,149 @@ namespace Model
      */
     inline CreateEventSourceMappingRequest& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline CreateEventSourceMappingRequest& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline CreateEventSourceMappingRequest& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddQueues(const Aws::String& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddQueues(Aws::String&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline CreateEventSourceMappingRequest& AddQueues(const char* value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
+
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline CreateEventSourceMappingRequest& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
+     * store your secret, use the following format: <code> { "username": "your
+     * username", "password": "your password" }</code> </p> <p>To reference the secret,
+     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
+     * ]</code> </p> <p>The value of <code>Type</code> is always
+     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
+     * managed keys. When using a customer managed KMS key, the Lambda execution role
+     * requires <code>kms:Decrypt</code> permissions.</p>
+     */
+    inline CreateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_eventSourceArn;
@@ -623,6 +767,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_topics;
     bool m_topicsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_queues;
+    bool m_queuesHasBeenSet;
+
+    Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
+    bool m_sourceAccessConfigurationsHasBeenSet;
   };
 
 } // namespace Model

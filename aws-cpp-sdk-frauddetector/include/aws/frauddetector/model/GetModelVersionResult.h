@@ -213,37 +213,86 @@ namespace Model
 
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline GetModelVersionResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline GetModelVersionResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The model version status.</p>
+     * <p>The model version status.</p> <p>Possible values are:</p> <ul> <li> <p>
+     * <code>TRAINING_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>TRAINING_COMPLETE</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>ACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> <li> <p>
+     * <code>INACTIVATE_IN_PROGRESS</code> </p> </li> <li> <p> <code>INACTIVE</code>
+     * </p> </li> <li> <p> <code>ERROR</code> </p> </li> </ul>
      */
     inline GetModelVersionResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

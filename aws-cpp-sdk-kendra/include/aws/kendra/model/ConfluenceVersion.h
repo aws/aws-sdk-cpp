@@ -16,6 +16,7 @@ namespace Model
   enum class ConfluenceVersion
   {
     NOT_SET,
+    CLOUD,
     SERVER
   };
 

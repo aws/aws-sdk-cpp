@@ -16,8 +16,8 @@ namespace Model
   enum class DurationUnit
   {
     NOT_SET,
-    ms,
-    s
+    s,
+    ms
   };
 
 namespace DurationUnitMapper

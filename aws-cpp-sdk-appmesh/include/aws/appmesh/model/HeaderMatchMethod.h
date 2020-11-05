@@ -26,9 +26,7 @@ namespace Model
 
   /**
    * <p>An object that represents the method and value to match with the header value
-   * sent in a
-         request. Specify one match method.</p><p><h3>See Also:</h3>  
-   * <a
+   * sent in a request. Specify one match method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HeaderMatchMethod">AWS
    * API Reference</a></p>
    */

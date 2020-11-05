@@ -92,7 +92,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline const ReplicaStatus& GetReplicaStatus() const{ return m_replicaStatus; }
 
@@ -105,7 +110,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
@@ -118,7 +128,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
@@ -131,7 +146,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(ReplicaStatus&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
@@ -144,7 +164,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(const ReplicaStatus& value) { SetReplicaStatus(value); return *this;}
 
@@ -157,7 +182,12 @@ namespace Model
      * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
      * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
      * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> </ul>
+     * replication will stop from and to this region.</p>  </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
+     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
+     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop
+     * from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
 

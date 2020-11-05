@@ -599,6 +599,31 @@ namespace Model
      */
     inline SharePointConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline SharePointConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -630,6 +655,9 @@ namespace Model
 
     Aws::String m_documentTitleFieldName;
     bool m_documentTitleFieldNameHasBeenSet;
+
+    bool m_disableLocalGroups;
+    bool m_disableLocalGroupsHasBeenSet;
   };
 
 } // namespace Model

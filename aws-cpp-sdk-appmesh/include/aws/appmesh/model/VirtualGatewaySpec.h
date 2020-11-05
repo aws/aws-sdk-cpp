@@ -74,57 +74,49 @@ namespace Model
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline const Aws::Vector<VirtualGatewayListener>& GetListeners() const{ return m_listeners; }
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(const Aws::Vector<VirtualGatewayListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(Aws::Vector<VirtualGatewayListener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualGatewaySpec& WithListeners(const Aws::Vector<VirtualGatewayListener>& value) { SetListeners(value); return *this;}
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualGatewaySpec& WithListeners(Aws::Vector<VirtualGatewayListener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualGatewaySpec& AddListeners(const VirtualGatewayListener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
      * <p>The listeners that the mesh endpoint is expected to receive inbound traffic
-     * from. You
-         can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualGatewaySpec& AddListeners(VirtualGatewayListener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 

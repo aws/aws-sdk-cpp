@@ -13,7 +13,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/IndexStatistics.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
+#include <aws/kendra/model/UserContextPolicy.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
+#include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -503,6 +505,68 @@ namespace Model
      */
     inline DescribeIndexResult& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurations = value; }
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurations = std::move(value); }
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The user token configuration for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The user context policy for the Amazon Kendra index.</p>
+     */
+    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
+
+    /**
+     * <p>The user context policy for the Amazon Kendra index.</p>
+     */
+    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicy = value; }
+
+    /**
+     * <p>The user context policy for the Amazon Kendra index.</p>
+     */
+    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicy = std::move(value); }
+
+    /**
+     * <p>The user context policy for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
+
+    /**
+     * <p>The user context policy for the Amazon Kendra index.</p>
+     */
+    inline DescribeIndexResult& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -530,6 +594,10 @@ namespace Model
     Aws::String m_errorMessage;
 
     CapacityUnitsConfiguration m_capacityUnits;
+
+    Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
+
+    UserContextPolicy m_userContextPolicy;
   };
 
 } // namespace Model
