@@ -35,7 +35,7 @@ AWS_CORE_API Aws::String ComputeUserAgentString()
   return ss.str();
 }
 
-ClientConfiguration::ClientConfiguration() :
+ClientConfiguration::ClientConfiguration(bool doRegionLookup, Aws::String defaultRegion) :
     scheme(Aws::Http::Scheme::HTTPS),
     useDualStack(false),
     maxConnections(25),
@@ -101,6 +101,12 @@ ClientConfiguration::ClientConfiguration() :
     else
     {
         retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
+    }
+
+    if (doRegionLookup == false)
+    {
+        region = defaultRegion;
+        return;
     }
 
     // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.

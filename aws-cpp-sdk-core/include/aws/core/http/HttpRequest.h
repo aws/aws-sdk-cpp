@@ -18,6 +18,13 @@
 
 namespace Aws
 {
+    namespace Crt
+    {
+        namespace Http
+        {
+            class HttpRequest;
+        }
+    }
     namespace Http
     {
         extern AWS_CORE_API const char DATE_HEADER[];
@@ -537,6 +544,8 @@ namespace Aws
             Aws::String m_resolvedRemoteHost;
             Aws::Monitoring::HttpClientMetricsCollection m_httpRequestMetrics;
         };
+
+        std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequestToCrtHttpRequest(const HttpRequest& httpRequest);
 
     } // namespace Http
 } // namespace Aws

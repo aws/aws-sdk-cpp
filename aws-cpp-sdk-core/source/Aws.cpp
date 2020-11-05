@@ -56,6 +56,31 @@ namespace Aws
 
         Aws::Config::InitConfigAndCredentialsCacheManager();
 
+        if (options.ioOptions.clientBootstrap_create_fn)
+        {
+            Aws::SetDefaultClientBootstrap(options.ioOptions.clientBootstrap_create_fn());
+        }
+        else
+        {
+            Aws::Crt::Io::EventLoopGroup eventLoopGroup;
+            Aws::Crt::Io::DefaultHostResolver defaultHostResolver(eventLoopGroup, 8, 30);
+            auto clientBootstrap = Aws::MakeShared<Aws::Crt::Io::ClientBootstrap>(ALLOCATION_TAG, eventLoopGroup, defaultHostResolver);
+            clientBootstrap->EnableBlockingShutdown();
+            Aws::SetDefaultClientBootstrap(clientBootstrap);
+        }
+
+        if (options.ioOptions.tlsConnectionOptions_create_fn)
+        {
+            Aws::SetDefaultTlsConnectionOptions(options.ioOptions.tlsConnectionOptions_create_fn());
+        }
+        else
+        {
+            Aws::Crt::Io::TlsContextOptions tlsCtxOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
+            Aws::Crt::Io::TlsContext tlsContext(tlsCtxOptions, Aws::Crt::Io::TlsMode::CLIENT);
+            auto tlsConnectionOptions = Aws::MakeShared<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, tlsContext.NewConnectionOptions());
+            Aws::SetDefaultTlsConnectionOptions(tlsConnectionOptions);
+        }
+
         if (options.cryptoOptions.aes_CBCFactory_create_fn)
         {
             Aws::Utils::Crypto::SetAES_CBCFactory(options.cryptoOptions.aes_CBCFactory_create_fn());

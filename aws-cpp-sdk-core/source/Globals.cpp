@@ -4,6 +4,8 @@
  */
 
 #include <aws/crt/Api.h>
+#include <aws/crt/io/TlsOptions.h>
+#include <aws/crt/io/Bootstrap.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -14,10 +16,32 @@ namespace Aws
     static const char TAG[] = "GlobalEnumOverflowContainer";
 
     static Aws::Crt::ApiHandle* g_apiHandle;
+    static std::shared_ptr<Aws::Crt::Io::ClientBootstrap> g_defaultClientBootstrap(nullptr);
+    static std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions> g_defaultTlsConnectionOptions(nullptr);
 
     Aws::Crt::ApiHandle* GetApiHandle()
     {
         return g_apiHandle;
+    }
+
+    void SetDefaultClientBootstrap(const std::shared_ptr<Aws::Crt::Io::ClientBootstrap>& clientBootstrap)
+    {
+        g_defaultClientBootstrap = clientBootstrap;
+    }
+
+    Aws::Crt::Io::ClientBootstrap* GetDefaultClientBootstrap()
+    {
+        return g_defaultClientBootstrap.get();
+    }
+
+    void SetDefaultTlsConnectionOptions(const std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions>& tlsConnectionOptions)
+    {
+        g_defaultTlsConnectionOptions = tlsConnectionOptions;
+    }
+
+    Aws::Crt::Io::TlsConnectionOptions* GetDefaultTlsConnectionOptions()
+    {
+        return g_defaultTlsConnectionOptions.get();
     }
 
     void InitializeCrt()
@@ -27,12 +51,8 @@ namespace Aws
 
     void CleanupCrt()
     {
-        aws_global_thread_creator_shutdown_wait_for(5);
-        Aws::Crt::g_allocator = nullptr;
-        aws_auth_library_clean_up();
-        aws_mqtt_library_clean_up();
-        aws_http_library_clean_up();
-
+        Aws::SetDefaultClientBootstrap(nullptr);
+        Aws::SetDefaultTlsConnectionOptions(nullptr);
         Aws::Delete(g_apiHandle);
     }
 

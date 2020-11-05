@@ -22,3 +22,17 @@
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>
 #end
 #end
+#if($serviceModel.metadata.namespace == "S3Crt")
+\#include <aws/core/Version.h>
+\#include <aws/core/platform/OSVersionInfo.h>
+\#include <aws/core/http/standard/StandardHttpResponse.h>
+\#include <aws/core/Globals.h>
+\#include <aws/crt/Types.h>
+\#include <aws/crt/auth/Credentials.h>
+\#include <aws/crt/http/HttpRequestResponse.h>
+\#include <aws/crt/io/Stream.h>
+\#include <aws/http/request_response.h>
+\#include <aws/common/string.h>
+
+using namespace Aws::Utils;
+#end

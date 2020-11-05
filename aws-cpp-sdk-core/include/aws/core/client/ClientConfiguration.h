@@ -50,7 +50,8 @@ namespace Aws
          */
         struct AWS_CORE_API ClientConfiguration
         {
-            ClientConfiguration();
+            /* Tell SDK to perform region look up or not. If not user can specify directly later or use the defaults*/
+            ClientConfiguration(bool doRegionLookup = true, Aws::String defaultRegion = "us-east-1");
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.

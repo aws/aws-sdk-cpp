@@ -51,4 +51,7 @@ public class Operation {
 
     // For pre-signed URL generation
     private boolean hasPreSignedUrl;
+
+    // For S3 CRT
+    private boolean s3CrtSpecific;
 }

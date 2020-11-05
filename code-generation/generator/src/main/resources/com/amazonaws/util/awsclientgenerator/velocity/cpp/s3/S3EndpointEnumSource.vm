@@ -4,7 +4,7 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 #set($endpointPrefix = $metadata.endpointPrefix)
-\#include <aws/s3/S3Endpoint.h>
+\#include <aws/${serviceModel.serviceName}/${serviceNamespace}Endpoint.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/HashingUtils.h>
 
