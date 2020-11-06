@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline const Aws::Vector<PlacementGroupStrategy>& GetSupportedStrategies() const{ return m_supportedStrategies; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline bool SupportedStrategiesHasBeenSet() const { return m_supportedStrategiesHasBeenSet; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline void SetSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = value; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline void SetSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = std::move(value); }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& WithSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { SetSupportedStrategies(value); return *this;}
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& WithSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { SetSupportedStrategies(std::move(value)); return *this;}
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& AddSupportedStrategies(const PlacementGroupStrategy& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(value); return *this; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& AddSupportedStrategies(PlacementGroupStrategy&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(std::move(value)); return *this; }
 

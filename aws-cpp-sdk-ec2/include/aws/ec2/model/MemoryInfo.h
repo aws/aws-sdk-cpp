@@ -38,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>Size of the memory, in MiB.</p>
+     * <p>The size of the memory, in MiB.</p>
      */
     inline long long GetSizeInMiB() const{ return m_sizeInMiB; }
 
     /**
-     * <p>Size of the memory, in MiB.</p>
+     * <p>The size of the memory, in MiB.</p>
      */
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
 
     /**
-     * <p>Size of the memory, in MiB.</p>
+     * <p>The size of the memory, in MiB.</p>
      */
     inline void SetSizeInMiB(long long value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
 
     /**
-     * <p>Size of the memory, in MiB.</p>
+     * <p>The size of the memory, in MiB.</p>
      */
     inline MemoryInfo& WithSizeInMiB(long long value) { SetSizeInMiB(value); return *this;}
 

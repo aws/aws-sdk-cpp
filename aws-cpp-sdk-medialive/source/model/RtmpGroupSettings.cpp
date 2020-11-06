@@ -19,6 +19,7 @@ namespace Model
 {
 
 RtmpGroupSettings::RtmpGroupSettings() : 
+    m_adMarkersHasBeenSet(false),
     m_authenticationScheme(AuthenticationScheme::NOT_SET),
     m_authenticationSchemeHasBeenSet(false),
     m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
@@ -35,6 +36,7 @@ RtmpGroupSettings::RtmpGroupSettings() :
 }
 
 RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) : 
+    m_adMarkersHasBeenSet(false),
     m_authenticationScheme(AuthenticationScheme::NOT_SET),
     m_authenticationSchemeHasBeenSet(false),
     m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
@@ -53,6 +55,16 @@ RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) :
 
 RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("adMarkers"))
+  {
+    Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
+    for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
+    {
+      m_adMarkers.push_back(RtmpAdMarkersMapper::GetRtmpAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
+    }
+    m_adMarkersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("authenticationScheme"))
   {
     m_authenticationScheme = AuthenticationSchemeMapper::GetAuthenticationSchemeForName(jsonValue.GetString("authenticationScheme"));
@@ -101,6 +113,17 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 JsonValue RtmpGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_adMarkersHasBeenSet)
+  {
+   Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
+   for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
+   {
+     adMarkersJsonList[adMarkersIndex].AsString(RtmpAdMarkersMapper::GetNameForRtmpAdMarkers(m_adMarkers[adMarkersIndex]));
+   }
+   payload.WithArray("adMarkers", std::move(adMarkersJsonList));
+
+  }
 
   if(m_authenticationSchemeHasBeenSet)
   {

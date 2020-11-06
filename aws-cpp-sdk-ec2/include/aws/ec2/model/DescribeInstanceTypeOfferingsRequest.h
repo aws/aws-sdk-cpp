@@ -108,7 +108,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -117,7 +118,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -126,7 +128,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -135,7 +138,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -144,7 +148,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline DescribeInstanceTypeOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -153,7 +158,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline DescribeInstanceTypeOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -162,7 +168,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline DescribeInstanceTypeOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -171,7 +178,8 @@ namespace Model
      * <li> <p> <code>location</code> - This depends on the location type. For example,
      * if the location type is <code>region</code> (default), the location is the
      * Region code (for example, <code>us-east-2</code>.)</p> </li> <li> <p>
-     * <code>instance-type</code> - The instance type.</p> </li> </ul>
+     * <code>instance-type</code> - The instance type. For example,
+     * <code>c5.2xlarge</code>.</p> </li> </ul>
      */
     inline DescribeInstanceTypeOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/AuthenticationScheme.h>
 #include <aws/medialive/model/RtmpCacheFullBehavior.h>
 #include <aws/medialive/model/RtmpCaptionData.h>
 #include <aws/medialive/model/InputLossActionForRtmpOut.h>
+#include <aws/medialive/model/RtmpAdMarkers.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +40,63 @@ namespace Model
     RtmpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     RtmpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline const Aws::Vector<RtmpAdMarkers>& GetAdMarkers() const{ return m_adMarkers; }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline void SetAdMarkers(const Aws::Vector<RtmpAdMarkers>& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline void SetAdMarkers(Aws::Vector<RtmpAdMarkers>&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline RtmpGroupSettings& WithAdMarkers(const Aws::Vector<RtmpAdMarkers>& value) { SetAdMarkers(value); return *this;}
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline RtmpGroupSettings& WithAdMarkers(Aws::Vector<RtmpAdMarkers>&& value) { SetAdMarkers(std::move(value)); return *this;}
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline RtmpGroupSettings& AddAdMarkers(const RtmpAdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(value); return *this; }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message
+     * based on the content of each SCTE-35 message, format it for that marker type,
+     * and insert it in the datastream.
+     */
+    inline RtmpGroupSettings& AddAdMarkers(RtmpAdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -300,6 +359,9 @@ namespace Model
     inline RtmpGroupSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
 
   private:
+
+    Aws::Vector<RtmpAdMarkers> m_adMarkers;
+    bool m_adMarkersHasBeenSet;
 
     AuthenticationScheme m_authenticationScheme;
     bool m_authenticationSchemeHasBeenSet;

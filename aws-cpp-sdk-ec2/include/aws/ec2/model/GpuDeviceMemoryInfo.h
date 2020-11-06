@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>The size (in MiB) for the memory available to the GPU accelerator.</p>
+     * <p>The size of the memory available to the GPU accelerator, in MiB.</p>
      */
     inline int GetSizeInMiB() const{ return m_sizeInMiB; }
 
     /**
-     * <p>The size (in MiB) for the memory available to the GPU accelerator.</p>
+     * <p>The size of the memory available to the GPU accelerator, in MiB.</p>
      */
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
 
     /**
-     * <p>The size (in MiB) for the memory available to the GPU accelerator.</p>
+     * <p>The size of the memory available to the GPU accelerator, in MiB.</p>
      */
     inline void SetSizeInMiB(int value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
 
     /**
-     * <p>The size (in MiB) for the memory available to the GPU accelerator.</p>
+     * <p>The size of the memory available to the GPU accelerator, in MiB.</p>
      */
     inline GpuDeviceMemoryInfo& WithSizeInMiB(int value) { SetSizeInMiB(value); return *this;}
 

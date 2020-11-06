@@ -69,10 +69,50 @@ namespace Model
      */
     inline Parameters& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
 
+
+    /**
+     * <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances
+     * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
+     * targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default
+     * is <code>true</code> (instance are not rebooted).</p>
+     */
+    inline bool GetNoReboot() const{ return m_noReboot; }
+
+    /**
+     * <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances
+     * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
+     * targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default
+     * is <code>true</code> (instance are not rebooted).</p>
+     */
+    inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
+
+    /**
+     * <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances
+     * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
+     * targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default
+     * is <code>true</code> (instance are not rebooted).</p>
+     */
+    inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
+
+    /**
+     * <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances
+     * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
+     * targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default
+     * is <code>true</code> (instance are not rebooted).</p>
+     */
+    inline Parameters& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
+
   private:
 
     bool m_excludeBootVolume;
     bool m_excludeBootVolumeHasBeenSet;
+
+    bool m_noReboot;
+    bool m_noRebootHasBeenSet;
   };
 
 } // namespace Model

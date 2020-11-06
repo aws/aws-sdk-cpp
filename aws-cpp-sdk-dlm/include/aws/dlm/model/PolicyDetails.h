@@ -44,38 +44,56 @@ namespace Model
 
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline const PolicyTypeValues& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline void SetPolicyType(const PolicyTypeValues& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline void SetPolicyType(PolicyTypeValues&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline PolicyDetails& WithPolicyType(const PolicyTypeValues& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The valid target resource types and actions a policy can manage. The default
-     * is EBS_SNAPSHOT_MANAGEMENT.</p>
+     * <p>The valid target resource types and actions a policy can manage. Specify
+     * <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages
+     * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline PolicyDetails& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
 

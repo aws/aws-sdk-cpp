@@ -23,7 +23,9 @@ LifecyclePolicySummary::LifecyclePolicySummary() :
     m_descriptionHasBeenSet(false),
     m_state(GettablePolicyStateValues::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_policyType(PolicyTypeValues::NOT_SET),
+    m_policyTypeHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_state(GettablePolicyStateValues::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_policyType(PolicyTypeValues::NOT_SET),
+    m_policyTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +74,13 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyType"))
+  {
+    m_policyType = PolicyTypeValuesMapper::GetPolicyTypeValuesForName(jsonValue.GetString("PolicyType"));
+
+    m_policyTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +114,11 @@ JsonValue LifecyclePolicySummary::Jsonize() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_policyTypeHasBeenSet)
+  {
+   payload.WithString("PolicyType", PolicyTypeValuesMapper::GetNameForPolicyTypeValues(m_policyType));
   }
 
   return payload;

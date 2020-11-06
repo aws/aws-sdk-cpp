@@ -16,7 +16,8 @@ namespace Model
   enum class PolicyTypeValues
   {
     NOT_SET,
-    EBS_SNAPSHOT_MANAGEMENT
+    EBS_SNAPSHOT_MANAGEMENT,
+    IMAGE_MANAGEMENT
   };
 
 namespace PolicyTypeValuesMapper

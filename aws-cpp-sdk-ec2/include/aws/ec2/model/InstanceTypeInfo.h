@@ -98,22 +98,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline bool GetCurrentGeneration() const{ return m_currentGeneration; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline InstanceTypeInfo& WithCurrentGeneration(bool value) { SetCurrentGeneration(value); return *this;}
 
@@ -181,42 +181,42 @@ namespace Model
 
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline const Aws::Vector<RootDeviceType>& GetSupportedRootDeviceTypes() const{ return m_supportedRootDeviceTypes; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline bool SupportedRootDeviceTypesHasBeenSet() const { return m_supportedRootDeviceTypesHasBeenSet; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline void SetSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = value; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline void SetSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = std::move(value); }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& WithSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { SetSupportedRootDeviceTypes(value); return *this;}
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& WithSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { SetSupportedRootDeviceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& AddSupportedRootDeviceTypes(const RootDeviceType& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& AddSupportedRootDeviceTypes(RootDeviceType&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(std::move(value)); return *this; }
 
@@ -263,53 +263,53 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline bool GetBareMetal() const{ return m_bareMetal; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline bool BareMetalHasBeenSet() const { return m_bareMetalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline void SetBareMetal(bool value) { m_bareMetalHasBeenSet = true; m_bareMetal = value; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline InstanceTypeInfo& WithBareMetal(bool value) { SetBareMetal(value); return *this;}
 
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline const InstanceTypeHypervisor& GetHypervisor() const{ return m_hypervisor; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline void SetHypervisor(const InstanceTypeHypervisor& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline void SetHypervisor(InstanceTypeHypervisor&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline InstanceTypeInfo& WithHypervisor(const InstanceTypeHypervisor& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline InstanceTypeInfo& WithHypervisor(InstanceTypeHypervisor&& value) { SetHypervisor(std::move(value)); return *this;}
 
@@ -429,32 +429,32 @@ namespace Model
 
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline const InstanceStorageInfo& GetInstanceStorageInfo() const{ return m_instanceStorageInfo; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline bool InstanceStorageInfoHasBeenSet() const { return m_instanceStorageInfoHasBeenSet; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline void SetInstanceStorageInfo(const InstanceStorageInfo& value) { m_instanceStorageInfoHasBeenSet = true; m_instanceStorageInfo = value; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline void SetInstanceStorageInfo(InstanceStorageInfo&& value) { m_instanceStorageInfoHasBeenSet = true; m_instanceStorageInfo = std::move(value); }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline InstanceTypeInfo& WithInstanceStorageInfo(const InstanceStorageInfo& value) { SetInstanceStorageInfo(value); return *this;}
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline InstanceTypeInfo& WithInstanceStorageInfo(InstanceStorageInfo&& value) { SetInstanceStorageInfo(std::move(value)); return *this;}
 

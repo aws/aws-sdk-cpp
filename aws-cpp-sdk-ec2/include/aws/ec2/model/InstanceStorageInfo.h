@@ -64,42 +64,42 @@ namespace Model
 
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline const Aws::Vector<DiskInfo>& GetDisks() const{ return m_disks; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline void SetDisks(const Aws::Vector<DiskInfo>& value) { m_disksHasBeenSet = true; m_disks = value; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline void SetDisks(Aws::Vector<DiskInfo>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& WithDisks(const Aws::Vector<DiskInfo>& value) { SetDisks(value); return *this;}
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& WithDisks(Aws::Vector<DiskInfo>&& value) { SetDisks(std::move(value)); return *this;}
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& AddDisks(const DiskInfo& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& AddDisks(DiskInfo&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
 

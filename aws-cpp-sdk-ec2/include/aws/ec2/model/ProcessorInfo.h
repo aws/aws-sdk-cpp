@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline const Aws::Vector<ArchitectureType>& GetSupportedArchitectures() const{ return m_supportedArchitectures; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline bool SupportedArchitecturesHasBeenSet() const { return m_supportedArchitecturesHasBeenSet; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline void SetSupportedArchitectures(const Aws::Vector<ArchitectureType>& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures = value; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline void SetSupportedArchitectures(Aws::Vector<ArchitectureType>&& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures = std::move(value); }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& WithSupportedArchitectures(const Aws::Vector<ArchitectureType>& value) { SetSupportedArchitectures(value); return *this;}
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& WithSupportedArchitectures(Aws::Vector<ArchitectureType>&& value) { SetSupportedArchitectures(std::move(value)); return *this;}
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& AddSupportedArchitectures(const ArchitectureType& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures.push_back(value); return *this; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& AddSupportedArchitectures(ArchitectureType&& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures.push_back(std::move(value)); return *this; }
 

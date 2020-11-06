@@ -24,6 +24,11 @@ NetworkInfo::NetworkInfo() :
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
     m_maximumNetworkInterfacesHasBeenSet(false),
+    m_maximumNetworkCards(0),
+    m_maximumNetworkCardsHasBeenSet(false),
+    m_defaultNetworkCardIndex(0),
+    m_defaultNetworkCardIndexHasBeenSet(false),
+    m_networkCardsHasBeenSet(false),
     m_ipv4AddressesPerInterface(0),
     m_ipv4AddressesPerInterfaceHasBeenSet(false),
     m_ipv6AddressesPerInterface(0),
@@ -41,6 +46,11 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
     m_maximumNetworkInterfacesHasBeenSet(false),
+    m_maximumNetworkCards(0),
+    m_maximumNetworkCardsHasBeenSet(false),
+    m_defaultNetworkCardIndex(0),
+    m_defaultNetworkCardIndexHasBeenSet(false),
+    m_networkCardsHasBeenSet(false),
     m_ipv4AddressesPerInterface(0),
     m_ipv4AddressesPerInterfaceHasBeenSet(false),
     m_ipv6AddressesPerInterface(0),
@@ -72,6 +82,30 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     {
       m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
+    }
+    XmlNode maximumNetworkCardsNode = resultNode.FirstChild("maximumNetworkCards");
+    if(!maximumNetworkCardsNode.IsNull())
+    {
+      m_maximumNetworkCards = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkCardsNode.GetText()).c_str()).c_str());
+      m_maximumNetworkCardsHasBeenSet = true;
+    }
+    XmlNode defaultNetworkCardIndexNode = resultNode.FirstChild("defaultNetworkCardIndex");
+    if(!defaultNetworkCardIndexNode.IsNull())
+    {
+      m_defaultNetworkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultNetworkCardIndexNode.GetText()).c_str()).c_str());
+      m_defaultNetworkCardIndexHasBeenSet = true;
+    }
+    XmlNode networkCardsNode = resultNode.FirstChild("networkCards");
+    if(!networkCardsNode.IsNull())
+    {
+      XmlNode networkCardsMember = networkCardsNode.FirstChild("item");
+      while(!networkCardsMember.IsNull())
+      {
+        m_networkCards.push_back(networkCardsMember);
+        networkCardsMember = networkCardsMember.NextNode("item");
+      }
+
+      m_networkCardsHasBeenSet = true;
     }
     XmlNode ipv4AddressesPerInterfaceNode = resultNode.FirstChild("ipv4AddressesPerInterface");
     if(!ipv4AddressesPerInterfaceNode.IsNull())
@@ -120,6 +154,27 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
   }
 
+  if(m_maximumNetworkCardsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+
+  if(m_defaultNetworkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+
+  if(m_networkCardsHasBeenSet)
+  {
+      unsigned networkCardsIdx = 1;
+      for(auto& item : m_networkCards)
+      {
+        Aws::StringStream networkCardsSs;
+        networkCardsSs << location << index << locationValue << ".NetworkCards." << networkCardsIdx++;
+        item.OutputToStream(oStream, networkCardsSs.str().c_str());
+      }
+  }
+
   if(m_ipv4AddressesPerInterfaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ipv4AddressesPerInterface=" << m_ipv4AddressesPerInterface << "&";
@@ -156,6 +211,24 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_maximumNetworkInterfacesHasBeenSet)
   {
       oStream << location << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+  if(m_maximumNetworkCardsHasBeenSet)
+  {
+      oStream << location << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+  if(m_defaultNetworkCardIndexHasBeenSet)
+  {
+      oStream << location << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+  if(m_networkCardsHasBeenSet)
+  {
+      unsigned networkCardsIdx = 1;
+      for(auto& item : m_networkCards)
+      {
+        Aws::StringStream networkCardsSs;
+        networkCardsSs << location <<  ".NetworkCards." << networkCardsIdx++;
+        item.OutputToStream(oStream, networkCardsSs.str().c_str());
+      }
   }
   if(m_ipv4AddressesPerInterfaceHasBeenSet)
   {

@@ -65,25 +65,25 @@ namespace Model
 
     /**
      * <p>The baseline throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline double GetBaselineThroughputInMBps() const{ return m_baselineThroughputInMBps; }
 
     /**
      * <p>The baseline throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline bool BaselineThroughputInMBpsHasBeenSet() const { return m_baselineThroughputInMBpsHasBeenSet; }
 
     /**
      * <p>The baseline throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline void SetBaselineThroughputInMBps(double value) { m_baselineThroughputInMBpsHasBeenSet = true; m_baselineThroughputInMBps = value; }
 
     /**
      * <p>The baseline throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline EbsOptimizedInfo& WithBaselineThroughputInMBps(double value) { SetBaselineThroughputInMBps(value); return *this;}
 
@@ -140,25 +140,25 @@ namespace Model
 
     /**
      * <p>The maximum throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline double GetMaximumThroughputInMBps() const{ return m_maximumThroughputInMBps; }
 
     /**
      * <p>The maximum throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline bool MaximumThroughputInMBpsHasBeenSet() const { return m_maximumThroughputInMBpsHasBeenSet; }
 
     /**
      * <p>The maximum throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline void SetMaximumThroughputInMBps(double value) { m_maximumThroughputInMBpsHasBeenSet = true; m_maximumThroughputInMBps = value; }
 
     /**
      * <p>The maximum throughput performance for an EBS-optimized instance type, in
-     * MBps.</p>
+     * MB/s.</p>
      */
     inline EbsOptimizedInfo& WithMaximumThroughputInMBps(double value) { SetMaximumThroughputInMBps(value); return *this;}
 

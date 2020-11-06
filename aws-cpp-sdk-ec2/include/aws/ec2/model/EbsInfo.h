@@ -44,7 +44,7 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux
@@ -53,7 +53,7 @@ namespace Model
     inline const EbsOptimizedSupport& GetEbsOptimizedSupport() const{ return m_ebsOptimizedSupport; }
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux
@@ -62,7 +62,7 @@ namespace Model
     inline bool EbsOptimizedSupportHasBeenSet() const { return m_ebsOptimizedSupportHasBeenSet; }
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux
@@ -71,7 +71,7 @@ namespace Model
     inline void SetEbsOptimizedSupport(const EbsOptimizedSupport& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = value; }
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux
@@ -80,7 +80,7 @@ namespace Model
     inline void SetEbsOptimizedSupport(EbsOptimizedSupport&& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = std::move(value); }
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux
@@ -89,7 +89,7 @@ namespace Model
     inline EbsInfo& WithEbsOptimizedSupport(const EbsOptimizedSupport& value) { SetEbsOptimizedSupport(value); return *this;}
 
     /**
-     * <p>Indicates that the instance type is Amazon EBS-optimized. For more
+     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux

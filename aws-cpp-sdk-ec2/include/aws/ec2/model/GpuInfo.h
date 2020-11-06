@@ -83,26 +83,26 @@ namespace Model
 
 
     /**
-     * <p>The total size of the memory for the GPU accelerators for the instance
-     * type.</p>
+     * <p>The total size of the memory for the GPU accelerators for the instance type,
+     * in MiB.</p>
      */
     inline int GetTotalGpuMemoryInMiB() const{ return m_totalGpuMemoryInMiB; }
 
     /**
-     * <p>The total size of the memory for the GPU accelerators for the instance
-     * type.</p>
+     * <p>The total size of the memory for the GPU accelerators for the instance type,
+     * in MiB.</p>
      */
     inline bool TotalGpuMemoryInMiBHasBeenSet() const { return m_totalGpuMemoryInMiBHasBeenSet; }
 
     /**
-     * <p>The total size of the memory for the GPU accelerators for the instance
-     * type.</p>
+     * <p>The total size of the memory for the GPU accelerators for the instance type,
+     * in MiB.</p>
      */
     inline void SetTotalGpuMemoryInMiB(int value) { m_totalGpuMemoryInMiBHasBeenSet = true; m_totalGpuMemoryInMiB = value; }
 
     /**
-     * <p>The total size of the memory for the GPU accelerators for the instance
-     * type.</p>
+     * <p>The total size of the memory for the GPU accelerators for the instance type,
+     * in MiB.</p>
      */
     inline GpuInfo& WithTotalGpuMemoryInMiB(int value) { SetTotalGpuMemoryInMiB(value); return *this;}
 
