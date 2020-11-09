@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Provides details about the location of an occurrence of sensitive data in an
-   * Adobe Portable Document Format file, Apache Avro object container, Microsoft
-   * Word document, or non-binary text file.</p><p><h3>See Also:</h3>   <a
+   * Adobe Portable Document Format file, Microsoft Word document, or non-binary text
+   * file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range">AWS API
    * Reference</a></p>
    */

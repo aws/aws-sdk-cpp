@@ -24,7 +24,8 @@ namespace Model
     StartTimeBefore,
     StartTimeAfter,
     AutomationType,
-    TagKey
+    TagKey,
+    TargetResourceGroup
   };
 
 namespace AutomationExecutionFilterKeyMapper

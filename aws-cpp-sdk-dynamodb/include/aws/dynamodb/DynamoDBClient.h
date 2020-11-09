@@ -23,15 +23,18 @@
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsResult.h>
 #include <aws/dynamodb/model/DescribeEndpointsResult.h>
+#include <aws/dynamodb/model/DescribeExportResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
+#include <aws/dynamodb/model/ExportTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
 #include <aws/dynamodb/model/ListContributorInsightsResult.h>
+#include <aws/dynamodb/model/ListExportsResult.h>
 #include <aws/dynamodb/model/ListGlobalTablesResult.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
 #include <aws/dynamodb/model/ListTagsOfResourceResult.h>
@@ -103,15 +106,18 @@ namespace Model
         class DescribeContinuousBackupsRequest;
         class DescribeContributorInsightsRequest;
         class DescribeEndpointsRequest;
+        class DescribeExportRequest;
         class DescribeGlobalTableRequest;
         class DescribeGlobalTableSettingsRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
         class DescribeTableReplicaAutoScalingRequest;
         class DescribeTimeToLiveRequest;
+        class ExportTableToPointInTimeRequest;
         class GetItemRequest;
         class ListBackupsRequest;
         class ListContributorInsightsRequest;
+        class ListExportsRequest;
         class ListGlobalTablesRequest;
         class ListTablesRequest;
         class ListTagsOfResourceRequest;
@@ -145,15 +151,18 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, DynamoDBError> DescribeContinuousBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeContributorInsightsResult, DynamoDBError> DescribeContributorInsightsOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointsResult, DynamoDBError> DescribeEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportResult, DynamoDBError> DescribeExportOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalTableResult, DynamoDBError> DescribeGlobalTableOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, DynamoDBError> DescribeGlobalTableSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, DynamoDBError> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, DynamoDBError> DescribeTableOutcome;
         typedef Aws::Utils::Outcome<DescribeTableReplicaAutoScalingResult, DynamoDBError> DescribeTableReplicaAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, DynamoDBError> DescribeTimeToLiveOutcome;
+        typedef Aws::Utils::Outcome<ExportTableToPointInTimeResult, DynamoDBError> ExportTableToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, DynamoDBError> GetItemOutcome;
         typedef Aws::Utils::Outcome<ListBackupsResult, DynamoDBError> ListBackupsOutcome;
         typedef Aws::Utils::Outcome<ListContributorInsightsResult, DynamoDBError> ListContributorInsightsOutcome;
+        typedef Aws::Utils::Outcome<ListExportsResult, DynamoDBError> ListExportsOutcome;
         typedef Aws::Utils::Outcome<ListGlobalTablesResult, DynamoDBError> ListGlobalTablesOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, DynamoDBError> ListTablesOutcome;
         typedef Aws::Utils::Outcome<ListTagsOfResourceResult, DynamoDBError> ListTagsOfResourceOutcome;
@@ -187,15 +196,18 @@ namespace Model
         typedef std::future<DescribeContinuousBackupsOutcome> DescribeContinuousBackupsOutcomeCallable;
         typedef std::future<DescribeContributorInsightsOutcome> DescribeContributorInsightsOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
+        typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeGlobalTableOutcome> DescribeGlobalTableOutcomeCallable;
         typedef std::future<DescribeGlobalTableSettingsOutcome> DescribeGlobalTableSettingsOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<DescribeTableReplicaAutoScalingOutcome> DescribeTableReplicaAutoScalingOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
+        typedef std::future<ExportTableToPointInTimeOutcome> ExportTableToPointInTimeOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
         typedef std::future<ListContributorInsightsOutcome> ListContributorInsightsOutcomeCallable;
+        typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
         typedef std::future<ListGlobalTablesOutcome> ListGlobalTablesOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
         typedef std::future<ListTagsOfResourceOutcome> ListTagsOfResourceOutcomeCallable;
@@ -232,15 +244,18 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeContinuousBackupsRequest&, const Model::DescribeContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeContributorInsightsRequest&, const Model::DescribeContributorInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContributorInsightsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableRequest&, const Model::DescribeGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableSettingsRequest&, const Model::DescribeGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableReplicaAutoScalingRequest&, const Model::DescribeTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExportTableToPointInTimeRequest&, const Model::ExportTableToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTableToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListContributorInsightsRequest&, const Model::ListContributorInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContributorInsightsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListGlobalTablesRequest&, const Model::ListGlobalTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGlobalTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTagsOfResourceRequest&, const Model::ListTagsOfResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsOfResourceResponseReceivedHandler;
@@ -1196,6 +1211,31 @@ namespace Model
         virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExportOutcome DescribeExport(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportOutcomeCallable DescribeExportCallable(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportAsync(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the specified global table.</p>  <p>This
          * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
@@ -1532,6 +1572,37 @@ namespace Model
         virtual void DescribeTimeToLiveAsync(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportTableToPointInTimeOutcome ExportTableToPointInTime(const Model::ExportTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportTableToPointInTimeOutcomeCallable ExportTableToPointInTimeCallable(const Model::ExportTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportTableToPointInTimeAsync(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The <code>GetItem</code> operation returns a set of attributes for the item
          * with the given primary key. If there is no matching item, <code>GetItem</code>
          * does not return any data and there will be no <code>Item</code> element in the
@@ -1650,6 +1721,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListContributorInsightsAsync(const Model::ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
@@ -2995,15 +3094,18 @@ namespace Model
         void DescribeContinuousBackupsAsyncHelper(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContributorInsightsAsyncHelper(const Model::DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableAsyncHelper(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableSettingsAsyncHelper(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableReplicaAutoScalingAsyncHelper(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportTableToPointInTimeAsyncHelper(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackupsAsyncHelper(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContributorInsightsAsyncHelper(const Model::ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGlobalTablesAsyncHelper(const Model::ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsOfResourceAsyncHelper(const Model::ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

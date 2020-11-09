@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline const DatasetContentState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline void SetState(const DatasetContentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline void SetState(DatasetContentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline DatasetContentStatus& WithState(const DatasetContentState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
-     * "SUCCEEDED" or "FAILED".</p>
+     * <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED,
+     * or FAILED.</p>
      */
     inline DatasetContentStatus& WithState(DatasetContentState&& value) { SetState(std::move(value)); return *this;}
 

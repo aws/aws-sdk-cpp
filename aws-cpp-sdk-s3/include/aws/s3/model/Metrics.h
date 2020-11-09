@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> A container specifying replication metrics-related settings enabling metrics
-   * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-   * together with a <code>ReplicationTime</code> block. </p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Metrics">AWS API
+   * <p> A container specifying replication metrics-related settings enabling
+   * replication metrics and events.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Metrics">AWS API
    * Reference</a></p>
    */
   class AWS_S3_API Metrics

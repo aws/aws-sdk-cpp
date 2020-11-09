@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline const Aws::Vector<QueryFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline void SetFilters(const Aws::Vector<QueryFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline void SetFilters(Aws::Vector<QueryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline SqlQueryDatasetAction& WithFilters(const Aws::Vector<QueryFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline SqlQueryDatasetAction& WithFilters(Aws::Vector<QueryFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline SqlQueryDatasetAction& AddFilters(const QueryFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Pre-filters applied to message data.</p>
+     * <p>Prefilters applied to message data.</p>
      */
     inline SqlQueryDatasetAction& AddFilters(QueryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

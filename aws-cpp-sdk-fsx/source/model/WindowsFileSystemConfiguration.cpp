@@ -34,7 +34,8 @@ WindowsFileSystemConfiguration::WindowsFileSystemConfiguration() :
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_aliasesHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ WindowsFileSystemConfiguration::WindowsFileSystemConfiguration(JsonView jsonValu
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_aliasesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +150,16 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
     m_copyTagsToBackupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Aliases"))
+  {
+    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+    {
+      m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
+    }
+    m_aliasesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +240,17 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
   if(m_copyTagsToBackupsHasBeenSet)
   {
    payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_aliasesHasBeenSet)
+  {
+   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+   {
+     aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());
+   }
+   payload.WithArray("Aliases", std::move(aliasesJsonList));
 
   }
 

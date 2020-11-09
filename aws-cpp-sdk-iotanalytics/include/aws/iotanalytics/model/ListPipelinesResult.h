@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline const Aws::Vector<PipelineSummary>& GetPipelineSummaries() const{ return m_pipelineSummaries; }
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline void SetPipelineSummaries(const Aws::Vector<PipelineSummary>& value) { m_pipelineSummaries = value; }
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline void SetPipelineSummaries(Aws::Vector<PipelineSummary>&& value) { m_pipelineSummaries = std::move(value); }
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline ListPipelinesResult& WithPipelineSummaries(const Aws::Vector<PipelineSummary>& value) { SetPipelineSummaries(value); return *this;}
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline ListPipelinesResult& WithPipelineSummaries(Aws::Vector<PipelineSummary>&& value) { SetPipelineSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline ListPipelinesResult& AddPipelineSummaries(const PipelineSummary& value) { m_pipelineSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "PipelineSummary" objects.</p>
+     * <p>A list of <code>PipelineSummary</code> objects.</p>
      */
     inline ListPipelinesResult& AddPipelineSummaries(PipelineSummary&& value) { m_pipelineSummaries.push_back(std::move(value)); return *this; }
 

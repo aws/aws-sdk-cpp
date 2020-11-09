@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the data set whose content generation triggers the new data
-   * set content generation.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the dataset whose content generation triggers the new
+   * dataset content generation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TriggeringDataset">AWS
    * API Reference</a></p>
    */
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline TriggeringDataset& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline TriggeringDataset& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set whose content generation triggers the new data set
+     * <p>The name of the dataset whose content generation triggers the new dataset
      * content generation.</p>
      */
     inline TriggeringDataset& WithName(const char* value) { SetName(value); return *this;}

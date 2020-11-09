@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about data set contents.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about dataset contents.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentSummary">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline DatasetContentSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline DatasetContentSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the data set contents.</p>
+     * <p>The version of the dataset contents.</p>
      */
     inline DatasetContentSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -112,63 +112,63 @@ namespace Model
 
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline DatasetContentSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The actual time the creation of the data set contents was started.</p>
+     * <p>The actual time the creation of the dataset contents was started.</p>
      */
     inline DatasetContentSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline const Aws::Utils::DateTime& GetScheduleTime() const{ return m_scheduleTime; }
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline bool ScheduleTimeHasBeenSet() const { return m_scheduleTimeHasBeenSet; }
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline void SetScheduleTime(const Aws::Utils::DateTime& value) { m_scheduleTimeHasBeenSet = true; m_scheduleTime = value; }
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline void SetScheduleTime(Aws::Utils::DateTime&& value) { m_scheduleTimeHasBeenSet = true; m_scheduleTime = std::move(value); }
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline DatasetContentSummary& WithScheduleTime(const Aws::Utils::DateTime& value) { SetScheduleTime(value); return *this;}
 
     /**
-     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     * <p>The time the creation of the dataset contents was scheduled to start.</p>
      */
     inline DatasetContentSummary& WithScheduleTime(Aws::Utils::DateTime&& value) { SetScheduleTime(std::move(value)); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The configuration of the resource used to execute the
-   * "containerAction".</p><p><h3>See Also:</h3>   <a
+   * <code>containerAction</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ResourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,69 +39,69 @@ namespace Model
 
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline ResourceConfiguration& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
     /**
-     * <p>The type of the compute resource used to execute the "containerAction".
-     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
-     * memory=32GiB).</p>
+     * <p>The type of the compute resource used to execute the
+     * <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4,
+     * memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
      */
     inline ResourceConfiguration& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The size (in GB) of the persistent storage available to the resource instance
-     * used to execute the "containerAction" (min: 1, max: 50).</p>
+     * <p>The size, in GB, of the persistent storage available to the resource instance
+     * used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
     /**
-     * <p>The size (in GB) of the persistent storage available to the resource instance
-     * used to execute the "containerAction" (min: 1, max: 50).</p>
+     * <p>The size, in GB, of the persistent storage available to the resource instance
+     * used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
      */
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
-     * <p>The size (in GB) of the persistent storage available to the resource instance
-     * used to execute the "containerAction" (min: 1, max: 50).</p>
+     * <p>The size, in GB, of the persistent storage available to the resource instance
+     * used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
     /**
-     * <p>The size (in GB) of the persistent storage available to the resource instance
-     * used to execute the "containerAction" (min: 1, max: 50).</p>
+     * <p>The size, in GB, of the persistent storage available to the resource instance
+     * used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
      */
     inline ResourceConfiguration& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 

@@ -38,81 +38,49 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline const Aws::Vector<AssociationFilter>& GetAssociationFilterList() const{ return m_associationFilterList; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline bool AssociationFilterListHasBeenSet() const { return m_associationFilterListHasBeenSet; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline void SetAssociationFilterList(const Aws::Vector<AssociationFilter>& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList = value; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline void SetAssociationFilterList(Aws::Vector<AssociationFilter>&& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline ListAssociationsRequest& WithAssociationFilterList(const Aws::Vector<AssociationFilter>& value) { SetAssociationFilterList(value); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline ListAssociationsRequest& WithAssociationFilterList(Aws::Vector<AssociationFilter>&& value) { SetAssociationFilterList(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline ListAssociationsRequest& AddAssociationFilterList(const AssociationFilter& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>  <p>Filtering associations using the <code>InstanceID</code>
-     * attribute only returns legacy associations created using the
-     * <code>InstanceID</code> attribute. Associations targeting the instance that are
-     * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * results.</p>
      */
     inline ListAssociationsRequest& AddAssociationFilterList(AssociationFilter&& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList.push_back(std::move(value)); return *this; }
 

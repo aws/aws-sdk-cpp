@@ -57,26 +57,26 @@ namespace Model
 
 
     /**
-     * <p>The number of days that message data is kept. The "unlimited" parameter must
-     * be false.</p>
+     * <p>The number of days that message data is kept. The <code>unlimited</code>
+     * parameter must be false.</p>
      */
     inline int GetNumberOfDays() const{ return m_numberOfDays; }
 
     /**
-     * <p>The number of days that message data is kept. The "unlimited" parameter must
-     * be false.</p>
+     * <p>The number of days that message data is kept. The <code>unlimited</code>
+     * parameter must be false.</p>
      */
     inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
 
     /**
-     * <p>The number of days that message data is kept. The "unlimited" parameter must
-     * be false.</p>
+     * <p>The number of days that message data is kept. The <code>unlimited</code>
+     * parameter must be false.</p>
      */
     inline void SetNumberOfDays(int value) { m_numberOfDaysHasBeenSet = true; m_numberOfDays = value; }
 
     /**
-     * <p>The number of days that message data is kept. The "unlimited" parameter must
-     * be false.</p>
+     * <p>The number of days that message data is kept. The <code>unlimited</code>
+     * parameter must be false.</p>
      */
     inline RetentionPeriod& WithNumberOfDays(int value) { SetNumberOfDays(value); return *this;}
 

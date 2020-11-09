@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/AssociateFileSystemAliasesResult.h>
 #include <aws/fsx/model/CancelDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateBackupResult.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
@@ -20,7 +21,9 @@
 #include <aws/fsx/model/DeleteFileSystemResult.h>
 #include <aws/fsx/model/DescribeBackupsResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksResult.h>
+#include <aws/fsx/model/DescribeFileSystemAliasesResult.h>
 #include <aws/fsx/model/DescribeFileSystemsResult.h>
+#include <aws/fsx/model/DisassociateFileSystemAliasesResult.h>
 #include <aws/fsx/model/ListTagsForResourceResult.h>
 #include <aws/fsx/model/TagResourceResult.h>
 #include <aws/fsx/model/UntagResourceResult.h>
@@ -64,6 +67,7 @@ namespace FSx
 
 namespace Model
 {
+        class AssociateFileSystemAliasesRequest;
         class CancelDataRepositoryTaskRequest;
         class CreateBackupRequest;
         class CreateDataRepositoryTaskRequest;
@@ -73,12 +77,15 @@ namespace Model
         class DeleteFileSystemRequest;
         class DescribeBackupsRequest;
         class DescribeDataRepositoryTasksRequest;
+        class DescribeFileSystemAliasesRequest;
         class DescribeFileSystemsRequest;
+        class DisassociateFileSystemAliasesRequest;
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateFileSystemRequest;
 
+        typedef Aws::Utils::Outcome<AssociateFileSystemAliasesResult, FSxError> AssociateFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, FSxError> CancelDataRepositoryTaskOutcome;
         typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
         typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
@@ -88,12 +95,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemAliasesResult, FSxError> DescribeFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
+        typedef Aws::Utils::Outcome<DisassociateFileSystemAliasesResult, FSxError> DisassociateFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FSxError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
 
+        typedef std::future<AssociateFileSystemAliasesOutcome> AssociateFileSystemAliasesOutcomeCallable;
         typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
         typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
@@ -103,7 +113,9 @@ namespace Model
         typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
         typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
         typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
+        typedef std::future<DescribeFileSystemAliasesOutcome> DescribeFileSystemAliasesOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
+        typedef std::future<DisassociateFileSystemAliasesOutcome> DisassociateFileSystemAliasesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -112,6 +124,7 @@ namespace Model
 
   class FSxClient;
 
+    typedef std::function<void(const FSxClient*, const Model::AssociateFileSystemAliasesRequest&, const Model::AssociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CancelDataRepositoryTaskRequest&, const Model::CancelDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDataRepositoryTaskResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
@@ -121,7 +134,9 @@ namespace Model
     typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryTasksRequest&, const Model::DescribeDataRepositoryTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryTasksResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemAliasesRequest&, const Model::DescribeFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DisassociateFileSystemAliasesRequest&, const Model::DisassociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -157,6 +172,70 @@ namespace Model
 
         virtual ~FSxClient();
 
+
+        /**
+         * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
+         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * can have a maximum of 50 DNS aliases associated with it at any one time. If you
+         * try to associate a DNS alias that is already associated with the file system,
+         * FSx takes no action on that alias in the request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+         * 5: Using DNS aliases to access your file system</a>, including additional steps
+         * you must take to be able to access your file system using a DNS alias.</p>
+         * <p>The system response shows the DNS aliases that Amazon FSx is attempting to
+         * associate with the file system. Use the API operation to monitor the status of
+         * the aliases Amazon FSx is associating with the file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFileSystemAliasesOutcome AssociateFileSystemAliases(const Model::AssociateFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
+         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * can have a maximum of 50 DNS aliases associated with it at any one time. If you
+         * try to associate a DNS alias that is already associated with the file system,
+         * FSx takes no action on that alias in the request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+         * 5: Using DNS aliases to access your file system</a>, including additional steps
+         * you must take to be able to access your file system using a DNS alias.</p>
+         * <p>The system response shows the DNS aliases that Amazon FSx is attempting to
+         * associate with the file system. Use the API operation to monitor the status of
+         * the aliases Amazon FSx is associating with the file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateFileSystemAliasesOutcomeCallable AssociateFileSystemAliasesCallable(const Model::AssociateFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
+         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * can have a maximum of 50 DNS aliases associated with it at any one time. If you
+         * try to associate a DNS alias that is already associated with the file system,
+         * FSx takes no action on that alias in the request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+         * 5: Using DNS aliases to access your file system</a>, including additional steps
+         * you must take to be able to access your file system using a DNS alias.</p>
+         * <p>The system response shows the DNS aliases that Amazon FSx is attempting to
+         * associate with the file system. Use the API operation to monitor the status of
+         * the aliases Amazon FSx is associating with the file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateFileSystemAliasesAsync(const Model::AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
@@ -813,6 +892,43 @@ namespace Model
         virtual void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
+         * Windows File Server file system. A history of all DNS aliases that have been
+         * associated with and disassociated from the file system is available in the list
+         * of <a>AdministrativeAction</a> provided in the <a>DescribeFileSystems</a>
+         * operation response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFileSystemAliasesOutcome DescribeFileSystemAliases(const Model::DescribeFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
+         * Windows File Server file system. A history of all DNS aliases that have been
+         * associated with and disassociated from the file system is available in the list
+         * of <a>AdministrativeAction</a> provided in the <a>DescribeFileSystems</a>
+         * operation response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFileSystemAliasesOutcomeCallable DescribeFileSystemAliasesCallable(const Model::DescribeFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
+         * Windows File Server file system. A history of all DNS aliases that have been
+         * associated with and disassociated from the file system is available in the list
+         * of <a>AdministrativeAction</a> provided in the <a>DescribeFileSystems</a>
+         * operation response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFileSystemAliasesAsync(const Model::DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
          * <code>FileSystemIds</code> value is provided for that file system. Otherwise, it
          * returns descriptions of all file systems owned by your AWS account in the AWS
@@ -896,6 +1012,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use this action to disassociate, or remove, one or more Domain Name Service
+         * (DNS) aliases from an Amazon FSx for Windows File Server file system. If you
+         * attempt to disassociate a DNS alias that is not associated with the file system,
+         * Amazon FSx responds with a 400 Bad Request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a>.</p> <p>The system generated response showing the DNS
+         * aliases that Amazon FSx is attempting to disassociate from the file system. Use
+         * the API operation to monitor the status of the aliases Amazon FSx is
+         * disassociating with the file system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFileSystemAliasesOutcome DisassociateFileSystemAliases(const Model::DisassociateFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Use this action to disassociate, or remove, one or more Domain Name Service
+         * (DNS) aliases from an Amazon FSx for Windows File Server file system. If you
+         * attempt to disassociate a DNS alias that is not associated with the file system,
+         * Amazon FSx responds with a 400 Bad Request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a>.</p> <p>The system generated response showing the DNS
+         * aliases that Amazon FSx is attempting to disassociate from the file system. Use
+         * the API operation to monitor the status of the aliases Amazon FSx is
+         * disassociating with the file system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateFileSystemAliasesOutcomeCallable DisassociateFileSystemAliasesCallable(const Model::DisassociateFileSystemAliasesRequest& request) const;
+
+        /**
+         * <p>Use this action to disassociate, or remove, one or more Domain Name Service
+         * (DNS) aliases from an Amazon FSx for Windows File Server file system. If you
+         * attempt to disassociate a DNS alias that is not associated with the file system,
+         * Amazon FSx responds with a 400 Bad Request. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+         * with DNS Aliases</a>.</p> <p>The system generated response showing the DNS
+         * aliases that Amazon FSx is attempting to disassociate from the file system. Use
+         * the API operation to monitor the status of the aliases Amazon FSx is
+         * disassociating with the file system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateFileSystemAliasesAsync(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon
@@ -1091,6 +1256,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateFileSystemAliasesAsyncHelper(const Model::AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelDataRepositoryTaskAsyncHelper(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataRepositoryTaskAsyncHelper(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1100,7 +1266,9 @@ namespace Model
         void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataRepositoryTasksAsyncHelper(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFileSystemAliasesAsyncHelper(const Model::DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateFileSystemAliasesAsyncHelper(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

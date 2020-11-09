@@ -56,8 +56,6 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     *  <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> 
      */
     inline int GetContainerPort() const{ return m_containerPort; }
 
@@ -71,8 +69,6 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     *  <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> 
      */
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
 
@@ -86,8 +82,6 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     *  <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> 
      */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
@@ -101,8 +95,6 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     *  <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> 
      */
     inline PortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 

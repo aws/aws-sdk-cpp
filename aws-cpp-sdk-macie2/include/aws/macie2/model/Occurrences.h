@@ -45,162 +45,154 @@ namespace Model
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline const Aws::Vector<Cell>& GetCells() const{ return m_cells; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline void SetCells(const Aws::Vector<Cell>& value) { m_cellsHasBeenSet = true; m_cells = value; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline void SetCells(Aws::Vector<Cell>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline Occurrences& WithCells(const Aws::Vector<Cell>& value) { SetCells(value); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline Occurrences& WithCells(Aws::Vector<Cell>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline Occurrences& AddCells(const Cell& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
-     * Excel workbook, CSV file, or TSV file. Each object specifies the cell that
-     * contains the data. This value is null for all other types of files.</p>
+     * Excel workbook, CSV file, or TSV file. Each object specifies the cell or field
+     * that contains the data. This value is null for all other types of files.</p>
      */
     inline Occurrences& AddCells(Cell&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline const Aws::Vector<Range>& GetLineRanges() const{ return m_lineRanges; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline bool LineRangesHasBeenSet() const { return m_lineRangesHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline void SetLineRanges(const Aws::Vector<Range>& value) { m_lineRangesHasBeenSet = true; m_lineRanges = value; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline void SetLineRanges(Aws::Vector<Range>&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline Occurrences& WithLineRanges(const Aws::Vector<Range>& value) { SetLineRanges(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline Occurrences& WithLineRanges(Aws::Vector<Range>&& value) { SetLineRanges(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline Occurrences& AddLineRanges(const Range& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container, Microsoft Word document, or non-binary text file, such as
-     * an HTML, JSON, TXT, or XML file. Each object specifies the line that contains
-     * the data, and the position of the data on that line.</p> <p>This value is often
-     * null for file types that are supported by Cell, Page, or Record objects.
-     * Exceptions are the locations of: full names and addresses in a Microsoft Excel
-     * workbook, CSV file, or TSV file; data in unstructured sections of an otherwise
-     * structured file, such as a comment in a file; and, data in a malformed file that
-     * Amazon Macie analyzes as plain text.</p>
+     * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
+     * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
+     * Each object specifies the line that contains the data, and the position of the
+     * data on that line.</p> <p>This value is often null for file types that are
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
+     * data in unstructured sections of an otherwise structured file, such as a comment
+     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
+     * text.</p>
      */
     inline Occurrences& AddLineRanges(Range&& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(std::move(value)); return *this; }
 
@@ -345,57 +337,65 @@ namespace Model
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline Occurrences& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline Occurrences& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline Occurrences& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Parquet file. Each object specifies the row that contains the data. This value
-     * is null for all other types of files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the field or
+     * record that contains the data. This value is null for all other types of
+     * files.</p>
      */
     inline Occurrences& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
 

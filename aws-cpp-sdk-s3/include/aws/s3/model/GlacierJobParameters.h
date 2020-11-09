@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline GlacierJobParameters& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 

@@ -19,7 +19,8 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_contentDeliveryRulesHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_versioningConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lateDataRulesHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,17 @@ Aws::String CreateDatasetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_lateDataRulesHasBeenSet)
+  {
+   Array<JsonValue> lateDataRulesJsonList(m_lateDataRules.size());
+   for(unsigned lateDataRulesIndex = 0; lateDataRulesIndex < lateDataRulesJsonList.GetLength(); ++lateDataRulesIndex)
+   {
+     lateDataRulesJsonList[lateDataRulesIndex].AsObject(m_lateDataRules[lateDataRulesIndex].Jsonize());
+   }
+   payload.WithArray("lateDataRules", std::move(lateDataRulesJsonList));
 
   }
 

@@ -44,25 +44,29 @@ namespace Model
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline int GetDays() const{ return m_days; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
 
@@ -136,32 +140,32 @@ namespace Model
 
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 

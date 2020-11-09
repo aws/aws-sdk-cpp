@@ -27,6 +27,8 @@ PackageDetails::PackageDetails() :
     m_packageStatus(PackageStatus::NOT_SET),
     m_packageStatusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_availablePackageVersionHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
 }
@@ -40,6 +42,8 @@ PackageDetails::PackageDetails(JsonView jsonValue) :
     m_packageStatus(PackageStatus::NOT_SET),
     m_packageStatusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_availablePackageVersionHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -89,6 +93,20 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
+
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailablePackageVersion"))
+  {
+    m_availablePackageVersion = jsonValue.GetString("AvailablePackageVersion");
+
+    m_availablePackageVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
@@ -134,6 +152,17 @@ JsonValue PackageDetails::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_availablePackageVersionHasBeenSet)
+  {
+   payload.WithString("AvailablePackageVersion", m_availablePackageVersion);
+
   }
 
   if(m_errorDetailsHasBeenSet)

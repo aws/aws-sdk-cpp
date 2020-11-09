@@ -39,48 +39,48 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline DeleteDatasetContentRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline DeleteDatasetContentRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set whose content is deleted.</p>
+     * <p>The name of the dataset whose content is deleted.</p>
      */
     inline DeleteDatasetContentRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -96,7 +96,7 @@ namespace Model
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -104,7 +104,7 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -112,7 +112,7 @@ namespace Model
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -120,7 +120,7 @@ namespace Model
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -128,7 +128,7 @@ namespace Model
     inline DeleteDatasetContentRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>
@@ -136,7 +136,7 @@ namespace Model
     inline DeleteDatasetContentRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the data set whose content is deleted. You can also use the
+     * <p>The version of the dataset whose content is deleted. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
      * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
      * default.</p>

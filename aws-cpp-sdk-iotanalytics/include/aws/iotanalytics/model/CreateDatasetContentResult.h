@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline CreateDatasetContentResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline CreateDatasetContentResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The version ID of the data set contents which are being created.</p>
+     * <p>The version ID of the dataset contents that are being created.</p>
      */
     inline CreateDatasetContentResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

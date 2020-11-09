@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline LambdaActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline LambdaActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the 'lambda' activity.</p>
+     * <p>The name of the lambda activity.</p>
      */
     inline LambdaActivity& WithName(const char* value) { SetName(value); return *this;}
 
@@ -122,29 +122,29 @@ namespace Model
 
     /**
      * <p>The number of messages passed to the Lambda function for processing.</p>
-     * <p>The AWS Lambda function must be able to process all of these messages within
-     * five minutes, which is the maximum timeout duration for Lambda functions.</p>
+     * <p>The Lambda function must be able to process all of these messages within five
+     * minutes, which is the maximum timeout duration for Lambda functions.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
      * <p>The number of messages passed to the Lambda function for processing.</p>
-     * <p>The AWS Lambda function must be able to process all of these messages within
-     * five minutes, which is the maximum timeout duration for Lambda functions.</p>
+     * <p>The Lambda function must be able to process all of these messages within five
+     * minutes, which is the maximum timeout duration for Lambda functions.</p>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
     /**
      * <p>The number of messages passed to the Lambda function for processing.</p>
-     * <p>The AWS Lambda function must be able to process all of these messages within
-     * five minutes, which is the maximum timeout duration for Lambda functions.</p>
+     * <p>The Lambda function must be able to process all of these messages within five
+     * minutes, which is the maximum timeout duration for Lambda functions.</p>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
      * <p>The number of messages passed to the Lambda function for processing.</p>
-     * <p>The AWS Lambda function must be able to process all of these messages within
-     * five minutes, which is the maximum timeout duration for Lambda functions.</p>
+     * <p>The Lambda function must be able to process all of these messages within five
+     * minutes, which is the maximum timeout duration for Lambda functions.</p>
      */
     inline LambdaActivity& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline const Aws::Vector<DatastoreSummary>& GetDatastoreSummaries() const{ return m_datastoreSummaries; }
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline void SetDatastoreSummaries(const Aws::Vector<DatastoreSummary>& value) { m_datastoreSummaries = value; }
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline void SetDatastoreSummaries(Aws::Vector<DatastoreSummary>&& value) { m_datastoreSummaries = std::move(value); }
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline ListDatastoresResult& WithDatastoreSummaries(const Aws::Vector<DatastoreSummary>& value) { SetDatastoreSummaries(value); return *this;}
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline ListDatastoresResult& WithDatastoreSummaries(Aws::Vector<DatastoreSummary>&& value) { SetDatastoreSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline ListDatastoresResult& AddDatastoreSummaries(const DatastoreSummary& value) { m_datastoreSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatastoreSummary" objects.</p>
+     * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
     inline ListDatastoresResult& AddDatastoreSummaries(DatastoreSummary&& value) { m_datastoreSummaries.push_back(std::move(value)); return *this; }
 

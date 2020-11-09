@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline const ServiceManagedDatastoreS3StorageSummary& GetServiceManagedS3() const{ return m_serviceManagedS3; }
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline bool ServiceManagedS3HasBeenSet() const { return m_serviceManagedS3HasBeenSet; }
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline void SetServiceManagedS3(const ServiceManagedDatastoreS3StorageSummary& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = value; }
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline void SetServiceManagedS3(ServiceManagedDatastoreS3StorageSummary&& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = std::move(value); }
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline DatastoreStorageSummary& WithServiceManagedS3(const ServiceManagedDatastoreS3StorageSummary& value) { SetServiceManagedS3(value); return *this;}
 
     /**
-     * <p>Used to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service.</p>
+     * <p>Used to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics.</p>
      */
     inline DatastoreStorageSummary& WithServiceManagedS3(ServiceManagedDatastoreS3StorageSummary&& value) { SetServiceManagedS3(std::move(value)); return *this;}
 

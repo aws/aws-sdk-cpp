@@ -204,6 +204,61 @@ namespace Model
      */
     inline DatastoreSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline DatastoreSummary& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>AWS IoT
+     * Analytics updates this value at most once per minute for one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline DatastoreSummary& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -220,6 +275,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastMessageArrivalTime;
+    bool m_lastMessageArrivalTimeHasBeenSet;
   };
 
 } // namespace Model

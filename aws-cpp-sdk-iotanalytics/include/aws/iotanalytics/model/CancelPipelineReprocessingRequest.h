@@ -75,49 +75,49 @@ namespace Model
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline const Aws::String& GetReprocessingId() const{ return m_reprocessingId; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline bool ReprocessingIdHasBeenSet() const { return m_reprocessingIdHasBeenSet; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(const Aws::String& value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId = value; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(Aws::String&& value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId = std::move(value); }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(const char* value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId.assign(value); }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(const Aws::String& value) { SetReprocessingId(value); return *this;}
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(Aws::String&& value) { SetReprocessingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(const char* value) { SetReprocessingId(value); return *this;}
 

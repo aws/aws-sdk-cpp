@@ -32,6 +32,7 @@
 #include <aws/es/model/DescribeReservedElasticsearchInstancesResult.h>
 #include <aws/es/model/DissociatePackageResult.h>
 #include <aws/es/model/GetCompatibleElasticsearchVersionsResult.h>
+#include <aws/es/model/GetPackageVersionHistoryResult.h>
 #include <aws/es/model/GetUpgradeHistoryResult.h>
 #include <aws/es/model/GetUpgradeStatusResult.h>
 #include <aws/es/model/ListDomainNamesResult.h>
@@ -44,6 +45,7 @@
 #include <aws/es/model/RejectInboundCrossClusterSearchConnectionResult.h>
 #include <aws/es/model/StartElasticsearchServiceSoftwareUpdateResult.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigResult.h>
+#include <aws/es/model/UpdatePackageResult.h>
 #include <aws/es/model/UpgradeElasticsearchDomainResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -107,6 +109,7 @@ namespace Model
         class DescribeReservedElasticsearchInstancesRequest;
         class DissociatePackageRequest;
         class GetCompatibleElasticsearchVersionsRequest;
+        class GetPackageVersionHistoryRequest;
         class GetUpgradeHistoryRequest;
         class GetUpgradeStatusRequest;
         class ListDomainsForPackageRequest;
@@ -119,6 +122,7 @@ namespace Model
         class RemoveTagsRequest;
         class StartElasticsearchServiceSoftwareUpdateRequest;
         class UpdateElasticsearchDomainConfigRequest;
+        class UpdatePackageRequest;
         class UpgradeElasticsearchDomainRequest;
 
         typedef Aws::Utils::Outcome<AcceptInboundCrossClusterSearchConnectionResult, ElasticsearchServiceError> AcceptInboundCrossClusterSearchConnectionOutcome;
@@ -144,6 +148,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeReservedElasticsearchInstancesResult, ElasticsearchServiceError> DescribeReservedElasticsearchInstancesOutcome;
         typedef Aws::Utils::Outcome<DissociatePackageResult, ElasticsearchServiceError> DissociatePackageOutcome;
         typedef Aws::Utils::Outcome<GetCompatibleElasticsearchVersionsResult, ElasticsearchServiceError> GetCompatibleElasticsearchVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetPackageVersionHistoryResult, ElasticsearchServiceError> GetPackageVersionHistoryOutcome;
         typedef Aws::Utils::Outcome<GetUpgradeHistoryResult, ElasticsearchServiceError> GetUpgradeHistoryOutcome;
         typedef Aws::Utils::Outcome<GetUpgradeStatusResult, ElasticsearchServiceError> GetUpgradeStatusOutcome;
         typedef Aws::Utils::Outcome<ListDomainNamesResult, ElasticsearchServiceError> ListDomainNamesOutcome;
@@ -157,6 +162,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ElasticsearchServiceError> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<StartElasticsearchServiceSoftwareUpdateResult, ElasticsearchServiceError> StartElasticsearchServiceSoftwareUpdateOutcome;
         typedef Aws::Utils::Outcome<UpdateElasticsearchDomainConfigResult, ElasticsearchServiceError> UpdateElasticsearchDomainConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdatePackageResult, ElasticsearchServiceError> UpdatePackageOutcome;
         typedef Aws::Utils::Outcome<UpgradeElasticsearchDomainResult, ElasticsearchServiceError> UpgradeElasticsearchDomainOutcome;
 
         typedef std::future<AcceptInboundCrossClusterSearchConnectionOutcome> AcceptInboundCrossClusterSearchConnectionOutcomeCallable;
@@ -182,6 +188,7 @@ namespace Model
         typedef std::future<DescribeReservedElasticsearchInstancesOutcome> DescribeReservedElasticsearchInstancesOutcomeCallable;
         typedef std::future<DissociatePackageOutcome> DissociatePackageOutcomeCallable;
         typedef std::future<GetCompatibleElasticsearchVersionsOutcome> GetCompatibleElasticsearchVersionsOutcomeCallable;
+        typedef std::future<GetPackageVersionHistoryOutcome> GetPackageVersionHistoryOutcomeCallable;
         typedef std::future<GetUpgradeHistoryOutcome> GetUpgradeHistoryOutcomeCallable;
         typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
         typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
@@ -195,6 +202,7 @@ namespace Model
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<StartElasticsearchServiceSoftwareUpdateOutcome> StartElasticsearchServiceSoftwareUpdateOutcomeCallable;
         typedef std::future<UpdateElasticsearchDomainConfigOutcome> UpdateElasticsearchDomainConfigOutcomeCallable;
+        typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
         typedef std::future<UpgradeElasticsearchDomainOutcome> UpgradeElasticsearchDomainOutcomeCallable;
 } // namespace Model
 
@@ -223,6 +231,7 @@ namespace Model
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DescribeReservedElasticsearchInstancesRequest&, const Model::DescribeReservedElasticsearchInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedElasticsearchInstancesResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DissociatePackageRequest&, const Model::DissociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DissociatePackageResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::GetCompatibleElasticsearchVersionsRequest&, const Model::GetCompatibleElasticsearchVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCompatibleElasticsearchVersionsResponseReceivedHandler;
+    typedef std::function<void(const ElasticsearchServiceClient*, const Model::GetPackageVersionHistoryRequest&, const Model::GetPackageVersionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPackageVersionHistoryResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::GetUpgradeHistoryRequest&, const Model::GetUpgradeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeHistoryResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::GetUpgradeStatusRequest&, const Model::GetUpgradeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeStatusResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::ListDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainNamesResponseReceivedHandler;
@@ -236,6 +245,7 @@ namespace Model
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::StartElasticsearchServiceSoftwareUpdateRequest&, const Model::StartElasticsearchServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpdateElasticsearchDomainConfigRequest&, const Model::UpdateElasticsearchDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateElasticsearchDomainConfigResponseReceivedHandler;
+    typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpdatePackageRequest&, const Model::UpdatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpgradeElasticsearchDomainRequest&, const Model::UpgradeElasticsearchDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeElasticsearchDomainResponseReceivedHandler;
 
   /**
@@ -975,6 +985,34 @@ namespace Model
         virtual void GetCompatibleElasticsearchVersionsAsync(const Model::GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of versions of the package, along with their creation time and
+         * commit message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPackageVersionHistoryOutcome GetPackageVersionHistory(const Model::GetPackageVersionHistoryRequest& request) const;
+
+        /**
+         * <p>Returns a list of versions of the package, along with their creation time and
+         * commit message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPackageVersionHistoryOutcomeCallable GetPackageVersionHistoryCallable(const Model::GetPackageVersionHistoryRequest& request) const;
+
+        /**
+         * <p>Returns a list of versions of the package, along with their creation time and
+         * commit message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPackageVersionHistoryAsync(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the complete history of the last 10 upgrades that were performed on
          * the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">AWS
@@ -1335,6 +1373,31 @@ namespace Model
         virtual void UpdateElasticsearchDomainConfigAsync(const Model::UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a package for use with Amazon ES domains.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageOutcome UpdatePackage(const Model::UpdatePackageRequest& request) const;
+
+        /**
+         * <p>Updates a package for use with Amazon ES domains.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePackageOutcomeCallable UpdatePackageCallable(const Model::UpdatePackageRequest& request) const;
+
+        /**
+         * <p>Updates a package for use with Amazon ES domains.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows you to either upgrade your domain or perform an Upgrade eligibility
          * check to a compatible Elasticsearch version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">AWS
@@ -1389,6 +1452,7 @@ namespace Model
         void DescribeReservedElasticsearchInstancesAsyncHelper(const Model::DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DissociatePackageAsyncHelper(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCompatibleElasticsearchVersionsAsyncHelper(const Model::GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPackageVersionHistoryAsyncHelper(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUpgradeHistoryAsyncHelper(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUpgradeStatusAsyncHelper(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainNamesAsyncHelper(const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1402,6 +1466,7 @@ namespace Model
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartElasticsearchServiceSoftwareUpdateAsyncHelper(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateElasticsearchDomainConfigAsyncHelper(const Model::UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePackageAsyncHelper(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpgradeElasticsearchDomainAsyncHelper(const Model::UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

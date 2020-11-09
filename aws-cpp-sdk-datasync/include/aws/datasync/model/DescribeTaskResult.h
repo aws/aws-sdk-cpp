@@ -82,35 +82,35 @@ namespace Model
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
      * about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     * DataSync User Guide.</i> </p>
+     * DataSync User Guide</i>.</p>
      */
     inline const TaskStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
      * about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     * DataSync User Guide.</i> </p>
+     * DataSync User Guide</i>.</p>
      */
     inline void SetStatus(const TaskStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
      * about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     * DataSync User Guide.</i> </p>
+     * DataSync User Guide</i>.</p>
      */
     inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
      * about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     * DataSync User Guide.</i> </p>
+     * DataSync User Guide</i>.</p>
      */
     inline DescribeTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
      * about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     * DataSync User Guide.</i> </p>
+     * DataSync User Guide</i>.</p>
      */
     inline DescribeTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 

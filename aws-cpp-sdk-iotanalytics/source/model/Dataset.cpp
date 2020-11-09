@@ -29,7 +29,8 @@ Dataset::Dataset() :
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
-    m_versioningConfigurationHasBeenSet(false)
+    m_versioningConfigurationHasBeenSet(false),
+    m_lateDataRulesHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Dataset::Dataset(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
-    m_versioningConfigurationHasBeenSet(false)
+    m_versioningConfigurationHasBeenSet(false),
+    m_lateDataRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +132,16 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_versioningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lateDataRules"))
+  {
+    Array<JsonView> lateDataRulesJsonList = jsonValue.GetArray("lateDataRules");
+    for(unsigned lateDataRulesIndex = 0; lateDataRulesIndex < lateDataRulesJsonList.GetLength(); ++lateDataRulesIndex)
+    {
+      m_lateDataRules.push_back(lateDataRulesJsonList[lateDataRulesIndex].AsObject());
+    }
+    m_lateDataRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +218,17 @@ JsonValue Dataset::Jsonize() const
   if(m_versioningConfigurationHasBeenSet)
   {
    payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
+
+  }
+
+  if(m_lateDataRulesHasBeenSet)
+  {
+   Array<JsonValue> lateDataRulesJsonList(m_lateDataRules.size());
+   for(unsigned lateDataRulesIndex = 0; lateDataRulesIndex < lateDataRulesJsonList.GetLength(); ++lateDataRulesIndex)
+   {
+     lateDataRulesJsonList[lateDataRulesIndex].AsObject(m_lateDataRules[lateDataRulesIndex].Jsonize());
+   }
+   payload.WithArray("lateDataRules", std::move(lateDataRulesJsonList));
 
   }
 

@@ -81,22 +81,22 @@ namespace Model
 
 
     /**
-     * <p>The size (in MiB) of the tmpfs volume.</p>
+     * <p>The maximum size (in MiB) of the tmpfs volume.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size (in MiB) of the tmpfs volume.</p>
+     * <p>The maximum size (in MiB) of the tmpfs volume.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>The size (in MiB) of the tmpfs volume.</p>
+     * <p>The maximum size (in MiB) of the tmpfs volume.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size (in MiB) of the tmpfs volume.</p>
+     * <p>The maximum size (in MiB) of the tmpfs volume.</p>
      */
     inline Tmpfs& WithSize(int value) { SetSize(value); return *this;}
 

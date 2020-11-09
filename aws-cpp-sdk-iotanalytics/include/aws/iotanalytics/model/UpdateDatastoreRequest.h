@@ -113,44 +113,50 @@ namespace Model
 
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline const DatastoreStorage& GetDatastoreStorage() const{ return m_datastoreStorage; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline bool DatastoreStorageHasBeenSet() const { return m_datastoreStorageHasBeenSet; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline void SetDatastoreStorage(const DatastoreStorage& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = value; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline void SetDatastoreStorage(DatastoreStorage&& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = std::move(value); }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline UpdateDatastoreRequest& WithDatastoreStorage(const DatastoreStorage& value) { SetDatastoreStorage(value); return *this;}
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data store data is stored. You can choose one of
+     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+     * specified, the default is<code>serviceManagedS3</code>. You cannot change this
+     * storage option after the data store is created.</p>
      */
     inline UpdateDatastoreRequest& WithDatastoreStorage(DatastoreStorage&& value) { SetDatastoreStorage(std::move(value)); return *this;}
 

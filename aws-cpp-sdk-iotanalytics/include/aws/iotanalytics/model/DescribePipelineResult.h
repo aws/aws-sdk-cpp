@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>A "Pipeline" object that contains information about the pipeline.</p>
+     * <p>A <code>Pipeline</code> object that contains information about the
+     * pipeline.</p>
      */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
 
     /**
-     * <p>A "Pipeline" object that contains information about the pipeline.</p>
+     * <p>A <code>Pipeline</code> object that contains information about the
+     * pipeline.</p>
      */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
     /**
-     * <p>A "Pipeline" object that contains information about the pipeline.</p>
+     * <p>A <code>Pipeline</code> object that contains information about the
+     * pipeline.</p>
      */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
 
     /**
-     * <p>A "Pipeline" object that contains information about the pipeline.</p>
+     * <p>A <code>Pipeline</code> object that contains information about the
+     * pipeline.</p>
      */
     inline DescribePipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
 
     /**
-     * <p>A "Pipeline" object that contains information about the pipeline.</p>
+     * <p>A <code>Pipeline</code> object that contains information about the
+     * pipeline.</p>
      */
     inline DescribePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
 

@@ -42,6 +42,7 @@
 #include <aws/datasync/model/UntagResourceResult.h>
 #include <aws/datasync/model/UpdateAgentResult.h>
 #include <aws/datasync/model/UpdateTaskResult.h>
+#include <aws/datasync/model/UpdateTaskExecutionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -112,6 +113,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateAgentRequest;
         class UpdateTaskRequest;
+        class UpdateTaskExecutionRequest;
 
         typedef Aws::Utils::Outcome<CancelTaskExecutionResult, DataSyncError> CancelTaskExecutionOutcome;
         typedef Aws::Utils::Outcome<CreateAgentResult, DataSyncError> CreateAgentOutcome;
@@ -144,6 +146,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, DataSyncError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAgentResult, DataSyncError> UpdateAgentOutcome;
         typedef Aws::Utils::Outcome<UpdateTaskResult, DataSyncError> UpdateTaskOutcome;
+        typedef Aws::Utils::Outcome<UpdateTaskExecutionResult, DataSyncError> UpdateTaskExecutionOutcome;
 
         typedef std::future<CancelTaskExecutionOutcome> CancelTaskExecutionOutcomeCallable;
         typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
@@ -176,6 +179,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
         typedef std::future<UpdateTaskOutcome> UpdateTaskOutcomeCallable;
+        typedef std::future<UpdateTaskExecutionOutcome> UpdateTaskExecutionOutcomeCallable;
 } // namespace Model
 
   class DataSyncClient;
@@ -211,6 +215,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateAgentRequest&, const Model::UpdateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskRequest&, const Model::UpdateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskExecutionRequest&, const Model::UpdateTaskExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskExecutionResponseReceivedHandler;
 
   /**
    * <fullname>AWS DataSync</fullname> <p>AWS DataSync is a managed data transfer
@@ -1247,6 +1252,52 @@ namespace Model
          */
         virtual void UpdateTaskAsync(const Model::UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTaskExecutionOutcome UpdateTaskExecution(const Model::UpdateTaskExecutionRequest& request) const;
+
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTaskExecutionOutcomeCallable UpdateTaskExecutionCallable(const Model::UpdateTaskExecutionRequest& request) const;
+
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTaskExecutionAsync(const Model::UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1282,6 +1333,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAgentAsyncHelper(const Model::UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTaskAsyncHelper(const Model::UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTaskExecutionAsyncHelper(const Model::UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

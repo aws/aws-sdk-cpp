@@ -18,7 +18,8 @@ UpdateDatasetRequest::UpdateDatasetRequest() :
     m_triggersHasBeenSet(false),
     m_contentDeliveryRulesHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
-    m_versioningConfigurationHasBeenSet(false)
+    m_versioningConfigurationHasBeenSet(false),
+    m_lateDataRulesHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
   if(m_versioningConfigurationHasBeenSet)
   {
    payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
+
+  }
+
+  if(m_lateDataRulesHasBeenSet)
+  {
+   Array<JsonValue> lateDataRulesJsonList(m_lateDataRules.size());
+   for(unsigned lateDataRulesIndex = 0; lateDataRulesIndex < lateDataRulesJsonList.GetLength(); ++lateDataRulesIndex)
+   {
+     lateDataRulesJsonList[lateDataRulesIndex].AsObject(m_lateDataRules[lateDataRulesIndex].Jsonize());
+   }
+   payload.WithArray("lateDataRules", std::move(lateDataRulesJsonList));
 
   }
 

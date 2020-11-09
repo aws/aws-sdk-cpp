@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline const Aws::String& GetDataURI() const{ return m_dataURI; }
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline bool DataURIHasBeenSet() const { return m_dataURIHasBeenSet; }
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline void SetDataURI(const Aws::String& value) { m_dataURIHasBeenSet = true; m_dataURI = value; }
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline void SetDataURI(Aws::String&& value) { m_dataURIHasBeenSet = true; m_dataURI = std::move(value); }
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline void SetDataURI(const char* value) { m_dataURIHasBeenSet = true; m_dataURI.assign(value); }
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline DatasetEntry& WithDataURI(const Aws::String& value) { SetDataURI(value); return *this;}
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline DatasetEntry& WithDataURI(Aws::String&& value) { SetDataURI(std::move(value)); return *this;}
 
     /**
-     * <p>The pre-signed URI of the data set item.</p>
+     * <p>The presigned URI of the data set item.</p>
      */
     inline DatasetEntry& WithDataURI(const char* value) { SetDataURI(value); return *this;}
 

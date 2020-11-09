@@ -24,7 +24,8 @@ DatastoreSummary::DatastoreSummary() :
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DatastoreSummary::DatastoreSummary(JsonView jsonValue) :
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastMessageArrivalTime"))
+  {
+    m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
+
+    m_lastMessageArrivalTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,11 @@ JsonValue DatastoreSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastMessageArrivalTimeHasBeenSet)
+  {
+   payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
   }
 
   return payload;

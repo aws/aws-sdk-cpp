@@ -13,13 +13,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDatasetContentRequest::CreateDatasetContentRequest() : 
-    m_datasetNameHasBeenSet(false)
+    m_datasetNameHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
 Aws::String CreateDatasetContentRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_versionIdHasBeenSet)
+  {
+   payload.WithString("versionId", m_versionId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

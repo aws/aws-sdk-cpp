@@ -42,6 +42,7 @@
 #include <aws/es/model/DescribeReservedElasticsearchInstancesRequest.h>
 #include <aws/es/model/DissociatePackageRequest.h>
 #include <aws/es/model/GetCompatibleElasticsearchVersionsRequest.h>
+#include <aws/es/model/GetPackageVersionHistoryRequest.h>
 #include <aws/es/model/GetUpgradeHistoryRequest.h>
 #include <aws/es/model/GetUpgradeStatusRequest.h>
 #include <aws/es/model/ListDomainsForPackageRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/es/model/RemoveTagsRequest.h>
 #include <aws/es/model/StartElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
+#include <aws/es/model/UpdatePackageRequest.h>
 #include <aws/es/model/UpgradeElasticsearchDomainRequest.h>
 
 using namespace Aws;
@@ -831,6 +833,40 @@ void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsyncHelper(c
   handler(this, request, GetCompatibleElasticsearchVersions(request), context);
 }
 
+GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPackageVersionHistory", "Required field: PackageID, is not set");
+    return GetPackageVersionHistoryOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/";
+  ss << request.GetPackageID();
+  ss << "/history";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPackageVersionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPackageVersionHistoryOutcomeCallable ElasticsearchServiceClient::GetPackageVersionHistoryCallable(const GetPackageVersionHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::GetPackageVersionHistoryAsyncHelper(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPackageVersionHistory(request), context);
+}
+
 GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -1231,6 +1267,33 @@ void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsync(const Upda
 void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsyncHelper(const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateElasticsearchDomainConfig(request), context);
+}
+
+UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/update";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackageOutcomeCallable ElasticsearchServiceClient::UpdatePackageCallable(const UpdatePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::UpdatePackageAsyncHelper(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePackage(request), context);
 }
 
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const

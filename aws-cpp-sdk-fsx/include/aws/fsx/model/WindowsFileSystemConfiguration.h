@@ -10,6 +10,7 @@
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystemMaintenanceOperation.h>
+#include <aws/fsx/model/Alias.h>
 #include <utility>
 
 namespace Aws
@@ -735,6 +736,31 @@ namespace Model
      */
     inline WindowsFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
+
+    
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
+
+    
+    inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+
+    
+    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
+
+    
+    inline WindowsFileSystemConfiguration& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
+
+    
+    inline WindowsFileSystemConfiguration& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
+
+    
+    inline WindowsFileSystemConfiguration& AddAliases(const Alias& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+    
+    inline WindowsFileSystemConfiguration& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_activeDirectoryId;
@@ -772,6 +798,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet;
+
+    Aws::Vector<Alias> m_aliases;
+    bool m_aliasesHasBeenSet;
   };
 
 } // namespace Model

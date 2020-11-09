@@ -39,38 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline const AssociationFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline void SetKey(const AssociationFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline void SetKey(AssociationFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline AssociationFilter& WithKey(const AssociationFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
+     * <p>The name of the filter.</p>
      */
     inline AssociationFilter& WithKey(AssociationFilterKey&& value) { SetKey(std::move(value)); return *this;}
 

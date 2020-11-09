@@ -31,6 +31,7 @@
 #include <aws/s3/model/DeleteBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketCorsRequest.h>
 #include <aws/s3/model/DeleteBucketEncryptionRequest.h>
+#include <aws/s3/model/DeleteBucketIntelligentTieringConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
 #include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/s3/model/GetBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketCorsRequest.h>
 #include <aws/s3/model/GetBucketEncryptionRequest.h>
+#include <aws/s3/model/GetBucketIntelligentTieringConfigurationRequest.h>
 #include <aws/s3/model/GetBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsRequest.h>
+#include <aws/s3/model/ListBucketIntelligentTieringConfigurationsRequest.h>
 #include <aws/s3/model/ListBucketInventoryConfigurationsRequest.h>
 #include <aws/s3/model/ListBucketMetricsConfigurationsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
@@ -85,6 +88,7 @@
 #include <aws/s3/model/PutBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/PutBucketCorsRequest.h>
 #include <aws/s3/model/PutBucketEncryptionRequest.h>
+#include <aws/s3/model/PutBucketIntelligentTieringConfigurationRequest.h>
 #include <aws/s3/model/PutBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLoggingRequest.h>
@@ -572,6 +576,48 @@ void S3Client::DeleteBucketEncryptionAsync(const DeleteBucketEncryptionRequest& 
 void S3Client::DeleteBucketEncryptionAsyncHelper(const DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBucketEncryption(request), context);
+}
+
+DeleteBucketIntelligentTieringConfigurationOutcome S3Client::DeleteBucketIntelligentTieringConfiguration(const DeleteBucketIntelligentTieringConfigurationRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketIntelligentTieringConfiguration", "Required field: Bucket, is not set");
+    return DeleteBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketIntelligentTieringConfiguration", "Required field: Id, is not set");
+    return DeleteBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketIntelligentTieringConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?intelligent-tiering");
+  uri.SetQueryString(ss.str());
+  return DeleteBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteBucketIntelligentTieringConfigurationOutcomeCallable S3Client::DeleteBucketIntelligentTieringConfigurationCallable(const DeleteBucketIntelligentTieringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketIntelligentTieringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketIntelligentTieringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketIntelligentTieringConfigurationAsync(const DeleteBucketIntelligentTieringConfigurationRequest& request, const DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketIntelligentTieringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketIntelligentTieringConfigurationAsyncHelper(const DeleteBucketIntelligentTieringConfigurationRequest& request, const DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketIntelligentTieringConfiguration(request), context);
 }
 
 DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfiguration(const DeleteBucketInventoryConfigurationRequest& request) const
@@ -1230,6 +1276,48 @@ void S3Client::GetBucketEncryptionAsync(const GetBucketEncryptionRequest& reques
 void S3Client::GetBucketEncryptionAsyncHelper(const GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBucketEncryption(request), context);
+}
+
+GetBucketIntelligentTieringConfigurationOutcome S3Client::GetBucketIntelligentTieringConfiguration(const GetBucketIntelligentTieringConfigurationRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketIntelligentTieringConfiguration", "Required field: Bucket, is not set");
+    return GetBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketIntelligentTieringConfiguration", "Required field: Id, is not set");
+    return GetBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketIntelligentTieringConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?intelligent-tiering");
+  uri.SetQueryString(ss.str());
+  return GetBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetBucketIntelligentTieringConfigurationOutcomeCallable S3Client::GetBucketIntelligentTieringConfigurationCallable(const GetBucketIntelligentTieringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketIntelligentTieringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketIntelligentTieringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketIntelligentTieringConfigurationAsync(const GetBucketIntelligentTieringConfigurationRequest& request, const GetBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketIntelligentTieringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketIntelligentTieringConfigurationAsyncHelper(const GetBucketIntelligentTieringConfigurationRequest& request, const GetBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketIntelligentTieringConfiguration(request), context);
 }
 
 GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration(const GetBucketInventoryConfigurationRequest& request) const
@@ -2218,6 +2306,43 @@ void S3Client::ListBucketAnalyticsConfigurationsAsyncHelper(const ListBucketAnal
   handler(this, request, ListBucketAnalyticsConfigurations(request), context);
 }
 
+ListBucketIntelligentTieringConfigurationsOutcome S3Client::ListBucketIntelligentTieringConfigurations(const ListBucketIntelligentTieringConfigurationsRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBucketIntelligentTieringConfigurations", "Required field: Bucket, is not set");
+    return ListBucketIntelligentTieringConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListBucketIntelligentTieringConfigurationsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?intelligent-tiering");
+  uri.SetQueryString(ss.str());
+  return ListBucketIntelligentTieringConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+ListBucketIntelligentTieringConfigurationsOutcomeCallable S3Client::ListBucketIntelligentTieringConfigurationsCallable(const ListBucketIntelligentTieringConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBucketIntelligentTieringConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBucketIntelligentTieringConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::ListBucketIntelligentTieringConfigurationsAsync(const ListBucketIntelligentTieringConfigurationsRequest& request, const ListBucketIntelligentTieringConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBucketIntelligentTieringConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::ListBucketIntelligentTieringConfigurationsAsyncHelper(const ListBucketIntelligentTieringConfigurationsRequest& request, const ListBucketIntelligentTieringConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBucketIntelligentTieringConfigurations(request), context);
+}
+
 ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurations(const ListBucketInventoryConfigurationsRequest& request) const
 {
   if (!request.BucketHasBeenSet())
@@ -2705,6 +2830,48 @@ void S3Client::PutBucketEncryptionAsync(const PutBucketEncryptionRequest& reques
 void S3Client::PutBucketEncryptionAsyncHelper(const PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBucketEncryption(request), context);
+}
+
+PutBucketIntelligentTieringConfigurationOutcome S3Client::PutBucketIntelligentTieringConfiguration(const PutBucketIntelligentTieringConfigurationRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketIntelligentTieringConfiguration", "Required field: Bucket, is not set");
+    return PutBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketIntelligentTieringConfiguration", "Required field: Id, is not set");
+    return PutBucketIntelligentTieringConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketIntelligentTieringConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  ss.str("?intelligent-tiering");
+  uri.SetQueryString(ss.str());
+  return PutBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutBucketIntelligentTieringConfigurationOutcomeCallable S3Client::PutBucketIntelligentTieringConfigurationCallable(const PutBucketIntelligentTieringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketIntelligentTieringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketIntelligentTieringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketIntelligentTieringConfigurationAsync(const PutBucketIntelligentTieringConfigurationRequest& request, const PutBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketIntelligentTieringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketIntelligentTieringConfigurationAsyncHelper(const PutBucketIntelligentTieringConfigurationRequest& request, const PutBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketIntelligentTieringConfiguration(request), context);
 }
 
 PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration(const PutBucketInventoryConfigurationRequest& request) const

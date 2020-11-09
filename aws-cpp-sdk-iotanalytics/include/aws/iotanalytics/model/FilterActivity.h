@@ -39,91 +39,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline FilterActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline FilterActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the 'filter' activity.</p>
+     * <p>The name of the filter activity.</p>
      */
     inline FilterActivity& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline FilterActivity& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline FilterActivity& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
-     * value.</p>
+     * value. Messages that satisfy the condition are passed to the next activity. </p>
      */
     inline FilterActivity& WithFilter(const char* value) { SetFilter(value); return *this;}
 

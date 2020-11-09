@@ -51,6 +51,7 @@
 #include <aws/datasync/model/UntagResourceRequest.h>
 #include <aws/datasync/model/UpdateAgentRequest.h>
 #include <aws/datasync/model/UpdateTaskRequest.h>
+#include <aws/datasync/model/UpdateTaskExecutionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -960,5 +961,32 @@ void DataSyncClient::UpdateTaskAsync(const UpdateTaskRequest& request, const Upd
 void DataSyncClient::UpdateTaskAsyncHelper(const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateTask(request), context);
+}
+
+UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateTaskExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTaskExecutionOutcomeCallable DataSyncClient::UpdateTaskExecutionCallable(const UpdateTaskExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTaskExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateTaskExecutionAsync(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateTaskExecutionAsyncHelper(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTaskExecution(request), context);
 }
 

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline const Aws::Vector<ChannelSummary>& GetChannelSummaries() const{ return m_channelSummaries; }
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline void SetChannelSummaries(const Aws::Vector<ChannelSummary>& value) { m_channelSummaries = value; }
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline void SetChannelSummaries(Aws::Vector<ChannelSummary>&& value) { m_channelSummaries = std::move(value); }
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline ListChannelsResult& WithChannelSummaries(const Aws::Vector<ChannelSummary>& value) { SetChannelSummaries(value); return *this;}
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline ListChannelsResult& WithChannelSummaries(Aws::Vector<ChannelSummary>&& value) { SetChannelSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline ListChannelsResult& AddChannelSummaries(const ChannelSummary& value) { m_channelSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "ChannelSummary" objects.</p>
+     * <p>A list of <code>ChannelSummary</code> objects.</p>
      */
     inline ListChannelsResult& AddChannelSummaries(ChannelSummary&& value) { m_channelSummaries.push_back(std::move(value)); return *this; }
 

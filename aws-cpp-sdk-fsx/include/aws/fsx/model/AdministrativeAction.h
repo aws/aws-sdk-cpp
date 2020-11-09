@@ -64,25 +64,29 @@ namespace Model
 
     /**
      * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action.</p>
+     * administrative action. Does not apply to any other administrative action
+     * type.</p>
      */
     inline int GetProgressPercent() const{ return m_progressPercent; }
 
     /**
      * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action.</p>
+     * administrative action. Does not apply to any other administrative action
+     * type.</p>
      */
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
 
     /**
      * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action.</p>
+     * administrative action. Does not apply to any other administrative action
+     * type.</p>
      */
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
 
     /**
      * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
-     * administrative action.</p>
+     * administrative action. Does not apply to any other administrative action
+     * type.</p>
      */
     inline AdministrativeAction& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
 
@@ -216,48 +220,42 @@ namespace Model
 
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     const FileSystem& GetTargetFileSystemValues() const;
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     bool TargetFileSystemValuesHasBeenSet() const;
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     void SetTargetFileSystemValues(const FileSystem& value);
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     void SetTargetFileSystemValues(FileSystem&& value);
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
     AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value);
 
     /**
-     * <p>Describes the target <code>StorageCapacity</code> or
-     * <code>ThroughputCapacity</code> value provided in the
+     * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */

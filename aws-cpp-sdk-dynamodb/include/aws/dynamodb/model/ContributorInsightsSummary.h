@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a Contributor Insights summary entry..</p><p><h3>See Also:</h3>  
+   * <p>Represents a Contributor Insights summary entry.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ContributorInsightsSummary">AWS
    * API Reference</a></p>

@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>An instance of a variable to be passed to the "containerAction" execution.
-   * Each variable must have a name and a value given by one of "stringValue",
-   * "datasetContentVersionValue", or "outputFileUriValue".</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>An instance of a variable to be passed to the <code>containerAction</code>
+   * execution. Each variable must have a name and a value given by one of
+   * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or
+   * <code>outputFileUriValue</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Variable">AWS
    * API Reference</a></p>
    */
@@ -146,37 +146,37 @@ namespace Model
 
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline const DatasetContentVersionValue& GetDatasetContentVersionValue() const{ return m_datasetContentVersionValue; }
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline bool DatasetContentVersionValueHasBeenSet() const { return m_datasetContentVersionValueHasBeenSet; }
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline void SetDatasetContentVersionValue(const DatasetContentVersionValue& value) { m_datasetContentVersionValueHasBeenSet = true; m_datasetContentVersionValue = value; }
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline void SetDatasetContentVersionValue(DatasetContentVersionValue&& value) { m_datasetContentVersionValueHasBeenSet = true; m_datasetContentVersionValue = std::move(value); }
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline Variable& WithDatasetContentVersionValue(const DatasetContentVersionValue& value) { SetDatasetContentVersionValue(value); return *this;}
 
     /**
-     * <p>The value of the variable as a structure that specifies a data set content
+     * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
     inline Variable& WithDatasetContentVersionValue(DatasetContentVersionValue&& value) { SetDatasetContentVersionValue(std::move(value)); return *this;}

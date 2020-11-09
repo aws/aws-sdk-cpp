@@ -32,15 +32,18 @@
 #include <aws/dynamodb/model/DescribeContinuousBackupsRequest.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsRequest.h>
 #include <aws/dynamodb/model/DescribeEndpointsRequest.h>
+#include <aws/dynamodb/model/DescribeExportRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsRequest.h>
 #include <aws/dynamodb/model/DescribeLimitsRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingRequest.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveRequest.h>
+#include <aws/dynamodb/model/ExportTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
+#include <aws/dynamodb/model/ListExportsRequest.h>
 #include <aws/dynamodb/model/ListGlobalTablesRequest.h>
 #include <aws/dynamodb/model/ListTablesRequest.h>
 #include <aws/dynamodb/model/ListTagsOfResourceRequest.h>
@@ -738,6 +741,33 @@ void DynamoDBClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest
   handler(this, request, DescribeEndpoints(request), context);
 }
 
+DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExportOutcomeCallable DynamoDBClient::DescribeExportCallable(const DescribeExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::DescribeExportAsyncHelper(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExport(request), context);
+}
+
 DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlobalTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1035,6 +1065,33 @@ void DynamoDBClient::DescribeTimeToLiveAsyncHelper(const DescribeTimeToLiveReque
   handler(this, request, DescribeTimeToLive(request), context);
 }
 
+ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExportTableToPointInTimeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportTableToPointInTimeOutcomeCallable DynamoDBClient::ExportTableToPointInTimeCallable(const ExportTableToPointInTimeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportTableToPointInTimeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportTableToPointInTime(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ExportTableToPointInTimeAsync(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportTableToPointInTimeAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ExportTableToPointInTimeAsyncHelper(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportTableToPointInTime(request), context);
+}
+
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1168,6 +1225,33 @@ void DynamoDBClient::ListContributorInsightsAsync(const ListContributorInsightsR
 void DynamoDBClient::ListContributorInsightsAsyncHelper(const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListContributorInsights(request), context);
+}
+
+ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExportsOutcomeCallable DynamoDBClient::ListExportsCallable(const ListExportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExportsAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExports(request), context);
 }
 
 ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesRequest& request) const

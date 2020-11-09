@@ -50,6 +50,7 @@
 #include <aws/storagegateway/model/DeleteVolumeRequest.h>
 #include <aws/storagegateway/model/DescribeAvailabilityMonitorTestRequest.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitRequest.h>
+#include <aws/storagegateway/model/DescribeBandwidthRateLimitScheduleRequest.h>
 #include <aws/storagegateway/model/DescribeCacheRequest.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesRequest.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsRequest.h>
@@ -92,6 +93,7 @@
 #include <aws/storagegateway/model/StartGatewayRequest.h>
 #include <aws/storagegateway/model/UpdateAutomaticTapeCreationPolicyRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
+#include <aws/storagegateway/model/UpdateBandwidthRateLimitScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsRequest.h>
 #include <aws/storagegateway/model/UpdateGatewayInformationRequest.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowRequest.h>
@@ -984,6 +986,33 @@ void StorageGatewayClient::DescribeBandwidthRateLimitAsync(const DescribeBandwid
 void StorageGatewayClient::DescribeBandwidthRateLimitAsyncHelper(const DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBandwidthRateLimit(request), context);
+}
+
+DescribeBandwidthRateLimitScheduleOutcome StorageGatewayClient::DescribeBandwidthRateLimitSchedule(const DescribeBandwidthRateLimitScheduleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBandwidthRateLimitScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBandwidthRateLimitScheduleOutcomeCallable StorageGatewayClient::DescribeBandwidthRateLimitScheduleCallable(const DescribeBandwidthRateLimitScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBandwidthRateLimitScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBandwidthRateLimitSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeBandwidthRateLimitScheduleAsync(const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBandwidthRateLimitScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeBandwidthRateLimitScheduleAsyncHelper(const DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBandwidthRateLimitSchedule(request), context);
 }
 
 DescribeCacheOutcome StorageGatewayClient::DescribeCache(const DescribeCacheRequest& request) const
@@ -2118,6 +2147,33 @@ void StorageGatewayClient::UpdateBandwidthRateLimitAsync(const UpdateBandwidthRa
 void StorageGatewayClient::UpdateBandwidthRateLimitAsyncHelper(const UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBandwidthRateLimit(request), context);
+}
+
+UpdateBandwidthRateLimitScheduleOutcome StorageGatewayClient::UpdateBandwidthRateLimitSchedule(const UpdateBandwidthRateLimitScheduleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateBandwidthRateLimitScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBandwidthRateLimitScheduleOutcomeCallable StorageGatewayClient::UpdateBandwidthRateLimitScheduleCallable(const UpdateBandwidthRateLimitScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBandwidthRateLimitScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBandwidthRateLimitSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateBandwidthRateLimitScheduleAsync(const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBandwidthRateLimitScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateBandwidthRateLimitScheduleAsyncHelper(const UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBandwidthRateLimitSchedule(request), context);
 }
 
 UpdateChapCredentialsOutcome StorageGatewayClient::UpdateChapCredentials(const UpdateChapCredentialsRequest& request) const

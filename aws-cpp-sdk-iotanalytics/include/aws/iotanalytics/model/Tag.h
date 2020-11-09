@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A set of key/value pairs which are used to manage the resource.</p><p><h3>See
+   * <p>A set of key-value pairs that are used to manage the resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Tag">AWS
    * API Reference</a></p>

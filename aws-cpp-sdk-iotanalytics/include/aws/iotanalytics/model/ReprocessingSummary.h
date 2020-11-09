@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline ReprocessingSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline ReprocessingSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     * <p>The <code>reprocessingId</code> returned by
+     * <code>StartPipelineReprocessing</code>.</p>
      */
     inline ReprocessingSummary& WithId(const char* value) { SetId(value); return *this;}
 

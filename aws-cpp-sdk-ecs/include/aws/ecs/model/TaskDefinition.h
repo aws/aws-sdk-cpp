@@ -1225,8 +1225,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1243,8 +1247,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1261,8 +1269,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1279,8 +1291,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1297,8 +1313,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1315,8 +1335,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1333,8 +1357,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -1351,8 +1379,12 @@ namespace Model
 
     /**
      * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, this field is optional and any value can be used. If a task-level
-     * memory value is specified then the container-level memory value is optional.</p>
+     * launch type, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used.
+     * If a task-level memory value is specified then the container-level memory value
+     * is optional. For more information regarding container-level memory and memory
+     * reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of valid values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2

@@ -105,42 +105,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

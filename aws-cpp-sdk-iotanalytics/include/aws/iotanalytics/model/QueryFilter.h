@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information which is used to filter message data, to segregate it according
-   * to the time frame in which it arrives.</p><p><h3>See Also:</h3>   <a
+   * <p>Information that is used to filter message data, to segregate it according to
+   * the timeframe in which it arrives.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/QueryFilter">AWS
    * API Reference</a></p>
    */

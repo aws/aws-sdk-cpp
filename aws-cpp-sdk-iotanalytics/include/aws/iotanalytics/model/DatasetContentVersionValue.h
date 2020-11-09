@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The data set whose latest contents are used as input to the notebook or
+   * <p>The dataset whose latest contents are used as input to the notebook or
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentVersionValue">AWS
    * API Reference</a></p>
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline DatasetContentVersionValue& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline DatasetContentVersionValue& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set whose latest contents are used as input to the
+     * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline DatasetContentVersionValue& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}

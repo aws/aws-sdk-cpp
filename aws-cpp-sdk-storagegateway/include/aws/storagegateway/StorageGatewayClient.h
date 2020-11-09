@@ -41,6 +41,7 @@
 #include <aws/storagegateway/model/DeleteVolumeResult.h>
 #include <aws/storagegateway/model/DescribeAvailabilityMonitorTestResult.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitResult.h>
+#include <aws/storagegateway/model/DescribeBandwidthRateLimitScheduleResult.h>
 #include <aws/storagegateway/model/DescribeCacheResult.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesResult.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsResult.h>
@@ -83,6 +84,7 @@
 #include <aws/storagegateway/model/StartGatewayResult.h>
 #include <aws/storagegateway/model/UpdateAutomaticTapeCreationPolicyResult.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitResult.h>
+#include <aws/storagegateway/model/UpdateBandwidthRateLimitScheduleResult.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsResult.h>
 #include <aws/storagegateway/model/UpdateGatewayInformationResult.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowResult.h>
@@ -162,6 +164,7 @@ namespace Model
         class DeleteVolumeRequest;
         class DescribeAvailabilityMonitorTestRequest;
         class DescribeBandwidthRateLimitRequest;
+        class DescribeBandwidthRateLimitScheduleRequest;
         class DescribeCacheRequest;
         class DescribeCachediSCSIVolumesRequest;
         class DescribeChapCredentialsRequest;
@@ -204,6 +207,7 @@ namespace Model
         class StartGatewayRequest;
         class UpdateAutomaticTapeCreationPolicyRequest;
         class UpdateBandwidthRateLimitRequest;
+        class UpdateBandwidthRateLimitScheduleRequest;
         class UpdateChapCredentialsRequest;
         class UpdateGatewayInformationRequest;
         class UpdateGatewaySoftwareNowRequest;
@@ -245,6 +249,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteVolumeResult, StorageGatewayError> DeleteVolumeOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityMonitorTestResult, StorageGatewayError> DescribeAvailabilityMonitorTestOutcome;
         typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitResult, StorageGatewayError> DescribeBandwidthRateLimitOutcome;
+        typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitScheduleResult, StorageGatewayError> DescribeBandwidthRateLimitScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeCacheResult, StorageGatewayError> DescribeCacheOutcome;
         typedef Aws::Utils::Outcome<DescribeCachediSCSIVolumesResult, StorageGatewayError> DescribeCachediSCSIVolumesOutcome;
         typedef Aws::Utils::Outcome<DescribeChapCredentialsResult, StorageGatewayError> DescribeChapCredentialsOutcome;
@@ -287,6 +292,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartGatewayResult, StorageGatewayError> StartGatewayOutcome;
         typedef Aws::Utils::Outcome<UpdateAutomaticTapeCreationPolicyResult, StorageGatewayError> UpdateAutomaticTapeCreationPolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitResult, StorageGatewayError> UpdateBandwidthRateLimitOutcome;
+        typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitScheduleResult, StorageGatewayError> UpdateBandwidthRateLimitScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateChapCredentialsResult, StorageGatewayError> UpdateChapCredentialsOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, StorageGatewayError> UpdateGatewayInformationOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, StorageGatewayError> UpdateGatewaySoftwareNowOutcome;
@@ -328,6 +334,7 @@ namespace Model
         typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
         typedef std::future<DescribeAvailabilityMonitorTestOutcome> DescribeAvailabilityMonitorTestOutcomeCallable;
         typedef std::future<DescribeBandwidthRateLimitOutcome> DescribeBandwidthRateLimitOutcomeCallable;
+        typedef std::future<DescribeBandwidthRateLimitScheduleOutcome> DescribeBandwidthRateLimitScheduleOutcomeCallable;
         typedef std::future<DescribeCacheOutcome> DescribeCacheOutcomeCallable;
         typedef std::future<DescribeCachediSCSIVolumesOutcome> DescribeCachediSCSIVolumesOutcomeCallable;
         typedef std::future<DescribeChapCredentialsOutcome> DescribeChapCredentialsOutcomeCallable;
@@ -370,6 +377,7 @@ namespace Model
         typedef std::future<StartGatewayOutcome> StartGatewayOutcomeCallable;
         typedef std::future<UpdateAutomaticTapeCreationPolicyOutcome> UpdateAutomaticTapeCreationPolicyOutcomeCallable;
         typedef std::future<UpdateBandwidthRateLimitOutcome> UpdateBandwidthRateLimitOutcomeCallable;
+        typedef std::future<UpdateBandwidthRateLimitScheduleOutcome> UpdateBandwidthRateLimitScheduleOutcomeCallable;
         typedef std::future<UpdateChapCredentialsOutcome> UpdateChapCredentialsOutcomeCallable;
         typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
         typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
@@ -414,6 +422,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeAvailabilityMonitorTestRequest&, const Model::DescribeAvailabilityMonitorTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityMonitorTestResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitRequest&, const Model::DescribeBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitScheduleRequest&, const Model::DescribeBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCacheRequest&, const Model::DescribeCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCachediSCSIVolumesRequest&, const Model::DescribeCachediSCSIVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCachediSCSIVolumesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeChapCredentialsRequest&, const Model::DescribeChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChapCredentialsResponseReceivedHandler;
@@ -456,6 +465,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::StartGatewayRequest&, const Model::StartGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateAutomaticTapeCreationPolicyRequest&, const Model::UpdateAutomaticTapeCreationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutomaticTapeCreationPolicyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitRequest&, const Model::UpdateBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitScheduleRequest&, const Model::UpdateBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateChapCredentialsRequest&, const Model::UpdateChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChapCredentialsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
@@ -1916,6 +1926,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBandwidthRateLimitAsync(const Model::DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. This operation is supported only in the
+         * volume and tape gateway types. </p> <p>This operation returns information about
+         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
+         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
+         * interval defines a period of time on one or more days of the week, during which
+         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
+         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
+         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
+         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
+         * are set for the gateway, this operation returns an empty response. To specify
+         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
+         * your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBandwidthRateLimitScheduleOutcome DescribeBandwidthRateLimitSchedule(const Model::DescribeBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. This operation is supported only in the
+         * volume and tape gateway types. </p> <p>This operation returns information about
+         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
+         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
+         * interval defines a period of time on one or more days of the week, during which
+         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
+         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
+         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
+         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
+         * are set for the gateway, this operation returns an empty response. To specify
+         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
+         * your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBandwidthRateLimitScheduleOutcomeCallable DescribeBandwidthRateLimitScheduleCallable(const Model::DescribeBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. This operation is supported only in the
+         * volume and tape gateway types. </p> <p>This operation returns information about
+         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
+         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
+         * interval defines a period of time on one or more days of the week, during which
+         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
+         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
+         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
+         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
+         * are set for the gateway, this operation returns an empty response. To specify
+         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
+         * your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBandwidthRateLimitScheduleAsync(const Model::DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the cache of a gateway. This operation is only
@@ -3673,6 +3747,43 @@ namespace Model
         virtual void UpdateBandwidthRateLimitAsync(const Model::UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
+         * bandwidth rate limit schedule. This operation is supported in the volume and
+         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBandwidthRateLimitScheduleOutcome UpdateBandwidthRateLimitSchedule(const Model::UpdateBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
+         * bandwidth rate limit schedule. This operation is supported in the volume and
+         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBandwidthRateLimitScheduleOutcomeCallable UpdateBandwidthRateLimitScheduleCallable(const Model::UpdateBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
+         * bandwidth rate limit schedule. This operation is supported in the volume and
+         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBandwidthRateLimitScheduleAsync(const Model::UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
          * however, for added security, you might use it. This operation is supported in
@@ -4133,6 +4244,7 @@ namespace Model
         void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityMonitorTestAsyncHelper(const Model::DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBandwidthRateLimitAsyncHelper(const Model::DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBandwidthRateLimitScheduleAsyncHelper(const Model::DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCacheAsyncHelper(const Model::DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCachediSCSIVolumesAsyncHelper(const Model::DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChapCredentialsAsyncHelper(const Model::DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4175,6 +4287,7 @@ namespace Model
         void StartGatewayAsyncHelper(const Model::StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAutomaticTapeCreationPolicyAsyncHelper(const Model::UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBandwidthRateLimitAsyncHelper(const Model::UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBandwidthRateLimitScheduleAsyncHelper(const Model::UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChapCredentialsAsyncHelper(const Model::UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewayInformationAsyncHelper(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewaySoftwareNowAsyncHelper(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

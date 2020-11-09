@@ -88,32 +88,32 @@ namespace Model
 
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline const LoggingLevel& GetLevel() const{ return m_level; }
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline void SetLevel(const LoggingLevel& value) { m_levelHasBeenSet = true; m_level = value; }
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline void SetLevel(LoggingLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline LoggingOptions& WithLevel(const LoggingLevel& value) { SetLevel(value); return *this;}
 
     /**
-     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     * <p>The logging level. Currently, only ERROR is supported.</p>
      */
     inline LoggingOptions& WithLevel(LoggingLevel&& value) { SetLevel(std::move(value)); return *this;}
 

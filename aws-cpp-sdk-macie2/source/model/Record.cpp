@@ -19,12 +19,14 @@ namespace Model
 {
 
 Record::Record() : 
+    m_jsonPathHasBeenSet(false),
     m_recordIndex(0),
     m_recordIndexHasBeenSet(false)
 {
 }
 
 Record::Record(JsonView jsonValue) : 
+    m_jsonPathHasBeenSet(false),
     m_recordIndex(0),
     m_recordIndexHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ Record::Record(JsonView jsonValue) :
 
 Record& Record::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("jsonPath"))
+  {
+    m_jsonPath = jsonValue.GetString("jsonPath");
+
+    m_jsonPathHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("recordIndex"))
   {
     m_recordIndex = jsonValue.GetInt64("recordIndex");
@@ -46,6 +55,12 @@ Record& Record::operator =(JsonView jsonValue)
 JsonValue Record::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_jsonPathHasBeenSet)
+  {
+   payload.WithString("jsonPath", m_jsonPath);
+
+  }
 
   if(m_recordIndexHasBeenSet)
   {

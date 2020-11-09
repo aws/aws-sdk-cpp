@@ -88,7 +88,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline const Aws::String& GetRootDirectory() const{ return m_rootDirectory; }
 
@@ -96,7 +99,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
 
@@ -104,7 +110,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline void SetRootDirectory(const Aws::String& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
 
@@ -112,7 +121,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline void SetRootDirectory(Aws::String&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
 
@@ -120,7 +132,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline void SetRootDirectory(const char* value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory.assign(value); }
 
@@ -128,7 +143,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(const Aws::String& value) { SetRootDirectory(value); return *this;}
 
@@ -136,7 +154,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(Aws::String&& value) { SetRootDirectory(std::move(value)); return *this;}
 
@@ -144,7 +165,10 @@ namespace Model
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
      * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>
+     * omitting this parameter.</p>  <p>If an EFS access point is specified
+     * in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(const char* value) { SetRootDirectory(value); return *this;}
 

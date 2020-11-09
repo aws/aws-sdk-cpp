@@ -27,6 +27,7 @@ DomainPackageDetails::DomainPackageDetails() :
     m_domainNameHasBeenSet(false),
     m_domainPackageStatus(DomainPackageStatus::NOT_SET),
     m_domainPackageStatusHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
     m_referencePathHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
@@ -41,6 +42,7 @@ DomainPackageDetails::DomainPackageDetails(JsonView jsonValue) :
     m_domainNameHasBeenSet(false),
     m_domainPackageStatus(DomainPackageStatus::NOT_SET),
     m_domainPackageStatusHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
     m_referencePathHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
@@ -89,6 +91,13 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
     m_domainPackageStatus = DomainPackageStatusMapper::GetDomainPackageStatusForName(jsonValue.GetString("DomainPackageStatus"));
 
     m_domainPackageStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageVersion"))
+  {
+    m_packageVersion = jsonValue.GetString("PackageVersion");
+
+    m_packageVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReferencePath"))
@@ -143,6 +152,12 @@ JsonValue DomainPackageDetails::Jsonize() const
   if(m_domainPackageStatusHasBeenSet)
   {
    payload.WithString("DomainPackageStatus", DomainPackageStatusMapper::GetNameForDomainPackageStatus(m_domainPackageStatus));
+  }
+
+  if(m_packageVersionHasBeenSet)
+  {
+   payload.WithString("PackageVersion", m_packageVersion);
+
   }
 
   if(m_referencePathHasBeenSet)

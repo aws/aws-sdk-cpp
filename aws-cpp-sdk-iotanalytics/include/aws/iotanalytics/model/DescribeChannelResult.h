@@ -60,32 +60,32 @@ namespace Model
 
 
     /**
-     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
-     * is set to true in the request.</p>
+     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
+     * parameter is set to <code>true</code> in the request.</p>
      */
     inline const ChannelStatistics& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
-     * is set to true in the request.</p>
+     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
+     * parameter is set to <code>true</code> in the request.</p>
      */
     inline void SetStatistics(const ChannelStatistics& value) { m_statistics = value; }
 
     /**
-     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
-     * is set to true in the request.</p>
+     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
+     * parameter is set to <code>true</code> in the request.</p>
      */
     inline void SetStatistics(ChannelStatistics&& value) { m_statistics = std::move(value); }
 
     /**
-     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
-     * is set to true in the request.</p>
+     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
+     * parameter is set to <code>true</code> in the request.</p>
      */
     inline DescribeChannelResult& WithStatistics(const ChannelStatistics& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
-     * is set to true in the request.</p>
+     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
+     * parameter is set to <code>true</code> in the request.</p>
      */
     inline DescribeChannelResult& WithStatistics(ChannelStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 

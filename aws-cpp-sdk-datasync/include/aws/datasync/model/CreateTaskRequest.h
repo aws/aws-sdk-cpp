@@ -293,7 +293,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
@@ -301,7 +301,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
@@ -309,7 +309,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
@@ -317,7 +317,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
@@ -325,7 +325,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
@@ -333,7 +333,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
@@ -341,7 +341,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
@@ -349,7 +349,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 

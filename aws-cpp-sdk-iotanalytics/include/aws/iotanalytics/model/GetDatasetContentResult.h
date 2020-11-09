@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline const Aws::Vector<DatasetEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline void SetEntries(const Aws::Vector<DatasetEntry>& value) { m_entries = value; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline void SetEntries(Aws::Vector<DatasetEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& WithEntries(const Aws::Vector<DatasetEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& WithEntries(Aws::Vector<DatasetEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& AddEntries(const DatasetEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& AddEntries(DatasetEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

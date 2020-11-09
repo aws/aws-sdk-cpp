@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/SelfManagedActiveDirectoryConfiguration.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -489,6 +490,232 @@ namespace Model
      */
     inline CreateFileSystemWindowsConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAliases() const{ return m_aliases; }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline void SetAliases(const Aws::Vector<Aws::String>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline void SetAliases(Aws::Vector<Aws::String>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAliases(const Aws::Vector<Aws::String>& value) { SetAliases(value); return *this;}
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAliases(Aws::Vector<Aws::String>&& value) { SetAliases(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& AddAliases(const Aws::String& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& AddAliases(Aws::String&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of one or more DNS alias names that you want to associate with the
+     * Amazon FSx file system. Aliases allow you to use existing DNS names to access
+     * the data in your Amazon FSx file system. You can associate up to 50 aliases with
+     * a file system at any time. You can associate additional DNS aliases after you
+     * create the file system using the <a>AssociateFileSystemAliases</a> operation.
+     * You can remove DNS aliases from the file system after it is created using the
+     * <a>DisassociateFileSystemAliases</a> operation. You only need to specify the
+     * alias name in the request payload.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+     * with DNS Aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+     * 5: Using DNS aliases to access your file system</a>, including additional steps
+     * you must take to be able to access your file system using a DNS alias.</p> <p>An
+     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
+     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
+     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
+     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
+     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
+     * regardless of how you specify them: as uppercase letters, lowercase letters, or
+     * the corresponding letters in escape codes.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& AddAliases(const char* value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
   private:
 
     Aws::String m_activeDirectoryId;
@@ -517,6 +744,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_aliases;
+    bool m_aliasesHasBeenSet;
   };
 
 } // namespace Model

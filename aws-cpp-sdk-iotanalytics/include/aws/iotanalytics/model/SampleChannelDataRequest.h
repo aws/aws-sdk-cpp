@@ -81,25 +81,25 @@ namespace Model
 
 
     /**
-     * <p>The number of sample messages to be retrieved. The limit is 10, the default
+     * <p>The number of sample messages to be retrieved. The limit is 10. The default
      * is also 10.</p>
      */
     inline int GetMaxMessages() const{ return m_maxMessages; }
 
     /**
-     * <p>The number of sample messages to be retrieved. The limit is 10, the default
+     * <p>The number of sample messages to be retrieved. The limit is 10. The default
      * is also 10.</p>
      */
     inline bool MaxMessagesHasBeenSet() const { return m_maxMessagesHasBeenSet; }
 
     /**
-     * <p>The number of sample messages to be retrieved. The limit is 10, the default
+     * <p>The number of sample messages to be retrieved. The limit is 10. The default
      * is also 10.</p>
      */
     inline void SetMaxMessages(int value) { m_maxMessagesHasBeenSet = true; m_maxMessages = value; }
 
     /**
-     * <p>The number of sample messages to be retrieved. The limit is 10, the default
+     * <p>The number of sample messages to be retrieved. The limit is 10. The default
      * is also 10.</p>
      */
     inline SampleChannelDataRequest& WithMaxMessages(int value) { SetMaxMessages(value); return *this;}

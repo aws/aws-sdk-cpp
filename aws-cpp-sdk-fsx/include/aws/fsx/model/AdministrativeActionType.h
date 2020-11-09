@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     FILE_SYSTEM_UPDATE,
-    STORAGE_OPTIMIZATION
+    STORAGE_OPTIMIZATION,
+    FILE_SYSTEM_ALIAS_ASSOCIATION,
+    FILE_SYSTEM_ALIAS_DISASSOCIATION
   };
 
 namespace AdministrativeActionTypeMapper

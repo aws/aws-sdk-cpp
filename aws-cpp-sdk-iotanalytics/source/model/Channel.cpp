@@ -26,7 +26,8 @@ Channel::Channel() :
     m_statusHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Channel::Channel(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastMessageArrivalTime"))
+  {
+    m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
+
+    m_lastMessageArrivalTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,11 @@ JsonValue Channel::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastMessageArrivalTimeHasBeenSet)
+  {
+   payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
   }
 
   return payload;

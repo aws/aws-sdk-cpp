@@ -26,6 +26,7 @@
 #include <aws/s3/model/GetBucketAnalyticsConfigurationResult.h>
 #include <aws/s3/model/GetBucketCorsResult.h>
 #include <aws/s3/model/GetBucketEncryptionResult.h>
+#include <aws/s3/model/GetBucketIntelligentTieringConfigurationResult.h>
 #include <aws/s3/model/GetBucketInventoryConfigurationResult.h>
 #include <aws/s3/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3/model/GetBucketLocationResult.h>
@@ -50,6 +51,7 @@
 #include <aws/s3/model/GetPublicAccessBlockResult.h>
 #include <aws/s3/model/HeadObjectResult.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsResult.h>
+#include <aws/s3/model/ListBucketIntelligentTieringConfigurationsResult.h>
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
 #include <aws/s3/model/ListBucketMetricsConfigurationsResult.h>
 #include <aws/s3/model/ListBucketsResult.h>
@@ -120,6 +122,7 @@ namespace Aws
         class DeleteBucketAnalyticsConfigurationRequest;
         class DeleteBucketCorsRequest;
         class DeleteBucketEncryptionRequest;
+        class DeleteBucketIntelligentTieringConfigurationRequest;
         class DeleteBucketInventoryConfigurationRequest;
         class DeleteBucketLifecycleRequest;
         class DeleteBucketMetricsConfigurationRequest;
@@ -137,6 +140,7 @@ namespace Aws
         class GetBucketAnalyticsConfigurationRequest;
         class GetBucketCorsRequest;
         class GetBucketEncryptionRequest;
+        class GetBucketIntelligentTieringConfigurationRequest;
         class GetBucketInventoryConfigurationRequest;
         class GetBucketLifecycleConfigurationRequest;
         class GetBucketLocationRequest;
@@ -162,6 +166,7 @@ namespace Aws
         class HeadBucketRequest;
         class HeadObjectRequest;
         class ListBucketAnalyticsConfigurationsRequest;
+        class ListBucketIntelligentTieringConfigurationsRequest;
         class ListBucketInventoryConfigurationsRequest;
         class ListBucketMetricsConfigurationsRequest;
         class ListMultipartUploadsRequest;
@@ -174,6 +179,7 @@ namespace Aws
         class PutBucketAnalyticsConfigurationRequest;
         class PutBucketCorsRequest;
         class PutBucketEncryptionRequest;
+        class PutBucketIntelligentTieringConfigurationRequest;
         class PutBucketInventoryConfigurationRequest;
         class PutBucketLifecycleConfigurationRequest;
         class PutBucketLoggingRequest;
@@ -207,6 +213,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketAnalyticsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketCorsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketEncryptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketIntelligentTieringConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketInventoryConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketLifecycleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketMetricsConfigurationOutcome;
@@ -224,6 +231,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetBucketAnalyticsConfigurationResult, S3Error> GetBucketAnalyticsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketCorsResult, S3Error> GetBucketCorsOutcome;
         typedef Aws::Utils::Outcome<GetBucketEncryptionResult, S3Error> GetBucketEncryptionOutcome;
+        typedef Aws::Utils::Outcome<GetBucketIntelligentTieringConfigurationResult, S3Error> GetBucketIntelligentTieringConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketInventoryConfigurationResult, S3Error> GetBucketInventoryConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, S3Error> GetBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketLocationResult, S3Error> GetBucketLocationOutcome;
@@ -249,6 +257,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> HeadBucketOutcome;
         typedef Aws::Utils::Outcome<HeadObjectResult, S3Error> HeadObjectOutcome;
         typedef Aws::Utils::Outcome<ListBucketAnalyticsConfigurationsResult, S3Error> ListBucketAnalyticsConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListBucketIntelligentTieringConfigurationsResult, S3Error> ListBucketIntelligentTieringConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListBucketInventoryConfigurationsResult, S3Error> ListBucketInventoryConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListBucketMetricsConfigurationsResult, S3Error> ListBucketMetricsConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListBucketsResult, S3Error> ListBucketsOutcome;
@@ -262,6 +271,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketAnalyticsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketCorsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketEncryptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketIntelligentTieringConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketInventoryConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketLoggingOutcome;
@@ -295,6 +305,7 @@ namespace Aws
         typedef std::future<DeleteBucketAnalyticsConfigurationOutcome> DeleteBucketAnalyticsConfigurationOutcomeCallable;
         typedef std::future<DeleteBucketCorsOutcome> DeleteBucketCorsOutcomeCallable;
         typedef std::future<DeleteBucketEncryptionOutcome> DeleteBucketEncryptionOutcomeCallable;
+        typedef std::future<DeleteBucketIntelligentTieringConfigurationOutcome> DeleteBucketIntelligentTieringConfigurationOutcomeCallable;
         typedef std::future<DeleteBucketInventoryConfigurationOutcome> DeleteBucketInventoryConfigurationOutcomeCallable;
         typedef std::future<DeleteBucketLifecycleOutcome> DeleteBucketLifecycleOutcomeCallable;
         typedef std::future<DeleteBucketMetricsConfigurationOutcome> DeleteBucketMetricsConfigurationOutcomeCallable;
@@ -312,6 +323,7 @@ namespace Aws
         typedef std::future<GetBucketAnalyticsConfigurationOutcome> GetBucketAnalyticsConfigurationOutcomeCallable;
         typedef std::future<GetBucketCorsOutcome> GetBucketCorsOutcomeCallable;
         typedef std::future<GetBucketEncryptionOutcome> GetBucketEncryptionOutcomeCallable;
+        typedef std::future<GetBucketIntelligentTieringConfigurationOutcome> GetBucketIntelligentTieringConfigurationOutcomeCallable;
         typedef std::future<GetBucketInventoryConfigurationOutcome> GetBucketInventoryConfigurationOutcomeCallable;
         typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<GetBucketLocationOutcome> GetBucketLocationOutcomeCallable;
@@ -337,6 +349,7 @@ namespace Aws
         typedef std::future<HeadBucketOutcome> HeadBucketOutcomeCallable;
         typedef std::future<HeadObjectOutcome> HeadObjectOutcomeCallable;
         typedef std::future<ListBucketAnalyticsConfigurationsOutcome> ListBucketAnalyticsConfigurationsOutcomeCallable;
+        typedef std::future<ListBucketIntelligentTieringConfigurationsOutcome> ListBucketIntelligentTieringConfigurationsOutcomeCallable;
         typedef std::future<ListBucketInventoryConfigurationsOutcome> ListBucketInventoryConfigurationsOutcomeCallable;
         typedef std::future<ListBucketMetricsConfigurationsOutcome> ListBucketMetricsConfigurationsOutcomeCallable;
         typedef std::future<ListBucketsOutcome> ListBucketsOutcomeCallable;
@@ -350,6 +363,7 @@ namespace Aws
         typedef std::future<PutBucketAnalyticsConfigurationOutcome> PutBucketAnalyticsConfigurationOutcomeCallable;
         typedef std::future<PutBucketCorsOutcome> PutBucketCorsOutcomeCallable;
         typedef std::future<PutBucketEncryptionOutcome> PutBucketEncryptionOutcomeCallable;
+        typedef std::future<PutBucketIntelligentTieringConfigurationOutcome> PutBucketIntelligentTieringConfigurationOutcomeCallable;
         typedef std::future<PutBucketInventoryConfigurationOutcome> PutBucketInventoryConfigurationOutcomeCallable;
         typedef std::future<PutBucketLifecycleConfigurationOutcome> PutBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<PutBucketLoggingOutcome> PutBucketLoggingOutcomeCallable;
@@ -395,6 +409,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::DeleteBucketAnalyticsConfigurationRequest&, const Model::DeleteBucketAnalyticsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketAnalyticsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketCorsRequest&, const Model::DeleteBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketCorsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketEncryptionRequest&, const Model::DeleteBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketEncryptionResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::DeleteBucketIntelligentTieringConfigurationRequest&, const Model::DeleteBucketIntelligentTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketInventoryConfigurationRequest&, const Model::DeleteBucketInventoryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketInventoryConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketLifecycleRequest&, const Model::DeleteBucketLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketLifecycleResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketMetricsConfigurationRequest&, const Model::DeleteBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketMetricsConfigurationResponseReceivedHandler;
@@ -412,6 +427,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::GetBucketAnalyticsConfigurationRequest&, const Model::GetBucketAnalyticsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketAnalyticsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketCorsRequest&, const Model::GetBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketCorsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketEncryptionRequest&, const Model::GetBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketEncryptionResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetBucketIntelligentTieringConfigurationRequest&, const Model::GetBucketIntelligentTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketIntelligentTieringConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketInventoryConfigurationRequest&, const Model::GetBucketInventoryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketInventoryConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketLocationRequest&, const Model::GetBucketLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLocationResponseReceivedHandler;
@@ -437,6 +453,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::HeadBucketRequest&, const Model::HeadBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > HeadBucketResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::HeadObjectRequest&, const Model::HeadObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > HeadObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketAnalyticsConfigurationsRequest&, const Model::ListBucketAnalyticsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketAnalyticsConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::ListBucketIntelligentTieringConfigurationsRequest&, const Model::ListBucketIntelligentTieringConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketIntelligentTieringConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketInventoryConfigurationsRequest&, const Model::ListBucketInventoryConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketInventoryConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketMetricsConfigurationsRequest&, const Model::ListBucketMetricsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketMetricsConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
@@ -450,6 +467,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::PutBucketAnalyticsConfigurationRequest&, const Model::PutBucketAnalyticsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketAnalyticsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketCorsRequest&, const Model::PutBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketCorsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketEncryptionRequest&, const Model::PutBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketEncryptionResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutBucketIntelligentTieringConfigurationRequest&, const Model::PutBucketIntelligentTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketIntelligentTieringConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketInventoryConfigurationRequest&, const Model::PutBucketInventoryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketInventoryConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketLifecycleConfigurationRequest&, const Model::PutBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketLoggingRequest&, const Model::PutBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLoggingResponseReceivedHandler;
@@ -2125,6 +2143,97 @@ namespace Aws
         virtual void DeleteBucketEncryptionAsync(const Model::DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the S3 Intelligent-Tiering configuration from the specified
+         * bucket.</p> <p>The S3 Intelligent-Tiering storage class is designed to optimize
+         * storage costs by automatically moving data to the most cost-effective storage
+         * access tier, without additional operational overhead. S3 Intelligent-Tiering
+         * delivers automatic cost savings by moving data between access tiers, when access
+         * patterns change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for
+         * objects larger than 128 KB that you plan to store for at least 30 days. If the
+         * size of an object is less than 128 KB, it is not eligible for auto-tiering.
+         * Smaller objects can be stored, but they are always charged at the frequent
+         * access tier rates in the S3 Intelligent-Tiering storage class. </p> <p>If you
+         * delete an object before the end of the 30-day minimum storage duration period,
+         * you are charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBucketIntelligentTieringConfigurationOutcome DeleteBucketIntelligentTieringConfiguration(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the S3 Intelligent-Tiering configuration from the specified
+         * bucket.</p> <p>The S3 Intelligent-Tiering storage class is designed to optimize
+         * storage costs by automatically moving data to the most cost-effective storage
+         * access tier, without additional operational overhead. S3 Intelligent-Tiering
+         * delivers automatic cost savings by moving data between access tiers, when access
+         * patterns change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for
+         * objects larger than 128 KB that you plan to store for at least 30 days. If the
+         * size of an object is less than 128 KB, it is not eligible for auto-tiering.
+         * Smaller objects can be stored, but they are always charged at the frequent
+         * access tier rates in the S3 Intelligent-Tiering storage class. </p> <p>If you
+         * delete an object before the end of the 30-day minimum storage duration period,
+         * you are charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBucketIntelligentTieringConfigurationOutcomeCallable DeleteBucketIntelligentTieringConfigurationCallable(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the S3 Intelligent-Tiering configuration from the specified
+         * bucket.</p> <p>The S3 Intelligent-Tiering storage class is designed to optimize
+         * storage costs by automatically moving data to the most cost-effective storage
+         * access tier, without additional operational overhead. S3 Intelligent-Tiering
+         * delivers automatic cost savings by moving data between access tiers, when access
+         * patterns change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for
+         * objects larger than 128 KB that you plan to store for at least 30 days. If the
+         * size of an object is less than 128 KB, it is not eligible for auto-tiering.
+         * Smaller objects can be stored, but they are always charged at the frequent
+         * access tier rates in the S3 Intelligent-Tiering storage class. </p> <p>If you
+         * delete an object before the end of the 30-day minimum storage duration period,
+         * you are charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBucketIntelligentTieringConfigurationAsync(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request, const DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an inventory configuration (identified by the inventory ID) from the
          * bucket.</p> <p>To use this operation, you must have permissions to perform the
          * <code>s3:PutInventoryConfiguration</code> action. The bucket owner has this
@@ -3429,6 +3538,97 @@ namespace Aws
         virtual void GetBucketEncryptionAsync(const Model::GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>GetBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBucketIntelligentTieringConfigurationOutcome GetBucketIntelligentTieringConfiguration(const Model::GetBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>GetBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBucketIntelligentTieringConfigurationOutcomeCallable GetBucketIntelligentTieringConfigurationCallable(const Model::GetBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>GetBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBucketIntelligentTieringConfigurationAsync(const Model::GetBucketIntelligentTieringConfigurationRequest& request, const GetBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an inventory configuration (identified by the inventory configuration
          * ID) from the bucket.</p> <p>To use this operation, you must have permissions to
          * perform the <code>s3:GetInventoryConfiguration</code> action. The bucket owner
@@ -4424,7 +4624,8 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
          * Torrent</a>. For more information about returning the ACL of an object, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.</p>
-         * <p>If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE
+         * <p>If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
          * storage classes, before you can retrieve the object you must first restore a
          * copy using <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
@@ -4535,7 +4736,8 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
          * Torrent</a>. For more information about returning the ACL of an object, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.</p>
-         * <p>If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE
+         * <p>If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
          * storage classes, before you can retrieve the object you must first restore a
          * copy using <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
@@ -4648,7 +4850,8 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon S3
          * Torrent</a>. For more information about returning the ACL of an object, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.</p>
-         * <p>If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE
+         * <p>If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
          * storage classes, before you can retrieve the object you must first restore a
          * copy using <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
@@ -5450,6 +5653,97 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBucketAnalyticsConfigurationsAsync(const Model::ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>ListBucketIntelligentTieringConfigurations</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBucketIntelligentTieringConfigurationsOutcome ListBucketIntelligentTieringConfigurations(const Model::ListBucketIntelligentTieringConfigurationsRequest& request) const;
+
+        /**
+         * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>ListBucketIntelligentTieringConfigurations</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBucketIntelligentTieringConfigurationsOutcomeCallable ListBucketIntelligentTieringConfigurationsCallable(const Model::ListBucketIntelligentTieringConfigurationsRequest& request) const;
+
+        /**
+         * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>ListBucketIntelligentTieringConfigurations</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBucketIntelligentTieringConfigurationsAsync(const Model::ListBucketIntelligentTieringConfigurationsRequest& request, const ListBucketIntelligentTieringConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of inventory configurations for the bucket. You can have up to
@@ -6919,6 +7213,97 @@ namespace Aws
         virtual void PutBucketEncryptionAsync(const Model::PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>PutBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBucketIntelligentTieringConfigurationOutcome PutBucketIntelligentTieringConfiguration(const Model::PutBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>PutBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBucketIntelligentTieringConfigurationOutcomeCallable PutBucketIntelligentTieringConfigurationCallable(const Model::PutBucketIntelligentTieringConfigurationRequest& request) const;
+
+        /**
+         * <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket.</p>
+         * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage
+         * costs by automatically moving data to the most cost-effective storage access
+         * tier, without additional operational overhead. S3 Intelligent-Tiering delivers
+         * automatic cost savings by moving data between access tiers, when access patterns
+         * change.</p> <p>The S3 Intelligent-Tiering storage class is suitable for objects
+         * larger than 128 KB that you plan to store for at least 30 days. If the size of
+         * an object is less than 128 KB, it is not eligible for auto-tiering. Smaller
+         * objects can be stored, but they are always charged at the frequent access tier
+         * rates in the S3 Intelligent-Tiering storage class. </p> <p>If you delete an
+         * object before the end of the 30-day minimum storage duration period, you are
+         * charged for 30 days. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+         * class for automatically optimizing frequently and infrequently accessed
+         * objects</a>.</p> <p>Operations related to
+         * <code>PutBucketIntelligentTieringConfiguration</code> include: </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBucketIntelligentTieringConfigurationAsync(const Model::PutBucketIntelligentTieringConfigurationRequest& request, const PutBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This implementation of the <code>PUT</code> operation adds an inventory
          * configuration (identified by the inventory ID) to the bucket. You can have up to
          * 1,000 inventory configurations per bucket. </p> <p>Amazon S3 inventory generates
@@ -7628,14 +8013,14 @@ namespace Aws
         /**
          * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
          * To use this operation, you must have the
-         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * <code>s3:PutBucketOwnershipControls</code> permission. For more information
          * about Amazon S3 permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
          * Ownership, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
          * Object Ownership</a>. </p> <p>The following operations are related to
-         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <code>PutBucketOwnershipControls</code>:</p> <ul> <li> <p>
          * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
          * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
@@ -7646,14 +8031,14 @@ namespace Aws
         /**
          * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
          * To use this operation, you must have the
-         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * <code>s3:PutBucketOwnershipControls</code> permission. For more information
          * about Amazon S3 permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
          * Ownership, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
          * Object Ownership</a>. </p> <p>The following operations are related to
-         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <code>PutBucketOwnershipControls</code>:</p> <ul> <li> <p>
          * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
          * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
@@ -7666,14 +8051,14 @@ namespace Aws
         /**
          * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
          * To use this operation, you must have the
-         * <code>s3:GetBucketOwnershipControls</code> permission. For more information
+         * <code>s3:PutBucketOwnershipControls</code> permission. For more information
          * about Amazon S3 permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. </p> <p>For information about Amazon S3 Object
          * Ownership, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using
          * Object Ownership</a>. </p> <p>The following operations are related to
-         * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
+         * <code>PutBucketOwnershipControls</code>:</p> <ul> <li> <p>
          * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
          * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
@@ -9241,49 +9626,51 @@ namespace Aws
          * issuing duplicate requests.</p> </li> <li> <p> Amazon S3 accepts a select
          * request even if the object has already been restored. A select request doesn’t
          * return error response <code>409</code>.</p> </li> </ul> <p> <b>Restoring
-         * Archives</b> </p> <p>Objects in the GLACIER and DEEP_ARCHIVE storage classes are
-         * archived. To access an archived object, you must first initiate a restore
-         * request. This restores a temporary copy of the archived object. In a restore
-         * request, you specify the number of days that you want the restored copy to
-         * exist. After the specified period, Amazon S3 deletes the temporary copy but the
-         * object remains archived in the GLACIER or DEEP_ARCHIVE storage class that object
-         * was restored from. </p> <p>To restore a specific object version, you can provide
-         * a version ID. If you don't provide a version ID, Amazon S3 restores the current
-         * version.</p> <p>The time it takes restore jobs to finish depends on which
-         * storage class the object is being restored from and which data access tier you
-         * specify. </p> <p>When restoring an archived object (or using a select request),
-         * you can specify one of the following data access tier options in the
+         * Archives</b> </p> <p>Objects that you archive to the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
+         * storage classes are not accessible in real time. For objects in Archive Access
+         * tier or Deep Archive Access tier you must first initiate a restore request, and
+         * then wait until the object is moved into the Frequent Access tier. For objects
+         * in S3 Glacier or S3 Glacier Deep Archive you must first initiate a restore
+         * request, and then wait until a temporary copy of the object is available. To
+         * access an archived object, you must restore the object for the duration (number
+         * of days) that you specify.</p> <p>To restore a specific object version, you can
+         * provide a version ID. If you don't provide a version ID, Amazon S3 restores the
+         * current version.</p> <p>When restoring an archived object (or using a select
+         * request), you can specify one of the following data access tier options in the
          * <code>Tier</code> element of the request body: </p> <ul> <li> <p> <b>
          * <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-         * your data stored in the GLACIER storage class when occasional urgent requests
-         * for a subset of archives are required. For all but the largest archived objects
-         * (250 MB+), data accessed using Expedited retrievals are typically made available
-         * within 1–5 minutes. Provisioned capacity ensures that retrieval capacity for
-         * Expedited retrievals is available when you need it. Expedited retrievals and
-         * provisioned capacity are not available for the DEEP_ARCHIVE storage class.</p>
-         * </li> <li> <p> <b> <code>Standard</code> </b> - S3 Standard retrievals allow you
-         * to access any of your archived objects within several hours. This is the default
-         * option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
-         * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours
-         * from the GLACIER storage class and typically complete within 12 hours from the
-         * DEEP_ARCHIVE storage class. </p> </li> <li> <p> <b> <code>Bulk</code> </b> -
-         * Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling
-         * you to retrieve large amounts, even petabytes, of data inexpensively in a day.
-         * Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-         * class and typically complete within 48 hours from the DEEP_ARCHIVE storage
-         * class.</p> </li> </ul> <p>For more information about archive retrieval options
-         * and provisioned capacity for <code>Expedited</code> data access, see <a
+         * your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+         * class when occasional urgent requests for a subset of archives are required. For
+         * all but the largest archived objects (250 MB+), data accessed using Expedited
+         * retrievals is typically made available within 1–5 minutes. Provisioned capacity
+         * ensures that retrieval capacity for Expedited retrievals is available when you
+         * need it. Expedited retrievals and provisioned capacity are not available for
+         * objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep
+         * Archive storage class.</p> </li> <li> <p> <b> <code>Standard</code> </b> -
+         * Standard retrievals allow you to access any of your archived objects within
+         * several hours. This is the default option for retrieval requests that do not
+         * specify the retrieval option. Standard retrievals typically finish within 3–5
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 12 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Standard retrievals are free for objects stored in S3 Intelligent-Tiering.</p>
+         * </li> <li> <p> <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost
+         * retrieval option in S3 Glacier, enabling you to retrieve large amounts, even
+         * petabytes, of data inexpensively. Bulk retrievals typically finish within 5–12
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 48 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.</p> </li>
+         * </ul> <p>For more information about archive retrieval options and provisioned
+         * capacity for <code>Expedited</code> data access, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>. </p> <p>You can use Amazon S3 restore speed upgrade to change the
-         * restore speed to a faster speed while it is in progress. You upgrade the speed
-         * of an in-progress restoration by issuing another restore request to the same
-         * object, setting a new <code>Tier</code> request element. When issuing a request
-         * to upgrade the restore tier, you must choose a tier that is faster than the tier
-         * that the in-progress restore is using. You must not change any other parameters,
-         * such as the <code>Days</code> request element. For more information, see <a
+         * restore speed to a faster speed while it is in progress. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-         * Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple
+         * Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple
          * Storage Service Developer Guide</i>. </p> <p>To get the status of object
          * restoration, you can send a <code>HEAD</code> request. Operations return the
          * <code>x-amz-restore</code> header, which provides information about the
@@ -9309,17 +9696,16 @@ namespace Aws
          * Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p> <b>Responses</b> </p> <p>A successful operation returns
          * either the <code>200 OK</code> or <code>202 Accepted</code> status code. </p>
-         * <ul> <li> <p>If the object copy is not previously restored, then Amazon S3
-         * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
-         * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
-         * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
-         * <i>Cause: Object restore is already in progress. (This error does not apply to
-         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
-         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
-         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
-         * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
-         * Glacier expedited retrievals are currently not available. Try again later.
+         * <ul> <li> <p>If the object is not previously restored, then Amazon S3 returns
+         * <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the object is
+         * previously restored, Amazon S3 returns <code>200 OK</code> in the response. </p>
+         * </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p>
+         * <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object
+         * restore is already in progress. (This error does not apply to SELECT type
+         * requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p>
+         * </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li>
+         * <ul> <li> <p> <i>Code: GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li>
+         * <p> <i>Cause: expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
          * This error applies only to Expedited retrievals and not to S3 Standard or Bulk
          * retrievals.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 503</i> </p> </li>
@@ -9409,49 +9795,51 @@ namespace Aws
          * issuing duplicate requests.</p> </li> <li> <p> Amazon S3 accepts a select
          * request even if the object has already been restored. A select request doesn’t
          * return error response <code>409</code>.</p> </li> </ul> <p> <b>Restoring
-         * Archives</b> </p> <p>Objects in the GLACIER and DEEP_ARCHIVE storage classes are
-         * archived. To access an archived object, you must first initiate a restore
-         * request. This restores a temporary copy of the archived object. In a restore
-         * request, you specify the number of days that you want the restored copy to
-         * exist. After the specified period, Amazon S3 deletes the temporary copy but the
-         * object remains archived in the GLACIER or DEEP_ARCHIVE storage class that object
-         * was restored from. </p> <p>To restore a specific object version, you can provide
-         * a version ID. If you don't provide a version ID, Amazon S3 restores the current
-         * version.</p> <p>The time it takes restore jobs to finish depends on which
-         * storage class the object is being restored from and which data access tier you
-         * specify. </p> <p>When restoring an archived object (or using a select request),
-         * you can specify one of the following data access tier options in the
+         * Archives</b> </p> <p>Objects that you archive to the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
+         * storage classes are not accessible in real time. For objects in Archive Access
+         * tier or Deep Archive Access tier you must first initiate a restore request, and
+         * then wait until the object is moved into the Frequent Access tier. For objects
+         * in S3 Glacier or S3 Glacier Deep Archive you must first initiate a restore
+         * request, and then wait until a temporary copy of the object is available. To
+         * access an archived object, you must restore the object for the duration (number
+         * of days) that you specify.</p> <p>To restore a specific object version, you can
+         * provide a version ID. If you don't provide a version ID, Amazon S3 restores the
+         * current version.</p> <p>When restoring an archived object (or using a select
+         * request), you can specify one of the following data access tier options in the
          * <code>Tier</code> element of the request body: </p> <ul> <li> <p> <b>
          * <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-         * your data stored in the GLACIER storage class when occasional urgent requests
-         * for a subset of archives are required. For all but the largest archived objects
-         * (250 MB+), data accessed using Expedited retrievals are typically made available
-         * within 1–5 minutes. Provisioned capacity ensures that retrieval capacity for
-         * Expedited retrievals is available when you need it. Expedited retrievals and
-         * provisioned capacity are not available for the DEEP_ARCHIVE storage class.</p>
-         * </li> <li> <p> <b> <code>Standard</code> </b> - S3 Standard retrievals allow you
-         * to access any of your archived objects within several hours. This is the default
-         * option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
-         * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours
-         * from the GLACIER storage class and typically complete within 12 hours from the
-         * DEEP_ARCHIVE storage class. </p> </li> <li> <p> <b> <code>Bulk</code> </b> -
-         * Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling
-         * you to retrieve large amounts, even petabytes, of data inexpensively in a day.
-         * Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-         * class and typically complete within 48 hours from the DEEP_ARCHIVE storage
-         * class.</p> </li> </ul> <p>For more information about archive retrieval options
-         * and provisioned capacity for <code>Expedited</code> data access, see <a
+         * your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+         * class when occasional urgent requests for a subset of archives are required. For
+         * all but the largest archived objects (250 MB+), data accessed using Expedited
+         * retrievals is typically made available within 1–5 minutes. Provisioned capacity
+         * ensures that retrieval capacity for Expedited retrievals is available when you
+         * need it. Expedited retrievals and provisioned capacity are not available for
+         * objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep
+         * Archive storage class.</p> </li> <li> <p> <b> <code>Standard</code> </b> -
+         * Standard retrievals allow you to access any of your archived objects within
+         * several hours. This is the default option for retrieval requests that do not
+         * specify the retrieval option. Standard retrievals typically finish within 3–5
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 12 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Standard retrievals are free for objects stored in S3 Intelligent-Tiering.</p>
+         * </li> <li> <p> <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost
+         * retrieval option in S3 Glacier, enabling you to retrieve large amounts, even
+         * petabytes, of data inexpensively. Bulk retrievals typically finish within 5–12
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 48 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.</p> </li>
+         * </ul> <p>For more information about archive retrieval options and provisioned
+         * capacity for <code>Expedited</code> data access, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>. </p> <p>You can use Amazon S3 restore speed upgrade to change the
-         * restore speed to a faster speed while it is in progress. You upgrade the speed
-         * of an in-progress restoration by issuing another restore request to the same
-         * object, setting a new <code>Tier</code> request element. When issuing a request
-         * to upgrade the restore tier, you must choose a tier that is faster than the tier
-         * that the in-progress restore is using. You must not change any other parameters,
-         * such as the <code>Days</code> request element. For more information, see <a
+         * restore speed to a faster speed while it is in progress. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-         * Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple
+         * Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple
          * Storage Service Developer Guide</i>. </p> <p>To get the status of object
          * restoration, you can send a <code>HEAD</code> request. Operations return the
          * <code>x-amz-restore</code> header, which provides information about the
@@ -9477,17 +9865,16 @@ namespace Aws
          * Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p> <b>Responses</b> </p> <p>A successful operation returns
          * either the <code>200 OK</code> or <code>202 Accepted</code> status code. </p>
-         * <ul> <li> <p>If the object copy is not previously restored, then Amazon S3
-         * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
-         * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
-         * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
-         * <i>Cause: Object restore is already in progress. (This error does not apply to
-         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
-         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
-         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
-         * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
-         * Glacier expedited retrievals are currently not available. Try again later.
+         * <ul> <li> <p>If the object is not previously restored, then Amazon S3 returns
+         * <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the object is
+         * previously restored, Amazon S3 returns <code>200 OK</code> in the response. </p>
+         * </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p>
+         * <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object
+         * restore is already in progress. (This error does not apply to SELECT type
+         * requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p>
+         * </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li>
+         * <ul> <li> <p> <i>Code: GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li>
+         * <p> <i>Cause: expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
          * This error applies only to Expedited retrievals and not to S3 Standard or Bulk
          * retrievals.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 503</i> </p> </li>
@@ -9579,49 +9966,51 @@ namespace Aws
          * issuing duplicate requests.</p> </li> <li> <p> Amazon S3 accepts a select
          * request even if the object has already been restored. A select request doesn’t
          * return error response <code>409</code>.</p> </li> </ul> <p> <b>Restoring
-         * Archives</b> </p> <p>Objects in the GLACIER and DEEP_ARCHIVE storage classes are
-         * archived. To access an archived object, you must first initiate a restore
-         * request. This restores a temporary copy of the archived object. In a restore
-         * request, you specify the number of days that you want the restored copy to
-         * exist. After the specified period, Amazon S3 deletes the temporary copy but the
-         * object remains archived in the GLACIER or DEEP_ARCHIVE storage class that object
-         * was restored from. </p> <p>To restore a specific object version, you can provide
-         * a version ID. If you don't provide a version ID, Amazon S3 restores the current
-         * version.</p> <p>The time it takes restore jobs to finish depends on which
-         * storage class the object is being restored from and which data access tier you
-         * specify. </p> <p>When restoring an archived object (or using a select request),
-         * you can specify one of the following data access tier options in the
+         * Archives</b> </p> <p>Objects that you archive to the S3 Glacier, S3 Glacier Deep
+         * Archive, S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive
+         * storage classes are not accessible in real time. For objects in Archive Access
+         * tier or Deep Archive Access tier you must first initiate a restore request, and
+         * then wait until the object is moved into the Frequent Access tier. For objects
+         * in S3 Glacier or S3 Glacier Deep Archive you must first initiate a restore
+         * request, and then wait until a temporary copy of the object is available. To
+         * access an archived object, you must restore the object for the duration (number
+         * of days) that you specify.</p> <p>To restore a specific object version, you can
+         * provide a version ID. If you don't provide a version ID, Amazon S3 restores the
+         * current version.</p> <p>When restoring an archived object (or using a select
+         * request), you can specify one of the following data access tier options in the
          * <code>Tier</code> element of the request body: </p> <ul> <li> <p> <b>
          * <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-         * your data stored in the GLACIER storage class when occasional urgent requests
-         * for a subset of archives are required. For all but the largest archived objects
-         * (250 MB+), data accessed using Expedited retrievals are typically made available
-         * within 1–5 minutes. Provisioned capacity ensures that retrieval capacity for
-         * Expedited retrievals is available when you need it. Expedited retrievals and
-         * provisioned capacity are not available for the DEEP_ARCHIVE storage class.</p>
-         * </li> <li> <p> <b> <code>Standard</code> </b> - S3 Standard retrievals allow you
-         * to access any of your archived objects within several hours. This is the default
-         * option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
-         * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours
-         * from the GLACIER storage class and typically complete within 12 hours from the
-         * DEEP_ARCHIVE storage class. </p> </li> <li> <p> <b> <code>Bulk</code> </b> -
-         * Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling
-         * you to retrieve large amounts, even petabytes, of data inexpensively in a day.
-         * Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-         * class and typically complete within 48 hours from the DEEP_ARCHIVE storage
-         * class.</p> </li> </ul> <p>For more information about archive retrieval options
-         * and provisioned capacity for <code>Expedited</code> data access, see <a
+         * your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+         * class when occasional urgent requests for a subset of archives are required. For
+         * all but the largest archived objects (250 MB+), data accessed using Expedited
+         * retrievals is typically made available within 1–5 minutes. Provisioned capacity
+         * ensures that retrieval capacity for Expedited retrievals is available when you
+         * need it. Expedited retrievals and provisioned capacity are not available for
+         * objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep
+         * Archive storage class.</p> </li> <li> <p> <b> <code>Standard</code> </b> -
+         * Standard retrievals allow you to access any of your archived objects within
+         * several hours. This is the default option for retrieval requests that do not
+         * specify the retrieval option. Standard retrievals typically finish within 3–5
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 12 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Standard retrievals are free for objects stored in S3 Intelligent-Tiering.</p>
+         * </li> <li> <p> <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost
+         * retrieval option in S3 Glacier, enabling you to retrieve large amounts, even
+         * petabytes, of data inexpensively. Bulk retrievals typically finish within 5–12
+         * hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive
+         * storage class. They typically finish within 48 hours for objects stored in the
+         * S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive storage class.
+         * Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.</p> </li>
+         * </ul> <p>For more information about archive retrieval options and provisioned
+         * capacity for <code>Expedited</code> data access, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a> in the <i>Amazon Simple Storage Service Developer
          * Guide</i>. </p> <p>You can use Amazon S3 restore speed upgrade to change the
-         * restore speed to a faster speed while it is in progress. You upgrade the speed
-         * of an in-progress restoration by issuing another restore request to the same
-         * object, setting a new <code>Tier</code> request element. When issuing a request
-         * to upgrade the restore tier, you must choose a tier that is faster than the tier
-         * that the in-progress restore is using. You must not change any other parameters,
-         * such as the <code>Days</code> request element. For more information, see <a
+         * restore speed to a faster speed while it is in progress. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-         * Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple
+         * Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple
          * Storage Service Developer Guide</i>. </p> <p>To get the status of object
          * restoration, you can send a <code>HEAD</code> request. Operations return the
          * <code>x-amz-restore</code> header, which provides information about the
@@ -9647,17 +10036,16 @@ namespace Aws
          * Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer
          * Guide</i>.</p> <p> <b>Responses</b> </p> <p>A successful operation returns
          * either the <code>200 OK</code> or <code>202 Accepted</code> status code. </p>
-         * <ul> <li> <p>If the object copy is not previously restored, then Amazon S3
-         * returns <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the
-         * object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the
-         * response. </p> </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul>
-         * <li> <ul> <li> <p> <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p>
-         * <i>Cause: Object restore is already in progress. (This error does not apply to
-         * SELECT type requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409
-         * Conflict</i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p>
-         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
-         * GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause: S3
-         * Glacier expedited retrievals are currently not available. Try again later.
+         * <ul> <li> <p>If the object is not previously restored, then Amazon S3 returns
+         * <code>202 Accepted</code> in the response. </p> </li> <li> <p>If the object is
+         * previously restored, Amazon S3 returns <code>200 OK</code> in the response. </p>
+         * </li> </ul> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p>
+         * <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object
+         * restore is already in progress. (This error does not apply to SELECT type
+         * requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p>
+         * </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li>
+         * <ul> <li> <p> <i>Code: GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li>
+         * <p> <i>Cause: expedited retrievals are currently not available. Try again later.
          * (Returned if there is insufficient capacity to process the Expedited request.
          * This error applies only to Expedited retrievals and not to S3 Standard or Bulk
          * retrievals.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 503</i> </p> </li>
@@ -10509,6 +10897,7 @@ namespace Aws
         void DeleteBucketAnalyticsConfigurationAsyncHelper(const Model::DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketCorsAsyncHelper(const Model::DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketEncryptionAsyncHelper(const Model::DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBucketIntelligentTieringConfigurationAsyncHelper(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request, const DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketInventoryConfigurationAsyncHelper(const Model::DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketLifecycleAsyncHelper(const Model::DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketMetricsConfigurationAsyncHelper(const Model::DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10526,6 +10915,7 @@ namespace Aws
         void GetBucketAnalyticsConfigurationAsyncHelper(const Model::GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketCorsAsyncHelper(const Model::GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketEncryptionAsyncHelper(const Model::GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBucketIntelligentTieringConfigurationAsyncHelper(const Model::GetBucketIntelligentTieringConfigurationRequest& request, const GetBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketInventoryConfigurationAsyncHelper(const Model::GetBucketInventoryConfigurationRequest& request, const GetBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketLifecycleConfigurationAsyncHelper(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketLocationAsyncHelper(const Model::GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10551,6 +10941,7 @@ namespace Aws
         void HeadBucketAsyncHelper(const Model::HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void HeadObjectAsyncHelper(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBucketAnalyticsConfigurationsAsyncHelper(const Model::ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBucketIntelligentTieringConfigurationsAsyncHelper(const Model::ListBucketIntelligentTieringConfigurationsRequest& request, const ListBucketIntelligentTieringConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBucketInventoryConfigurationsAsyncHelper(const Model::ListBucketInventoryConfigurationsRequest& request, const ListBucketInventoryConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBucketMetricsConfigurationsAsyncHelper(const Model::ListBucketMetricsConfigurationsRequest& request, const ListBucketMetricsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBucketsAsyncHelper(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10564,6 +10955,7 @@ namespace Aws
         void PutBucketAnalyticsConfigurationAsyncHelper(const Model::PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketCorsAsyncHelper(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketEncryptionAsyncHelper(const Model::PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBucketIntelligentTieringConfigurationAsyncHelper(const Model::PutBucketIntelligentTieringConfigurationRequest& request, const PutBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketInventoryConfigurationAsyncHelper(const Model::PutBucketInventoryConfigurationRequest& request, const PutBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketLifecycleConfigurationAsyncHelper(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketLoggingAsyncHelper(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

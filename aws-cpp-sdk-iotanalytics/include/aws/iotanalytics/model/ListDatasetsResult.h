@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline const Aws::Vector<DatasetSummary>& GetDatasetSummaries() const{ return m_datasetSummaries; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline void SetDatasetSummaries(const Aws::Vector<DatasetSummary>& value) { m_datasetSummaries = value; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline void SetDatasetSummaries(Aws::Vector<DatasetSummary>&& value) { m_datasetSummaries = std::move(value); }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& WithDatasetSummaries(const Aws::Vector<DatasetSummary>& value) { SetDatasetSummaries(value); return *this;}
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& WithDatasetSummaries(Aws::Vector<DatasetSummary>&& value) { SetDatasetSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& AddDatasetSummaries(const DatasetSummary& value) { m_datasetSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& AddDatasetSummaries(DatasetSummary&& value) { m_datasetSummaries.push_back(std::move(value)); return *this; }
 

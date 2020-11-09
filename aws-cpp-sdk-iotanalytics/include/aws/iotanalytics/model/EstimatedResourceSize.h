@@ -38,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline double GetEstimatedSizeInBytes() const{ return m_estimatedSizeInBytes; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline bool EstimatedSizeInBytesHasBeenSet() const { return m_estimatedSizeInBytesHasBeenSet; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline void SetEstimatedSizeInBytes(double value) { m_estimatedSizeInBytesHasBeenSet = true; m_estimatedSizeInBytes = value; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline EstimatedResourceSize& WithEstimatedSizeInBytes(double value) { SetEstimatedSizeInBytes(value); return *this;}
 

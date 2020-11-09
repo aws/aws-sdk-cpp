@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/ArchiveStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -270,6 +271,32 @@ namespace Model
      * Objects: General Considerations</a>.</p>
      */
     inline HeadObjectResult& WithRestore(const char* value) { SetRestore(value); return *this;}
+
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline const ArchiveStatus& GetArchiveStatus() const{ return m_archiveStatus; }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline void SetArchiveStatus(const ArchiveStatus& value) { m_archiveStatus = value; }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline void SetArchiveStatus(ArchiveStatus&& value) { m_archiveStatus = std::move(value); }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline HeadObjectResult& WithArchiveStatus(const ArchiveStatus& value) { SetArchiveStatus(value); return *this;}
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline HeadObjectResult& WithArchiveStatus(ArchiveStatus&& value) { SetArchiveStatus(std::move(value)); return *this;}
 
 
     /**
@@ -1293,6 +1320,8 @@ namespace Model
     Aws::String m_expiration;
 
     Aws::String m_restore;
+
+    ArchiveStatus m_archiveStatus;
 
     Aws::Utils::DateTime m_lastModified;
 

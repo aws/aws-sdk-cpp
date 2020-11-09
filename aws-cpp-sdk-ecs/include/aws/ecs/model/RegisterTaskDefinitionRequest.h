@@ -659,50 +659,66 @@ namespace Model
 
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 

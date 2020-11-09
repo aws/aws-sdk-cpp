@@ -9,6 +9,7 @@
 #include <aws/ecs/model/HostVolumeProperties.h>
 #include <aws/ecs/model/DockerVolumeConfiguration.h>
 #include <aws/ecs/model/EFSVolumeConfiguration.h>
+#include <aws/ecs/model/FSxWindowsFileServerVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -27,12 +28,14 @@ namespace Model
 {
 
   /**
-   * <p>A data volume used in a task definition. For tasks that use Amazon Elastic
-   * File System (Amazon EFS) file storage, specify an
-   * <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify
-   * a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host
-   * volume, specify a <code>host</code> and optional <code>sourcePath</code>. For
-   * more information, see <a
+   * <p>A data volume used in a task definition. For tasks that use the Amazon
+   * Elastic File System (Amazon EFS), specify an
+   * <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for
+   * Windows File Server file system, specify a
+   * <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a
+   * Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that
+   * use a bind mount host volume, specify a <code>host</code> and optional
+   * <code>sourcePath</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
    * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
@@ -288,6 +291,43 @@ namespace Model
      */
     inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline const FSxWindowsFileServerVolumeConfiguration& GetFsxWindowsFileServerVolumeConfiguration() const{ return m_fsxWindowsFileServerVolumeConfiguration; }
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline bool FsxWindowsFileServerVolumeConfigurationHasBeenSet() const { return m_fsxWindowsFileServerVolumeConfigurationHasBeenSet; }
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline void SetFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = value; }
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline void SetFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = std::move(value); }
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline Volume& WithFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { SetFsxWindowsFileServerVolumeConfiguration(value); return *this;}
+
+    /**
+     * <p>This parameter is specified when you are using Amazon FSx for Windows File
+     * Server file system for task storage.</p>
+     */
+    inline Volume& WithFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { SetFsxWindowsFileServerVolumeConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -301,6 +341,9 @@ namespace Model
 
     EFSVolumeConfiguration m_efsVolumeConfiguration;
     bool m_efsVolumeConfigurationHasBeenSet;
+
+    FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
+    bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet;
   };
 
 } // namespace Model
