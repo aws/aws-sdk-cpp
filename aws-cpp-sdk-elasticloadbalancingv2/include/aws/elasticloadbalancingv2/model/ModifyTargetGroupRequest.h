@@ -82,54 +82,54 @@ namespace Model
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols
-     * are not supported for health checks.</p> <p>With Network Load Balancers, you
-     * can't modify this setting.</p>
+     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.</p> <p>With Network Load
+     * Balancers, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
@@ -263,33 +263,29 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
-     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
-     * <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For TCP health checks, the supported values are 10 or 30
+     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
-     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
-     * <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For TCP health checks, the supported values are 10 or 30
+     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
-     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
-     * <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For TCP health checks, the supported values are 10 or 30
+     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For HTTP and HTTPS health checks, the range is 5 to 300
-     * seconds. For TPC health checks, the supported values are 10 or 30 seconds.</p>
-     * <p>With Network Load Balancers, you can't modify this setting.</p>
+     * individual target. For TCP health checks, the supported values are 10 or 30
+     * seconds.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 

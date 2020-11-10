@@ -83,7 +83,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -100,7 +101,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -117,7 +119,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -134,7 +137,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -151,7 +155,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -168,7 +173,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -185,7 +191,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -202,7 +209,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

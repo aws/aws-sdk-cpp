@@ -185,7 +185,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
@@ -196,7 +196,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
@@ -207,7 +207,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
@@ -218,7 +218,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
@@ -229,7 +229,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
@@ -240,7 +240,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
@@ -251,7 +251,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
@@ -262,7 +262,7 @@ namespace Model
      * <p>Required if the policy type is <code>StepScaling</code> or
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
 
@@ -303,7 +303,7 @@ namespace Model
      * <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
      * largest instance weight.</p> 
@@ -321,7 +321,7 @@ namespace Model
      * <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
      * largest instance weight.</p> 
@@ -339,7 +339,7 @@ namespace Model
      * <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
      * largest instance weight.</p> 
@@ -357,7 +357,7 @@ namespace Model
      * <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-     * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
      * largest instance weight.</p> 
@@ -408,7 +408,7 @@ namespace Model
      * the Auto Scaling group.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
@@ -419,7 +419,7 @@ namespace Model
      * the Auto Scaling group.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
@@ -430,7 +430,7 @@ namespace Model
      * the Auto Scaling group.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
@@ -441,7 +441,7 @@ namespace Model
      * the Auto Scaling group.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
@@ -707,7 +707,7 @@ namespace Model
      * <p>Indicates whether the scaling policy is enabled or disabled. The default is
      * enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
-     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -716,7 +716,7 @@ namespace Model
      * <p>Indicates whether the scaling policy is enabled or disabled. The default is
      * enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
-     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -725,7 +725,7 @@ namespace Model
      * <p>Indicates whether the scaling policy is enabled or disabled. The default is
      * enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
-     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
@@ -734,7 +734,7 @@ namespace Model
      * <p>Indicates whether the scaling policy is enabled or disabled. The default is
      * enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
-     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}

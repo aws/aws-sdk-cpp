@@ -105,25 +105,29 @@ namespace Model
 
 
     /**
-     * <p>The port on which the target is listening. Not used if the target is a Lambda
+     * <p>The port on which the target is listening. If the target group protocol is
+     * GENEVE, the supported port is 6081. Not used if the target is a Lambda
      * function.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port on which the target is listening. Not used if the target is a Lambda
+     * <p>The port on which the target is listening. If the target group protocol is
+     * GENEVE, the supported port is 6081. Not used if the target is a Lambda
      * function.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port on which the target is listening. Not used if the target is a Lambda
+     * <p>The port on which the target is listening. If the target group protocol is
+     * GENEVE, the supported port is 6081. Not used if the target is a Lambda
      * function.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port on which the target is listening. Not used if the target is a Lambda
+     * <p>The port on which the target is listening. If the target group protocol is
+     * GENEVE, the supported port is 6081. Not used if the target is a Lambda
      * function.</p>
      */
     inline TargetDescription& WithPort(int value) { SetPort(value); return *this;}

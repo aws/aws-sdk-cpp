@@ -85,230 +85,154 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline CreateListenerRequest& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol for connections from clients to the load balancer. For
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
-     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and
-     * TCP_UDP.</p>
+     * Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You cannot specify a protocol for a Gateway Load Balancer.</p>
      */
     inline CreateListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>The port on which the load balancer is listening.</p>
+     * <p>The port on which the load balancer is listening. You cannot specify a port
+     * for a Gateway Load Balancer.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port on which the load balancer is listening.</p>
+     * <p>The port on which the load balancer is listening. You cannot specify a port
+     * for a Gateway Load Balancer.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port on which the load balancer is listening.</p>
+     * <p>The port on which the load balancer is listening. You cannot specify a port
+     * for a Gateway Load Balancer.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port on which the load balancer is listening.</p>
+     * <p>The port on which the load balancer is listening. You cannot specify a port
+     * for a Gateway Load Balancer.</p>
      */
     inline CreateListenerRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
-     * and ciphers are supported. The following are the possible values:</p> <ul> <li>
-     * <p> <code>ELBSecurityPolicy-2016-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code> </p> </li> <li> <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> </p> </li> </ul> <p>For more
-     * information, see <a
+     * and ciphers are supported.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Application Load Balancers Guide</i> and <a
+     * policies</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 
@@ -316,64 +240,56 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline CreateListenerRequest& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline CreateListenerRequest& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline CreateListenerRequest& AddCertificates(const Certificate& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default certificate for the listener. You must
      * provide exactly one certificate. Set <code>CertificateArn</code> to the
-     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
-     * certificate list for the listener, use <a>AddListenerCertificates</a>.</p>
+     * certificate ARN but do not set <code>IsDefault</code>.</p>
      */
     inline CreateListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
@@ -427,7 +343,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlpnPolicy() const{ return m_alpnPolicy; }
 
@@ -439,7 +355,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline bool AlpnPolicyHasBeenSet() const { return m_alpnPolicyHasBeenSet; }
 
@@ -451,7 +367,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline void SetAlpnPolicy(const Aws::Vector<Aws::String>& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = value; }
 
@@ -463,7 +379,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline void SetAlpnPolicy(Aws::Vector<Aws::String>&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = std::move(value); }
 
@@ -475,7 +391,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& WithAlpnPolicy(const Aws::Vector<Aws::String>& value) { SetAlpnPolicy(value); return *this;}
 
@@ -487,7 +403,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& WithAlpnPolicy(Aws::Vector<Aws::String>&& value) { SetAlpnPolicy(std::move(value)); return *this;}
 
@@ -499,7 +415,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& AddAlpnPolicy(const Aws::String& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
 
@@ -511,7 +427,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& AddAlpnPolicy(Aws::String&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(std::move(value)); return *this; }
 
@@ -523,7 +439,7 @@ namespace Model
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline CreateListenerRequest& AddAlpnPolicy(const char* value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
 

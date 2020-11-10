@@ -43,6 +43,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -51,6 +55,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -59,6 +64,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -67,6 +76,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -75,6 +85,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -83,6 +97,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -91,6 +106,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -99,6 +118,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -107,6 +127,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -115,6 +139,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -123,6 +148,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -131,6 +160,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -139,6 +169,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -147,6 +181,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -155,6 +190,10 @@ namespace Model
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
+     * <p>condition-values-per-alb-rule</p> </li> <li>
+     * <p>condition-wildcards-per-alb-rule</p> </li> <li> <p>gateway-load-balancers</p>
+     * </li> <li> <p>gateway-load-balancers-per-vpc</p> </li> <li>
+     * <p>geneve-target-groups</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
@@ -163,6 +202,7 @@ namespace Model
      * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
      * <p>target-groups-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */

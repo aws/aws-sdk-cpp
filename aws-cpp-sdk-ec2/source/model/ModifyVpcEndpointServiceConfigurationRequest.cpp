@@ -20,7 +20,9 @@ ModifyVpcEndpointServiceConfigurationRequest::ModifyVpcEndpointServiceConfigurat
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
     m_addNetworkLoadBalancerArnsHasBeenSet(false),
-    m_removeNetworkLoadBalancerArnsHasBeenSet(false)
+    m_removeNetworkLoadBalancerArnsHasBeenSet(false),
+    m_addGatewayLoadBalancerArnsHasBeenSet(false),
+    m_removeGatewayLoadBalancerArnsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,28 @@ Aws::String ModifyVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "RemoveNetworkLoadBalancerArn." << removeNetworkLoadBalancerArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeNetworkLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_addGatewayLoadBalancerArnsHasBeenSet)
+  {
+    unsigned addGatewayLoadBalancerArnsCount = 1;
+    for(auto& item : m_addGatewayLoadBalancerArns)
+    {
+      ss << "AddGatewayLoadBalancerArn." << addGatewayLoadBalancerArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      addGatewayLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_removeGatewayLoadBalancerArnsHasBeenSet)
+  {
+    unsigned removeGatewayLoadBalancerArnsCount = 1;
+    for(auto& item : m_removeGatewayLoadBalancerArns)
+    {
+      ss << "RemoveGatewayLoadBalancerArn." << removeGatewayLoadBalancerArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      removeGatewayLoadBalancerArnsCount++;
     }
   }
 

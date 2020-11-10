@@ -20,7 +20,8 @@ namespace Model
     InvokedBefore,
     Target,
     Owner,
-    Status
+    Status,
+    SessionId
   };
 
 namespace SessionFilterKeyMapper

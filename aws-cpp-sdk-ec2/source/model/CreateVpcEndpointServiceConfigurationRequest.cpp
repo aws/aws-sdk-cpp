@@ -17,6 +17,7 @@ CreateVpcEndpointServiceConfigurationRequest::CreateVpcEndpointServiceConfigurat
     m_acceptanceRequiredHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
@@ -49,6 +50,17 @@ Aws::String CreateVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "NetworkLoadBalancerArn." << networkLoadBalancerArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       networkLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+    unsigned gatewayLoadBalancerArnsCount = 1;
+    for(auto& item : m_gatewayLoadBalancerArns)
+    {
+      ss << "GatewayLoadBalancerArn." << gatewayLoadBalancerArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      gatewayLoadBalancerArnsCount++;
     }
   }
 

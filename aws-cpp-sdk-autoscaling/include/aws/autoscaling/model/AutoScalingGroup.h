@@ -1033,22 +1033,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether capacity rebalance is enabled.</p>
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
      */
     inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
 
     /**
-     * <p>Indicates whether capacity rebalance is enabled.</p>
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
      */
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
 
     /**
-     * <p>Indicates whether capacity rebalance is enabled.</p>
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
      */
     inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
 
     /**
-     * <p>Indicates whether capacity rebalance is enabled.</p>
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
      */
     inline AutoScalingGroup& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
 

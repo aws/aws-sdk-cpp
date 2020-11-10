@@ -115,6 +115,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -126,6 +128,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
@@ -137,6 +141,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -148,6 +154,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -159,6 +167,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -170,6 +180,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -181,6 +193,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -192,6 +206,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -203,6 +219,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -218,7 +236,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
 
@@ -233,7 +253,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
 
@@ -248,7 +270,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
@@ -263,7 +287,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
 
@@ -278,7 +304,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
 
@@ -293,7 +321,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
 
@@ -308,7 +338,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
 
@@ -323,7 +355,9 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p>
+     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
+     * Load Balancers] You can specify subnets from one or more Availability Zones. You
+     * cannot specify Elastic IP addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
 
@@ -392,7 +426,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline const LoadBalancerSchemeEnum& GetScheme() const{ return m_scheme; }
 
@@ -405,7 +440,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
@@ -418,7 +454,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline void SetScheme(const LoadBalancerSchemeEnum& value) { m_schemeHasBeenSet = true; m_scheme = value; }
 
@@ -431,7 +468,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline void SetScheme(LoadBalancerSchemeEnum&& value) { m_schemeHasBeenSet = true; m_scheme = std::move(value); }
 
@@ -444,7 +482,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithScheme(const LoadBalancerSchemeEnum& value) { SetScheme(value); return *this;}
 
@@ -457,7 +496,8 @@ namespace Model
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
-     * Internet-facing load balancer.</p>
+     * Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway
+     * Load Balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(std::move(value)); return *this;}
 

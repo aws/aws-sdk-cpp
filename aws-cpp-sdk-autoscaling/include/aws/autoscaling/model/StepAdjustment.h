@@ -39,7 +39,7 @@ namespace Model
    * null in the same step adjustment.</p> </li> </ul> <p>For more information, see
    * <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step
-   * Adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
+   * adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StepAdjustment">AWS
    * API Reference</a></p>

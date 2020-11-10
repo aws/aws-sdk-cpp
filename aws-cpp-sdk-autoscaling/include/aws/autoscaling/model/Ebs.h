@@ -336,7 +336,7 @@ namespace Model
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -364,7 +364,7 @@ namespace Model
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
@@ -392,7 +392,7 @@ namespace Model
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -420,7 +420,7 @@ namespace Model
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

@@ -49,38 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline void SetLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline void SetLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline LaunchTemplate& WithLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
 
     /**
-     * <p>The launch template to use. You must specify either the launch template ID or
-     * launch template name in the request.</p>
+     * <p>The launch template to use.</p>
      */
     inline LaunchTemplate& WithLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
 
@@ -88,72 +82,72 @@ namespace Model
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline void SetOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline void SetOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline LaunchTemplate& WithOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline LaunchTemplate& WithOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline LaunchTemplate& AddOverrides(const LaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template. Currently, the only supported override is instance type. You can
-     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
-     * Scaling will use the instance type specified in the launch template to launch
-     * instances. </p>
+     * specify between 1 and 20 instance types. If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template when it
+     * launches an instance. </p>
      */
     inline LaunchTemplate& AddOverrides(LaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Interface,
-    Gateway
+    Gateway,
+    GatewayLoadBalancer
   };
 
 namespace ServiceTypeMapper

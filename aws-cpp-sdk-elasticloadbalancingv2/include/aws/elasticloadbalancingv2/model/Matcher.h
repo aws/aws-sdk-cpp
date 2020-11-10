@@ -45,7 +45,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline const Aws::String& GetHttpCode() const{ return m_httpCode; }
 
@@ -53,7 +53,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline bool HttpCodeHasBeenSet() const { return m_httpCodeHasBeenSet; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline void SetHttpCode(const Aws::String& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::move(value); }
 
@@ -77,7 +77,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline void SetHttpCode(const char* value) { m_httpCodeHasBeenSet = true; m_httpCode.assign(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline Matcher& WithHttpCode(const Aws::String& value) { SetHttpCode(value); return *this;}
 
@@ -93,7 +93,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(std::move(value)); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
      * and the default value is 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers, this is "200–399".</p>
+     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
      */
     inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
 

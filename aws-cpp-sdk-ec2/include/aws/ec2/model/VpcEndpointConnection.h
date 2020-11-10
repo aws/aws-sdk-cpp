@@ -324,6 +324,61 @@ namespace Model
      */
     inline VpcEndpointConnection& AddNetworkLoadBalancerArns(const char* value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGatewayLoadBalancerArns() const{ return m_gatewayLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline bool GatewayLoadBalancerArnsHasBeenSet() const { return m_gatewayLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetGatewayLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetGatewayLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(const Aws::String& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(Aws::String&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(const char* value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_serviceId;
@@ -346,6 +401,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
     bool m_networkLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
+    bool m_gatewayLoadBalancerArnsHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int application_HASH = HashingUtils::HashString("application");
         static const int network_HASH = HashingUtils::HashString("network");
+        static const int gateway_HASH = HashingUtils::HashString("gateway");
 
 
         LoadBalancerTypeEnum GetLoadBalancerTypeEnumForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == network_HASH)
           {
             return LoadBalancerTypeEnum::network;
+          }
+          else if (hashCode == gateway_HASH)
+          {
+            return LoadBalancerTypeEnum::gateway;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "application";
           case LoadBalancerTypeEnum::network:
             return "network";
+          case LoadBalancerTypeEnum::gateway:
+            return "gateway";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

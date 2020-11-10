@@ -28,7 +28,8 @@ VpcEndpointConnection::VpcEndpointConnection() :
     m_vpcEndpointStateHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false)
+    m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) :
     m_vpcEndpointStateHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false)
+    m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,18 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
 
       m_networkLoadBalancerArnsHasBeenSet = true;
     }
+    XmlNode gatewayLoadBalancerArnsNode = resultNode.FirstChild("gatewayLoadBalancerArnSet");
+    if(!gatewayLoadBalancerArnsNode.IsNull())
+    {
+      XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
+      while(!gatewayLoadBalancerArnsMember.IsNull())
+      {
+        m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
+        gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsMember.NextNode("item");
+      }
+
+      m_gatewayLoadBalancerArnsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -157,6 +171,15 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << index << locationValue << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -197,6 +220,14 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_networkLoadBalancerArns)
       {
         oStream << location << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

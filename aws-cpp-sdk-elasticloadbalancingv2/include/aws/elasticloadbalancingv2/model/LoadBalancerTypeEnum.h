@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     application,
-    network
+    network,
+    gateway
   };
 
 namespace LoadBalancerTypeEnumMapper

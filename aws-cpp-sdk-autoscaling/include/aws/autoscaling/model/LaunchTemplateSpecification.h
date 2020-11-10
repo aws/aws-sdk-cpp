@@ -29,7 +29,7 @@ namespace Model
    * <p>The launch template that is specified must be configured for use with an Auto
    * Scaling group. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
-   * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
+   * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
    * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
@@ -50,7 +50,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
@@ -59,7 +60,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
@@ -68,7 +70,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
@@ -86,7 +90,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
@@ -95,7 +100,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
@@ -104,7 +110,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
@@ -113,7 +120,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
@@ -124,7 +132,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
@@ -134,7 +143,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
@@ -144,7 +154,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
@@ -154,7 +165,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
@@ -164,7 +176,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
@@ -174,7 +187,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
@@ -184,7 +198,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
@@ -194,7 +209,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API.</p> <p>You must specify either a template ID or a template name.</p>
+     * API. You must specify either a <code>LaunchTemplateId</code> or a
+     * <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
@@ -206,10 +222,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -221,10 +237,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
@@ -236,10 +252,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
@@ -251,10 +267,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
@@ -266,10 +282,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
@@ -281,10 +297,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
@@ -296,10 +312,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
@@ -311,10 +327,10 @@ namespace Model
      * API operation. New launch template versions can be created using the Amazon EC2
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
-     * API.</p> <p>If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling
-     * selects the latest version of the launch template when launching instances. If
-     * the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default
-     * version of the launch template when launching instances. The default value is
+     * API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the
+     * latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
      * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}

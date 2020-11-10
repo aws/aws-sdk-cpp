@@ -140,50 +140,50 @@ namespace Model
 
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>A policy to attach to the endpoint that controls access to the service. The
-     * policy must be in valid JSON format.</p>
+     * <p>(Interface and gateway endpoints) A policy to attach to the endpoint that
+     * controls access to the service. The policy must be in valid JSON format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
@@ -299,56 +299,65 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSubnetIds() const{ return m_addSubnetIds; }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline bool AddSubnetIdsHasBeenSet() const { return m_addSubnetIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline void SetAddSubnetIds(const Aws::Vector<Aws::String>& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds = value; }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline void SetAddSubnetIds(Aws::Vector<Aws::String>&& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSubnetIds(const Aws::Vector<Aws::String>& value) { SetAddSubnetIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSubnetIds(Aws::Vector<Aws::String>&& value) { SetAddSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSubnetIds(const Aws::String& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSubnetIds(Aws::String&& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more subnet IDs in which to serve the
-     * endpoint.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
+     * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSubnetIds(const char* value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds.push_back(value); return *this; }
 

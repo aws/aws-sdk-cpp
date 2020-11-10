@@ -35,9 +35,7 @@ namespace Model
    * instances policy for a new Auto Scaling group, or you can create it for an
    * existing group by updating the group to specify
    * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
-   * configuration or launch template. For more information, see
-   * <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * configuration or launch template.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */
@@ -53,81 +51,81 @@ namespace Model
 
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>Required when
-     * creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and optionally the instance types
+     * (overrides) that are used to provision EC2 instances to fulfill On-Demand and
+     * Spot capacities. Required when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution. If not provided, the value for each
+     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
 

@@ -28,7 +28,7 @@ namespace Model
    * <p>Describes a filter that is used to return a more specific list of results
    * when describing tags.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-   * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+   * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Filter">AWS
    * API Reference</a></p>

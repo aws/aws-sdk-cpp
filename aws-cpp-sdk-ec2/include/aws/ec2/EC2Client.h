@@ -6667,7 +6667,10 @@ namespace Model
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
          * specify the subnets in which to create an endpoint, and the security groups to
-         * associate with the endpoint network interface.</p> <p>Use
+         * associate with the endpoint network interface.</p> <p>A
+         * <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+         * that serves an endpoint for communicating with a Gateway Load Balancer that
+         * you've configured as a VPC endpoint service.</p> <p>Use
          * <a>DescribeVpcEndpointServices</a> to get a list of supported
          * services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
@@ -6689,7 +6692,10 @@ namespace Model
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
          * specify the subnets in which to create an endpoint, and the security groups to
-         * associate with the endpoint network interface.</p> <p>Use
+         * associate with the endpoint network interface.</p> <p>A
+         * <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+         * that serves an endpoint for communicating with a Gateway Load Balancer that
+         * you've configured as a VPC endpoint service.</p> <p>Use
          * <a>DescribeVpcEndpointServices</a> to get a list of supported
          * services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
@@ -6713,7 +6719,10 @@ namespace Model
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
          * specify the subnets in which to create an endpoint, and the security groups to
-         * associate with the endpoint network interface.</p> <p>Use
+         * associate with the endpoint network interface.</p> <p>A
+         * <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+         * that serves an endpoint for communicating with a Gateway Load Balancer that
+         * you've configured as a VPC endpoint service.</p> <p>Use
          * <a>DescribeVpcEndpointServices</a> to get a list of supported
          * services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
@@ -6771,10 +6780,15 @@ namespace Model
 
         /**
          * <p>Creates a VPC endpoint service configuration to which service consumers (AWS
-         * accounts, IAM users, and IAM roles) can connect. Service consumers can create an
-         * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
-         * service configuration, you must first create a Network Load Balancer for your
-         * service. For more information, see <a
+         * accounts, IAM users, and IAM roles) can connect.</p> <p>To create an endpoint
+         * service configuration, you must first create one of the following for your
+         * service:</p> <ul> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+         * Load Balancer</a>. Service consumers connect to your service using an interface
+         * endpoint.</p> </li> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+         * Load Balancer</a>. Service consumers connect to your service using a Gateway
+         * Load Balancer endpoint.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p> <p>If you set the private DNS name, you must prove that you own the private
@@ -6789,10 +6803,15 @@ namespace Model
 
         /**
          * <p>Creates a VPC endpoint service configuration to which service consumers (AWS
-         * accounts, IAM users, and IAM roles) can connect. Service consumers can create an
-         * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
-         * service configuration, you must first create a Network Load Balancer for your
-         * service. For more information, see <a
+         * accounts, IAM users, and IAM roles) can connect.</p> <p>To create an endpoint
+         * service configuration, you must first create one of the following for your
+         * service:</p> <ul> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+         * Load Balancer</a>. Service consumers connect to your service using an interface
+         * endpoint.</p> </li> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+         * Load Balancer</a>. Service consumers connect to your service using a Gateway
+         * Load Balancer endpoint.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p> <p>If you set the private DNS name, you must prove that you own the private
@@ -6809,10 +6828,15 @@ namespace Model
 
         /**
          * <p>Creates a VPC endpoint service configuration to which service consumers (AWS
-         * accounts, IAM users, and IAM roles) can connect. Service consumers can create an
-         * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
-         * service configuration, you must first create a Network Load Balancer for your
-         * service. For more information, see <a
+         * accounts, IAM users, and IAM roles) can connect.</p> <p>To create an endpoint
+         * service configuration, you must first create one of the following for your
+         * service:</p> <ul> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+         * Load Balancer</a>. Service consumers connect to your service using an interface
+         * endpoint.</p> </li> <li> <p>A <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+         * Load Balancer</a>. Service consumers connect to your service using a Gateway
+         * Load Balancer endpoint.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p> <p>If you set the private DNS name, you must prove that you own the private
@@ -8442,8 +8466,10 @@ namespace Model
         /**
          * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
          * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint deletes the endpoint network
-         * interfaces.</p><p><h3>See Also:</h3>   <a
+         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
+         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
+         * only be deleted if the routes that are associated with the endpoint are
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          */
@@ -8452,8 +8478,10 @@ namespace Model
         /**
          * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
          * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint deletes the endpoint network
-         * interfaces.</p><p><h3>See Also:</h3>   <a
+         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
+         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
+         * only be deleted if the routes that are associated with the endpoint are
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -8464,8 +8492,10 @@ namespace Model
         /**
          * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
          * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint deletes the endpoint network
-         * interfaces.</p><p><h3>See Also:</h3>   <a
+         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
+         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
+         * only be deleted if the routes that are associated with the endpoint are
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -17156,8 +17186,8 @@ namespace Model
 
         /**
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
-         * modify depend on the type of VPC endpoint (interface or gateway). For more
-         * information, see <a
+         * modify depend on the type of VPC endpoint (interface, gateway, or Gateway Load
+         * Balancer). For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17168,8 +17198,8 @@ namespace Model
 
         /**
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
-         * modify depend on the type of VPC endpoint (interface or gateway). For more
-         * information, see <a
+         * modify depend on the type of VPC endpoint (interface, gateway, or Gateway Load
+         * Balancer). For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17182,8 +17212,8 @@ namespace Model
 
         /**
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
-         * modify depend on the type of VPC endpoint (interface or gateway). For more
-         * information, see <a
+         * modify depend on the type of VPC endpoint (interface, gateway, or Gateway Load
+         * Balancer). For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17227,11 +17257,11 @@ namespace Model
 
         /**
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
-         * change the Network Load Balancers for your service, and you can specify whether
-         * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
-         * must prove that you own the private DNS domain name. For more information, see
-         * <a
+         * change the Network Load Balancers or Gateway Load Balancers for your service,
+         * and you can specify whether acceptance is required for requests to connect to
+         * your endpoint service through an interface VPC endpoint.</p> <p>If you set or
+         * modify the private DNS name, you must prove that you own the private DNS domain
+         * name. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
          * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17242,11 +17272,11 @@ namespace Model
 
         /**
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
-         * change the Network Load Balancers for your service, and you can specify whether
-         * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
-         * must prove that you own the private DNS domain name. For more information, see
-         * <a
+         * change the Network Load Balancers or Gateway Load Balancers for your service,
+         * and you can specify whether acceptance is required for requests to connect to
+         * your endpoint service through an interface VPC endpoint.</p> <p>If you set or
+         * modify the private DNS name, you must prove that you own the private DNS domain
+         * name. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
          * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17259,11 +17289,11 @@ namespace Model
 
         /**
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
-         * change the Network Load Balancers for your service, and you can specify whether
-         * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
-         * must prove that you own the private DNS domain name. For more information, see
-         * <a
+         * change the Network Load Balancers or Gateway Load Balancers for your service,
+         * and you can specify whether acceptance is required for requests to connect to
+         * your endpoint service through an interface VPC endpoint.</p> <p>If you set or
+         * modify the private DNS name, you must prove that you own the private DNS domain
+         * name. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
          * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a

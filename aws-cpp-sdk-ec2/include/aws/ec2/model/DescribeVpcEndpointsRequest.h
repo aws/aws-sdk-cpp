@@ -129,6 +129,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -148,6 +151,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -167,6 +173,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -186,6 +195,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -205,6 +217,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -224,6 +239,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -243,6 +261,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -262,6 +283,9 @@ namespace Model
      * state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
      * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>vpc-endpoint-type</code> - The type of VPC endpoint
+     * (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key

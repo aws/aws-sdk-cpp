@@ -123,7 +123,7 @@ namespace Model
      * complete before executing the policy.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
@@ -133,7 +133,7 @@ namespace Model
      * complete before executing the policy.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool HonorCooldownHasBeenSet() const { return m_honorCooldownHasBeenSet; }
@@ -143,7 +143,7 @@ namespace Model
      * complete before executing the policy.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
@@ -153,7 +153,7 @@ namespace Model
      * complete before executing the policy.</p> <p>Valid only if the policy type is
      * <code>SimpleScaling</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline ExecutePolicyRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}

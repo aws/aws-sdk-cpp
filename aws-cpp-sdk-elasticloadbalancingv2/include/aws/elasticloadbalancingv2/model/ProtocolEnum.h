@@ -21,7 +21,8 @@ namespace Model
     TCP,
     TLS,
     UDP,
-    TCP_UDP
+    TCP_UDP,
+    GENEVE
   };
 
 namespace ProtocolEnumMapper

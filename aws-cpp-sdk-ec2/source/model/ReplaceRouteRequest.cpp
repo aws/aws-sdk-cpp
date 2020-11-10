@@ -16,6 +16,7 @@ ReplaceRouteRequest::ReplaceRouteRequest() :
     m_destinationPrefixListIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_vpcEndpointIdHasBeenSet(false),
     m_egressOnlyInternetGatewayIdHasBeenSet(false),
     m_gatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -53,6 +54,11 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+    ss << "VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
 
   if(m_egressOnlyInternetGatewayIdHasBeenSet)

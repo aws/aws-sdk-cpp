@@ -172,9 +172,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
@@ -185,9 +185,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
@@ -198,9 +198,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
@@ -211,9 +211,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
@@ -224,9 +224,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
@@ -237,9 +237,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
@@ -250,9 +250,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
@@ -263,9 +263,9 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-     * and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}

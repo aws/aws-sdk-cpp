@@ -101,42 +101,50 @@ namespace Model
 
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The private DNS name to assign to the VPC endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the VPC
+     * endpoint service.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
@@ -194,6 +202,52 @@ namespace Model
      * your service.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddNetworkLoadBalancerArns(const char* value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGatewayLoadBalancerArns() const{ return m_gatewayLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline bool GatewayLoadBalancerArnsHasBeenSet() const { return m_gatewayLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& WithGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetGatewayLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& WithGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetGatewayLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(const Aws::String& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(Aws::String&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(const char* value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
 
 
     /**
@@ -314,6 +368,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
     bool m_networkLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
+    bool m_gatewayLoadBalancerArnsHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
