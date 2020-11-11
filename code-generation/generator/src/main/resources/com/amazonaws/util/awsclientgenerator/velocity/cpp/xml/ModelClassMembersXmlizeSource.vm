@@ -113,6 +113,8 @@
   ${spaces}{
 #if($member.locationName && $member.shape.flattened)
     ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${member.locationName}");
+#elseif(${member.shape.listMember.locationName})
+    ${spaces}XmlNode ${lowerCaseVarName}Node = ${lowerCaseVarName}ParentNode.CreateChildElement("${member.shape.listMember.locationName}");
 #else
     ${spaces}XmlNode ${lowerCaseVarName}Node = ${lowerCaseVarName}ParentNode.CreateChildElement("${member.shape.listMember.shape.name}");
 #end
