@@ -132,7 +132,7 @@ void RealtimeLogConfig::AddToNode(XmlNode& parentNode) const
    XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
    for(const auto& item : m_fields)
    {
-     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("String");
+     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("Field");
      fieldsNode.SetText(item);
    }
   }

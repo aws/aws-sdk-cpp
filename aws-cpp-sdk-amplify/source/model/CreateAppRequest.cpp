@@ -32,6 +32,7 @@ CreateAppRequest::CreateAppRequest() :
     m_customRulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
@@ -144,6 +145,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_customHeadersHasBeenSet)
+  {
+   payload.WithString("customHeaders", m_customHeaders);
 
   }
 

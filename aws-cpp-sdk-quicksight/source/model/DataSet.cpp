@@ -32,7 +32,8 @@ DataSet::DataSet() :
     m_consumedSpiceCapacityInBytes(0),
     m_consumedSpiceCapacityInBytesHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false)
+    m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_columnLevelPermissionRulesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DataSet::DataSet(JsonView jsonValue) :
     m_consumedSpiceCapacityInBytes(0),
     m_consumedSpiceCapacityInBytesHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false)
+    m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_columnLevelPermissionRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +155,16 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColumnLevelPermissionRules"))
+  {
+    Array<JsonView> columnLevelPermissionRulesJsonList = jsonValue.GetArray("ColumnLevelPermissionRules");
+    for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
+    {
+      m_columnLevelPermissionRules.push_back(columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject());
+    }
+    m_columnLevelPermissionRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +258,17 @@ JsonValue DataSet::Jsonize() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_columnLevelPermissionRulesHasBeenSet)
+  {
+   Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+   for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
+   {
+     columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
+   }
+   payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
 
   }
 

@@ -26,6 +26,7 @@ namespace Model
     JIRA,
     MARIADB,
     MYSQL,
+    ORACLE,
     POSTGRESQL,
     PRESTO,
     REDSHIFT,

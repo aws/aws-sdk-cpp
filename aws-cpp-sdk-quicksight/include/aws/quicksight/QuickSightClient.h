@@ -875,9 +875,10 @@ namespace Model
 
         /**
          * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
-         * Resource Name (ARN). This policy will be assigned to specified groups or users
-         * of Amazon QuickSight. The users and groups need to be in the same namespace.
-         * </p><p><h3>See Also:</h3>   <a
+         * Resource Name (ARN). This policy assignment is attached to the specified groups
+         * or users of Amazon QuickSight. Assignment names are unique per AWS account. To
+         * avoid overwriting rules in other namespaces, use assignment names that are
+         * unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
@@ -885,9 +886,10 @@ namespace Model
 
         /**
          * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
-         * Resource Name (ARN). This policy will be assigned to specified groups or users
-         * of Amazon QuickSight. The users and groups need to be in the same namespace.
-         * </p><p><h3>See Also:</h3>   <a
+         * Resource Name (ARN). This policy assignment is attached to the specified groups
+         * or users of Amazon QuickSight. Assignment names are unique per AWS account. To
+         * avoid overwriting rules in other namespaces, use assignment names that are
+         * unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -897,9 +899,10 @@ namespace Model
 
         /**
          * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
-         * Resource Name (ARN). This policy will be assigned to specified groups or users
-         * of Amazon QuickSight. The users and groups need to be in the same namespace.
-         * </p><p><h3>See Also:</h3>   <a
+         * Resource Name (ARN). This policy assignment is attached to the specified groups
+         * or users of Amazon QuickSight. Assignment names are unique per AWS account. To
+         * avoid overwriting rules in other namespaces, use assignment names that are
+         * unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -3475,8 +3478,9 @@ namespace Model
 
         /**
          * <p>Updates an existing IAM policy assignment. This operation updates only the
-         * optional parameter or parameters that are specified in the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * optional parameter or parameters that are specified in the request. This
+         * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
@@ -3484,8 +3488,9 @@ namespace Model
 
         /**
          * <p>Updates an existing IAM policy assignment. This operation updates only the
-         * optional parameter or parameters that are specified in the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * optional parameter or parameters that are specified in the request. This
+         * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -3495,8 +3500,9 @@ namespace Model
 
         /**
          * <p>Updates an existing IAM policy assignment. This operation updates only the
-         * optional parameter or parameters that are specified in the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * optional parameter or parameters that are specified in the request. This
+         * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *

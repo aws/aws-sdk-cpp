@@ -136,56 +136,47 @@ namespace Model
 
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IAM action to grant or revoke permissions on, for example
-     * <code>"quicksight:DescribeDashboard"</code>.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

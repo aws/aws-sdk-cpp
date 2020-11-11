@@ -286,6 +286,27 @@ namespace Model
      */
     inline DataSetSummary& WithRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { SetRowLevelPermissionDataSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if the dataset has column level permission configured. </p>
+     */
+    inline bool GetColumnLevelPermissionRulesApplied() const{ return m_columnLevelPermissionRulesApplied; }
+
+    /**
+     * <p>Indicates if the dataset has column level permission configured. </p>
+     */
+    inline bool ColumnLevelPermissionRulesAppliedHasBeenSet() const { return m_columnLevelPermissionRulesAppliedHasBeenSet; }
+
+    /**
+     * <p>Indicates if the dataset has column level permission configured. </p>
+     */
+    inline void SetColumnLevelPermissionRulesApplied(bool value) { m_columnLevelPermissionRulesAppliedHasBeenSet = true; m_columnLevelPermissionRulesApplied = value; }
+
+    /**
+     * <p>Indicates if the dataset has column level permission configured. </p>
+     */
+    inline DataSetSummary& WithColumnLevelPermissionRulesApplied(bool value) { SetColumnLevelPermissionRulesApplied(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -308,6 +329,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    bool m_columnLevelPermissionRulesApplied;
+    bool m_columnLevelPermissionRulesAppliedHasBeenSet;
   };
 
 } // namespace Model

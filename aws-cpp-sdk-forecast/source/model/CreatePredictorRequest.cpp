@@ -17,6 +17,7 @@ CreatePredictorRequest::CreatePredictorRequest() :
     m_algorithmArnHasBeenSet(false),
     m_forecastHorizon(0),
     m_forecastHorizonHasBeenSet(false),
+    m_forecastTypesHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
     m_performHPO(false),
@@ -50,6 +51,17 @@ Aws::String CreatePredictorRequest::SerializePayload() const
   if(m_forecastHorizonHasBeenSet)
   {
    payload.WithInteger("ForecastHorizon", m_forecastHorizon);
+
+  }
+
+  if(m_forecastTypesHasBeenSet)
+  {
+   Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
+   for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
+   {
+     forecastTypesJsonList[forecastTypesIndex].AsString(m_forecastTypes[forecastTypesIndex]);
+   }
+   payload.WithArray("ForecastTypes", std::move(forecastTypesJsonList));
 
   }
 

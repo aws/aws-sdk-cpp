@@ -30,6 +30,7 @@ namespace Aws
         static const int JIRA_HASH = HashingUtils::HashString("JIRA");
         static const int MARIADB_HASH = HashingUtils::HashString("MARIADB");
         static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
+        static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
         static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
         static const int PRESTO_HASH = HashingUtils::HashString("PRESTO");
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
@@ -86,6 +87,10 @@ namespace Aws
           else if (hashCode == MYSQL_HASH)
           {
             return DataSourceType::MYSQL;
+          }
+          else if (hashCode == ORACLE_HASH)
+          {
+            return DataSourceType::ORACLE;
           }
           else if (hashCode == POSTGRESQL_HASH)
           {
@@ -169,6 +174,8 @@ namespace Aws
             return "MARIADB";
           case DataSourceType::MYSQL:
             return "MYSQL";
+          case DataSourceType::ORACLE:
+            return "ORACLE";
           case DataSourceType::POSTGRESQL:
             return "POSTGRESQL";
           case DataSourceType::PRESTO:

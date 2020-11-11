@@ -26,7 +26,9 @@ DataSetSummary::DataSetSummary() :
     m_lastUpdatedTimeHasBeenSet(false),
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false)
+    m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_columnLevelPermissionRulesApplied(false),
+    m_columnLevelPermissionRulesAppliedHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ DataSetSummary::DataSetSummary(JsonView jsonValue) :
     m_lastUpdatedTimeHasBeenSet(false),
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false)
+    m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_columnLevelPermissionRulesApplied(false),
+    m_columnLevelPermissionRulesAppliedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +98,13 @@ DataSetSummary& DataSetSummary::operator =(JsonView jsonValue)
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColumnLevelPermissionRulesApplied"))
+  {
+    m_columnLevelPermissionRulesApplied = jsonValue.GetBool("ColumnLevelPermissionRulesApplied");
+
+    m_columnLevelPermissionRulesAppliedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +148,12 @@ JsonValue DataSetSummary::Jsonize() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_columnLevelPermissionRulesAppliedHasBeenSet)
+  {
+   payload.WithBool("ColumnLevelPermissionRulesApplied", m_columnLevelPermissionRulesApplied);
 
   }
 

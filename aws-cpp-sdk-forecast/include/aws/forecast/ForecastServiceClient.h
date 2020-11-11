@@ -320,8 +320,8 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
          * operation.</p>  <p>The <code>Status</code> of a dataset group must be
-         * <code>ACTIVE</code> before you can create use the dataset group to create a
-         * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
+         * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
+         * To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
@@ -336,8 +336,8 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
          * operation.</p>  <p>The <code>Status</code> of a dataset group must be
-         * <code>ACTIVE</code> before you can create use the dataset group to create a
-         * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
+         * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
+         * To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
@@ -354,8 +354,8 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
          * operation.</p>  <p>The <code>Status</code> of a dataset group must be
-         * <code>ACTIVE</code> before you can create use the dataset group to create a
-         * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
+         * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
+         * To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
@@ -575,78 +575,80 @@ namespace Model
         virtual void CreateForecastExportJobAsync(const Model::CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, you provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose the
+         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
+         * dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * chosen algorithm to train a model using the latest version of the datasets in
-         * the specified dataset group. The result is called a predictor. You then generate
-         * a forecast using the <a>CreateForecast</a> operation.</p> <p>After training a
-         * model, the <code>CreatePredictor</code> operation also evaluates it. To see the
-         * evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always review
-         * the evaluation metrics before deciding to use the predictor to generate a
-         * forecast.</p> <p>Optionally, you can specify a featurization configuration to
-         * fill and aggregate the data fields in the <code>TARGET_TIME_SERIES</code>
-         * dataset to improve model training. For more information, see
-         * <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES datasets,
-         * <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
-         * specified when the dataset was created matches the
+         * algorithm to train a predictor using the latest version of the datasets in the
+         * specified dataset group. You can then generate a forecast using the
+         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
+         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
+         * configuration to fill and aggregate the data fields in the
+         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
+         * datasets, <code>CreatePredictor</code> verifies that the
+         * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
-         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>
-         * <b>AutoML</b> </p> <p>If you want Amazon Forecast to evaluate each algorithm and
-         * choose the one that minimizes the <code>objective function</code>, set
+         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>By default,
+         * predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90)
+         * quantiles. You can choose custom forecast types to train and evaluate your
+         * predictor by setting the <code>ForecastTypes</code>. </p> <p> <b>AutoML</b> </p>
+         * <p>If you want Amazon Forecast to evaluate each algorithm and choose the one
+         * that minimizes the <code>objective function</code>, set
          * <code>PerformAutoML</code> to <code>true</code>. The <code>objective
-         * function</code> is defined as the mean of the weighted p10, p50, and p90
-         * quantile losses. For more information, see <a>EvaluationResult</a>.</p> <p>When
-         * AutoML is enabled, the following properties are disallowed:</p> <ul> <li> <p>
-         * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
-         * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
-         * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
-         * can use the predictor to create a forecast, the <code>Status</code> of the
-         * predictor must be <code>ACTIVE</code>, signifying that training has completed.
-         * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * function</code> is defined as the mean of the weighted losses over the forecast
+         * types. By default, these are the p10, p50, and p90 quantile losses. For more
+         * information, see <a>EvaluationResult</a>.</p> <p>When AutoML is enabled, the
+         * following properties are disallowed:</p> <ul> <li> <p> <code>AlgorithmArn</code>
+         * </p> </li> <li> <p> <code>HPOConfig</code> </p> </li> <li> <p>
+         * <code>PerformHPO</code> </p> </li> <li> <p> <code>TrainingParameters</code> </p>
+         * </li> </ul> <p>To get a list of all of your predictors, use the
+         * <a>ListPredictors</a> operation.</p>  <p>Before you can use the predictor
+         * to create a forecast, the <code>Status</code> of the predictor must be
+         * <code>ACTIVE</code>, signifying that training has completed. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePredictorOutcome CreatePredictor(const Model::CreatePredictorRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, you provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose the
+         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
+         * dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * chosen algorithm to train a model using the latest version of the datasets in
-         * the specified dataset group. The result is called a predictor. You then generate
-         * a forecast using the <a>CreateForecast</a> operation.</p> <p>After training a
-         * model, the <code>CreatePredictor</code> operation also evaluates it. To see the
-         * evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always review
-         * the evaluation metrics before deciding to use the predictor to generate a
-         * forecast.</p> <p>Optionally, you can specify a featurization configuration to
-         * fill and aggregate the data fields in the <code>TARGET_TIME_SERIES</code>
-         * dataset to improve model training. For more information, see
-         * <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES datasets,
-         * <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
-         * specified when the dataset was created matches the
+         * algorithm to train a predictor using the latest version of the datasets in the
+         * specified dataset group. You can then generate a forecast using the
+         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
+         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
+         * configuration to fill and aggregate the data fields in the
+         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
+         * datasets, <code>CreatePredictor</code> verifies that the
+         * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
-         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>
-         * <b>AutoML</b> </p> <p>If you want Amazon Forecast to evaluate each algorithm and
-         * choose the one that minimizes the <code>objective function</code>, set
+         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>By default,
+         * predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90)
+         * quantiles. You can choose custom forecast types to train and evaluate your
+         * predictor by setting the <code>ForecastTypes</code>. </p> <p> <b>AutoML</b> </p>
+         * <p>If you want Amazon Forecast to evaluate each algorithm and choose the one
+         * that minimizes the <code>objective function</code>, set
          * <code>PerformAutoML</code> to <code>true</code>. The <code>objective
-         * function</code> is defined as the mean of the weighted p10, p50, and p90
-         * quantile losses. For more information, see <a>EvaluationResult</a>.</p> <p>When
-         * AutoML is enabled, the following properties are disallowed:</p> <ul> <li> <p>
-         * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
-         * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
-         * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
-         * can use the predictor to create a forecast, the <code>Status</code> of the
-         * predictor must be <code>ACTIVE</code>, signifying that training has completed.
-         * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * function</code> is defined as the mean of the weighted losses over the forecast
+         * types. By default, these are the p10, p50, and p90 quantile losses. For more
+         * information, see <a>EvaluationResult</a>.</p> <p>When AutoML is enabled, the
+         * following properties are disallowed:</p> <ul> <li> <p> <code>AlgorithmArn</code>
+         * </p> </li> <li> <p> <code>HPOConfig</code> </p> </li> <li> <p>
+         * <code>PerformHPO</code> </p> </li> <li> <p> <code>TrainingParameters</code> </p>
+         * </li> </ul> <p>To get a list of all of your predictors, use the
+         * <a>ListPredictors</a> operation.</p>  <p>Before you can use the predictor
+         * to create a forecast, the <code>Status</code> of the predictor must be
+         * <code>ACTIVE</code>, signifying that training has completed. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          *
@@ -655,39 +657,40 @@ namespace Model
         virtual Model::CreatePredictorOutcomeCallable CreatePredictorCallable(const Model::CreatePredictorRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, you provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose the
+         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
+         * dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * chosen algorithm to train a model using the latest version of the datasets in
-         * the specified dataset group. The result is called a predictor. You then generate
-         * a forecast using the <a>CreateForecast</a> operation.</p> <p>After training a
-         * model, the <code>CreatePredictor</code> operation also evaluates it. To see the
-         * evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always review
-         * the evaluation metrics before deciding to use the predictor to generate a
-         * forecast.</p> <p>Optionally, you can specify a featurization configuration to
-         * fill and aggregate the data fields in the <code>TARGET_TIME_SERIES</code>
-         * dataset to improve model training. For more information, see
-         * <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES datasets,
-         * <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
-         * specified when the dataset was created matches the
+         * algorithm to train a predictor using the latest version of the datasets in the
+         * specified dataset group. You can then generate a forecast using the
+         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
+         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
+         * configuration to fill and aggregate the data fields in the
+         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
+         * datasets, <code>CreatePredictor</code> verifies that the
+         * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
-         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>
-         * <b>AutoML</b> </p> <p>If you want Amazon Forecast to evaluate each algorithm and
-         * choose the one that minimizes the <code>objective function</code>, set
+         * For more information, see <a>howitworks-datasets-groups</a>.</p> <p>By default,
+         * predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90)
+         * quantiles. You can choose custom forecast types to train and evaluate your
+         * predictor by setting the <code>ForecastTypes</code>. </p> <p> <b>AutoML</b> </p>
+         * <p>If you want Amazon Forecast to evaluate each algorithm and choose the one
+         * that minimizes the <code>objective function</code>, set
          * <code>PerformAutoML</code> to <code>true</code>. The <code>objective
-         * function</code> is defined as the mean of the weighted p10, p50, and p90
-         * quantile losses. For more information, see <a>EvaluationResult</a>.</p> <p>When
-         * AutoML is enabled, the following properties are disallowed:</p> <ul> <li> <p>
-         * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
-         * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
-         * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
-         * can use the predictor to create a forecast, the <code>Status</code> of the
-         * predictor must be <code>ACTIVE</code>, signifying that training has completed.
-         * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * function</code> is defined as the mean of the weighted losses over the forecast
+         * types. By default, these are the p10, p50, and p90 quantile losses. For more
+         * information, see <a>EvaluationResult</a>.</p> <p>When AutoML is enabled, the
+         * following properties are disallowed:</p> <ul> <li> <p> <code>AlgorithmArn</code>
+         * </p> </li> <li> <p> <code>HPOConfig</code> </p> </li> <li> <p>
+         * <code>PerformHPO</code> </p> </li> <li> <p> <code>TrainingParameters</code> </p>
+         * </li> </ul> <p>To get a list of all of your predictors, use the
+         * <a>ListPredictors</a> operation.</p>  <p>Before you can use the predictor
+         * to create a forecast, the <code>Status</code> of the predictor must be
+         * <code>ACTIVE</code>, signifying that training has completed. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          *
@@ -1203,8 +1206,10 @@ namespace Model
          * <p>Provides metrics on the accuracy of the models that were trained by the
          * <a>CreatePredictor</a> operation. Use metrics to see how well the model
          * performed and to decide whether to use the predictor to generate a forecast. For
-         * more information, see <a>metrics</a>.</p> <p>This operation generates metrics
-         * for each backtest window that was evaluated. The number of backtest windows
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+         * Metrics</a>.</p> <p>This operation generates metrics for each backtest window
+         * that was evaluated. The number of backtest windows
          * (<code>NumberOfBacktestWindows</code>) is specified using the
          * <a>EvaluationParameters</a> object, which is optionally included in the
          * <code>CreatePredictor</code> request. If <code>NumberOfBacktestWindows</code>
@@ -1226,8 +1231,10 @@ namespace Model
          * <p>Provides metrics on the accuracy of the models that were trained by the
          * <a>CreatePredictor</a> operation. Use metrics to see how well the model
          * performed and to decide whether to use the predictor to generate a forecast. For
-         * more information, see <a>metrics</a>.</p> <p>This operation generates metrics
-         * for each backtest window that was evaluated. The number of backtest windows
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+         * Metrics</a>.</p> <p>This operation generates metrics for each backtest window
+         * that was evaluated. The number of backtest windows
          * (<code>NumberOfBacktestWindows</code>) is specified using the
          * <a>EvaluationParameters</a> object, which is optionally included in the
          * <code>CreatePredictor</code> request. If <code>NumberOfBacktestWindows</code>
@@ -1251,8 +1258,10 @@ namespace Model
          * <p>Provides metrics on the accuracy of the models that were trained by the
          * <a>CreatePredictor</a> operation. Use metrics to see how well the model
          * performed and to decide whether to use the predictor to generate a forecast. For
-         * more information, see <a>metrics</a>.</p> <p>This operation generates metrics
-         * for each backtest window that was evaluated. The number of backtest windows
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+         * Metrics</a>.</p> <p>This operation generates metrics for each backtest window
+         * that was evaluated. The number of backtest windows
          * (<code>NumberOfBacktestWindows</code>) is specified using the
          * <a>EvaluationParameters</a> object, which is optionally included in the
          * <code>CreatePredictor</code> request. If <code>NumberOfBacktestWindows</code>

@@ -45,7 +45,7 @@ Aws::String ChangeTagsForResourceRequest::SerializePayload() const
    XmlNode removeTagKeysParentNode = parentNode.CreateChildElement("RemoveTagKeys");
    for(const auto& item : m_removeTagKeys)
    {
-     XmlNode removeTagKeysNode = removeTagKeysParentNode.CreateChildElement("TagKey");
+     XmlNode removeTagKeysNode = removeTagKeysParentNode.CreateChildElement("Key");
      removeTagKeysNode.SetText(item);
    }
   }

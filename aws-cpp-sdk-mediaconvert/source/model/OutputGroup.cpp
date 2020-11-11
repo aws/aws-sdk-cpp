@@ -19,6 +19,7 @@ namespace Model
 {
 
 OutputGroup::OutputGroup() : 
+    m_automatedEncodingSettingsHasBeenSet(false),
     m_customNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputGroupSettingsHasBeenSet(false),
@@ -27,6 +28,7 @@ OutputGroup::OutputGroup() :
 }
 
 OutputGroup::OutputGroup(JsonView jsonValue) : 
+    m_automatedEncodingSettingsHasBeenSet(false),
     m_customNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputGroupSettingsHasBeenSet(false),
@@ -37,6 +39,13 @@ OutputGroup::OutputGroup(JsonView jsonValue) :
 
 OutputGroup& OutputGroup::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("automatedEncodingSettings"))
+  {
+    m_automatedEncodingSettings = jsonValue.GetObject("automatedEncodingSettings");
+
+    m_automatedEncodingSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customName"))
   {
     m_customName = jsonValue.GetString("customName");
@@ -74,6 +83,12 @@ OutputGroup& OutputGroup::operator =(JsonView jsonValue)
 JsonValue OutputGroup::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_automatedEncodingSettingsHasBeenSet)
+  {
+   payload.WithObject("automatedEncodingSettings", m_automatedEncodingSettings.Jsonize());
+
+  }
 
   if(m_customNameHasBeenSet)
   {

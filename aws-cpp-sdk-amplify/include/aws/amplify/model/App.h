@@ -795,6 +795,47 @@ namespace Model
 
 
     /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline const Aws::String& GetCustomHeaders() const{ return m_customHeaders; }
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline void SetCustomHeaders(const Aws::String& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline void SetCustomHeaders(Aws::String&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::move(value); }
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline void SetCustomHeaders(const char* value) { m_customHeadersHasBeenSet = true; m_customHeaders.assign(value); }
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline App& WithCustomHeaders(const Aws::String& value) { SetCustomHeaders(value); return *this;}
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline App& WithCustomHeaders(Aws::String&& value) { SetCustomHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the custom HTTP headers for the Amplify app.</p>
+     */
+    inline App& WithCustomHeaders(const char* value) { SetCustomHeaders(value); return *this;}
+
+
+    /**
      * <p> Enables automated branch creation for the Amplify app. </p>
      */
     inline bool GetEnableAutoBranchCreation() const{ return m_enableAutoBranchCreation; }
@@ -964,6 +1005,9 @@ namespace Model
 
     Aws::String m_buildSpec;
     bool m_buildSpecHasBeenSet;
+
+    Aws::String m_customHeaders;
+    bool m_customHeadersHasBeenSet;
 
     bool m_enableAutoBranchCreation;
     bool m_enableAutoBranchCreationHasBeenSet;

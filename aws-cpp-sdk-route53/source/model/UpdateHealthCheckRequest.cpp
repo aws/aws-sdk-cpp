@@ -127,7 +127,7 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
    XmlNode childHealthChecksParentNode = parentNode.CreateChildElement("ChildHealthChecks");
    for(const auto& item : m_childHealthChecks)
    {
-     XmlNode childHealthChecksNode = childHealthChecksParentNode.CreateChildElement("HealthCheckId");
+     XmlNode childHealthChecksNode = childHealthChecksParentNode.CreateChildElement("ChildHealthCheck");
      childHealthChecksNode.SetText(item);
    }
   }
@@ -145,7 +145,7 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
    XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
    for(const auto& item : m_regions)
    {
-     XmlNode regionsNode = regionsParentNode.CreateChildElement("HealthCheckRegion");
+     XmlNode regionsNode = regionsParentNode.CreateChildElement("Region");
      regionsNode.SetText(HealthCheckRegionMapper::GetNameForHealthCheckRegion(item));
    }
   }

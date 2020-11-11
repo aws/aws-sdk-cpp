@@ -33,7 +33,7 @@ Aws::String ListTagsForResourcesRequest::SerializePayload() const
    XmlNode resourceIdsParentNode = parentNode.CreateChildElement("ResourceIds");
    for(const auto& item : m_resourceIds)
    {
-     XmlNode resourceIdsNode = resourceIdsParentNode.CreateChildElement("TagResourceId");
+     XmlNode resourceIdsNode = resourceIdsParentNode.CreateChildElement("ResourceId");
      resourceIdsNode.SetText(item);
    }
   }

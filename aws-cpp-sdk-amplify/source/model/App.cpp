@@ -42,6 +42,7 @@ App::App() :
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
@@ -73,6 +74,7 @@ App::App(JsonView jsonValue) :
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
@@ -223,6 +225,13 @@ App& App::operator =(JsonView jsonValue)
     m_buildSpec = jsonValue.GetString("buildSpec");
 
     m_buildSpecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customHeaders"))
+  {
+    m_customHeaders = jsonValue.GetString("customHeaders");
+
+    m_customHeadersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("enableAutoBranchCreation"))
@@ -379,6 +388,12 @@ JsonValue App::Jsonize() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_customHeadersHasBeenSet)
+  {
+   payload.WithString("customHeaders", m_customHeaders);
 
   }
 

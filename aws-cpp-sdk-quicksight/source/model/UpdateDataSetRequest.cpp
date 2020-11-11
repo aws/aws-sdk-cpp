@@ -21,7 +21,8 @@ UpdateDataSetRequest::UpdateDataSetRequest() :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false)
+    m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_columnLevelPermissionRulesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,17 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_columnLevelPermissionRulesHasBeenSet)
+  {
+   Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+   for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
+   {
+     columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
+   }
+   payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
 
   }
 

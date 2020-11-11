@@ -62,56 +62,86 @@ namespace Model
 
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline const H264AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline void SetAdaptiveQuantization(const H264AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline void SetAdaptiveQuantization(H264AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline H264Settings& WithAdaptiveQuantization(const H264AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -355,68 +385,104 @@ namespace Model
 
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264FlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
 
     /**
-     * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears
-     * as a visual flicker that can arise when the encoder saves bits by copying some
-     * macroblocks many times from frame to frame, and then refreshes them at the
-     * I-frame. When you enable this setting, the encoder updates these macroblocks
-     * slightly more often to smooth out the flicker. This setting is disabled by
-     * default. Related setting: In addition to enabling this setting, you must also
-     * set adaptiveQuantization to a value other than Off (OFF).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1578,110 +1644,164 @@ namespace Model
 
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1791,104 +1911,152 @@ namespace Model
 
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on temporal variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
-     * and uses more bits on complex objects with sharp edges that move a lot. For
-     * example, this feature improves the readability of text tickers on newscasts and
-     * scoreboards on sports matches. Enabling this feature will almost always improve
-     * your video quality. Note, though, that this feature doesn't take into account
-     * where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal quantization,
-     * adjust the strength of the filter with the setting Adaptive quantization
-     * (adaptiveQuantization).
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 

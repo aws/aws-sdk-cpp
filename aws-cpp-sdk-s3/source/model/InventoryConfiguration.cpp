@@ -146,7 +146,7 @@ void InventoryConfiguration::AddToNode(XmlNode& parentNode) const
    XmlNode optionalFieldsParentNode = parentNode.CreateChildElement("OptionalFields");
    for(const auto& item : m_optionalFields)
    {
-     XmlNode optionalFieldsNode = optionalFieldsParentNode.CreateChildElement("InventoryOptionalField");
+     XmlNode optionalFieldsNode = optionalFieldsParentNode.CreateChildElement("Field");
      optionalFieldsNode.SetText(InventoryOptionalFieldMapper::GetNameForInventoryOptionalField(item));
    }
   }

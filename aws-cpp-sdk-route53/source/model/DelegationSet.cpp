@@ -90,7 +90,7 @@ void DelegationSet::AddToNode(XmlNode& parentNode) const
    XmlNode nameServersParentNode = parentNode.CreateChildElement("NameServers");
    for(const auto& item : m_nameServers)
    {
-     XmlNode nameServersNode = nameServersParentNode.CreateChildElement("DNSName");
+     XmlNode nameServersNode = nameServersParentNode.CreateChildElement("NameServer");
      nameServersNode.SetText(item);
    }
   }

@@ -7,6 +7,7 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/forecast/model/WeightedQuantileLoss.h>
+#include <aws/forecast/model/ErrorMetric.h>
 #include <utility>
 
 namespace Aws
@@ -37,27 +38,6 @@ namespace Model
     Metrics(Aws::Utils::Json::JsonView jsonValue);
     Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The root mean square error (RMSE).</p>
-     */
-    inline double GetRMSE() const{ return m_rMSE; }
-
-    /**
-     * <p>The root mean square error (RMSE).</p>
-     */
-    inline bool RMSEHasBeenSet() const { return m_rMSEHasBeenSet; }
-
-    /**
-     * <p>The root mean square error (RMSE).</p>
-     */
-    inline void SetRMSE(double value) { m_rMSEHasBeenSet = true; m_rMSE = value; }
-
-    /**
-     * <p>The root mean square error (RMSE).</p>
-     */
-    inline Metrics& WithRMSE(double value) { SetRMSE(value); return *this;}
 
 
     /**
@@ -116,13 +96,62 @@ namespace Model
      */
     inline Metrics& AddWeightedQuantileLosses(WeightedQuantileLoss&& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses.push_back(std::move(value)); return *this; }
 
-  private:
 
-    double m_rMSE;
-    bool m_rMSEHasBeenSet;
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline const Aws::Vector<ErrorMetric>& GetErrorMetrics() const{ return m_errorMetrics; }
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline bool ErrorMetricsHasBeenSet() const { return m_errorMetricsHasBeenSet; }
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline void SetErrorMetrics(const Aws::Vector<ErrorMetric>& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = value; }
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline void SetErrorMetrics(Aws::Vector<ErrorMetric>&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = std::move(value); }
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline Metrics& WithErrorMetrics(const Aws::Vector<ErrorMetric>& value) { SetErrorMetrics(value); return *this;}
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline Metrics& WithErrorMetrics(Aws::Vector<ErrorMetric>&& value) { SetErrorMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline Metrics& AddErrorMetrics(const ErrorMetric& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(value); return *this; }
+
+    /**
+     * <p> Provides detailed error metrics on forecast type, root-mean square-error
+     * (RMSE), and weighted average percentage error (WAPE). </p>
+     */
+    inline Metrics& AddErrorMetrics(ErrorMetric&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::Vector<WeightedQuantileLoss> m_weightedQuantileLosses;
     bool m_weightedQuantileLossesHasBeenSet;
+
+    Aws::Vector<ErrorMetric> m_errorMetrics;
+    bool m_errorMetricsHasBeenSet;
   };
 
 } // namespace Model

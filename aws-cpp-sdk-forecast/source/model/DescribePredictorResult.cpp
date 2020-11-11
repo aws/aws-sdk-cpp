@@ -58,6 +58,15 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("ForecastTypes"))
+  {
+    Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
+    for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
+    {
+      m_forecastTypes.push_back(forecastTypesJsonList[forecastTypesIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("PerformAutoML"))
   {
     m_performAutoML = jsonValue.GetBool("PerformAutoML");

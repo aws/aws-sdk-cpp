@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AutomatedEncodingSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/OutputGroupSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -38,6 +39,43 @@ namespace Model
     OutputGroup(Aws::Utils::Json::JsonView jsonValue);
     OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline const AutomatedEncodingSettings& GetAutomatedEncodingSettings() const{ return m_automatedEncodingSettings; }
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline bool AutomatedEncodingSettingsHasBeenSet() const { return m_automatedEncodingSettingsHasBeenSet; }
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline void SetAutomatedEncodingSettings(const AutomatedEncodingSettings& value) { m_automatedEncodingSettingsHasBeenSet = true; m_automatedEncodingSettings = value; }
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline void SetAutomatedEncodingSettings(AutomatedEncodingSettings&& value) { m_automatedEncodingSettingsHasBeenSet = true; m_automatedEncodingSettings = std::move(value); }
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline OutputGroup& WithAutomatedEncodingSettings(const AutomatedEncodingSettings& value) { SetAutomatedEncodingSettings(value); return *this;}
+
+    /**
+     * Use automated encoding to have MediaConvert choose your encoding settings for
+     * you, based on characteristics of your input video.
+     */
+    inline OutputGroup& WithAutomatedEncodingSettings(AutomatedEncodingSettings&& value) { SetAutomatedEncodingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -218,6 +256,9 @@ namespace Model
     inline OutputGroup& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
   private:
+
+    AutomatedEncodingSettings m_automatedEncodingSettings;
+    bool m_automatedEncodingSettingsHasBeenSet;
 
     Aws::String m_customName;
     bool m_customNameHasBeenSet;

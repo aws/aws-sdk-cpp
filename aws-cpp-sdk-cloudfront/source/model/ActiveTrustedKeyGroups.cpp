@@ -98,7 +98,7 @@ void ActiveTrustedKeyGroups::AddToNode(XmlNode& parentNode) const
    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("KGKeyPairIds");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("KeyGroup");
      item.AddToNode(itemsNode);
    }
   }

@@ -62,7 +62,7 @@ void LifecycleConfiguration::AddToNode(XmlNode& parentNode) const
    XmlNode rulesParentNode = parentNode.CreateChildElement("Rules");
    for(const auto& item : m_rules)
    {
-     XmlNode rulesNode = rulesParentNode.CreateChildElement("LifecycleRule");
+     XmlNode rulesNode = rulesParentNode.CreateChildElement("Rule");
      item.AddToNode(rulesNode);
    }
   }

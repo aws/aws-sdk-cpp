@@ -105,7 +105,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFeaturizationMethodParameters() const{ return m_featurizationMethodParameters; }
 
@@ -131,7 +135,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline bool FeaturizationMethodParametersHasBeenSet() const { return m_featurizationMethodParametersHasBeenSet; }
 
@@ -157,7 +165,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline void SetFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = value; }
 
@@ -183,7 +195,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline void SetFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = std::move(value); }
 
@@ -209,7 +225,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& WithFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetFeaturizationMethodParameters(value); return *this;}
 
@@ -235,7 +255,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& WithFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetFeaturizationMethodParameters(std::move(value)); return *this;}
 
@@ -261,7 +285,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
 
@@ -287,7 +315,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
 
@@ -313,7 +345,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
 
@@ -339,7 +375,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -365,7 +405,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
 
@@ -391,7 +435,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
 
@@ -417,7 +465,11 @@ namespace Model
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
      * </li> <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>,
      * <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p>
-     * </li> </ul>
+     * </li> </ul> <p>To set a filling method to a specific value, set the fill
+     * parameter to <code>value</code> and define the value in a corresponding
+     * <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     * include the following: <code>"backfill": "value"</code> and
+     * <code>"backfill_value":"2"</code>. </p>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
 

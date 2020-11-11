@@ -7,13 +7,13 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
 #include <aws/forecast/model/InputDataConfig.h>
 #include <aws/forecast/model/FeaturizationConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -88,8 +88,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -101,8 +101,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -114,8 +114,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -127,8 +127,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -140,8 +140,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -153,8 +153,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -166,8 +166,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -179,8 +179,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -231,6 +231,88 @@ namespace Model
      * TARGET_TIME_SERIES dataset length.</p>
      */
     inline CreatePredictorRequest& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
+
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
 
 
     /**
@@ -289,7 +371,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline bool GetPerformHPO() const{ return m_performHPO; }
 
@@ -304,7 +387,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline bool PerformHPOHasBeenSet() const { return m_performHPOHasBeenSet; }
 
@@ -319,7 +403,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline void SetPerformHPO(bool value) { m_performHPOHasBeenSet = true; m_performHPO = value; }
 
@@ -334,7 +419,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline CreatePredictorRequest& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
 
@@ -840,6 +926,9 @@ namespace Model
 
     int m_forecastHorizon;
     bool m_forecastHorizonHasBeenSet;
+
+    Aws::Vector<Aws::String> m_forecastTypes;
+    bool m_forecastTypesHasBeenSet;
 
     bool m_performAutoML;
     bool m_performAutoMLHasBeenSet;

@@ -70,7 +70,7 @@ void InvalidChangeBatch::AddToNode(XmlNode& parentNode) const
    XmlNode messagesParentNode = parentNode.CreateChildElement("messages");
    for(const auto& item : m_messages)
    {
-     XmlNode messagesNode = messagesParentNode.CreateChildElement("ErrorMessage");
+     XmlNode messagesNode = messagesParentNode.CreateChildElement("Message");
      messagesNode.SetText(item);
    }
   }

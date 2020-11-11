@@ -80,7 +80,7 @@ void QueryStringNames::AddToNode(XmlNode& parentNode) const
    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("String");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("Name");
      itemsNode.SetText(item);
    }
   }

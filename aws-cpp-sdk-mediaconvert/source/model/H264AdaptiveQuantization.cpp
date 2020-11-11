@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
         static const int LOW_HASH = HashingUtils::HashString("LOW");
         static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
@@ -34,6 +35,10 @@ namespace Aws
           if (hashCode == OFF_HASH)
           {
             return H264AdaptiveQuantization::OFF;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return H264AdaptiveQuantization::AUTO;
           }
           else if (hashCode == LOW_HASH)
           {
@@ -71,6 +76,8 @@ namespace Aws
           {
           case H264AdaptiveQuantization::OFF:
             return "OFF";
+          case H264AdaptiveQuantization::AUTO:
+            return "AUTO";
           case H264AdaptiveQuantization::LOW:
             return "LOW";
           case H264AdaptiveQuantization::MEDIUM:

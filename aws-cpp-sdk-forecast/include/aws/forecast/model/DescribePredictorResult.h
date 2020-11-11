@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
@@ -13,7 +14,6 @@
 #include <aws/forecast/model/FeaturizationConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
 #include <aws/forecast/model/PredictorExecutionDetails.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -169,6 +169,55 @@ namespace Model
 
 
     /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline DescribePredictorResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline DescribePredictorResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline DescribePredictorResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline DescribePredictorResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The forecast types used during predictor training. Default value is
+     * <code>["0.1","0.5","0.9"]</code> </p>
+     */
+    inline DescribePredictorResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
+
+
+    /**
      * <p>Whether the predictor is set to perform AutoML.</p>
      */
     inline bool GetPerformAutoML() const{ return m_performAutoML; }
@@ -205,97 +254,97 @@ namespace Model
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_trainingParameters = value; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParameters = std::move(value); }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& WithTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTrainingParameters(value); return *this;}
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParameters.emplace(key, value); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The default training parameters or overrides selected during model training.
-     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
-     * algorithms, the optimized values for the chosen hyperparameters are returned.
-     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values
+     * for the chosen hyperparameters are returned. For more information, see
+     * <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const char* key, const char* value) { m_trainingParameters.emplace(key, value); return *this; }
 
@@ -790,6 +839,8 @@ namespace Model
     Aws::String m_algorithmArn;
 
     int m_forecastHorizon;
+
+    Aws::Vector<Aws::String> m_forecastTypes;
 
     bool m_performAutoML;
 

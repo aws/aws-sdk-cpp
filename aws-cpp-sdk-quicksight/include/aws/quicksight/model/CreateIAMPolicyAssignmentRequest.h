@@ -85,42 +85,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the assignment. It must be unique within an AWS account.</p>
+     * <p>The name of the assignment, also called a rule. It must be unique within an
+     * AWS account.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 

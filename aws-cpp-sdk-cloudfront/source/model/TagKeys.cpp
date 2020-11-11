@@ -62,7 +62,7 @@ void TagKeys::AddToNode(XmlNode& parentNode) const
    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("TagKey");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("Key");
      itemsNode.SetText(item);
    }
   }

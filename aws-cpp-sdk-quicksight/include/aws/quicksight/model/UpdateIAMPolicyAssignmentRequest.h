@@ -36,91 +36,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the assignment. This name must be unique within an AWS
-     * account.</p>
+     * <p>The name of the assignment, also called a rule. This name must be unique
+     * within an AWS account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 

@@ -501,108 +501,149 @@ namespace Model
 
 
     /**
-     * <p> Enables automated branch creation for the Amplify app. </p>
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline const Aws::String& GetCustomHeaders() const{ return m_customHeaders; }
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline void SetCustomHeaders(const Aws::String& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline void SetCustomHeaders(Aws::String&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::move(value); }
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline void SetCustomHeaders(const char* value) { m_customHeadersHasBeenSet = true; m_customHeaders.assign(value); }
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline UpdateAppRequest& WithCustomHeaders(const Aws::String& value) { SetCustomHeaders(value); return *this;}
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline UpdateAppRequest& WithCustomHeaders(Aws::String&& value) { SetCustomHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom HTTP headers for an Amplify app.</p>
+     */
+    inline UpdateAppRequest& WithCustomHeaders(const char* value) { SetCustomHeaders(value); return *this;}
+
+
+    /**
+     * <p> Enables automated branch creation for an Amplify app. </p>
      */
     inline bool GetEnableAutoBranchCreation() const{ return m_enableAutoBranchCreation; }
 
     /**
-     * <p> Enables automated branch creation for the Amplify app. </p>
+     * <p> Enables automated branch creation for an Amplify app. </p>
      */
     inline bool EnableAutoBranchCreationHasBeenSet() const { return m_enableAutoBranchCreationHasBeenSet; }
 
     /**
-     * <p> Enables automated branch creation for the Amplify app. </p>
+     * <p> Enables automated branch creation for an Amplify app. </p>
      */
     inline void SetEnableAutoBranchCreation(bool value) { m_enableAutoBranchCreationHasBeenSet = true; m_enableAutoBranchCreation = value; }
 
     /**
-     * <p> Enables automated branch creation for the Amplify app. </p>
+     * <p> Enables automated branch creation for an Amplify app. </p>
      */
     inline UpdateAppRequest& WithEnableAutoBranchCreation(bool value) { SetEnableAutoBranchCreation(value); return *this;}
 
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoBranchCreationPatterns() const{ return m_autoBranchCreationPatterns; }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline bool AutoBranchCreationPatternsHasBeenSet() const { return m_autoBranchCreationPatternsHasBeenSet; }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline void SetAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = value; }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline void SetAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = std::move(value); }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { SetAutoBranchCreationPatterns(value); return *this;}
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { SetAutoBranchCreationPatterns(std::move(value)); return *this;}
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline UpdateAppRequest& AddAutoBranchCreationPatterns(const Aws::String& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline UpdateAppRequest& AddAutoBranchCreationPatterns(Aws::String&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> Describes the automated branch creation glob patterns for the Amplify app.
+     * <p> Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     inline UpdateAppRequest& AddAutoBranchCreationPatterns(const char* value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline const AutoBranchCreationConfig& GetAutoBranchCreationConfig() const{ return m_autoBranchCreationConfig; }
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline bool AutoBranchCreationConfigHasBeenSet() const { return m_autoBranchCreationConfigHasBeenSet; }
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = value; }
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = std::move(value); }
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { SetAutoBranchCreationConfig(value); return *this;}
 
     /**
-     * <p> The automated branch creation configuration for the Amplify app. </p>
+     * <p> The automated branch creation configuration for an Amplify app. </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
 
@@ -798,6 +839,9 @@ namespace Model
 
     Aws::String m_buildSpec;
     bool m_buildSpecHasBeenSet;
+
+    Aws::String m_customHeaders;
+    bool m_customHeadersHasBeenSet;
 
     bool m_enableAutoBranchCreation;
     bool m_enableAutoBranchCreationHasBeenSet;

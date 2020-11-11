@@ -84,7 +84,7 @@ void LoggingEnabled::AddToNode(XmlNode& parentNode) const
    XmlNode targetGrantsParentNode = parentNode.CreateChildElement("TargetGrants");
    for(const auto& item : m_targetGrants)
    {
-     XmlNode targetGrantsNode = targetGrantsParentNode.CreateChildElement("TargetGrant");
+     XmlNode targetGrantsNode = targetGrantsParentNode.CreateChildElement("Grant");
      item.AddToNode(targetGrantsNode);
    }
   }

@@ -80,7 +80,7 @@ void StatusCodes::AddToNode(XmlNode& parentNode) const
    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("Integer");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("StatusCode");
      ss << item;
      itemsNode.SetText(ss.str());
      ss.str("");

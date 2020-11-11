@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/JiraParameters.h>
 #include <aws/quicksight/model/MariaDbParameters.h>
 #include <aws/quicksight/model/MySqlParameters.h>
+#include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/PostgreSqlParameters.h>
 #include <aws/quicksight/model/PrestoParameters.h>
 #include <aws/quicksight/model/RdsParameters.h>
@@ -303,6 +304,37 @@ namespace Model
      * <p>MySQL parameters.</p>
      */
     inline DataSourceParameters& WithMySqlParameters(MySqlParameters&& value) { SetMySqlParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline const OracleParameters& GetOracleParameters() const{ return m_oracleParameters; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline bool OracleParametersHasBeenSet() const { return m_oracleParametersHasBeenSet; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline void SetOracleParameters(const OracleParameters& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = value; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline void SetOracleParameters(OracleParameters&& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = std::move(value); }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline DataSourceParameters& WithOracleParameters(const OracleParameters& value) { SetOracleParameters(value); return *this;}
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline DataSourceParameters& WithOracleParameters(OracleParameters&& value) { SetOracleParameters(std::move(value)); return *this;}
 
 
     /**
@@ -670,6 +702,9 @@ namespace Model
 
     MySqlParameters m_mySqlParameters;
     bool m_mySqlParametersHasBeenSet;
+
+    OracleParameters m_oracleParameters;
+    bool m_oracleParametersHasBeenSet;
 
     PostgreSqlParameters m_postgreSqlParameters;
     bool m_postgreSqlParametersHasBeenSet;

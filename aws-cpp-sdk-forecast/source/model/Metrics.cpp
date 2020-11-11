@@ -19,29 +19,20 @@ namespace Model
 {
 
 Metrics::Metrics() : 
-    m_rMSE(0.0),
-    m_rMSEHasBeenSet(false),
-    m_weightedQuantileLossesHasBeenSet(false)
+    m_weightedQuantileLossesHasBeenSet(false),
+    m_errorMetricsHasBeenSet(false)
 {
 }
 
 Metrics::Metrics(JsonView jsonValue) : 
-    m_rMSE(0.0),
-    m_rMSEHasBeenSet(false),
-    m_weightedQuantileLossesHasBeenSet(false)
+    m_weightedQuantileLossesHasBeenSet(false),
+    m_errorMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Metrics& Metrics::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("RMSE"))
-  {
-    m_rMSE = jsonValue.GetDouble("RMSE");
-
-    m_rMSEHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("WeightedQuantileLosses"))
   {
     Array<JsonView> weightedQuantileLossesJsonList = jsonValue.GetArray("WeightedQuantileLosses");
@@ -52,18 +43,22 @@ Metrics& Metrics::operator =(JsonView jsonValue)
     m_weightedQuantileLossesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorMetrics"))
+  {
+    Array<JsonView> errorMetricsJsonList = jsonValue.GetArray("ErrorMetrics");
+    for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
+    {
+      m_errorMetrics.push_back(errorMetricsJsonList[errorMetricsIndex].AsObject());
+    }
+    m_errorMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Metrics::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_rMSEHasBeenSet)
-  {
-   payload.WithDouble("RMSE", m_rMSE);
-
-  }
 
   if(m_weightedQuantileLossesHasBeenSet)
   {
@@ -73,6 +68,17 @@ JsonValue Metrics::Jsonize() const
      weightedQuantileLossesJsonList[weightedQuantileLossesIndex].AsObject(m_weightedQuantileLosses[weightedQuantileLossesIndex].Jsonize());
    }
    payload.WithArray("WeightedQuantileLosses", std::move(weightedQuantileLossesJsonList));
+
+  }
+
+  if(m_errorMetricsHasBeenSet)
+  {
+   Array<JsonValue> errorMetricsJsonList(m_errorMetrics.size());
+   for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
+   {
+     errorMetricsJsonList[errorMetricsIndex].AsObject(m_errorMetrics[errorMetricsIndex].Jsonize());
+   }
+   payload.WithArray("ErrorMetrics", std::move(errorMetricsJsonList));
 
   }
 

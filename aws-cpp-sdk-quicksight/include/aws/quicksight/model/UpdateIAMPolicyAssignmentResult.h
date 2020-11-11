@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentName = value; }
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentName = std::move(value); }
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentName.assign(value); }
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the assignment. </p>
+     * <p>The name of the assignment or rule.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 

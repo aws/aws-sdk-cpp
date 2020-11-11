@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
+#include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <utility>
 
 namespace Aws
@@ -426,6 +427,55 @@ namespace Model
      */
     inline UpdateDataSetRequest& WithRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { SetRowLevelPermissionDataSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline const Aws::Vector<ColumnLevelPermissionRule>& GetColumnLevelPermissionRules() const{ return m_columnLevelPermissionRules; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline bool ColumnLevelPermissionRulesHasBeenSet() const { return m_columnLevelPermissionRulesHasBeenSet; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = value; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = std::move(value); }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline UpdateDataSetRequest& WithColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { SetColumnLevelPermissionRules(value); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline UpdateDataSetRequest& WithColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { SetColumnLevelPermissionRules(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline UpdateDataSetRequest& AddColumnLevelPermissionRules(const ColumnLevelPermissionRule& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(value); return *this; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline UpdateDataSetRequest& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -451,6 +501,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
+    bool m_columnLevelPermissionRulesHasBeenSet;
   };
 
 } // namespace Model

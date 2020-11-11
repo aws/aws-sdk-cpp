@@ -27,6 +27,7 @@ DataSourceParameters::DataSourceParameters() :
     m_jiraParametersHasBeenSet(false),
     m_mariaDbParametersHasBeenSet(false),
     m_mySqlParametersHasBeenSet(false),
+    m_oracleParametersHasBeenSet(false),
     m_postgreSqlParametersHasBeenSet(false),
     m_prestoParametersHasBeenSet(false),
     m_rdsParametersHasBeenSet(false),
@@ -50,6 +51,7 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_jiraParametersHasBeenSet(false),
     m_mariaDbParametersHasBeenSet(false),
     m_mySqlParametersHasBeenSet(false),
+    m_oracleParametersHasBeenSet(false),
     m_postgreSqlParametersHasBeenSet(false),
     m_prestoParametersHasBeenSet(false),
     m_rdsParametersHasBeenSet(false),
@@ -121,6 +123,13 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_mySqlParameters = jsonValue.GetObject("MySqlParameters");
 
     m_mySqlParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OracleParameters"))
+  {
+    m_oracleParameters = jsonValue.GetObject("OracleParameters");
+
+    m_oracleParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PostgreSqlParameters"))
@@ -252,6 +261,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_mySqlParametersHasBeenSet)
   {
    payload.WithObject("MySqlParameters", m_mySqlParameters.Jsonize());
+
+  }
+
+  if(m_oracleParametersHasBeenSet)
+  {
+   payload.WithObject("OracleParameters", m_oracleParameters.Jsonize());
 
   }
 
