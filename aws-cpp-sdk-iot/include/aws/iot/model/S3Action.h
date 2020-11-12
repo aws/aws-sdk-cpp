@@ -122,42 +122,58 @@ namespace Model
 
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline S3Action& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline S3Action& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The object key.</p>
+     * <p>The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+     * resources, and condition keys for Amazon S3</a>.</p>
      */
     inline S3Action& WithKey(const char* value) { SetKey(value); return *this;}
 

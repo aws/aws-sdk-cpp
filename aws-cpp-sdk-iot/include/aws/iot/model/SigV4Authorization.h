@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Use Sig V4 authorization.</p><p><h3>See Also:</h3>   <a
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * Version 4 signing process</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SigV4Authorization">AWS
    * API Reference</a></p>
    */

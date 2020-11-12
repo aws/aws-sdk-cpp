@@ -17,7 +17,8 @@ GetPersonalizedRankingRequest::GetPersonalizedRankingRequest() :
     m_inputListHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_filterArnHasBeenSet(false)
+    m_filterArnHasBeenSet(false),
+    m_filterValuesHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String GetPersonalizedRankingRequest::SerializePayload() const
   if(m_filterArnHasBeenSet)
   {
    payload.WithString("filterArn", m_filterArn);
+
+  }
+
+  if(m_filterValuesHasBeenSet)
+  {
+   JsonValue filterValuesJsonMap;
+   for(auto& filterValuesItem : m_filterValues)
+   {
+     filterValuesJsonMap.WithString(filterValuesItem.first, filterValuesItem.second);
+   }
+   payload.WithObject("filterValues", std::move(filterValuesJsonMap));
 
   }
 

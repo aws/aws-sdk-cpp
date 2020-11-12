@@ -21,6 +21,8 @@ namespace Model
 IotEventsAction::IotEventsAction() : 
     m_inputNameHasBeenSet(false),
     m_messageIdHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ IotEventsAction::IotEventsAction() :
 IotEventsAction::IotEventsAction(JsonView jsonValue) : 
     m_inputNameHasBeenSet(false),
     m_messageIdHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +51,13 @@ IotEventsAction& IotEventsAction::operator =(JsonView jsonValue)
     m_messageId = jsonValue.GetString("messageId");
 
     m_messageIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchMode"))
+  {
+    m_batchMode = jsonValue.GetBool("batchMode");
+
+    m_batchModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -72,6 +83,12 @@ JsonValue IotEventsAction::Jsonize() const
   if(m_messageIdHasBeenSet)
   {
    payload.WithString("messageId", m_messageId);
+
+  }
+
+  if(m_batchModeHasBeenSet)
+  {
+   payload.WithBool("batchMode", m_batchMode);
 
   }
 

@@ -302,52 +302,285 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline GetPersonalizedRankingRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline GetPersonalizedRankingRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a filter you created to include or exclude
-     * items from recommendations for a given user.</p>
+     * <p>The Amazon Resource Name (ARN) of a filter you created to include items or
+     * exclude items from recommendations for a given user. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
      */
     inline GetPersonalizedRankingRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const{ return m_filterValues; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline void SetFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline void SetFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& WithFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetFilterValues(value); return *this;}
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& WithFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(const Aws::String& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(const Aws::String& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(const char* key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The values to use when filtering recommendations. For each placeholder
+     * parameter in your filter expression, provide the parameter name (in matching
+     * case) as a key and the filter value(s) as the corresponding value. Separate
+     * multiple values for one parameter with a comma. </p> <p>For filter expressions
+     * that use an <code>INCLUDE</code> element to include items, you must provide
+     * values for all parameters that are defined in the expression. For filters with
+     * expressions that use an <code>EXCLUDE</code> element to exclude items, you can
+     * omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use
+     * that portion of the expression to filter recommendations.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+     * Recommendations</a>.</p>
+     */
+    inline GetPersonalizedRankingRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
 
   private:
 
@@ -365,6 +598,9 @@ namespace Model
 
     Aws::String m_filterArn;
     bool m_filterArnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_filterValues;
+    bool m_filterValuesHasBeenSet;
   };
 
 } // namespace Model

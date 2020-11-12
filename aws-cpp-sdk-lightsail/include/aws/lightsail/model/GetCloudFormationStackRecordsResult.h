@@ -71,7 +71,7 @@ namespace Model
 
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -80,7 +80,7 @@ namespace Model
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -89,7 +89,7 @@ namespace Model
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -98,7 +98,7 @@ namespace Model
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -107,7 +107,7 @@ namespace Model
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -116,7 +116,7 @@ namespace Model
     inline GetCloudFormationStackRecordsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page
@@ -125,7 +125,7 @@ namespace Model
     inline GetCloudFormationStackRecordsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another
      * <code>GetCloudFormationStackRecords</code> request and specify the next page

@@ -84,6 +84,13 @@ namespace Aws
         static const int UpdateDistributionBundle_HASH = HashingUtils::HashString("UpdateDistributionBundle");
         static const int CreateCertificate_HASH = HashingUtils::HashString("CreateCertificate");
         static const int DeleteCertificate_HASH = HashingUtils::HashString("DeleteCertificate");
+        static const int CreateContainerService_HASH = HashingUtils::HashString("CreateContainerService");
+        static const int UpdateContainerService_HASH = HashingUtils::HashString("UpdateContainerService");
+        static const int DeleteContainerService_HASH = HashingUtils::HashString("DeleteContainerService");
+        static const int CreateContainerServiceDeployment_HASH = HashingUtils::HashString("CreateContainerServiceDeployment");
+        static const int CreateContainerServiceRegistryLogin_HASH = HashingUtils::HashString("CreateContainerServiceRegistryLogin");
+        static const int RegisterContainerImage_HASH = HashingUtils::HashString("RegisterContainerImage");
+        static const int DeleteContainerImage_HASH = HashingUtils::HashString("DeleteContainerImage");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -345,6 +352,34 @@ namespace Aws
           {
             return OperationType::DeleteCertificate;
           }
+          else if (hashCode == CreateContainerService_HASH)
+          {
+            return OperationType::CreateContainerService;
+          }
+          else if (hashCode == UpdateContainerService_HASH)
+          {
+            return OperationType::UpdateContainerService;
+          }
+          else if (hashCode == DeleteContainerService_HASH)
+          {
+            return OperationType::DeleteContainerService;
+          }
+          else if (hashCode == CreateContainerServiceDeployment_HASH)
+          {
+            return OperationType::CreateContainerServiceDeployment;
+          }
+          else if (hashCode == CreateContainerServiceRegistryLogin_HASH)
+          {
+            return OperationType::CreateContainerServiceRegistryLogin;
+          }
+          else if (hashCode == RegisterContainerImage_HASH)
+          {
+            return OperationType::RegisterContainerImage;
+          }
+          else if (hashCode == DeleteContainerImage_HASH)
+          {
+            return OperationType::DeleteContainerImage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -487,6 +522,20 @@ namespace Aws
             return "CreateCertificate";
           case OperationType::DeleteCertificate:
             return "DeleteCertificate";
+          case OperationType::CreateContainerService:
+            return "CreateContainerService";
+          case OperationType::UpdateContainerService:
+            return "UpdateContainerService";
+          case OperationType::DeleteContainerService:
+            return "DeleteContainerService";
+          case OperationType::CreateContainerServiceDeployment:
+            return "CreateContainerServiceDeployment";
+          case OperationType::CreateContainerServiceRegistryLogin:
+            return "CreateContainerServiceRegistryLogin";
+          case OperationType::RegisterContainerImage:
+            return "RegisterContainerImage";
+          case OperationType::DeleteContainerImage:
+            return "DeleteContainerImage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

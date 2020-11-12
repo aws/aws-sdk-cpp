@@ -471,6 +471,79 @@ namespace Model
      */
     inline DescribeWorldGenerationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetWorldTags() const{ return m_worldTags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline void SetWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { m_worldTags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline void SetWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { m_worldTags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& WithWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { SetWorldTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& WithWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { SetWorldTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(const Aws::String& key, const Aws::String& value) { m_worldTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(Aws::String&& key, const Aws::String& value) { m_worldTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(const Aws::String& key, Aws::String&& value) { m_worldTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(Aws::String&& key, Aws::String&& value) { m_worldTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(const char* key, Aws::String&& value) { m_worldTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(Aws::String&& key, const char* value) { m_worldTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline DescribeWorldGenerationJobResult& AddWorldTags(const char* key, const char* value) { m_worldTags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -492,6 +565,8 @@ namespace Model
     FinishedWorldsSummary m_finishedWorldsSummary;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Map<Aws::String, Aws::String> m_worldTags;
   };
 
 } // namespace Model

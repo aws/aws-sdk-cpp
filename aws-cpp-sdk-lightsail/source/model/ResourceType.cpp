@@ -20,6 +20,7 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
+        static const int ContainerService_HASH = HashingUtils::HashString("ContainerService");
         static const int Instance_HASH = HashingUtils::HashString("Instance");
         static const int StaticIp_HASH = HashingUtils::HashString("StaticIp");
         static const int KeyPair_HASH = HashingUtils::HashString("KeyPair");
@@ -43,7 +44,11 @@ namespace Aws
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Instance_HASH)
+          if (hashCode == ContainerService_HASH)
+          {
+            return ResourceType::ContainerService;
+          }
+          else if (hashCode == Instance_HASH)
           {
             return ResourceType::Instance;
           }
@@ -129,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::ContainerService:
+            return "ContainerService";
           case ResourceType::Instance:
             return "Instance";
           case ResourceType::StaticIp:

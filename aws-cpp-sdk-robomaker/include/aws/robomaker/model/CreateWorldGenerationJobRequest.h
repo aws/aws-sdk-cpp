@@ -242,6 +242,85 @@ namespace Model
      */
     inline CreateWorldGenerationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetWorldTags() const{ return m_worldTags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline bool WorldTagsHasBeenSet() const { return m_worldTagsHasBeenSet; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline void SetWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { m_worldTagsHasBeenSet = true; m_worldTags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline void SetWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { m_worldTagsHasBeenSet = true; m_worldTags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& WithWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { SetWorldTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& WithWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { SetWorldTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(const Aws::String& key, const Aws::String& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, const Aws::String& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(const Aws::String& key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(const char* key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, const char* value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * generated worlds.</p>
+     */
+    inline CreateWorldGenerationJobRequest& AddWorldTags(const char* key, const char* value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -255,6 +334,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_worldTags;
+    bool m_worldTagsHasBeenSet;
   };
 
 } // namespace Model

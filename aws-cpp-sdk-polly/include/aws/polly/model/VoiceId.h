@@ -64,6 +64,7 @@ namespace Model
     Mizuki,
     Naja,
     Nicole,
+    Olivia,
     Penelope,
     Raveena,
     Ricardo,

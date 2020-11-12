@@ -79,7 +79,14 @@ namespace Model
     DetachCertificateFromDistribution,
     UpdateDistributionBundle,
     CreateCertificate,
-    DeleteCertificate
+    DeleteCertificate,
+    CreateContainerService,
+    UpdateContainerService,
+    DeleteContainerService,
+    CreateContainerServiceDeployment,
+    CreateContainerServiceRegistryLogin,
+    RegisterContainerImage,
+    DeleteContainerImage
   };
 
 namespace OperationTypeMapper

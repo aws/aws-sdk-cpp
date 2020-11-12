@@ -173,7 +173,12 @@ namespace Model
      * allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource
      * could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
-     * request is not valid.</p> </dd> </dl>
+     * request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of
+     * the worlds in the world generation job failed. This can happen if your
+     * <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl>
+     * <p>For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     * Simulation WorldForge</a>. </p>
      */
     inline const WorldExportJobErrorCode& GetFailureCode() const{ return m_failureCode; }
 
@@ -185,7 +190,12 @@ namespace Model
      * allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource
      * could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
-     * request is not valid.</p> </dd> </dl>
+     * request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of
+     * the worlds in the world generation job failed. This can happen if your
+     * <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl>
+     * <p>For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     * Simulation WorldForge</a>. </p>
      */
     inline void SetFailureCode(const WorldExportJobErrorCode& value) { m_failureCode = value; }
 
@@ -197,7 +207,12 @@ namespace Model
      * allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource
      * could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
-     * request is not valid.</p> </dd> </dl>
+     * request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of
+     * the worlds in the world generation job failed. This can happen if your
+     * <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl>
+     * <p>For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     * Simulation WorldForge</a>. </p>
      */
     inline void SetFailureCode(WorldExportJobErrorCode&& value) { m_failureCode = std::move(value); }
 
@@ -209,7 +224,12 @@ namespace Model
      * allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource
      * could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
-     * request is not valid.</p> </dd> </dl>
+     * request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of
+     * the worlds in the world generation job failed. This can happen if your
+     * <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl>
+     * <p>For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     * Simulation WorldForge</a>. </p>
      */
     inline CreateWorldExportJobResult& WithFailureCode(const WorldExportJobErrorCode& value) { SetFailureCode(value); return *this;}
 
@@ -221,7 +241,12 @@ namespace Model
      * allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource
      * could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
-     * request is not valid.</p> </dd> </dl>
+     * request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of
+     * the worlds in the world generation job failed. This can happen if your
+     * <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl>
+     * <p>For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     * Simulation WorldForge</a>. </p>
      */
     inline CreateWorldExportJobResult& WithFailureCode(WorldExportJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 

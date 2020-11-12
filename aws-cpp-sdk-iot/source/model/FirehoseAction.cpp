@@ -21,14 +21,18 @@ namespace Model
 FirehoseAction::FirehoseAction() : 
     m_roleArnHasBeenSet(false),
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
 }
 
 FirehoseAction::FirehoseAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
     m_separatorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("batchMode"))
+  {
+    m_batchMode = jsonValue.GetBool("batchMode");
+
+    m_batchModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue FirehoseAction::Jsonize() const
   if(m_separatorHasBeenSet)
   {
    payload.WithString("separator", m_separator);
+
+  }
+
+  if(m_batchModeHasBeenSet)
+  {
+   payload.WithBool("batchMode", m_batchMode);
 
   }
 

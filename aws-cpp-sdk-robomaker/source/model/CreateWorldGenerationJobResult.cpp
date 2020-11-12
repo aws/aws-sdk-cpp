@@ -83,6 +83,15 @@ CreateWorldGenerationJobResult& CreateWorldGenerationJobResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("worldTags"))
+  {
+    Aws::Map<Aws::String, JsonView> worldTagsJsonMap = jsonValue.GetObject("worldTags").GetAllObjects();
+    for(auto& worldTagsItem : worldTagsJsonMap)
+    {
+      m_worldTags[worldTagsItem.first] = worldTagsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

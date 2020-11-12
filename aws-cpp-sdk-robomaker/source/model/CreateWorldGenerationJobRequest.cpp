@@ -17,7 +17,8 @@ CreateWorldGenerationJobRequest::CreateWorldGenerationJobRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_templateHasBeenSet(false),
     m_worldCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_worldTagsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String CreateWorldGenerationJobRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_worldTagsHasBeenSet)
+  {
+   JsonValue worldTagsJsonMap;
+   for(auto& worldTagsItem : m_worldTags)
+   {
+     worldTagsJsonMap.WithString(worldTagsItem.first, worldTagsItem.second);
+   }
+   payload.WithObject("worldTags", std::move(worldTagsJsonMap));
 
   }
 

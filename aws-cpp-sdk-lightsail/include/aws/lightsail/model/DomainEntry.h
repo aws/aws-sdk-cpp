@@ -196,7 +196,7 @@ namespace Model
      * <p>When <code>true</code>, specifies whether the domain entry is an alias used
      * by the Lightsail load balancer. You can include an alias (A type) record in your
      * request, which points to a load balancer DNS name and routes traffic to your
-     * load balancer</p>
+     * load balancer.</p>
      */
     inline bool GetIsAlias() const{ return m_isAlias; }
 
@@ -204,7 +204,7 @@ namespace Model
      * <p>When <code>true</code>, specifies whether the domain entry is an alias used
      * by the Lightsail load balancer. You can include an alias (A type) record in your
      * request, which points to a load balancer DNS name and routes traffic to your
-     * load balancer</p>
+     * load balancer.</p>
      */
     inline bool IsAliasHasBeenSet() const { return m_isAliasHasBeenSet; }
 
@@ -212,7 +212,7 @@ namespace Model
      * <p>When <code>true</code>, specifies whether the domain entry is an alias used
      * by the Lightsail load balancer. You can include an alias (A type) record in your
      * request, which points to a load balancer DNS name and routes traffic to your
-     * load balancer</p>
+     * load balancer.</p>
      */
     inline void SetIsAlias(bool value) { m_isAliasHasBeenSet = true; m_isAlias = value; }
 
@@ -220,7 +220,7 @@ namespace Model
      * <p>When <code>true</code>, specifies whether the domain entry is an alias used
      * by the Lightsail load balancer. You can include an alias (A type) record in your
      * request, which points to a load balancer DNS name and routes traffic to your
-     * load balancer</p>
+     * load balancer.</p>
      */
     inline DomainEntry& WithIsAlias(bool value) { SetIsAlias(value); return *this;}
 

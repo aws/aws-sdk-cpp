@@ -16,6 +16,7 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
+    ContainerService,
     Instance,
     StaticIp,
     KeyPair,

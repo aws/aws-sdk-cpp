@@ -21,6 +21,8 @@ namespace Model
 IotAnalyticsAction::IotAnalyticsAction() : 
     m_channelArnHasBeenSet(false),
     m_channelNameHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ IotAnalyticsAction::IotAnalyticsAction() :
 IotAnalyticsAction::IotAnalyticsAction(JsonView jsonValue) : 
     m_channelArnHasBeenSet(false),
     m_channelNameHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +51,13 @@ IotAnalyticsAction& IotAnalyticsAction::operator =(JsonView jsonValue)
     m_channelName = jsonValue.GetString("channelName");
 
     m_channelNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchMode"))
+  {
+    m_batchMode = jsonValue.GetBool("batchMode");
+
+    m_batchModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -72,6 +83,12 @@ JsonValue IotAnalyticsAction::Jsonize() const
   if(m_channelNameHasBeenSet)
   {
    payload.WithString("channelName", m_channelName);
+
+  }
+
+  if(m_batchModeHasBeenSet)
+  {
+   payload.WithBool("batchMode", m_batchMode);
 
   }
 

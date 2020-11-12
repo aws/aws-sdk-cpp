@@ -20,7 +20,11 @@ namespace Model
     en_AU,
     en_GB,
     en_US,
-    es_US
+    es_ES,
+    es_US,
+    fr_FR,
+    fr_CA,
+    it_IT
   };
 
 namespace LocaleMapper
