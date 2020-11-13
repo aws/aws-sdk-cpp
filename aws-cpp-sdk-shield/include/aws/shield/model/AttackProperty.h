@@ -134,50 +134,50 @@ namespace Model
 
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline const Aws::Vector<Contributor>& GetTopContributors() const{ return m_topContributors; }
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline bool TopContributorsHasBeenSet() const { return m_topContributorsHasBeenSet; }
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline void SetTopContributors(const Aws::Vector<Contributor>& value) { m_topContributorsHasBeenSet = true; m_topContributors = value; }
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline void SetTopContributors(Aws::Vector<Contributor>&& value) { m_topContributorsHasBeenSet = true; m_topContributors = std::move(value); }
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline AttackProperty& WithTopContributors(const Aws::Vector<Contributor>& value) { SetTopContributors(value); return *this;}
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline AttackProperty& WithTopContributors(Aws::Vector<Contributor>&& value) { SetTopContributors(std::move(value)); return *this;}
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline AttackProperty& AddTopContributors(const Contributor& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(value); return *this; }
 
     /**
-     * <p>The array of <a>Contributor</a> objects that includes the top five
-     * contributors to an attack. </p>
+     * <p>The array of contributor objects that includes the top five contributors to
+     * an attack. </p>
      */
     inline AttackProperty& AddTopContributors(Contributor&& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(std::move(value)); return *this; }
 

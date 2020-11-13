@@ -27,7 +27,8 @@ Subscription::Subscription() :
     m_autoRenewHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
-    m_proactiveEngagementStatusHasBeenSet(false)
+    m_proactiveEngagementStatusHasBeenSet(false),
+    m_subscriptionLimitsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Subscription::Subscription(JsonView jsonValue) :
     m_autoRenewHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
-    m_proactiveEngagementStatusHasBeenSet(false)
+    m_proactiveEngagementStatusHasBeenSet(false),
+    m_subscriptionLimitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ Subscription& Subscription::operator =(JsonView jsonValue)
     m_proactiveEngagementStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubscriptionLimits"))
+  {
+    m_subscriptionLimits = jsonValue.GetObject("SubscriptionLimits");
+
+    m_subscriptionLimitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue Subscription::Jsonize() const
   if(m_proactiveEngagementStatusHasBeenSet)
   {
    payload.WithString("ProactiveEngagementStatus", ProactiveEngagementStatusMapper::GetNameForProactiveEngagementStatus(m_proactiveEngagementStatus));
+  }
+
+  if(m_subscriptionLimitsHasBeenSet)
+  {
+   payload.WithObject("SubscriptionLimits", m_subscriptionLimits.Jsonize());
+
   }
 
   return payload;

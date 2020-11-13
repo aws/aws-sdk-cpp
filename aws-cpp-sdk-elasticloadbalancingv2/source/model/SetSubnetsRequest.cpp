@@ -13,7 +13,9 @@ using namespace Aws::Utils;
 SetSubnetsRequest::SetSubnetsRequest() : 
     m_loadBalancerArnHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false)
+    m_subnetMappingsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String SetSubnetsRequest::SerializePayload() const
       item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
       subnetMappingsCount++;
     }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 
   ss << "Version=2015-12-01";

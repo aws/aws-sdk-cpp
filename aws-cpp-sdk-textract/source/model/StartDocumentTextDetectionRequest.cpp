@@ -17,7 +17,8 @@ StartDocumentTextDetectionRequest::StartDocumentTextDetectionRequest() :
     m_clientRequestTokenHasBeenSet(false),
     m_jobTagHasBeenSet(false),
     m_notificationChannelHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
+    m_outputConfigHasBeenSet(false),
+    m_kMSKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String StartDocumentTextDetectionRequest::SerializePayload() const
   if(m_outputConfigHasBeenSet)
   {
    payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
+
+  }
+
+  if(m_kMSKeyIdHasBeenSet)
+  {
+   payload.WithString("KMSKeyId", m_kMSKeyId);
 
   }
 

@@ -24,6 +24,8 @@ Block::Block() :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_textType(TextType::NOT_SET),
+    m_textTypeHasBeenSet(false),
     m_rowIndex(0),
     m_rowIndexHasBeenSet(false),
     m_columnIndex(0),
@@ -49,6 +51,8 @@ Block::Block(JsonView jsonValue) :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_textType(TextType::NOT_SET),
+    m_textTypeHasBeenSet(false),
     m_rowIndex(0),
     m_rowIndexHasBeenSet(false),
     m_columnIndex(0),
@@ -90,6 +94,13 @@ Block& Block::operator =(JsonView jsonValue)
     m_text = jsonValue.GetString("Text");
 
     m_textHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TextType"))
+  {
+    m_textType = TextTypeMapper::GetTextTypeForName(jsonValue.GetString("TextType"));
+
+    m_textTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RowIndex"))
@@ -190,6 +201,11 @@ JsonValue Block::Jsonize() const
   {
    payload.WithString("Text", m_text);
 
+  }
+
+  if(m_textTypeHasBeenSet)
+  {
+   payload.WithString("TextType", TextTypeMapper::GetNameForTextType(m_textType));
   }
 
   if(m_rowIndexHasBeenSet)

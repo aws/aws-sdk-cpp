@@ -25,12 +25,16 @@
 #include <aws/shield/model/AssociateHealthCheckRequest.h>
 #include <aws/shield/model/AssociateProactiveEngagementDetailsRequest.h>
 #include <aws/shield/model/CreateProtectionRequest.h>
+#include <aws/shield/model/CreateProtectionGroupRequest.h>
 #include <aws/shield/model/CreateSubscriptionRequest.h>
 #include <aws/shield/model/DeleteProtectionRequest.h>
+#include <aws/shield/model/DeleteProtectionGroupRequest.h>
 #include <aws/shield/model/DescribeAttackRequest.h>
+#include <aws/shield/model/DescribeAttackStatisticsRequest.h>
 #include <aws/shield/model/DescribeDRTAccessRequest.h>
 #include <aws/shield/model/DescribeEmergencyContactSettingsRequest.h>
 #include <aws/shield/model/DescribeProtectionRequest.h>
+#include <aws/shield/model/DescribeProtectionGroupRequest.h>
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
 #include <aws/shield/model/DisableProactiveEngagementRequest.h>
 #include <aws/shield/model/DisassociateDRTLogBucketRequest.h>
@@ -39,8 +43,11 @@
 #include <aws/shield/model/EnableProactiveEngagementRequest.h>
 #include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
+#include <aws/shield/model/ListProtectionGroupsRequest.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
+#include <aws/shield/model/ListResourcesInProtectionGroupRequest.h>
 #include <aws/shield/model/UpdateEmergencyContactSettingsRequest.h>
+#include <aws/shield/model/UpdateProtectionGroupRequest.h>
 #include <aws/shield/model/UpdateSubscriptionRequest.h>
 
 using namespace Aws;
@@ -251,6 +258,33 @@ void ShieldClient::CreateProtectionAsyncHelper(const CreateProtectionRequest& re
   handler(this, request, CreateProtection(request), context);
 }
 
+CreateProtectionGroupOutcome ShieldClient::CreateProtectionGroup(const CreateProtectionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateProtectionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateProtectionGroupOutcomeCallable ShieldClient::CreateProtectionGroupCallable(const CreateProtectionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateProtectionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProtectionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::CreateProtectionGroupAsync(const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateProtectionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::CreateProtectionGroupAsyncHelper(const CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateProtectionGroup(request), context);
+}
+
 CreateSubscriptionOutcome ShieldClient::CreateSubscription(const CreateSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -305,6 +339,33 @@ void ShieldClient::DeleteProtectionAsyncHelper(const DeleteProtectionRequest& re
   handler(this, request, DeleteProtection(request), context);
 }
 
+DeleteProtectionGroupOutcome ShieldClient::DeleteProtectionGroup(const DeleteProtectionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteProtectionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteProtectionGroupOutcomeCallable ShieldClient::DeleteProtectionGroupCallable(const DeleteProtectionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProtectionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProtectionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DeleteProtectionGroupAsync(const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProtectionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DeleteProtectionGroupAsyncHelper(const DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProtectionGroup(request), context);
+}
+
 DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -330,6 +391,33 @@ void ShieldClient::DescribeAttackAsync(const DescribeAttackRequest& request, con
 void ShieldClient::DescribeAttackAsyncHelper(const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAttack(request), context);
+}
+
+DescribeAttackStatisticsOutcome ShieldClient::DescribeAttackStatistics(const DescribeAttackStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAttackStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAttackStatisticsOutcomeCallable ShieldClient::DescribeAttackStatisticsCallable(const DescribeAttackStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAttackStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAttackStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DescribeAttackStatisticsAsync(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAttackStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DescribeAttackStatisticsAsyncHelper(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAttackStatistics(request), context);
 }
 
 DescribeDRTAccessOutcome ShieldClient::DescribeDRTAccess(const DescribeDRTAccessRequest& request) const
@@ -411,6 +499,33 @@ void ShieldClient::DescribeProtectionAsync(const DescribeProtectionRequest& requ
 void ShieldClient::DescribeProtectionAsyncHelper(const DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeProtection(request), context);
+}
+
+DescribeProtectionGroupOutcome ShieldClient::DescribeProtectionGroup(const DescribeProtectionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeProtectionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeProtectionGroupOutcomeCallable ShieldClient::DescribeProtectionGroupCallable(const DescribeProtectionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProtectionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProtectionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DescribeProtectionGroupAsync(const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProtectionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DescribeProtectionGroupAsyncHelper(const DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProtectionGroup(request), context);
 }
 
 DescribeSubscriptionOutcome ShieldClient::DescribeSubscription(const DescribeSubscriptionRequest& request) const
@@ -629,6 +744,33 @@ void ShieldClient::ListAttacksAsyncHelper(const ListAttacksRequest& request, con
   handler(this, request, ListAttacks(request), context);
 }
 
+ListProtectionGroupsOutcome ShieldClient::ListProtectionGroups(const ListProtectionGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListProtectionGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProtectionGroupsOutcomeCallable ShieldClient::ListProtectionGroupsCallable(const ListProtectionGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProtectionGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProtectionGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::ListProtectionGroupsAsync(const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProtectionGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::ListProtectionGroupsAsyncHelper(const ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProtectionGroups(request), context);
+}
+
 ListProtectionsOutcome ShieldClient::ListProtections(const ListProtectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -656,6 +798,33 @@ void ShieldClient::ListProtectionsAsyncHelper(const ListProtectionsRequest& requ
   handler(this, request, ListProtections(request), context);
 }
 
+ListResourcesInProtectionGroupOutcome ShieldClient::ListResourcesInProtectionGroup(const ListResourcesInProtectionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListResourcesInProtectionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourcesInProtectionGroupOutcomeCallable ShieldClient::ListResourcesInProtectionGroupCallable(const ListResourcesInProtectionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourcesInProtectionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourcesInProtectionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::ListResourcesInProtectionGroupAsync(const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesInProtectionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::ListResourcesInProtectionGroupAsyncHelper(const ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourcesInProtectionGroup(request), context);
+}
+
 UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettings(const UpdateEmergencyContactSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -681,6 +850,33 @@ void ShieldClient::UpdateEmergencyContactSettingsAsync(const UpdateEmergencyCont
 void ShieldClient::UpdateEmergencyContactSettingsAsyncHelper(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateEmergencyContactSettings(request), context);
+}
+
+UpdateProtectionGroupOutcome ShieldClient::UpdateProtectionGroup(const UpdateProtectionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateProtectionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateProtectionGroupOutcomeCallable ShieldClient::UpdateProtectionGroupCallable(const UpdateProtectionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProtectionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProtectionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::UpdateProtectionGroupAsync(const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProtectionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::UpdateProtectionGroupAsyncHelper(const UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProtectionGroup(request), context);
 }
 
 UpdateSubscriptionOutcome ShieldClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const

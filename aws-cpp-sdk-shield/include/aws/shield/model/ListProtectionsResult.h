@@ -76,10 +76,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -89,10 +89,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -102,10 +102,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -115,10 +115,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -128,10 +128,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline ListProtectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -141,10 +141,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline ListProtectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -154,10 +154,10 @@ namespace Model
      * NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the
      * value of NextToken from the previous response to get information about another
-     * batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a>
-     * objects in batches smaller than the number specified by MaxResults. If there are
-     * more <a>Protection</a> objects to return, AWS WAF will always also return a
-     * <code>NextToken</code>.</p>
+     * batch of Protections.</p> <p>Shield Advanced might return the list of
+     * <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, Shield
+     * Advanced will always also return a <code>NextToken</code>.</p>
      */
     inline ListProtectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

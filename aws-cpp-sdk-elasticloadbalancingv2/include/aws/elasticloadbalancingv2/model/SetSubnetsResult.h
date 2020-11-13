@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/AvailabilityZone.h>
 #include <utility>
@@ -70,6 +71,32 @@ namespace Model
     inline SetSubnetsResult& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>[Network Load Balancers] The IP address type.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>[Network Load Balancers] The IP address type.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressType = value; }
+
+    /**
+     * <p>[Network Load Balancers] The IP address type.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>[Network Load Balancers] The IP address type.</p>
+     */
+    inline SetSubnetsResult& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The IP address type.</p>
+     */
+    inline SetSubnetsResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,6 +115,8 @@ namespace Model
   private:
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
+
+    IpAddressType m_ipAddressType;
 
     ResponseMetadata m_responseMetadata;
   };

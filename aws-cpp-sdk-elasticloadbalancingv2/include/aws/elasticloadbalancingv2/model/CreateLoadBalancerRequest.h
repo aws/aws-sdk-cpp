@@ -236,9 +236,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
 
@@ -253,9 +255,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
 
@@ -270,9 +274,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
@@ -287,9 +293,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
 
@@ -304,9 +312,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
 
@@ -321,9 +331,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
 
@@ -338,9 +350,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
 
@@ -355,9 +369,11 @@ namespace Model
      * You can specify subnets from one or more Availability Zones. You can specify one
      * Elastic IP address per subnet if you need static IP addresses for your
      * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet.</p> <p>[Gateway
-     * Load Balancers] You can specify subnets from one or more Availability Zones. You
-     * cannot specify Elastic IP addresses for your subnets.</p>
+     * private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
 
@@ -575,50 +591,50 @@ namespace Model
 
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>.</p>
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
+     * must use <code>ipv4</code>.</p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

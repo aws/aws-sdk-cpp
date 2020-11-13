@@ -78,11 +78,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -125,11 +129,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -172,11 +180,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -219,11 +231,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -266,11 +282,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -313,11 +333,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -360,11 +384,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -407,11 +435,15 @@ namespace Model
      * <code>false</code>. The default is <code>false</code>. If the value is
      * <code>false</code> and the request contains a duplicate header field name or
      * query parameter key, the load balancer uses the last value sent by the
-     * client.</p> </li> </ul> <p>The following attribute is supported only by Network
-     * Load Balancers:</p> <ul> <li> <p> <code>proxy_protocol_v2.enabled</code> -
-     * Indicates whether Proxy Protocol version 2 is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
-     * </li> </ul>
+     * client.</p> </li> </ul> <p>The following attributes are supported only by
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
+     * whether the load balancer terminates connections at the end of the
+     * deregistration timeout. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> <li> <p>
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

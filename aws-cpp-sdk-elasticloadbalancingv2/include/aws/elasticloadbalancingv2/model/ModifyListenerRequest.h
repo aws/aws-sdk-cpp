@@ -109,7 +109,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
@@ -117,7 +118,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -125,7 +127,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
@@ -133,7 +136,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
@@ -141,7 +145,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline ModifyListenerRequest& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
@@ -149,7 +154,8 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
-     * support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a protocol
+     * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline ModifyListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}

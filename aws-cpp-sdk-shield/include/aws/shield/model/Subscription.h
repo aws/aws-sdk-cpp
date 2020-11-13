@@ -9,6 +9,7 @@
 #include <aws/shield/model/AutoRenew.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/ProactiveEngagementStatus.h>
+#include <aws/shield/model/SubscriptionLimits.h>
 #include <aws/shield/model/Limit.h>
 #include <utility>
 
@@ -315,6 +316,37 @@ namespace Model
      */
     inline Subscription& WithProactiveEngagementStatus(ProactiveEngagementStatus&& value) { SetProactiveEngagementStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline const SubscriptionLimits& GetSubscriptionLimits() const{ return m_subscriptionLimits; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline bool SubscriptionLimitsHasBeenSet() const { return m_subscriptionLimitsHasBeenSet; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline void SetSubscriptionLimits(const SubscriptionLimits& value) { m_subscriptionLimitsHasBeenSet = true; m_subscriptionLimits = value; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline void SetSubscriptionLimits(SubscriptionLimits&& value) { m_subscriptionLimitsHasBeenSet = true; m_subscriptionLimits = std::move(value); }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline Subscription& WithSubscriptionLimits(const SubscriptionLimits& value) { SetSubscriptionLimits(value); return *this;}
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline Subscription& WithSubscriptionLimits(SubscriptionLimits&& value) { SetSubscriptionLimits(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -334,6 +366,9 @@ namespace Model
 
     ProactiveEngagementStatus m_proactiveEngagementStatus;
     bool m_proactiveEngagementStatusHasBeenSet;
+
+    SubscriptionLimits m_subscriptionLimits;
+    bool m_subscriptionLimitsHasBeenSet;
   };
 
 } // namespace Model

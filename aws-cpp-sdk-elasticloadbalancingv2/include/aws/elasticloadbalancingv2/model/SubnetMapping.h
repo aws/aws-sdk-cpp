@@ -177,6 +177,47 @@ namespace Model
      */
     inline SubnetMapping& WithPrivateIPv4Address(const char* value) { SetPrivateIPv4Address(value); return *this;}
 
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline const Aws::String& GetIPv6Address() const{ return m_iPv6Address; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline bool IPv6AddressHasBeenSet() const { return m_iPv6AddressHasBeenSet; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(const Aws::String& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = value; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(Aws::String&& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = std::move(value); }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(const char* value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address.assign(value); }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline SubnetMapping& WithIPv6Address(const Aws::String& value) { SetIPv6Address(value); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline SubnetMapping& WithIPv6Address(Aws::String&& value) { SetIPv6Address(std::move(value)); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline SubnetMapping& WithIPv6Address(const char* value) { SetIPv6Address(value); return *this;}
+
   private:
 
     Aws::String m_subnetId;
@@ -187,6 +228,9 @@ namespace Model
 
     Aws::String m_privateIPv4Address;
     bool m_privateIPv4AddressHasBeenSet;
+
+    Aws::String m_iPv6Address;
+    bool m_iPv6AddressHasBeenSet;
   };
 
 } // namespace Model

@@ -23,14 +23,16 @@ namespace Model
 LoadBalancerAddress::LoadBalancerAddress() : 
     m_ipAddressHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false)
+    m_privateIPv4AddressHasBeenSet(false),
+    m_iPv6AddressHasBeenSet(false)
 {
 }
 
 LoadBalancerAddress::LoadBalancerAddress(const XmlNode& xmlNode) : 
     m_ipAddressHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false)
+    m_privateIPv4AddressHasBeenSet(false),
+    m_iPv6AddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +61,12 @@ LoadBalancerAddress& LoadBalancerAddress::operator =(const XmlNode& xmlNode)
       m_privateIPv4Address = Aws::Utils::Xml::DecodeEscapedXmlText(privateIPv4AddressNode.GetText());
       m_privateIPv4AddressHasBeenSet = true;
     }
+    XmlNode iPv6AddressNode = resultNode.FirstChild("IPv6Address");
+    if(!iPv6AddressNode.IsNull())
+    {
+      m_iPv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(iPv6AddressNode.GetText());
+      m_iPv6AddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +89,11 @@ void LoadBalancerAddress::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".PrivateIPv4Address=" << StringUtils::URLEncode(m_privateIPv4Address.c_str()) << "&";
   }
 
+  if(m_iPv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IPv6Address=" << StringUtils::URLEncode(m_iPv6Address.c_str()) << "&";
+  }
+
 }
 
 void LoadBalancerAddress::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -96,6 +109,10 @@ void LoadBalancerAddress::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_privateIPv4AddressHasBeenSet)
   {
       oStream << location << ".PrivateIPv4Address=" << StringUtils::URLEncode(m_privateIPv4Address.c_str()) << "&";
+  }
+  if(m_iPv6AddressHasBeenSet)
+  {
+      oStream << location << ".IPv6Address=" << StringUtils::URLEncode(m_iPv6Address.c_str()) << "&";
   }
 }
 

@@ -17,11 +17,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetSubnetsResult::SetSubnetsResult()
+SetSubnetsResult::SetSubnetsResult() : 
+    m_ipAddressType(IpAddressType::NOT_SET)
 {
 }
 
-SetSubnetsResult::SetSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SetSubnetsResult::SetSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+    m_ipAddressType(IpAddressType::NOT_SET)
 {
   *this = result;
 }
@@ -48,6 +50,11 @@ SetSubnetsResult& SetSubnetsResult::operator =(const Aws::AmazonWebServiceResult
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 
+    }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
     }
   }
 

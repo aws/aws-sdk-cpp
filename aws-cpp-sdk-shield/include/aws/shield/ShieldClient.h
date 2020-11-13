@@ -16,12 +16,16 @@
 #include <aws/shield/model/AssociateHealthCheckResult.h>
 #include <aws/shield/model/AssociateProactiveEngagementDetailsResult.h>
 #include <aws/shield/model/CreateProtectionResult.h>
+#include <aws/shield/model/CreateProtectionGroupResult.h>
 #include <aws/shield/model/CreateSubscriptionResult.h>
 #include <aws/shield/model/DeleteProtectionResult.h>
+#include <aws/shield/model/DeleteProtectionGroupResult.h>
 #include <aws/shield/model/DescribeAttackResult.h>
+#include <aws/shield/model/DescribeAttackStatisticsResult.h>
 #include <aws/shield/model/DescribeDRTAccessResult.h>
 #include <aws/shield/model/DescribeEmergencyContactSettingsResult.h>
 #include <aws/shield/model/DescribeProtectionResult.h>
+#include <aws/shield/model/DescribeProtectionGroupResult.h>
 #include <aws/shield/model/DescribeSubscriptionResult.h>
 #include <aws/shield/model/DisableProactiveEngagementResult.h>
 #include <aws/shield/model/DisassociateDRTLogBucketResult.h>
@@ -30,8 +34,11 @@
 #include <aws/shield/model/EnableProactiveEngagementResult.h>
 #include <aws/shield/model/GetSubscriptionStateResult.h>
 #include <aws/shield/model/ListAttacksResult.h>
+#include <aws/shield/model/ListProtectionGroupsResult.h>
 #include <aws/shield/model/ListProtectionsResult.h>
+#include <aws/shield/model/ListResourcesInProtectionGroupResult.h>
 #include <aws/shield/model/UpdateEmergencyContactSettingsResult.h>
+#include <aws/shield/model/UpdateProtectionGroupResult.h>
 #include <aws/shield/model/UpdateSubscriptionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -77,12 +84,16 @@ namespace Model
         class AssociateHealthCheckRequest;
         class AssociateProactiveEngagementDetailsRequest;
         class CreateProtectionRequest;
+        class CreateProtectionGroupRequest;
         class CreateSubscriptionRequest;
         class DeleteProtectionRequest;
+        class DeleteProtectionGroupRequest;
         class DescribeAttackRequest;
+        class DescribeAttackStatisticsRequest;
         class DescribeDRTAccessRequest;
         class DescribeEmergencyContactSettingsRequest;
         class DescribeProtectionRequest;
+        class DescribeProtectionGroupRequest;
         class DescribeSubscriptionRequest;
         class DisableProactiveEngagementRequest;
         class DisassociateDRTLogBucketRequest;
@@ -91,8 +102,11 @@ namespace Model
         class EnableProactiveEngagementRequest;
         class GetSubscriptionStateRequest;
         class ListAttacksRequest;
+        class ListProtectionGroupsRequest;
         class ListProtectionsRequest;
+        class ListResourcesInProtectionGroupRequest;
         class UpdateEmergencyContactSettingsRequest;
+        class UpdateProtectionGroupRequest;
         class UpdateSubscriptionRequest;
 
         typedef Aws::Utils::Outcome<AssociateDRTLogBucketResult, ShieldError> AssociateDRTLogBucketOutcome;
@@ -100,12 +114,16 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateHealthCheckResult, ShieldError> AssociateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<AssociateProactiveEngagementDetailsResult, ShieldError> AssociateProactiveEngagementDetailsOutcome;
         typedef Aws::Utils::Outcome<CreateProtectionResult, ShieldError> CreateProtectionOutcome;
+        typedef Aws::Utils::Outcome<CreateProtectionGroupResult, ShieldError> CreateProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<CreateSubscriptionResult, ShieldError> CreateSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteProtectionResult, ShieldError> DeleteProtectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteProtectionGroupResult, ShieldError> DeleteProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeAttackResult, ShieldError> DescribeAttackOutcome;
+        typedef Aws::Utils::Outcome<DescribeAttackStatisticsResult, ShieldError> DescribeAttackStatisticsOutcome;
         typedef Aws::Utils::Outcome<DescribeDRTAccessResult, ShieldError> DescribeDRTAccessOutcome;
         typedef Aws::Utils::Outcome<DescribeEmergencyContactSettingsResult, ShieldError> DescribeEmergencyContactSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeProtectionResult, ShieldError> DescribeProtectionOutcome;
+        typedef Aws::Utils::Outcome<DescribeProtectionGroupResult, ShieldError> DescribeProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionResult, ShieldError> DescribeSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DisableProactiveEngagementResult, ShieldError> DisableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTLogBucketResult, ShieldError> DisassociateDRTLogBucketOutcome;
@@ -114,8 +132,11 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableProactiveEngagementResult, ShieldError> EnableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionStateResult, ShieldError> GetSubscriptionStateOutcome;
         typedef Aws::Utils::Outcome<ListAttacksResult, ShieldError> ListAttacksOutcome;
+        typedef Aws::Utils::Outcome<ListProtectionGroupsResult, ShieldError> ListProtectionGroupsOutcome;
         typedef Aws::Utils::Outcome<ListProtectionsResult, ShieldError> ListProtectionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourcesInProtectionGroupResult, ShieldError> ListResourcesInProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateEmergencyContactSettingsResult, ShieldError> UpdateEmergencyContactSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateProtectionGroupResult, ShieldError> UpdateProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateSubscriptionResult, ShieldError> UpdateSubscriptionOutcome;
 
         typedef std::future<AssociateDRTLogBucketOutcome> AssociateDRTLogBucketOutcomeCallable;
@@ -123,12 +144,16 @@ namespace Model
         typedef std::future<AssociateHealthCheckOutcome> AssociateHealthCheckOutcomeCallable;
         typedef std::future<AssociateProactiveEngagementDetailsOutcome> AssociateProactiveEngagementDetailsOutcomeCallable;
         typedef std::future<CreateProtectionOutcome> CreateProtectionOutcomeCallable;
+        typedef std::future<CreateProtectionGroupOutcome> CreateProtectionGroupOutcomeCallable;
         typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
         typedef std::future<DeleteProtectionOutcome> DeleteProtectionOutcomeCallable;
+        typedef std::future<DeleteProtectionGroupOutcome> DeleteProtectionGroupOutcomeCallable;
         typedef std::future<DescribeAttackOutcome> DescribeAttackOutcomeCallable;
+        typedef std::future<DescribeAttackStatisticsOutcome> DescribeAttackStatisticsOutcomeCallable;
         typedef std::future<DescribeDRTAccessOutcome> DescribeDRTAccessOutcomeCallable;
         typedef std::future<DescribeEmergencyContactSettingsOutcome> DescribeEmergencyContactSettingsOutcomeCallable;
         typedef std::future<DescribeProtectionOutcome> DescribeProtectionOutcomeCallable;
+        typedef std::future<DescribeProtectionGroupOutcome> DescribeProtectionGroupOutcomeCallable;
         typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
         typedef std::future<DisableProactiveEngagementOutcome> DisableProactiveEngagementOutcomeCallable;
         typedef std::future<DisassociateDRTLogBucketOutcome> DisassociateDRTLogBucketOutcomeCallable;
@@ -137,8 +162,11 @@ namespace Model
         typedef std::future<EnableProactiveEngagementOutcome> EnableProactiveEngagementOutcomeCallable;
         typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
         typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
+        typedef std::future<ListProtectionGroupsOutcome> ListProtectionGroupsOutcomeCallable;
         typedef std::future<ListProtectionsOutcome> ListProtectionsOutcomeCallable;
+        typedef std::future<ListResourcesInProtectionGroupOutcome> ListResourcesInProtectionGroupOutcomeCallable;
         typedef std::future<UpdateEmergencyContactSettingsOutcome> UpdateEmergencyContactSettingsOutcomeCallable;
+        typedef std::future<UpdateProtectionGroupOutcome> UpdateProtectionGroupOutcomeCallable;
         typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
 } // namespace Model
 
@@ -149,12 +177,16 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::AssociateHealthCheckRequest&, const Model::AssociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::AssociateProactiveEngagementDetailsRequest&, const Model::AssociateProactiveEngagementDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateProactiveEngagementDetailsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateProtectionRequest&, const Model::CreateProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::CreateProtectionGroupRequest&, const Model::CreateProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateSubscriptionRequest&, const Model::CreateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionRequest&, const Model::DeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionGroupRequest&, const Model::DeleteProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeAttackRequest&, const Model::DescribeAttackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttackResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DescribeAttackStatisticsRequest&, const Model::DescribeAttackStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttackStatisticsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeDRTAccessRequest&, const Model::DescribeDRTAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDRTAccessResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeEmergencyContactSettingsRequest&, const Model::DescribeEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEmergencyContactSettingsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionRequest&, const Model::DescribeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionGroupRequest&, const Model::DescribeProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisableProactiveEngagementRequest&, const Model::DisableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTLogBucketRequest&, const Model::DisassociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTLogBucketResponseReceivedHandler;
@@ -163,8 +195,11 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::EnableProactiveEngagementRequest&, const Model::EnableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::ListProtectionGroupsRequest&, const Model::ListProtectionGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionGroupsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListProtectionsRequest&, const Model::ListProtectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionsResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::ListResourcesInProtectionGroupRequest&, const Model::ListResourcesInProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesInProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UpdateEmergencyContactSettingsRequest&, const Model::UpdateEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmergencyContactSettingsResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::UpdateProtectionGroupRequest&, const Model::UpdateProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UpdateSubscriptionRequest&, const Model::UpdateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionResponseReceivedHandler;
 
   /**
@@ -533,6 +568,37 @@ namespace Model
         virtual void CreateProtectionAsync(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a grouping of protected resources so they can be handled as a
+         * collective. This resource grouping improves the accuracy of detection and
+         * reduces false positives. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateProtectionGroupOutcome CreateProtectionGroup(const Model::CreateProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Creates a grouping of protected resources so they can be handled as a
+         * collective. This resource grouping improves the accuracy of detection and
+         * reduces false positives. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateProtectionGroupOutcomeCallable CreateProtectionGroupCallable(const Model::CreateProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Creates a grouping of protected resources so they can be handled as a
+         * collective. This resource grouping improves the accuracy of detection and
+         * reduces false positives. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateProtectionGroupAsync(const Model::CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Activates AWS Shield Advanced for an account.</p> <p>When you initally create
          * a subscription, your subscription is set to be automatically renewed at the end
          * of the existing subscription period. You can change this by submitting an
@@ -595,6 +661,31 @@ namespace Model
         virtual void DeleteProtectionAsync(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes the specified protection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProtectionGroupOutcome DeleteProtectionGroup(const Model::DeleteProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Removes the specified protection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProtectionGroupOutcomeCallable DeleteProtectionGroupCallable(const Model::DeleteProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Removes the specified protection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProtectionGroupAsync(const Model::DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the details of a DDoS attack. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">AWS
          * API Reference</a></p>
@@ -618,6 +709,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAttackAsync(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides information about the number and type of attacks AWS Shield has
+         * detected in the last year for all resources that belong to your account,
+         * regardless of whether you've defined Shield protections for them. This operation
+         * is available to Shield customers as well as to Shield Advanced customers.</p>
+         * <p>The operation returns data for the time range of midnight UTC, one year ago,
+         * to midnight UTC, today. For example, if the current time is <code>2020-10-26
+         * 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then the
+         * time range for the attack data returned is from <code>2019-10-26 00:00:00
+         * UTC</code> to <code>2020-10-26 00:00:00 UTC</code>. </p> <p>The time range
+         * indicates the period covered by the attack statistics data items.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAttackStatisticsOutcome DescribeAttackStatistics(const Model::DescribeAttackStatisticsRequest& request) const;
+
+        /**
+         * <p>Provides information about the number and type of attacks AWS Shield has
+         * detected in the last year for all resources that belong to your account,
+         * regardless of whether you've defined Shield protections for them. This operation
+         * is available to Shield customers as well as to Shield Advanced customers.</p>
+         * <p>The operation returns data for the time range of midnight UTC, one year ago,
+         * to midnight UTC, today. For example, if the current time is <code>2020-10-26
+         * 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then the
+         * time range for the attack data returned is from <code>2019-10-26 00:00:00
+         * UTC</code> to <code>2020-10-26 00:00:00 UTC</code>. </p> <p>The time range
+         * indicates the period covered by the attack statistics data items.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAttackStatisticsOutcomeCallable DescribeAttackStatisticsCallable(const Model::DescribeAttackStatisticsRequest& request) const;
+
+        /**
+         * <p>Provides information about the number and type of attacks AWS Shield has
+         * detected in the last year for all resources that belong to your account,
+         * regardless of whether you've defined Shield protections for them. This operation
+         * is available to Shield customers as well as to Shield Advanced customers.</p>
+         * <p>The operation returns data for the time range of midnight UTC, one year ago,
+         * to midnight UTC, today. For example, if the current time is <code>2020-10-26
+         * 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then the
+         * time range for the attack data returned is from <code>2019-10-26 00:00:00
+         * UTC</code> to <code>2020-10-26 00:00:00 UTC</code>. </p> <p>The time range
+         * indicates the period covered by the attack statistics data items.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAttackStatisticsAsync(const Model::DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current role and list of Amazon S3 log buckets used by the DDoS
@@ -711,6 +857,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProtectionAsync(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the specification for the specified protection group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProtectionGroupOutcome DescribeProtectionGroup(const Model::DescribeProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Returns the specification for the specified protection group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProtectionGroupOutcomeCallable DescribeProtectionGroupCallable(const Model::DescribeProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Returns the specification for the specified protection group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProtectionGroupAsync(const Model::DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides details about the AWS Shield Advanced subscription for an
@@ -1012,6 +1186,34 @@ namespace Model
         virtual void ListAttacksAsync(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the <a>ProtectionGroup</a> objects for the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProtectionGroupsOutcome ListProtectionGroups(const Model::ListProtectionGroupsRequest& request) const;
+
+        /**
+         * <p>Retrieves the <a>ProtectionGroup</a> objects for the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProtectionGroupsOutcomeCallable ListProtectionGroupsCallable(const Model::ListProtectionGroupsRequest& request) const;
+
+        /**
+         * <p>Retrieves the <a>ProtectionGroup</a> objects for the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProtectionGroupsAsync(const Model::ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all <a>Protection</a> objects for the account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
@@ -1038,6 +1240,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProtectionsAsync(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the resources that are included in the protection group.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourcesInProtectionGroupOutcome ListResourcesInProtectionGroup(const Model::ListResourcesInProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Retrieves the resources that are included in the protection group.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourcesInProtectionGroupOutcomeCallable ListResourcesInProtectionGroupCallable(const Model::ListResourcesInProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Retrieves the resources that are included in the protection group.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourcesInProtectionGroupAsync(const Model::ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the details of the list of email addresses and phone numbers that the
@@ -1072,6 +1302,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEmergencyContactSettingsAsync(const Model::UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing protection group. A protection group is a grouping of
+         * protected resources so they can be handled as a collective. This resource
+         * grouping improves the accuracy of detection and reduces false positives.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProtectionGroupOutcome UpdateProtectionGroup(const Model::UpdateProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Updates an existing protection group. A protection group is a grouping of
+         * protected resources so they can be handled as a collective. This resource
+         * grouping improves the accuracy of detection and reduces false positives.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateProtectionGroupOutcomeCallable UpdateProtectionGroupCallable(const Model::UpdateProtectionGroupRequest& request) const;
+
+        /**
+         * <p>Updates an existing protection group. A protection group is a grouping of
+         * protected resources so they can be handled as a collective. This resource
+         * grouping improves the accuracy of detection and reduces false positives.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateProtectionGroupAsync(const Model::UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the details of an existing subscription. Only enter values for
@@ -1113,12 +1377,16 @@ namespace Model
         void AssociateHealthCheckAsyncHelper(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateProactiveEngagementDetailsAsyncHelper(const Model::AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProtectionAsyncHelper(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateProtectionGroupAsyncHelper(const Model::CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubscriptionAsyncHelper(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProtectionAsyncHelper(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteProtectionGroupAsyncHelper(const Model::DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAttackAsyncHelper(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAttackStatisticsAsyncHelper(const Model::DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDRTAccessAsyncHelper(const Model::DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEmergencyContactSettingsAsyncHelper(const Model::DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProtectionAsyncHelper(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProtectionGroupAsyncHelper(const Model::DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableProactiveEngagementAsyncHelper(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTLogBucketAsyncHelper(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1127,8 +1395,11 @@ namespace Model
         void EnableProactiveEngagementAsyncHelper(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListProtectionGroupsAsyncHelper(const Model::ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProtectionsAsyncHelper(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourcesInProtectionGroupAsyncHelper(const Model::ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEmergencyContactSettingsAsyncHelper(const Model::UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateProtectionGroupAsyncHelper(const Model::UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSubscriptionAsyncHelper(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

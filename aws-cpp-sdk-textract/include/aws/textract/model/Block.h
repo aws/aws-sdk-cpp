@@ -7,6 +7,7 @@
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/BlockType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/model/TextType.h>
 #include <aws/textract/model/Geometry.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/SelectionStatus.h>
@@ -299,6 +300,43 @@ namespace Model
      * <p>The word or line of text that's recognized by Amazon Textract. </p>
      */
     inline Block& WithText(const char* value) { SetText(value); return *this;}
+
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline const TextType& GetTextType() const{ return m_textType; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline bool TextTypeHasBeenSet() const { return m_textTypeHasBeenSet; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline void SetTextType(const TextType& value) { m_textTypeHasBeenSet = true; m_textType = value; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = std::move(value); }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline Block& WithTextType(const TextType& value) { SetTextType(value); return *this;}
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline Block& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
 
 
     /**
@@ -762,6 +800,9 @@ namespace Model
 
     Aws::String m_text;
     bool m_textHasBeenSet;
+
+    TextType m_textType;
+    bool m_textTypeHasBeenSet;
 
     int m_rowIndex;
     bool m_rowIndexHasBeenSet;

@@ -384,6 +384,79 @@ namespace Model
      */
     inline StartDocumentAnalysisRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+
   private:
 
     DocumentLocation m_documentLocation;
@@ -403,6 +476,9 @@ namespace Model
 
     OutputConfig m_outputConfig;
     bool m_outputConfigHasBeenSet;
+
+    Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet;
   };
 
 } // namespace Model

@@ -33,6 +33,7 @@ static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
 static const int DOCUMENT_TOO_LARGE_HASH = HashingUtils::HashString("DocumentTooLargeException");
+static const int INVALID_K_M_S_KEY_HASH = HashingUtils::HashString("InvalidKMSKeyException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
 static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
 static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
@@ -69,6 +70,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOCUMENT_TOO_LARGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::DOCUMENT_TOO_LARGE), false);
+  }
+  else if (hashCode == INVALID_K_M_S_KEY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_K_M_S_KEY), false);
   }
   else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
