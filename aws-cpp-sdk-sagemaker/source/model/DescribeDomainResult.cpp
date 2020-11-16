@@ -106,12 +106,6 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("HomeEfsFileSystemKmsKeyId"))
-  {
-    m_homeEfsFileSystemKmsKeyId = jsonValue.GetString("HomeEfsFileSystemKmsKeyId");
-
-  }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -130,6 +124,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
 
   }
 

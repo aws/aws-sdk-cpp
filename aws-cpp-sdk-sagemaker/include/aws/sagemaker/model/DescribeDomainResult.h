@@ -359,32 +359,32 @@ namespace Model
 
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettings = value; }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettings = std::move(value); }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
@@ -438,42 +438,6 @@ namespace Model
      * subnets</p> </li> </ul>
      */
     inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyId = value; }
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyId = std::move(value); }
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyId.assign(value); }
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
 
 
     /**
@@ -595,6 +559,49 @@ namespace Model
      */
     inline DescribeDomainResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_domainArn;
@@ -621,13 +628,13 @@ namespace Model
 
     AppNetworkAccessType m_appNetworkAccessType;
 
-    Aws::String m_homeEfsFileSystemKmsKeyId;
-
     Aws::Vector<Aws::String> m_subnetIds;
 
     Aws::String m_url;
 
     Aws::String m_vpcId;
+
+    Aws::String m_kmsKeyId;
   };
 
 } // namespace Model

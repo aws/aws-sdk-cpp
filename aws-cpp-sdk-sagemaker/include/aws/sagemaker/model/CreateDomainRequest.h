@@ -356,52 +356,60 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline bool HomeEfsFileSystemKmsKeyIdHasBeenSet() const { return m_homeEfsFileSystemKmsKeyIdHasBeenSet; }
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = value; }
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = std::move(value); }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId.assign(value); }
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
+    inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
-     * customer master key (CMK) is not supported.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
@@ -426,8 +434,8 @@ namespace Model
     AppNetworkAccessType m_appNetworkAccessType;
     bool m_appNetworkAccessTypeHasBeenSet;
 
-    Aws::String m_homeEfsFileSystemKmsKeyId;
-    bool m_homeEfsFileSystemKmsKeyIdHasBeenSet;
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

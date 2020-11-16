@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -146,6 +149,163 @@ namespace Model
      */
     inline CanaryRunConfigInput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
 
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the keys and values to use for any environment variables used in
+     * the canary script. Use the following format:</p> <p>{ "key1" : "value1", "key2"
+     * : "value2", ...}</p> <p>Keys must start with a letter and be at least two
+     * characters. The total size of your environment variables cannot exceed 4 KB. You
+     * can't specify any Lambda reserved environment variables as the keys for your
+     * environment variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.</p>
+     */
+    inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
+
   private:
 
     int m_timeoutInSeconds;
@@ -156,6 +316,9 @@ namespace Model
 
     bool m_activeTracing;
     bool m_activeTracingHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_environmentVariables;
+    bool m_environmentVariablesHasBeenSet;
   };
 
 } // namespace Model

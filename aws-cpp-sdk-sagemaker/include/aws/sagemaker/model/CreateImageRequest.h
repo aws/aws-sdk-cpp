@@ -78,50 +78,50 @@ namespace Model
 
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline CreateImageRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline CreateImageRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name of the image. When the image is added to a domain,
-     * <code>DisplayName</code> must be unique to the domain.</p>
+     * <p>The display name of the image. If not provided, <code>ImageName</code> is
+     * displayed.</p>
      */
     inline CreateImageRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

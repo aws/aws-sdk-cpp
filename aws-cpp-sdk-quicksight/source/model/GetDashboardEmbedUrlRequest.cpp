@@ -26,6 +26,8 @@ GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() :
     m_undoRedoDisabledHasBeenSet(false),
     m_resetDisabled(false),
     m_resetDisabledHasBeenSet(false),
+    m_statePersistenceEnabled(false),
+    m_statePersistenceEnabledHasBeenSet(false),
     m_userArnHasBeenSet(false)
 {
 }
@@ -63,6 +65,13 @@ void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_resetDisabled;
       uri.AddQueryStringParameter("reset-disabled", ss.str());
+      ss.str("");
+    }
+
+    if(m_statePersistenceEnabledHasBeenSet)
+    {
+      ss << m_statePersistenceEnabled;
+      uri.AddQueryStringParameter("state-persistence-enabled", ss.str());
       ss.str("");
     }
 

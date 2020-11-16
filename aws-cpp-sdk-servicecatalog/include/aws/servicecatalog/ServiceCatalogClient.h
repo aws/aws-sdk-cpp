@@ -62,6 +62,7 @@
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionResult.h>
 #include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusResult.h>
 #include <aws/servicecatalog/model/GetProvisionedProductOutputsResult.h>
+#include <aws/servicecatalog/model/ImportAsProvisionedProductResult.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesResult.h>
 #include <aws/servicecatalog/model/ListBudgetsForResourceResult.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioResult.h>
@@ -185,6 +186,7 @@ namespace Model
         class ExecuteProvisionedProductServiceActionRequest;
         class GetAWSOrganizationsAccessStatusRequest;
         class GetProvisionedProductOutputsRequest;
+        class ImportAsProvisionedProductRequest;
         class ListAcceptedPortfolioSharesRequest;
         class ListBudgetsForResourceRequest;
         class ListConstraintsForPortfolioRequest;
@@ -270,6 +272,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExecuteProvisionedProductServiceActionResult, ServiceCatalogError> ExecuteProvisionedProductServiceActionOutcome;
         typedef Aws::Utils::Outcome<GetAWSOrganizationsAccessStatusResult, ServiceCatalogError> GetAWSOrganizationsAccessStatusOutcome;
         typedef Aws::Utils::Outcome<GetProvisionedProductOutputsResult, ServiceCatalogError> GetProvisionedProductOutputsOutcome;
+        typedef Aws::Utils::Outcome<ImportAsProvisionedProductResult, ServiceCatalogError> ImportAsProvisionedProductOutcome;
         typedef Aws::Utils::Outcome<ListAcceptedPortfolioSharesResult, ServiceCatalogError> ListAcceptedPortfolioSharesOutcome;
         typedef Aws::Utils::Outcome<ListBudgetsForResourceResult, ServiceCatalogError> ListBudgetsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListConstraintsForPortfolioResult, ServiceCatalogError> ListConstraintsForPortfolioOutcome;
@@ -355,6 +358,7 @@ namespace Model
         typedef std::future<ExecuteProvisionedProductServiceActionOutcome> ExecuteProvisionedProductServiceActionOutcomeCallable;
         typedef std::future<GetAWSOrganizationsAccessStatusOutcome> GetAWSOrganizationsAccessStatusOutcomeCallable;
         typedef std::future<GetProvisionedProductOutputsOutcome> GetProvisionedProductOutputsOutcomeCallable;
+        typedef std::future<ImportAsProvisionedProductOutcome> ImportAsProvisionedProductOutcomeCallable;
         typedef std::future<ListAcceptedPortfolioSharesOutcome> ListAcceptedPortfolioSharesOutcomeCallable;
         typedef std::future<ListBudgetsForResourceOutcome> ListBudgetsForResourceOutcomeCallable;
         typedef std::future<ListConstraintsForPortfolioOutcome> ListConstraintsForPortfolioOutcomeCallable;
@@ -443,6 +447,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductServiceActionRequest&, const Model::ExecuteProvisionedProductServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::GetAWSOrganizationsAccessStatusRequest&, const Model::GetAWSOrganizationsAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSOrganizationsAccessStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::GetProvisionedProductOutputsRequest&, const Model::GetProvisionedProductOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProvisionedProductOutputsResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::ImportAsProvisionedProductRequest&, const Model::ImportAsProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportAsProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListAcceptedPortfolioSharesRequest&, const Model::ListAcceptedPortfolioSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceptedPortfolioSharesResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListBudgetsForResourceRequest&, const Model::ListBudgetsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBudgetsForResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListConstraintsForPortfolioRequest&, const Model::ListConstraintsForPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConstraintsForPortfolioResponseReceivedHandler;
@@ -481,8 +486,8 @@ namespace Model
    * <fullname>AWS Service Catalog</fullname> <p> <a
    * href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
    * organizations to create and manage catalogs of IT services that are approved for
-   * use on AWS. To get the most out of this documentation, you should be familiar
-   * with the terminology discussed in <a
+   * AWS. To get the most out of this documentation, you should be familiar with the
+   * terminology discussed in <a
    * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
    * Service Catalog Concepts</a>.</p>
    */
@@ -2098,6 +2103,58 @@ namespace Model
         virtual void GetProvisionedProductOutputsAsync(const Model::GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Requests the import of a resource as a Service Catalog provisioned product
+         * that is associated to a Service Catalog product and provisioning artifact. Once
+         * imported all supported Service Catalog governance actions are supported on the
+         * provisioned product.</p> <p>Resource import only supports CloudFormation stack
+         * ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+         * <p>The CloudFormation stack must have one of the following statuses to be
+         * imported: CREATE_COMPLETE, UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE,
+         * IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.</p> <p>Import of the resource
+         * requires that the CloudFormation stack template matches the associated Service
+         * Catalog product provisioning artifact. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportAsProvisionedProductOutcome ImportAsProvisionedProduct(const Model::ImportAsProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Requests the import of a resource as a Service Catalog provisioned product
+         * that is associated to a Service Catalog product and provisioning artifact. Once
+         * imported all supported Service Catalog governance actions are supported on the
+         * provisioned product.</p> <p>Resource import only supports CloudFormation stack
+         * ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+         * <p>The CloudFormation stack must have one of the following statuses to be
+         * imported: CREATE_COMPLETE, UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE,
+         * IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.</p> <p>Import of the resource
+         * requires that the CloudFormation stack template matches the associated Service
+         * Catalog product provisioning artifact. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportAsProvisionedProductOutcomeCallable ImportAsProvisionedProductCallable(const Model::ImportAsProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Requests the import of a resource as a Service Catalog provisioned product
+         * that is associated to a Service Catalog product and provisioning artifact. Once
+         * imported all supported Service Catalog governance actions are supported on the
+         * provisioned product.</p> <p>Resource import only supports CloudFormation stack
+         * ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+         * <p>The CloudFormation stack must have one of the following statuses to be
+         * imported: CREATE_COMPLETE, UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE,
+         * IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.</p> <p>Import of the resource
+         * requires that the CloudFormation stack template matches the associated Service
+         * Catalog product provisioning artifact. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportAsProvisionedProductAsync(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all portfolios for which sharing was accepted by this
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
@@ -3127,6 +3184,7 @@ namespace Model
         void ExecuteProvisionedProductServiceActionAsyncHelper(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAWSOrganizationsAccessStatusAsyncHelper(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProvisionedProductOutputsAsyncHelper(const Model::GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportAsProvisionedProductAsyncHelper(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAcceptedPortfolioSharesAsyncHelper(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBudgetsForResourceAsyncHelper(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConstraintsForPortfolioAsyncHelper(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

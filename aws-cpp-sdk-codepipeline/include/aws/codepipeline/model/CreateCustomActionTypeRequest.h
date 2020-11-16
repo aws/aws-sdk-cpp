@@ -46,49 +46,37 @@ namespace Model
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline CreateCustomActionTypeRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
      * <p>The category of the custom action, such as a build action or a test
-     * action.</p>  <p>Although <code>Source</code> and <code>Approval</code> are
-     * listed as valid values, they are not currently functional. These values are
-     * reserved for future use.</p> 
+     * action.</p>
      */
     inline CreateCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
 

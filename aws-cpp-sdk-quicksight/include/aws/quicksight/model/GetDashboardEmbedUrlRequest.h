@@ -236,6 +236,51 @@ namespace Model
 
 
     /**
+     * <p>Adds persistence of state for the user session in an embedded dashboard.
+     * Persistence applies to the sheet and the parameter settings. These are control
+     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
+     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
+     * when the the subscriber reopens the same dashboard URL. The state is stored in
+     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
+     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     */
+    inline bool GetStatePersistenceEnabled() const{ return m_statePersistenceEnabled; }
+
+    /**
+     * <p>Adds persistence of state for the user session in an embedded dashboard.
+     * Persistence applies to the sheet and the parameter settings. These are control
+     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
+     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
+     * when the the subscriber reopens the same dashboard URL. The state is stored in
+     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
+     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     */
+    inline bool StatePersistenceEnabledHasBeenSet() const { return m_statePersistenceEnabledHasBeenSet; }
+
+    /**
+     * <p>Adds persistence of state for the user session in an embedded dashboard.
+     * Persistence applies to the sheet and the parameter settings. These are control
+     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
+     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
+     * when the the subscriber reopens the same dashboard URL. The state is stored in
+     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
+     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     */
+    inline void SetStatePersistenceEnabled(bool value) { m_statePersistenceEnabledHasBeenSet = true; m_statePersistenceEnabled = value; }
+
+    /**
+     * <p>Adds persistence of state for the user session in an embedded dashboard.
+     * Persistence applies to the sheet and the parameter settings. These are control
+     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
+     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
+     * when the the subscriber reopens the same dashboard URL. The state is stored in
+     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
+     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithStatePersistenceEnabled(bool value) { SetStatePersistenceEnabled(value); return *this;}
+
+
+    /**
      * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
@@ -350,6 +395,9 @@ namespace Model
 
     bool m_resetDisabled;
     bool m_resetDisabledHasBeenSet;
+
+    bool m_statePersistenceEnabled;
+    bool m_statePersistenceEnabledHasBeenSet;
 
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;

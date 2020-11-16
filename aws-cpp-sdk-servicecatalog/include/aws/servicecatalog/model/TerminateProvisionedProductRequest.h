@@ -279,6 +279,39 @@ namespace Model
      */
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
+    /**
+     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
+     * API deletes the Service Catalog provisioned product. However, it does not remove
+     * the CloudFormation stack, stack set, or the underlying resources of the deleted
+     * provisioned product. The default value is false.</p>
+     */
+    inline bool GetRetainPhysicalResources() const{ return m_retainPhysicalResources; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
+     * API deletes the Service Catalog provisioned product. However, it does not remove
+     * the CloudFormation stack, stack set, or the underlying resources of the deleted
+     * provisioned product. The default value is false.</p>
+     */
+    inline bool RetainPhysicalResourcesHasBeenSet() const { return m_retainPhysicalResourcesHasBeenSet; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
+     * API deletes the Service Catalog provisioned product. However, it does not remove
+     * the CloudFormation stack, stack set, or the underlying resources of the deleted
+     * provisioned product. The default value is false.</p>
+     */
+    inline void SetRetainPhysicalResources(bool value) { m_retainPhysicalResourcesHasBeenSet = true; m_retainPhysicalResources = value; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
+     * API deletes the Service Catalog provisioned product. However, it does not remove
+     * the CloudFormation stack, stack set, or the underlying resources of the deleted
+     * provisioned product. The default value is false.</p>
+     */
+    inline TerminateProvisionedProductRequest& WithRetainPhysicalResources(bool value) { SetRetainPhysicalResources(value); return *this;}
+
   private:
 
     Aws::String m_provisionedProductName;
@@ -295,6 +328,9 @@ namespace Model
 
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
+    bool m_retainPhysicalResources;
+    bool m_retainPhysicalResourcesHasBeenSet;
   };
 
 } // namespace Model

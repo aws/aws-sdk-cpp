@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for an Amazon SageMaker KernelGateway app.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The configuration for the file system and kernels in a SageMaker image
+   * running as a KernelGateway app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayImageConfig">AWS
    * API Reference</a></p>
    */
@@ -41,81 +41,79 @@ namespace Model
 
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline const Aws::Vector<KernelSpec>& GetKernelSpecs() const{ return m_kernelSpecs; }
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline bool KernelSpecsHasBeenSet() const { return m_kernelSpecsHasBeenSet; }
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline void SetKernelSpecs(const Aws::Vector<KernelSpec>& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs = value; }
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline void SetKernelSpecs(Aws::Vector<KernelSpec>&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs = std::move(value); }
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline KernelGatewayImageConfig& WithKernelSpecs(const Aws::Vector<KernelSpec>& value) { SetKernelSpecs(value); return *this;}
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline KernelGatewayImageConfig& WithKernelSpecs(Aws::Vector<KernelSpec>&& value) { SetKernelSpecs(std::move(value)); return *this;}
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline KernelGatewayImageConfig& AddKernelSpecs(const KernelSpec& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs.push_back(value); return *this; }
 
     /**
-     * <p>Defines how a kernel is started and the arguments, environment variables, and
-     * metadata that are available to the kernel.</p>
+     * <p>The specification of the Jupyter kernels in the image.</p>
      */
     inline KernelGatewayImageConfig& AddKernelSpecs(KernelSpec&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline KernelGatewayImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
 
     /**
-     * <p>The file system configuration.</p>
+     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * image.</p>
      */
     inline KernelGatewayImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
 

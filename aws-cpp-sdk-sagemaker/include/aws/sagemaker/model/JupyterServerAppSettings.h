@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Jupyter server's app settings.</p><p><h3>See Also:</h3>   <a
+   * <p>The JupyterServer app settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterServerAppSettings">AWS
    * API Reference</a></p>
    */
@@ -38,38 +38,38 @@ namespace Model
 
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline JupyterServerAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
 
     /**
-     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app.</p>
      */
     inline JupyterServerAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
 

@@ -77,50 +77,50 @@ namespace Model
 
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
 
     /**
-     * <p>A list of custom images that are configured to run as a KernelGateway
-     * app.</p>
+     * <p>A list of custom SageMaker images that are configured to run as a
+     * KernelGateway app.</p>
      */
     inline KernelGatewayAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
 

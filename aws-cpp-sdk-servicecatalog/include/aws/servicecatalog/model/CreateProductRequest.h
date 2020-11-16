@@ -456,32 +456,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline const ProvisioningArtifactProperties& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline bool ProvisioningArtifactParametersHasBeenSet() const { return m_provisioningArtifactParametersHasBeenSet; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline void SetProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = std::move(value); }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { SetProvisioningArtifactParameters(value); return *this;}
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>.</p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 

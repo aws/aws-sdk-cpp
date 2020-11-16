@@ -55,6 +55,7 @@
 #include <aws/dms/model/ModifyReplicationInstanceResult.h>
 #include <aws/dms/model/ModifyReplicationSubnetGroupResult.h>
 #include <aws/dms/model/ModifyReplicationTaskResult.h>
+#include <aws/dms/model/MoveReplicationTaskResult.h>
 #include <aws/dms/model/RebootReplicationInstanceResult.h>
 #include <aws/dms/model/RefreshSchemasResult.h>
 #include <aws/dms/model/ReloadTablesResult.h>
@@ -147,6 +148,7 @@ namespace Model
         class ModifyReplicationInstanceRequest;
         class ModifyReplicationSubnetGroupRequest;
         class ModifyReplicationTaskRequest;
+        class MoveReplicationTaskRequest;
         class RebootReplicationInstanceRequest;
         class RefreshSchemasRequest;
         class ReloadTablesRequest;
@@ -201,6 +203,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyReplicationInstanceResult, DatabaseMigrationServiceError> ModifyReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationSubnetGroupResult, DatabaseMigrationServiceError> ModifyReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationTaskResult, DatabaseMigrationServiceError> ModifyReplicationTaskOutcome;
+        typedef Aws::Utils::Outcome<MoveReplicationTaskResult, DatabaseMigrationServiceError> MoveReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<RebootReplicationInstanceResult, DatabaseMigrationServiceError> RebootReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<RefreshSchemasResult, DatabaseMigrationServiceError> RefreshSchemasOutcome;
         typedef Aws::Utils::Outcome<ReloadTablesResult, DatabaseMigrationServiceError> ReloadTablesOutcome;
@@ -255,6 +258,7 @@ namespace Model
         typedef std::future<ModifyReplicationInstanceOutcome> ModifyReplicationInstanceOutcomeCallable;
         typedef std::future<ModifyReplicationSubnetGroupOutcome> ModifyReplicationSubnetGroupOutcomeCallable;
         typedef std::future<ModifyReplicationTaskOutcome> ModifyReplicationTaskOutcomeCallable;
+        typedef std::future<MoveReplicationTaskOutcome> MoveReplicationTaskOutcomeCallable;
         typedef std::future<RebootReplicationInstanceOutcome> RebootReplicationInstanceOutcomeCallable;
         typedef std::future<RefreshSchemasOutcome> RefreshSchemasOutcomeCallable;
         typedef std::future<ReloadTablesOutcome> ReloadTablesOutcomeCallable;
@@ -312,6 +316,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationInstanceRequest&, const Model::ModifyReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationSubnetGroupRequest&, const Model::ModifyReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationTaskRequest&, const Model::ModifyReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationTaskResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::MoveReplicationTaskRequest&, const Model::MoveReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RebootReplicationInstanceRequest&, const Model::RebootReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RefreshSchemasRequest&, const Model::RefreshSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshSchemasResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
@@ -1823,6 +1828,40 @@ namespace Model
         virtual void ModifyReplicationTaskAsync(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Moves a replication task from its current replication instance to a different
+         * target replication instance using the specified parameters. The target
+         * replication instance must be created with the same or later AWS DMS version as
+         * the current replication instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MoveReplicationTaskOutcome MoveReplicationTask(const Model::MoveReplicationTaskRequest& request) const;
+
+        /**
+         * <p>Moves a replication task from its current replication instance to a different
+         * target replication instance using the specified parameters. The target
+         * replication instance must be created with the same or later AWS DMS version as
+         * the current replication instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MoveReplicationTaskOutcomeCallable MoveReplicationTaskCallable(const Model::MoveReplicationTaskRequest& request) const;
+
+        /**
+         * <p>Moves a replication task from its current replication instance to a different
+         * target replication instance using the specified parameters. The target
+         * replication instance must be created with the same or later AWS DMS version as
+         * the current replication instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MoveReplicationTaskAsync(const Model::MoveReplicationTaskRequest& request, const MoveReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Reboots a replication instance. Rebooting results in a momentary outage,
          * until the replication instance becomes available again.</p><p><h3>See Also:</h3>
          * <a
@@ -2161,6 +2200,7 @@ namespace Model
         void ModifyReplicationInstanceAsyncHelper(const Model::ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationSubnetGroupAsyncHelper(const Model::ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationTaskAsyncHelper(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MoveReplicationTaskAsyncHelper(const Model::MoveReplicationTaskRequest& request, const MoveReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootReplicationInstanceAsyncHelper(const Model::RebootReplicationInstanceRequest& request, const RebootReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RefreshSchemasAsyncHelper(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReloadTablesAsyncHelper(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

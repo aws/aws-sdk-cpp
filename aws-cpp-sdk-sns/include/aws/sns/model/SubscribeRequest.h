@@ -345,7 +345,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -366,7 +366,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -387,7 +387,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -408,7 +408,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -429,7 +429,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -450,7 +450,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -471,7 +471,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -492,7 +492,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -513,7 +513,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -534,7 +534,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -555,7 +555,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -576,7 +576,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -597,7 +597,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S

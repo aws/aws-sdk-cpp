@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Elastic File System (EFS) storage configuration for an
+   * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
    * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSystemConfig">AWS
    * API Reference</a></p>
@@ -96,50 +96,50 @@ namespace Model
 
 
     /**
-     * <p>The default POSIX user ID. If not specified, defaults to
+     * <p>The default POSIX user ID (UID). If not specified, defaults to
      * <code>1000</code>.</p>
      */
     inline int GetDefaultUid() const{ return m_defaultUid; }
 
     /**
-     * <p>The default POSIX user ID. If not specified, defaults to
+     * <p>The default POSIX user ID (UID). If not specified, defaults to
      * <code>1000</code>.</p>
      */
     inline bool DefaultUidHasBeenSet() const { return m_defaultUidHasBeenSet; }
 
     /**
-     * <p>The default POSIX user ID. If not specified, defaults to
+     * <p>The default POSIX user ID (UID). If not specified, defaults to
      * <code>1000</code>.</p>
      */
     inline void SetDefaultUid(int value) { m_defaultUidHasBeenSet = true; m_defaultUid = value; }
 
     /**
-     * <p>The default POSIX user ID. If not specified, defaults to
+     * <p>The default POSIX user ID (UID). If not specified, defaults to
      * <code>1000</code>.</p>
      */
     inline FileSystemConfig& WithDefaultUid(int value) { SetDefaultUid(value); return *this;}
 
 
     /**
-     * <p>The default POSIX group ID. If not specified, defaults to
+     * <p>The default POSIX group ID (GID). If not specified, defaults to
      * <code>100</code>.</p>
      */
     inline int GetDefaultGid() const{ return m_defaultGid; }
 
     /**
-     * <p>The default POSIX group ID. If not specified, defaults to
+     * <p>The default POSIX group ID (GID). If not specified, defaults to
      * <code>100</code>.</p>
      */
     inline bool DefaultGidHasBeenSet() const { return m_defaultGidHasBeenSet; }
 
     /**
-     * <p>The default POSIX group ID. If not specified, defaults to
+     * <p>The default POSIX group ID (GID). If not specified, defaults to
      * <code>100</code>.</p>
      */
     inline void SetDefaultGid(int value) { m_defaultGidHasBeenSet = true; m_defaultGid = value; }
 
     /**
-     * <p>The default POSIX group ID. If not specified, defaults to
+     * <p>The default POSIX group ID (GID). If not specified, defaults to
      * <code>100</code>.</p>
      */
     inline FileSystemConfig& WithDefaultGid(int value) { SetDefaultGid(value); return *this;}

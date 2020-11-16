@@ -19,7 +19,9 @@ TerminateProvisionedProductRequest::TerminateProvisionedProductRequest() :
     m_terminateTokenHasBeenSet(true),
     m_ignoreErrors(false),
     m_ignoreErrorsHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false)
+    m_acceptLanguageHasBeenSet(false),
+    m_retainPhysicalResources(false),
+    m_retainPhysicalResourcesHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,12 @@ Aws::String TerminateProvisionedProductRequest::SerializePayload() const
   if(m_acceptLanguageHasBeenSet)
   {
    payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
+  if(m_retainPhysicalResourcesHasBeenSet)
+  {
+   payload.WithBool("RetainPhysicalResources", m_retainPhysicalResources);
 
   }
 

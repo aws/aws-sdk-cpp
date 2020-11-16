@@ -23,6 +23,11 @@ namespace QuickSight
 namespace Model
 {
 
+  /**
+   * <p>Oracle parameters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/OracleParameters">AWS
+   * API Reference</a></p>
+   */
   class AWS_QUICKSIGHT_API OracleParameters
   {
   public:

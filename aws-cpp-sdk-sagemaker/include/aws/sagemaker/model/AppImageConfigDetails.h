@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for running an Amazon SageMaker image as a KernelGateway
+   * <p>The configuration for running a SageMaker image as a KernelGateway
    * app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppImageConfigDetails">AWS
    * API Reference</a></p>
@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline const Aws::String& GetAppImageConfigName() const{ return m_appImageConfigName; }
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline bool AppImageConfigNameHasBeenSet() const { return m_appImageConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline void SetAppImageConfigName(const Aws::String& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = value; }
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline void SetAppImageConfigName(Aws::String&& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = std::move(value); }
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline void SetAppImageConfigName(const char* value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName.assign(value); }
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigName(const Aws::String& value) { SetAppImageConfigName(value); return *this;}
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigName(Aws::String&& value) { SetAppImageConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AppImageConfig.</p>
+     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigName(const char* value) { SetAppImageConfigName(value); return *this;}
 
@@ -185,32 +185,32 @@ namespace Model
 
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline const KernelGatewayImageConfig& GetKernelGatewayImageConfig() const{ return m_kernelGatewayImageConfig; }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline bool KernelGatewayImageConfigHasBeenSet() const { return m_kernelGatewayImageConfigHasBeenSet; }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline void SetKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = value; }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline void SetKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = std::move(value); }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline AppImageConfigDetails& WithKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { SetKernelGatewayImageConfig(value); return *this;}
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
      */
     inline AppImageConfigDetails& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 

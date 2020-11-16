@@ -19,6 +19,7 @@ namespace Model
 {
 
 ActionExecution::ActionExecution() : 
+    m_actionExecutionIdHasBeenSet(false),
     m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
@@ -34,6 +35,7 @@ ActionExecution::ActionExecution() :
 }
 
 ActionExecution::ActionExecution(JsonView jsonValue) : 
+    m_actionExecutionIdHasBeenSet(false),
     m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
@@ -51,6 +53,13 @@ ActionExecution::ActionExecution(JsonView jsonValue) :
 
 ActionExecution& ActionExecution::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("actionExecutionId"))
+  {
+    m_actionExecutionId = jsonValue.GetString("actionExecutionId");
+
+    m_actionExecutionIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ActionExecutionStatusMapper::GetActionExecutionStatusForName(jsonValue.GetString("status"));
@@ -120,6 +129,12 @@ ActionExecution& ActionExecution::operator =(JsonView jsonValue)
 JsonValue ActionExecution::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_actionExecutionIdHasBeenSet)
+  {
+   payload.WithString("actionExecutionId", m_actionExecutionId);
+
+  }
 
   if(m_statusHasBeenSet)
   {

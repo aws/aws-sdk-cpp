@@ -83,168 +83,160 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
-     * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
-     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
-     * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
-     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
-     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
-     * to client errors (for example, when the subscribed endpoint is unreachable) or
-     * server errors (for example, when the service that powers the subscribed endpoint
-     * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * this action uses:</p> <ul> <li> <p> <code>DeliveryPolicy</code> – The policy
+     * that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p>
+     * </li> <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your
+     * subscriber receive only a subset of messages, rather than receiving every
+     * message published to the topic.</p> </li> <li> <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw
+     * message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for
+     * the endpoints to process JSON formatting, which is otherwise created for Amazon
+     * SNS metadata.</p> </li> <li> <p> <code>RedrivePolicy</code> – When specified,
+     * sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+     * Messages that can't be delivered due to client errors (for example, when the
+     * subscribed endpoint is unreachable) or server errors (for example, when the
+     * service that powers the subscribed endpoint becomes unavailable) are held in the
+     * dead-letter queue for further analysis or reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

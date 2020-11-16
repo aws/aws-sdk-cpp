@@ -107,140 +107,124 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline const Aws::String& GetSourceEndpointArn() const{ return m_sourceEndpointArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline bool SourceEndpointArnHasBeenSet() const { return m_sourceEndpointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline void SetSourceEndpointArn(const Aws::String& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline void SetSourceEndpointArn(Aws::String&& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline void SetSourceEndpointArn(const char* value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithSourceEndpointArn(const Aws::String& value) { SetSourceEndpointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithSourceEndpointArn(Aws::String&& value) { SetSourceEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithSourceEndpointArn(const char* value) { SetSourceEndpointArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline const Aws::String& GetTargetEndpointArn() const{ return m_targetEndpointArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline bool TargetEndpointArnHasBeenSet() const { return m_targetEndpointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline void SetTargetEndpointArn(const Aws::String& value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline void SetTargetEndpointArn(Aws::String&& value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline void SetTargetEndpointArn(const char* value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithTargetEndpointArn(const Aws::String& value) { SetTargetEndpointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithTargetEndpointArn(Aws::String&& value) { SetTargetEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN that uniquely identifies the endpoint.</p>
      */
     inline ReplicationTask& WithTargetEndpointArn(const char* value) { SetTargetEndpointArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline ReplicationTask& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline ReplicationTask& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline ReplicationTask& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
@@ -359,42 +343,554 @@ namespace Model
 
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline ReplicationTask& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline ReplicationTask& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the replication task.</p>
+     * <p>The status of the replication task. This response parameter can return one of
+     * the following values:</p> <ul> <li> <p> <code>"moving"</code> – The task is
+     * being moved in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"creating"</code> – The task is being created in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+     * <code>CreateReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"deleting"</code> – The task is being deleted in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed"</code> – The task failed to successfully complete the database
+     * migration in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"failed-move"</code> – The task failed to move in response to running the
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"modifying"</code> – The task definition is being modified in response to
+     * running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+     * <code>ModifyReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+     * respond to other task operations, such as <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> or <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+     * <code>DeleteReplicationTask</code> </a>. </p> </li> <li> <p>
+     * <code>"running"</code> – The task is performing a database migration in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"starting"</code> – The task is preparing to perform a database migration
+     * in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+     * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"stopping"</code> – The task is preparing to stop in response to running
+     * the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+     * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
+     * <code>"testing"</code> – The database migration specified for this task is being
+     * tested in response to running either the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> or the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation.</p>  <p> <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration
+     * task assessment operation. The <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+     * <code>StartReplicationTaskAssessment</code> </a> operation assesses data type
+     * compatibility only between the source and target database of a given migration
+     * task. In contrast, <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+     * <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a
+     * variety of premigration task assessments in addition to data type compatibility.
+     * These assessments include ones for the validity of primary key definitions and
+     * likely issues with database migration performance, among others.</p> 
+     * </li> </ul>
      */
     inline ReplicationTask& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -447,7 +943,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -460,7 +956,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -473,7 +969,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -486,7 +982,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -499,7 +995,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -512,7 +1008,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -525,7 +1021,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -538,7 +1034,7 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
      * – Change data capture (CDC) load completed.</p> </li> <li> <p>
      * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full-load stopped as specified before starting the CDC
+     * migration, the full load stopped as specified before starting the CDC
      * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
      * migration stopped at the specified server time.</p> </li> </ul>
      */
@@ -976,6 +1472,79 @@ namespace Model
      */
     inline ReplicationTask& WithTaskData(const char* value) { SetTaskData(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline const Aws::String& GetTargetReplicationInstanceArn() const{ return m_targetReplicationInstanceArn; }
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline bool TargetReplicationInstanceArnHasBeenSet() const { return m_targetReplicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline void SetTargetReplicationInstanceArn(const Aws::String& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = value; }
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline void SetTargetReplicationInstanceArn(Aws::String&& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline void SetTargetReplicationInstanceArn(const char* value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn.assign(value); }
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline ReplicationTask& WithTargetReplicationInstanceArn(const Aws::String& value) { SetTargetReplicationInstanceArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline ReplicationTask& WithTargetReplicationInstanceArn(Aws::String&& value) { SetTargetReplicationInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the replication instance to which this task is moved in response
+     * to running the <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+     * <code>MoveReplicationTask</code> </a> operation. Otherwise, this response
+     * parameter isn't a member of the <code>ReplicationTask</code> object.</p>
+     */
+    inline ReplicationTask& WithTargetReplicationInstanceArn(const char* value) { SetTargetReplicationInstanceArn(value); return *this;}
+
   private:
 
     Aws::String m_replicationTaskIdentifier;
@@ -1031,6 +1600,9 @@ namespace Model
 
     Aws::String m_taskData;
     bool m_taskDataHasBeenSet;
+
+    Aws::String m_targetReplicationInstanceArn;
+    bool m_targetReplicationInstanceArnHasBeenSet;
   };
 
 } // namespace Model

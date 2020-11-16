@@ -33,8 +33,8 @@ static const int STORAGE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("S
 static const int RESOURCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ResourceAlreadyExistsFault");
 static const int K_M_S_INVALID_STATE_FAULT_HASH = HashingUtils::HashString("KMSInvalidStateFault");
 static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
-static const int INVALID_CERTIFICATE_FAULT_HASH = HashingUtils::HashString("InvalidCertificateFault");
 static const int S3_ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("S3AccessDeniedFault");
+static const int INVALID_CERTIFICATE_FAULT_HASH = HashingUtils::HashString("InvalidCertificateFault");
 static const int K_M_S_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("KMSNotFoundFault");
 static const int INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientResourceCapacityFault");
 static const int S3_RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("S3ResourceNotFoundFault");
@@ -83,13 +83,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), false);
   }
-  else if (hashCode == INVALID_CERTIFICATE_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), false);
-  }
   else if (hashCode == S3_ACCESS_DENIED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_ACCESS_DENIED_FAULT), false);
+  }
+  else if (hashCode == INVALID_CERTIFICATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), false);
   }
   else if (hashCode == K_M_S_NOT_FOUND_FAULT_HASH)
   {

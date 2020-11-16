@@ -20,6 +20,7 @@
 #include <aws/iotsitewise/model/CreateDashboardResult.h>
 #include <aws/iotsitewise/model/CreateGatewayResult.h>
 #include <aws/iotsitewise/model/CreatePortalResult.h>
+#include <aws/iotsitewise/model/CreatePresignedPortalUrlResult.h>
 #include <aws/iotsitewise/model/CreateProjectResult.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyResult.h>
 #include <aws/iotsitewise/model/DeleteAssetResult.h>
@@ -110,6 +111,7 @@ namespace Model
         class CreateDashboardRequest;
         class CreateGatewayRequest;
         class CreatePortalRequest;
+        class CreatePresignedPortalUrlRequest;
         class CreateProjectRequest;
         class DeleteAccessPolicyRequest;
         class DeleteAssetRequest;
@@ -165,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDashboardResult, IoTSiteWiseError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateGatewayResult, IoTSiteWiseError> CreateGatewayOutcome;
         typedef Aws::Utils::Outcome<CreatePortalResult, IoTSiteWiseError> CreatePortalOutcome;
+        typedef Aws::Utils::Outcome<CreatePresignedPortalUrlResult, IoTSiteWiseError> CreatePresignedPortalUrlOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, IoTSiteWiseError> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteAccessPolicyResult, IoTSiteWiseError> DeleteAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteAssetResult, IoTSiteWiseError> DeleteAssetOutcome;
@@ -220,6 +223,7 @@ namespace Model
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
         typedef std::future<CreatePortalOutcome> CreatePortalOutcomeCallable;
+        typedef std::future<CreatePresignedPortalUrlOutcome> CreatePresignedPortalUrlOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteAccessPolicyOutcome> DeleteAccessPolicyOutcomeCallable;
         typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
@@ -278,6 +282,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePortalRequest&, const Model::CreatePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePortalResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePresignedPortalUrlRequest&, const Model::CreatePresignedPortalUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedPortalUrlResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAccessPolicyRequest&, const Model::DeleteAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
@@ -769,6 +774,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortalAsync(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedPortalUrlOutcome CreatePresignedPortalUrl(const Model::CreatePresignedPortalUrlRequest& request) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePresignedPortalUrlOutcomeCallable CreatePresignedPortalUrlCallable(const Model::CreatePresignedPortalUrlRequest& request) const;
+
+        /**
+         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
+         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
+         * An IAM user with access to a portal can call this API to get a URL to that
+         * portal. The URL contains a session token that lets the IAM user access the
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePresignedPortalUrlAsync(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
@@ -2232,6 +2274,7 @@ namespace Model
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGatewayAsyncHelper(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePortalAsyncHelper(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePresignedPortalUrlAsyncHelper(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPolicyAsyncHelper(const Model::DeleteAccessPolicyRequest& request, const DeleteAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssetAsyncHelper(const Model::DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

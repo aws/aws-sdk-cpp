@@ -42,58 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline RuntimeVersion& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline RuntimeVersion& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the runtime version. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and
-     * <code>syn-1.0</code>.</p>
+     * <p>The name of the runtime version. For a list of valid runtime versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.</p>
      */
     inline RuntimeVersion& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 

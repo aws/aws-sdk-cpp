@@ -62,27 +62,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the provisioning artifact.</p>
+     * <p>Information about the provisioning artifact. </p>
      */
     inline const ProvisioningArtifactDetail& GetProvisioningArtifactDetail() const{ return m_provisioningArtifactDetail; }
 
     /**
-     * <p>Information about the provisioning artifact.</p>
+     * <p>Information about the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { m_provisioningArtifactDetail = value; }
 
     /**
-     * <p>Information about the provisioning artifact.</p>
+     * <p>Information about the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetail = std::move(value); }
 
     /**
-     * <p>Information about the provisioning artifact.</p>
+     * <p>Information about the provisioning artifact. </p>
      */
     inline CreateProductResult& WithProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { SetProvisioningArtifactDetail(value); return *this;}
 
     /**
-     * <p>Information about the provisioning artifact.</p>
+     * <p>Information about the provisioning artifact. </p>
      */
     inline CreateProductResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
 

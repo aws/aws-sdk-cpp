@@ -159,27 +159,27 @@ namespace Model
 
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration of a KernelGateway app.</p>
      */
     inline const KernelGatewayImageConfig& GetKernelGatewayImageConfig() const{ return m_kernelGatewayImageConfig; }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration of a KernelGateway app.</p>
      */
     inline void SetKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { m_kernelGatewayImageConfig = value; }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration of a KernelGateway app.</p>
      */
     inline void SetKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { m_kernelGatewayImageConfig = std::move(value); }
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration of a KernelGateway app.</p>
      */
     inline DescribeAppImageConfigResult& WithKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { SetKernelGatewayImageConfig(value); return *this;}
 
     /**
-     * <p>The KernelGateway app.</p>
+     * <p>The configuration of a KernelGateway app.</p>
      */
     inline DescribeAppImageConfigResult& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 

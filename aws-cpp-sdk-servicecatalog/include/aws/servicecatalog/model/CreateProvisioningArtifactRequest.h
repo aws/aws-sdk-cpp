@@ -135,32 +135,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline const ProvisioningArtifactProperties& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline void SetParameters(const ProvisioningArtifactProperties& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline void SetParameters(ProvisioningArtifactProperties&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline CreateProvisioningArtifactRequest& WithParameters(const ProvisioningArtifactProperties& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The configuration for the provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact. The <code>info</code> field
+     * accepts <code>ImportFromPhysicalID</code>. </p>
      */
     inline CreateProvisioningArtifactRequest& WithParameters(ProvisioningArtifactProperties&& value) { SetParameters(std::move(value)); return *this;}
 

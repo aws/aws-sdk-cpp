@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/StageExecution.h>
 #include <aws/codepipeline/model/TransitionState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/codepipeline/model/StageExecution.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -81,6 +81,25 @@ namespace Model
      * <p>The name of the stage.</p>
      */
     inline StageState& WithStageName(const char* value) { SetStageName(value); return *this;}
+
+
+    
+    inline const StageExecution& GetInboundExecution() const{ return m_inboundExecution; }
+
+    
+    inline bool InboundExecutionHasBeenSet() const { return m_inboundExecutionHasBeenSet; }
+
+    
+    inline void SetInboundExecution(const StageExecution& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = value; }
+
+    
+    inline void SetInboundExecution(StageExecution&& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = std::move(value); }
+
+    
+    inline StageState& WithInboundExecution(const StageExecution& value) { SetInboundExecution(value); return *this;}
+
+    
+    inline StageState& WithInboundExecution(StageExecution&& value) { SetInboundExecution(std::move(value)); return *this;}
 
 
     /**
@@ -195,6 +214,9 @@ namespace Model
 
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
+    StageExecution m_inboundExecution;
+    bool m_inboundExecutionHasBeenSet;
 
     TransitionState m_inboundTransitionState;
     bool m_inboundTransitionStateHasBeenSet;

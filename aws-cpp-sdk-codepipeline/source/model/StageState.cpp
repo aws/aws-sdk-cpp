@@ -20,6 +20,7 @@ namespace Model
 
 StageState::StageState() : 
     m_stageNameHasBeenSet(false),
+    m_inboundExecutionHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -28,6 +29,7 @@ StageState::StageState() :
 
 StageState::StageState(JsonView jsonValue) : 
     m_stageNameHasBeenSet(false),
+    m_inboundExecutionHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -42,6 +44,13 @@ StageState& StageState::operator =(JsonView jsonValue)
     m_stageName = jsonValue.GetString("stageName");
 
     m_stageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inboundExecution"))
+  {
+    m_inboundExecution = jsonValue.GetObject("inboundExecution");
+
+    m_inboundExecutionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inboundTransitionState"))
@@ -78,6 +87,12 @@ JsonValue StageState::Jsonize() const
   if(m_stageNameHasBeenSet)
   {
    payload.WithString("stageName", m_stageName);
+
+  }
+
+  if(m_inboundExecutionHasBeenSet)
+  {
+   payload.WithObject("inboundExecution", m_inboundExecution.Jsonize());
 
   }
 
