@@ -26,6 +26,7 @@ JobSummary::JobSummary() :
     m_jobStatusHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_userPausedDetailsHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_jobStatusHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_userPausedDetailsHasBeenSet(false)
 {
@@ -83,6 +85,13 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("jobType"));
 
     m_jobTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastRunErrorStatus"))
+  {
+    m_lastRunErrorStatus = jsonValue.GetObject("lastRunErrorStatus");
+
+    m_lastRunErrorStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -136,6 +145,12 @@ JsonValue JobSummary::Jsonize() const
   if(m_jobTypeHasBeenSet)
   {
    payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
+  if(m_lastRunErrorStatusHasBeenSet)
+  {
+   payload.WithObject("lastRunErrorStatus", m_lastRunErrorStatus.Jsonize());
+
   }
 
   if(m_nameHasBeenSet)

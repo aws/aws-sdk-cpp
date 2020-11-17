@@ -18,7 +18,8 @@ CopyDBSnapshotRequest::CopyDBSnapshotRequest() :
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
     m_preSignedUrlHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false)
+    m_optionGroupNameHasBeenSet(false),
+    m_targetCustomAvailabilityZoneHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,11 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
+  }
+
+  if(m_targetCustomAvailabilityZoneHasBeenSet)
+  {
+    ss << "TargetCustomAvailabilityZone=" << StringUtils::URLEncode(m_targetCustomAvailabilityZone.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

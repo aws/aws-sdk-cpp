@@ -90,49 +90,49 @@ namespace Model
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline KeyValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be empty or null.</p>
+     * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline KeyValuePair& WithValue(const char* value) { SetValue(value); return *this;}
 

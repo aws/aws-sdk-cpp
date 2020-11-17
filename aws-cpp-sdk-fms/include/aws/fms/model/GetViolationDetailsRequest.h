@@ -169,8 +169,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -178,8 +180,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -187,8 +191,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -196,8 +202,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -205,8 +213,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -214,8 +224,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline GetViolationDetailsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -223,8 +235,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline GetViolationDetailsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -232,8 +246,10 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, or
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     * <code>AWS::EC2::Subnet</code>. </p>
      */
     inline GetViolationDetailsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

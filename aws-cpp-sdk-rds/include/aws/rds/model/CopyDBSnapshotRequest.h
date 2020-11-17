@@ -895,6 +895,55 @@ namespace Model
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline const Aws::String& GetTargetCustomAvailabilityZone() const{ return m_targetCustomAvailabilityZone; }
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline bool TargetCustomAvailabilityZoneHasBeenSet() const { return m_targetCustomAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline void SetTargetCustomAvailabilityZone(const Aws::String& value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone = value; }
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline void SetTargetCustomAvailabilityZone(Aws::String&& value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone = std::move(value); }
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline void SetTargetCustomAvailabilityZone(const char* value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone.assign(value); }
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(const Aws::String& value) { SetTargetCustomAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(Aws::String&& value) { SetTargetCustomAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The external custom Availability Zone (CAZ) identifier for the target
+     * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
+     */
+    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(const char* value) { SetTargetCustomAvailabilityZone(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBSnapshotIdentifier;
@@ -917,6 +966,9 @@ namespace Model
 
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
+    Aws::String m_targetCustomAvailabilityZone;
+    bool m_targetCustomAvailabilityZoneHasBeenSet;
   };
 
 } // namespace Model

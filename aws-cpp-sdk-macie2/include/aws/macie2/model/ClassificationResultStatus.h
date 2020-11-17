@@ -41,96 +41,96 @@ namespace Model
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE -
      * Amazon Macie successfully completed its analysis of the object that the finding
-     * applies to.</p></li> <li><p>PARTIAL - Macie was able to analyze only a subset of
-     * the data in the object that the finding applies to. For example, the object is a
-     * compressed or archive file that contains files in an unsupported
-     * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that
-     * the finding applies to. For example, the object is a malformed file or a file
-     * that uses an unsupported format.</p></li></ul>
+     * applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data
+     * in the object that the finding applies to. For example, the object is an archive
+     * file that contains files in an unsupported format.</p></li> <li><p>SKIPPED -
+     * Macie wasn't able to analyze the object that the finding applies to. For
+     * example, the object is a malformed file or a file that uses an unsupported
+     * format.</p></li></ul>
      */
     inline ClassificationResultStatus& WithCode(const char* value) { SetCode(value); return *this;}
 

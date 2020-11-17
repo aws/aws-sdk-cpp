@@ -246,7 +246,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -262,7 +263,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -278,7 +280,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -294,7 +297,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -310,7 +314,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -326,7 +331,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -342,7 +348,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -358,7 +365,8 @@ namespace Model
      * valid values are <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
      * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. </p>
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the
+     * value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

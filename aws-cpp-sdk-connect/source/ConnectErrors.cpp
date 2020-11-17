@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/connect/ConnectErrors.h>
 #include <aws/connect/model/InvalidContactFlowException.h>
+#include <aws/connect/model/ResourceInUseException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -23,6 +24,12 @@ template<> AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledE
   return InvalidContactFlowException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
 namespace ConnectErrorMapper
 {
 
@@ -35,6 +42,7 @@ static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateRe
 static const int DESTINATION_NOT_ALLOWED_HASH = HashingUtils::HashString("DestinationNotAllowedException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int CONTACT_FLOW_NOT_PUBLISHED_HASH = HashingUtils::HashString("ContactFlowNotPublishedException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
@@ -78,6 +86,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONTACT_FLOW_NOT_PUBLISHED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_FLOW_NOT_PUBLISHED), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
   {

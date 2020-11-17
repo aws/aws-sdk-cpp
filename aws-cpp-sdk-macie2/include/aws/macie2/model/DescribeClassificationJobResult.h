@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/JobStatus.h>
 #include <aws/macie2/model/JobType.h>
+#include <aws/macie2/model/LastRunErrorStatus.h>
 #include <aws/macie2/model/S3JobDefinition.h>
 #include <aws/macie2/model/JobScheduleFrequency.h>
 #include <aws/macie2/model/Statistics.h>
@@ -407,6 +408,42 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline const LastRunErrorStatus& GetLastRunErrorStatus() const{ return m_lastRunErrorStatus; }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline void SetLastRunErrorStatus(const LastRunErrorStatus& value) { m_lastRunErrorStatus = value; }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline void SetLastRunErrorStatus(LastRunErrorStatus&& value) { m_lastRunErrorStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline DescribeClassificationJobResult& WithLastRunErrorStatus(const LastRunErrorStatus& value) { SetLastRunErrorStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline DescribeClassificationJobResult& WithLastRunErrorStatus(LastRunErrorStatus&& value) { SetLastRunErrorStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job last
      * ran.</p>
      */
@@ -712,6 +749,8 @@ namespace Model
     JobStatus m_jobStatus;
 
     JobType m_jobType;
+
+    LastRunErrorStatus m_lastRunErrorStatus;
 
     Aws::Utils::DateTime m_lastRunTime;
 

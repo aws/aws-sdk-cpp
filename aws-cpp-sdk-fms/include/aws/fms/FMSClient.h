@@ -187,7 +187,10 @@ namespace Model
    * about the AWS Firewall Manager API actions, data types, and errors. For detailed
    * information about AWS Firewall Manager features, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
-   * Firewall Manager Developer Guide</a>.</p>
+   * Firewall Manager Developer Guide</a>.</p> <p>Some API actions require explicit
+   * resource permissions. For information, see the developer guide topic <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+   * Manager required permissions for API actions</a>. </p>
    */
   class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient
   {
@@ -474,7 +477,12 @@ namespace Model
          * policies if the specified policy has not been applied to them. Resources are
          * considered noncompliant for security group policies if they are in scope of the
          * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. </p><p><h3>See Also:</h3>   <a
+         * disabled or not possible. Resources are considered noncompliant for Network
+         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
+         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
+         * the Firewall Manager doesn't have the expected route table, and for
+         * modifications to a firewall policy that violate the Firewall Manager policy's
+         * rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          */
@@ -487,7 +495,12 @@ namespace Model
          * policies if the specified policy has not been applied to them. Resources are
          * considered noncompliant for security group policies if they are in scope of the
          * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. </p><p><h3>See Also:</h3>   <a
+         * disabled or not possible. Resources are considered noncompliant for Network
+         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
+         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
+         * the Firewall Manager doesn't have the expected route table, and for
+         * modifications to a firewall policy that violate the Firewall Manager policy's
+         * rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          *
@@ -502,7 +515,12 @@ namespace Model
          * policies if the specified policy has not been applied to them. Resources are
          * considered noncompliant for security group policies if they are in scope of the
          * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. </p><p><h3>See Also:</h3>   <a
+         * disabled or not possible. Resources are considered noncompliant for Network
+         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
+         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
+         * the Firewall Manager doesn't have the expected route table, and for
+         * modifications to a firewall policy that violate the Firewall Manager policy's
+         * rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          *
@@ -857,7 +875,13 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p><p><h3>See Also:</h3>   <a
+         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * outside of the console, you must configure the SNS topic to allow the Firewall
+         * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
          */
@@ -865,7 +889,13 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p><p><h3>See Also:</h3>   <a
+         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * outside of the console, you must configure the SNS topic to allow the Firewall
+         * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -875,7 +905,13 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p><p><h3>See Also:</h3>   <a
+         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * outside of the console, you must configure the SNS topic to allow the Firewall
+         * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -885,18 +921,19 @@ namespace Model
 
         /**
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
-         * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
-         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
-         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
-         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
-         * specific to one of the types. If you want to enforce more than one policy type
-         * across accounts, create multiple policies. You can create multiple policies for
-         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
-         * Advanced policy. For more information about subscribing to Shield Advanced, see
-         * <a
+         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
+         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
+         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
+         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
+         * Advanced policy, which applies Shield Advanced protection to specified accounts
+         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
+         * Firewall policy, which provides firewall rules to filter network traffic in
+         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
+         * types. If you want to enforce more than one policy type across accounts, create
+         * multiple policies. You can create multiple policies for each type.</p> <p>You
+         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
+         * more information about subscribing to Shield Advanced, see <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
@@ -906,18 +943,19 @@ namespace Model
 
         /**
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
-         * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
-         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
-         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
-         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
-         * specific to one of the types. If you want to enforce more than one policy type
-         * across accounts, create multiple policies. You can create multiple policies for
-         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
-         * Advanced policy. For more information about subscribing to Shield Advanced, see
-         * <a
+         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
+         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
+         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
+         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
+         * Advanced policy, which applies Shield Advanced protection to specified accounts
+         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
+         * Firewall policy, which provides firewall rules to filter network traffic in
+         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
+         * types. If you want to enforce more than one policy type across accounts, create
+         * multiple policies. You can create multiple policies for each type.</p> <p>You
+         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
+         * more information about subscribing to Shield Advanced, see <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
@@ -929,18 +967,19 @@ namespace Model
 
         /**
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
-         * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
-         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
-         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
-         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
-         * specific to one of the types. If you want to enforce more than one policy type
-         * across accounts, create multiple policies. You can create multiple policies for
-         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
-         * Advanced policy. For more information about subscribing to Shield Advanced, see
-         * <a
+         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
+         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
+         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
+         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
+         * Advanced policy, which applies Shield Advanced protection to specified accounts
+         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
+         * Firewall policy, which provides firewall rules to filter network traffic in
+         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
+         * types. If you want to enforce more than one policy type across accounts, create
+         * multiple policies. You can create multiple policies for each type.</p> <p>You
+         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
+         * more information about subscribing to Shield Advanced, see <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API

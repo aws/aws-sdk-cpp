@@ -41,56 +41,62 @@ namespace Model
 
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline const SensitiveDataItemCategory& GetCategory() const{ return m_category; }
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline void SetCategory(const SensitiveDataItemCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline void SetCategory(SensitiveDataItemCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline SensitiveDataItem& WithCategory(const SensitiveDataItemCategory& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>The category of sensitive data that was detected. For example:
-     * FINANCIAL_INFORMATION, for financial information such as credit card numbers;
-     * PERSONAL_INFORMATION, for personally identifiable information, such as full
-     * names and mailing addresses, or personal health information; or,
-     * CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.</p>
+     * <p>The category of sensitive data that was detected. For example: CREDENTIALS,
+     * for credentials data such as private keys or AWS secret keys;
+     * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
+     * PERSONAL_INFORMATION, for personal health information, such as health insurance
+     * identification numbers, or personally identifiable information, such as driver's
+     * license identification numbers.</p>
      */
     inline SensitiveDataItem& WithCategory(SensitiveDataItemCategory&& value) { SetCategory(std::move(value)); return *this;}
 

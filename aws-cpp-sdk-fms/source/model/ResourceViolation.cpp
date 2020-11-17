@@ -21,14 +21,22 @@ namespace Model
 ResourceViolation::ResourceViolation() : 
     m_awsVPCSecurityGroupViolationHasBeenSet(false),
     m_awsEc2NetworkInterfaceViolationHasBeenSet(false),
-    m_awsEc2InstanceViolationHasBeenSet(false)
+    m_awsEc2InstanceViolationHasBeenSet(false),
+    m_networkFirewallMissingFirewallViolationHasBeenSet(false),
+    m_networkFirewallMissingSubnetViolationHasBeenSet(false),
+    m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
+    m_networkFirewallPolicyModifiedViolationHasBeenSet(false)
 {
 }
 
 ResourceViolation::ResourceViolation(JsonView jsonValue) : 
     m_awsVPCSecurityGroupViolationHasBeenSet(false),
     m_awsEc2NetworkInterfaceViolationHasBeenSet(false),
-    m_awsEc2InstanceViolationHasBeenSet(false)
+    m_awsEc2InstanceViolationHasBeenSet(false),
+    m_networkFirewallMissingFirewallViolationHasBeenSet(false),
+    m_networkFirewallMissingSubnetViolationHasBeenSet(false),
+    m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
+    m_networkFirewallPolicyModifiedViolationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +64,34 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_awsEc2InstanceViolationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkFirewallMissingFirewallViolation"))
+  {
+    m_networkFirewallMissingFirewallViolation = jsonValue.GetObject("NetworkFirewallMissingFirewallViolation");
+
+    m_networkFirewallMissingFirewallViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallMissingSubnetViolation"))
+  {
+    m_networkFirewallMissingSubnetViolation = jsonValue.GetObject("NetworkFirewallMissingSubnetViolation");
+
+    m_networkFirewallMissingSubnetViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallMissingExpectedRTViolation"))
+  {
+    m_networkFirewallMissingExpectedRTViolation = jsonValue.GetObject("NetworkFirewallMissingExpectedRTViolation");
+
+    m_networkFirewallMissingExpectedRTViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallPolicyModifiedViolation"))
+  {
+    m_networkFirewallPolicyModifiedViolation = jsonValue.GetObject("NetworkFirewallPolicyModifiedViolation");
+
+    m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +114,30 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_awsEc2InstanceViolationHasBeenSet)
   {
    payload.WithObject("AwsEc2InstanceViolation", m_awsEc2InstanceViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallMissingFirewallViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallMissingFirewallViolation", m_networkFirewallMissingFirewallViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallMissingSubnetViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallMissingSubnetViolation", m_networkFirewallMissingSubnetViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallMissingExpectedRTViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallMissingExpectedRTViolation", m_networkFirewallMissingExpectedRTViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallPolicyModifiedViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallPolicyModifiedViolation", m_networkFirewallPolicyModifiedViolation.Jsonize());
 
   }
 

@@ -19,7 +19,8 @@ namespace Model
     AccountId,
     UserId,
     VoiceConnectorId,
-    VoiceConnectorGroupId
+    VoiceConnectorGroupId,
+    SipRuleId
   };
 
 namespace PhoneNumberAssociationNameMapper

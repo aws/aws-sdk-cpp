@@ -8,6 +8,10 @@
 #include <aws/fms/model/AwsVPCSecurityGroupViolation.h>
 #include <aws/fms/model/AwsEc2NetworkInterfaceViolation.h>
 #include <aws/fms/model/AwsEc2InstanceViolation.h>
+#include <aws/fms/model/NetworkFirewallMissingFirewallViolation.h>
+#include <aws/fms/model/NetworkFirewallMissingSubnetViolation.h>
+#include <aws/fms/model/NetworkFirewallMissingExpectedRTViolation.h>
+#include <aws/fms/model/NetworkFirewallPolicyModifiedViolation.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +135,172 @@ namespace Model
      */
     inline ResourceViolation& WithAwsEc2InstanceViolation(AwsEc2InstanceViolation&& value) { SetAwsEc2InstanceViolation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline const NetworkFirewallMissingFirewallViolation& GetNetworkFirewallMissingFirewallViolation() const{ return m_networkFirewallMissingFirewallViolation; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline bool NetworkFirewallMissingFirewallViolationHasBeenSet() const { return m_networkFirewallMissingFirewallViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline void SetNetworkFirewallMissingFirewallViolation(const NetworkFirewallMissingFirewallViolation& value) { m_networkFirewallMissingFirewallViolationHasBeenSet = true; m_networkFirewallMissingFirewallViolation = value; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline void SetNetworkFirewallMissingFirewallViolation(NetworkFirewallMissingFirewallViolation&& value) { m_networkFirewallMissingFirewallViolationHasBeenSet = true; m_networkFirewallMissingFirewallViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingFirewallViolation(const NetworkFirewallMissingFirewallViolation& value) { SetNetworkFirewallMissingFirewallViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * has no Firewall Manager managed firewall in its VPC. </p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingFirewallViolation(NetworkFirewallMissingFirewallViolation&& value) { SetNetworkFirewallMissingFirewallViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline const NetworkFirewallMissingSubnetViolation& GetNetworkFirewallMissingSubnetViolation() const{ return m_networkFirewallMissingSubnetViolation; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline bool NetworkFirewallMissingSubnetViolationHasBeenSet() const { return m_networkFirewallMissingSubnetViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline void SetNetworkFirewallMissingSubnetViolation(const NetworkFirewallMissingSubnetViolation& value) { m_networkFirewallMissingSubnetViolationHasBeenSet = true; m_networkFirewallMissingSubnetViolation = value; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline void SetNetworkFirewallMissingSubnetViolation(NetworkFirewallMissingSubnetViolation&& value) { m_networkFirewallMissingSubnetViolationHasBeenSet = true; m_networkFirewallMissingSubnetViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingSubnetViolation(const NetworkFirewallMissingSubnetViolation& value) { SetNetworkFirewallMissingSubnetViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that an
+     * Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingSubnetViolation(NetworkFirewallMissingSubnetViolation&& value) { SetNetworkFirewallMissingSubnetViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline const NetworkFirewallMissingExpectedRTViolation& GetNetworkFirewallMissingExpectedRTViolation() const{ return m_networkFirewallMissingExpectedRTViolation; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline bool NetworkFirewallMissingExpectedRTViolationHasBeenSet() const { return m_networkFirewallMissingExpectedRTViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline void SetNetworkFirewallMissingExpectedRTViolation(const NetworkFirewallMissingExpectedRTViolation& value) { m_networkFirewallMissingExpectedRTViolationHasBeenSet = true; m_networkFirewallMissingExpectedRTViolation = value; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline void SetNetworkFirewallMissingExpectedRTViolation(NetworkFirewallMissingExpectedRTViolation&& value) { m_networkFirewallMissingExpectedRTViolationHasBeenSet = true; m_networkFirewallMissingExpectedRTViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingExpectedRTViolation(const NetworkFirewallMissingExpectedRTViolation& value) { SetNetworkFirewallMissingExpectedRTViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a subnet
+     * is not associated with the expected Firewall Manager managed route table. </p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingExpectedRTViolation(NetworkFirewallMissingExpectedRTViolation&& value) { SetNetworkFirewallMissingExpectedRTViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline const NetworkFirewallPolicyModifiedViolation& GetNetworkFirewallPolicyModifiedViolation() const{ return m_networkFirewallPolicyModifiedViolation; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline bool NetworkFirewallPolicyModifiedViolationHasBeenSet() const { return m_networkFirewallPolicyModifiedViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline void SetNetworkFirewallPolicyModifiedViolation(const NetworkFirewallPolicyModifiedViolation& value) { m_networkFirewallPolicyModifiedViolationHasBeenSet = true; m_networkFirewallPolicyModifiedViolation = value; }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline void SetNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolation&& value) { m_networkFirewallPolicyModifiedViolationHasBeenSet = true; m_networkFirewallPolicyModifiedViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallPolicyModifiedViolation(const NetworkFirewallPolicyModifiedViolation& value) { SetNetworkFirewallPolicyModifiedViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for an Network Firewall policy that indicates that a
+     * firewall policy in an individual account has been modified in a way that makes
+     * it noncompliant. For example, the individual account owner might have deleted a
+     * rule group, changed the priority of a stateless rule group, or changed a policy
+     * default action.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolation&& value) { SetNetworkFirewallPolicyModifiedViolation(std::move(value)); return *this;}
+
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -141,6 +311,18 @@ namespace Model
 
     AwsEc2InstanceViolation m_awsEc2InstanceViolation;
     bool m_awsEc2InstanceViolationHasBeenSet;
+
+    NetworkFirewallMissingFirewallViolation m_networkFirewallMissingFirewallViolation;
+    bool m_networkFirewallMissingFirewallViolationHasBeenSet;
+
+    NetworkFirewallMissingSubnetViolation m_networkFirewallMissingSubnetViolation;
+    bool m_networkFirewallMissingSubnetViolationHasBeenSet;
+
+    NetworkFirewallMissingExpectedRTViolation m_networkFirewallMissingExpectedRTViolation;
+    bool m_networkFirewallMissingExpectedRTViolationHasBeenSet;
+
+    NetworkFirewallPolicyModifiedViolation m_networkFirewallPolicyModifiedViolation;
+    bool m_networkFirewallPolicyModifiedViolationHasBeenSet;
   };
 
 } // namespace Model

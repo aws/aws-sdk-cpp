@@ -46,40 +46,40 @@ namespace Model
     /**
      * <p>Specifies whether Amazon Macie detected additional occurrences of sensitive
      * data in the S3 object. A finding includes location data for a maximum of 15
-     * occurrences of sensitive data.</p> <p>This value can help you to determine
-     * whether to investigate additional occurrences of sensitive data in an object.
-     * You can do this by referring to the corresponding sensitive data discovery
-     * result for the finding (ClassificationDetails.detailedResultsLocation).</p>
+     * occurrences of sensitive data.</p> <p>This value can help you determine whether
+     * to investigate additional occurrences of sensitive data in an object. You can do
+     * this by referring to the corresponding sensitive data discovery result for the
+     * finding (ClassificationDetails.detailedResultsLocation).</p>
      */
     inline bool GetAdditionalOccurrences() const{ return m_additionalOccurrences; }
 
     /**
      * <p>Specifies whether Amazon Macie detected additional occurrences of sensitive
      * data in the S3 object. A finding includes location data for a maximum of 15
-     * occurrences of sensitive data.</p> <p>This value can help you to determine
-     * whether to investigate additional occurrences of sensitive data in an object.
-     * You can do this by referring to the corresponding sensitive data discovery
-     * result for the finding (ClassificationDetails.detailedResultsLocation).</p>
+     * occurrences of sensitive data.</p> <p>This value can help you determine whether
+     * to investigate additional occurrences of sensitive data in an object. You can do
+     * this by referring to the corresponding sensitive data discovery result for the
+     * finding (ClassificationDetails.detailedResultsLocation).</p>
      */
     inline bool AdditionalOccurrencesHasBeenSet() const { return m_additionalOccurrencesHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon Macie detected additional occurrences of sensitive
      * data in the S3 object. A finding includes location data for a maximum of 15
-     * occurrences of sensitive data.</p> <p>This value can help you to determine
-     * whether to investigate additional occurrences of sensitive data in an object.
-     * You can do this by referring to the corresponding sensitive data discovery
-     * result for the finding (ClassificationDetails.detailedResultsLocation).</p>
+     * occurrences of sensitive data.</p> <p>This value can help you determine whether
+     * to investigate additional occurrences of sensitive data in an object. You can do
+     * this by referring to the corresponding sensitive data discovery result for the
+     * finding (ClassificationDetails.detailedResultsLocation).</p>
      */
     inline void SetAdditionalOccurrences(bool value) { m_additionalOccurrencesHasBeenSet = true; m_additionalOccurrences = value; }
 
     /**
      * <p>Specifies whether Amazon Macie detected additional occurrences of sensitive
      * data in the S3 object. A finding includes location data for a maximum of 15
-     * occurrences of sensitive data.</p> <p>This value can help you to determine
-     * whether to investigate additional occurrences of sensitive data in an object.
-     * You can do this by referring to the corresponding sensitive data discovery
-     * result for the finding (ClassificationDetails.detailedResultsLocation).</p>
+     * occurrences of sensitive data.</p> <p>This value can help you determine whether
+     * to investigate additional occurrences of sensitive data in an object. You can do
+     * this by referring to the corresponding sensitive data discovery result for the
+     * finding (ClassificationDetails.detailedResultsLocation).</p>
      */
     inline ClassificationResult& WithAdditionalOccurrences(bool value) { SetAdditionalOccurrences(value); return *this;}
 

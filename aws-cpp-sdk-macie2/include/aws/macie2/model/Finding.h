@@ -189,22 +189,30 @@ namespace Model
 
 
     /**
-     * <p>The total number of occurrences of the finding.</p>
+     * <p>The total number of occurrences of the finding. For sensitive data findings,
+     * this value is always 1. All sensitive data findings are considered new (unique)
+     * because they derive from individual classification jobs.</p>
      */
     inline long long GetCount() const{ return m_count; }
 
     /**
-     * <p>The total number of occurrences of the finding.</p>
+     * <p>The total number of occurrences of the finding. For sensitive data findings,
+     * this value is always 1. All sensitive data findings are considered new (unique)
+     * because they derive from individual classification jobs.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The total number of occurrences of the finding.</p>
+     * <p>The total number of occurrences of the finding. For sensitive data findings,
+     * this value is always 1. All sensitive data findings are considered new (unique)
+     * because they derive from individual classification jobs.</p>
      */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The total number of occurrences of the finding.</p>
+     * <p>The total number of occurrences of the finding. For sensitive data findings,
+     * this value is always 1. All sensitive data findings are considered new (unique)
+     * because they derive from individual classification jobs.</p>
      */
     inline Finding& WithCount(long long value) { SetCount(value); return *this;}
 

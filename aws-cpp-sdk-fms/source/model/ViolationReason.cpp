@@ -29,6 +29,10 @@ namespace Aws
         static const int RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP_HASH = HashingUtils::HashString("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
         static const int SECURITY_GROUP_UNUSED_HASH = HashingUtils::HashString("SECURITY_GROUP_UNUSED");
         static const int SECURITY_GROUP_REDUNDANT_HASH = HashingUtils::HashString("SECURITY_GROUP_REDUNDANT");
+        static const int MISSING_FIREWALL_HASH = HashingUtils::HashString("MISSING_FIREWALL");
+        static const int MISSING_FIREWALL_SUBNET_IN_AZ_HASH = HashingUtils::HashString("MISSING_FIREWALL_SUBNET_IN_AZ");
+        static const int MISSING_EXPECTED_ROUTE_TABLE_HASH = HashingUtils::HashString("MISSING_EXPECTED_ROUTE_TABLE");
+        static const int NETWORK_FIREWALL_POLICY_MODIFIED_HASH = HashingUtils::HashString("NETWORK_FIREWALL_POLICY_MODIFIED");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -70,6 +74,22 @@ namespace Aws
           {
             return ViolationReason::SECURITY_GROUP_REDUNDANT;
           }
+          else if (hashCode == MISSING_FIREWALL_HASH)
+          {
+            return ViolationReason::MISSING_FIREWALL;
+          }
+          else if (hashCode == MISSING_FIREWALL_SUBNET_IN_AZ_HASH)
+          {
+            return ViolationReason::MISSING_FIREWALL_SUBNET_IN_AZ;
+          }
+          else if (hashCode == MISSING_EXPECTED_ROUTE_TABLE_HASH)
+          {
+            return ViolationReason::MISSING_EXPECTED_ROUTE_TABLE;
+          }
+          else if (hashCode == NETWORK_FIREWALL_POLICY_MODIFIED_HASH)
+          {
+            return ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +122,14 @@ namespace Aws
             return "SECURITY_GROUP_UNUSED";
           case ViolationReason::SECURITY_GROUP_REDUNDANT:
             return "SECURITY_GROUP_REDUNDANT";
+          case ViolationReason::MISSING_FIREWALL:
+            return "MISSING_FIREWALL";
+          case ViolationReason::MISSING_FIREWALL_SUBNET_IN_AZ:
+            return "MISSING_FIREWALL_SUBNET_IN_AZ";
+          case ViolationReason::MISSING_EXPECTED_ROUTE_TABLE:
+            return "MISSING_EXPECTED_ROUTE_TABLE";
+          case ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED:
+            return "NETWORK_FIREWALL_POLICY_MODIFIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

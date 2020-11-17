@@ -95,6 +95,12 @@ DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("lastRunErrorStatus"))
+  {
+    m_lastRunErrorStatus = jsonValue.GetObject("lastRunErrorStatus");
+
+  }
+
   if(jsonValue.ValueExists("lastRunTime"))
   {
     m_lastRunTime = jsonValue.GetString("lastRunTime");

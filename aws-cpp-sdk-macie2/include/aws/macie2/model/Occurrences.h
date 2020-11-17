@@ -201,8 +201,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline const Aws::Vector<Range>& GetOffsetRanges() const{ return m_offsetRanges; }
 
@@ -210,8 +210,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline bool OffsetRangesHasBeenSet() const { return m_offsetRangesHasBeenSet; }
 
@@ -219,8 +219,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline void SetOffsetRanges(const Aws::Vector<Range>& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = value; }
 
@@ -228,8 +228,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline void SetOffsetRanges(Aws::Vector<Range>&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = std::move(value); }
 
@@ -237,8 +237,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline Occurrences& WithOffsetRanges(const Aws::Vector<Range>& value) { SetOffsetRanges(value); return *this;}
 
@@ -246,8 +246,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline Occurrences& WithOffsetRanges(Aws::Vector<Range>&& value) { SetOffsetRanges(std::move(value)); return *this;}
 
@@ -255,8 +255,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline Occurrences& AddOffsetRanges(const Range& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(value); return *this; }
 
@@ -264,8 +264,8 @@ namespace Model
      * <p>An array of objects, one for each occurrence of sensitive data in a binary
      * text file. Each object specifies the position of the data relative to the
      * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Macie adds location data to a lineRanges.Range or Page object, depending
-     * on the file type.</p>
+     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
+     * depending on the file type.</p>
      */
     inline Occurrences& AddOffsetRanges(Range&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(std::move(value)); return *this; }
 
@@ -337,65 +337,65 @@ namespace Model
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline Occurrences& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline Occurrences& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline Occurrences& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Apache
-     * Avro object container or Apache Parquet file. Each object specifies the field or
-     * record that contains the data. This value is null for all other types of
-     * files.</p>
+     * Avro object container or Apache Parquet file. Each object specifies the record
+     * index and the path to the field in the record that contains the data. This value
+     * is null for all other types of files.</p>
      */
     inline Occurrences& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
 

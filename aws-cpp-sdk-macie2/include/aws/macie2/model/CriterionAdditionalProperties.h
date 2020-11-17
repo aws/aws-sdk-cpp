@@ -95,7 +95,7 @@ namespace Model
 
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -106,7 +106,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetEqExactMatch() const{ return m_eqExactMatch; }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -117,7 +117,7 @@ namespace Model
     inline bool EqExactMatchHasBeenSet() const { return m_eqExactMatchHasBeenSet; }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -128,7 +128,7 @@ namespace Model
     inline void SetEqExactMatch(const Aws::Vector<Aws::String>& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = value; }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -139,7 +139,7 @@ namespace Model
     inline void SetEqExactMatch(Aws::Vector<Aws::String>&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = std::move(value); }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -150,7 +150,7 @@ namespace Model
     inline CriterionAdditionalProperties& WithEqExactMatch(const Aws::Vector<Aws::String>& value) { SetEqExactMatch(value); return *this;}
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -161,7 +161,7 @@ namespace Model
     inline CriterionAdditionalProperties& WithEqExactMatch(Aws::Vector<Aws::String>&& value) { SetEqExactMatch(std::move(value)); return *this;}
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -172,7 +172,7 @@ namespace Model
     inline CriterionAdditionalProperties& AddEqExactMatch(const Aws::String& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(value); return *this; }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
@@ -183,7 +183,7 @@ namespace Model
     inline CriterionAdditionalProperties& AddEqExactMatch(Aws::String&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A condition that requires an array field of a finding to exactly match the
+     * <p>A condition that requires an array field on a finding to exactly match the
      * specified property values. You can use this operator with the following
      * properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,

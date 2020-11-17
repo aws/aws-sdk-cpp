@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/JobStatus.h>
 #include <aws/macie2/model/JobType.h>
+#include <aws/macie2/model/LastRunErrorStatus.h>
 #include <aws/macie2/model/UserPausedDetails.h>
 #include <aws/macie2/model/S3BucketDefinitionForJob.h>
 #include <utility>
@@ -304,6 +305,49 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline const LastRunErrorStatus& GetLastRunErrorStatus() const{ return m_lastRunErrorStatus; }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline bool LastRunErrorStatusHasBeenSet() const { return m_lastRunErrorStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline void SetLastRunErrorStatus(const LastRunErrorStatus& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = value; }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline void SetLastRunErrorStatus(LastRunErrorStatus&& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline JobSummary& WithLastRunErrorStatus(const LastRunErrorStatus& value) { SetLastRunErrorStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether any account- or bucket-level access errors occurred when
+     * the job ran. For a recurring job, this value indicates the error status of the
+     * job's most recent run.</p>
+     */
+    inline JobSummary& WithLastRunErrorStatus(LastRunErrorStatus&& value) { SetLastRunErrorStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The custom name of the job.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -402,6 +446,9 @@ namespace Model
 
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
+    LastRunErrorStatus m_lastRunErrorStatus;
+    bool m_lastRunErrorStatusHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
