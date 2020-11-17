@@ -123,12 +123,10 @@ static char* strdup_callback(const char* str)
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(const CurlHttpClient* client,
-                             CURL* curlHandle,
                              HttpRequest* request,
                              HttpResponse* response,
                              Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
         m_client(client),
-        m_curlHandle(curlHandle),
         m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter),
@@ -136,7 +134,6 @@ struct CurlWriteCallbackContext
     {}
 
     const CurlHttpClient* m_client;
-    CURL* m_curlHandle;
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
@@ -145,19 +142,16 @@ struct CurlWriteCallbackContext
 
 struct CurlReadCallbackContext
 {
-    CurlReadCallbackContext(const CurlHttpClient* client, CURL* curlHandle, HttpRequest* request, Aws::Utils::RateLimits::RateLimiterInterface* limiter) :
+    CurlReadCallbackContext(const CurlHttpClient* client, HttpRequest* request, Aws::Utils::RateLimits::RateLimiterInterface* limiter) :
         m_client(client),
-        m_curlHandle(curlHandle),
         m_rateLimiter(limiter),
-        m_request(request),
-        m_readPaused(false)
+        m_request(request)
     {}
 
     const CurlHttpClient* m_client;
     CURL* m_curlHandle;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     HttpRequest* m_request;
-    bool m_readPaused;
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -242,26 +236,16 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
     {
         if (request->IsEventStreamRequest())
         {
+            // Waiting for next available character to read.
+            // Without peek(), readsome() will keep reading 0 byte from the stream.
+            ioStream->peek();
             ioStream->readsome(ptr, amountToRead);
         }
         else
         {
             ioStream->read(ptr, amountToRead);
         }
-
         size_t amountRead = static_cast<size_t>(ioStream->gcount());
-        if (amountRead == 0)
-        {
-            if (ioStream->eof())
-            {
-                return 0;
-            }
-            else
-            {
-                context->m_readPaused = true;
-                return CURL_READFUNC_PAUSE;
-            }
-        }
         auto& sentHandler = request->GetDataSentEventHandler();
         if (sentHandler)
         {
@@ -319,22 +303,6 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
     }
 
     return CURL_SEEKFUNC_OK;
-}
-
-static int CurlProgressCallback(void *userdata,   curl_off_t,   curl_off_t,   curl_off_t,   curl_off_t)
-{
-    CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
-    if (!context)
-    {
-        return CURLE_ABORTED_BY_CALLBACK;
-    }
-
-    if (context->m_readPaused)
-    {
-        context->m_readPaused = false;
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-    }
-    return 0;
 }
 
 void SetOptCodeForHttpMethod(CURL* requestHandle, const std::shared_ptr<HttpRequest>& request)
@@ -552,8 +520,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        CurlWriteCallbackContext writeContext(this, connectionHandle, request.get(), response.get(), readLimiter);
-        CurlReadCallbackContext readContext(this, connectionHandle, request.get(), writeLimiter);
+        CurlWriteCallbackContext writeContext(this, request.get(), response.get(), readLimiter);
+        CurlReadCallbackContext readContext(this, request.get(), writeLimiter);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
 
@@ -653,12 +621,6 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
-            if (request->IsEventStreamRequest())
-            {
-                curl_easy_setopt(connectionHandle, CURLOPT_NOPROGRESS, 0L);
-                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlProgressCallback);
-                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFODATA, &readContext);
-            }
         }
 
         OverrideOptionsOnConnectionHandle(connectionHandle);

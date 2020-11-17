@@ -498,7 +498,7 @@ JsonView JsonView::GetObject(const Aws::String& key) const
 
 JsonView JsonView::AsObject() const
 {
-    assert(cJSON_IsObject(m_value));
+    assert(cJSON_IsObject(m_value) || cJSON_IsNull(m_value));
     return m_value;
 }
 
