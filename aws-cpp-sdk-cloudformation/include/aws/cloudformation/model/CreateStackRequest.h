@@ -559,15 +559,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -621,15 +621,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -683,15 +683,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -745,15 +745,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -807,15 +807,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -869,15 +869,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -931,15 +931,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -993,15 +993,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
-     * not currently support nested stacks. If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p>  <p>You
-     * should only create stacks directly from a stack template that contains macros if
-     * you know what processing the macro performs.</p> <p>Each macro relies on an
-     * underlying Lambda service function for processing stack templates. Be aware that
-     * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p>  <p>For more information, see <a
+     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * create a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must create the stack directly from the template using this
+     * capability.</p>  <p>You should only create stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without AWS CloudFormation being notified.</p>
+     *  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>

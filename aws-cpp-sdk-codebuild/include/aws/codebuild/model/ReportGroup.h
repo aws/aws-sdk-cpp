@@ -10,6 +10,7 @@
 #include <aws/codebuild/model/ReportExportConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codebuild/model/ReportGroupStatusType.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -319,6 +320,25 @@ namespace Model
      */
     inline ReportGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ReportGroupStatusType& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    
+    inline void SetStatus(const ReportGroupStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    
+    inline void SetStatus(ReportGroupStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    
+    inline ReportGroup& WithStatus(const ReportGroupStatusType& value) { SetStatus(value); return *this;}
+
+    
+    inline ReportGroup& WithStatus(ReportGroupStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -341,6 +361,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ReportGroupStatusType m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArn = value; }
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArn = std::move(value); }
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline void SetAccessPointArn(const char* value) { m_accessPointArn.assign(value); }
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline CreateAccessPointResult& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline CreateAccessPointResult& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the access point.</p>
+     * <p>The ARN of the access point.</p>  <p>This is only supported by Amazon
+     * S3 on Outposts.</p> 
      */
     inline CreateAccessPointResult& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
 

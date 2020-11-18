@@ -26,7 +26,9 @@ ReportGroup::ReportGroup() :
     m_exportConfigHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_status(ReportGroupStatusType::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ReportGroup::ReportGroup(JsonView jsonValue) :
     m_exportConfigHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_status(ReportGroupStatusType::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +101,13 @@ ReportGroup& ReportGroup::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ReportGroupStatusTypeMapper::GetReportGroupStatusTypeForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +157,11 @@ JsonValue ReportGroup::Jsonize() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ReportGroupStatusTypeMapper::GetNameForReportGroupStatusType(m_status));
   }
 
   return payload;

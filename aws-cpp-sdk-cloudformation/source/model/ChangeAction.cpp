@@ -24,6 +24,7 @@ namespace Aws
         static const int Modify_HASH = HashingUtils::HashString("Modify");
         static const int Remove_HASH = HashingUtils::HashString("Remove");
         static const int Import_HASH = HashingUtils::HashString("Import");
+        static const int Dynamic_HASH = HashingUtils::HashString("Dynamic");
 
 
         ChangeAction GetChangeActionForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Import_HASH)
           {
             return ChangeAction::Import;
+          }
+          else if (hashCode == Dynamic_HASH)
+          {
+            return ChangeAction::Dynamic;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "Remove";
           case ChangeAction::Import:
             return "Import";
+          case ChangeAction::Dynamic:
+            return "Dynamic";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

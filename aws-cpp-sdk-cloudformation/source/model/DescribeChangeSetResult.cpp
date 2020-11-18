@@ -19,13 +19,15 @@ using namespace Aws;
 
 DescribeChangeSetResult::DescribeChangeSetResult() : 
     m_executionStatus(ExecutionStatus::NOT_SET),
-    m_status(ChangeSetStatus::NOT_SET)
+    m_status(ChangeSetStatus::NOT_SET),
+    m_includeNestedStacks(false)
 {
 }
 
 DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_executionStatus(ExecutionStatus::NOT_SET),
-    m_status(ChangeSetStatus::NOT_SET)
+    m_status(ChangeSetStatus::NOT_SET),
+    m_includeNestedStacks(false)
 {
   *this = result;
 }
@@ -151,6 +153,21 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
+    XmlNode includeNestedStacksNode = resultNode.FirstChild("IncludeNestedStacks");
+    if(!includeNestedStacksNode.IsNull())
+    {
+      m_includeNestedStacks = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeNestedStacksNode.GetText()).c_str()).c_str());
+    }
+    XmlNode parentChangeSetIdNode = resultNode.FirstChild("ParentChangeSetId");
+    if(!parentChangeSetIdNode.IsNull())
+    {
+      m_parentChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(parentChangeSetIdNode.GetText());
+    }
+    XmlNode rootChangeSetIdNode = resultNode.FirstChild("RootChangeSetId");
+    if(!rootChangeSetIdNode.IsNull())
+    {
+      m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
     }
   }
 

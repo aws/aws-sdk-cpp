@@ -46,8 +46,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline const FleetReplacementStrategy& GetReplacementStrategy() const{ return m_replacementStrategy; }
 
@@ -57,8 +57,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline bool ReplacementStrategyHasBeenSet() const { return m_replacementStrategyHasBeenSet; }
 
@@ -68,8 +68,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline void SetReplacementStrategy(const FleetReplacementStrategy& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
 
@@ -79,8 +79,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline void SetReplacementStrategy(FleetReplacementStrategy&& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = std::move(value); }
 
@@ -90,8 +90,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline FleetSpotCapacityRebalance& WithReplacementStrategy(const FleetReplacementStrategy& value) { SetReplacementStrategy(value); return *this;}
 
@@ -101,8 +101,8 @@ namespace Model
      * specify <code>launch</code>. Only available for fleets of type
      * <code>maintain</code>.</p>  <p>When a replacement instance is launched,
      * the instance marked for rebalance is not automatically terminated. You can
-     * terminate it, or you can wait until Amazon EC2 interrupts it. You are charged
-     * for both instances while they are running.</p> 
+     * terminate it, or you can leave it running. You are charged for both instances
+     * while they are running.</p> 
      */
     inline FleetSpotCapacityRebalance& WithReplacementStrategy(FleetReplacementStrategy&& value) { SetReplacementStrategy(std::move(value)); return *this;}
 

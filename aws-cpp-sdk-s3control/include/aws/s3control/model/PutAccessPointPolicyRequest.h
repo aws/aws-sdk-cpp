@@ -85,8 +85,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -98,8 +100,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -111,8 +115,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -124,8 +130,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -137,8 +145,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -150,8 +160,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -163,8 +175,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -176,8 +190,10 @@ namespace Model
 
     /**
      * <p>The name of the access point that you want to associate with the specified
-     * policy.</p> <p>For Amazon S3 on Outposts specify the ARN of the access point
-     * accessed in the format
+     * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
+     * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
+     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
+     * specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -192,7 +208,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
@@ -201,7 +217,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
@@ -210,7 +226,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
@@ -219,7 +235,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
@@ -228,7 +244,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
@@ -237,7 +253,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
@@ -246,7 +262,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
@@ -255,7 +271,7 @@ namespace Model
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}

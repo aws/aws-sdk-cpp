@@ -1536,7 +1536,7 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1547,7 +1547,7 @@ namespace Model
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1560,7 +1560,7 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1573,7 +1573,7 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * <p>For Redis engine version 6.x onwards: Deletes a ser group. The user group
          * must first be disassociated from the replcation group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1584,7 +1584,7 @@ namespace Model
         virtual Model::DeleteUserGroupOutcome DeleteUserGroup(const Model::DeleteUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * <p>For Redis engine version 6.x onwards: Deletes a ser group. The user group
          * must first be disassociated from the replcation group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1597,7 +1597,7 @@ namespace Model
         virtual Model::DeleteUserGroupOutcomeCallable DeleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.04 onwards: Deletes a ser group. The user group
+         * <p>For Redis engine version 6.x onwards: Deletes a ser group. The user group
          * must first be disassociated from the replcation group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using

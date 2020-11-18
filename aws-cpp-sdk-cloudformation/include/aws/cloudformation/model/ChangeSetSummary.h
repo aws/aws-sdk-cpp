@@ -427,6 +427,113 @@ namespace Model
      */
     inline ChangeSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the
+     * change set.</p>
+     */
+    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
+
+    /**
+     * <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the
+     * change set.</p>
+     */
+    inline bool IncludeNestedStacksHasBeenSet() const { return m_includeNestedStacksHasBeenSet; }
+
+    /**
+     * <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the
+     * change set.</p>
+     */
+    inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacksHasBeenSet = true; m_includeNestedStacks = value; }
+
+    /**
+     * <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the
+     * change set.</p>
+     */
+    inline ChangeSetSummary& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
+
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline const Aws::String& GetParentChangeSetId() const{ return m_parentChangeSetId; }
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline bool ParentChangeSetIdHasBeenSet() const { return m_parentChangeSetIdHasBeenSet; }
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline void SetParentChangeSetId(const Aws::String& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = value; }
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline void SetParentChangeSetId(Aws::String&& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = std::move(value); }
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline void SetParentChangeSetId(const char* value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId.assign(value); }
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline ChangeSetSummary& WithParentChangeSetId(const Aws::String& value) { SetParentChangeSetId(value); return *this;}
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline ChangeSetSummary& WithParentChangeSetId(Aws::String&& value) { SetParentChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent change set ID.</p>
+     */
+    inline ChangeSetSummary& WithParentChangeSetId(const char* value) { SetParentChangeSetId(value); return *this;}
+
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline const Aws::String& GetRootChangeSetId() const{ return m_rootChangeSetId; }
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline bool RootChangeSetIdHasBeenSet() const { return m_rootChangeSetIdHasBeenSet; }
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline void SetRootChangeSetId(const Aws::String& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = value; }
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline void SetRootChangeSetId(Aws::String&& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = std::move(value); }
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline void SetRootChangeSetId(const char* value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId.assign(value); }
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline ChangeSetSummary& WithRootChangeSetId(const Aws::String& value) { SetRootChangeSetId(value); return *this;}
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline ChangeSetSummary& WithRootChangeSetId(Aws::String&& value) { SetRootChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The root change set ID.</p>
+     */
+    inline ChangeSetSummary& WithRootChangeSetId(const char* value) { SetRootChangeSetId(value); return *this;}
+
   private:
 
     Aws::String m_stackId;
@@ -455,6 +562,15 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    bool m_includeNestedStacks;
+    bool m_includeNestedStacksHasBeenSet;
+
+    Aws::String m_parentChangeSetId;
+    bool m_parentChangeSetIdHasBeenSet;
+
+    Aws::String m_rootChangeSetId;
+    bool m_rootChangeSetIdHasBeenSet;
   };
 
 } // namespace Model

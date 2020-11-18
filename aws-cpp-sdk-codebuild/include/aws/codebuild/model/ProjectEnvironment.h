@@ -164,11 +164,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -180,11 +178,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -196,11 +192,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -212,11 +206,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -228,11 +220,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -244,11 +234,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -260,11 +248,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -276,11 +262,9 @@ namespace Model
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
      * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
      * in the Docker repository that CodeBuild uses to manage its Docker images, this
-     * would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-     * of this image, this would be <code>aws/codebuild/standard:latest</code>.</p>
-     * </li> <li> <p>For an image digest:
-     * <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
-     * specify an image with the digest
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
@@ -554,42 +538,74 @@ namespace Model
 
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 

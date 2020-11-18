@@ -22,7 +22,7 @@ namespace Model
 
   /**
    * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-   * this Amazon S3 bucket. You can enable the configuration options in any
+   * this Amazon S3 account. You can enable the configuration options in any
    * combination. For more information about when Amazon S3 considers a bucket or
    * object public, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
@@ -172,44 +172,48 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS services and authorized users
-     * within this account.</p> <p>Enabling this setting doesn't affect previously
-     * stored bucket policies, except that public and cross-account access within any
-     * public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.</p> <p>This is not supported for Amazon S3 on Outposts.</p>
+     * access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p> <p>This is not supported for Amazon S3 on
+     * Outposts.</p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS services and authorized users
-     * within this account.</p> <p>Enabling this setting doesn't affect previously
-     * stored bucket policies, except that public and cross-account access within any
-     * public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.</p> <p>This is not supported for Amazon S3 on Outposts.</p>
+     * access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p> <p>This is not supported for Amazon S3 on
+     * Outposts.</p>
      */
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS services and authorized users
-     * within this account.</p> <p>Enabling this setting doesn't affect previously
-     * stored bucket policies, except that public and cross-account access within any
-     * public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.</p> <p>This is not supported for Amazon S3 on Outposts.</p>
+     * access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p> <p>This is not supported for Amazon S3 on
+     * Outposts.</p>
      */
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS services and authorized users
-     * within this account.</p> <p>Enabling this setting doesn't affect previously
-     * stored bucket policies, except that public and cross-account access within any
-     * public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.</p> <p>This is not supported for Amazon S3 on Outposts.</p>
+     * access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p> <p>This is not supported for Amazon S3 on
+     * Outposts.</p>
      */
     inline PublicAccessBlockConfiguration& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
 

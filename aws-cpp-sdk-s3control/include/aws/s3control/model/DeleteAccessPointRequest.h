@@ -76,8 +76,11 @@ namespace Model
 
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -88,8 +91,11 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -100,8 +106,11 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -112,8 +121,11 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -124,8 +136,11 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -136,8 +151,11 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -148,8 +166,11 @@ namespace Model
     inline DeleteAccessPointRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -160,8 +181,11 @@ namespace Model
     inline DeleteAccessPointRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the access point you want to delete.</p> <p>For Amazon S3 on
-     * Outposts specify the ARN of the access point accessed in the format
+     * <p>The name of the access point you want to delete.</p> <p>For using this
+     * parameter with Amazon S3 on Outposts with the REST API, you must specify the
+     * name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3
+     * on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region

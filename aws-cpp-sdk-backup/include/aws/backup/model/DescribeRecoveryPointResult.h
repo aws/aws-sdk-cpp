@@ -182,6 +182,70 @@ namespace Model
 
 
     /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const Aws::String& value) { m_sourceBackupVaultArn = value; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(Aws::String&& value) { m_sourceBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const char* value) { m_sourceBackupVaultArn.assign(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const Aws::String& value) { SetSourceBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(Aws::String&& value) { SetSourceBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const char* value) { SetSourceBackupVaultArn(value); return *this;}
+
+
+    /**
      * <p>An ARN that uniquely identifies a saved resource. The format of the ARN
      * depends on the resource type.</p>
      */
@@ -722,6 +786,8 @@ namespace Model
     Aws::String m_backupVaultName;
 
     Aws::String m_backupVaultArn;
+
+    Aws::String m_sourceBackupVaultArn;
 
     Aws::String m_resourceArn;
 

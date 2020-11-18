@@ -54,6 +54,12 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("SourceBackupVaultArn"))
+  {
+    m_sourceBackupVaultArn = jsonValue.GetString("SourceBackupVaultArn");
+
+  }
+
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");

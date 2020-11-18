@@ -1365,14 +1365,16 @@ namespace Model
         virtual void RetryBuildAsync(const Model::RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts a failed batch build. Only batch builds that have failed can be
+         * retried.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
          * API Reference</a></p>
          */
         virtual Model::RetryBuildBatchOutcome RetryBuildBatch(const Model::RetryBuildBatchRequest& request) const;
 
         /**
-         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts a failed batch build. Only batch builds that have failed can be
+         * retried.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
          * API Reference</a></p>
          *
@@ -1381,7 +1383,8 @@ namespace Model
         virtual Model::RetryBuildBatchOutcomeCallable RetryBuildBatchCallable(const Model::RetryBuildBatchRequest& request) const;
 
         /**
-         * <p>Restarts a batch build.</p><p><h3>See Also:</h3>   <a
+         * <p>Restarts a failed batch build. Only batch builds that have failed can be
+         * retried.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">AWS
          * API Reference</a></p>
          *

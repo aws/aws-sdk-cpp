@@ -215,6 +215,63 @@ namespace Model
 
 
     /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline bool SourceBackupVaultArnHasBeenSet() const { return m_sourceBackupVaultArnHasBeenSet; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const Aws::String& value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn = value; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(Aws::String&& value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const char* value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn.assign(value); }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(const Aws::String& value) { SetSourceBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(Aws::String&& value) { SetSourceBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(const char* value) { SetSourceBackupVaultArn(value); return *this;}
+
+
+    /**
      * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
      * the resource type.</p>
      */
@@ -824,6 +881,9 @@ namespace Model
 
     Aws::String m_backupVaultArn;
     bool m_backupVaultArnHasBeenSet;
+
+    Aws::String m_sourceBackupVaultArn;
+    bool m_sourceBackupVaultArnHasBeenSet;
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;

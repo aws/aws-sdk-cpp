@@ -19,7 +19,8 @@ namespace Model
     Add,
     Modify,
     Remove,
-    Import
+    Import,
+    Dynamic
   };
 
 namespace ChangeActionMapper

@@ -32,6 +32,7 @@
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
+#include <aws/backup/model/DescribeGlobalSettingsRequest.h>
 #include <aws/backup/model/DescribeProtectedResourceRequest.h>
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeRegionSettingsRequest.h>
@@ -65,6 +66,7 @@
 #include <aws/backup/model/TagResourceRequest.h>
 #include <aws/backup/model/UntagResourceRequest.h>
 #include <aws/backup/model/UpdateBackupPlanRequest.h>
+#include <aws/backup/model/UpdateGlobalSettingsRequest.h>
 #include <aws/backup/model/UpdateRecoveryPointLifecycleRequest.h>
 #include <aws/backup/model/UpdateRegionSettingsRequest.h>
 
@@ -546,6 +548,33 @@ void BackupClient::DescribeCopyJobAsync(const DescribeCopyJobRequest& request, c
 void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCopyJob(request), context);
+}
+
+DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGlobalSettingsOutcomeCallable BackupClient::DescribeGlobalSettingsCallable(const DescribeGlobalSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeGlobalSettingsAsync(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeGlobalSettingsAsyncHelper(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGlobalSettings(request), context);
 }
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
@@ -1622,6 +1651,33 @@ void BackupClient::UpdateBackupPlanAsync(const UpdateBackupPlanRequest& request,
 void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBackupPlan(request), context);
+}
+
+UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGlobalSettingsOutcomeCallable BackupClient::UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateGlobalSettingsAsyncHelper(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGlobalSettings(request), context);
 }
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const

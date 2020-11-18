@@ -842,56 +842,56 @@ namespace Model
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline const Aws::String& GetBackupType() const{ return m_backupType; }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline void SetBackupType(const Aws::String& value) { m_backupType = value; }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline void SetBackupType(Aws::String&& value) { m_backupType = std::move(value); }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline void SetBackupType(const char* value) { m_backupType.assign(value); }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(const Aws::String& value) { SetBackupType(value); return *this;}
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(Aws::String&& value) { SetBackupType(std::move(value)); return *this;}
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
      * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.</p>
+     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
+     * is a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(const char* value) { SetBackupType(value); return *this;}
 

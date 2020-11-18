@@ -29,7 +29,8 @@ ResourceChange::ResourceChange() :
     m_replacement(Replacement::NOT_SET),
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ResourceChange::ResourceChange(const XmlNode& xmlNode) :
     m_replacement(Replacement::NOT_SET),
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -107,6 +109,12 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
 
       m_detailsHasBeenSet = true;
     }
+    XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
+    if(!changeSetIdNode.IsNull())
+    {
+      m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
+      m_changeSetIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -159,6 +167,11 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
+  }
+
 }
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -200,6 +213,10 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
         detailsSs << location <<  ".Details.member." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
+  }
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
 }
 

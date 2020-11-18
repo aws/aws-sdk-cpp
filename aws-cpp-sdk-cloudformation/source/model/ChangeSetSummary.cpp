@@ -31,7 +31,11 @@ ChangeSetSummary::ChangeSetSummary() :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_includeNestedStacks(false),
+    m_includeNestedStacksHasBeenSet(false),
+    m_parentChangeSetIdHasBeenSet(false),
+    m_rootChangeSetIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_includeNestedStacks(false),
+    m_includeNestedStacksHasBeenSet(false),
+    m_parentChangeSetIdHasBeenSet(false),
+    m_rootChangeSetIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -111,6 +119,24 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode includeNestedStacksNode = resultNode.FirstChild("IncludeNestedStacks");
+    if(!includeNestedStacksNode.IsNull())
+    {
+      m_includeNestedStacks = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeNestedStacksNode.GetText()).c_str()).c_str());
+      m_includeNestedStacksHasBeenSet = true;
+    }
+    XmlNode parentChangeSetIdNode = resultNode.FirstChild("ParentChangeSetId");
+    if(!parentChangeSetIdNode.IsNull())
+    {
+      m_parentChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(parentChangeSetIdNode.GetText());
+      m_parentChangeSetIdHasBeenSet = true;
+    }
+    XmlNode rootChangeSetIdNode = resultNode.FirstChild("RootChangeSetId");
+    if(!rootChangeSetIdNode.IsNull())
+    {
+      m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
+      m_rootChangeSetIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -163,6 +189,21 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_includeNestedStacksHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IncludeNestedStacks=" << std::boolalpha << m_includeNestedStacks << "&";
+  }
+
+  if(m_parentChangeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParentChangeSetId=" << StringUtils::URLEncode(m_parentChangeSetId.c_str()) << "&";
+  }
+
+  if(m_rootChangeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RootChangeSetId=" << StringUtils::URLEncode(m_rootChangeSetId.c_str()) << "&";
+  }
+
 }
 
 void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -202,6 +243,18 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_includeNestedStacksHasBeenSet)
+  {
+      oStream << location << ".IncludeNestedStacks=" << std::boolalpha << m_includeNestedStacks << "&";
+  }
+  if(m_parentChangeSetIdHasBeenSet)
+  {
+      oStream << location << ".ParentChangeSetId=" << StringUtils::URLEncode(m_parentChangeSetId.c_str()) << "&";
+  }
+  if(m_rootChangeSetIdHasBeenSet)
+  {
+      oStream << location << ".RootChangeSetId=" << StringUtils::URLEncode(m_rootChangeSetId.c_str()) << "&";
   }
 }
 

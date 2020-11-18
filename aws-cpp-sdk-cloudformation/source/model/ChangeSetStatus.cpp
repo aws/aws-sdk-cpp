@@ -23,7 +23,10 @@ namespace Aws
         static const int CREATE_PENDING_HASH = HashingUtils::HashString("CREATE_PENDING");
         static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
         static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
+        static const int DELETE_PENDING_HASH = HashingUtils::HashString("DELETE_PENDING");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
@@ -42,9 +45,21 @@ namespace Aws
           {
             return ChangeSetStatus::CREATE_COMPLETE;
           }
+          else if (hashCode == DELETE_PENDING_HASH)
+          {
+            return ChangeSetStatus::DELETE_PENDING;
+          }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
+          {
+            return ChangeSetStatus::DELETE_IN_PROGRESS;
+          }
           else if (hashCode == DELETE_COMPLETE_HASH)
           {
             return ChangeSetStatus::DELETE_COMPLETE;
+          }
+          else if (hashCode == DELETE_FAILED_HASH)
+          {
+            return ChangeSetStatus::DELETE_FAILED;
           }
           else if (hashCode == FAILED_HASH)
           {
@@ -70,8 +85,14 @@ namespace Aws
             return "CREATE_IN_PROGRESS";
           case ChangeSetStatus::CREATE_COMPLETE:
             return "CREATE_COMPLETE";
+          case ChangeSetStatus::DELETE_PENDING:
+            return "DELETE_PENDING";
+          case ChangeSetStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
           case ChangeSetStatus::DELETE_COMPLETE:
             return "DELETE_COMPLETE";
+          case ChangeSetStatus::DELETE_FAILED:
+            return "DELETE_FAILED";
           case ChangeSetStatus::FAILED:
             return "FAILED";
           default:

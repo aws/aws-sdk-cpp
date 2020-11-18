@@ -28,7 +28,9 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_descriptionHasBeenSet(false),
     m_changeSetType(ChangeSetType::NOT_SET),
     m_changeSetTypeHasBeenSet(false),
-    m_resourcesToImportHasBeenSet(false)
+    m_resourcesToImportHasBeenSet(false),
+    m_includeNestedStacks(false),
+    m_includeNestedStacksHasBeenSet(false)
 {
 }
 
@@ -147,6 +149,11 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       item.OutputToStream(ss, "ResourcesToImport.member.", resourcesToImportCount, "");
       resourcesToImportCount++;
     }
+  }
+
+  if(m_includeNestedStacksHasBeenSet)
+  {
+    ss << "IncludeNestedStacks=" << std::boolalpha << m_includeNestedStacks << "&";
   }
 
   ss << "Version=2010-05-15";

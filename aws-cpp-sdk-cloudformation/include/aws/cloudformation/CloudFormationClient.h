@@ -502,7 +502,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          */
@@ -528,7 +530,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -556,7 +560,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -660,8 +666,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          */
@@ -670,8 +680,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -682,8 +696,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -1692,8 +1710,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          */
@@ -1707,8 +1727,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -1724,8 +1746,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          *

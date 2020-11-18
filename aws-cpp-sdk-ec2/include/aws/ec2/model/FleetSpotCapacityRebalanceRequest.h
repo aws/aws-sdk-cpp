@@ -51,8 +51,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline const FleetReplacementStrategy& GetReplacementStrategy() const{ return m_replacementStrategy; }
 
@@ -63,8 +63,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline bool ReplacementStrategyHasBeenSet() const { return m_replacementStrategyHasBeenSet; }
 
@@ -75,8 +75,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline void SetReplacementStrategy(const FleetReplacementStrategy& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
 
@@ -87,8 +87,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline void SetReplacementStrategy(FleetReplacementStrategy&& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = std::move(value); }
 
@@ -99,8 +99,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline FleetSpotCapacityRebalanceRequest& WithReplacementStrategy(const FleetReplacementStrategy& value) { SetReplacementStrategy(value); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * Instance in the fleet, specify <code>launch</code>. You must specify a value,
      * otherwise you get an error.</p>  <p>When a replacement instance is
      * launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are
-     * charged for all instances while they are running.</p> 
+     * can terminate it, or you can leave it running. You are charged for all instances
+     * while they are running.</p> 
      */
     inline FleetSpotCapacityRebalanceRequest& WithReplacementStrategy(FleetReplacementStrategy&& value) { SetReplacementStrategy(std::move(value)); return *this;}
 

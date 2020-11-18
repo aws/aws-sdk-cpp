@@ -381,12 +381,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -442,12 +441,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -503,12 +501,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -564,12 +561,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -625,12 +621,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -686,12 +681,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -747,12 +741,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -808,12 +801,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>Also, change sets do not currently support
-     * nested stacks. If you want to create a stack from a stack template that contains
-     * macros <i>and</i> nested stacks, you must create or update the stack directly
-     * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p>  <p>For more information on macros, see
-     * <a
+     * change sets has no effect.</p> <p>If you want to create a stack from a stack
+     * template that contains macros <i>and</i> nested stacks, you must create or
+     * update the stack directly from the template using the <a>CreateStack</a> or
+     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
+     * more information on macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -1538,6 +1530,35 @@ namespace Model
      */
     inline CreateChangeSetRequest& AddResourcesToImport(ResourceToImport&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Creates a change set for the all nested stacks specified in the template. The
+     * default behavior of this action is set to <code>False</code>. To include nested
+     * sets in a change set, specify <code>True</code>.</p>
+     */
+    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
+
+    /**
+     * <p>Creates a change set for the all nested stacks specified in the template. The
+     * default behavior of this action is set to <code>False</code>. To include nested
+     * sets in a change set, specify <code>True</code>.</p>
+     */
+    inline bool IncludeNestedStacksHasBeenSet() const { return m_includeNestedStacksHasBeenSet; }
+
+    /**
+     * <p>Creates a change set for the all nested stacks specified in the template. The
+     * default behavior of this action is set to <code>False</code>. To include nested
+     * sets in a change set, specify <code>True</code>.</p>
+     */
+    inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacksHasBeenSet = true; m_includeNestedStacks = value; }
+
+    /**
+     * <p>Creates a change set for the all nested stacks specified in the template. The
+     * default behavior of this action is set to <code>False</code>. To include nested
+     * sets in a change set, specify <code>True</code>.</p>
+     */
+    inline CreateChangeSetRequest& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -1587,6 +1608,9 @@ namespace Model
 
     Aws::Vector<ResourceToImport> m_resourcesToImport;
     bool m_resourcesToImportHasBeenSet;
+
+    bool m_includeNestedStacks;
+    bool m_includeNestedStacksHasBeenSet;
   };
 
 } // namespace Model

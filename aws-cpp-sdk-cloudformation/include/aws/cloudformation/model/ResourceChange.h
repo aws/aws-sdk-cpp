@@ -49,42 +49,54 @@ namespace Model
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline ResourceChange& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline ResourceChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -450,6 +462,47 @@ namespace Model
      */
     inline ResourceChange& AddDetails(ResourceChangeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+
   private:
 
     ChangeAction m_action;
@@ -472,6 +525,9 @@ namespace Model
 
     Aws::Vector<ResourceChangeDetail> m_details;
     bool m_detailsHasBeenSet;
+
+    Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet;
   };
 
 } // namespace Model

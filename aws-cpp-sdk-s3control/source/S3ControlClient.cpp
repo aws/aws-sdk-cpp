@@ -32,6 +32,8 @@
 #include <aws/s3control/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3control/model/DeleteJobTaggingRequest.h>
 #include <aws/s3control/model/DeletePublicAccessBlockRequest.h>
+#include <aws/s3control/model/DeleteStorageLensConfigurationRequest.h>
+#include <aws/s3control/model/DeleteStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/DescribeJobRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/GetAccessPointPolicyRequest.h>
@@ -42,15 +44,20 @@
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
+#include <aws/s3control/model/GetStorageLensConfigurationRequest.h>
+#include <aws/s3control/model/GetStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
 #include <aws/s3control/model/ListJobsRequest.h>
 #include <aws/s3control/model/ListRegionalBucketsRequest.h>
+#include <aws/s3control/model/ListStorageLensConfigurationsRequest.h>
 #include <aws/s3control/model/PutAccessPointPolicyRequest.h>
 #include <aws/s3control/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
+#include <aws/s3control/model/PutStorageLensConfigurationRequest.h>
+#include <aws/s3control/model/PutStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/UpdateJobPriorityRequest.h>
 #include <aws/s3control/model/UpdateJobStatusRequest.h>
 
@@ -771,6 +778,121 @@ void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAcces
   handler(this, request, DeletePublicAccessBlock(request), context);
 }
 
+DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfiguration(const DeleteStorageLensConfigurationRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStorageLensConfiguration", "Required field: ConfigId, is not set");
+    return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStorageLensConfiguration", "Required field: AccountId, is not set");
+    return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteStorageLensConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteStorageLensConfiguration", "HostPrefix required field: AccountId, is empty");
+      return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteStorageLensConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteStorageLensConfigurationOutcomeCallable S3ControlClient::DeleteStorageLensConfigurationCallable(const DeleteStorageLensConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStorageLensConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteStorageLensConfigurationAsync(const DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageLensConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteStorageLensConfigurationAsyncHelper(const DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStorageLensConfiguration(request), context);
+}
+
+DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensConfigurationTagging(const DeleteStorageLensConfigurationTaggingRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStorageLensConfigurationTagging", "Required field: ConfigId, is not set");
+    return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStorageLensConfigurationTagging", "Required field: AccountId, is not set");
+    return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteStorageLensConfigurationTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteStorageLensConfigurationTagging", "HostPrefix required field: AccountId, is empty");
+      return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteStorageLensConfigurationTagging", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::DeleteStorageLensConfigurationTaggingCallable(const DeleteStorageLensConfigurationTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStorageLensConfigurationTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteStorageLensConfigurationTaggingAsync(const DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteStorageLensConfigurationTaggingAsyncHelper(const DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStorageLensConfigurationTagging(request), context);
+}
+
 DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1369,6 +1491,121 @@ void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlock
   handler(this, request, GetPublicAccessBlock(request), context);
 }
 
+GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(const GetStorageLensConfigurationRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStorageLensConfiguration", "Required field: ConfigId, is not set");
+    return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStorageLensConfiguration", "Required field: AccountId, is not set");
+    return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetStorageLensConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetStorageLensConfiguration", "HostPrefix required field: AccountId, is empty");
+      return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetStorageLensConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetStorageLensConfigurationOutcomeCallable S3ControlClient::GetStorageLensConfigurationCallable(const GetStorageLensConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStorageLensConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetStorageLensConfigurationAsync(const GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStorageLensConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetStorageLensConfigurationAsyncHelper(const GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStorageLensConfiguration(request), context);
+}
+
+GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigurationTagging(const GetStorageLensConfigurationTaggingRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStorageLensConfigurationTagging", "Required field: ConfigId, is not set");
+    return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStorageLensConfigurationTagging", "Required field: AccountId, is not set");
+    return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetStorageLensConfigurationTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetStorageLensConfigurationTagging", "HostPrefix required field: AccountId, is empty");
+      return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetStorageLensConfigurationTagging", "Invalid DNS host: " << uri.GetAuthority());
+      return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::GetStorageLensConfigurationTaggingCallable(const GetStorageLensConfigurationTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStorageLensConfigurationTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetStorageLensConfigurationTaggingAsync(const GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetStorageLensConfigurationTaggingAsyncHelper(const GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStorageLensConfigurationTagging(request), context);
+}
+
 ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPointsRequest& request) const
 {
   S3ControlARN arn(request.GetBucket());
@@ -1526,6 +1763,57 @@ void S3ControlClient::ListRegionalBucketsAsync(const ListRegionalBucketsRequest&
 void S3ControlClient::ListRegionalBucketsAsyncHelper(const ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRegionalBuckets(request), context);
+}
+
+ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurations(const ListStorageLensConfigurationsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListStorageLensConfigurations", "Required field: AccountId, is not set");
+    return ListStorageLensConfigurationsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListStorageLensConfigurationsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("ListStorageLensConfigurations", "HostPrefix required field: AccountId, is empty");
+      return ListStorageLensConfigurationsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListStorageLensConfigurations", "Invalid DNS host: " << uri.GetAuthority());
+      return ListStorageLensConfigurationsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListStorageLensConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+ListStorageLensConfigurationsOutcomeCallable S3ControlClient::ListStorageLensConfigurationsCallable(const ListStorageLensConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStorageLensConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStorageLensConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::ListStorageLensConfigurationsAsync(const ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStorageLensConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::ListStorageLensConfigurationsAsyncHelper(const ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStorageLensConfigurations(request), context);
 }
 
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const
@@ -1883,6 +2171,121 @@ void S3ControlClient::PutPublicAccessBlockAsync(const PutPublicAccessBlockReques
 void S3ControlClient::PutPublicAccessBlockAsyncHelper(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutPublicAccessBlock(request), context);
+}
+
+PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(const PutStorageLensConfigurationRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutStorageLensConfiguration", "Required field: ConfigId, is not set");
+    return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutStorageLensConfiguration", "Required field: AccountId, is not set");
+    return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutStorageLensConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutStorageLensConfiguration", "HostPrefix required field: AccountId, is empty");
+      return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutStorageLensConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutStorageLensConfigurationOutcomeCallable S3ControlClient::PutStorageLensConfigurationCallable(const PutStorageLensConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStorageLensConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutStorageLensConfigurationAsync(const PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutStorageLensConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutStorageLensConfigurationAsyncHelper(const PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutStorageLensConfiguration(request), context);
+}
+
+PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigurationTagging(const PutStorageLensConfigurationTaggingRequest& request) const
+{
+  if (!request.ConfigIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutStorageLensConfigurationTagging", "Required field: ConfigId, is not set");
+    return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutStorageLensConfigurationTagging", "Required field: AccountId, is not set");
+    return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutStorageLensConfigurationTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutStorageLensConfigurationTagging", "HostPrefix required field: AccountId, is empty");
+      return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutStorageLensConfigurationTagging", "Invalid DNS host: " << uri.GetAuthority());
+      return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/v20180820/storagelens/";
+  ss << request.GetConfigId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::PutStorageLensConfigurationTaggingCallable(const PutStorageLensConfigurationTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStorageLensConfigurationTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutStorageLensConfigurationTaggingAsync(const PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutStorageLensConfigurationTaggingAsyncHelper(const PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutStorageLensConfigurationTagging(request), context);
 }
 
 UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const

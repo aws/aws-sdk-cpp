@@ -22,6 +22,7 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -45,6 +46,7 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -86,6 +88,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
 
     m_backupVaultArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupVaultArn"))
+  {
+    m_sourceBackupVaultArn = jsonValue.GetString("SourceBackupVaultArn");
+
+    m_sourceBackupVaultArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceArn"))
@@ -201,6 +210,12 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_backupVaultArnHasBeenSet)
   {
    payload.WithString("BackupVaultArn", m_backupVaultArn);
+
+  }
+
+  if(m_sourceBackupVaultArnHasBeenSet)
+  {
+   payload.WithString("SourceBackupVaultArn", m_sourceBackupVaultArn);
 
   }
 
