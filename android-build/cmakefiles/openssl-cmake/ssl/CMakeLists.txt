@@ -23,25 +23,48 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-include_directories ( ../crypto .. ../include )
-
 if( BUILD_SHARED_LIBS )
-    add_definitions ( -DOPENSSL_BUILD_SHLIBSSL )
+  add_definitions( -DOPENSSL_BUILD_SHLIBSSL )
 endif()
 
-set ( LIBSRC s2_meth.c s2_srvr.c s2_clnt.c s2_lib.c s2_enc.c s2_pkt.c s3_meth.c s3_srvr.c
-  s3_clnt.c s3_lib.c s3_enc.c s3_pkt.c s3_both.c s23_meth.c s23_srvr.c s23_clnt.c
-  s23_lib.c s23_pkt.c t1_meth.c t1_srvr.c t1_clnt.c t1_lib.c t1_enc.c d1_meth.c d1_srvr.c
-  d1_clnt.c d1_lib.c d1_pkt.c d1_both.c ssl_lib.c ssl_err2.c ssl_cert.c
-  ssl_sess.c ssl_ciph.c ssl_stat.c ssl_rsa.c ssl_asn1.c ssl_txt.c ssl_algs.c bio_ssl.c
-  ssl_err.c kssl.c t1_reneg.c tls_srp.c s3_cbc.c d1_srtp.c ssl_conf.c ssl_utst.c t1_ext.c t1_trce.c)
+set( LIBSRC
+  bio_ssl.c d1_lib.c d1_msg.c d1_srtp.c methods.c packet.c pqueue.c s3_cbc.c s3_enc.c s3_lib.c
+  s3_msg.c ssl_asn1.c ssl_cert.c ssl_ciph.c ssl_conf.c ssl_err.c ssl_init.c ssl_lib.c
+  ssl_mcnf.c ssl_rsa.c ssl_sess.c ssl_stat.c ssl_txt.c ssl_utst.c t1_enc.c t1_lib.c
+  t1_trce.c tls13_enc.c tls_srp.c
+  record/dtls1_bitmap.c record/rec_layer_d1.c record/rec_layer_s3.c record/ssl3_buffer.c
+  record/ssl3_record.c record/ssl3_record_tls13.c
+  statem/extensions.c statem/extensions_clnt.c statem/extensions_cust.c
+  statem/extensions_srvr.c statem/statem.c statem/statem_clnt.c statem/statem_dtls.c
+  statem/statem_lib.c statem/statem_srvr.c
+  )
 
-add_library ( ssl ${LIBSRC} )
-target_link_libraries ( ssl crypto )
+include_directories( BEFORE SYSTEM
+  ${PROJECT_SOURCE_DIR}/ # e_os.h
+)
 
-install( FILES ssl.h ssl2.h ssl3.h ssl23.h tls1.h dtls1.h kssl.h srtp.h
-    DESTINATION include/openssl )
+add_library( ssl ${LIBSRC} )
 
-install( TARGETS ssl RUNTIME DESTINATION bin
-                     LIBRARY DESTINATION lib
-                     ARCHIVE DESTINATION lib )
+target_include_directories( ssl PUBLIC ${PROJECT_BINARY_DIR}/include )
+
+target_link_libraries( ssl crypto )
+
+set_target_properties( ssl PROPERTIES
+  VERSION "${LIB_VERSION}" SOVERSION "${LIB_SOVERSION}" )
+
+# if( ANDROID )
+#   set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl_1_1" )
+# endif()
+
+# if( MSVC )
+#   if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+#     set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl-1_1-x64" )
+#   elseif( CMAKE_SIZEOF_VOID_P EQUAL 4 )
+#     set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl-1_1" )
+#   endif()
+# endif()
+
+install( TARGETS ssl
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib )

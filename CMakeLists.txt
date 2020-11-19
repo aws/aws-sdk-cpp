@@ -162,6 +162,7 @@ project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib
 include(external_dependencies)
+include(build_external)
 
 if(COMMAND apply_post_project_platform_settings)
     apply_post_project_platform_settings()
@@ -185,8 +186,16 @@ if (BUILD_DEPS)
     set(IN_SOURCE_BUILD ON)
     set(BUILD_TESTING_PREV ${BUILD_TESTING})
     set(BUILD_TESTING OFF)
+    # Always build deps statically for Android
+    if (PLATFORM_ANDROID)
+        set(BUILD_SHARED_LIBS_PREV ${BUILD_SHARED_LIBS})
+        set(BUILD_SHARED_LIBS OFF)
+    endif()
     add_subdirectory(crt/aws-crt-cpp)
     set(BUILD_TESTING ${BUILD_TESTING_PREV})
+    if (PLATFORM_ANDROID)
+        set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
+    endif()
 else()
     include(AwsFindPackage)
     set(IN_SOURCE_BUILD OFF)
@@ -201,8 +210,6 @@ set_msvc_warnings()
 include(sdks)
 
 include(utilities)
-
-include(build_external)
 
 if(ENABLE_BCRYPT_ENCRYPTION)
     set(CRYPTO_LIBS Bcrypt)
