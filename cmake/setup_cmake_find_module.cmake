@@ -32,7 +32,7 @@ file(WRITE
 
 if (NOT SIMPLE_INSTALL)
     file(APPEND
-        "${CMAKE_CURRENT_BINARY_DIR}/platformDeps.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
         "set(AWSSDK_PLATFORM_PREFIX ${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER})\n")
 endif()
 

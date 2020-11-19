@@ -466,15 +466,6 @@ if (ENABLE_CURL_LOGGING)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "ENABLE_CURL_LOGGING")
 endif()
 
-
-if(ENABLE_CURL_CLIENT AND BUILD_CURL)
-    add_dependencies(${PROJECT_NAME} CURL)
-endif()
-
-if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
-    add_dependencies(${PROJECT_NAME} OPENSSL)
-endif()
-
 if(PLATFORM_CUSTOM)
   if(COMMAND add_custom_core_libraries)
     add_custom_core_libraries()

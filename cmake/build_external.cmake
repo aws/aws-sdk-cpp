@@ -1,14 +1,18 @@
 # The NDK does not provide any http or crypto functionality out of the box; we build versions of zlib, openssl, and curl to account for this.
 if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
-    include(ExternalProject)
-
     set(EXTERNAL_CXX_FLAGS "-Wno-unused-private-field")
     set(EXTERNAL_C_FLAGS "")
 
     set(BASE_SDK_DIR ${CMAKE_BINARY_DIR} CACHE STRING "Android build" FORCE)
 
     # we patch the install process for each dependency to match what we need for 3rd party installation
-    set(EXTERNAL_INSTALL_DIR ${CMAKE_BINARY_DIR}/external)
+    if (DEFINED CMAKE_INSTALL_PREFIX)
+        set(EXTERNAL_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/external-install CACHE STRING "A string describes the path where external dependencies will be installed")
+    else()
+        set(EXTERNAL_INSTALL_DIR ${CMAKE_BINARY_DIR}/external-install CACHE STRING "A string describes the path where external dependencies will be installed")
+    endif()
+    set(EXTERNAL_BUILD_DIR ${CMAKE_BINARY_DIR}/external-build)
+    file(MAKE_DIRECTORY ${EXTERNAL_BUILD_DIR})
 
     # zlib
     if(BUILD_ZLIB)
@@ -19,28 +23,6 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
 
         set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
         set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
-
-        #zlib
-        #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
-        #likely, some of the things here are unnecessary
-        ExternalProject_Add(ZLIB
-            SOURCE_DIR ${ZLIB_SOURCE_DIR}
-            URL https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz
-            URL_HASH "SHA256=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1"
-            PATCH_COMMAND ""
-            CMAKE_ARGS
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
-            -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-            -DANDROID_ABI=${ANDROID_ABI}
-            -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
-            -DANDROID_STL=${ANDROID_STL}
-            -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
-            -DCMAKE_CXX_FLAGS=${EXTERNAL_CXX_FLAGS}
-            -DCMAKE_C_FLAGS=${EXTERNAL_C_FLAGS}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DBUILD_SHARED_LIBS=0
-            )
 
         if(UNIX)
             set(ZLIB_NAME libz)
@@ -70,27 +52,6 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
         set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
 
-        ExternalProject_Add(OPENSSL
-            SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-            GIT_REPOSITORY https://github.com/openssl/openssl.git
-            GIT_TAG e216bf9d7ca761718f34e8b3094fcb32c7a143e4 # 1.0.2j
-	    UPDATE_COMMAND ""
-            PATCH_COMMAND cd ${CMAKE_BINARY_DIR} && python ${AWS_NATIVE_SDK_ROOT}/android-build/configure_openssl_cmake.py --source ${AWS_NATIVE_SDK_ROOT} --dest ${OPENSSL_SOURCE_DIR}
-            CMAKE_ARGS
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
-            -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-            -DANDROID_ABI=${ANDROID_ABI}
-            -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
-            -DANDROID_STL=${ANDROID_STL}
-            -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
-            -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS}
-            -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS}
-            -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DBUILD_SHARED_LIBS=0
-            )
-
         add_library(ssl UNKNOWN IMPORTED)
         set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
         add_library(crypto UNKNOWN IMPORTED)
@@ -98,6 +59,9 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
 
         set(OPENSSL_LIBRARIES "${OPENSSL_LIBRARY_DIR}/libssl.a;${OPENSSL_LIBRARY_DIR}/libcrypto.a")
         set(CURL_OPENSSL_DEPENDENCY "OPENSSL")
+
+        set(LibCrypto_INCLUDE_DIR "${OPENSSL_INCLUDE_DIR}" CACHE INTERNAL "crypto include dir")
+        set(LibCrypto_STATIC_LIBRARY "${OPENSSL_LIBRARY_DIR}/libcrypto.a" CACHE INTERNAL "crypto static library")
     endif()
 
     # curl
@@ -120,39 +84,65 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             set(CURL_USE_ZLIB "OFF")
         endif()
 
-        ExternalProject_Add(CURL
-                DEPENDS ${CURL_OPENSSL_DEPENDENCY} ${CURL_ZLIB_DEPENDENCY}
-                SOURCE_DIR ${CURL_SOURCE_DIR}
-                GIT_REPOSITORY https://github.com/bagder/curl.git
-                GIT_TAG 44b9b4d4f56d6f6de92c89636994c03984e9cd01 # 7.52.1
-                UPDATE_COMMAND ""
-                PATCH_COMMAND ""
-                CMAKE_ARGS
-                -C ${AWS_NATIVE_SDK_ROOT}/android-build/CurlAndroidCrossCompile.cmake
-                -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-                -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
-                -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-                -DANDROID_ABI=${ANDROID_ABI}
-                -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
-                -DANDROID_STL=${ANDROID_STL}
-                -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
-                -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
-                -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
-                -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
-                -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
-                -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
-                -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-                -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
-                -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
-                -DCURL_STATICLIB=ON
-                -DBUILD_CURL_EXE=ON
-                -DBUILD_CURL_TESTS=OFF
-                -DCURL_ZLIB=${CURL_USE_ZLIB}
-                )
-
         add_library(curl UNKNOWN IMPORTED)
         set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.a)
 
         set(CURL_LIBRARIES "${CURL_LIBRARY_DIR}/libcurl.a")
     endif()
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
+        -DAWS_NATIVE_SDK_ROOT=${AWS_NATIVE_SDK_ROOT}
+
+        -DBUILD_CURL=${BUILD_CURL}
+        -DCURL_SOURCE_DIR=${CURL_SOURCE_DIR}
+        -DCURL_INSTALL_DIR=${CURL_INSTALL_DIR}
+        -DCURL_OPENSSL_DEPENDENCY=${CURL_OPENSSL_DEPENDENCY}
+        -DCURL_ZLIB_DEPENDENCY=${CURL_ZLIB_DEPENDENCY}
+        -DCURL_CXX_FLAGS=${CURL_CXX_FLAGS}
+        -DCURL_C_FLAGS=${CURL_C_FLAGS}
+        -DCURL_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
+        -DCURL_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
+        -DCURL_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
+        -DCURL_USE_ZLIB=${CURL_USE_ZLIB}
+
+        -DBUILD_OPENSSL=${BUILD_OPENSSL}
+        -DOPENSSL_SOURCE_DIR=${OPENSSL_SOURCE_DIR}
+        -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
+        -DOPENSSL_INSTALL_DIR=${OPENSSL_INSTALL_DIR}
+        -DOPENSSL_CXX_FLAGS=${OPENSSL_CXX_FLAGS}
+        -DOPENSSL_C_FLAGS=${OPENSSL_C_FLAGS}
+        -DOPENSSL_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
+
+        -DBUILD_ZLIB=${BUILD_ZLIB}
+        -DZLIB_SOURCE_DIR=${ZLIB_SOURCE_DIR}
+        -DZLIB_INSTALL_DIR=${ZLIB_INSTALL_DIR}
+
+        -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+        -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
+        -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
+        -DANDROID_ABI=${ANDROID_ABI}
+        -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
+        -DANDROID_STL=${ANDROID_STL}
+
+        -DEXTERNAL_CXX_FLAGS=${EXTERNAL_CXX_FLAGS}
+        -DEXTERNAL_C_FLAGS=${EXTERNAL_C_FLAGS}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        ${CMAKE_CURRENT_SOURCE_DIR}/android-build
+        WORKING_DIRECTORY ${EXTERNAL_BUILD_DIR}
+        RESULT_VARIABLE CONFIGURE_DEPS_EXIT_CODE)
+
+    if (NOT ${CONFIGURE_DEPS_EXIT_CODE} EQUAL 0)
+        message(FATAL_ERROR "Failed to configure dependency libraries.")
+    endif()
+
+    include(ProcessorCount)
+    ProcessorCount(NUM_JOBS)
+    execute_process(COMMAND ${CMAKE_COMMAND} --build ${EXTERNAL_BUILD_DIR} --config ${CMAKE_BUILD_TYPE} -- -j ${NUM_JOBS}
+    RESULT_VARIABLE BUILD_DEPS_EXIT_CODE)
+
+    if (NOT ${BUILD_DEPS_EXIT_CODE} EQUAL 0)
+        message(FATAL_ERROR "Failed to build dependency libraries.")
+    endif()
+
 endif()

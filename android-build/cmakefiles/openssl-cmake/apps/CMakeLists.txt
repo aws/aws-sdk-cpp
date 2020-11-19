@@ -23,21 +23,43 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#bambrose 2015-06-01 commented out unneeded compile deps.
+file( READ ${CMAKE_CURRENT_SOURCE_DIR}/CA.pl.cmake CA_PL )
+file( WRITE ${CMAKE_CURRENT_BINARY_DIR}/CA.pl "${CA_PL}" )
 
-include_directories ( .. ../include )
-add_definitions ( -DMONOLITH )
+file( READ ${CMAKE_CURRENT_SOURCE_DIR}/tsget.cmake TSGET )
+string( REPLACE "@VERSION_STRING@" "${VERSION_STRING}" TSGET "${TSGET}" )
+file( WRITE ${CMAKE_CURRENT_BINARY_DIR}/tsget "${TSGET}" )
 
-set ( E_SRC openssl.c #
-  verify.c asn1pars.c req.c dgst.c dh.c dhparam.c enc.c passwd.c gendh.c errstr.c
-  ca.c pkcs7.c crl2p7.c crl.c rsa.c rsautl.c dsa.c dsaparam.c ec.c ecparam.c x509.c
-  genrsa.c gendsa.c genpkey.c s_server.c s_client.c speed.c s_time.c apps.c s_cb.c
-  s_socket.c app_rand.c version.c sess_id.c ciphers.c nseq.c pkcs12.c pkcs8.c pkey.c
-  pkeyparam.c pkeyutl.c spkac.c smime.c cms.c rand.c engine.c ocsp.c prime.c ts.c
-  srp.c )
+file( READ ${CMAKE_CURRENT_SOURCE_DIR}/progs.h.cmake PROGS_H )
+file( WRITE ${CMAKE_CURRENT_BINARY_DIR}/progs.h "${PROGS_H}" )
 
-add_executable ( openssl ${E_SRC} )
-target_link_libraries ( openssl z crypto ssl )
+add_definitions( -DMONOLITH )
 
-install( TARGETS openssl RUNTIME DESTINATION bin )
+set( E_SRC
+  app_rand.c apps.c asn1pars.c bf_prefix.c ca.c ciphers.c cms.c crl.c crl2p7.c dgst.c dhparam.c
+  dsa.c dsaparam.c ec.c ecparam.c enc.c engine.c errstr.c gendsa.c genpkey.c
+  genrsa.c nseq.c ocsp.c openssl.c opt.c passwd.c pkcs12.c pkcs7.c pkcs8.c pkey.c
+  pkeyparam.c pkeyutl.c prime.c rand.c rehash.c req.c rsa.c rsautl.c s_cb.c
+  s_client.c s_server.c s_socket.c s_time.c sess_id.c smime.c speed.c spkac.c storeutl.c srp.c
+  ts.c verify.c version.c x509.c )
 
+include_directories( BEFORE SYSTEM
+  ${PROJECT_SOURCE_DIR}/ # e_os.h
+  ${CMAKE_CURRENT_BINARY_DIR}/ # progs.h
+)
+
+if( WIN32 )
+  list( APPEND E_SRC win32_init.c )
+endif()
+
+add_executable( openssl ${E_SRC} )
+
+target_link_libraries( openssl crypto ssl )
+
+install( TARGETS openssl
+    RUNTIME DESTINATION bin )
+
+install( FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/CA.pl
+  ${CMAKE_CURRENT_BINARY_DIR}/tsget
+  DESTINATION share/openssl )
