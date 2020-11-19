@@ -63,7 +63,7 @@
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("${operation.name}", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -82,7 +82,7 @@
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
