@@ -116,7 +116,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CancelQuery", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -127,7 +127,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CancelQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -198,7 +198,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Query", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -209,7 +209,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("Query", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else

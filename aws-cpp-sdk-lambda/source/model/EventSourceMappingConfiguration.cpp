@@ -20,6 +20,9 @@ namespace Model
 
 EventSourceMappingConfiguration::EventSourceMappingConfiguration() : 
     m_uUIDHasBeenSet(false),
+    m_startingPosition(EventSourcePosition::NOT_SET),
+    m_startingPositionHasBeenSet(false),
+    m_startingPositionTimestampHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
@@ -47,6 +50,9 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
 
 EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonValue) : 
     m_uUIDHasBeenSet(false),
+    m_startingPosition(EventSourcePosition::NOT_SET),
+    m_startingPositionHasBeenSet(false),
+    m_startingPositionTimestampHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
@@ -80,6 +86,20 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_uUID = jsonValue.GetString("UUID");
 
     m_uUIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingPosition"))
+  {
+    m_startingPosition = EventSourcePositionMapper::GetEventSourcePositionForName(jsonValue.GetString("StartingPosition"));
+
+    m_startingPositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingPositionTimestamp"))
+  {
+    m_startingPositionTimestamp = jsonValue.GetDouble("StartingPositionTimestamp");
+
+    m_startingPositionTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BatchSize"))
@@ -214,6 +234,16 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   {
    payload.WithString("UUID", m_uUID);
 
+  }
+
+  if(m_startingPositionHasBeenSet)
+  {
+   payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
+  }
+
+  if(m_startingPositionTimestampHasBeenSet)
+  {
+   payload.WithDouble("StartingPositionTimestamp", m_startingPositionTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_batchSizeHasBeenSet)

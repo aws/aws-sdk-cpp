@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lex/model/DialogAction.h>
 #include <aws/lex/model/IntentSummary.h>
+#include <aws/lex/model/ActiveContext.h>
 #include <utility>
 
 namespace Aws
@@ -253,6 +254,70 @@ namespace Model
      */
     inline GetSessionResult& WithDialogAction(DialogAction&& value) { SetDialogAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline GetSessionResult& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline GetSessionResult& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline GetSessionResult& AddActiveContexts(const ActiveContext& value) { m_activeContexts.push_back(value); return *this; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline GetSessionResult& AddActiveContexts(ActiveContext&& value) { m_activeContexts.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<IntentSummary> m_recentIntentSummaryView;
@@ -262,6 +327,8 @@ namespace Model
     Aws::String m_sessionId;
 
     DialogAction m_dialogAction;
+
+    Aws::Vector<ActiveContext> m_activeContexts;
   };
 
 } // namespace Model

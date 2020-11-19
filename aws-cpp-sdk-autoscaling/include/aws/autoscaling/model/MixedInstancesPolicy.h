@@ -30,7 +30,7 @@ namespace Model
    * Instances and Spot Instances across multiple instance types. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-   * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+   * Scaling groups with multiple instance types and purchase options</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed
    * instances policy for a new Auto Scaling group, or you can create it for an
    * existing group by updating the group to specify

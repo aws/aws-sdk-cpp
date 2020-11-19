@@ -33,7 +33,8 @@ StorageDescriptor::StorageDescriptor() :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ StorageDescriptor::StorageDescriptor(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,13 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     m_storedAsSubDirectoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SchemaReference"))
+  {
+    m_schemaReference = jsonValue.GetObject("SchemaReference");
+
+    m_schemaReferenceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -251,6 +260,12 @@ JsonValue StorageDescriptor::Jsonize() const
   if(m_storedAsSubDirectoriesHasBeenSet)
   {
    payload.WithBool("StoredAsSubDirectories", m_storedAsSubDirectories);
+
+  }
+
+  if(m_schemaReferenceHasBeenSet)
+  {
+   payload.WithObject("SchemaReference", m_schemaReference.Jsonize());
 
   }
 

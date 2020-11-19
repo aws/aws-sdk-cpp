@@ -10,6 +10,7 @@
 #include <aws/glue/model/SerDeInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/SkewedInfo.h>
+#include <aws/glue/model/SchemaReference.h>
 #include <aws/glue/model/Column.h>
 #include <aws/glue/model/Order.h>
 #include <utility>
@@ -539,6 +540,49 @@ namespace Model
      */
     inline StorageDescriptor& WithStoredAsSubDirectories(bool value) { SetStoredAsSubDirectories(value); return *this;}
 
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline const SchemaReference& GetSchemaReference() const{ return m_schemaReference; }
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline bool SchemaReferenceHasBeenSet() const { return m_schemaReferenceHasBeenSet; }
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline void SetSchemaReference(const SchemaReference& value) { m_schemaReferenceHasBeenSet = true; m_schemaReference = value; }
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline void SetSchemaReference(SchemaReference&& value) { m_schemaReferenceHasBeenSet = true; m_schemaReference = std::move(value); }
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline StorageDescriptor& WithSchemaReference(const SchemaReference& value) { SetSchemaReference(value); return *this;}
+
+    /**
+     * <p>An object that references a schema stored in the AWS Glue Schema
+     * Registry.</p> <p>When creating a table, you can pass an empty list of columns
+     * for the schema, and instead use a schema reference.</p>
+     */
+    inline StorageDescriptor& WithSchemaReference(SchemaReference&& value) { SetSchemaReference(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Column> m_columns;
@@ -576,6 +620,9 @@ namespace Model
 
     bool m_storedAsSubDirectories;
     bool m_storedAsSubDirectoriesHasBeenSet;
+
+    SchemaReference m_schemaReference;
+    bool m_schemaReferenceHasBeenSet;
   };
 
 } // namespace Model

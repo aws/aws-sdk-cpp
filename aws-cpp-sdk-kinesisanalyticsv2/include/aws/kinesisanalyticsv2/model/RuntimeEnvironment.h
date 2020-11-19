@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SQL_1_0,
     FLINK_1_6,
-    FLINK_1_8
+    FLINK_1_8,
+    FLINK_1_11
   };
 
 namespace RuntimeEnvironmentMapper

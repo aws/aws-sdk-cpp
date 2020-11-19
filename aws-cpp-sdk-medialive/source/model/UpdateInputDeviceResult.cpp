@@ -19,6 +19,7 @@ using namespace Aws;
 UpdateInputDeviceResult::UpdateInputDeviceResult() : 
     m_connectionState(InputDeviceConnectionState::NOT_SET),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
+    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
     m_type(InputDeviceType::NOT_SET)
 {
 }
@@ -26,6 +27,7 @@ UpdateInputDeviceResult::UpdateInputDeviceResult() :
 UpdateInputDeviceResult::UpdateInputDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(InputDeviceConnectionState::NOT_SET),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
+    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
     m_type(InputDeviceType::NOT_SET)
 {
   *this = result;
@@ -49,6 +51,12 @@ UpdateInputDeviceResult& UpdateInputDeviceResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("deviceSettingsSyncState"))
   {
     m_deviceSettingsSyncState = DeviceSettingsSyncStateMapper::GetDeviceSettingsSyncStateForName(jsonValue.GetString("deviceSettingsSyncState"));
+
+  }
+
+  if(jsonValue.ValueExists("deviceUpdateStatus"))
+  {
+    m_deviceUpdateStatus = DeviceUpdateStatusMapper::GetDeviceUpdateStatusForName(jsonValue.GetString("deviceUpdateStatus"));
 
   }
 

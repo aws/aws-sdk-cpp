@@ -527,6 +527,42 @@ namespace Model
      */
     inline PutSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const Aws::String& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(Aws::String&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const char* value) { m_activeContexts.assign(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
@@ -548,6 +584,8 @@ namespace Model
   Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_sessionId;
+
+    Aws::String m_activeContexts;
   };
 
 } // namespace Model

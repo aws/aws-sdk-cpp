@@ -19,6 +19,7 @@
 #include <aws/ds/model/RadiusSettings.h>
 #include <aws/ds/model/RadiusStatus.h>
 #include <aws/ds/model/OwnerDirectoryDescription.h>
+#include <aws/ds/model/RegionsInfo.h>
 #include <utility>
 
 namespace Aws
@@ -1029,6 +1030,37 @@ namespace Model
      */
     inline DirectoryDescription& WithOwnerDirectoryDescription(OwnerDirectoryDescription&& value) { SetOwnerDirectoryDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline const RegionsInfo& GetRegionsInfo() const{ return m_regionsInfo; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline bool RegionsInfoHasBeenSet() const { return m_regionsInfoHasBeenSet; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(const RegionsInfo& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = value; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(RegionsInfo&& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = std::move(value); }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(const RegionsInfo& value) { SetRegionsInfo(value); return *this;}
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(RegionsInfo&& value) { SetRegionsInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -1102,6 +1134,9 @@ namespace Model
 
     OwnerDirectoryDescription m_ownerDirectoryDescription;
     bool m_ownerDirectoryDescriptionHasBeenSet;
+
+    RegionsInfo m_regionsInfo;
+    bool m_regionsInfoHasBeenSet;
   };
 
 } // namespace Model

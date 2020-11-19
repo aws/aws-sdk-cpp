@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 RemovePermissionRequest::RemovePermissionRequest() : 
     m_statementIdHasBeenSet(false),
+    m_removeAllPermissions(false),
+    m_removeAllPermissionsHasBeenSet(false),
     m_eventBusNameHasBeenSet(false)
 {
 }
@@ -25,6 +27,12 @@ Aws::String RemovePermissionRequest::SerializePayload() const
   if(m_statementIdHasBeenSet)
   {
    payload.WithString("StatementId", m_statementId);
+
+  }
+
+  if(m_removeAllPermissionsHasBeenSet)
+  {
+   payload.WithBool("RemoveAllPermissions", m_removeAllPermissions);
 
   }
 

@@ -640,6 +640,79 @@ namespace Model
      */
     inline PostContentRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline void SetActiveContexts(const Aws::String& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline void SetActiveContexts(Aws::String&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline void SetActiveContexts(const char* value) { m_activeContextsHasBeenSet = true; m_activeContexts.assign(value); }
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline PostContentRequest& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline PostContentRequest& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of contexts active for the request. A context can be activated when a
+     * previous intent is fulfilled, or by including the context in the request,</p>
+     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
+     * of contexts for the session. If you specify an empty list, all contexts for the
+     * session are cleared.</p>
+     */
+    inline PostContentRequest& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+
   private:
 
     Aws::String m_botName;
@@ -660,6 +733,9 @@ namespace Model
     Aws::String m_accept;
     bool m_acceptHasBeenSet;
 
+
+    Aws::String m_activeContexts;
+    bool m_activeContextsHasBeenSet;
   };
 
 } // namespace Model

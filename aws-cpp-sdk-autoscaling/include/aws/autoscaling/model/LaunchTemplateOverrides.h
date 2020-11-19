@@ -7,6 +7,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -24,9 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes an override for a launch template. Currently, the only supported
-   * override is instance type.</p> <p>The maximum number of instance type overrides
-   * that can be associated with an Auto Scaling group is 20.</p><p><h3>See
+   * <p>Describes an override for a launch template. The maximum number of instance
+   * types that can be associated with an Auto Scaling group is 20. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html">Configuring
+   * overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateOverrides">AWS
    * API Reference</a></p>
@@ -44,73 +47,73 @@ namespace Model
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline LaunchTemplateOverrides& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline LaunchTemplateOverrides& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance
-     * type that is supported in your requested Region and Availability Zones. For
-     * information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
+     * type that is supported in your requested Region and Availability Zones. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline LaunchTemplateOverrides& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -243,6 +246,73 @@ namespace Model
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
 
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline void SetLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline void SetLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
+
+    /**
+     * <p>Provides the launch template to be used when launching the instance type. For
+     * example, some instance types might require a launch template with a different
+     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
+     * defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. </p>
+     */
+    inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -250,6 +320,9 @@ namespace Model
 
     Aws::String m_weightedCapacity;
     bool m_weightedCapacityHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplateSpecification;
+    bool m_launchTemplateSpecificationHasBeenSet;
   };
 
 } // namespace Model

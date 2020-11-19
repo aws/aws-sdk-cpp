@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -76,6 +77,73 @@ namespace Model
      * <p>The identifier of the event source mapping.</p>
      */
     inline GetEventSourceMappingResult& WithUUID(const char* value) { SetUUID(value); return *this;}
+
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPosition = value; }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPosition = std::move(value); }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline GetEventSourceMappingResult& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline GetEventSourceMappingResult& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestamp = value; }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestamp = std::move(value); }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline GetEventSourceMappingResult& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline GetEventSourceMappingResult& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 
 
     /**
@@ -634,6 +702,10 @@ namespace Model
   private:
 
     Aws::String m_uUID;
+
+    EventSourcePosition m_startingPosition;
+
+    Aws::Utils::DateTime m_startingPositionTimestamp;
 
     int m_batchSize;
 

@@ -20,7 +20,8 @@ PutSessionRequest::PutSessionRequest() :
     m_sessionAttributesHasBeenSet(false),
     m_dialogActionHasBeenSet(false),
     m_recentIntentSummaryViewHasBeenSet(false),
-    m_acceptHasBeenSet(false)
+    m_acceptHasBeenSet(false),
+    m_activeContextsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String PutSessionRequest::SerializePayload() const
      recentIntentSummaryViewJsonList[recentIntentSummaryViewIndex].AsObject(m_recentIntentSummaryView[recentIntentSummaryViewIndex].Jsonize());
    }
    payload.WithArray("recentIntentSummaryView", std::move(recentIntentSummaryViewJsonList));
+
+  }
+
+  if(m_activeContextsHasBeenSet)
+  {
+   Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
+   for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
+   {
+     activeContextsJsonList[activeContextsIndex].AsObject(m_activeContexts[activeContextsIndex].Jsonize());
+   }
+   payload.WithArray("activeContexts", std::move(activeContextsJsonList));
 
   }
 

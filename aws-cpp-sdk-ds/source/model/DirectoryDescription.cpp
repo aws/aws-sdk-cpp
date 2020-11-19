@@ -51,7 +51,8 @@ DirectoryDescription::DirectoryDescription() :
     m_ssoEnabledHasBeenSet(false),
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false)
+    m_ownerDirectoryDescriptionHasBeenSet(false),
+    m_regionsInfoHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ DirectoryDescription::DirectoryDescription(JsonView jsonValue) :
     m_ssoEnabledHasBeenSet(false),
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false)
+    m_ownerDirectoryDescriptionHasBeenSet(false),
+    m_regionsInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -266,6 +268,13 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
     m_ownerDirectoryDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RegionsInfo"))
+  {
+    m_regionsInfo = jsonValue.GetObject("RegionsInfo");
+
+    m_regionsInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -410,6 +419,12 @@ JsonValue DirectoryDescription::Jsonize() const
   if(m_ownerDirectoryDescriptionHasBeenSet)
   {
    payload.WithObject("OwnerDirectoryDescription", m_ownerDirectoryDescription.Jsonize());
+
+  }
+
+  if(m_regionsInfoHasBeenSet)
+  {
+   payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
 
   }
 

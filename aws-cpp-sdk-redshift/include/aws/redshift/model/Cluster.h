@@ -2131,6 +2131,47 @@ namespace Model
      */
     inline Cluster& WithResizeInfo(ResizeInfo&& value) { SetResizeInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline const Aws::String& GetClusterNamespaceArn() const{ return m_clusterNamespaceArn; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline bool ClusterNamespaceArnHasBeenSet() const { return m_clusterNamespaceArnHasBeenSet; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(const Aws::String& value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn = value; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(Aws::String&& value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn = std::move(value); }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(const char* value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn.assign(value); }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(const Aws::String& value) { SetClusterNamespaceArn(value); return *this;}
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(Aws::String&& value) { SetClusterNamespaceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(const char* value) { SetClusterNamespaceArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2270,6 +2311,9 @@ namespace Model
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;
+
+    Aws::String m_clusterNamespaceArn;
+    bool m_clusterNamespaceArnHasBeenSet;
   };
 
 } // namespace Model

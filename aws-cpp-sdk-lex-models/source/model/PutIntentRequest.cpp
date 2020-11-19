@@ -27,7 +27,9 @@ PutIntentRequest::PutIntentRequest() :
     m_checksumHasBeenSet(false),
     m_createVersion(false),
     m_createVersionHasBeenSet(false),
-    m_kendraConfigurationHasBeenSet(false)
+    m_kendraConfigurationHasBeenSet(false),
+    m_inputContextsHasBeenSet(false),
+    m_outputContextsHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,28 @@ Aws::String PutIntentRequest::SerializePayload() const
   if(m_kendraConfigurationHasBeenSet)
   {
    payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
+
+  }
+
+  if(m_inputContextsHasBeenSet)
+  {
+   Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
+   for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
+   {
+     inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
+   }
+   payload.WithArray("inputContexts", std::move(inputContextsJsonList));
+
+  }
+
+  if(m_outputContextsHasBeenSet)
+  {
+   Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
+   for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
+   {
+     outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());
+   }
+   payload.WithArray("outputContexts", std::move(outputContextsJsonList));
 
   }
 

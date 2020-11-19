@@ -185,7 +185,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
@@ -195,7 +195,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
@@ -205,7 +205,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
@@ -215,7 +215,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
@@ -225,7 +225,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
@@ -235,7 +235,7 @@ namespace Model
      * changes to an existing policy, all optional parameters are left unchanged if not
      * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}

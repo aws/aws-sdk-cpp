@@ -31,7 +31,8 @@ Slot::Slot() :
     m_sampleUtterancesHasBeenSet(false),
     m_responseCardHasBeenSet(false),
     m_obfuscationSetting(ObfuscationSetting::NOT_SET),
-    m_obfuscationSettingHasBeenSet(false)
+    m_obfuscationSettingHasBeenSet(false),
+    m_defaultValueSpecHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Slot::Slot(JsonView jsonValue) :
     m_sampleUtterancesHasBeenSet(false),
     m_responseCardHasBeenSet(false),
     m_obfuscationSetting(ObfuscationSetting::NOT_SET),
-    m_obfuscationSettingHasBeenSet(false)
+    m_obfuscationSettingHasBeenSet(false),
+    m_defaultValueSpecHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ Slot& Slot::operator =(JsonView jsonValue)
     m_obfuscationSettingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultValueSpec"))
+  {
+    m_defaultValueSpec = jsonValue.GetObject("defaultValueSpec");
+
+    m_defaultValueSpecHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +205,12 @@ JsonValue Slot::Jsonize() const
   if(m_obfuscationSettingHasBeenSet)
   {
    payload.WithString("obfuscationSetting", ObfuscationSettingMapper::GetNameForObfuscationSetting(m_obfuscationSetting));
+  }
+
+  if(m_defaultValueSpecHasBeenSet)
+  {
+   payload.WithObject("defaultValueSpec", m_defaultValueSpec.Jsonize());
+
   }
 
   return payload;

@@ -123,48 +123,48 @@ namespace Model
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the master account and member accounts if
-     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * calculates recommendations including the management account and member accounts
+     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}

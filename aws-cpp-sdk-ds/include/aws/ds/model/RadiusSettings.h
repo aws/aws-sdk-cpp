@@ -41,56 +41,65 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRadiusServers() const{ return m_radiusServers; }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline bool RadiusServersHasBeenSet() const { return m_radiusServersHasBeenSet; }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline void SetRadiusServers(const Aws::Vector<Aws::String>& value) { m_radiusServersHasBeenSet = true; m_radiusServers = value; }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline void SetRadiusServers(Aws::Vector<Aws::String>&& value) { m_radiusServersHasBeenSet = true; m_radiusServers = std::move(value); }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline RadiusSettings& WithRadiusServers(const Aws::Vector<Aws::String>& value) { SetRadiusServers(value); return *this;}
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline RadiusSettings& WithRadiusServers(Aws::Vector<Aws::String>&& value) { SetRadiusServers(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline RadiusSettings& AddRadiusServers(const Aws::String& value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline RadiusSettings& AddRadiusServers(Aws::String&& value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
+     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
+     * RADIUS server load balancer.</p>
      */
     inline RadiusSettings& AddRadiusServers(const char* value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(value); return *this; }
 

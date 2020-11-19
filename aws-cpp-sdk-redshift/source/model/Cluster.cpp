@@ -74,7 +74,8 @@ Cluster::Cluster() :
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
-    m_resizeInfoHasBeenSet(false)
+    m_resizeInfoHasBeenSet(false),
+    m_clusterNamespaceArnHasBeenSet(false)
 {
 }
 
@@ -132,7 +133,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
-    m_resizeInfoHasBeenSet(false)
+    m_resizeInfoHasBeenSet(false),
+    m_clusterNamespaceArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -467,6 +469,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_resizeInfo = resizeInfoNode;
       m_resizeInfoHasBeenSet = true;
     }
+    XmlNode clusterNamespaceArnNode = resultNode.FirstChild("ClusterNamespaceArn");
+    if(!clusterNamespaceArnNode.IsNull())
+    {
+      m_clusterNamespaceArn = Aws::Utils::Xml::DecodeEscapedXmlText(clusterNamespaceArnNode.GetText());
+      m_clusterNamespaceArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -766,6 +774,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_clusterNamespaceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1015,6 +1028,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String resizeInfoLocationAndMember(location);
       resizeInfoLocationAndMember += ".ResizeInfo";
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMember.c_str());
+  }
+  if(m_clusterNamespaceArnHasBeenSet)
+  {
+      oStream << location << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
   }
 }
 

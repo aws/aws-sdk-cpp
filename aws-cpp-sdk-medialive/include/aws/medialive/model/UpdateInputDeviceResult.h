@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputDeviceConnectionState.h>
 #include <aws/medialive/model/DeviceSettingsSyncState.h>
+#include <aws/medialive/model/DeviceUpdateStatus.h>
 #include <aws/medialive/model/InputDeviceHdSettings.h>
 #include <aws/medialive/model/InputDeviceNetworkSettings.h>
 #include <aws/medialive/model/InputDeviceType.h>
@@ -149,6 +150,32 @@ namespace Model
      * means that it has not updated its configuration.
      */
     inline UpdateInputDeviceResult& WithDeviceSettingsSyncState(DeviceSettingsSyncState&& value) { SetDeviceSettingsSyncState(std::move(value)); return *this;}
+
+
+    /**
+     * The status of software on the input device.
+     */
+    inline const DeviceUpdateStatus& GetDeviceUpdateStatus() const{ return m_deviceUpdateStatus; }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline void SetDeviceUpdateStatus(const DeviceUpdateStatus& value) { m_deviceUpdateStatus = value; }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline void SetDeviceUpdateStatus(DeviceUpdateStatus&& value) { m_deviceUpdateStatus = std::move(value); }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline UpdateInputDeviceResult& WithDeviceUpdateStatus(const DeviceUpdateStatus& value) { SetDeviceUpdateStatus(value); return *this;}
+
+    /**
+     * The status of software on the input device.
+     */
+    inline UpdateInputDeviceResult& WithDeviceUpdateStatus(DeviceUpdateStatus&& value) { SetDeviceUpdateStatus(std::move(value)); return *this;}
 
 
     /**
@@ -379,6 +406,8 @@ namespace Model
     InputDeviceConnectionState m_connectionState;
 
     DeviceSettingsSyncState m_deviceSettingsSyncState;
+
+    DeviceUpdateStatus m_deviceUpdateStatus;
 
     InputDeviceHdSettings m_hdDeviceSettings;
 

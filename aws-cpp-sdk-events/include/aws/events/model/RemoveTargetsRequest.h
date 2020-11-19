@@ -77,42 +77,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline RemoveTargetsRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline RemoveTargetsRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline RemoveTargetsRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 

@@ -22,13 +22,15 @@ namespace Model
 
 LaunchTemplateOverrides::LaunchTemplateOverrides() : 
     m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_launchTemplateSpecificationHasBeenSet(false)
 {
 }
 
 LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) : 
     m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_launchTemplateSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
       m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
       m_weightedCapacityHasBeenSet = true;
     }
+    XmlNode launchTemplateSpecificationNode = resultNode.FirstChild("LaunchTemplateSpecification");
+    if(!launchTemplateSpecificationNode.IsNull())
+    {
+      m_launchTemplateSpecification = launchTemplateSpecificationNode;
+      m_launchTemplateSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -68,6 +76,13 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
   }
 
+  if(m_launchTemplateSpecificationHasBeenSet)
+  {
+      Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
+      launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
+      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -79,6 +94,12 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_weightedCapacityHasBeenSet)
   {
       oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
+  }
+  if(m_launchTemplateSpecificationHasBeenSet)
+  {
+      Aws::String launchTemplateSpecificationLocationAndMember(location);
+      launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
+      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
   }
 }
 

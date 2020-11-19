@@ -9,6 +9,7 @@
 #include <aws/ds/model/ClientException.h>
 #include <aws/ds/model/EntityAlreadyExistsException.h>
 #include <aws/ds/model/DirectoryAlreadySharedException.h>
+#include <aws/ds/model/DirectoryAlreadyInRegionException.h>
 #include <aws/ds/model/InvalidLDAPSStatusException.h>
 #include <aws/ds/model/DirectoryUnavailableException.h>
 #include <aws/ds/model/UserDoesNotExistException.h>
@@ -33,6 +34,7 @@
 #include <aws/ds/model/OrganizationsException.h>
 #include <aws/ds/model/InvalidTargetException.h>
 #include <aws/ds/model/DomainControllerLimitExceededException.h>
+#include <aws/ds/model/RegionLimitExceededException.h>
 #include <aws/ds/model/ServiceException.h>
 #include <aws/ds/model/IpRouteLimitExceededException.h>
 #include <aws/ds/model/SnapshotLimitExceededException.h>
@@ -63,6 +65,12 @@ template<> AWS_DIRECTORYSERVICE_API DirectoryAlreadySharedException DirectorySer
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED);
   return DirectoryAlreadySharedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryAlreadyInRegionException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_ALREADY_IN_REGION);
+  return DirectoryAlreadyInRegionException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DIRECTORYSERVICE_API InvalidLDAPSStatusException DirectoryServiceError::GetModeledError()
@@ -209,6 +217,12 @@ template<> AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException Direc
   return DomainControllerLimitExceededException(this->GetJsonPayload().View());
 }
 
+template<> AWS_DIRECTORYSERVICE_API RegionLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::REGION_LIMIT_EXCEEDED);
+  return RegionLimitExceededException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DIRECTORYSERVICE_API ServiceException DirectoryServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::SERVICE);
@@ -239,6 +253,7 @@ namespace DirectoryServiceErrorMapper
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
 static const int DIRECTORY_ALREADY_SHARED_HASH = HashingUtils::HashString("DirectoryAlreadySharedException");
+static const int DIRECTORY_ALREADY_IN_REGION_HASH = HashingUtils::HashString("DirectoryAlreadyInRegionException");
 static const int INVALID_L_D_A_P_S_STATUS_HASH = HashingUtils::HashString("InvalidLDAPSStatusException");
 static const int DIRECTORY_UNAVAILABLE_HASH = HashingUtils::HashString("DirectoryUnavailableException");
 static const int USER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("UserDoesNotExistException");
@@ -262,6 +277,7 @@ static const int NO_AVAILABLE_CERTIFICATE_HASH = HashingUtils::HashString("NoAva
 static const int ORGANIZATIONS_HASH = HashingUtils::HashString("OrganizationsException");
 static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTargetException");
 static const int DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainControllerLimitExceededException");
+static const int REGION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RegionLimitExceededException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int IP_ROUTE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IpRouteLimitExceededException");
 static const int SNAPSHOT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SnapshotLimitExceededException");
@@ -283,6 +299,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DIRECTORY_ALREADY_SHARED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED), false);
+  }
+  else if (hashCode == DIRECTORY_ALREADY_IN_REGION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_IN_REGION), false);
   }
   else if (hashCode == INVALID_L_D_A_P_S_STATUS_HASH)
   {
@@ -375,6 +395,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DOMAIN_CONTROLLER_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == REGION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::REGION_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == SERVICE_HASH)
   {

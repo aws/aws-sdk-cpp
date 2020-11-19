@@ -18,6 +18,7 @@
 #include <aws/kinesisanalyticsv2/model/AddApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationResult.h>
+#include <aws/kinesisanalyticsv2/model/CreateApplicationPresignedUrlResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
@@ -83,6 +84,7 @@ namespace Model
         class AddApplicationReferenceDataSourceRequest;
         class AddApplicationVpcConfigurationRequest;
         class CreateApplicationRequest;
+        class CreateApplicationPresignedUrlRequest;
         class CreateApplicationSnapshotRequest;
         class DeleteApplicationRequest;
         class DeleteApplicationCloudWatchLoggingOptionRequest;
@@ -110,6 +112,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, KinesisAnalyticsV2Error> AddApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<AddApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> AddApplicationVpcConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, KinesisAnalyticsV2Error> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationPresignedUrlResult, KinesisAnalyticsV2Error> CreateApplicationPresignedUrlOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationSnapshotResult, KinesisAnalyticsV2Error> CreateApplicationSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationResult, KinesisAnalyticsV2Error> DeleteApplicationOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsV2Error> DeleteApplicationCloudWatchLoggingOptionOutcome;
@@ -137,6 +140,7 @@ namespace Model
         typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<AddApplicationVpcConfigurationOutcome> AddApplicationVpcConfigurationOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+        typedef std::future<CreateApplicationPresignedUrlOutcome> CreateApplicationPresignedUrlOutcomeCallable;
         typedef std::future<CreateApplicationSnapshotOutcome> CreateApplicationSnapshotOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
@@ -167,6 +171,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationVpcConfigurationRequest&, const Model::AddApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationPresignedUrlRequest&, const Model::CreateApplicationPresignedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationPresignedUrlResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationSnapshotRequest&, const Model::CreateApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationCloudWatchLoggingOptionRequest&, const Model::DeleteApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler;
@@ -515,6 +520,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApplicationPresignedUrlOutcome CreateApplicationPresignedUrl(const Model::CreateApplicationPresignedUrlRequest& request) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateApplicationPresignedUrlOutcomeCallable CreateApplicationPresignedUrlCallable(const Model::CreateApplicationPresignedUrlRequest& request) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateApplicationPresignedUrlAsync(const Model::CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of the application's state data.</p><p><h3>See Also:</h3> 
@@ -992,8 +1049,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          */
@@ -1001,8 +1061,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          *
@@ -1012,8 +1075,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          *
@@ -1146,6 +1212,7 @@ namespace Model
         void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationVpcConfigurationAsyncHelper(const Model::AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateApplicationPresignedUrlAsyncHelper(const Model::CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationSnapshotAsyncHelper(const Model::CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

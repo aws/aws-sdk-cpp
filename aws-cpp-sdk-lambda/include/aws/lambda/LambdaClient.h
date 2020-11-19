@@ -490,6 +490,8 @@ namespace Model
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
          * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
+         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
          * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
@@ -519,6 +521,8 @@ namespace Model
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
          * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
+         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
          * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
@@ -550,6 +554,8 @@ namespace Model
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
          * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
+         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
          * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
          * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>

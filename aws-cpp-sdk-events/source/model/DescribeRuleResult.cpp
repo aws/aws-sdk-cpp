@@ -84,6 +84,12 @@ DescribeRuleResult& DescribeRuleResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+
+  }
+
 
 
   return *this;

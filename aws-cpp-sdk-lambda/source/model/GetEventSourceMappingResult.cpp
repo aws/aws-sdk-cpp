@@ -17,6 +17,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEventSourceMappingResult::GetEventSourceMappingResult() : 
+    m_startingPosition(EventSourcePosition::NOT_SET),
     m_batchSize(0),
     m_maximumBatchingWindowInSeconds(0),
     m_parallelizationFactor(0),
@@ -27,6 +28,7 @@ GetEventSourceMappingResult::GetEventSourceMappingResult() :
 }
 
 GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_startingPosition(EventSourcePosition::NOT_SET),
     m_batchSize(0),
     m_maximumBatchingWindowInSeconds(0),
     m_parallelizationFactor(0),
@@ -43,6 +45,18 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("UUID"))
   {
     m_uUID = jsonValue.GetString("UUID");
+
+  }
+
+  if(jsonValue.ValueExists("StartingPosition"))
+  {
+    m_startingPosition = EventSourcePositionMapper::GetEventSourcePositionForName(jsonValue.GetString("StartingPosition"));
+
+  }
+
+  if(jsonValue.ValueExists("StartingPositionTimestamp"))
+  {
+    m_startingPositionTimestamp = jsonValue.GetDouble("StartingPositionTimestamp");
 
   }
 

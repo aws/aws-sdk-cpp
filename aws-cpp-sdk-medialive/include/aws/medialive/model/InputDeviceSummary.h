@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputDeviceConnectionState.h>
 #include <aws/medialive/model/DeviceSettingsSyncState.h>
+#include <aws/medialive/model/DeviceUpdateStatus.h>
 #include <aws/medialive/model/InputDeviceHdSettings.h>
 #include <aws/medialive/model/InputDeviceNetworkSettings.h>
 #include <aws/medialive/model/InputDeviceType.h>
@@ -167,6 +168,37 @@ namespace Model
      * means that it has not updated its configuration.
      */
     inline InputDeviceSummary& WithDeviceSettingsSyncState(DeviceSettingsSyncState&& value) { SetDeviceSettingsSyncState(std::move(value)); return *this;}
+
+
+    /**
+     * The status of software on the input device.
+     */
+    inline const DeviceUpdateStatus& GetDeviceUpdateStatus() const{ return m_deviceUpdateStatus; }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline bool DeviceUpdateStatusHasBeenSet() const { return m_deviceUpdateStatusHasBeenSet; }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline void SetDeviceUpdateStatus(const DeviceUpdateStatus& value) { m_deviceUpdateStatusHasBeenSet = true; m_deviceUpdateStatus = value; }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline void SetDeviceUpdateStatus(DeviceUpdateStatus&& value) { m_deviceUpdateStatusHasBeenSet = true; m_deviceUpdateStatus = std::move(value); }
+
+    /**
+     * The status of software on the input device.
+     */
+    inline InputDeviceSummary& WithDeviceUpdateStatus(const DeviceUpdateStatus& value) { SetDeviceUpdateStatus(value); return *this;}
+
+    /**
+     * The status of software on the input device.
+     */
+    inline InputDeviceSummary& WithDeviceUpdateStatus(DeviceUpdateStatus&& value) { SetDeviceUpdateStatus(std::move(value)); return *this;}
 
 
     /**
@@ -435,6 +467,9 @@ namespace Model
 
     DeviceSettingsSyncState m_deviceSettingsSyncState;
     bool m_deviceSettingsSyncStateHasBeenSet;
+
+    DeviceUpdateStatus m_deviceUpdateStatus;
+    bool m_deviceUpdateStatusHasBeenSet;
 
     InputDeviceHdSettings m_hdDeviceSettings;
     bool m_hdDeviceSettingsHasBeenSet;

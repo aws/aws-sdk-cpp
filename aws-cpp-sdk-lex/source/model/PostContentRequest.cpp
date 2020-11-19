@@ -21,7 +21,8 @@ PostContentRequest::PostContentRequest() :
     m_userIdHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
     m_requestAttributesHasBeenSet(false),
-    m_acceptHasBeenSet(false)
+    m_acceptHasBeenSet(false),
+    m_activeContextsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,13 @@ Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders()
   {
     ss << m_accept;
     headers.emplace("accept",  ss.str());
+    ss.str("");
+  }
+
+  if(m_activeContextsHasBeenSet)
+  {
+    ss << m_activeContexts;
+    headers.emplace("x-amz-lex-active-contexts",  ss.str());
     ss.str("");
   }
 

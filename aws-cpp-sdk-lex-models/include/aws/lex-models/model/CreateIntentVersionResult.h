@@ -15,6 +15,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lex-models/model/KendraConfiguration.h>
 #include <aws/lex-models/model/Slot.h>
+#include <aws/lex-models/model/InputContext.h>
+#include <aws/lex-models/model/OutputContext.h>
 #include <utility>
 
 namespace Aws
@@ -568,6 +570,99 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline const Aws::Vector<InputContext>& GetInputContexts() const{ return m_inputContexts; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline void SetInputContexts(const Aws::Vector<InputContext>& value) { m_inputContexts = value; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline void SetInputContexts(Aws::Vector<InputContext>&& value) { m_inputContexts = std::move(value); }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline CreateIntentVersionResult& WithInputContexts(const Aws::Vector<InputContext>& value) { SetInputContexts(value); return *this;}
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline CreateIntentVersionResult& WithInputContexts(Aws::Vector<InputContext>&& value) { SetInputContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline CreateIntentVersionResult& AddInputContexts(const InputContext& value) { m_inputContexts.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline CreateIntentVersionResult& AddInputContexts(InputContext&& value) { m_inputContexts.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline const Aws::Vector<OutputContext>& GetOutputContexts() const{ return m_outputContexts; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline void SetOutputContexts(const Aws::Vector<OutputContext>& value) { m_outputContexts = value; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline void SetOutputContexts(Aws::Vector<OutputContext>&& value) { m_outputContexts = std::move(value); }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline CreateIntentVersionResult& WithOutputContexts(const Aws::Vector<OutputContext>& value) { SetOutputContexts(value); return *this;}
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline CreateIntentVersionResult& WithOutputContexts(Aws::Vector<OutputContext>&& value) { SetOutputContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline CreateIntentVersionResult& AddOutputContexts(const OutputContext& value) { m_outputContexts.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline CreateIntentVersionResult& AddOutputContexts(OutputContext&& value) { m_outputContexts.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -601,6 +696,10 @@ namespace Model
     Aws::String m_checksum;
 
     KendraConfiguration m_kendraConfiguration;
+
+    Aws::Vector<InputContext> m_inputContexts;
+
+    Aws::Vector<OutputContext> m_outputContexts;
   };
 
 } // namespace Model

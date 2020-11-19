@@ -138,6 +138,24 @@ PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("inputContexts"))
+  {
+    Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
+    for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
+    {
+      m_inputContexts.push_back(inputContextsJsonList[inputContextsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("outputContexts"))
+  {
+    Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
+    for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
+    {
+      m_outputContexts.push_back(outputContextsJsonList[outputContextsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

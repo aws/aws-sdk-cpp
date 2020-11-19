@@ -18,7 +18,8 @@ PostTextRequest::PostTextRequest() :
     m_userIdHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
     m_requestAttributesHasBeenSet(false),
-    m_inputTextHasBeenSet(false)
+    m_inputTextHasBeenSet(false),
+    m_activeContextsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String PostTextRequest::SerializePayload() const
   if(m_inputTextHasBeenSet)
   {
    payload.WithString("inputText", m_inputText);
+
+  }
+
+  if(m_activeContextsHasBeenSet)
+  {
+   Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
+   for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
+   {
+     activeContextsJsonList[activeContextsIndex].AsObject(m_activeContexts[activeContextsIndex].Jsonize());
+   }
+   payload.WithArray("activeContexts", std::move(activeContextsJsonList));
 
   }
 

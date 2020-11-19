@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline ListReplaysRequest& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline ListReplaysRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>A name prefix to filter the archives returned. Only archives with name that
+     * <p>A name prefix to filter the replays returned. Only replays with name that
      * match the prefix are returned.</p>
      */
     inline ListReplaysRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}

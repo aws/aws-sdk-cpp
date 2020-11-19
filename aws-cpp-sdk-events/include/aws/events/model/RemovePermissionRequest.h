@@ -84,6 +84,27 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to remove all permissions.</p>
+     */
+    inline bool GetRemoveAllPermissions() const{ return m_removeAllPermissions; }
+
+    /**
+     * <p>Specifies whether to remove all permissions.</p>
+     */
+    inline bool RemoveAllPermissionsHasBeenSet() const { return m_removeAllPermissionsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to remove all permissions.</p>
+     */
+    inline void SetRemoveAllPermissions(bool value) { m_removeAllPermissionsHasBeenSet = true; m_removeAllPermissions = value; }
+
+    /**
+     * <p>Specifies whether to remove all permissions.</p>
+     */
+    inline RemovePermissionRequest& WithRemoveAllPermissions(bool value) { SetRemoveAllPermissions(value); return *this;}
+
+
+    /**
      * <p>The name of the event bus to revoke permissions for. If you omit this, the
      * default event bus is used.</p>
      */
@@ -135,6 +156,9 @@ namespace Model
 
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
+
+    bool m_removeAllPermissions;
+    bool m_removeAllPermissionsHasBeenSet;
 
     Aws::String m_eventBusName;
     bool m_eventBusNameHasBeenSet;

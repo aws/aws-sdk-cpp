@@ -194,10 +194,7 @@ namespace Model
      * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
      * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
      * to <code>true</code> by default. In these Regions setting the parameter to
-     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
-     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
-     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
-     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
      */
     inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
 
@@ -217,10 +214,7 @@ namespace Model
      * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
      * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
      * to <code>true</code> by default. In these Regions setting the parameter to
-     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
-     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
-     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
-     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
      */
     inline bool EnableModelImprovementsHasBeenSet() const { return m_enableModelImprovementsHasBeenSet; }
 
@@ -240,10 +234,7 @@ namespace Model
      * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
      * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
      * to <code>true</code> by default. In these Regions setting the parameter to
-     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
-     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
-     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
-     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
      */
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
 
@@ -263,10 +254,7 @@ namespace Model
      * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
      * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
      * to <code>true</code> by default. In these Regions setting the parameter to
-     * <code>false</code> throws a <code>ValidationException</code> exception.</p> <ul>
-     * <li> <p>Asia Pacific (Singapore) (ap-southeast-1)</p> </li> <li> <p>Asia Pacific
-     * (Tokyo) (ap-northeast-1)</p> </li> <li> <p>EU (Frankfurt) (eu-central-1)</p>
-     * </li> <li> <p>EU (London) (eu-west-2)</p> </li> </ul>
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
      */
     inline PutBotRequest& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
 
@@ -281,17 +269,18 @@ namespace Model
      * response. <code>AMAZON.FallbackIntent</code> and
      * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
      * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
-     * parameter to <code>true</code> to use confidence scores.</p> <ul> <li> <p>US
-     * East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon)
-     * (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
-     * <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the
-     * <code>enableModelImprovements</code> parameter is set to <code>true</code> by
-     * default.</p> <p>For example, suppose a bot is configured with the confidence
-     * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
-     * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code>
-     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
-     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
 
@@ -305,17 +294,18 @@ namespace Model
      * response. <code>AMAZON.FallbackIntent</code> and
      * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
      * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
-     * parameter to <code>true</code> to use confidence scores.</p> <ul> <li> <p>US
-     * East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon)
-     * (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
-     * <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the
-     * <code>enableModelImprovements</code> parameter is set to <code>true</code> by
-     * default.</p> <p>For example, suppose a bot is configured with the confidence
-     * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
-     * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code>
-     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
-     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
 
@@ -329,17 +319,18 @@ namespace Model
      * response. <code>AMAZON.FallbackIntent</code> and
      * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
      * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
-     * parameter to <code>true</code> to use confidence scores.</p> <ul> <li> <p>US
-     * East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon)
-     * (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
-     * <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the
-     * <code>enableModelImprovements</code> parameter is set to <code>true</code> by
-     * default.</p> <p>For example, suppose a bot is configured with the confidence
-     * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
-     * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code>
-     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
-     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
 
@@ -353,17 +344,18 @@ namespace Model
      * response. <code>AMAZON.FallbackIntent</code> and
      * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
      * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
-     * parameter to <code>true</code> to use confidence scores.</p> <ul> <li> <p>US
-     * East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon)
-     * (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
-     * <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the
-     * <code>enableModelImprovements</code> parameter is set to <code>true</code> by
-     * default.</p> <p>For example, suppose a bot is configured with the confidence
-     * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
-     * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code>
-     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
-     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline PutBotRequest& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 

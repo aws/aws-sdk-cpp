@@ -24,6 +24,8 @@ InputDeviceSummary::InputDeviceSummary() :
     m_connectionStateHasBeenSet(false),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
     m_deviceSettingsSyncStateHasBeenSet(false),
+    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
+    m_deviceUpdateStatusHasBeenSet(false),
     m_hdDeviceSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_macAddressHasBeenSet(false),
@@ -41,6 +43,8 @@ InputDeviceSummary::InputDeviceSummary(JsonView jsonValue) :
     m_connectionStateHasBeenSet(false),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
     m_deviceSettingsSyncStateHasBeenSet(false),
+    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
+    m_deviceUpdateStatusHasBeenSet(false),
     m_hdDeviceSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_macAddressHasBeenSet(false),
@@ -74,6 +78,13 @@ InputDeviceSummary& InputDeviceSummary::operator =(JsonView jsonValue)
     m_deviceSettingsSyncState = DeviceSettingsSyncStateMapper::GetDeviceSettingsSyncStateForName(jsonValue.GetString("deviceSettingsSyncState"));
 
     m_deviceSettingsSyncStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceUpdateStatus"))
+  {
+    m_deviceUpdateStatus = DeviceUpdateStatusMapper::GetDeviceUpdateStatusForName(jsonValue.GetString("deviceUpdateStatus"));
+
+    m_deviceUpdateStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hdDeviceSettings"))
@@ -146,6 +157,11 @@ JsonValue InputDeviceSummary::Jsonize() const
   if(m_deviceSettingsSyncStateHasBeenSet)
   {
    payload.WithString("deviceSettingsSyncState", DeviceSettingsSyncStateMapper::GetNameForDeviceSettingsSyncState(m_deviceSettingsSyncState));
+  }
+
+  if(m_deviceUpdateStatusHasBeenSet)
+  {
+   payload.WithString("deviceUpdateStatus", DeviceUpdateStatusMapper::GetNameForDeviceUpdateStatus(m_deviceUpdateStatus));
   }
 
   if(m_hdDeviceSettingsHasBeenSet)

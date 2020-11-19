@@ -58,6 +58,15 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("activeContexts"))
+  {
+    Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
+    for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
+    {
+      m_activeContexts.push_back(activeContextsJsonList[activeContextsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

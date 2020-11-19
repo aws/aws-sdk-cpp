@@ -128,7 +128,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -139,7 +139,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -183,7 +183,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateTable", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -194,7 +194,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -238,7 +238,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -249,7 +249,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -293,7 +293,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteTable", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -304,7 +304,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -348,7 +348,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -359,7 +359,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -430,7 +430,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTable", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -441,7 +441,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -485,7 +485,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListDatabases", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -496,7 +496,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListDatabases", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -540,7 +540,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTables", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -551,7 +551,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTables", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -595,7 +595,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsForResource", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -606,7 +606,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTagsForResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -650,7 +650,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -661,7 +661,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("TagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -705,7 +705,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -716,7 +716,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UntagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -760,7 +760,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -771,7 +771,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -815,7 +815,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTable", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -826,7 +826,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -870,7 +870,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("WriteRecords", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -881,7 +881,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("WriteRecords", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else

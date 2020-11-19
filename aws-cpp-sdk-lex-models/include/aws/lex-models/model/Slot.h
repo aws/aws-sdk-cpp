@@ -10,6 +10,7 @@
 #include <aws/lex-models/model/Prompt.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex-models/model/ObfuscationSetting.h>
+#include <aws/lex-models/model/SlotDefaultValueSpec.h>
 #include <utility>
 
 namespace Aws
@@ -502,6 +503,49 @@ namespace Model
      */
     inline Slot& WithObfuscationSetting(ObfuscationSetting&& value) { SetObfuscationSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline const SlotDefaultValueSpec& GetDefaultValueSpec() const{ return m_defaultValueSpec; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline bool DefaultValueSpecHasBeenSet() const { return m_defaultValueSpecHasBeenSet; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline void SetDefaultValueSpec(const SlotDefaultValueSpec& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = value; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline void SetDefaultValueSpec(SlotDefaultValueSpec&& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = std::move(value); }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline Slot& WithDefaultValueSpec(const SlotDefaultValueSpec& value) { SetDefaultValueSpec(value); return *this;}
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline Slot& WithDefaultValueSpec(SlotDefaultValueSpec&& value) { SetDefaultValueSpec(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -533,6 +577,9 @@ namespace Model
 
     ObfuscationSetting m_obfuscationSetting;
     bool m_obfuscationSettingHasBeenSet;
+
+    SlotDefaultValueSpec m_defaultValueSpec;
+    bool m_defaultValueSpecHasBeenSet;
   };
 
 } // namespace Model

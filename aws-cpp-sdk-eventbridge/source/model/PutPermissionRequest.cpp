@@ -17,7 +17,8 @@ PutPermissionRequest::PutPermissionRequest() :
     m_actionHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_statementIdHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String PutPermissionRequest::SerializePayload() const
   if(m_conditionHasBeenSet)
   {
    payload.WithObject("Condition", m_condition.Jsonize());
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("Policy", m_policy);
 
   }
 

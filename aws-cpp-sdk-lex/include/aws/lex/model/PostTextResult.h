@@ -14,6 +14,7 @@
 #include <aws/lex/model/DialogState.h>
 #include <aws/lex/model/ResponseCard.h>
 #include <aws/lex/model/PredictedIntent.h>
+#include <aws/lex/model/ActiveContext.h>
 #include <utility>
 
 namespace Aws
@@ -82,8 +83,7 @@ namespace Model
      * 1.0. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
-     * score may change based on improvements to the Amazon Lex natural language
-     * understanding (NLU) model.</p>
+     * score may change based on improvements to Amazon Lex.</p>
      */
     inline const IntentConfidence& GetNluIntentConfidence() const{ return m_nluIntentConfidence; }
 
@@ -93,8 +93,7 @@ namespace Model
      * 1.0. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
-     * score may change based on improvements to the Amazon Lex natural language
-     * understanding (NLU) model.</p>
+     * score may change based on improvements to Amazon Lex.</p>
      */
     inline void SetNluIntentConfidence(const IntentConfidence& value) { m_nluIntentConfidence = value; }
 
@@ -104,8 +103,7 @@ namespace Model
      * 1.0. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
-     * score may change based on improvements to the Amazon Lex natural language
-     * understanding (NLU) model.</p>
+     * score may change based on improvements to Amazon Lex.</p>
      */
     inline void SetNluIntentConfidence(IntentConfidence&& value) { m_nluIntentConfidence = std::move(value); }
 
@@ -115,8 +113,7 @@ namespace Model
      * 1.0. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
-     * score may change based on improvements to the Amazon Lex natural language
-     * understanding (NLU) model.</p>
+     * score may change based on improvements to Amazon Lex.</p>
      */
     inline PostTextResult& WithNluIntentConfidence(const IntentConfidence& value) { SetNluIntentConfidence(value); return *this;}
 
@@ -126,8 +123,7 @@ namespace Model
      * 1.0. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
-     * score may change based on improvements to the Amazon Lex natural language
-     * understanding (NLU) model.</p>
+     * score may change based on improvements to Amazon Lex.</p>
      */
     inline PostTextResult& WithNluIntentConfidence(IntentConfidence&& value) { SetNluIntentConfidence(std::move(value)); return *this;}
 
@@ -939,86 +935,115 @@ namespace Model
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline PostTextResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline PostTextResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the bot that responded to the conversation. You can use this
      * information to help determine if one version of a bot is performing better than
-     * another version.</p> <p>If you have enabled the new natural language
-     * understanding (NLU) model, you can use this to determine if the improvement is
-     * due to changes to the bot or changes to the NLU.</p> <p>For more information
-     * about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-     * parameter of the <code>PutBot</code> operation.</p>
+     * another version.</p>
      */
     inline PostTextResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostTextResult& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostTextResult& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostTextResult& AddActiveContexts(const ActiveContext& value) { m_activeContexts.push_back(value); return *this; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostTextResult& AddActiveContexts(ActiveContext&& value) { m_activeContexts.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1047,6 +1072,8 @@ namespace Model
     Aws::String m_sessionId;
 
     Aws::String m_botVersion;
+
+    Aws::Vector<ActiveContext> m_activeContexts;
   };
 
 } // namespace Model

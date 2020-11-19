@@ -262,8 +262,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
@@ -281,8 +282,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
@@ -300,8 +302,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
@@ -319,8 +322,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
@@ -338,8 +342,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
@@ -357,8 +362,9 @@ namespace Model
      * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacities, but also the parameters
      * that specify the instance configuration information—the launch template and
-     * instance types. The policy can also include a weight for each instance type. For
-     * more information, see <a
+     * instance types. The policy can also include a weight for each instance type and
+     * different launch templates for individual instance types. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
